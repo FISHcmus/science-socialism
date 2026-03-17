@@ -1,287 +1,521 @@
 # Chương 6: VẤN ĐỀ DÂN TỘC VÀ TÔN GIÁO TRONG THỜI KỲ QUÁ ĐỘ LÊN CHỦ NGHĨA XÃ HỘI
 
-*(Dùng cho khối không Chuyên)*
-
-Người biên soạn: PGS,TS Trần Xuân Dung; PGS,TS Lê Văn Đoán
-
-Số tiết giảng: 05
-
-## A. MỤC TIÊU
-
-**Về kiến thức:** Trang bị cho người học quan điểm cơ bản chủ nghĩa Mác-Lênin về vấn đề dân tộc, tôn giáo. Sinh viên nắm được những nội dung cơ bản của chính sách dân tộc, tôn giáo của Đảng và Nhà nước ta.
-
-**Về kỹ năng:** Giúp sinh viên rèn luyện kỹ năng tư duy và năng lực vận dụng những nội dung trong bài học để phân tích, giải thích những vấn đề trong thực tiễn một cách khách quan, có cơ sở khoa học.
-
-**Về thái độ:** Giúp sinh viên thấy rõ tính khoa học trong tư tưởng và và cách thức giải quyết vấn đề dân tộc, tôn giáo của chủ nghĩa Mác – Lênin, của Đảng Cộng sản Việt Nam, từ đó có trách nhiệm góp phần tuyên truyền, góp phần thực hiện chính sách, pháp luật dân tộc, tôn giáo của Đảng, Nhà nước.
-
 ## B. NỘI DUNG
 
-### I. VẤN ĐỀ DÂN TỘC TRONG THỜI KỲ QUÁ ĐỘ LÊN CHỦ NGHĨA XÃ HỘI
+[trang 195]
 
-#### 1.1. Dân tộc và các đặc trưng của dân tộc
+### I- DÂN TỘC TRONG THỜI KỲ QUÁ ĐỘ LÊN CHỦ NGHĨA XÃ HỘI
 
-Chúng ta có thể hiểu khái niệm dân tộc ở 2 nghĩa phổ biến: thứ nhất, khái niệm dân tộc dùng để chỉ một cộng đồng người có mối liên hệ chặt chẽ và bền vững, có chung sinh hoạt kinh tế, có ngôn ngữ riêng, văn hoá có những đặc thù, xuất hiện sau bộ lạc, bộ tộc, kế thừa và phát triển cao hơn những nhân tố tộc người ở bộ lạc, bộ tộc và thể hiện thành ý thức tự giác tộc người của dân cư cộng đồng đó. Thứ hai, khái niệm dân tộc dùng để chỉ một cộng đồng người ổn định làm thành nhân dân một nước, có lãnh thổ quốc gia, có nền kinh tế thống nhất, có ngôn ngữ chung và có ý thức về sự thống nhất của mình, gắn bó với nhau bởi quyền lợi chính trị, kinh tế, truyền thống văn hoá và truyền thống đấu tranh chung trong suốt quá trình lịch sử lâu dài.
+#### 1. Khái niệm, đặc trưng cơ bản của dân tộc
 
-Như vậy, với nghĩa thứ nhất, dân tộc là một bộ phận của quốc gia, chẳng hạn: dân tộc Kinh, dân tộc Tày, dân tộc Bana, dân tộc Ê-đê…ở Việt Nam. Với nghĩa thứ hai, dân tộc là toàn bộ nhân dân của quốc gia đó, chẳng hạn: dân tộc Nga, dân tộc Trung Hoa, dân tộc Ấn Độ, dân tộc Việt Nam…
+Theo quan điểm của chủ nghĩa Mác - Lênin, dân tộc là quá trình phát triển lâu dài của xã hội loài người, trải qua các hình thức cộng đồng từ thấp đến cao, bao gồm: thị tộc, bộ lạc, bộ tộc, dân tộc. Sự biến đổi của phương thức sản xuất chính là nguyên nhân quyết định sự biến đổi của cộng đồng dân tộc.
 
-**Những đặc trưng cơ bản của một dân tộc:**
+Ở phương Tây, dân tộc xuất hiện khi phương thức sản xuất tư bản chủ nghĩa được xác lập thay thế phương thức sản xuất phong kiến. Ở phương Đông, dân tộc được hình thành trên cơ sở một nền văn hóa, một tâm lý dân tộc đã phát triển tương đối chín muồi và một cộng đồng kinh tế tuy đã đạt tới một mức độ nhất định, song nhìn chung còn kém phát triển và ở trạng thái phân tán. Dân tộc được hiểu theo hai nghĩa rộng và nghĩa hẹp:
 
-**Thứ nhất**, dân tộc là một cộng đồng có chung sinh hoạt về kinh tế. Trong một dân tộc, nhân tố kinh tế - xã hội được biểu hiện hết sức mạnh mẽ. C.Mác và Ph.Ăngghen đã chứng minh rằng nhân tố cơ bản dẫn tới việc chuyển từ hình thức cộng đồng trước dân tộc sang dân tộc là tác nhân kinh tế. Những mối liên hệ kinh tế thường xuyên và mạnh mẽ đặc biệt là mối liên hệ thị trường đã làm tăng tính thống nhất, tính ổn định, tính bền vững của cộng đồng người đông đảo sống trong một lãnh thổ rộng lớn. Trong lịch sử nhân loại, dân tộc điển hình là dân tộc tư sản, dân tộc này bao gồm các giai cấp, tầng lớp khác nhau, trong đó tư sản và vô sản là đối lập nhau về địa vị kinh tế, song hai giai cấp này có quan hệ kinh tế chặt chẽ trong một hệ thống kinh tế duy nhất hình thành trên địa bàn dân tộc, đó là hệ thống kinh tế tư bản chủ nghĩa. Thiếu sự cộng đồng chặt chẽ, bền vững về kinh tế thì cộng đồng người chưa phải là dân tộc.
+*Theo nghĩa rộng*, dân tộc (Nation) là khái niệm dùng để chỉ *một cộng đồng người ổn định làm thành nhân dân một nước, có lãnh thổ riêng, nền kinh tế thống nhất, có ngôn ngữ chung và có ý thức về sự thống nhất của mình, gắn bó với nhau bởi quyền lợi chính trị, kinh tế, truyền thống văn hóa và truyền thống đấu tranh chung trong suốt quá trình lịch sử lâu dài dựng nước và giữ nước*. Với nghĩa này, khái niệm dân tộc dùng để chỉ một quốc gia,
 
-Trong một quốc gia có nhiều dân tộc thì các mối quan hệ kinh tế là cơ sở để liên kết các bộ phận, các thành viên của dân tộc. Nó tạo nên nền tảng cho sự vững chắc của cộng đồng dân tộc.
+[trang 196]
 
-**Thứ hai**, dân tộc là cộng đồng có chung về ngôn ngữ. Ngôn ngữ là công cụ giao tiếp xã hội, trước hết là công cụ giao tiếp trong cộng đồng (thị tộc, bộ lạc, bộ tộc, dân tộc). Các thành viên của một dân tộc có thể dùng nhiều ngôn ngữ trong giao tiếp với nhau, song điều quan trọng nhất là một dân tộc có một ngôn ngữ chung thống nhất mà các thành viên của dân tộc coi là tiếng mẹ đẻ của họ. Tính thống nhất trong ngôn ngữ dân tộc thể hiện trước hết ở sự thống nhất về cấu trúc ngữ pháp và kho từ vựng cơ bản. Ngôn ngữ dân tộc là một ngôn ngữ đã phát triển. Thống nhất về ngôn ngữ là một trong những đặc trưng chủ yếu của dân tộc.
+nghĩa là toàn bộ nhân dân của một nước. Ví dụ, dân tộc Ấn Độ, dân tộc Trung Hoa, dân tộc Việt Nam, v.v..
 
-Trong một quốc gia có nhiều dân tộc, mỗi dân tộc có một ngôn ngữ riêng và có thể có chữ viết riêng (trên cơ sở ngôn ngữ chung của quốc gia) làm công cụ giao tiếp trên mọi lĩnh vực kinh tế, văn hoá, tình cảm…
+Theo nghĩa rộng, dân tộc có một số đặc trưng cơ bản sau:
 
-**Thứ ba**, dân tộc là cộng đồng về lãnh thổ. Mỗi dân tộc có lãnh thổ riêng thống nhất, không bị chia cắt. Khái niệm lãnh thổ bao gồm cả vùng đất, vùng biển, hải đảo, vùng trời thuộc chủ quyền của quốc gia dân tộc. Lãnh thổ dân tộc ổn định hơn nhiều so với lãnh thổ bộ tộc. Phạm vi lãnh thổ dân tộc hình thành trong quá trình lịch sử lâu dài. Chủ quyền quốc gia dân tộc về lãnh thổ là một khái niệm xác định, thường được thể chế hoá thành luật pháp quốc gia và luật pháp quốc tế. Thực tế lịch sử có những trường hợp lãnh thổ dân tộc bị chia cắt tạm thời, nhưng không thể căn cứ vào đó mà cho rằng cộng đồng ấy đã bị chia thành hai hoặc nhiều dân tộc. Đương nhiên sự chia cắt là một thử thách đối với tính bền vững của cộng đồng dân tộc. Cộng đồng lãnh thổ là tác động quan trọng không thể thiếu được của dân tộc. Lãnh thổ là địa bàn sinh tồn và phát triển của dân tộc, không có lãnh thổ thì không có khái niệm Tổ quốc, quốc gia.
+*Thứ nhất*, có chung một vùng lãnh thổ ổn định.
 
-Trong trường hợp quốc gia có nhiều dân tộc thì lãnh thổ quốc gia bao gồm lãnh thổ của các dân tộc thuộc quốc gia ấy hợp thành. Các dân tộc trong một quốc gia có thể cư trú tập trung trên một vùng lãnh thổ của cả nước, hoặc cư trú đan xen với nhiều dân tộc anh em. Vận mệnh dân tộc là một phần rất quan trọng gắn với việc xác lập và bảo vệ lãnh thổ đất nước.
+Lãnh thổ là dấu hiệu xác định không gian sinh tồn, vị trí địa lý của một dân tộc, biểu thị vùng đất, vùng trời, vùng biển mà mỗi dân tộc được quyền sở hữu. Lãnh thổ là yếu tố thể hiện chủ quyền của một dân tộc trong tương quan với các quốc gia - dân tộc khác. Trên không gian đó, các cộng đồng tộc người có mối quan hệ gắn bó với nhau, cư trú đan xen với nhau. Vận mệnh của cộng đồng tộc người gắn bó với việc xác lập và bảo vệ lãnh thổ quốc gia.
 
-**Thứ tư**, dân tộc là một cộng đồng về văn hoá, về tâm lý, về tính cách. Văn hoá là yếu tố đặc biệt quan trọng của sự liên kết cộng đồng. Văn hoá dân tộc mang nhiều sắc thái của các địa phương, các sắc tộc, các tập đoàn người,…song nó vẫn là một nền văn hoá thống nhất không bị chia cắt. Tính thống nhất trong đa dạng là đặc trưng của văn hoá dân tộc. Văn hoá dân tộc hình thành trong quá trình lâu dài của lịch sử hơn bất cứ yếu tố nào khác, tạo ra sắc thái riêng của từng dân tộc. Mỗi dân tộc có một nền văn hoá độc đáo của dân tộc mình.
+Đối với quốc gia và từng thành viên dân tộc, yếu tố lãnh thổ là thiêng liêng nhất. Không có lãnh thổ thì không có khái niệm tổ quốc, quốc gia. Bảo vệ chủ quyền quốc gia là nghĩa vụ và trách nhiệm cao nhất của mỗi thành viên dân tộc. Chủ quyền quốc gia - dân tộc về lãnh thổ là một khái niệm xác định thường được thể chế hóa thành luật pháp quốc gia và luật pháp quốc tế.
 
-Trong sinh hoạt cộng đồng, các thành viên của dân tộc thuộc những thành phần xã hội khác nhau tham gia vào sự sáng tạo giá trị văn hoá chung của dân tộc, đồng thời hấp thụ các giá trị văn hoá chung đó. Cá nhân hoặc nhóm người nào từ chối những giá trị văn hoá dân tộc thì họ đã tự tách mình khỏi cộng đồng dân tộc.
+Trong bối cảnh toàn cầu hóa hiện nay, quá trình di cư khiến cư dân của một quốc gia lại có thể cư trú ở nhiều quốc gia, châu lục khác. Vậy nên, khái niệm dân tộc, lãnh thổ, hay đường biên giới không chỉ bó hẹp trong biên giới hữu hình, mà đã được mở rộng thành đường biên giới "mềm", ở đó dấu ấn văn hóa chính là yếu tố để phân định ranh giới giữa các quốc gia - dân tộc.
 
-Văn hoá của một dân tộc không thể phát triển nếu không giao lưu với văn hoá của các dân tộc khác. Tuy nhiên, trong giao lưu văn hoá, các dân tộc không ngừng đấu tranh để bảo tồn và phát triển bản sắc của mình. Văn hoá dân tộc thường có sức đề kháng rất lớn chống lại nguy cơ đồng hoá về văn hoá.
+*Thứ hai*, có chung một phương thức sinh hoạt kinh tế.
 
-Mỗi một dân tộc có tâm lý, tính cách riêng. Chẳng hạn, tâm lý, tính cách của dân tộc Việt Nam khác với tâm lý, tính cách của các dân tộc Trung Hoa, Ấn Độ, Nhật Bản…, mặc dù tâm lý, tính cách các dân tộc phương Đông có nhiều nét tương đồng. Ta cũng có thể nói như vậy về các dân tộc phương Tây như: Pháp, Đức, Italia,… Người ta có thể nhận biết tâm lý, tính cách một dân tộc qua sinh hoạt vật chất, cũng như sinh hoạt tinh thần của dân tộc ấy, đặc biệt là qua các phong tục tập quán, tín ngưỡng, đời sống văn hoá.
+Đây là đặc trưng quan trọng nhất của dân tộc, là cơ sở để gắn kết các bộ phận, các thành viên trong dân tộc, tạo
 
-Đối với một quốc gia có nhiều dân tộc, mỗi dân tộc có nét tâm lý riêng biểu hiện kết tinh trong đặc thù văn hoá dân tộc, gắn bó với nền văn hoá của cả cộng đồng các dân tộc.
+[trang 197]
 
-Các đặc trưng cơ bản nói trên gắn bó chặt chẽ với nhau trong một chỉnh thể, đồng thời mỗi đặc trưng có một vị trí xác định. Đó là bốn đặc trưng không thể thiếu một mặt nào của cộng đồng dân tộc. Các đặc trưng ấy có quan hệ nhân quả, tác động lẫn nhau, kết hợp với nhau một cách chặt chẽ và độc đáo trong lịch sử lâu dài hình thành và phát triển cộng đồng.
+nên tính thống nhất, ổn định, bền vững của dân tộc. Mối quan hệ kinh tế là nền tảng cho sự vững chắc của cộng đồng dân tộc. Nếu thiếu tính cộng đồng chặt chẽ, bền vững về kinh tế thì cộng đồng người chưa thể trở thành dân tộc.
 
-Từ khái niệm dân tộc và đặc trưng của dân tộc, chúng ta nhận thấy rằng khái niệm dân tộc và khái niệm quốc gia gắn bó chặt chẽ với nhau. Điều khẳng định này có cơ sở khoa học bởi vì dân tộc ra đời trong những quốc gia nhất định và thông thường những nhân tố hình thành dân tộc chín muồi không tách rời với sự chín muồi của những nhân tố hình thành quốc gia, chúng bổ sung cho nhau và thúc đẩy lẫn nhau. Lịch sử hình thành các dân tộc (từ cộng đồng thị tộc đến dân tộc) đã khẳng định rằng mỗi một cộng đồng dân tộc vừa mang tính tộc người vừa mang tính chính trị - xã hội. Tính tộc người và tính chính trị - xã hội đó ghi đậm vào tâm trí của đông đảo dân cư ý thức gắn bó quyền lợi và nghĩa vụ của mình với dân tộc, đồng thời với nhà nước, quốc gia. Tình cảm đối với dân tộc hoà nhập vào tình cảm đối với Tổ quốc và trở thành một trong những giá trị thiêng liêng, bền vững của nhiều thế hệ ở các dân tộc, quốc gia. Tình cảm ấy xuất hiện và được củng cố trong quá trình lịch sử dựng nước và giữ nước lâu dài và trở thành nét truyền thống đặc sắc của các dân tộc, quốc gia đó.
+*Thứ ba*, có chung một ngôn ngữ làm công cụ giao tiếp.
 
-Mối quan hệ giữa dân tộc và quốc gia có ý nghĩa thực tiễn rất lớn. Công cuộc cải tạo xã hội cũ, xây dựng xã hội mới – từ cơ sở hạ tầng đến kiến trúc thượng tầng và các quan hệ xã hội không thể thiếu được nội dung cải tạo, xây dựng cộng đồng dân tộc và các mối quan hệ dân tộc. Ngược lại, việc cải tạo, xây dựng cộng đồng dân tộc và các mối quan hệ dân tộc không thể tách rời công cuộc cải tạo, xây dựng toàn diện xã hội mà trước hết là xây dựng chế độ chính trị - xã hội, xây dựng nhà nước theo con đường tiến bộ. Dân tộc xã hội chủ nghĩa chỉ có thể xuất hiện nhờ kết quả của sự cải tạo, xây dựng từng bước cộng đồng dân tộc và các mối quan hệ dân tộc theo các nguyên lý của chủ nghĩa Mác – Lênin. Đồng thời, các dân tộc xã hội chủ nghĩa cũng chỉ có thể xuất hiện do kết quả của công cuộc cải tạo, xây dựng trong mọi lĩnh vực của đời sống xã hội để từng bước tiến tới xây dựng thành công chế độ xã hội chủ nghĩa.
+Mỗi một dân tộc có ngôn ngữ riêng, bao gồm cả ngôn ngữ nói và ngôn ngữ viết, làm công cụ giao tiếp giữa các thành viên trên mọi lĩnh vực kinh tế, văn hóa, xã hội và tình cảm... Trong một quốc gia có nhiều cộng đồng tộc người, với các ngôn ngữ khác nhau, nhưng bao giờ cũng sẽ có một ngôn ngữ chung, thống nhất. Tính thống nhất trong ngôn ngữ dân tộc được thể hiện trước hết ở sự thống nhất về cấu trúc ngữ pháp và kho từ vựng cơ bản. Ngôn ngữ dân tộc là một ngôn ngữ đã phát triển và sự thống nhất về ngôn ngữ là một trong những đặc trưng chủ yếu của dân tộc.
 
-Trong một quốc gia có nhiều dân tộc, chúng ta không nên xem nhẹ hoặc làm lu mờ những nhân tố dân tộc còn tồn tại lâu dài trong một cộng đồng dân tộc của quốc gia đó. Nhân tố dân tộc bao giờ cũng in đậm dấu ấn trong cộng đồng đó. Nhân tố dân tộc đó được biểu hiện nổi bật nhất trong văn hoá, nghệ thuật, ngôn ngữ, phong tục, tập quán, nếp sống, tâm lý và tình cảm. Chúng hoà quyện vào nhau và tạo thành một thể thống nhất mà đa dạng về bản sắc dân tộc. Chính điều đó là căn cứ chủ yếu để phân biệt dân tộc này với dân tộc khác. Điều này đòi hỏi những nước đang quá độ lên chủ nghĩa xã hội trong khi hoạch định và thực hiện chính sách chung của quốc gia, cần chú ý đến tính đặc thù của cộng đồng gồm nhiều dân tộc, đồng thời cần có những chính sách riêng đáp ứng những yêu cầu chính đáng mang tính đặc thù của từng dân tộc. Trong tuyên ngôn của Đảng cộng sản, C.Mác và Ph.Angghen đã chỉ rõ: "Giai cấp tư sản ngày càng xoá bỏ tình trạng phân tán về tư liệu sản xuất, về tài sản và về dân cư. Nó tụ tập dân cư, tập trung các tư liệu sản xuất và tích tụ tài sản vào trong tay một số ít người. Kết quả tất nhiên của những thay đổi ấy là sự tập trung về chính trị. Những địa phương độc lập, liên hệ với nhau hầu như chỉ bởi những quan hệ liên minh và có những lợi ích, luật lệ, chính phủ, thuế quan khác nhau thì đã được tập hợp lại thành một dân tộc thống nhất, có một chính phủ thống nhất, một luật pháp thống nhất, một lợi ích thống nhất mang tính giai cấp và một hàng rào thuế quan thống nhất"[^64].
+*Thứ tư*, có chung một nền văn hóa và tâm lý.
 
-[^64]: C.Mác và Ph.Ăngghen: Toàn tập, NXB.Chính trị Quốc gia, Hà Nội, 1995, T4, Tr. 602-603
+Văn hóa dân tộc được biểu hiện thông qua tâm lý, tính cách, phong tục, tập quán, lối sống dân tộc, tạo nên bản sắc riêng của từng dân tộc. Văn hóa dân tộc gắn bó chặt chẽ với văn hóa của các cộng đồng tộc người trong một quốc gia. Văn hóa là một yếu tố đặc biệt quan trọng của sự liên kết cộng đồng. Mỗi dân tộc có một nền văn hóa độc đáo của dân tộc mình. Trong sinh hoạt cộng đồng, các thành viên của dân tộc thuộc những thành phần xã hội khác nhau tham gia vào sự sáng tạo giá trị văn hóa chung của dân tộc, đồng thời hấp thụ các giá trị văn hóa chung đó.
 
-#### 1.2. Cương lĩnh dân tộc của chủ nghĩa Mác – Lênin
+[trang 198]
 
-Cương lĩnh dân tộc của chủ nghĩa Mác - Lênin đã được V.I.Lênin nêu ra trên cơ sở tư tưởng của học thuyết Mác về vấn đề dân tộc; căn cứ vào sự tổng kết kinh nghiệm cuộc đấu tranh của phong trào cách mạng thế giới và cách mạng Nga; dựa vào sự phân tích sâu sắc hai xu hướng khách quan của sự phát triển các dân tộc gắn liền với quá trình phát triển của chủ nghĩa tư bản. Cương lĩnh dân tộc của chủ nghĩa Mác – Lênin gồm có ba nội dung chủ yếu: các dân tộc hoàn toàn bình đẳng; các dân tộc có quyền tự quyết; đoàn kết giai cấp công nhân các dân tộc trong cuộc đấu tranh xoá bỏ áp bức dân tộc và xây dựng mối quan hệ giữa các dân tộc.
+Cá nhân hoặc nhóm người nào từ chối những giá trị văn hóa dân tộc thì họ đã tự mình tách khỏi cộng đồng dân tộc. Văn hóa của một dân tộc không thể phát triển nếu không giao lưu với văn hóa của các dân tộc khác. Tuy nhiên, trong giao lưu văn hóa, các dân tộc luôn có ý thức bảo tồn và phát triển bản sắc của mình, tránh nguy cơ đồng hóa về văn hóa.
 
-**Các dân tộc hoàn toàn bình đẳng.** Đây là nội dung rất quan trọng của cương lĩnh. Bình đẳng giữa các dân tộc, trước hết là xoá bỏ tình trạng dân tộc này đặt ách nô dịch lên dân tộc khác trên cơ sở thủ tiêu tình trạng giai cấp này áp bức giai cấp khác. Tiếp đó phải từng bước khắc phục tình trạng chênh lệch trong sự phát triển của các dân tộc, tạo điều kiện thuận lợi để các dân tộc còn ở trình độ lạc hậu, bằng sự nỗ lực của chính mình cùng với sự giúp đỡ của các dân tộc anh em phát triển nhanh trên con đường tiến bộ. Sự bình đẳng toàn diện giữa các dân tộc về chính trị, kinh tế, văn hoá, xã hội,...phải được thực hiện một cách đích thực trong đời sống.
+*Thứ năm*, có chung một nhà nước (nhà nước dân tộc).
 
-**Các dân tộc có quyền tự quyết.** Quyền tự quyết là quyền thiêng liêng nhất của mỗi dân tộc đối với vận mệnh của dân tộc mình. Quyền dân tộc tự quyết bao gồm quyền tự do phân lập thành cộng đồng quốc gia dân tộc độc lập và quyền tự nguyện liên hiệp với các dân tộc khác trên cơ sở bình đẳng để có đủ sức mạnh chống nguy cơ xâm lược từ bên ngoài, giữ vững độc lập chủ quyền và có thêm những điều kiện thuận lợi cho sự phát triển quốc gia – dân tộc.
+Các thành viên cũng như các cộng đồng tộc người trong một dân tộc đều chịu sự quản lý, điều khiển của một nhà nước độc lập. Đây là yếu tố phân biệt dân tộc - quốc gia và dân tộc - tộc người. Dân tộc - tộc người trong một quốc gia không có nhà nước với thể chế chính trị riêng. Hình thức tổ chức, tính chất của nhà nước do chế độ chính trị của dân tộc quyết định. Nhà nước là đặc trưng cho thể chế chính trị của dân tộc, là đại diện cho dân tộc trong quan hệ với các quốc gia dân tộc khác trên thế giới.
 
-V.I.Lênin là người luôn luôn thể hiện quan điểm lịch sử cụ thể khi xem xét và giải quyết vấn đề quyền tự quyết của các dân tộc. Chẳng hạn, trước cách mạng xã hội chủ nghĩa tháng Mười, V.I.Lênin ủng hộ yêu sách của các dân tộc bị áp bức, đòi phân lập. Yêu sách này góp phần làm suy yếu chế độ chuyên chế Nga hoàng, làm thất bại chính sách dân tộc sôvanh Đại Nga, tạo điều kiện đưa cách mạng đến thắng lợi. Sau cách mạng tháng Mười, V.I.Lênin ủng hộ nguyện vọng liên hiệp lại của các dân tộc, vì điều đó là tất yếu và cần thiết để đảm bảo quyền bình đẳng giữa các dân tộc, xoá bỏ mọi thù hằn để liên kết các dân tộc thành một quốc gia rộng lớn nhằm bảo vệ những thành quả của cách mạng đã giành được và cùng nhau xây dựng xã hội mới. Như vậy, V.I.Lênin đã triệt để đấu tranh chống áp bức dân tộc, đồng thời kiên quyết đấu tranh gạt bỏ những trở ngại để các dân tộc ngày càng xích lại gần nhau.
+Các đặc trưng cơ bản nói trên gắn bó chặt chẽ với nhau trong một chỉnh thể, đồng thời mỗi đặc trưng có một vị trí xác định. Các đặc trưng ấy có quan hệ nhân quả, tác động qua lại, kết hợp với nhau một cách chặt chẽ và độc đáo trong lịch sử hình thành và phát triển của dân tộc, tạo nên tính ổn định, bền vững của cộng đồng dân tộc.
 
-**Đoàn kết giai cấp công nhân các dân tộc trong cuộc đấu tranh xoá bỏ áp bức dân tộc và xây dựng mối quan hệ mới giữa các dân tộc.** Đây là tư tưởng cơ bản trong cương lĩnh dân tộc của các Đảng cộng sản. Nó phản ánh bản chất quốc tế của phong trào công nhân, phản ánh sự thống nhất giữa sự nghiệp giải phóng dân tộc và giải phóng giai cấp. Nó đảm bảo cho phong trào dân tộc có đủ sức mạnh để giành thắng lợi. Việc thực hiện quyền bình đẳng và quyền dân tộc tự quyết là tuỳ thuộc vào sự đoàn kết, thống nhất giai cấp công nhân các dân tộc trong từng quốc gia cũng như trên toàn thế giới. Chỉ có đứng vững trên lập trường của giai cấp công nhân mới thực hiện được quyền bình đẳng và quyền tự quyết đúng đắn, khắc phục được thái độ kỳ thị, lòng thù hằn dân tộc. Từ đó mối đoàn kết được nhân dân lao động các dân tộc trong cuộc đấu tranh vì độc lập dân tộc, dân chủ và tiến bộ xã hội. Chính vì vậy, nội dung đoàn kết giai cấp công nhân các dân tộc được nêu trong cương lĩnh không chỉ là lời kêu gọi mà còn là giải pháp hữu hiệu đảm bảo việc thực hiện quyền bình đẳng và quyền tự quyết dân tộc. Nội dung đó đóng vai trò liên kết cả ba nội dung của cương lĩnh thành một chỉnh thể. Đoàn kết giai cấp công nhân các dân tộc là sự thể hiện thực tế tinh thần yêu nước mà trong thời đại ngày nay để trở thành sức mạnh cực kỳ to lớn. Nội dung đó phù hợp với tinh thần quốc tế chân chính đang lên tiếng kêu gọi các dân tộc, quốc tế xích lại gần nhau.
+Theo nghĩa hẹp, dân tộc (Ethnie) là khái niệm dùng để chỉ một cộng đồng tộc người được hình thành trong lịch sử, có mối liên hệ chặt chẽ và bền vững, có chung ý thức tự giác tộc người, ngôn ngữ và văn hóa. Cộng đồng này xuất hiện sau bộ lạc, bộ tộc, kế thừa và phát triển cao hơn
 
-Như vậy, sự thăng trầm của lịch sử nhân loại đã không bác bỏ cương lĩnh dân tộc của chủ nghĩa Mác – Lênin, trái lại, hiện thực lịch sử đã cung cấp thêm các sự kiện để xác nhận sự đúng đắn của cương lĩnh và đòi hỏi sự vận dụng cương lĩnh đó cho phù hợp với điều kiện lịch sử cụ thể của từng dân tộc, từng quốc gia trong thời đại ngày nay.
+[trang 199]
 
-Cương lĩnh dân tộc của chủ nghĩa Mác – Lênin là một bộ phận trong cương lĩnh cách mạng của giai cấp công nhân và nhân dân lao động trong sự nghiệp đấu tranh giải phóng dân tộc, giải phóng giai cấp; là cơ sở lý luận của đường lối chính sách dân tộc của các Đảng cộng sản và Nhà nước trong các quốc gia đang quá độ lên chủ nghĩa xã hội.
+những nhân tố tộc người của các cộng đồng đó. Với nghĩa này, dân tộc là một bộ phận hay thành phần của quốc gia. Chẳng hạn, Việt Nam là quốc gia có 54 dân tộc, tức 54 cộng đồng tộc người. Sự khác nhau giữa các cộng đồng tộc người ấy biểu hiện chủ yếu ở đặc trưng văn hóa, lối sống, tâm lý, ý thức tộc người.
 
-### II. VẤN ĐỀ TÔN GIÁO TRONG THỜI KỲ QUÁ ĐỘ LÊN CHỦ NGHĨA XÃ HỘI
+Dân tộc - tộc người có một số đặc trưng cơ bản sau:
 
-#### 2.1. Quan điểm của chủ nghĩa Mác - Lênin về tôn giáo và nguồn gốc, bản chất, tính chất, chức năng của tôn giáo
+- Cộng đồng về ngôn ngữ (bao gồm ngôn ngữ nói, ngôn ngữ viết; hoặc chỉ riêng ngôn ngữ nói). Đây là tiêu chí cơ bản để phân biệt các tộc người khác nhau và là vấn đề luôn được các dân tộc coi trọng giữ gìn. Tuy nhiên, trong quá trình phát triển tộc người, vì nhiều nguyên nhân khác nhau, có những tộc người không còn ngôn ngữ mẹ đẻ mà sử dụng ngôn ngữ khác làm công cụ giao tiếp.
 
-##### a. Về khái niệm tôn giáo
+- Cộng đồng về văn hóa. Văn hóa bao gồm văn hóa vật thể và văn hóa phi vật thể ở mỗi tộc người, phản ánh truyền thống, lối sống, phong tục, tập quán, tín ngưỡng, tôn giáo của tộc người đó. Lịch sử phát triển của các tộc người gắn liền với truyền thống văn hóa của họ. Ngày nay, cùng với xu thế giao lưu văn hóa vẫn song song tồn tại xu thế bảo tồn và phát huy bản sắc văn hóa của mỗi tộc người.
 
-Chủ nghĩa Mác - Lênin cho rằng: Tất cả mọi tôn giáo chẳng qua chỉ là sự phản ánh hư ảo - vào đầu óc của con người - những lực lượng ở bên ngoài chi phối cuộc sống hàng ngày của họ; Tôn giáo là một hình thái ý thức xã hội, phản ánh hiện thực khách quan, thông qua sự phản ánh đó, các lực lượng tự nhiên trở thành siêu tự nhiên, thần bí...
+- Ý thức tự giác tộc người. Đây là tiêu chí quan trọng nhất để phân định một tộc người và có vị trí quyết định đối với sự tồn tại và phát triển của mỗi tộc người. Đặc trưng nổi bật là các tộc người luôn tự ý thức về nguồn gốc, tộc danh của dân tộc mình; đó còn là ý thức tự khẳng định sự tồn tại và phát triển của mỗi tộc người dù cho có
 
-Ở một cách tiếp cận khác, tôn giáo còn được hiểu là một thực thể xã hội – các tôn giáo cụ thể (đạo Chính Thống, đạo Công Giáo, đạo Tin lành, đạo Phật…), với các tiêu chí cơ bản sau: có đấng siêu nhiên, đấng tối cao, thần linh để tôn thờ; có hệ thống giáo thuyết (giáo lý, giáo lễ, giáo luật) phản ánh thế giới quan, nhân sinh quan, đạo đức của tôn giáo; có hệ thống hành vi hay nghi thức, biểu tượng tôn giáo và hệ thống cơ sở thờ tự; có tổ chức nhân sự, quản lý điều hành việc đạo (người hoạt động tôn giáo chuyên nghiệp hay không chuyên nghiệp); có hệ thống tín đồ đông đảo, những người tự nguyện tin theo một tôn giáo nào đó, và được tôn giáo đó thừa nhận.
+[trang 200]
 
-Trong khi làm rõ khái niệm tín ngưỡng, cũng cần thiết phải làm rõ khái niệm mê tín, dị đoan. Mê tín là niềm tin mê muội, viển vông quá mức, không dựa trên một cơ sở khoa học nào. Dị đoan là sự suy đoán một cách nhảm nhí, tùy tiện, sai lệch những điều xảy ra trong cuộc sống. Mê tín dị đoan là chỉ những hành động sai lệch quá mức, gây tổn hại cho cá nhân và cộng đồng, được tạo ra bởi niềm tin mù quáng, nhảm nhí, mê muội...
+những tác động làm thay đổi địa bàn cư trú, lãnh thổ, hay tác động ảnh hưởng của giao lưu kinh tế, văn hóa...
 
-##### b. Về nguồn gốc tôn giáo
+Sự hình thành và phát triển của ý thức tự giác tộc người liên quan trực tiếp đến các yếu tố của ý thức, tình cảm, tâm lý tộc người.
 
-**Nguồn gốc kinh tế - xã hội của tôn giáo.** Trước hết, do sự bất lực của con người trong cuộc đấu tranh với tự nhiên, xã hội để giải quyết các yêu cầu, các mục đích kinh tế - xã hội, cũng như cuộc sống của bản thân họ. Khi xã hội xuất hiện chế độ tư hữu về tư liệu sản xuất, giai cấp hình thành, đối kháng giai cấp nảy sinh. Trong xã hội đó, các mối quan hệ xã hội ngày càng phức tạp và con người ngày càng chịu tác động của những yếu tố tự phát, ngẫu nhiên, may rủi... nằm ngoài ý muốn và khả năng điều chỉnh của mình với những hậu quả khó lường... Một lần nữa con người lại bị động, bất lực trước lực lượng tự phát nảy sinh trong xã hội. Sự bần cùng về kinh tế, nạn áp bức về chính trị, sự hiện diện của những bất công xã hội cùng với những thất vọng, bất hạnh trong cuộc đấu tranh giai cấp của giai cấp bị trị - đó là nguồn gốc sâu xa của tôn giáo.
+Ba tiêu chí này tạo nên sự ổn định trong mỗi tộc người trong quá trình phát triển. Đây cũng là căn cứ để xem xét và phân định các tộc người ở Việt Nam hiện nay.
 
-Mặt khác, trong những trường hợp cụ thể nào đó, sự xuất hiện tôn giáo là để phục vụ cho những yêu cầu kinh tế - xã hội cụ thể. Điều này thể hiện rõ nét ở một số tôn giáo, khi những yêu cầu, mục đích kinh tế - xã hội bị "tôn giáo hoá" qua những nội dung giáo lý, cách thức hành lễ, tu trì.
+Thực chất, hai cách hiểu trên về khái niệm dân tộc tuy không đồng nhất nhưng lại gắn bó mật thiết với nhau, không tách rời nhau. Dân tộc quốc gia bao hàm dân tộc tộc người; dân tộc tộc người là bộ phận hình thành dân tộc quốc gia. Dân tộc tộc người ra đời trong những quốc gia nhất định và thông thường những nhân tố hình thành dân tộc tộc người không tách rời với những nhân tố hình thành quốc gia. Đó là lý do khi nói đến dân tộc Việt Nam thì không thể bỏ qua 54 cộng đồng tộc người, trái lại, khi nói đến 54 cộng đồng tộc người ở Việt Nam phải gắn liền với sự hình thành và phát triển của dân tộc Việt Nam.
 
-Trong những thập kỷ gần đây, với sự phát triển của các điều kiện kinh tế xã hội, đời sống vật chất, tinh thần của con người ngày càng được đảm bảo, con người có điều kiện hơn trong quan tâm giải quyết những vấn đề liên quan đến tôn giáo, tín ngưỡng, tâm linh. Đây cũng là nguyên nhân cho sự nẩy sinh, phát triển nhu cầu tôn giáo, tín ngưỡng.
+#### 2. Chủ nghĩa Mác - Lênin về vấn đề dân tộc
 
-**Nguồn gốc nhận thức của tôn giáo.** Ở một giai đoạn lịch sử nhất định, sự nhận thức của con người về tự nhiên, xã hội và chính bản thân mình là có giới hạn. Khi mà khoảng cách giữa "biết" và "chưa biết" vẫn tồn tại, khi những điều mà khoa học chưa giải thích được, thì điều đó thường được giải thích thông qua lăng kính các tôn giáo. Ngay cả những vấn đề đã được khoa học chứng minh, nhưng do trình độ dân trí thấp, chưa thể nhận thức đầy đủ, thì đây vẫn là điều kiện, là mảnh đất cho tôn giáo ra đời, tồn tại và phát triển.
+##### a) Hai xu hướng khách quan của sự phát triển quan hệ dân tộc
 
-Mặt khác, các kết quả nghiên cứu khoa học chứng minh rằng, có một thời kỳ rất dài con người sống không có tôn giáo. Bởi lúc đó, nhận thức của con người còn quá mông muội, thấp kém; trình độ nhận thức mới ở giai đoạn trực quan, cảm tính. Với trình độ nhận thức như vậy, con người chưa thể sáng tạo ra tôn giáo, vì tôn giáo bao giờ cũng gắn với cái thần thánh, siêu nhiên, thế giới bên kia - sản phẩm của những biểu tượng, của sự trừu tượng hoá, khái quát hoá. Khi con người chưa biết tự ý thức thì họ cũng chưa nhận thức được sự bất lực của mình trước sức mạnh của thế giới bên ngoài, do vậy, con người cũng chưa có nhu cầu sáng tạo ra tôn giáo để bù đắp sự bất lực ấy.
+Nghiên cứu vấn đề dân tộc, V.I. Lênin phát hiện ra hai xu hướng khách quan trong sự phát triển quan hệ dân tộc.
 
-Phải đến một trình độ nhận thức nhất định, khi con người đạt đến khả năng tư duy trừu tượng hoá, khái quát hoá (từ những hiện tượng riêng lẻ xẩy ra được hệ thống hoá, khái quát hoá), con người mới có khả năng sáng tạo ra tôn giáo. Thực chất nguồn gốc nhận thức của tôn giáo chính là sự tuyệt đối hoá, sự cường điệu mặt chủ thể của nhận thức con người, biến cái nội dung khách quan thành cái siêu nhiên, thần thánh.
+Xu hướng thứ nhất, cộng đồng dân cư muốn tách ra để hình thành cộng đồng dân tộc độc lập. Nguyên nhân là do sự thức tỉnh, sự trưởng thành về ý thức dân tộc, ý
 
-**Nguồn gốc tâm lý của tôn giáo.** Vấn đề ảnh hưởng của yếu tố tâm lý, tình cảm của con người đối với sự ra đời và tồn tại của tôn giáo đã được các nhà vô thần cổ đại nghiên cứu. Họ thường đưa ra những luận điểm: "sự sợ hãi sinh ra thần linh". V.I.Lênin tán thành và phân tích thêm: "Sợ hãi trước thế lực mù quáng của tư bản, - mù quáng vì quần chúng nhân dân không thể đoán trước được nó, - là thế lực bất cứ lúc nào trong đời sống của người vô sản và người tiểu chủ, cũng đe doạ đem lại cho họ và đang đem lại cho họ sự phá sản "đột ngột", "bất ngờ", "ngẫu nhiên", làm cho họ phải diệt vong, biến họ thành người ăn xin, một kẻ bần cùng, một gái điếm, và dồn họ vào cảnh chết đói, đó chính là nguồn gốc sâu xa của tôn giáo hiện đại..."[^65]
+[trang 201]
 
-Nhưng không chỉ từ sự sợ hãi trước sức mạnh tự phát của thiên nhiên và xã hội đã dẫn con người đến nhờ cậy thần linh, mà ngay cả những nét tâm lý như tình yêu, lòng biết ơn, sự kính trọng,… trong mối quan hệ giữa con người với tự nhiên và con người với con người nhiều khi cũng được thể hiện qua tín ngưỡng, tôn giáo.
+thức về quyền sống của mình, các cộng đồng dân cư đó muốn tách ra để thành lập các dân tộc độc lập. Xu hướng này thể hiện rõ nét trong phong trào đấu tranh giành độc lập dân tộc của các dân tộc thuộc địa và phụ thuộc muốn thoát khỏi sự áp bức, bóc lột của các nước thực dân, đế quốc.
 
-[^65]: V.I.Lênin toàn tập, NXB TB M, 1979, tập 17, tr. 515 – 516.
+Xu hướng thứ hai, các dân tộc trong từng quốc gia, thậm chí các dân tộc ở nhiều quốc gia muốn liên hiệp lại với nhau. Xu hướng này nổi lên trong giai đoạn chủ nghĩa tư bản đã phát triển thành chủ nghĩa đế quốc đi bóc lột thuộc địa; do sự phát triển của lực lượng sản xuất, của khoa học và công nghệ, của giao lưu kinh tế và văn hóa trong xã hội tư bản chủ nghĩa đã làm xuất hiện nhu cầu xóa bỏ hàng rào ngăn cách giữa các dân tộc, thúc đẩy các dân tộc xích lại gần nhau.
 
-##### c. Về bản chất tôn giáo
+Trong thời đại ngày nay, hai xu hướng khách quan nêu trên có những biểu hiện rất đa dạng, phong phú.
 
-Trước hết, chủ nghĩa Mác - Lênin cho rằng tôn giáo, tín ngưỡng là một loại hình thái ý thức xã hội phản ánh hư ảo hiện thực khách quan, chứa đựng những yếu tố tiêu cực, lạc hậu nhất định. Khác với các hình thái ý thức xã hội khác như triết học, văn học, đạo đức, chính trị…, qua sự phản ánh của tôn giáo, những hiện tượng tự nhiên trở thành siêu nhiên. Ph.Ăngghen cho rằng: "Tất cả mọi tôn giáo chẳng qua chỉ là sự phản ánh hư ảo - vào trong đầu óc của con người - của những lực lượng ở bên ngoài chi phối cuộc sống hàng ngày của họ; chỉ là sự phản ánh trong đó những lực lượng ở trần thế đã mang hình thức những lực lượng siêu trần thế"[^66]. Thực tế cho thấy, nhiều nhà sáng lập ra các tôn giáo lớn, như Phật Thích Ca, Chúa Giêsu, Nhà tiên tri Môhamét..., vốn là những con người tự nhiên – con người thực, nhưng qua lăng kính tôn giáo, họ trở thành những Đấng siêu nhiên.
+Trong phạm vi một quốc gia: Xu hướng thứ nhất thể hiện trong sự nỗ lực của từng dân tộc (tộc người) để đi tới sự tự do, bình đẳng và phồn vinh của dân tộc mình. Xu hướng thứ hai thể hiện ở sự xuất hiện những động lực thúc đẩy các dân tộc trong một cộng đồng quốc gia xích lại gần nhau hơn, hòa hợp với nhau ở mức độ cao hơn trên mọi lĩnh vực của đời sống xã hội.
 
-Mặt khác, trong bản thân mỗi tôn giáo đều chứa đựng những yếu tố lạc hậu, tiêu cực nhất định khi giải thích về bản chất các sự vật, hiện tượng, giải thích về cuộc sống của thế giới và con người. Một số tôn giáo, thông qua các giáo thuyết, và các hành vi cực đoan khác, đã kìm hãm nhận thức và khả năng vươn lên của con người, trước hết là những tín đồ; thậm chí đẩy họ đến những hành động đi ngược lại trào lưu, xu thế văn minh.
+Trong phạm vi quốc tế: Xu hướng thứ nhất thể hiện trong phong trào giải phóng dân tộc nhằm chống lại chủ nghĩa đế quốc và chống chính sách thực dân đô hộ dưới mọi hình thức, phá bỏ mọi áp bức bóc lột của chủ nghĩa đế
 
-Tôn giáo là một hiện tượng xã hội - văn hoá do con người sáng tạo ra. Con người sáng tạo ra tôn giáo vì mục đích, lợi ích của họ, phản ánh những ước mơ, nguyện vọng, suy nghĩ của họ. Khi con người sáng tạo ra ngôn ngữ, công cụ sản xuất, sáng tạo ra nhà nước..., chính là sáng tạo ra những điều kiện giúp họ không ngừng vươn lên trong làm chủ tự nhiên, xã hội. Nhưng, sáng tạo ra tôn giáo, con người lại sợ hãi tôn giáo, tuyệt đối hoá và phục tùng tôn giáo vô điều kiện.
+[trang 202]
 
-Con người, theo C.Mác, Ph.Ăngghen, chính là thế giới những con người, là nhà nước, là xã hội; nhà nước ấy, xã hội ấy đã sản sinh ra tôn giáo. Hai ông cũng cho rằng, sản xuất vật chất và các quan hệ kinh tế, xét đến cùng là nhân tố quyết định sự tồn tại và phát triển của các hình thái ý thức xã hội, trong đó có tôn giáo. Do đó, mọi quan niệm về tôn giáo, các tổ chức, thiết chế tôn giáo đều được sinh ra từ những hoạt động sản xuất, từ những điều kiện sống nhất định trong xã hội và thay đổi theo những thay đổi của cơ sở kinh tế.
+quốc. Độc lập dân tộc chính là mục tiêu chính trị chủ yếu của mọi quốc gia trong thời đại ngày nay. Độc lập tự chủ của mỗi dân tộc là xu hướng khách quan, là chân lý của thời đại, là sức mạnh hiện thực tạo nên quá trình phát triển của mỗi dân tộc. Xu hướng thứ hai thể hiện ở xu thế các dân tộc muốn xích lại gần nhau, hợp tác với nhau để hình thành liên minh dân tộc ở phạm vi khu vực hoặc toàn cầu. Xu hướng này tạo điều kiện để các dân tộc tận dụng tối đa những cơ hội, thuận lợi từ bên ngoài để phát triển phồn vinh dân tộc mình.
 
-Về phương diện thế giới quan, về cơ bản, các tôn giáo mang thế giới quan duy tâm, có sự khác biệt với thế giới quan duy vật biện chứng, khoa học của chủ nghĩa Mác - Lênin. Điều này nói lên rằng chủ nghĩa Mác - Lênin và tôn giáo chỉ khác nhau về thế giới quan, về cách nhìn nhận thế giới và con người; giữa chủ nghĩa Mác - Lênin và tôn giáo, giữa những người cộng sản và người theo tôn giáo không hoàn toàn đối lập về tư tưởng như các thế lực thù địch, các thế lực chống chủ nghĩa Mác - Lênin vẫn tuyên truyền.
+Hai xu hướng khách quan của sự phát triển dân tộc có sự thống nhất biện chứng với nhau trong tiến trình phát triển của mỗi quốc gia và của toàn nhân loại. Trong mọi trường hợp, hai xu hướng đó luôn có sự tác động qua lại với nhau, hỗ trợ cho nhau, mọi sự vi phạm mối quan hệ biện chứng này đều dẫn tới những hậu quả tiêu cực, khó lường. Hiện nay, hai xu hướng nêu trên diễn ra khá phức tạp trên phạm vi quốc tế và trong từng quốc gia, thậm chí nó bị lợi dụng vào mục đích chính trị nhằm thực hiện chiến lược "diễn biến hòa bình".
 
-Trong thực tiễn, những người cộng sản có lập trường mác xít không bao giờ có thái độ xem thường hoặc trấn áp những nhu cầu tín ngưỡng, tôn giáo của nhân dân. Ngược lại, chủ nghĩa Mác - Lênin và những người cộng sản, chế độ xã hội chủ nghĩa luôn tôn trọng quyền tự do tín ngưỡng, theo hoặc không theo tôn giáo của nhân dân. Trong những điều kiện cụ thể của xã hội, những người cộng sản và những người có tín ngưỡng tôn giáo có thể cùng nhau xây dựng một xã hội tốt đẹp hơn ở thế giới hiện thực. Xã hội ấy chính là xã hội mà quần chúng tín đồ cũng từng mơ ước và phản ánh nó qua một số tôn giáo.
+##### b) Cương lĩnh dân tộc của chủ nghĩa Mác - Lênin
 
-[^66]: C.Mác-Ph.Ăngghen toàn tập, Tập 20, NXB CTQG, HN 2000, tr. 437
+Dựa trên quan điểm của chủ nghĩa Mác về mối quan hệ giữa dân tộc với giai cấp; kết hợp phân tích hai xu hướng khách quan trong sự phát triển dân tộc; dựa vào kinh nghiệm của phong trào cách mạng thế giới và thực tiễn cách mạng Nga trong việc giải quyết vấn đề dân tộc những năm đầu thế kỷ XX, Cương lĩnh dân tộc của V.I. Lênin đã khái quát: "Các dân tộc hoàn toàn
 
-##### e. Về tính chất của tôn giáo
+[trang 203]
 
-**Tính lịch sử của tôn giáo.** Tôn giáo là một hiện tượng xã hội có tính lịch sử, nghĩa là nó có sự hình thành, tồn tại và phát triển trong những giai đoạn lịch sử nhất định, nó có khả năng biến đổi để thích nghi với nhiều chế độ chính trị - xã hội. Khi các điều kiện kinh tế – xã hội, lịch sử thay đổi, tôn giáo cũng có sự thay đổi theo. Trong quá trình vận động của các tôn giáo, chính các điều kiện kinh tế – xã hội, lịch sử cụ thể đã làm cho các tôn giáo bị phân liệt, chia tách thành nhiều tôn giáo, hệ phái khác nhau.
+bình đẳng, các dân tộc được quyền tự quyết, liên hiệp công nhân tất cả các dân tộc lại".
 
-Theo quan điểm của chủ nghĩa Mác - Lênin, đến một giai đoạn lịch sử nào đó, khi khoa học và giáo dục giúp cho đại đa số quần chúng nhân dân nhận thức được bản chất các hiện tượng tự nhiên và xã hội thì tôn giáo sẽ dần dần mất đi vị trí của nó trong đời sống xã hội và cả trong nhận thức, niềm tin của mỗi người. Đương nhiên, để đi đến trình độ đó sẽ còn là một quá trình phát triển rất lâu dài của xã hội loài người.
+Một là, các dân tộc hoàn toàn bình đẳng. Đây là quyền thiêng liêng của các dân tộc, không phân biệt dân tộc lớn hay nhỏ, ở trình độ phát triển cao hay thấp. Các dân tộc đều có nghĩa vụ và quyền lợi ngang nhau trên tất cả các lĩnh vực của đời sống xã hội, không dân tộc nào được giữ đặc quyền, đặc lợi về kinh tế, chính trị, văn hóa.
 
-**Tính quần chúng của tôn giáo.** Tôn giáo là một hiện tượng xã hội phổ biến ở tất cả các dân tộc, quốc gia, châu lục. Tính quần chúng của tôn giáo không chỉ biểu hiện ở số lượng tín đồ rất đông đảo (gần 3/4 dân số thế giới); mà còn thể hiện ở chỗ, các tôn giáo là nơi sinh hoạt văn hoá, tinh thần của một bộ phận quần chúng nhân dân lao động. Dù tôn giáo hướng con người vào niềm tin hạnh phúc hư ảo của thế giới bên kia, song nó luôn luôn phản ánh khát vọng của những người lao động về một xã hội tự do, bình đẳng, bác ái. Mặt khác, nhiều tôn giáo có tính nhân văn, nhân đạo và hướng thiện, vì vậy, được nhiều người ở các tầng lớp khác nhau trong xã hội, đặc biệt là quần chúng lao động, tin theo.
+Trong quan hệ xã hội cũng như trong quan hệ quốc tế, không một dân tộc nào có quyền đi áp bức, bóc lột dân tộc khác. Trong một quốc gia có nhiều dân tộc, quyền bình đẳng dân tộc phải được thể hiện trên cơ sở pháp lý, nhưng quan trọng hơn là phải được thực hiện trên thực tế. Để thực hiện được quyền bình đẳng dân tộc, trước hết phải thủ tiêu tình trạng áp bức giai cấp, trên cơ sở đó xoá bỏ tình trạng áp bức dân tộc; phải đấu tranh chống chủ nghĩa phân biệt chủng tộc, chủ nghĩa dân tộc cực đoan.
 
-**Tính chính trị của tôn giáo.** Khi xã hội chưa có giai cấp, tôn giáo chỉ phản ánh nhận thức hồn nhiên, ngây thơ của con người về bản thân và thế giới xung quanh mình, tôn giáo chưa mang tính chính trị. Tính chất chính trị của tôn giáo chỉ xuất hiện khi xã hội đã phân chia giai cấp, có sự khác biệt, sự đối kháng về lợi ích. Trước hết, do tôn giáo là sản phẩm của những điều kiện kinh tế - xã hội, phản ánh lợi ích, nguyện vọng của các giai cấp khác nhau trong cuộc đấu tranh giai cấp, đấu tranh dân tộc, nên tôn giáo mang tính chính trị. Tuy nhiên, khi các giai cấp bóc lột, thống trị sử dụng tôn giáo để phục vụ cho lợi ích giai cấp mình, chống lại các giai cấp lao động và tiến bộ xã hội, tôn giáo mang tính chính trị tiêu cực, phản tiến bộ.
+Quyền bình đẳng giữa các dân tộc là cơ sở để thực hiện quyền dân tộc tự quyết và xây dựng mối quan hệ hữu nghị, hợp tác giữa các dân tộc.
 
-Vì vậy, cần nhận rõ rằng, đa số quần chúng tín đồ đến với tôn giáo nhằm thoả mãn nhu cầu tinh thần; song, trên thực tế, tôn giáo đã và đang bị các thế lực chính trị – xã hội lợi dụng thực hiện mục đích ngoài tôn giáo của họ.
+Hai là, các dân tộc được quyền tự quyết. Đó là quyền của các dân tộc tự quyết định lấy vận mệnh của dân tộc mình, quyền tự lựa chọn chế độ chính trị và con đường phát triển của dân tộc mình.
 
-##### g. Về chức năng của tôn giáo
+Quyền tự quyết dân tộc bao gồm quyền tách ra thành lập một quốc gia dân tộc độc lập, đồng thời có quyền tự nguyện liên hiệp với dân tộc khác trên cơ sở bình đẳng.
 
-**Chức năng đền bù hư ảo.** Chủ nghĩa Mác – Lênin cho rằng sự bất lực của con người trước những sức mạnh tự nhiên và xã hội đã nẩy sinh nhu cầu khắc phục những mâu thuẫn thực tế trong ý thức, trong tưởng tượng; nẩy sinh nhu cầu đền bù sự hạn chế của các mối quan hệ hiện thực – thế giới "trần gian" với thế giới bên kia - thế giới "siêu trần gian".
+[trang 204]
 
-Luận điểm nổi tiếng của C. Mác: "tôn giáo là thuốc phiện của nhân dân" đã chỉ ra rằng, tôn giáo có tác dụng làm dịu nỗi đau, an ủi sự mất mát, bù đắp những thiếu hụt về mặt tinh thần của con người trong cuộc sống hiện thực; nhưng cũng giống như thuốc phiện, tôn giáo có thể gây ra những tác động có hại đối với con người khi tạo ra cho họ nhu cầu thường xuyên tách khỏi hiện thực, tiêm nhiễm cho họ những quan niệm phi khoa học...
+Tuy nhiên, việc thực hiện quyền dân tộc tự quyết phải xuất phát từ thực tiễn - cụ thể và phải đứng vững trên lập trường của giai cấp công nhân, đảm bảo sự thống nhất giữa lợi ích dân tộc và lợi ích của giai cấp công nhân. V.I. Lênin đặc biệt chú trọng quyền tự quyết của các dân tộc bị áp bức, các dân tộc phụ thuộc.
 
-**Chức năng thế giới quan.** Tôn giáo giúp con người có những nhận thức nhất định về thế giới và con người, thông qua hệ thống giáo thuyết của nó. Khi phản thế giới hiện thực, tôn giáo muốn đưa ra một bức tranh về thế giới tương lai (thông qua hệ thống các quan điểm, nhận thức, lý giải về tự nhiên, xã hội và con người) nhằm thoả mãn nhu cầu nhận thức của con người. Sự lý giải đó của tôn giáo không những hướng con người tới những nhận thức về thế giới (theo cách của họ), mà còn tạo ra ở tín đồ những thái độ và hành động đối với thế giới xung quanh.
+Quyền tự quyết dân tộc không đồng nhất với "quyền" của các tộc người thiểu số trong một quốc gia đa tộc người, nhất là việc phân lập thành quốc gia độc lập. Kiên quyết đấu tranh chống lại mọi âm mưu, thủ đoạn của các thế lực phản động, thù địch lợi dụng chiêu bài "dân tộc tự quyết" để can thiệp vào công việc nội bộ của các nước, hoặc kích động đòi ly khai dân tộc.
 
-**Chức năng điều chỉnh hành vi.** Thông qua hệ thống các giá trị chuẩn mực, cả trong nghi lễ và cuộc sống, tôn giáo góp phần quy định và điều chỉnh hành vi của con người, giúp con người hướng tới cái thiện, cái đẹp. Những chuẩn mực này không chỉ điều chỉnh các hành vi liên quan đến việc thờ cúng, nghi thức, nghi lễ tôn giáo, mà cả các hành vi trong cuộc sống hàng ngày, trong quan hệ xã hội, quan hệ gia đình của tín đồ...
+Ba là, liên hiệp công nhân tất cả các dân tộc. Liên hiệp công nhân các dân tộc phản ánh sự thống nhất giữa giải phóng dân tộc và giải phóng giai cấp; phản ánh sự gắn bó chặt chẽ giữa tinh thần của chủ nghĩa yêu nước và chủ nghĩa quốc tế chân chính.
 
-**Chức năng giao tiếp.** Tôn giáo góp phần tăng cường các mối quan hệ giữa con người với con người, trước hết là những người cùng tín ngưỡng. Sự giao tiếp chủ yếu được thực hiện trong hoạt động thờ cúng (giao tiếp với thánh thần); ngoài ra còn có sự giao tiếp ngoài tôn giáo, như về kinh tế, về gia đình, trong sinh hoạt hàng ngày...
+Đoàn kết, liên hiệp công nhân các dân tộc là cơ sở vững
 
-**Chức năng liên kết cộng đồng.** Tôn giáo góp phần hình thành những cộng đồng xã hội – gắn kết với nhau dựa trên những giá trị, chuẩn mực tôn giáo. Trong các xã hội có áp bức bóc lột, có những trường hợp tôn giáo với tư cách là một bộ phận của kiến trúc thượng tầng, đã đóng vai trò quan trọng trong sự liên kết, giữ gìn ổn định trật tự xã hội dựa trên hệ thống giá trị và chuẩn mực chung. Mặt khác, trong những trường hợp cụ thể khác, tôn giáo là ngọn cờ tập hợp các lực lượng đấu tranh chống áp bức, bóc lột, chống lại các thế lực chính trị - xã hội phản tiến bộ đương thời...
+[trang 205]
 
-Các chức năng được trình bày là một hệ thống, trong đó, mỗi chức năng lại có thể bao chứa các chức năng khác, như chức năng nhận thức, chức năng đạo đức, chức năng văn hoá... Trong những điều kiện lịch sử cụ thể, nội dung xã hội của các chức năng của tôn giáo có thể biến đổi, và thường bị các giai cấp bóc lột lợi dụng.
+chắc để đoàn kết các tầng lớp nhân dân lao động thuộc các dân tộc trong cuộc đấu tranh chống chủ nghĩa đế quốc vì độc lập dân tộc và tiến bộ xã hội. Vì vậy, nội dung này vừa là nội dung chủ yếu, vừa là giải pháp quan trọng để liên kết các nội dung của Cương lĩnh dân tộc thành một chỉnh thể.
 
-#### 2.2. Nguyên tắc giải quyết vấn đề tôn giáo trong thời kỳ quá độ lên chủ nghĩa xã hội
+Cương lĩnh dân tộc của chủ nghĩa Mác - Lênin là cơ sở lý luận quan trọng để các Đảng Cộng sản vận dụng thực hiện chính sách dân tộc trong quá trình đấu tranh giành độc lập dân tộc và xây dựng chủ nghĩa xã hội.
 
-Trong thời kỳ quá độ lên chủ nghĩa xã hội, tôn giáo vẫn còn tồn tại, tuy đã có sự biến đổi trên nhiều mặt. Vì vậy, cần có các nguyên tắc trong "ứng xử", giải quyết các vấn đề liên quan đến tôn giáo, nhằm bảo đảm quyền tự do tín ngưỡng và không tín ngưỡng của nhân dân, bảo đảm cho tôn giáo hoạt động bình thường, tuân thủ pháp luật, đáp ứng nhu cầu tín ngưỡng của nhân dân, đồng hành cùng dân tộc trong xây dựng và bảo vệ Tổ quốc xã hội chủ nghĩa.
+#### 3. Dân tộc và quan hệ dân tộc ở Việt Nam
 
-**Tôn trọng, bảo đảm quyền tự do tín ngưỡng và không tín ngưỡng của nhân dân.** Tín ngưỡng tôn giáo là niềm tin sâu sắc của quần chúng vào đấng tối cao, đấng thiêng liêng nào đó mà họ tôn thờ, thuộc lĩnh vực ý thức tư tưởng. Do đó, tự do tín ngưỡng và tự do không tín ngưỡng thuộc quyền tự do tư tưởng của nhân dân. Quyền này nói lên rằng việc theo đạo, đổi đạo, hay không theo đạo là thuộc quyền tự do lựa chọn của mỗi người dân, không một cá nhân, tổ chức nào, kể cả các chức sắc tôn giáo, tổ chức giáo hội… được quyền can thiệp vào sự lựa chọn này. Mọi hành vi cấm đoán, ngăn cản tự do theo đạo, đổi đạo, bỏ đạo hay đe dọa, bắt buộc công dân phải theo đạo đều xâm phạm đến quyền tự do tư tưởng của công dân.
+##### a) Đặc điểm dân tộc ở Việt Nam
 
-Tôn trọng tự do tín ngưỡng là xuất phát từ việc tôn trọng quyền tự do tư tưởng - một trong những quyền cơ bản của nhân dân, chính là tôn trọng niềm tin của tín đồ vào một loại hình tôn giáo nào đó mà họ cần đến, vào một loại hình tín ngưỡng mà họ coi là nhu cầu không thể thiếu. Tôn trọng tự do tín ngưỡng cũng chính là tôn trọng quyền con người, thể hiện bản chất ưu việt của chế độ xã hội chủ nghĩa. Nhà nước xã hội chủ nghĩa không can thiệp và không cho bất cứ ai can thiệp, xâm phạm đến quyền tự do tín ngưỡng, quyền lựa chọn theo hay không theo tôn giáo của nhân dân. Các tôn giáo và hoạt động tôn giáo bình thường, các cơ sở thờ tự, các phương tiện phục vụ nhằm thoả mãn nhu cầu tín ngưỡng của người dân được Nhà nước xã hội chủ nghĩa tôn trọng và bảo hộ.
+Việt Nam là một quốc gia đa tộc người có những đặc điểm nổi bật sau đây:
 
-**Khắc phục dần những ảnh hưởng tiêu cực của tôn giáo phải gắn liền với quá trình cải tạo xã hội cũ, xây dựng xã hội mới.** Nguyên tắc này để khẳng định chủ nghĩa Mác - Lênin chỉ hướng vào giải quyết những ảnh hưởng tiêu cực của tôn giáo đối với quần chúng lao động; chủ nghĩa Mác - Lênin không chủ trương can thiệp vào công việc nội bộ của các tôn giáo, không tuyên chiến với tôn giáo, không chủ trương xoá bỏ tôn giáo như luận điệu tuyên truyền của các thế lực thù địch.
+*Thứ nhất*, có sự chênh lệch về số dân giữa các tộc người.
 
-Chủ nghĩa Mác - Lênin chỉ ra rằng, muốn thay đổi ý thức xã hội, trước hết cần phải thay đổi bản thân tồn tại xã hội; muốn xoá bỏ ảo tưởng nảy sinh trong tư tưởng con người, phải xoá bỏ nguồn gốc sinh ra ảo tưởng ấy. Mà điều cần thiết trước hết là phải xác lập được một thế giới hiện thực không có áp bức, bất công, nghèo đói và thất học… cũng như những tệ nạn nảy sinh trong xã hội. Đó là một quá trình lâu dài, và không thể thực hiện được nếu tách rời việc cải tạo xã hội cũ, xây dựng xã hội mới.
+Theo các tài liệu chính thức, nước ta có 54 dân tộc. Dân tộc Kinh (Việt) là dân tộc đa số. Dân số thuộc dân tộc Kinh là 82.085.826 người, chiếm 85,3%. Trong 53 dân tộc thiểu số, 6 dân tộc có dân số trên 1 triệu người là: Tày, Thái, Mường, Mông, Khmer, Nùng (trong đó dân tộc Tày có dân số đông nhất với 1,85 triệu người); 11 dân tộc có dân số dưới 5 nghìn người, trong đó Ơ Đu là dân tộc có dân số thấp nhất (428 người). Địa bàn sinh sống chủ yếu của người dân tộc thiểu số là vùng trung du và miền núi phía Bắc và Tây Nguyên[^1]. Thực tế cho thấy, nếu một dân tộc mà số dân ít sẽ gặp rất nhiều khó khăn trong việc tổ chức cuộc sống, bảo tồn tiếng nói và văn hóa dân tộc, duy trì và phát triển giống nòi. Do vậy, việc phát triển số dân hợp lý cho các dân tộc thiểu số, đặc biệt đối với những dân tộc thiểu số rất ít người đang được Đảng và Nhà nước Việt Nam có những chính sách quan tâm đặc biệt.
 
-**Phân biệt hai mặt chính trị và tư tưởng, tín ngưỡng tôn giáo và lợi dụng tín ngưỡng tôn giáo trong quá trình giải quyết vấn đề tôn giáo.** Trong xã hội công xã nguyên thuỷ, tín ngưỡng tôn giáo chỉ biểu hiện thuần tuý về tư tưởng. Nhưng khi xã hội đã xuất hiện giai cấp thì dấu ấn giai cấp - chính trị ít nhiều đều in rõ trong các tôn giáo. Và từ đó hai mặt chính trị và tư tưởng thường thể hiện và có mối quan hệ với nhau trong vấn đề tôn giáo và bản thân mỗi tôn giáo.
+*Thứ hai*, các dân tộc cư trú xen kẽ nhau.
 
-Mặt chính trị phản ánh mối quan hệ giữa tiến bộ với phản tiến bộ, phản ánh mâu thuẫn đối kháng về lợi ích kinh tế, chính trị giữa các giai cấp, mâu thuẫn giữa những thế lực lợi dụng tôn giáo chống lại sự nghiệp cách mạng với lợi ích của nhân dân lao động. Mặt tư tưởng biểu hiện sự khác nhau về niềm tin, mức độ tin giữa những người có tín ngưỡng tôn giáo và những người không theo tôn giáo, cũng như những người có tín ngưỡng, tôn giáo khác nhau, phản ánh mâu thuẫn không mang tính đối kháng.
+Việt Nam vốn là nơi chuyển cư của nhiều dân tộc ở khu vực Đông Nam Á. Tính chất chuyển cư như vậy đã
 
-Phân biệt hai mặt chính trị và tư tưởng trong vấn đề tôn giáo thực chất là phân biệt tính chất khác nhau của hai loại mâu thuẫn luôn tồn tại trong bản thân tôn giáo và trong vấn đề tôn giáo. Sự phân biệt này, trong thực tế không đơn giản, bởi lẽ, trong đời sống xã hội, hiện tượng nhiều khi phản ánh sai lệch bản chất, mà vấn đề chính trị và tư tưởng trong tôn giáo thường đan xen vào nhau. Mặt khác, trong xã hội có đối kháng giai cấp, vấn đề tôn giáo thường bị yếu tố chính trị chi phối rất sâu sắc, nên khó nhận biết vấn đề chính trị hay tư tưởng thuần tuý trong tôn giáo. Việc phân biệt hai mặt này là cần thiết nhằm tránh khuynh hướng "tả" hoặc hữu trong quá trình quản lý, ứng xử những vấn đề liên quan đến tín ngưỡng, tôn giáo.
+[^1]: Https://www.gso.gov.vn/su-kien/2019/12/thong-cao-bao-chi-ket-qua-tong-dieu-tra-dan-so-va-nha-o-nam-2019/.
 
-**Quan điểm lịch sử cụ thể trong giải quyết vấn đề tôn giáo, tín ngưỡng.** Tôn giáo không phải là một hiện tượng xã hội bất biến, ngược lại, nó luôn luôn vận động và biến đổi không ngừng tuỳ thuộc vào những điều kiện kinh tế - xã hội - lịch sử cụ thể. Mỗi tôn giáo đều có lịch sử hình thành, có quá trình tồn tại và phát triển nhất định. Ở những thời kỳ lịch sử khác nhau, vai trò, tác động của từng tôn giáo đối với đời sống xã hội không giống nhau. Quan điểm, thái độ của các giáo hội, giáo sĩ, giáo dân về các lĩnh vực của đời sống xã hội luôn có sự khác biệt. Vì vậy, cần phải có quan điểm lịch sử cụ thể khi xem xét, đánh giá và ứng xử đối với những vấn đề có liên quan đến tôn giáo và đối với từng tôn giáo cụ thể.
+[trang 206]
 
-### III. VẤN ĐỀ DÂN TỘC VÀ VẤN ĐỀ TÔN GIÁO TRONG THỜI KỲ QUÁ ĐỘ LÊN CHỦ NGHĨA XÃ HỘI Ở VIỆT NAM
+làm cho bản đồ cư trú của các dân tộc trở nên phân tán, xen kẽ và làm cho các dân tộc ở Việt Nam không có lãnh thổ tộc người riêng. Vì vậy, không có một dân tộc nào ở Việt Nam cư trú tập trung và duy nhất trên một địa bàn.
 
-#### 3.1. Khái quát tình hình, đặc điểm dân tộc; quan điểm, chính sách của Đảng, Nhà nước Việt Nam trong giải quyết vấn đề dân tộc ở Việt Nam
+Đặc điểm này một mặt tạo điều kiện thuận lợi để các dân tộc tăng cường hiểu biết, mở rộng giao lưu, giúp đỡ nhau cùng phát triển, tạo nên một nền văn hóa thống nhất trong đa dạng. Mặt khác, do có nhiều tộc người sống xen kẽ nên trong quá trình sinh sống cũng dễ nảy sinh mâu thuẫn, xung đột, tạo kẽ hở để các thế lực thù địch lợi dụng vấn đề dân tộc phá hoại an ninh chính trị và sự thống nhất của đất nước.
 
-##### a. Khái quát tình hình, đặc điểm dân tộc Việt Nam
+*Thứ ba*, các dân tộc thiểu số ở Việt Nam phân bố chủ yếu ở địa bàn có vị trí chiến lược quan trọng.
 
-Việt Nam là một quốc gia gồm 54 dân tộc thống nhất được phân bố rải rác trên lãnh thổ cả nước. Dân tộc đông nhất là dân tộc Kinh chiếm khoảng 86% dân số, 53 dân tộc còn lại chiếm 14% dân số. 10 dân tộc có số dân dưới 1 triệu đến 100 ngàn là: Tày, Nùng, Thái, Mường, Khơ-me, Mông, Dao, Gia rai, Bana, Ê đê; 20 dân tộc có số dân dưới 100 ngàn; 16 dân tộc có số dân từ dưới 10 ngàn đến 1000; 6 dân tộc có số dân dưới 1000 (Cống, Si la, Pu Péo, Rơ măm, Ơ Đu, Brau).
+Mặc dù chỉ chiếm 14,3% dân số, nhưng 53 dân tộc thiểu số Việt Nam lại cư trú trên 3/4 diện tích lãnh thổ và ở những địa bàn trọng yếu của quốc gia cả về kinh tế, an ninh, quốc phòng, môi trường sinh thái - đó là vùng biên giới, hải đảo, vùng sâu, vùng xa của đất nước. Một số dân tộc có quan hệ dòng tộc với các dân tộc ở các nước láng giềng và khu vực, ví dụ: dân tộc Thái, dân tộc Mông, dân tộc Khmer, dân tộc Hoa... do vậy, các thế lực phản động thường lợi dụng vấn đề dân tộc để chống phá cách mạng Việt Nam.
 
-Đồng bào các dân tộc thiểu số ở nước ta cư trú trên địa bàn rộng lớn chiếm ¾ diện tích đất nước, chủ yếu là miền núi, trên toàn tuyến biên giới, một số ở đồng bằng và hải đảo. Ở nhiều tỉnh như Cao Bằng, Lạng Sơn, Hà Giang, Tuyên Quang, Yên Bái, Lào Cai, Sơn La, Lai Châu,... các dân tộc thiểu số chiếm hơn 70% dân số. Tình trạng cư trú đan xen là một trong những nét nổi bật trong tình hình dân tộc ở nước ta. Trong điều kiện hiện nay của đất nước, tình trạng đó ngày càng gia tăng.
+*Thứ tư*, các dân tộc ở Việt Nam có trình độ phát triển không đều.
 
-Do những yếu tố đặc thù của nền kinh tế trồng lúa nước, một kết cấu công xã nông thôn bền chặt sớm xuất hiện. Đồng thời trải qua lịch sử liên tục chống ngoại xâm mạnh hơn mình gấp nhiều lần, dân tộc ta đã được hình thành rất sớm và trở thành một quốc gia dân tộc thống nhất ngay dưới chế độ phong kiến. Những điều kiện trên đã tạo cho cộng đồng dân tộc Việt Nam có những đặc trưng nổi bật là:
+Các dân tộc ở nước ta còn có sự chênh lệch khá lớn về trình độ phát triển kinh tế, văn hóa, xã hội. Về phương diện xã hội, trình độ tổ chức đời sống, quan hệ xã hội của các dân
 
-- Tuy là một quốc gia đa dân tộc, nhưng yếu tố liên kết tạo nên tính cộng đồng – cộng đồng các dân tộc, cộng đồng quốc gia đã đạt tới mức độ bền vững. Tính cộng đồng đó được hình thành, củng cố trong một quá trình lịch sử lâu dài. Dân cư nhiều dân tộc có ý thức sâu sắc về một cội nguồn chung và khi giao tiếp, dân cư các dân tộc dễ nhận ra ở nhau các nét tương đồng. Người thuộc dân tộc nào cũng hiểu rằng mình là người Việt Nam với một lòng tự hào chính đáng. Non sông đất nước Việt Nam từ lâu đã trở thành một dải, một lãnh thổ chung, trên đó đã sớm hình thành một nhà nước trung ương tập quyền và được ghi nhận sâu sắc không chỉ trong nhận thức mà trong cả tình cảm dân cư các dân tộc bằng biểu tượng thiêng liêng là Tổ quốc. Trong cơ cấu của cộng đồng dân tộc Việt Nam, dân tộc Kinh về khách quan đã đóng vai trò là lực lượng trung tâm, là "điểm" quy tụ các dân tộc anh em không chỉ do ưu thế tuyệt đối về số lượng mà còn do sự phát triển kinh tế, văn hoá, xã hội đã đạt tới trình độ cao hơn nhiều so với nhiều dân tộc anh em khác.
+[trang 207]
 
-- Một đặc trưng cũng quan trọng khác của dân tộc Việt Nam là chủ nghĩa yêu nước truyền thống đã được hình thành trên cơ sở lòng tự hào của mỗi người dân thuộc cộng đồng dân tộc Việt Nam nói chung. Chủ nghĩa yêu nước Việt Nam đã trở thành một sức mạnh và được thử thách trong các cuộc đấu tranh chống ngoại xâm, bảo vệ Tổ quốc, xây dựng đất nước qua mấy nghìn năm lịch sử của dân tộc.
+tộc thiểu số không giống nhau. Về phương diện kinh tế, có thể phân loại các dân tộc thiểu số Việt Nam ở những trình độ phát triển rất khác nhau: một số ít dân tộc còn duy trì kinh tế chiếm đoạt, dựa vào khai thác tự nhiên; tuy nhiên, đại bộ phận các dân tộc ở Việt Nam đã chuyển sang phương thức sản xuất tiến bộ, tiến hành công nghiệp hóa, hiện đại hóa đất nước. Về văn hóa, trình độ dân trí, trình độ chuyên môn kỹ thuật của nhiều dân tộc thiểu số còn thấp.
 
-- Trong điều kiện hiện nay, dưới sự lãnh đạo của Đảng cộng sản Việt Nam, tính cộng đồng của dân tộc Việt Nam không những được củng cố mà còn được nâng lên ở một tầm cao hơn. Các dân tộc ở nước ta không có lãnh thổ riêng, không có nền kinh tế riêng và sự thống nhất hữu cơ giữa dân tộc và quốc gia trên mọi mặt của đời sống xã hội ngày càng trở nên bền vững.
+Muốn thực hiện bình đẳng dân tộc thì phải từng bước giảm, tiến tới xoá bỏ khoảng cách phát triển giữa các dân tộc về kinh tế, văn hóa, xã hội. Đây là nội dung quan trọng trong đường lối, chính sách của Đảng và Nhà nước Việt Nam để các dân tộc thiểu số phát triển nhanh và bền vững.
 
-- Trong cộng đồng các dân tộc còn có những nét khác biệt, trình độ phát triển kinh tế - xã hội, văn hoá... giữa các dân tộc không đồng đều, còn chênh lệch nhau khá rõ rệt. Hiện nay ở Việt Nam đã có 26 dân tộc có chữ viết.
+*Thứ năm*, các dân tộc Việt Nam có truyền thống đoàn kết, gắn bó lâu đời trong cộng đồng dân tộc - quốc gia thống nhất.
 
-- Các dân tộc thiểu số ở nước ta chỉ chiếm khoảng 14% dân số cả nước nhưng lại cư trú trên các địa bàn có vị trí chiến lược quan trọng về chính trị, kinh tế, quốc phòng, an ninh và giao lưu quốc tế, đó là các vùng biên giới, vùng rừng núi cao, hải đảo,...
+Đặc trưng này được hình thành do yêu cầu của quá trình cải biến tự nhiên và nhu cầu phải hợp sức, đoàn kết để cùng đấu tranh chống ngoại xâm nên dân tộc Việt Nam đã hình thành từ rất sớm và tạo ra sự gắn kết chặt chẽ giữa các dân tộc.
 
-##### b. Quan điểm và chính sách dân tộc của Đảng, Nhà nước Việt Nam
+Đoàn kết dân tộc trở thành truyền thống quý báu của các dân tộc ở Việt Nam, là một trong những nguyên nhân và động lực quyết định mọi thắng lợi của dân tộc trong các giai đoạn lịch sử; đánh thắng mọi kẻ thù xâm lược để giành độc lập, thống nhất Tổ quốc. Ngày nay, để thực hiện thắng lợi chiến lược xây dựng và bảo vệ vững chắc Tổ quốc Việt Nam, các dân tộc thiểu số cũng như đa số phải ra sức
 
-Đảng cộng sản Việt Nam ngay từ khi mới ra đời đã thực hiện nhất quán những nguyên tắc cơ bản của chủ nghĩa Mác – Lênin về vấn đề dân tộc, đồng thời căn cứ vào thực tiễn lịch sử đấu tranh cách mạng để xây dựng và bảo vệ Tổ quốc Việt Nam cũng như dựa vào tình hình thế giới trong giai đoạn hiện nay, Đảng và Nhà nước ta luôn luôn coi trọng vấn đề dân tộc và xây dựng khối đại đoàn kết toàn dân tộc có tầm đặc biệt quan trọng.
+[trang 208]
 
-Trong chính cương Đảng Lao động Việt Nam tại Đại hội lần thứ II của Đảng năm 1951 đã khẳng định: "Các dân tộc sống trên đất nước Việt Nam đều bình đẳng về quyền lợi và nghĩa vụ, đoàn kết giúp đỡ nhau để kháng chiến và kiến quốc"[^67].
+phát huy nội lực, giữ gìn và phát huy truyền thống đoàn kết dân tộc, nâng cao cảnh giác, kịp thời đập tan mọi âm mưu và hành động chia rẽ, phá hoại khối đại đoàn kết dân tộc.
 
-Trong cương lĩnh xây dựng đất nước trong thời kỳ quá độ lên chủ nghĩa xã hội (bổ sung, phát triển năm 2011) tiếp tục khẳng định: "Thực hiện chính sách bình đẳng, đoàn kết tôn trọng giúp đỡ lẫn nhau giữa các dân tộc, tạo mọi điều kiện để các dân tộc cùng phát triển, gắn bó mật thiết với sự phát triển chung của cộng đồng dân tộc Việt Nam"[^71].
+*Thứ sáu*, mỗi dân tộc có bản sắc văn hóa riêng, góp phần tạo nên sự phong phú, đa dạng của nền văn hóa Việt Nam thống nhất.
 
-Bình đẳng giữa các dân tộc là một trong những nguyên tắc cơ bản trong chính sách dân tộc của Đảng. Đoàn kết dân tộc là một nguyên tắc nhất quán xuyên suốt quá trình hoạch định chính sách dân tộc của Đảng. Mục tiêu: "dân giàu, nước mạnh, dân chủ, công bằng, văn minh"[^72].
+Việt Nam là một quốc gia đa dân tộc. Trong văn hóa của mỗi dân tộc đều có những sắc thái độc đáo riêng góp phần làm cho nền văn hóa Việt Nam thống nhất trong đa dạng. Sự thống nhất đó, suy cho cùng là do các dân tộc đều có chung một lịch sử dựng nước và giữ nước, đều sớm hình thành ý thức về một quốc gia độc lập, thống nhất.
 
-Chính sách dân tộc cơ bản của Đảng và Nhà nước ta:
+Xuất phát từ đặc điểm cơ bản của dân tộc Việt Nam, Đảng và Nhà nước ta luôn luôn quan tâm đến chính sách dân tộc, xem đó là vấn đề chính trị - xã hội rộng lớn và toàn diện gắn liền với các mục tiêu trong thời kỳ quá độ lên chủ nghĩa xã hội ở nước ta.
 
-- Tôn trọng lợi ích, truyền thống, văn hoá, ngôn ngữ, tập quán, tín ngưỡng của các dân tộc. Chống tư tưởng dân tộc lớn và tư tưởng dân tộc hẹp hòi, kỳ thị dân tộc và chia rẽ dân tộc.
+##### b) Quan điểm và chính sách của Đảng, Nhà nước Việt Nam về vấn đề dân tộc
 
-- Đảng và Nhà nước thực hiện một chiến lược phát triển kinh tế chung, trong đó ưu tiên đúng mức cho sự phát triển kinh tế ở vùng đồng bào dân tộc thiểu số còn lạc hậu.
+**Quan điểm của Đảng về vấn đề dân tộc:**
 
-- Quan tâm đến sự phát triển văn hoá, giáo dục của mỗi dân tộc, tạo điều kiện để thực hiện xoá mù chữ, phổ cập giáo dục cũng như tạo điều kiện cho từng dân tộc khai thác, phát huy các giá trị văn hoá của dân tộc mình.
+Đảng Cộng sản Việt Nam ngay từ khi mới ra đời đã thực hiện nhất quán những nguyên tắc cơ bản của chủ nghĩa Mác - Lênin về dân tộc. Căn cứ vào thực tiễn lịch sử đấu tranh cách mạng để xây dựng và bảo vệ Tổ quốc Việt Nam cũng như dựa vào tình hình thế giới trong giai đoạn hiện nay, Đảng và Nhà nước ta luôn luôn coi trọng vấn đề dân tộc và xây dựng khối đại đoàn kết toàn dân tộc có tầm quan trọng đặc biệt. Trong mỗi thời kỳ cách mạng, Đảng và
 
-- Quan tâm đào tạo đội ngũ cán bộ quản lý, văn hoá, khoa học,... cho từng dân tộc, đồng thời giáo dục tinh thần đoàn kết, hợp tác cho cán bộ các dân tộc.
+[trang 209]
 
-Chính sách dân tộc của Đảng và Nhà nước ta mang tính chất toàn diện, tổng hợp, bao trùm tất cả các lĩnh vực của đời sống xã hội, mang tính cách mạng và tiến bộ, đồng thời còn mang tính nhân văn sâu sắc.
+Nhà nước ta coi việc giải quyết đúng đắn vấn đề dân tộc là nhiệm vụ có tính chiến lược nhằm phát huy sức mạnh tổng hợp, cũng như tiềm năng của từng dân tộc và đưa đất nước quá độ lên chủ nghĩa xã hội. Đại hội XII khẳng định: "Đoàn kết các dân tộc có vị trí chiến lược trong sự nghiệp cách mạng của nước ta. Tiếp tục hoàn thiện cơ chế, chính sách, bảo đảm các dân tộc bình đẳng, tôn trọng, đoàn kết, giải quyết hài hòa quan hệ giữa các dân tộc, giúp nhau cùng phát triển, tạo chuyển biến rõ rệt trong phát triển kinh tế, văn hóa, xã hội vùng có đông đồng bào dân tộc thiểu số... Tăng cường kiểm tra, giám sát, đánh giá kết quả thực hiện các chủ trương, chính sách dân tộc của Đảng và Nhà nước ở các cấp. Chống kỳ thị dân tộc; nghiêm trị những âm mưu, hành động chia rẽ, phá hoại khối đại đoàn kết dân tộc"[^2].
 
-[^67]: Đảng Cộng sản Việt Nam: Văn kiện Đảng toàn tập, NXB. Chính trị quốc gia, Hà Nội 2001, T12, Tr.440
-[^71]: Đảng Cộng sản Việt Nam: Văn kiện Đại hội đại biểu toàn quốc lần thứ IX, NXB. Chính trị quốc gia, HN 2001, Tr.81
-[^72]: Đảng Cộng sản Việt Nam: Văn kiện Đại hội đại biểu toàn quốc lần thứ XII, NXB. Chính trị quốc gia, HN 2016, Tr.16
+Tựu trung lại, quan điểm cơ bản của Đảng ta về vấn đề dân tộc thể hiện ở các nội dung sau:
 
-#### 3.2. Tình hình, đặc điểm tôn giáo ở Việt Nam; quan điểm, chính sách của Đảng, Nhà nước Việt Nam đối với tôn giáo
+- "Vấn đề dân tộc và đoàn kết dân tộc là vấn đề chiến lược cơ bản, lâu dài, đồng thời cũng là vấn đề cấp bách hiện nay của cách mạng Việt Nam.
 
-##### a. Tình hình, đặc điểm tôn giáo ở Việt Nam
+- Các dân tộc trong đại gia đình Việt Nam bình đẳng, đoàn kết, tương trợ, giúp nhau cùng phát triển, cùng nhau phấn đấu thực hiện thắng lợi sự nghiệp công nghiệp hóa, hiện đại hóa đất nước, xây dựng và bảo vệ Tổ quốc Việt Nam xã hội chủ nghĩa. Kiên quyết đấu tranh với mọi âm mưu chia rẽ dân tộc.
 
-**Việt Nam là một quốc gia có nhiều tôn giáo.** Nước ta hiện nay có 13 tôn giáo đã được công nhận tư cách pháp nhân (Phật giáo, Công Giáo, Hồi giáo, Tin lành, Cao Đài, Phật Giáo Hòa Hảo, Tứ Ân Hiếu Nghĩa, Bửu Sơn Kỳ Hương, Baha'i, Minh Lý đạo - Tam Tông miếu, Giáo hội Phật đường Nam Tông Minh Sư Đạo, Tịnh độ Cư sĩ Phật hội, Bà la môn) và trên 40 tổ chức tôn giáo đã được công nhận về mặt tổ chức hoặc đã đăng ký hoạt động với khoảng 24 triệu tín đồ, 95.000 chức sắc, 200.000 chức việc và hơn 23.250 cơ sở thờ tự[^73].
+[^2]: Đảng Cộng sản Việt Nam: Văn kiện Đại hội đại biểu toàn quốc lần thứ XII, Sđd, tr.164-165.
 
-**Tôn giáo ở Việt Nam đa dạng, đan xen, chung sống hòa bình và không có xung đột, chiến tranh tôn giáo.** Việt Nam là nơi giao lưu của nhiều luồng văn hóa thế giới. Chưa từng xảy ra xung đột, chiến tranh tôn giáo. Không có một tôn giáo nào du nhập vào Việt Nam mà không mang dấu ấn, không chịu ảnh hưởng của bản sắc văn hóa Việt Nam.
+[trang 210]
 
-**Tín đồ các tôn giáo Việt Nam phần lớn là nhân dân lao động, có lòng yêu nước, tinh thần dân tộc.** Đa số tín đồ các tôn giáo đều có tinh thần yêu nước, chống ngoại xâm, tôn trọng công lý, gắn bó với dân tộc, đi theo Đảng, theo cách mạng.
+- Phát triển toàn diện chính trị, kinh tế, văn hóa, xã hội và an ninh - quốc phòng trên địa bàn vùng dân tộc và miền núi; gắn tăng trưởng kinh tế với giải quyết các vấn đề xã hội, thực hiện tốt chính sách dân tộc; quan tâm phát triển, bồi dưỡng nguồn nhân lực; chăm lo xây dựng đội ngũ cán bộ dân tộc thiểu số; giữ gìn và phát huy những giá trị, bản sắc văn hóa truyền thống các dân tộc thiểu số trong sự nghiệp phát triển chung của cộng đồng dân tộc Việt Nam thống nhất.
 
-**Hàng ngũ chức sắc các tôn giáo có vai trò, vị trí quan trọng trong giáo hội, có uy tín, ảnh hưởng với tín đồ.** Trong giai đoạn hiện nay, xu hướng tiến bộ trong hàng ngũ chức sắc ngày càng phát triển.
+- Ưu tiên đầu tư phát triển kinh tế - xã hội các vùng dân tộc và miền núi, trước hết, tập trung vào phát triển giao thông và cơ sở hạ tầng, xóa đói, giảm nghèo; khai thác có hiệu quả tiềm năng, thế mạnh của từng vùng, đi đôi với bảo vệ bền vững môi trường sinh thái; phát huy nội lực, tinh thần tự lực, tự cường của đồng bào các dân tộc, đồng thời tăng cường sự quan tâm hỗ trợ của Trung ương và sự giúp đỡ của các địa phương trong cả nước.
 
-**Các tôn giáo ở Việt Nam đều có quan hệ với các tổ chức, cá nhân tôn giáo ở nước ngoài.** Việc giải quyết vấn đề tôn giáo ở Việt Nam phải đảm bảo kết hợp giữa mở rộng giao lưu hợp tác quốc tế với việc bảo đảm độc lập, chủ quyền.
+- Công tác dân tộc và thực hiện chính sách dân tộc là nhiệm vụ của toàn Đảng, toàn dân, toàn quân, của các cấp, các ngành, của toàn bộ hệ thống chính trị"[^3].
 
-**Các tôn giáo ở Việt Nam thường bị các thế lực thực dân, đế quốc, phản động lợi dụng.** Các thế lực thù địch luôn tìm cách lợi dụng tôn giáo để thực hiện âm mưu "diễn biến hòa bình" đối với nước ta.
+**Chính sách dân tộc của Đảng, Nhà nước Việt Nam:**
 
-[^73]: Nguồn: Ban Tôn giáo Chính phủ, 12/2017
+Về chính trị: Thực hiện bình đẳng, đoàn kết, tôn trọng, giúp nhau cùng phát triển giữa các dân tộc. Chính sách dân tộc góp phần nâng cao tính tích cực chính trị của công dân; nâng cao nhận thức của đồng bào các dân tộc thiểu số về tầm quan trọng của vấn đề dân tộc, đoàn kết
 
-##### b. Nội dung quan điểm, chính sách của Đảng, Nhà nước Việt Nam đối với tôn giáo, tín ngưỡng trong giai đoạn hiện nay
+[^3]: Đảng Cộng sản Việt Nam: Văn kiện Đảng toàn tập, Sđd, t.62, tr.48-49.
 
-- **Tín ngưỡng, tôn giáo là nhu cầu tinh thần của một bộ phận nhân dân**, đang và sẽ tồn tại cùng dân tộc trong quá trình xây dựng chủ nghĩa xã hội ở nước ta. Vì vậy, thực hiện nhất quán chính sách tôn trọng và bảo đảm quyền tự do tín ngưỡng, theo hoặc không theo một tôn giáo nào, quyền sinh hoạt tôn giáo bình thường theo đúng pháp luật.
+[trang 211]
 
-- **Đảng, Nhà nước thực hiện nhất quán chính sách đại đoàn kết dân tộc.** Đoàn kết đồng bào theo các tôn giáo khác nhau; đoàn kết đồng bào theo tôn giáo và đồng bào không theo tôn giáo. Mục tiêu "dân giàu, nước mạnh, xã hội công bằng, dân chủ, văn minh" được coi là điểm tương đồng để gắn bó đồng bào các tôn giáo với sự nghiệp chung. Đồng thời, nghiêm cấm lợi dụng tín ngưỡng, tôn giáo để hoạt động mê tín dị đoan, hoạt động trái pháp luật và chính sách của Nhà nước, kích động chia rẽ nhân dân, chia rẽ các dân tộc, gây rối, xâm phạm an ninh quốc gia.
+các dân tộc, thống nhất mục tiêu chung là độc lập dân tộc và chủ nghĩa xã hội, dân giàu, nước mạnh, dân chủ, công bằng, văn minh.
 
-- **Nội dung cốt lõi của công tác tôn giáo là công tác vận động quần chúng.** Đẩy mạnh phát triển kinh tế, xã hội, văn hóa vùng đồng bào theo các tôn giáo, nhằm nâng cao trình độ, đời sống mọi mặt cho đồng bào.
+Về kinh tế: Nội dung, nhiệm vụ kinh tế trong chính sách dân tộc là các chủ trương, chính sách phát triển kinh tế - xã hội miền núi, vùng đồng bào các dân tộc thiểu số nhằm phát huy tiềm năng phát triển, từng bước khắc phục khoảng cách chênh lệch giữa các vùng, giữa các dân tộc. Thực hiện các nội dung kinh tế thông qua các chương trình, dự án phát triển kinh tế ở các vùng dân tộc thiểu số, thúc đẩy quá trình phát triển kinh tế thị trường định hướng xã hội chủ nghĩa. Thực hiện tốt chiến lược phát triển kinh tế - xã hội ở miền núi, vùng sâu, vùng xa, vùng biên giới, vùng căn cứ địa cách mạng.
 
-- **Công tác tôn giáo là trách nhiệm của cả hệ thống chính trị.** Làm tốt công tác tôn giáo là trách nhiệm của toàn bộ hệ thống chính trị, bao gồm hệ thống tổ chức đảng, chính quyền, mặt trận Tổ quốc, đoàn thể chính trị, do Đảng lãnh đạo.
+Về văn hóa: Xây dựng nền văn hóa Việt Nam tiên tiến, đậm đà bản sắc dân tộc. Giữ gìn và phát huy giá trị văn hóa truyền thống của các tộc người, phát triển ngôn ngữ, xây dựng đời sống văn hóa ở cơ sở, nâng cao trình độ văn hóa cho nhân dân các dân tộc. Đào tạo cán bộ văn hóa, xây dựng môi trường, thiết chế văn hóa phù hợp với điều kiện của các tộc người trong quốc gia đa dân tộc. Đồng thời, mở rộng giao lưu văn hóa với các quốc gia, các khu vực và trên thế giới. Đấu tranh chống tệ nạn xã hội, chống "diễn biến hòa bình" trên mặt trận tư tưởng - văn hóa ở nước ta hiện nay.
 
-- **Vấn đề theo đạo và truyền đạo.** Mọi tín đồ đều có quyền tự do hành đạo tại gia đình và cơ sở thờ tự hợp pháp theo quy định của pháp luật. Việc theo đạo, truyền đạo cũng như mọi hoạt động tôn giáo khác đều phải tuân thủ Hiến pháp và pháp luật.
+Về xã hội: Thực hiện chính sách xã hội, đảm bảo an sinh xã hội trong vùng đồng bào dân tộc thiểu số. Từng bước thực hiện bình đẳng xã hội, công bằng thông qua việc thực hiện chính sách phát triển kinh tế - xã hội, xóa đói
 
----
+[trang 212]
 
-Dân tộc, tôn giáo là những vấn đề nhạy cảm, phức tạp, liên quan đến nhiều lĩnh vực của đời sống xã hội, đến chính sách đối nội và đối ngoại của mọi nhà nước, đến cuộc sống của mỗi cá nhân, mỗi cộng đồng dân cư.
+giảm nghèo, dân số, y tế, giáo dục trên cơ sở chú ý đến tính đặc thù mỗi vùng, mỗi dân tộc. Phát huy vai trò của hệ thống chính trị cơ sở và các tổ chức chính trị - xã hội ở miền núi, vùng dân tộc thiểu số.
 
-Quá trình toàn cầu hoá, quốc tế hoá các vấn đề kinh tế - chính trị - xã hội - văn hoá…, vừa làm cho vấn đề dân tộc và vấn đề tôn giáo gắn chặt với nhau, mang tính chất quốc tế sâu sắc, vừa đặt ra yêu cầu nội tại bảo vệ bản sắc dân tộc, bảo vệ các giá trị của các loại hình tôn giáo, tín ngưỡng truyền thống.
+Về an ninh - quốc phòng: Tăng cường sức mạnh bảo vệ Tổ quốc trên cơ sở đảm bảo ổn định chính trị, thực hiện tốt an ninh chính trị, trật tự - an toàn xã hội. Phối hợp chặt chẽ các lực lượng trên từng địa bàn. Tăng cường quan hệ quân dân, tạo thế trận quốc phòng toàn dân trong vùng đồng bào dân tộc sinh sống.
 
-Vì vậy, quá trình nghiên cứu vấn đề dân tộc, tôn giáo ở Việt Nam hiện nay, cần chú ý:
+Thực hiện đúng chính sách dân tộc hiện nay ở Việt Nam là phải phát triển toàn diện về chính trị, kinh tế, văn hóa, xã hội, an ninh - quốc phòng các địa bàn vùng dân tộc thiểu số, vùng biên giới, rừng núi, hải đảo của Tổ quốc.
 
-**Một là**, luôn đứng trên quan điểm, phương pháp luận của chủ nghĩa Mác-Lênin, tư tưởng Hồ Chí Minh để nghiên cứu, xem xét tổng thể vấn đề dân tộc, tôn giáo, cũng như từng khía cạnh của nó.
+Như vậy, chính sách dân tộc của Đảng và Nhà nước ta mang tính chất toàn diện, tổng hợp, bao trùm tất cả các lĩnh vực của đời sống xã hội, liên quan đến mỗi dân tộc và quan hệ giữa các dân tộc trong cộng đồng quốc gia. Phát triển kinh tế - xã hội của các dân tộc là nền tảng để tăng cường đoàn kết và thực hiện quyền bình đẳng dân tộc, là cơ sở để từng bước khắc phục sự chênh lệch về trình độ phát triển giữa các dân tộc. Do vậy, chính sách dân tộc của Đảng và Nhà nước ta mang tính cách mạng và tiến bộ, đồng thời còn mang tính nhân văn sâu sắc, không bỏ sót bất kỳ dân tộc nào, không cho phép bất cứ tư tưởng kỳ thị, chia rẽ dân tộc nào; đồng thời phát huy nội lực của mỗi dân tộc kết hợp với sự giúp đỡ có hiệu quả của các dân tộc anh em trong cả nước.
 
-**Hai là**, nghiên cứu vấn đề dân tộc, tôn giáo phải gắn với thực tế tồn tại, vận động của vấn đề dân tộc, tôn giáo.
+[trang 213]
 
-**Ba là**, nghiên cứu vấn đề dân tộc, tôn giáo phải gắn với việc phê phán các quan điểm không đúng về vấn đề dân tộc, tôn giáo.
+### II- TÔN GIÁO TRONG THỜI KỲ QUÁ ĐỘ LÊN CHỦ NGHĨA XÃ HỘI
 
-**Bốn là**, kết hợp, kế thừa các phương pháp, thành quả nghiên cứu về dân tộc, tôn giáo của các ngành khoa học khác.
+#### 1. Quan điểm của chủ nghĩa Mác - Lênin về tôn giáo
 
-## C. CÂU HỎI THẢO LUẬN VÀ ÔN TẬP
+##### a) Bản chất, nguồn gốc và tính chất của tôn giáo
 
-1. Phân tích quan điểm Mác – Lênin về vấn đề dân tộc và giải quyết vấn đề dân tộc trong cách mạng xã hội chủ nghĩa?
+*Thứ nhất*, bản chất của tôn giáo.
 
-2. Trình bày những quan điểm, tư tưởng, chính sách, pháp luật của Đảng và Nhà nước Việt Nam về vấn đề dân tộc và giải quyết vấn đề dân tộc trong thời kỳ quá độ lên chủ nghĩa xã hội, xây dựng và bảo vệ Tổ quốc xã hội chủ nghĩa.
+Chủ nghĩa Mác - Lênin cho rằng, tôn giáo là một hình thái ý thức xã hội phản ánh hư ảo hiện thực khách quan. Thông qua sự phản ánh đó, các lực lượng tự nhiên và xã hội trở thành siêu nhiên, thần bí. Ph. Ăngghen cho rằng: "tất cả mọi tôn giáo chẳng qua chỉ là sự phản ánh hư ảo vào trong đầu óc của con người - của những lực lượng ở bên ngoài chi phối cuộc sống hàng ngày của họ; chỉ là sự phản ánh trong đó những lực lượng ở trần thế đã mang hình thức những lực lượng siêu trần thế"[^4].
 
-3. Phân tích, làm rõ quan điểm của chủ nghĩa Mác – Lênin về vấn đề tôn giáo và giải quyết vấn đề tôn giáo trong cách mạng xã hội chủ nghĩa.
+Ở một cách tiếp cận khác, tôn giáo là một thực thể xã hội - các tôn giáo cụ thể (ví dụ: Công giáo, Tin Lành, Phật giáo...), với các tiêu chí cơ bản sau: có niềm tin sâu sắc vào đấng siêu nhiên, đấng tối cao, thần linh để tôn thờ (niềm tin tôn giáo); có hệ thống giáo thuyết (giáo lý, giáo luật, lễ nghi) phản ánh thế giới quan, nhân sinh quan, đạo đức, lễ nghi của tôn giáo; có hệ thống cơ sở thờ tự; có tổ chức nhân sự, quản lý điều hành việc đạo (người hoạt động tôn giáo chuyên nghiệp hay không chuyên nghiệp); có hệ thống tín đồ đông đảo, những người tự nguyện tin theo một tôn giáo nào đó và được tôn giáo đó thừa nhận.
 
-4. Trình bày những quan điểm, tư tưởng, chính sách, pháp luật của Đảng và Nhà nước Việt Nam về vấn đề tôn giáo và giải quyết vấn đề tôn giáo trong thời kỳ quá độ lên chủ nghĩa xã hội, xây dựng và bảo vệ Tổ quốc xã hội chủ nghĩa.
+[^4]: C. Mác và Ph. Ăngghen: Toàn tập, Sđd, t.20, tr.437.
 
-5. Vì sao vấn đề dân tộc luôn gắn liền với vấn đề tôn giáo và có ảnh hưởng sâu sắc đến sự ổn định chính trị - xã hội của đất nước, đến độc lập, chủ quyền của Tổ quốc?
+[trang 214]
 
-## D. TÀI LIỆU THAM KHẢO
+Chỉ rõ bản chất của tôn giáo, chủ nghĩa Mác - Lênin khẳng định: Tôn giáo là một hiện tượng xã hội - văn hóa do con người sáng tạo ra. Con người sáng tạo ra tôn giáo vì mục đích, lợi ích của họ, phản ánh những ước mơ, nguyện vọng, suy nghĩ của họ. Nhưng, sáng tạo ra tôn giáo, con người lại bị lệ thuộc vào tôn giáo, tuyệt đối hóa và phục tùng tôn giáo vô điều kiện. Chủ nghĩa Mác - Lênin cũng cho rằng, sản xuất vật chất và các quan hệ kinh tế, xét đến cùng là nhân tố quyết định sự tồn tại và phát triển của các hình thái ý thức xã hội, trong đó có tôn giáo. Do đó, mọi quan niệm về tôn giáo, các tổ chức, thiết chế tôn giáo đều được sinh ra từ những hoạt động sản xuất, từ những điều kiện sống nhất định trong xã hội và thay đổi theo những thay đổi của cơ sở kinh tế. Về phương diện thế giới quan, các tôn giáo mang thế giới quan duy tâm, có sự khác biệt với thế giới quan duy vật biện chứng, khoa học của chủ nghĩa Mác - Lênin. Mặc dù có sự khác biệt về thế giới quan, nhưng những người cộng sản với lập trường mácxít không bao giờ có thái độ xem thường hoặc trấn áp những nhu cầu tín ngưỡng, tôn giáo của nhân dân; ngược lại, luôn tôn trọng quyền tự do tín ngưỡng, theo hoặc không theo tôn giáo của nhân dân. Trong những điều kiện cụ thể của xã hội, những người cộng sản và những người có tín ngưỡng tôn giáo có thể cùng nhau xây dựng một xã hội tốt đẹp hơn ở thế giới hiện thực. Xã hội ấy chính là xã hội mà quần chúng tín đồ cũng từng mơ ước và phản ánh nó qua một số tôn giáo.
 
-1. Đảng Cộng sản Việt Nam, *Cương lĩnh xây dựng đất nước trong thời kỳ quá độ lên chủ nghĩa xã hội (bổ sung, phát triển năm 2011)*, NXB Chính trị quốc gia, Hà Nội, 2011.
-2. Đảng Cộng sản Việt Nam, *Văn kiện Đại hội đại biểu toàn quốc lần thứ XII*, NXB Chính trị quốc gia, Hà Nội, 2016.
-3. Đảng Cộng sản Việt Nam, Nghị quyết số 24 - NQ/TƯ, ngày 12/3/2003 của BCHTƯ (khóa IX) Về công tác dân tộc, NXB CTQG, Hà Nội 2003.
-4. Đảng Cộng sản Việt Nam, Nghị quyết số 25 - NQ/TƯ, ngày 12/3/2003 của BCHTƯ (khóa IX) Về công tác tôn giáo, NXB CTQG, Hà Nội 2003.
-5. Ban Tuyên giáo Trung ương Đảng, *Vấn đề dân tộc và chính sách dân tộc*, NXB. Chính trị quốc gia - Sự thật, Hà Nội, 2018.
-6. Quốc hội nước CHXHCN Việt Nam (khóa XIV), Luật tín ngưỡng, tôn giáo, Luật số 02/2016/QH14, ngày 18/11/2016.
-7. Dương Xuân Ngọc, *Giáo trình Chủ nghĩa xã hội khoa học*, dùng cho hệ đào tạo Cao cấp lý luận chính trị, Nxb CAND, HN 2016.
+[trang 215]
+
+Tôn giáo và tín ngưỡng không đồng nhất, nhưng có giao thoa nhất định. Tín ngưỡng là hệ thống những niềm tin, sự ngưỡng mộ, cũng như cách thức thể hiện niềm tin của con người trước các sự vật, hiện tượng, lực lượng có tính thần thánh, linh thiêng để cầu mong sự che chở, giúp đỡ. Có nhiều loại hình tín ngưỡng khác nhau như: tín ngưỡng thờ cúng tổ tiên; tín ngưỡng thờ anh hùng dân tộc; tín ngưỡng thờ Mẫu...
+
+Mê tín là niềm tin mê muội, viển vông, không dựa trên một cơ sở khoa học nào. Nói cách khác là niềm tin về mối quan hệ nhân quả giữa các sự kiện, sự vật, hiện tượng trên thực tế không có mối liên hệ cụ thể, rõ ràng, khách quan, tất yếu, nhưng được bao phủ bởi các yếu tố siêu nhiên, thần thánh, hư ảo. Dị đoan là sự suy đoán, hành động một cách tùy tiện, sai lệch những điều bình thường, chuẩn mực trong cuộc sống.
+
+Mê tín dị đoan là niềm tin của con người vào các lực lượng siêu nhiên, thần thánh đến mức độ mê muội, cuồng tín, dẫn đến những hành vi cực đoan, sai lệch quá mức, trái với các giá trị văn hóa, đạo đức, pháp luật, gây tổn hại cho cá nhân, xã hội và cộng đồng.
+
+*Thứ hai*, nguồn gốc của tôn giáo.
+
+- Nguồn gốc tự nhiên, kinh tế - xã hội: Trong xã hội công xã nguyên thủy, do lực lượng sản xuất chưa phát triển, trước thiên nhiên hùng vĩ tác động và chi phối khiến cho con người cảm thấy yếu đuối và bất lực, không giải thích được, nên con người đã gán cho tự nhiên những sức mạnh, quyền lực thần bí.
+
+[trang 216]
+
+Khi xã hội xuất hiện các giai cấp đối kháng, có áp bức bất công, do không giải thích được nguồn gốc của sự phân hóa giai cấp và áp bức bóc lột bất công, tội ác, v.v., cộng với lo sợ trước sự thống trị của các lực lượng xã hội, con người trông chờ vào sự giải phóng của một lực lượng siêu nhiên ngoài trần thế.
+
+- Nguồn gốc nhận thức: Ở một giai đoạn lịch sử nhất định, sự nhận thức của con người về tự nhiên, xã hội và chính bản thân mình là có giới hạn. Khi mà khoảng cách giữa "biết" và "chưa biết" vẫn tồn tại, khi những điều mà khoa học chưa giải thích được, thì điều đó thường được giải thích thông qua lăng kính các tôn giáo. Ngay cả những vấn đề đã được khoa học chứng minh, nhưng do trình độ dân trí thấp, chưa thể nhận thức đầy đủ, thì đây vẫn là điều kiện, là mảnh đất cho tôn giáo ra đời, tồn tại và phát triển. Thực chất nguồn gốc nhận thức của tôn giáo chính là sự tuyệt đối hóa, sự cường điệu mặt chủ thể của nhận thức con người, biến cái nội dung khách quan thành cái siêu nhiên, thần thánh.
+
+- Nguồn gốc tâm lý: Sự sợ hãi trước những hiện tượng tự nhiên, xã hội, hay trong những lúc ốm đau, bệnh tật; ngay cả những may, rủi bất ngờ xảy ra, hoặc tâm lý muốn được bình yên khi làm một việc lớn (ví dụ: ma chay, cưới xin, làm nhà, khởi đầu sự nghiệp kinh doanh...), con người cũng dễ tìm đến với tôn giáo. Thậm chí cả những tình cảm tích cực như tình yêu, lòng biết ơn, lòng kính trọng đối với những người có công với nước, với dân cũng dễ dẫn con
+
+[trang 217]
+
+người đến với tôn giáo (ví dụ: thờ các anh hùng dân tộc, thờ các thành hoàng làng...).
+
+*Thứ ba*, tính chất của tôn giáo.
+
+- *Tính lịch sử của tôn giáo:* Tôn giáo là một hiện tượng xã hội có tính lịch sử, nghĩa là nó có sự hình thành, tồn tại và phát triển và có khả năng biến đổi trong những giai đoạn lịch sử nhất định để thích nghi với nhiều chế độ chính trị - xã hội. Khi các điều kiện kinh tế - xã hội, lịch sử thay đổi, tôn giáo cũng có sự thay đổi theo. Trong quá trình vận động của các tôn giáo, chính các điều kiện kinh tế - xã hội, lịch sử cụ thể đã làm cho các tôn giáo bị phân liệt, chia tách thành nhiều tôn giáo, hệ phái khác nhau.
+
+Theo quan điểm của chủ nghĩa Mác - Lênin, đến một giai đoạn lịch sử nào đó, khi khoa học và giáo dục giúp cho đại đa số quần chúng nhân dân nhận thức được bản chất các hiện tượng tự nhiên và xã hội thì tôn giáo sẽ dần dần mất đi vị trí của nó trong đời sống xã hội và cả trong nhận thức, niềm tin của mỗi người.
+
+- *Tính quần chúng của tôn giáo:* Tôn giáo là một hiện tượng xã hội phổ biến ở tất cả các dân tộc, quốc gia, châu lục. Tính quần chúng của tôn giáo không chỉ biểu hiện ở số lượng tín đồ rất đông đảo (gần 3/4 dân số thế giới); mà còn thể hiện ở chỗ, các tôn giáo là nơi sinh hoạt văn hóa, tinh thần của một bộ phận quần chúng nhân dân. Dù tôn giáo hướng con người vào niềm tin hạnh phúc hư ảo của thế giới bên kia, song nó luôn luôn phản ánh khát vọng của những người lao động về một xã hội tự do, bình đẳng, bác ái. Mặt
+
+[trang 218]
+
+khác, nhiều tôn giáo có tính nhân văn, nhân đạo và hướng thiện, vì vậy, được nhiều người ở các tầng lớp khác nhau trong xã hội, đặc biệt là quần chúng lao động tin theo.
+
+- *Tính chính trị của tôn giáo:* Khi xã hội chưa có giai cấp, tôn giáo chỉ phản ánh nhận thức hồn nhiên, ngây thơ của con người về bản thân và thế giới xung quanh mình, tôn giáo chưa mang tính chính trị. Tính chất chính trị của tôn giáo chỉ xuất hiện khi xã hội đã phân chia giai cấp, có sự khác biệt, sự đối kháng về lợi ích giai cấp. Trước hết, do tôn giáo là sản phẩm của những điều kiện kinh tế - xã hội, phản ánh lợi ích, nguyện vọng của các giai cấp khác nhau trong cuộc đấu tranh giai cấp, đấu tranh dân tộc, nên tôn giáo mang tính chính trị. Mặt khác, khi các giai cấp bóc lột, thống trị sử dụng tôn giáo để phục vụ cho lợi ích giai cấp mình, chống lại các giai cấp lao động và tiến bộ xã hội, tôn giáo mang tính chính trị tiêu cực, phản tiến bộ.
+
+Vì vậy, cần nhận rõ rằng, đa số quần chúng tín đồ đến với tôn giáo nhằm thoả mãn nhu cầu tinh thần; song, trên thực tế, tôn giáo đã và đang bị các thế lực chính trị - xã hội lợi dụng thực hiện mục đích ngoài tôn giáo của họ.
+
+##### b) Nguyên tắc giải quyết vấn đề tôn giáo trong thời kỳ quá độ lên chủ nghĩa xã hội
+
+Trong thời kỳ quá độ lên chủ nghĩa xã hội, tôn giáo vẫn còn tồn tại, tuy đã có sự biến đổi trên nhiều mặt, vì vậy, khi giải quyết vấn đề tôn giáo cần đảm bảo các nguyên tắc sau:
+
+- Tôn trọng, bảo đảm quyền tự do tín ngưỡng và không tín ngưỡng của nhân dân.
+
+[trang 219]
+
+Tín ngưỡng, tôn giáo là niềm tin sâu sắc của quần chúng vào đấng tối cao, đấng thiêng liêng nào đó mà họ tôn thờ, thuộc lĩnh vực ý thức tư tưởng. Do đó, tự do tín ngưỡng và tự do không tín ngưỡng thuộc quyền tự do tư tưởng của nhân dân. Việc theo đạo, đổi đạo, hay không theo đạo là thuộc quyền tự do lựa chọn của mỗi người dân, không một cá nhân, tổ chức nào, kể cả các chức sắc tôn giáo, tổ chức giáo hội... được quyền can thiệp vào sự lựa chọn này. Mọi hành vi cấm đoán, ngăn cản tự do theo đạo, đổi đạo, bỏ đạo hay đe dọa, bắt buộc người dân phải theo đạo đều xâm phạm đến quyền tự do tư tưởng của họ.
+
+Tôn trọng tự do tín ngưỡng cũng chính là tôn trọng quyền con người, thể hiện bản chất ưu việt của chế độ xã hội chủ nghĩa. Nhà nước xã hội chủ nghĩa không can thiệp và không cho bất cứ ai can thiệp, xâm phạm đến quyền tự do tín ngưỡng, quyền lựa chọn theo hay không theo tôn giáo của nhân dân. Các tôn giáo và hoạt động tôn giáo bình thường, các cơ sở thờ tự, các phương tiện phục vụ nhằm thoả mãn nhu cầu tín ngưỡng của người dân được nhà nước xã hội chủ nghĩa tôn trọng và bảo hộ.
+
+- Khắc phục dần những ảnh hưởng tiêu cực của tôn giáo phải gắn liền với quá trình cải tạo xã hội cũ, xây dựng xã hội mới.
+
+Nguyên tắc này khẳng định, chủ nghĩa Mác - Lênin chỉ hướng vào giải quyết những ảnh hưởng tiêu cực của tôn giáo đối với quần chúng nhân dân mà không chủ trương can thiệp vào công việc nội bộ của các tôn giáo.
+
+[trang 220]
+
+Chủ nghĩa Mác - Lênin chỉ ra rằng, muốn thay đổi ý thức xã hội, trước hết cần phải thay đổi bản thân tồn tại xã hội; muốn xoá bỏ ảo tưởng nảy sinh trong tư tưởng con người, phải xoá bỏ nguồn gốc sinh ra ảo tưởng ấy. Điều cần thiết trước hết là phải xác lập được một thế giới hiện thực không có áp bức, bất công, nghèo đói và thất học... cũng như những tệ nạn nảy sinh trong xã hội. Đó là một quá trình lâu dài, và không thể thực hiện được nếu tách rời việc cải tạo xã hội cũ, xây dựng xã hội mới.
+
+- Phân biệt hai mặt chính trị và tư tưởng của tôn giáo trong quá trình giải quyết vấn đề tôn giáo.
+
+Trong xã hội công xã nguyên thủy, tín ngưỡng, tôn giáo chỉ biểu hiện thuần tuý về tư tưởng. Nhưng khi xã hội đã xuất hiện giai cấp thì dấu ấn giai cấp - chính trị ít nhiều đều in rõ trong các tôn giáo. Từ đó, hai mặt chính trị và tư tưởng thường thể hiện và có mối quan hệ với nhau trong vấn đề tôn giáo và bản thân mỗi tôn giáo.
+
+Mặt chính trị phản ánh mối quan hệ giữa tiến bộ với phản tiến bộ, phản ánh mâu thuẫn đối kháng về lợi ích kinh tế, chính trị giữa các giai cấp, mâu thuẫn giữa những thế lực lợi dụng tôn giáo chống lại sự nghiệp cách mạng với lợi ích của nhân dân lao động. Mặt tư tưởng biểu hiện sự khác nhau về niềm tin, mức độ tin giữa những người có tín ngưỡng, tôn giáo và những người không theo tôn giáo, cũng như những người có tín ngưỡng, tôn giáo khác nhau, phản ánh mâu thuẫn không mang tính đối kháng.
+
+[trang 221]
+
+Phân biệt hai mặt chính trị và tư tưởng trong giải quyết vấn đề tôn giáo thực chất là phân biệt tính chất khác nhau của hai loại mâu thuẫn luôn tồn tại trong bản thân tôn giáo và trong vấn đề tôn giáo. Sự phân biệt này trong thực tế không đơn giản, bởi lẽ, trong đời sống xã hội, hiện tượng nhiều khi phản ánh sai lệch bản chất, mà vấn đề chính trị và tư tưởng trong tôn giáo thường đan xen vào nhau. Mặt khác, trong xã hội có đối kháng giai cấp, tôn giáo thường bị yếu tố chính trị chi phối rất sâu sắc nên khó nhận biết vấn đề chính trị hay tư tưởng thuần túy trong tôn giáo. Việc phân biệt hai mặt này là cần thiết nhằm tránh khuynh hướng cực đoan trong quá trình quản lý, ứng xử những vấn đề liên quan đến tín ngưỡng, tôn giáo.
+
+- Quan điểm lịch sử cụ thể trong giải quyết vấn đề tín ngưỡng, tôn giáo.
+
+Tôn giáo không phải là một hiện tượng xã hội bất biến, ngược lại nó luôn luôn vận động và biến đổi không ngừng tuỳ thuộc vào những điều kiện kinh tế - xã hội lịch sử cụ thể. Mỗi tôn giáo đều có lịch sử hình thành, có quá trình tồn tại và phát triển nhất định. Ở những thời kỳ lịch sử khác nhau, vai trò, tác động của từng tôn giáo đối với đời sống xã hội không giống nhau. Quan điểm, thái độ của các giáo hội, giáo sĩ, giáo dân về những lĩnh vực của đời sống xã hội luôn có sự khác biệt. Vì vậy, cần phải có quan điểm lịch sử cụ thể khi xem xét, đánh giá và ứng xử đối với những vấn đề có liên quan đến tôn giáo và đối với từng tôn giáo cụ thể.
+
+[trang 222]
+
+#### 2. Tôn giáo ở Việt Nam và chính sách tôn giáo của Đảng, Nhà nước ta hiện nay
+
+##### a) Đặc điểm tôn giáo ở Việt Nam
+
+*Thứ nhất*, Việt Nam là một quốc gia có nhiều tôn giáo.
+
+Nước ta hiện nay có 43 tổ chức thuộc 16 tôn giáo đã được công nhận và cấp đăng ký hoạt động với khoảng 57.000 chức sắc, 157.000 chức việc và hơn 29.000 cơ sở thờ tự[^5]. Các tổ chức tôn giáo có nhiều hình thức tồn tại khác nhau. Có tôn giáo du nhập từ bên ngoài, với những thời điểm, hoàn cảnh khác nhau, như Phật giáo, Công giáo, Tin Lành, Hồi giáo; có tôn giáo nội sinh, như Cao Đài, Hòa Hảo.
+
+*Thứ hai*, tôn giáo ở Việt Nam đa dạng, đan xen, chung sống hòa bình và không có xung đột, chiến tranh tôn giáo.
+
+Việt Nam là nơi giao lưu của nhiều luồng văn hóa thế giới. Các tôn giáo ở Việt Nam có sự đa dạng về nguồn gốc và truyền thống lịch sử. Mỗi tôn giáo ở Việt Nam có quá trình lịch sử tồn tại và phát triển khác nhau nên sự gắn bó với dân tộc cũng khác nhau. Tín đồ của các tôn giáo khác nhau cùng chung sống hòa bình trên một địa bàn, giữa họ có sự tôn trọng niềm tin của nhau và chưa từng xảy ra xung đột, chiến tranh tôn giáo. Thực tế cho thấy, không có một tôn giáo nào du nhập vào Việt Nam mà không
+
+[^5]: Theo Báo Nhân dân điện tử: "Tôn trọng, bảo đảm quyền tự do tín ngưỡng của nhân dân", ngày 22/12/2020.
+
+[trang 223]
+
+mang dấu ấn, không chịu ảnh hưởng của bản sắc văn hóa Việt Nam.
+
+*Thứ ba*, tín đồ các tôn giáo Việt Nam phần lớn là nhân dân lao động, có lòng yêu nước, tinh thần dân tộc.
+
+Tín đồ các tôn giáo Việt Nam có thành phần rất đa dạng, chủ yếu là người lao động... Đa số tín đồ các tôn giáo đều có tinh thần yêu nước, chống giặc ngoại xâm, tôn trọng công lý, gắn bó với dân tộc, đi theo Đảng, theo cách mạng, hăng hái tham gia xây dựng và bảo vệ Tổ quốc Việt Nam. Trong các giai đoạn lịch sử, tín đồ các tôn giáo cùng với các tầng lớp nhân dân làm nên những thắng lợi to lớn, vẻ vang của dân tộc và có ước vọng sống "tốt đời, đẹp đạo".
+
+*Thứ tư*, hàng ngũ chức sắc các tôn giáo có vai trò, vị trí quan trọng trong giáo hội, có uy tín, ảnh hưởng với tín đồ.
+
+Chức sắc tôn giáo là tín đồ có chức vụ, phẩm sắc trong tôn giáo, họ tự nguyện thực hiện thường xuyên nếp sống riêng theo giáo lý, giáo luật của tôn giáo mà mình tin theo. Về mặt tôn giáo, chức năng của họ là truyền bá, thực hành giáo lý, giáo luật, lễ nghi, quản lý tổ chức của tôn giáo, duy trì, củng cố, phát triển tôn giáo, chuyên chăm lo đến đời sống tâm linh của tín đồ.
+
+Trong giai đoạn hiện nay, hàng ngũ chức sắc các tôn giáo ở Việt Nam luôn chịu sự tác động của tình hình chính trị - xã hội trong và ngoài nước, nhưng nhìn chung
+
+[trang 224]
+
+xu hướng tiến bộ trong hàng ngũ chức sắc ngày càng phát triển.
+
+*Thứ năm*, các tôn giáo ở Việt Nam đều có quan hệ với các tổ chức, cá nhân tôn giáo ở nước ngoài.
+
+Nhìn chung, các tôn giáo ở nước ta không chỉ các tôn giáo ngoại nhập, mà cả các tôn giáo nội sinh đều có quan hệ với các tổ chức, cá nhân tôn giáo ở nước ngoài hoặc các tổ chức tôn giáo quốc tế.
+
+Đặc biệt trong giai đoạn hiện nay, Nhà nước Việt Nam đã thiết lập quan hệ ngoại giao với gần 200 quốc gia và vùng lãnh thổ trên toàn thế giới. Đây chính là điều kiện gián tiếp củng cố và phát sinh mối quan hệ giữa các tôn giáo ở Việt Nam với tôn giáo ở các nước trên thế giới. Vì vậy, việc giải quyết vấn đề tôn giáo ở Việt Nam phải đảm bảo kết hợp giữa mở rộng giao lưu hợp tác quốc tế với việc bảo đảm độc lập, chủ quyền, không để cho kẻ địch lợi dụng dân chủ, nhân quyền, tự do tôn giáo để chống phá, can thiệp vào công việc nội bộ của Nhà nước Việt Nam nhằm thực hiện âm mưu "diễn biến hòa bình" đối với nước ta.
+
+##### b) Chính sách của Đảng, Nhà nước Việt Nam đối với tín ngưỡng, tôn giáo hiện nay
+
+- Tín ngưỡng, tôn giáo là nhu cầu tinh thần của một bộ phận nhân dân, đang và sẽ tồn tại cùng dân tộc trong quá trình xây dựng chủ nghĩa xã hội ở nước ta.
+
+Đảng ta khẳng định, tín ngưỡng, tôn giáo sẽ tồn tại lâu dài cùng dân tộc trong quá trình xây dựng chủ nghĩa xã hội. Sự khẳng định đó mang tính khoa học và cách mạng, hoàn toàn khác với cách nhìn nhận chủ quan, tả
+
+[trang 225]
+
+khuynh khi cho rằng có thể bằng các biện pháp hành chính, hay khi trình độ dân trí cao, đời sống vật chất được bảo đảm là có thể làm cho tín ngưỡng, tôn giáo mất đi; hoặc duy tâm, hữu khuynh khi nhìn nhận tín ngưỡng, tôn giáo là hiện tượng bất biến, độc lập, thoát ly với mọi cơ sở kinh tế - xã hội, thể chế chính trị.
+
+Vì vậy, thực hiện nhất quán chính sách tôn trọng và bảo đảm quyền tự do tín ngưỡng, theo hoặc không theo một tín ngưỡng, tôn giáo nào, quyền sinh hoạt tín ngưỡng, tôn giáo bình thường theo đúng pháp luật. Các tôn giáo hoạt động trong khuôn khổ pháp luật, bình đẳng trước pháp luật.
+
+- Đảng, Nhà nước thực hiện nhất quán chính sách đại đoàn kết dân tộc.
+
+Đoàn kết đồng bào theo các tôn giáo khác nhau; đoàn kết đồng bào theo tôn giáo và đồng bào không theo tôn giáo. Nhà nước xã hội chủ nghĩa, một mặt nghiêm cấm mọi hành vi chia rẽ, phân biệt đối xử với công dân vì lý do tín ngưỡng, tôn giáo; mặt khác, thông qua quá trình vận động quần chúng nhân dân tham gia lao động sản xuất, hoạt động xã hội thực tiễn, nâng cao đời sống vật chất, tinh thần, nâng cao trình độ kiến thức... để tăng cường sự đoàn kết vì mục tiêu "dân giàu, nước mạnh, dân chủ, công bằng, văn minh", để cùng nhau xây dựng và bảo vệ Tổ quốc xã hội chủ nghĩa. Mọi công dân không phân biệt tín ngưỡng, tôn giáo đều có quyền và nghĩa vụ xây dựng, bảo vệ Tổ quốc.
+
+Giữ gìn và phát huy những giá trị tích cực của truyền thống thờ cúng tổ tiên, tôn vinh những người có công với
+
+[trang 226]
+
+Tổ quốc và nhân dân. Đồng thời, nghiêm cấm lợi dụng tín ngưỡng, tôn giáo để hoạt động mê tín dị đoan, hoạt động trái pháp luật và chính sách của Nhà nước, kích động chia rẽ nhân dân, chia rẽ các dân tộc, gây rối, xâm phạm an ninh quốc gia.
+
+- Nội dung cốt lõi của công tác tôn giáo là công tác vận động quần chúng.
+
+Công tác vận động quần chúng các tôn giáo nhằm động viên đồng bào nêu cao tinh thần yêu nước, ý thức bảo vệ độc lập và thống nhất đất nước thông qua việc thực hiện tốt các chính sách kinh tế - xã hội, an ninh, quốc phòng, bảo đảm lợi ích vật chất và tinh thần của nhân dân nói chung, trong đó có đồng bào tôn giáo.
+
+Đẩy mạnh phát triển kinh tế, xã hội, văn hóa vùng đồng bào theo các tôn giáo, nhằm nâng cao trình độ, đời sống mọi mặt cho đồng bào, làm cho quần chúng nhân dân nhận thức đầy đủ, đúng đắn đường lối, chính sách của Đảng, pháp luật của Nhà nước, tích cực, nghiêm chỉnh thực hiện đường lối, chính sách, pháp luật, trong đó có chính sách, pháp luật về tín ngưỡng, tôn giáo.
+
+- Công tác tôn giáo là trách nhiệm của cả hệ thống chính trị.
+
+Công tác tôn giáo có liên quan đến nhiều lĩnh vực của đời sống xã hội, các cấp, các ngành, các địa bàn, liên quan đến chính sách đối nội và đối ngoại của Đảng, Nhà nước. Công tác tôn giáo không chỉ liên quan đến quần chúng tín đồ, chức sắc các tôn giáo, mà còn gắn liền với công tác đấu
+
+[trang 227]
+
+tranh với âm mưu, hoạt động lợi dụng tôn giáo gây phương hại đến lợi ích Tổ quốc, dân tộc. Làm tốt công tác tôn giáo là trách nhiệm của toàn bộ hệ thống chính trị, bao gồm hệ thống tổ chức đảng, chính quyền, Mặt trận Tổ quốc, đoàn thể chính trị do Đảng lãnh đạo. Cần củng cố và kiện toàn tổ chức bộ máy và đội ngũ cán bộ chuyên trách làm công tác tôn giáo các cấp. Tăng cường công tác quản lý nhà nước đối với các tôn giáo và đấu tranh với hoạt động lợi dụng tôn giáo gây phương hại đến lợi ích Tổ quốc và dân tộc.
+
+- Vấn đề theo đạo và truyền đạo. Mọi tín đồ đều có quyền tự do hành đạo tại gia đình và cơ sở thờ tự hợp pháp theo quy định của pháp luật. Các tổ chức tôn giáo được Nhà nước thừa nhận được hoạt động theo pháp luật và được pháp luật bảo hộ. Việc theo đạo, truyền đạo cũng như mọi hoạt động tôn giáo khác đều phải tuân thủ Hiến pháp và pháp luật; không được lợi dụng tôn giáo để tuyên truyền tà đạo, hoạt động mê tín dị đoan, không được ép buộc người dân theo đạo. Nghiêm cấm các tổ chức truyền đạo, người truyền đạo và các cách thức truyền đạo trái phép, vi phạm các quy định của Hiến pháp và pháp luật.
+
+### III- QUAN HỆ DÂN TỘC VÀ TÔN GIÁO Ở VIỆT NAM
+
+#### 1. Đặc điểm quan hệ dân tộc và tôn giáo ở Việt Nam
+
+Quan hệ dân tộc và tôn giáo là sự liên kết, tác động qua lại, chi phối lẫn nhau giữa dân tộc với tôn giáo trong
+
+[trang 228]
+
+nội bộ một quốc gia, hoặc giữa các quốc gia với nhau trên mọi lĩnh vực của đời sống xã hội. Việc giải quyết mối quan hệ này như thế nào có ảnh hưởng lớn đến sự ổn định chính trị và phát triển bền vững của mỗi quốc gia, nhất là các quốc gia đa dân tộc và đa tôn giáo. Quan hệ dân tộc và tôn giáo được biểu hiện dưới nhiều cấp độ, hình thức và phạm vi khác nhau. Ở nước ta hiện nay, mối quan hệ này có những đặc điểm mang tính đặc thù cơ bản sau:
+
+##### a) Việt Nam là một quốc gia đa dân tộc, đa tôn giáo; quan hệ dân tộc và tôn giáo được thiết lập và củng cố trên cơ sở cộng đồng quốc gia - dân tộc thống nhất
+
+Trong lịch sử cũng như hiện tại, các tôn giáo ở Việt Nam có truyền thống gắn bó chặt chẽ với dân tộc, đồng hành cùng dân tộc, gắn đạo với đời. Mọi công dân Việt Nam không phân biệt dân tộc, tín ngưỡng và tôn giáo nhìn chung đều đoàn kết, ý thức rõ về cội nguồn, về một quốc gia - dân tộc thống nhất cùng chung sức xây dựng và bảo vệ Tổ quốc.
+
+Trong thời gian gần đây, ở nhiều nước, nhiều nơi trên thế giới nổi lên xu hướng xung đột dân tộc, tôn giáo gây mất ổn định chính trị - xã hội, thậm chí chiến tranh nội chiến bùng phát. Trong bối cảnh đó, ở Việt Nam, trong lịch sử phát triển của dân tộc, nhất là từ sau khi đất nước giành được độc lập dân tộc, dưới sự lãnh đạo của Đảng Cộng sản Việt Nam, quan hệ dân tộc và tôn giáo luôn được coi trọng và nhìn chung được giải quyết khá tốt, không
+
+[trang 229]
+
+dẫn đến những xung đột lớn trong nội bộ quốc gia. Mặc dù vậy, trong triển khai hoạt động thực tiễn, do nhận thức hoặc do thực hiện chưa đúng các chủ trương, đường lối, chính sách của Đảng và Nhà nước về dân tộc và tín ngưỡng, tôn giáo, nên có nơi có lúc quan hệ này vẫn nảy sinh những mâu thuẫn cần phải nhận diện rõ và đánh giá một cách khách quan, khoa học để tiếp tục tăng cường giải quyết tốt mối quan hệ dân tộc và tôn giáo nhằm một mặt, phát huy những giá trị tốt đẹp của các dân tộc và những giá trị đạo đức, văn hóa của các tôn giáo, tín ngưỡng, góp phần làm phong phú thêm nền văn hóa Việt Nam; mặt khác, đảm bảo sự ổn định chính trị quốc gia.
+
+##### b) Quan hệ dân tộc và tôn giáo ở Việt Nam chịu sự chi phối mạnh mẽ bởi tín ngưỡng truyền thống
+
+Ở Việt Nam, tín ngưỡng truyền thống biểu hiện ở nhiều cấp độ, trên phạm vi cả nước, diễn ra trong mọi gia đình, dòng họ không phân biệt dân tộc, tôn giáo, trong đó, tín ngưỡng thờ cúng tổ tiên, thờ anh hùng dân tộc, những người có công với dân, với nước có ý nghĩa đặc biệt quan trọng trong đời sống tâm linh của người Việt.
+
+Ở cấp độ gia đình, thờ cúng tổ tiên là hoạt động phổ biến, thậm chí trở thành truyền thống, nét đẹp văn hóa của mỗi gia đình, dòng họ; đồng thời là sợi dây kết dính các thành viên trong dòng họ, dòng tộc, kể cả họ có thể sinh sống ở mọi miền của đất nước.
+
+Ở cấp độ làng, xã, hầu hết các làng xã của người Việt đều thờ cúng Thành hoàng làng, thần làng rất đa dạng.
+
+[trang 230]
+
+Đa phần đó là các vị có công gây dựng làng xã, dạy nghề cho dân làng, hoặc là người có công với nước được sinh ra tại làng xã đó, v.v.. Chính hoạt động tín ngưỡng này trở thành sợi dây gắn kết chặt chẽ các thành viên trong gia đình với làng, xã, gắn kết các làng, xã với nhau và với triều đình trung ương - đại diện cho cộng đồng quốc gia dân tộc thống nhất.
+
+Ở cấp độ quốc gia, đỉnh cao của sự hội tụ đoàn kết thống nhất cộng đồng dân tộc của người Việt Nam được biểu hiện dưới dạng tín ngưỡng, tôn giáo, đó là người Việt Nam dù sinh sống ở bất cứ nơi đâu trên mọi miền của Tổ quốc hay định cư ở nước ngoài, dù có khác nhau về ngôn ngữ, về tín ngưỡng, tôn giáo, thế hệ... thì đều hướng về cội nguồn dân tộc chung - nơi các Vua Hùng đã có công dựng nước - thực hiện các nghi lễ tế tự, thờ cúng thể hiện lòng tôn kính, niềm tự hào dân tộc về con Lạc cháu Hồng, về nghĩa "đồng bào" đoàn kết gắn bó chặt chẽ trong một cộng đồng quốc gia - dân tộc thống nhất.
+
+Như vậy, chính tín ngưỡng truyền thống đã làm nên nét đặc thù trong quan hệ dân tộc và tôn giáo ở Việt Nam, thậm chí, chi phối mạnh mẽ, làm biến đổi các nền văn hóa, các tôn giáo bên ngoài khi du nhập vào Việt Nam. Việt Nam là nơi hội tụ của nhiều nền văn hóa trên thế giới và phần lớn các tôn giáo đều là tôn giáo ngoại sinh. Các nền văn hóa hay các tôn giáo từ bên ngoài du nhập vào muốn "cắm rễ", phát triển được trên lãnh thổ Việt Nam đều phải biến đổi ít nhiều để phù hợp với truyền thống dân tộc, với nền tảng văn hóa bản địa,
+
+[trang 231]
+
+trong đó có sự chi phối của tín ngưỡng truyền thống, nhất là tín ngưỡng thờ cúng tổ tiên. Sự biến đổi của Nho giáo, Phật giáo, Đạo giáo, Công giáo khi vào Việt Nam là những ví dụ điển hình.
+
+##### c) Các hiện tượng tôn giáo mới có xu hướng phát triển mạnh tác động đến đời sống cộng đồng và khối đại đoàn kết toàn dân tộc
+
+Từ khi đất nước thực hiện đường lối đổi mới, phát triển nền kinh tế thị trường, tiến hành hội nhập quốc tế sâu rộng thì đời sống tín ngưỡng, tôn giáo của người Việt Nam phát triển, trong đó xuất hiện một số hiện tượng tôn giáo mới như Long Hoa Di Lặc, Tin Lành Vàng Chứ, Thanh Hải vô thượng sư, Tiên Rồng...; các tổ chức đội lốt tôn giáo như Tin Lành Đềga, Hà Mòn ở Tây Nguyên. Tính chất mê tín của các hiện tượng tôn giáo mới khá rõ. Thậm chí, một số nhóm lợi dụng niềm tin tôn giáo để tuyên truyền những nội dung gây hoang mang trong quần chúng, hay thực hành những nghi lễ phản văn hóa, truyền đạo trái phép, phát tán các tài liệu có nội dung xuyên tạc đường lối, chính sách của Đảng và Nhà nước, làm phương hại đến mối quan hệ dân tộc và tôn giáo, làm ảnh hưởng đến khối đại đoàn kết dân tộc, đoàn kết tôn giáo; gây ra nhiều vấn đề phức tạp và tác động tiêu cực đến tình hình an ninh chính trị, trật tự an toàn xã hội ở nhiều vùng dân tộc. Do vậy, các hiện tượng tôn giáo mới phát triển mạnh hiện nay cần phải được quản lý tốt nhằm đảm bảo sự ổn định chính trị quốc gia và đảm bảo giải quyết tốt mối quan hệ dân tộc và tôn giáo ở nước ta.
+
+[trang 232]
+
+#### 2. Định hướng giải quyết mối quan hệ dân tộc và tôn giáo ở Việt Nam hiện nay
+
+Để giải quyết tốt mối quan hệ dân tộc và tôn giáo, Đảng Cộng sản Việt Nam yêu cầu "nghiêm trị những âm mưu, hành động chia rẽ, phá hoại khối đại đoàn kết dân tộc... Đồng thời chủ động phòng ngừa, kiên quyết đấu tranh với những hành vi lợi dụng tín ngưỡng, tôn giáo để chia rẽ, phá hoại khối đại đoàn kết dân tộc hoặc những hoạt động tín ngưỡng, tôn giáo trái quy định của pháp luật"[^6].
+
+Trên cơ sở nhận diện rõ các đặc điểm của quan hệ dân tộc và tôn giáo ở nước ta hiện nay, quá trình giải quyết mối quan hệ này cần quán triệt một số quan điểm sau:
+
+##### a) Tăng cường mối quan hệ tốt đẹp giữa dân tộc và tôn giáo, củng cố khối đại đoàn kết toàn dân tộc và đoàn kết tôn giáo là vấn đề chiến lược, cơ bản, lâu dài và cấp bách của cách mạng Việt Nam
+
+Trong lịch sử phát triển, từ khi nước nhà độc lập, Đảng ta luôn khẳng định: xây dựng, củng cố khối đại đoàn kết toàn dân tộc và đoàn kết tôn giáo là vấn đề chiến lược, cơ bản, lâu dài và cấp bách của cách mạng Việt Nam; phát huy những giá trị văn hóa truyền thống của các dân tộc, đồng thời "phát huy những giá trị văn
+
+[^6]: Đảng Cộng sản Việt Nam: Văn kiện Đại hội đại biểu toàn quốc lần thứ XII, Sđd, tr.165.
+
+[trang 233]
+
+hóa, đạo đức tốt đẹp và nguồn lực của tôn giáo cho quá trình phát triển đất nước"[^7]. Hiện nay, sự nghiệp đổi mới toàn diện đất nước theo định hướng xã hội chủ nghĩa của Việt Nam càng cần có một sự đoàn kết rộng rãi của khối đại đoàn kết toàn dân tộc, đoàn kết tôn giáo và tăng cường mối quan hệ tốt đẹp giữa dân tộc và tôn giáo... để tạo động lực to lớn thúc đẩy công cuộc kiến tạo đất nước phồn vinh, phát triển bền vững và bảo vệ nền độc lập, chủ quyền của quốc gia. Với yêu cầu đó, xã hội xã hội chủ nghĩa ở nước ta phải luôn là môi trường, điều kiện thuận lợi nhất cho tất cả các dân tộc, các tôn giáo được tự do phát triển theo đúng quy định của pháp luật, phát huy mọi nguồn lực đóng góp ngày càng nhiều cho sự nghiệp đổi mới xây dựng chủ nghĩa xã hội.
+
+Thực tiễn này cũng đặt ra yêu cầu: ở mỗi giai đoạn lịch sử, việc giải quyết mối quan hệ dân tộc và tôn giáo cần có cách tiếp cận và lựa chọn ưu tiên giải quyết phù hợp với bối cảnh, tình hình của giai đoạn đó; đồng thời phải luôn nhận diện đầy đủ và giải quyết một cách hiệu quả những vấn đề mới nảy sinh trong mối quan hệ dân tộc và tôn giáo.
+
+##### b) Giải quyết mối quan hệ dân tộc và tôn giáo phải đặt trong mối quan hệ với cộng đồng quốc gia - dân tộc thống nhất, theo định hướng xã hội chủ nghĩa
+
+[^7]: Chỉ thị số 18-CT/TW ngày 10/01/2018 của Bộ Chính trị, về tiếp tục thực hiện Nghị quyết số 26-NQ/TW của Ban Chấp hành Trung ương khóa IX về công tác tôn giáo trong tình hình mới.
+
+[trang 234]
+
+Tôn giáo và dân tộc là hai vấn đề rất nhạy cảm. Những vấn đề liên quan đến dân tộc, tôn giáo nếu không được giải quyết một cách thỏa đáng sẽ dẫn tới nguy cơ gây mất ổn định chính trị, xã hội, dễ tạo cớ cho các thế lực thù địch bên ngoài can thiệp vào công việc nội bộ của đất nước. Vì vậy, để giải quyết tốt mối quan hệ dân tộc và tôn giáo, cần phải tuân thủ nguyên tắc: giải quyết vấn đề tôn giáo trên cơ sở vấn đề dân tộc, tuyệt đối không được lợi dụng vấn đề tôn giáo đòi ly khai dân tộc, hay chia rẽ khối đại đoàn kết dân tộc làm tổn hại đến lợi ích quốc gia - dân tộc, mà phải đảm bảo giữ vững độc lập chủ quyền, thống nhất đất nước. Luật tín ngưỡng, tôn giáo năm 2016 quy định: "Tập hợp đồng bào theo tín ngưỡng, tôn giáo và đồng bào không theo tín ngưỡng, tôn giáo xây dựng khối đại đoàn kết toàn dân tộc, xây dựng và bảo vệ Tổ quốc". Thực hiện quan điểm có tính nguyên tắc này nhằm đảm bảo sự ổn định chính trị, trật tự an toàn xã hội ở mỗi địa bàn, nhất là ở vùng dân tộc thiểu số, vùng có đạo cũng như đảm bảo sự thống nhất toàn vẹn lãnh thổ trong một cộng đồng quốc gia - dân tộc thống nhất theo định hướng xã hội chủ nghĩa.
+
+##### c) Giải quyết mối quan hệ dân tộc và tôn giáo phải bảo đảm quyền tự do tín ngưỡng, tôn giáo của nhân dân, quyền của các dân tộc thiểu số, đồng thời kiên quyết đấu tranh chống lợi dụng vấn đề dân tộc, tôn giáo vào mục đích chính trị
+
+Trong các mối quan hệ xã hội thì quan hệ dân tộc, tôn giáo và nhân quyền là những quan hệ phức tạp, giữa chúng
+
+[trang 235]
+
+có sự tác động tương hỗ, thống nhất với nhau, đồng thời quy định lẫn nhau. Do vậy, việc giải quyết tốt mối quan hệ này là nhằm đảm bảo cho con người những quyền cơ bản về kinh tế, chính trị, văn hóa, xã hội và tín ngưỡng, tôn giáo.
+
+Song quyền phải gắn liền với pháp luật, do vậy đảm bảo quyền của các dân tộc, quyền tự do tôn giáo, tín ngưỡng cũng chính là đảm bảo thực hiện những nội dung cốt yếu của quyền con người trong khuôn khổ của pháp luật.
+
+Tăng cường củng cố an ninh quốc phòng, làm tốt công tác vận động quần chúng, đẩy mạnh tuyên truyền và thực hiện các chương trình phòng, chống tội phạm, giữ gìn an ninh chính trị, trật tự an toàn xã hội. Xây dựng quy chế phối hợp giữa lực lượng công an, quân đội với các đoàn thể trong công tác dân tộc, tôn giáo để nắm chắc tình hình, quản lý chặt đối tượng, sẵn sàng các phương án chủ động đấu tranh ngăn chặn các hoạt động phá hoại của các thế lực thù địch. Tranh thủ, vận động chức sắc, chức việc, nhà tu hành và tín đồ các tôn giáo xây dựng cuộc sống "tốt đời, đẹp đạo".
+
+Chủ động vạch trần những âm mưu thâm độc của các thế lực thù địch trong việc lợi dụng vấn đề dân tộc và tôn giáo, hoặc kết hợp vấn đề dân tộc với vấn đề tôn giáo nhằm "tôn giáo hóa dân tộc" của chúng. Kiên quyết đấu tranh, xử lý các tổ chức, các đối tượng có các hoạt động vi phạm pháp luật truyền đạo trái phép, hoặc lợi dụng vấn đề dân tộc, tôn giáo và nhân quyền để kích động quần chúng, chia rẽ tình đoàn kết dân tộc, đoàn kết tôn giáo.
+
+[trang 236]
+
+Tóm lại, nhận diện rõ những đặc điểm của quan hệ dân tộc, tôn giáo ở nước ta hiện nay để một mặt tiếp tục phát huy hiệu quả và tăng cường mối quan hệ tốt đẹp này nhằm tạo sự đồng thuận, đoàn kết dân tộc, đoàn kết tôn giáo, xây dựng một nước Việt Nam dân giàu, nước mạnh, dân chủ, công bằng, văn minh. Mặt khác, chủ động phòng ngừa, ngăn chặn mọi tác động tiêu cực và kiên quyết đấu tranh chống mọi hành động lợi dụng quan hệ dân tộc và tôn giáo gây mất trật tự an toàn xã hội, gây mất ổn định chính trị và phá hoại sự nghiệp xây dựng và bảo vệ Tổ quốc xã hội chủ nghĩa ở nước ta hiện nay.
+
+## C. CÂU HỎI ÔN TẬP
+
+1. Phân tích quan điểm của chủ nghĩa Mác - Lênin về dân tộc và giải quyết vấn đề dân tộc trong cách mạng xã hội chủ nghĩa?
+
+2. Trình bày những quan điểm của Đảng, chính sách, pháp luật của Nhà nước Việt Nam về dân tộc và giải quyết vấn đề dân tộc trong thời kỳ quá độ lên chủ nghĩa xã hội, xây dựng và bảo vệ Tổ quốc xã hội chủ nghĩa?
+
+3. Phân tích, làm rõ quan điểm của chủ nghĩa Mác - Lênin về tôn giáo và giải quyết vấn đề tôn giáo trong cách mạng xã hội chủ nghĩa?
+
+4. Trình bày những quan điểm của Đảng, chính sách, pháp luật của Nhà nước Việt Nam về tôn giáo và giải quyết
+
+[trang 237]
+
+vấn đề tôn giáo trong thời kỳ quá độ lên chủ nghĩa xã hội, xây dựng và bảo vệ Tổ quốc xã hội chủ nghĩa?
+
+5. Phân tích mối quan hệ giữa dân tộc với tôn giáo ở Việt Nam và ảnh hưởng của mối quan hệ đó đến sự ổn định chính trị - xã hội của đất nước, đến độc lập, chủ quyền của Tổ quốc? Trách nhiệm cá nhân?

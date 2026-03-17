@@ -43,6 +43,19 @@ pdftotext "2.GIAO TRINH CHXHKH KHONG CHUYEN.pdf" output.txt
 - **Cuối kỳ (final exam): 50%** — Essay, 60 min, paper materials allowed, no internet devices
 - **Group presentation:** Video 7–15 min, due Week 8. Rubric: format 15% + theory 35% + application 50%
 
+## Group Presentation (Nhóm 6)
+
+- **Topic:** Chủ đề 6 - Xây dựng khối đại đoàn kết toàn dân tộc
+- **Management spreadsheet:** `CNXHKH - Quản lý nhóm.xlsx`
+- **Members (9):** Nhân (nhóm trưởng), Bùi Huỳnh Nhi, Đào Thục Nhi, Nguyễn Hồng Châu Nhi, Trần Thị Phụng Nhi, Hoàng Thị Tố Như, Nguyễn Đình Ý Như, Nguyễn Phạm Quỳnh Như, Ngô Văn Phú
+- **Left group:** Lê Phương Quỳnh Như (no longer a member)
+
+### Task breakdown
+- Cơ sở lý luận (35%): Thục Nhi (T1-1), Châu Nhi (T1-2), Phụng Nhi (T1-3)
+- Thực tiễn VN (14%): Huỳnh Nhi (T2-1), Phú (T2-2)
+- Trách nhiệm SV (50%): Quỳnh Như (T3-1), Tố Như (T3-2), Ý Như (T3-3), Nhân (T3-4)
+- Video production (15%): cả nhóm (SX-1 to SX-5)
+
 ## Language
 
 All course content is in **Vietnamese**. Preserve Vietnamese diacritics exactly when extracting or editing markdown files.
