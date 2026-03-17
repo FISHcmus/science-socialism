@@ -1,0 +1,5 @@
+Hiểu lý thuyết về đoàn kết dân tộc là cần thiết, nhưng quan trọng hơn là hành động. Sinh viên có thể góp phần xây dựng khối đại đoàn kết thông qua hai việc: tuyên truyền chính sách và tham gia tình nguyện.
+
+Về tuyên truyền, nhiều đồng bào dân tộc thiểu số ở vùng sâu vùng xa chưa nắm rõ các chương trình hỗ trợ của Nhà nước. Chẳng hạn, Chương trình mục tiêu quốc gia phát triển vùng DTTS giai đoạn 2021-2030 đã hỗ trợ đất ở, nhà ở và nước sinh hoạt cho hàng nghìn hộ dân tại Hà Giang, Cao Bằng, Kon Tum. Sinh viên có thể giúp lan tỏa thông tin này qua mạng xã hội hoặc trong các đợt tình nguyện, để bà con biết quyền lợi mà mình được hưởng.
+
+Về tình nguyện, sinh viên ĐHKHTN đã có những đóng góp thiết thực. Trong các chiến dịch Mùa hè xanh tại Đắk Nông, Kon Tum, Trà Vinh, sinh viên khoa CNTT tổ chức lớp phổ cập tin học, hướng dẫn các em nhỏ DTTS sử dụng Internet để tìm tài liệu học tập. Sinh viên khoa Môi trường thì khảo sát nguồn nước, hướng dẫn bà con xử lý rác thải và xây hệ thống lọc nước đơn giản. Đây chính là cách "lý thuyết đi đôi với thực hành" - mang kiến thức chuyên môn phục vụ cộng đồng, thu hẹp khoảng cách giữa các vùng miền.
