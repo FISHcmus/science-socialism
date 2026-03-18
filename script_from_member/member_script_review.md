@@ -145,3 +145,21 @@ Mục tiêu: mỗi thành viên viết kịch bản ~216 từ cho video thuyết
 | Nguyễn Đình Ý Như | 1,700 | ~216 | 687% | Rất cao | 2 bảng so sánh, trùng lặp Phụng Nhi, scope phi thực tế |
 
 **Nhận xét chung:** Cả 7 bài đều mang dấu hiệu sử dụng AI (ChatGPT) rõ ràng: cấu trúc đánh số, format slide/luận văn, không có giọng cá nhân, vượt quá yêu cầu số từ từ 2-7 lần. Các lỗi phổ biến: (1) không đọc yêu cầu số từ, (2) paste nguyên output AI mà không chỉnh sửa, (3) không phối hợp nội dung với thành viên khác dẫn đến trùng lặp (Phụng Nhi - Ý Như - Phú về tôn giáo; Châu Nhi - Huỳnh Nhi về đặc điểm dân tộc), (4) dùng format bảng/Q&A/trích trang không phù hợp kịch bản video.
+
+---
+
+## Chỉnh sửa sau review
+
+### Loại bỏ ngôn ngữ tuyên truyền
+
+Trong quá trình rút gọn và chỉnh sửa kịch bản, nhóm trưởng đã loại bỏ toàn bộ ngôn ngữ mang tính tuyên truyền nhà nước, thay bằng giọng văn học thuật trung lập:
+
+| Nguyên bản | Sửa thành | File |
+|---|---|---|
+| "các thế lực thù địch thường lợi dụng... để phá hoại an ninh chính trị" | "dễ nảy sinh mâu thuẫn, hiểu lầm giữa các cộng đồng" + chênh lệch phát triển vùng miền | huynhnhi, video_script |
+| "đánh thắng mọi kẻ thù xâm lược" | "giúp giành và giữ vững độc lập" | huynhnhi, video_script |
+| "cần cảnh giác trước việc các thế lực đế quốc lợi dụng chiêu bài" | "quyền tự quyết cần tôn trọng chủ quyền và toàn vẹn lãnh thổ" | thucnhi, video_script |
+| "các thế lực lợi dụng tôn giáo chống lại sự nghiệp cách mạng" | "tôn giáo bị lợi dụng cho mục đích chính trị, gây ảnh hưởng đến ổn định xã hội" | phungnhi, video_script |
+| Toàn bộ section Tố Như: "thế lực thù địch", "phản động", "xuyên tạc", "kích động", "chiêu trò", "vạch trần" | Reframe thành "Kỹ năng kiểm chứng thông tin" - media literacy, responsible digital citizenship | tonhu, video_script |
+
+**Nguyên tắc:** Giữ nội dung học thuật từ giáo trình Mác - Lênin, nhưng trình bày với giọng văn trung lập, tập trung vào giá trị tích cực (đoàn kết, hiểu biết, gắn kết cộng đồng) thay vì đối đầu và thù địch.
