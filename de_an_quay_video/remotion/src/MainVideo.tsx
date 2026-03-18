@@ -31,7 +31,7 @@ const SECTION_COMPONENTS: Record<string, React.FC> = {
 
 export const MainVideo: React.FC = () => {
   return (
-    <AbsoluteFill style={{ backgroundColor: COLORS.navy }}>
+    <AbsoluteFill style={{ backgroundColor: COLORS.darkest }}>
       <Background3D accentColor={COLORS.gold} />
       {SECTIONS.map((section) => {
         const Component = SECTION_COMPONENTS[section.id];

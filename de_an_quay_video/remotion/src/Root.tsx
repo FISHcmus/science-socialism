@@ -1,5 +1,8 @@
 import { Composition } from "remotion";
+import { loadFont } from "@remotion/google-fonts/CormorantGaramond";
 import { MainVideo } from "./MainVideo";
+
+loadFont();
 
 export const RemotionRoot: React.FC = () => {
   return (
