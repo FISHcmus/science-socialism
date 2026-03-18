@@ -1,147 +1,77 @@
 import { AbsoluteFill, interpolate, useCurrentFrame, spring, useVideoConfig } from "remotion";
-import { COLORS, FONT, MEMBER_COLORS, TEXT_SHADOW } from "../../constants";
-import { SectionTitle, TypewriterText, MemberPlaceholder, Overlay } from "../ds";
+import { COLORS, FONT, TEXT_SHADOW } from "../../constants";
+import { SectionTitle, ArtDecoImage, MemberPiP, CitationFooter } from "../ds";
 
-// Beat 1: 0-90     — SectionTitle "Ba nguyên tắc cơ bản"
-// Beat 2: 90-2100  — Three principle cards appearing sequentially
-// Beat 3: 2100-2700 — MemberPlaceholder "Thục Nhi" + Overlay
+// Beat 1: 0-90   — SectionTitle "Cương lĩnh dân tộc của CN Mác - Lênin" (full screen)
+// Beat 2: 90-2700 — Content (720px left) + MemberPiP (240px right)
 
 const PRINCIPLES = [
   {
-    title: "Đoàn kết là sức mạnh",
-    description: "Tập hợp mọi lực lượng có thể tập hợp",
-    detail: "Đoàn kết toàn dân tộc là nguồn gốc sức mạnh và là nhân tố quyết định mọi thắng lợi của cách mạng Việt Nam.",
+    title: "Các dân tộc hoàn toàn bình đẳng",
+    detail: "Mọi dân tộc đều có quyền và nghĩa vụ ngang nhau trên mọi lĩnh vực, không phân biệt lớn nhỏ, trình độ phát triển.",
+    image: "Đồng bào các dân tộc thiểu số Việt Nam",
     appearAt: 90,
   },
   {
-    title: "Lấy liên minh công-nông-trí thức làm nền tảng",
-    description: "Cơ sở vững chắc cho khối đại đoàn kết",
-    detail: "Liên minh giai cấp công nhân, nông dân và tầng lớp trí thức là nền tảng của Mặt trận dân tộc thống nhất.",
+    title: "Các dân tộc có quyền tự quyết",
+    detail: "Quyền tự quyết định chế độ chính trị, con đường phát triển của mình. HCM: con đường cách mạng vô sản.",
+    image: "Trích dẫn Hồ Chí Minh về con đường cách mạng",
     appearAt: 690,
   },
   {
-    title: "Đoàn kết lâu dài, chặt chẽ, đoàn kết thật sự",
-    description: "Không phải đoàn kết hình thức",
-    detail: "Đoàn kết phải xuất phát từ lợi ích chung, được xây dựng trên nền tảng có lý, có tình, bền vững qua thời gian.",
+    title: "Liên hiệp công nhân tất cả các dân tộc",
+    detail: "Gắn kết chặt chẽ giải phóng dân tộc với giải phóng giai cấp, phản ánh bản chất quốc tế của phong trào công nhân.",
+    image: "Đoàn kết công nhân - nông dân các dân tộc",
     appearAt: 1290,
   },
 ];
 
-interface PrincipleCardProps {
-  title: string;
-  description: string;
-  detail: string;
-  appearAt: number;
-  accentColor: string;
-}
-
-const PrincipleCard: React.FC<PrincipleCardProps> = ({
-  title,
-  description,
-  detail,
-  appearAt,
-  accentColor,
-}) => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
-  const localFrame = frame - appearAt;
-
-  if (localFrame < 0) return null;
-
-  const cardSpring = spring({ frame: localFrame, fps, config: { damping: 16, stiffness: 90 } });
-  const translateX = interpolate(cardSpring, [0, 1], [-80, 0]);
-  const opacity = interpolate(cardSpring, [0, 1], [0, 1]);
-
-  const typeStartFrame = appearAt + 15;
-  const speed = 2;
-  const visibleChars = Math.min(Math.floor((frame - typeStartFrame) / speed), detail.length);
-  const cursorVisible = frame % 30 < 15;
-
-  return (
-    <div
-      style={{
-        transform: `translateX(${translateX}px)`,
-        opacity,
-        backgroundColor: "rgba(10, 10, 15, 0.88)",
-        border: `3px solid ${COLORS.gold}`,
-        borderLeft: `6px solid ${accentColor}`,
-        borderRadius: 16,
-        padding: "32px 40px",
-        marginBottom: 28,
-        display: "flex",
-        alignItems: "flex-start",
-        gap: 24,
-      }}
-    >
-      <div style={{ flex: 1 }}>
-        <div
-          style={{
-            fontSize: 32,
-            fontWeight: "bold",
-            color: COLORS.white,
-            fontFamily: FONT,
-            marginBottom: 10,
-            lineHeight: 1.3,
-            textShadow: TEXT_SHADOW,
-          }}
-        >
-          {title}
-        </div>
-        <div
-          style={{
-            fontSize: 22,
-            color: COLORS.gold,
-            fontFamily: FONT,
-            marginBottom: 12,
-            fontStyle: "italic",
-            textShadow: TEXT_SHADOW,
-          }}
-        >
-          {description}
-        </div>
-        <TypewriterText
-          text={detail}
-          visibleChars={visibleChars}
-          fontSize={24}
-          color={COLORS.body}
-          showCursor={false}
-          cursorVisible={cursorVisible}
-        />
-      </div>
-    </div>
-  );
-};
 
 export const Section11ThucNhi: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // Beat 1: SectionTitle animation values
+  // Beat 1: SectionTitle animation
   const titleSpring = spring({ frame, fps, config: { damping: 18, stiffness: 80 } });
   const titleOpacity = interpolate(titleSpring, [0, 1], [0, 1]);
   const titleTranslateY = interpolate(titleSpring, [0, 1], [40, 0]);
   const titleAccentWidth = interpolate(titleSpring, [0, 1], [0, 80]);
 
-  // Beat 3: MemberPlaceholder animation values (showFrom=2100)
-  const memberLocalFrame = Math.max(0, frame - 2100);
-  const memberScale = spring({ frame: memberLocalFrame, fps, config: { damping: 16, stiffness: 80 } });
-  const memberOpacity = interpolate(memberLocalFrame, [0, 20], [0, 1], {
+  // Beat 2: shared animation values
+  const beat2LocalFrame = Math.max(0, frame - 90);
+  const ringAngle = (beat2LocalFrame / fps) * 80;
+
+  const headerOpacity = interpolate(frame, [90, 110], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
 
-  const memberRingAngle = (memberLocalFrame / fps) * 80;
-
-  // Beat 3: Overlay opacity
-  const overlayOpacity = interpolate(frame, [2100, 2120], [0, 0.65], {
+  const pipOpacity = interpolate(frame, [90, 120], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
+
+  const citationOpacity = interpolate(frame, [1800, 1860], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+
+  // Image animations (appear after all 3 cards)
+  const img1Opacity = interpolate(frame, [1500, 1530], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const img1Sweep = Math.max(0, Math.min(1, (frame - 1535) / 30));
+
+  const img2Opacity = interpolate(frame, [1620, 1650], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const img2Sweep = Math.max(0, Math.min(1, (frame - 1655) / 30));
 
   return (
     <AbsoluteFill>
-
-      {/* Beat 1: SectionTitle (frames 0-90) */}
+      {/* Beat 1: SectionTitle (frames 0-90) — full screen */}
       {frame < 90 && (
         <AbsoluteFill
           style={{
@@ -152,8 +82,8 @@ export const Section11ThucNhi: React.FC = () => {
           }}
         >
           <SectionTitle
-            title="Ba nguyên tắc cơ bản"
-            subtitle="của đại đoàn kết dân tộc"
+            title="Cương lĩnh dân tộc"
+            subtitle="của chủ nghĩa Mác - Lênin"
             sectionNumber="PHẦN 1.1"
             opacity={titleOpacity}
             translateY={titleTranslateY}
@@ -162,88 +92,143 @@ export const Section11ThucNhi: React.FC = () => {
         </AbsoluteFill>
       )}
 
-      {/* Beat 2: Principle cards (frames 90-2100) */}
-      {frame >= 90 && frame < 2100 && (
-        <AbsoluteFill
-          style={{
-            padding: "60px 100px",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "flex-start",
-          }}
-        >
-          {/* Header */}
+      {/* Beat 2: Content (1440px) + MemberPiP (480px) — frames 90-2700 */}
+      {frame >= 90 && (
+        <AbsoluteFill style={{ display: "flex", flexDirection: "row" }}>
+          {/* Left: Content area */}
           <div
             style={{
-              marginBottom: 40,
-              opacity: interpolate(frame, [90, 110], [0, 1], {
-                extrapolateLeft: "clamp",
-                extrapolateRight: "clamp",
-              }),
+              width: 1440,
+              height: 1080,
+              padding: "60px 60px 40px 80px",
+              display: "flex",
+              flexDirection: "column",
+              overflow: "hidden",
             }}
           >
-            <div
-              style={{
-                fontSize: 24,
-                color: COLORS.gold,
-                fontFamily: FONT,
-                letterSpacing: 3,
-                marginBottom: 10,
-                textShadow: TEXT_SHADOW,
-              }}
-            >
-              PHẦN 1.1
+            {/* Header */}
+            <div style={{ marginBottom: 24, opacity: headerOpacity }}>
+              <div
+                style={{
+                  fontSize: 32,
+                  color: COLORS.gold,
+                  fontFamily: FONT,
+                  letterSpacing: 4,
+                  marginBottom: 8,
+                  textShadow: TEXT_SHADOW,
+                }}
+              >
+                PHẦN 1.1
+              </div>
+              <h2
+                style={{
+                  fontSize: 52,
+                  color: COLORS.white,
+                  fontFamily: FONT,
+                  fontWeight: "bold",
+                  margin: 0,
+                  lineHeight: 1.2,
+                  textShadow: TEXT_SHADOW,
+                }}
+              >
+                Cương lĩnh dân tộc của chủ nghĩa Mác - Lênin
+              </h2>
+              <div style={{ width: 100, height: 4, backgroundColor: COLORS.gold, marginTop: 16 }} />
             </div>
-            <h2
-              style={{
-                fontSize: 50,
-                color: COLORS.white,
-                fontFamily: FONT,
-                fontWeight: "bold",
-                margin: 0,
-                lineHeight: 1.3,
-                textShadow: TEXT_SHADOW,
-              }}
-            >
-              Ba nguyên tắc cơ bản của đại đoàn kết dân tộc
-            </h2>
-            <div
-              style={{
-                width: 80,
-                height: 3,
-                backgroundColor: COLORS.gold,
-                marginTop: 16,
-              }}
-            />
+
+            {/* 3 principle cards */}
+            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+              {PRINCIPLES.map((p, i) => {
+                const localFrame = frame - p.appearAt;
+                if (localFrame < 0) return null;
+
+                const cardSpring = spring({ frame: localFrame, fps, config: { damping: 16, stiffness: 90 } });
+                const translateX = interpolate(cardSpring, [0, 1], [-80, 0]);
+                const cardOpacity = interpolate(cardSpring, [0, 1], [0, 1]);
+
+                return (
+                  <div
+                    key={i}
+                    style={{
+                      transform: `translateX(${translateX}px)`,
+                      opacity: cardOpacity,
+                      backgroundColor: "rgba(10, 10, 15, 0.88)",
+                      border: `3px solid ${COLORS.gold}`,
+                      borderLeft: `6px solid ${COLORS.gold}`,
+                      borderRadius: 12,
+                      padding: "20px 32px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontSize: 38,
+                        fontWeight: "bold",
+                        color: COLORS.white,
+                        fontFamily: FONT,
+                        marginBottom: 8,
+                        lineHeight: 1.2,
+                        textShadow: TEXT_SHADOW,
+                      }}
+                    >
+                      {p.title}
+                    </div>
+                    <div
+                      style={{
+                        fontSize: 28,
+                        color: COLORS.body,
+                        fontFamily: FONT,
+                        lineHeight: 1.4,
+                        textShadow: TEXT_SHADOW,
+                      }}
+                    >
+                      {p.detail}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* 2 images stacked */}
+            <div style={{ display: "flex", gap: 40, marginTop: 24 }}>
+              <div style={{ opacity: img1Opacity }}>
+                <ArtDecoImage
+                  description="Ảnh minh họa 1"
+                  width={340}
+                  height={340}
+                  ringAngle={ringAngle}
+                  sweepProgress={img1Sweep}
+                />
+              </div>
+              <div style={{ opacity: img2Opacity }}>
+                <ArtDecoImage
+                  description="Ảnh minh họa 2"
+                  width={340}
+                  height={340}
+                  ringAngle={ringAngle}
+                  sweepProgress={img2Sweep}
+                />
+              </div>
+            </div>
+
+            {/* Citation */}
+            <div style={{ marginTop: "auto" }}>
+              <CitationFooter
+                text="Giáo trình CNXHKH (2021), Ch.6, I.2b, tr.202-205"
+                opacity={citationOpacity}
+              />
+            </div>
           </div>
 
-          {/* Cards */}
-          {PRINCIPLES.map((p, i) => (
-            <PrincipleCard
-              key={i}
-              title={p.title}
-              description={p.description}
-              detail={p.detail}
-              appearAt={p.appearAt}
-              accentColor={COLORS.gold}
+          {/* Right: MemberPiP (480px) */}
+          <div style={{ opacity: pipOpacity }}>
+            <MemberPiP
+              name="Đào Thục Nhi"
+              sectionLabel="Phần 1.1 - Cương lĩnh dân tộc"
+              ringAngle={ringAngle}
             />
-          ))}
+          </div>
         </AbsoluteFill>
-      )}
-
-      {/* Beat 3: MemberPlaceholder "Thục Nhi" + Overlay (frames 2100-2700) */}
-      {frame >= 2100 && (
-        <>
-          <Overlay direction="bottom" opacity={overlayOpacity} />
-          <MemberPlaceholder
-            name="Thục Nhi"
-            color={MEMBER_COLORS["Thục Nhi"] ?? COLORS.dark}
-            opacity={memberOpacity}
-            scale={memberScale}
-            ringAngle={memberRingAngle}
-          />
-        </>
       )}
     </AbsoluteFill>
   );
-};
+};;

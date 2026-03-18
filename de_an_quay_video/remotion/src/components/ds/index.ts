@@ -34,3 +34,15 @@ export type { GlassPanelProps } from "./GlassPanel";
 
 export { FilmGrain } from "./FilmGrain";
 export type { FilmGrainProps } from "./FilmGrain";
+
+export { ArtDecoImage } from "./ArtDecoImage";
+export type { ArtDecoImageProps } from "./ArtDecoImage";
+
+export { MemberVideoPlaceholder } from "./MemberVideoPlaceholder";
+export type { MemberVideoPlaceholderProps } from "./MemberVideoPlaceholder";
+
+export { CitationFooter } from "./CitationFooter";
+export type { CitationFooterProps } from "./CitationFooter";
+
+export { MemberPiP } from "./MemberPiP";
+export type { MemberPiPProps } from "./MemberPiP";

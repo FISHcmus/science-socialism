@@ -134,6 +134,9 @@ mcp__serena__rename_symbol(
 )
 ```
 
+**Serena gotcha — `replace_symbol_body` duplicates `export`:**
+Serena includes the symbol signature in the `body` param but does NOT remove the original `export const` prefix. This causes `export const export const ...`. After every `replace_symbol_body` call, immediately fix with `replace_text_in_file("export const export const", "export const")`.
+
 **Searching code:**
 ```
 # Search for a pattern in code files only
@@ -232,6 +235,8 @@ Remotion-based video composition for the group presentation. 13.5 min at 30fps.
 - **Typecheck:** `bunx tsc --noEmit`
 
 ### Architecture
+- **Composition is 1920x1080** (defined in `Root.tsx`). FIRST STEP for any layout work: verify this.
+- **AbsoluteFill** defaults to `flexDirection: "column"`. For horizontal layouts, MUST explicitly set `flexDirection: "row"`.
 - `src/MainVideo.tsx` - composition root, maps SECTIONS to Sequence components
 - `src/constants.ts` - defines COLORS, FONT, TEXT_SHADOW, SECTIONS, MEMBER_COLORS, REGIONS
 - `src/components/ds/` - design system components (SectionTitle, IconGrid, FlowChart, BarChart, CountUpNumber, TypewriterText, LowerThird, GlassPanel, MemberPlaceholder, Overlay) and tokens
@@ -250,6 +255,24 @@ When changing shared/DS components (adding dependencies, changing interfaces, re
 2. **Verify in Storybook** - visually confirm the component renders correctly before touching consumers
 3. **Only then integrate** - update section files / product code to use the new component
 4. Never skip straight to injecting changes into product code without Storybook verification
+
+## Projector Readability (MANDATORY)
+
+This video will be projected on a **classroom projector**. All sizing and styling decisions MUST account for this:
+
+- **Composition: 1920x1080** (16:9, defined in `Root.tsx`). Never code for 960x540. ALWAYS verify by reading `Root.tsx` before layout work.
+- **Minimum font sizes at 1920x1080:**
+  - Section label (e.g. "PHẦN 1.1"): 32px
+  - Section title: 48-56px
+  - Card/heading text: 36-40px
+  - Body/detail text: 28px minimum (NEVER below 28px)
+  - Citation footer: 24px
+  - MemberPiP name: 32px
+  - MemberPiP section label: 24px
+- **Always calculate layout math BEFORE writing code.** Write down the pixel budget: screen dimensions → column widths → padding → usable area → element heights. Verify total fits before coding.
+- **High contrast:** dark backgrounds (opacity >= 0.85), light text, TEXT_SHADOW on all text
+- **3D background meshes** are dimmed ~50% so text remains readable
+- Projectors wash out colors - avoid subtle color differences or thin lines < 2px
 
 ## Style Preferences
 
