@@ -1,0 +1,44 @@
+{
+  "name": "nhom6-video",
+  "private": true,
+  "scripts": {
+    "studio": "bunx remotion studio src/index.ts",
+    "render": "bunx remotion render src/index.ts nhom6-video out/video.mp4",
+    "render:draft": "bunx remotion render src/index.ts nhom6-video out/draft.mp4 --quality=50 --scale=0.5",
+    "web": "bun --hot src/serve.ts",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^5.0.1",
+    "@storybook/addon-a11y": "^10.2.19",
+    "@storybook/addon-docs": "^10.2.19",
+    "@storybook/addon-onboarding": "^10.2.19",
+    "@storybook/addon-vitest": "^10.2.19",
+    "@storybook/react-vite": "^10.2.19",
+    "@types/bun": "latest",
+    "@types/d3-geo": "^3.1.0",
+    "@types/d3-shape": "^3.1.8",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "@vitest/browser-playwright": "^4.1.0",
+    "@vitest/coverage-v8": "^4.1.0",
+    "playwright": "^1.58.2",
+    "storybook": "^10.2.19",
+    "vite": "^8.0.0",
+    "vitest": "^4.1.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.436",
+    "@remotion/player": "^4.0.436",
+    "d3-geo": "^3.1.1",
+    "d3-shape": "^3.2.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "remotion": "^4.0.436"
+  }
+}

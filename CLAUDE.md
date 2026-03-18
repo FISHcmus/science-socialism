@@ -60,6 +60,10 @@ pdftotext "2.GIAO TRINH CHXHKH KHONG CHUYEN.pdf" output.txt
 
 All course content is in **Vietnamese**. Preserve Vietnamese diacritics exactly when extracting or editing markdown files.
 
+## Code Editing Tools
+
+For all coding actions (reading, editing, navigating, searching code), always prefer **Serena MCP** and **JetBrains MCP** tools over built-in Read/Edit/Grep. Use Serena's symbolic tools for code exploration, `find_symbol`/`get_symbols_overview` for navigation, and `replace_symbol_body`/`insert_after_symbol` for edits. Fall back to built-in tools only for non-code files (markdown, PDFs, config, etc.).
+
 ## Style Preferences
 
 - Use normal hyphens (`-`) not em dashes (`—`) in all generated content (spreadsheets, markdown, etc.)

@@ -1,0 +1,3 @@
+[submodule "golden-egg-ds"]
+	path = golden-egg-ds
+	url = https://github.com/nhannht/golden-egg-ds.git
