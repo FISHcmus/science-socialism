@@ -88,7 +88,7 @@ export const VietnamMap: React.FC<{
             key={i}
             d={d}
             fill={fillColor}
-            stroke={COLORS.teal}
+            stroke={COLORS.gold}
             strokeWidth={isHighlighted ? 2 : 0.5}
             opacity={provinceProgress * drawProgress}
           />
