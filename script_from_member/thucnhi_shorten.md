@@ -2,7 +2,7 @@ Cương lĩnh dân tộc của chủ nghĩa Mác - Lênin đặt ra ba nguyên t
 
 Nguyên tắc thứ nhất: các dân tộc hoàn toàn bình đẳng. Dù lớn hay nhỏ, phát triển cao hay thấp, mọi dân tộc đều có quyền và nghĩa vụ ngang nhau. Không dân tộc nào được giữ đặc quyền hay áp bức dân tộc khác. Bình đẳng dân tộc là nền tảng để thực hiện hai nguyên tắc còn lại.
 
-Nguyên tắc thứ hai: các dân tộc có quyền tự quyết - tức quyền tự quyết định chế độ chính trị, con đường phát triển, và quyền tự nguyện liên hiệp với dân tộc khác trên cơ sở bình đẳng. Tuy nhiên, cần cảnh giác trước việc các thế lực đế quốc lợi dụng chiêu bài "dân tộc tự quyết" để can thiệp nội bộ quốc gia.
+Nguyên tắc thứ hai: các dân tộc có quyền tự quyết - tức quyền tự quyết định chế độ chính trị, con đường phát triển, và quyền tự nguyện liên hiệp với dân tộc khác trên cơ sở bình đẳng. Tuy nhiên, quyền tự quyết cần được thực hiện trên cơ sở tôn trọng chủ quyền và toàn vẹn lãnh thổ, tránh bị lợi dụng để can thiệp vào công việc nội bộ của quốc gia khác.
 
 Nguyên tắc thứ ba: liên hiệp công nhân tất cả các dân tộc. Đây là sợi chỉ xuyên suốt, phản ánh bản chất quốc tế của phong trào công nhân và gắn kết sự nghiệp giải phóng dân tộc với giải phóng giai cấp. Như Chủ tịch Hồ Chí Minh khẳng định: "Muốn cứu nước và giải phóng dân tộc, không có con đường nào khác con đường cách mạng vô sản."
 

@@ -2,9 +2,9 @@ Việt Nam có 54 dân tộc cư trú đan xen nhau - không dân tộc nào chi
 
 Về lợi thế, sống gần nhau giúp các dân tộc tăng cường hiểu biết, mở rộng giao lưu, giúp đỡ nhau cùng phát triển, tạo nên một nền văn hóa thống nhất trong đa dạng. Như Hồ Chí Minh khẳng định: "Bao nhiêu lợi ích đều vì dân. Bao nhiêu quyền hạn đều của dân... quyền hành và lực lượng đều ở nơi dân."
 
-Về thách thức, do có nhiều tộc người sống xen kẽ nên trong quá trình sinh sống cũng dễ nảy sinh mâu thuẫn, xung đột. Đặc biệt, các thế lực thù địch thường lợi dụng vấn đề dân tộc, tôn giáo để phá hoại an ninh chính trị và sự thống nhất của đất nước.
+Về thách thức, do có nhiều tộc người sống xen kẽ nên trong quá trình sinh sống cũng dễ nảy sinh mâu thuẫn, hiểu lầm giữa các cộng đồng. Ngoài ra, sự chênh lệch về trình độ phát triển giữa các vùng miền cũng là rào cản cần vượt qua để đảm bảo sự gắn kết bền vững.
 
-Đoàn kết dân tộc trở thành truyền thống quý báu, là một trong những nguyên nhân và động lực quyết định mọi thắng lợi của dân tộc trong các giai đoạn lịch sử, đánh thắng mọi kẻ thù xâm lược để giành độc lập, thống nhất Tổ quốc.
+Đoàn kết dân tộc trở thành truyền thống quý báu, là một trong những nguyên nhân và động lực quyết định mọi thắng lợi của dân tộc trong các giai đoạn lịch sử, giúp giành và giữ vững độc lập, thống nhất Tổ quốc.
 
 ---
 

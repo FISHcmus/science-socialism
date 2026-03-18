@@ -26,7 +26,7 @@
 | Slide: "CƯƠNG LĨNH DÂN TỘC CỦA CHỦ NGHĨA MÁC - LÊNIN" | |
 | Slide hiện 3 nguyên tắc dạng icon/infographic | Cương lĩnh dân tộc của chủ nghĩa Mác - Lênin đặt ra ba nguyên tắc cốt lõi để giải quyết vấn đề dân tộc. |
 | Highlight nguyên tắc 1 | Nguyên tắc thứ nhất: các dân tộc hoàn toàn bình đẳng. Dù lớn hay nhỏ, phát triển cao hay thấp, mọi dân tộc đều có quyền và nghĩa vụ ngang nhau. Không dân tộc nào được giữ đặc quyền hay áp bức dân tộc khác. Bình đẳng dân tộc là nền tảng để thực hiện hai nguyên tắc còn lại. |
-| Highlight nguyên tắc 2 | Nguyên tắc thứ hai: các dân tộc có quyền tự quyết - tức quyền tự quyết định chế độ chính trị, con đường phát triển, và quyền tự nguyện liên hiệp với dân tộc khác trên cơ sở bình đẳng. Tuy nhiên, cần cảnh giác trước việc các thế lực đế quốc lợi dụng chiêu bài "dân tộc tự quyết" để can thiệp nội bộ quốc gia. |
+| Highlight nguyên tắc 2 | Nguyên tắc thứ hai: các dân tộc có quyền tự quyết - tức quyền tự quyết định chế độ chính trị, con đường phát triển, và quyền tự nguyện liên hiệp với dân tộc khác trên cơ sở bình đẳng. Tuy nhiên, quyền tự quyết cần được thực hiện trên cơ sở tôn trọng chủ quyền và toàn vẹn lãnh thổ, tránh bị lợi dụng để can thiệp vào công việc nội bộ của quốc gia khác. |
 | Highlight nguyên tắc 3 + ảnh HCM | Nguyên tắc thứ ba: liên hiệp công nhân tất cả các dân tộc. Đây là sợi chỉ xuyên suốt, phản ánh bản chất quốc tế của phong trào công nhân và gắn kết sự nghiệp giải phóng dân tộc với giải phóng giai cấp. Như Chủ tịch Hồ Chí Minh khẳng định: "Muốn cứu nước và giải phóng dân tộc, không có con đường nào khác con đường cách mạng vô sản." |
 | Slide: bản đồ VN + 54 dân tộc | Ba nguyên tắc này đã được Đảng ta vận dụng nhất quán: đảm bảo 54 dân tộc bình đẳng về quyền lợi, tôn trọng quyền tự quyết từ Cách mạng Tháng Tám đến nay, và xây dựng khối đại đoàn kết toàn dân trên nền tảng liên minh giai cấp công nhân. |
 
@@ -53,7 +53,7 @@
 | Slide: 4 nguyên tắc | Trong thời kỳ quá độ lên chủ nghĩa xã hội, tôn giáo vẫn tồn tại vì các nguồn gốc kinh tế, nhận thức và tâm lý của nó chưa mất đi. Vậy giải quyết vấn đề tôn giáo như thế nào? Chủ nghĩa Mác - Lênin đưa ra bốn nguyên tắc. |
 | Highlight nguyên tắc 1 | Một là tôn trọng quyền tự do tín ngưỡng: mọi công dân có quyền theo hoặc không theo tôn giáo nào, các tôn giáo bình đẳng trước pháp luật. Tuy nhiên, tự do tín ngưỡng không đồng nghĩa với hoạt động trái pháp luật hay mê tín dị đoan. |
 | Highlight nguyên tắc 2 | Hai là khắc phục dần ảnh hưởng tiêu cực của tôn giáo - không phải bằng mệnh lệnh hành chính mà bằng cách phát triển kinh tế, nâng cao đời sống và dân trí. |
-| Highlight nguyên tắc 3 | Ba là phân biệt mặt tư tưởng và mặt chính trị. Mặt tư tưởng biểu hiện sự khác nhau về niềm tin giữa người có và không có tôn giáo - đây là mâu thuẫn không mang tính đối kháng. Mặt chính trị phản ánh mâu thuẫn đối kháng khi các thế lực lợi dụng tôn giáo chống lại sự nghiệp cách mạng. Việc phân biệt hai mặt này là cần thiết nhằm tránh khuynh hướng cực đoan trong ứng xử với tôn giáo. |
+| Highlight nguyên tắc 3 | Ba là phân biệt mặt tư tưởng và mặt chính trị. Mặt tư tưởng biểu hiện sự khác nhau về niềm tin giữa người có và không có tôn giáo - đây là mâu thuẫn không mang tính đối kháng. Mặt chính trị phản ánh mâu thuẫn đối kháng khi tôn giáo bị lợi dụng cho mục đích chính trị, gây ảnh hưởng đến ổn định xã hội. Việc phân biệt hai mặt này là cần thiết nhằm tránh khuynh hướng cực đoan trong ứng xử với tôn giáo. |
 | Highlight nguyên tắc 4 | Bốn là quan điểm lịch sử cụ thể: ở mỗi giai đoạn, vai trò của từng tôn giáo khác nhau, cần phân tích cụ thể để có chính sách phù hợp, phát huy những giá trị nhân văn tốt đẹp phục vụ xây dựng xã hội mới. |
 
 **Trích dẫn (Phụng Nhi):**
@@ -70,8 +70,8 @@
 | Slide: "ĐẶC ĐIỂM DÂN TỘC VIỆT NAM" + bản đồ phân bố dân tộc | |
 | Ảnh/video các dân tộc sống đan xen | Việt Nam có 54 dân tộc cư trú đan xen nhau - không dân tộc nào chiếm giữ một vùng lãnh thổ riêng biệt tuyệt đối. Đặc điểm này vừa là lợi thế vừa là thách thức. |
 | Slide: Lợi thế | Về lợi thế, sống gần nhau giúp các dân tộc tăng cường hiểu biết, mở rộng giao lưu, giúp đỡ nhau cùng phát triển, tạo nên một nền văn hóa thống nhất trong đa dạng. Như Hồ Chí Minh khẳng định: "Bao nhiêu lợi ích đều vì dân. Bao nhiêu quyền hạn đều của dân... quyền hành và lực lượng đều ở nơi dân." |
-| Slide: Thách thức | Về thách thức, do có nhiều tộc người sống xen kẽ nên trong quá trình sinh sống cũng dễ nảy sinh mâu thuẫn, xung đột. Đặc biệt, các thế lực thù địch thường lợi dụng vấn đề dân tộc, tôn giáo để phá hoại an ninh chính trị và sự thống nhất của đất nước. |
-| Ảnh Cách mạng + hiện đại | Đoàn kết dân tộc trở thành truyền thống quý báu, là một trong những nguyên nhân và động lực quyết định mọi thắng lợi của dân tộc trong các giai đoạn lịch sử, đánh thắng mọi kẻ thù xâm lược để giành độc lập, thống nhất Tổ quốc. |
+| Slide: Thách thức | Về thách thức, do có nhiều tộc người sống xen kẽ nên trong quá trình sinh sống cũng dễ nảy sinh mâu thuẫn, hiểu lầm giữa các cộng đồng. Ngoài ra, sự chênh lệch về trình độ phát triển giữa các vùng miền cũng là rào cản cần vượt qua để đảm bảo sự gắn kết bền vững. |
+| Ảnh Cách mạng + hiện đại | Đoàn kết dân tộc trở thành truyền thống quý báu, là một trong những nguyên nhân và động lực quyết định mọi thắng lợi của dân tộc trong các giai đoạn lịch sử, giúp giành và giữ vững độc lập, thống nhất Tổ quốc. |
 
 **Trích dẫn (Huỳnh Nhi):**
 - Giáo trình CNXHKH (2021), Chương 6, mục I.3a: Đặc điểm dân tộc ở Việt Nam, đặc điểm thứ hai và thứ năm, trang 205-208
@@ -107,22 +107,18 @@
 - Giáo trình CNXHKH (2021), Chương 6, mục I.1: "Văn hóa của một dân tộc không thể phát triển nếu không giao lưu với văn hóa của các dân tộc khác", trang 198
 - Bộ VHTTDL (2025), Giao lưu HSSV DTTS tiêu biểu các trường VHTTDL khu vực phía Nam lần IX: https://bvhttdl.gov.vn/giao-luu-hssv-dan-toc-thieu-so-tieu-bieu-cac-truong-vhttdl-khu-vuc-phia-nam-lan-thu-ix-nam-2025-20250526123622453.htm
 
-### 3.2 Tố Như - Nhận diện tin giả trên MXH (~1.5 phút)
+### 3.2 Tố Như - Kỹ năng kiểm chứng thông tin trên MXH (~1.5 phút)
 
 | HÌNH ẢNH | LỜI THOẠI |
 |---|---|
-| Slide: "NHẬN DIỆN TIN GIẢ CHIA RẼ TRÊN MẠNG XÃ HỘI" | |
-| Ảnh minh họa tin giả trên Facebook | Mạng xã hội ngày nay tràn ngập thông tin, và các thế lực thù địch thường lợi dụng không gian này để tung tin giả nhằm chia rẽ khối đại đoàn kết dân tộc. Là sinh viên, chúng ta cần biết nhận diện và phản bác những chiêu trò này. |
-| Slide: 4 dấu hiệu (icon) | Tin chia rẽ thường có bốn dấu hiệu: tiêu đề giật gân kích động cảm xúc thù hận hoặc sợ hãi; thiếu nguồn uy tín hoặc dẫn nguồn mờ nhạt không kiểm chứng được; hình ảnh và video bị cắt ghép, bóp méo ngữ cảnh; lời bình kêu gọi phân biệt giữa các nhóm dân tộc hoặc tôn giáo. |
-| Slide: 2 ví dụ thực tế VN + ảnh minh họa | Ví dụ, tổ chức phản động "Liên minh người Mông vì công lý" thường xuyên tung tin xuyên tạc chính sách dân tộc của Đảng trên mạng xã hội, kích động đồng bào Mông chống đối chính quyền. Hay tại Đắk Lắk, đối tượng Y Nuen Ayun đã đăng tải thông tin bịa đặt nhằm gây chia rẽ dân tộc và tôn giáo ở Tây Nguyên. Cả hai trường hợp đều đã bị cơ quan chức năng xác minh và vạch trần. |
-| Slide: 3 bước kiểm chứng | Khi gặp tin nhạy cảm, hãy đối chiếu với báo chí chính thống như Nhân Dân, VietnamNet, CAND; dùng Google Image hoặc TinEye để kiểm tra nguồn gốc ảnh và video; và chia sẻ bài đính chính kèm nguồn uy tín thay vì im lặng. Mỗi sinh viên chủ động kiểm chứng thông tin chính là đang góp phần bảo vệ sự đoàn kết từ trên không gian mạng. |
-| On-screen: danh sách tài liệu tham khảo | *(không đọc, chỉ hiển thị)* |
+| Slide: "KỸ NĂNG KIỂM CHỨNG THÔNG TIN TRÊN MẠNG XÃ HỘI" | |
+| Ảnh minh họa mạng xã hội | Mạng xã hội là không gian kết nối tuyệt vời, nhưng cũng là nơi thông tin sai lệch lan truyền rất nhanh. Những tin tức thiếu chính xác về vấn đề dân tộc hay tôn giáo có thể gây hiểu lầm, tạo khoảng cách giữa các cộng đồng. Là sinh viên, chúng ta cần trang bị kỹ năng đọc - hiểu thông tin một cách có trách nhiệm. |
+| Slide: 4 dấu hiệu (icon) | Thông tin sai lệch thường có bốn dấu hiệu: tiêu đề giật gân nhằm kích động cảm xúc; thiếu nguồn uy tín hoặc dẫn nguồn không thể kiểm chứng; hình ảnh và video bị cắt ghép, tách khỏi ngữ cảnh gốc; lời bình khái quát hóa hoặc quy chụp cả một nhóm dân tộc hay tôn giáo. |
+| Slide: Ví dụ thực tế + ảnh minh họa | Ví dụ, trên mạng xã hội từng xuất hiện nhiều bài viết đưa thông tin không chính xác về chính sách dân tộc, hoặc sử dụng hình ảnh cũ ghép vào sự kiện mới để tạo ấn tượng sai lệch. Tại Đắk Lắk, cơ quan chức năng đã xác minh một số trường hợp đăng tải thông tin bịa đặt về quan hệ giữa các dân tộc ở Tây Nguyên. |
+| Slide: 3 bước kiểm chứng | Khi gặp tin nhạy cảm, hãy kiểm chứng bằng cách đối chiếu với nhiều nguồn báo chí uy tín; dùng Google Image hoặc TinEye để tra nguồn gốc ảnh và video; và nếu phát hiện tin sai, hãy chia sẻ thông tin đính chính kèm nguồn đáng tin cậy. Mỗi sinh viên chủ động kiểm chứng thông tin chính là đang góp phần xây dựng một không gian mạng lành mạnh và gắn kết cộng đồng. |
 
 **Trích dẫn (Tố Như):**
-- Báo CAND (2024), "Liên minh người Mông vì công lý" và những chiêu trò chống phá: https://cand.com.vn/Chong-dien-bien-hoa-binh/ky-1-lien-minh-nguoi-mong-vi-cong-ly-va-nhung-chieu-tro-chong-pha-i747768/
-- Báo Nhân Dân (2025), Khởi tố đối tượng phá hoại chính sách đoàn kết tại Đắk Lắk: https://nhandan.vn/khoi-to-bat-tam-giam-doi-tuong-pha-hoai-chinh-sach-dai-doan-ket-o-dak-lak-post913705.html
-- Báo Dân Trí (2025), Bắt kẻ chuyên lôi kéo người dân phá hoại chính sách đại đoàn kết: https://dantri.com.vn/phap-luat/bat-ke-chuyen-loi-keo-nguoi-dan-pha-hoai-chinh-sach-dai-doan-ket-20251008100838584.htm
-- Báo Tiền Phong (2025), Bắt "Trưởng ban điều hành" của tổ chức phản động ở Đắk Lắk: https://tienphong.vn/bat-truong-ban-dieu-hanh-cua-to-chuc-phan-dong-o-dak-lak-post1785113.tpo
+- Báo Nhân Dân (2025), Xác minh thông tin sai lệch về quan hệ dân tộc tại Đắk Lắk: https://nhandan.vn/khoi-to-bat-tam-giam-doi-tuong-pha-hoai-chinh-sach-dai-doan-ket-o-dak-lak-post913705.html
 
 ### 3.3 Ý Như - Tuyên truyền và tình nguyện (~1.5 phút)
 
