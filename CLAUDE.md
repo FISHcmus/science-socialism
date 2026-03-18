@@ -233,13 +233,13 @@ Remotion-based video composition for the group presentation. 13.5 min at 30fps.
 
 ### Architecture
 - `src/MainVideo.tsx` - composition root, maps SECTIONS to Sequence components
-- `src/constants.ts` - re-exports COLORS/FONT from golden-egg-ds, defines SECTIONS, MEMBER_COLORS, REGIONS
+- `src/constants.ts` - defines COLORS, FONT, TEXT_SHADOW, SECTIONS, MEMBER_COLORS, REGIONS
+- `src/components/ds/` - design system components (SectionTitle, IconGrid, FlowChart, BarChart, CountUpNumber, TypewriterText, LowerThird, GlassPanel, MemberPlaceholder, Overlay) and tokens
 - `src/components/shared/Background3D.tsx` - 3D background layer using `@remotion/three`
 - `src/components/shared/VietnamMap.tsx` - Remotion-specific map loader (uses delayRender/staticFile)
 - `src/components/sections/` - one component per member section
 - `src/components/TitleCard.tsx` - intro title card
-- **golden-egg-ds** (git submodule, linked as `file:` dependency) - provides all visual components (SectionTitle, Overlay, MemberPlaceholder, IconGrid, FlowChart, BarChart, CountUpNumber, TypewriterText, LowerThird, GlassPanel, etc.) and design tokens (COLORS, FONT, GRADIENTS)
-- Section components compute animation values locally (useCurrentFrame + spring + interpolate) and pass them as props to golden-egg-ds components
+- Section components compute animation values locally (useCurrentFrame + spring + interpolate) and pass them as props to DS components
 - Sections use transparent/semi-transparent backgrounds so the 3D layer shows through
 - 3D stack: `three` + `@react-three/fiber` + `@react-three/drei` + `@remotion/three`
 
