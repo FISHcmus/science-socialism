@@ -1,0 +1,18 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "agent",
+            "prompt": "Check if the Bash command in $ARGUMENTS is a git commit command (contains 'git commit'). If it is NOT a git commit command, respond with {\"ok\": true} and nothing else.\n\nIf it IS a git commit, you must review ALL staged .md files in the script_from_member/ directory. Run: git diff --cached --name-only | grep 'script_from_member/.*\\.md$' to get the list, then git diff --cached for the full diff.\n\nFor each changed .md file, check:\n\n1. **Citation accuracy**: Every factual claim must have a citation. Textbook references must include exact page numbers matching Giáo trình CNXHKH (2021) Chương 6. External sources (URLs) must be real and verifiable. Flag any uncited claims about statistics, quotes, or specific facts.\n\n2. **Vietnamese grammar and vocabulary**: Check for spelling errors, wrong diacritics (e.g. sắc vs huyền), incorrect word usage, unnatural phrasing. Pay special attention to proper Vietnamese political terminology (e.g. 'dân chủ, công bằng' not 'công bằng, dân chủ'; 'tương trợ' not 'tôn trọng' in Đại hội XII formula).\n\n3. **Factual accuracy against textbook**: Key facts to verify:\n   - Dân tộc nghĩa rộng has 5 đặc trưng (not 4): lãnh thổ, kinh tế, ngôn ngữ, văn hóa/tâm lý, nhà nước\n   - Kinh tế is 'đặc trưng quan trọng nhất' (not văn hóa)\n   - 16 tôn giáo, 43 tổ chức (not 13 or 40)\n   - Correct HCM quotes: 'Bao nhiêu lợi ích đều vì dân. Bao nhiêu quyền hạn đều của dân' (from Dân vận 1949)\n   - Formula: 'dân giàu, nước mạnh, dân chủ, công bằng, văn minh' (exact order)\n   - Cương lĩnh dân tộc: 3 nguyên tắc (bình đẳng, tự quyết, liên hiệp công nhân)\n   - 4 nguyên tắc giải quyết tôn giáo\n\nIf you find issues, output JSON: {\"ok\": false, \"reason\": \"[list all issues found]\"}\nIf everything is correct, output JSON: {\"ok\": true}",
+            "timeout": 120,
+            "model": "claude-sonnet-4-6",
+            "statusMessage": "Reviewing citations, Vietnamese grammar, and factual accuracy..."
+          }
+        ]
+      }
+    ]
+  }
+}
