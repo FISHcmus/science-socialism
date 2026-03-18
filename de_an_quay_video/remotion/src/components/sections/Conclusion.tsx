@@ -1,5 +1,5 @@
 import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
-import { COLORS, FONT } from "../../constants";
+import { COLORS, FONT, TEXT_SHADOW } from "../../constants";
 
 // Total duration: 900 frames (30s)
 // Frames 0-300:   "Cảm ơn thầy/cô đã theo dõi" springs in, gold accent line
@@ -82,6 +82,7 @@ export const Conclusion: React.FC = () => {
             fontWeight: "bold",
             margin: 0,
             lineHeight: 1.3,
+            textShadow: TEXT_SHADOW,
           }}
         >
           Cảm ơn thầy/cô đã theo dõi
@@ -115,16 +116,18 @@ export const Conclusion: React.FC = () => {
             fontWeight: "bold",
             letterSpacing: 2,
             marginBottom: 8,
+            textShadow: TEXT_SHADOW,
           }}
         >
           Nhóm 6 - CNXHKH
         </div>
         <div
           style={{
-            fontSize: 18,
-            color: COLORS.muted,
+            fontSize: 22,
+            color: COLORS.body,
             fontFamily: FONT,
             letterSpacing: 1,
+            textShadow: TEXT_SHADOW,
           }}
         >
           BAA00103 — Chủ nghĩa xã hội khoa học
@@ -145,10 +148,11 @@ export const Conclusion: React.FC = () => {
             key={name}
             style={{
               opacity: memberOpacities[i],
-              fontSize: 20,
+              fontSize: 24,
               color: COLORS.white,
               fontFamily: FONT,
               padding: "6px 12px",
+              textShadow: TEXT_SHADOW,
             }}
           >
             {name}

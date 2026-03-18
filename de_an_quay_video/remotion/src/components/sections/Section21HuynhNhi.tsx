@@ -1,11 +1,7 @@
-import { AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig } from "remotion";
-import { COLORS, FONT, MEMBER_COLORS } from "../../constants";
-import { SectionTitle } from "../shared/SectionTitle";
-import { TypewriterText } from "../shared/TypewriterText";
+import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { COLORS, FONT, MEMBER_COLORS, TEXT_SHADOW } from "../../constants";
+import { SectionTitle, TypewriterText, MemberPlaceholder, Overlay, LowerThird } from "../ds";
 import { VietnamMap } from "../shared/VietnamMap";
-import { MemberPlaceholder } from "../shared/MemberPlaceholder";
-import { Overlay } from "../shared/Overlay";
-import { LowerThird } from "../shared/LowerThird";
 
 // Beat 1:  0-90    — SectionTitle "Thực tiễn đoàn kết dân tộc", sectionNumber "PHẦN 2.1"
 // Beat 2:  90-1200 — Left: VietnamMap highlighted. Right: TypewriterText about 54 dân tộc
@@ -14,8 +10,21 @@ import { LowerThird } from "../shared/LowerThird";
 
 export const Section21HuynhNhi: React.FC = () => {
   const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
 
-  // Beat 2 envelope
+  // --- Beat 1: SectionTitle animation values ---
+  const titleSlideIn = spring({
+    frame,
+    fps,
+    from: 40,
+    to: 0,
+    config: { damping: 18, stiffness: 100 },
+  });
+  const titleOpacity = interpolate(frame, [0, 20], [0, 1], {
+    extrapolateRight: "clamp",
+  });
+
+  // --- Beat 2 envelope ---
   const beat2Local = frame - 90;
   const beat2FadeIn =
     beat2Local >= 0
@@ -28,16 +37,66 @@ export const Section21HuynhNhi: React.FC = () => {
   const beat2Opacity = frame >= 90 && frame < 1200 ? Math.min(beat2FadeIn, beat2FadeOut) : 0;
   const beat2Visible = frame >= 90 && frame < 1200;
 
+  // --- Beat 2: TypewriterText values ---
+  const typewriterText =
+    "Việt Nam là quốc gia đa dân tộc với 54 dân tộc anh em cùng sinh sống. Truyền thống đoàn kết được hun đúc qua hàng nghìn năm lịch sử dựng nước và giữ nước.";
+  const visibleChars = Math.min(Math.floor((frame - 110) / 2), typewriterText.length);
+  const cursorVisible = frame % 30 < 15;
+
+  // --- Beat 3: MemberPlaceholder animation values ---
+  const showFrom = 1200;
+  const memberScale = spring({
+    frame: Math.max(frame - showFrom, 0),
+    fps,
+    from: 0.85,
+    to: 1,
+    config: { damping: 20, stiffness: 120 },
+  });
+  const memberOpacity = interpolate(frame, [showFrom, showFrom + 20], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const memberRingAngle = (Math.max(frame - showFrom, 0) / fps) * 80;
+
+  // --- Beat 3: Overlay opacity ---
+  const overlayBaseOpacity = interpolate(frame, [showFrom, showFrom + 20], [0, 0.65], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+
+  // --- Beat 3: LowerThird animation values ---
+  const lowerThirdShowFrom = 1215;
+  const lowerThirdTranslateY = spring({
+    frame: Math.max(frame - lowerThirdShowFrom, 0),
+    fps,
+    from: 40,
+    to: 0,
+    config: { damping: 18, stiffness: 100 },
+  });
+  const lowerThirdOpacity = interpolate(frame, [lowerThirdShowFrom, lowerThirdShowFrom + 20], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+
   return (
     <AbsoluteFill>
 
       {/* Beat 1: SectionTitle (frames 0-90) */}
       {frame < 90 && (
-        <SectionTitle
-          title="Thực tiễn đoàn kết dân tộc"
-          subtitle="Tại Việt Nam"
-          sectionNumber="PHẦN 2.1"
-        />
+        <AbsoluteFill
+          style={{
+            background: `linear-gradient(135deg, ${COLORS.darkest} 0%, ${COLORS.dark} 100%)`,
+          }}
+        >
+          <SectionTitle
+            title="Thực tiễn đoàn kết dân tộc"
+            subtitle="Tại Việt Nam"
+            sectionNumber="PHẦN 2.1"
+            opacity={titleOpacity}
+            translateY={titleSlideIn}
+            accentWidth={interpolate(frame, [10, 60], [0, 80], { extrapolateRight: "clamp" })}
+          />
+        </AbsoluteFill>
       )}
 
       {/* Beat 2: VietnamMap (left) + TypewriterText (right) (frames 90-1200) */}
@@ -64,12 +123,13 @@ export const Section21HuynhNhi: React.FC = () => {
           >
             <div
               style={{
-                fontSize: 16,
+                fontSize: 22,
                 color: COLORS.gold,
                 fontFamily: FONT,
                 letterSpacing: 2,
                 marginBottom: 16,
                 textTransform: "uppercase",
+                textShadow: TEXT_SHADOW,
               }}
             >
               Bản đồ Việt Nam
@@ -102,11 +162,12 @@ export const Section21HuynhNhi: React.FC = () => {
           >
             <div
               style={{
-                fontSize: 20,
+                fontSize: 24,
                 color: COLORS.gold,
                 fontFamily: FONT,
                 letterSpacing: 3,
                 textTransform: "uppercase",
+                textShadow: TEXT_SHADOW,
               }}
             >
               Thực tiễn đoàn kết
@@ -114,23 +175,25 @@ export const Section21HuynhNhi: React.FC = () => {
 
             <h2
               style={{
-                fontSize: 40,
+                fontSize: 46,
                 color: COLORS.white,
                 fontFamily: FONT,
                 fontWeight: "bold",
                 lineHeight: 1.4,
                 margin: 0,
+                textShadow: TEXT_SHADOW,
               }}
             >
               Quốc gia đa dân tộc
             </h2>
 
             <TypewriterText
-              text="Việt Nam là quốc gia đa dân tộc với 54 dân tộc anh em cùng sinh sống. Truyền thống đoàn kết được hun đúc qua hàng nghìn năm lịch sử dựng nước và giữ nước."
-              startFrame={110}
-              speed={2}
+              text={typewriterText}
+              visibleChars={visibleChars}
               fontSize={26}
-              color={COLORS.muted}
+              color={COLORS.body}
+              showCursor
+              cursorVisible={cursorVisible}
             />
 
             {/* Highlight stats box */}
@@ -158,8 +221,8 @@ export const Section21HuynhNhi: React.FC = () => {
                     style={{
                       opacity: statOpacity,
                       textAlign: "center",
-                      backgroundColor: "rgba(246,173,85,0.1)",
-                      border: `1px solid ${COLORS.gold}`,
+                      backgroundColor: "rgba(10, 10, 15, 0.85)",
+                      border: `3px solid ${COLORS.gold}`,
                       borderRadius: 12,
                       padding: "16px 24px",
                     }}
@@ -177,10 +240,11 @@ export const Section21HuynhNhi: React.FC = () => {
                     </div>
                     <div
                       style={{
-                        fontSize: 16,
-                        color: COLORS.muted,
+                        fontSize: 22,
+                        color: COLORS.body,
                         fontFamily: FONT,
                         marginTop: 6,
+                        textShadow: TEXT_SHADOW,
                       }}
                     >
                       {stat.label}
@@ -198,15 +262,20 @@ export const Section21HuynhNhi: React.FC = () => {
         <>
           <MemberPlaceholder
             name="Huỳnh Nhi"
-            color={MEMBER_COLORS["Huỳnh Nhi"] ?? COLORS.navy}
-            showFrom={1200}
+            color={MEMBER_COLORS["Huỳnh Nhi"] ?? COLORS.dark}
+            opacity={memberOpacity}
+            scale={memberScale}
+            ringAngle={memberRingAngle}
           />
-          <Overlay direction="bottom" opacity={0.65} showFrom={1200} />
-          <LowerThird
-            name="Huỳnh Nhi"
-            role="Thực tiễn đoàn kết dân tộc ở Việt Nam"
-            showFrom={1215}
-          />
+          <Overlay direction="bottom" opacity={overlayBaseOpacity} />
+          <div style={{ position: "absolute", bottom: 60, left: 60 }}>
+            <LowerThird
+              name="Huỳnh Nhi"
+              role="Thực tiễn đoàn kết dân tộc ở Việt Nam"
+              opacity={lowerThirdOpacity}
+              translateY={lowerThirdTranslateY}
+            />
+          </div>
         </>
       )}
     </AbsoluteFill>

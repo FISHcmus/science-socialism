@@ -1,35 +1,39 @@
-import { AbsoluteFill, interpolate, useCurrentFrame, spring, useVideoConfig } from "remotion";
-import { COLORS, FONT, MEMBER_COLORS } from "../../constants";
-import { SectionTitle } from "../shared/SectionTitle";
-import { FlowChart } from "../shared/FlowChart";
-import type { FlowNode } from "../shared/FlowChart";
-import { MemberPlaceholder } from "../shared/MemberPlaceholder";
-import { Overlay } from "../shared/Overlay";
-import { LowerThird } from "../shared/LowerThird";
+import {
+  AbsoluteFill,
+  interpolate,
+  useCurrentFrame,
+  spring,
+  useVideoConfig,
+} from "remotion";
+import { COLORS, FONT, MEMBER_COLORS, TEXT_SHADOW } from "../../constants";
+import {
+  SectionTitle,
+  FlowChart,
+  MemberPlaceholder,
+  Overlay,
+  LowerThird,
+} from "../ds";
+import type { FlowNode } from "../ds";
 
 // Beat 1:    0-90   — SectionTitle "Nhận thức đúng đắn", sectionNumber "PHẦN 3.1"
 // Beat 2:  90-2100  — FlowChart horizontal cycle showing the learning cycle
-// Beat 3: 2100-2700 — MemberPlaceholder "Quỳnh Như" + Overlay + LowerThird
+// Beat 3: 2100-2700 — MemberPlaceholder + Overlay + LowerThird
 // Total: 2700 frames (90s)
 
 const LEARNING_CYCLE_NODES: FlowNode[] = [
   {
-    icon: "📖",
     label: "Học tập lý luận",
     description: "Nắm vững chủ nghĩa Mác-Lênin",
   },
   {
-    icon: "🔍",
     label: "Phân tích thực tiễn",
     description: "Nhận diện thách thức",
   },
   {
-    icon: "💡",
     label: "Hình thành nhận thức",
     description: "Tư duy đúng đắn",
   },
   {
-    icon: "🎯",
     label: "Hành động đoàn kết",
     description: "Thực hiện trong đời sống",
   },
@@ -39,7 +43,16 @@ export const Section31QuynhNhu: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // Beat 2 envelope
+  // ── Beat 1: SectionTitle (frames 0-90) ──
+  const titleSpring = spring({
+    frame,
+    fps,
+    config: { damping: 14, stiffness: 100 },
+  });
+  const titleOpacity = interpolate(titleSpring, [0, 1], [0, 1]);
+  const titleTranslateY = interpolate(titleSpring, [0, 1], [40, 0]);
+
+  // ── Beat 2 envelope (frames 90-2100) ──
   const beat2Local = frame - 90;
   const beat2FadeIn =
     beat2Local >= 0
@@ -54,7 +67,11 @@ export const Section31QuynhNhu: React.FC = () => {
 
   // Heading animation
   const headingLocal = Math.max(0, frame - 90);
-  const headingSpring = spring({ frame: headingLocal, fps, config: { damping: 20, stiffness: 80 } });
+  const headingSpring = spring({
+    frame: headingLocal,
+    fps,
+    config: { damping: 20, stiffness: 80 },
+  });
   const headingY = interpolate(headingSpring, [0, 1], [40, 0]);
   const headingOpacity = interpolate(headingSpring, [0, 1], [0, 1]);
 
@@ -64,16 +81,83 @@ export const Section31QuynhNhu: React.FC = () => {
     extrapolateRight: "clamp",
   });
 
+  // Bottom quote annotation
+  const quoteOpacity =
+    frame > 400
+      ? interpolate(frame - 400, [0, 30], [0, 1], { extrapolateRight: "clamp" })
+      : 0;
+
+  // ── FlowChart: per-node arrays ──
+  const nodeScales = LEARNING_CYCLE_NODES.map((_, i) => {
+    const nodeStart = 150 + i * 25;
+    const localFrame = frame - nodeStart;
+    if (localFrame < 0) return 0.5;
+    const s = spring({ frame: localFrame, fps, config: { damping: 14, stiffness: 100 } });
+    return interpolate(s, [0, 1], [0.5, 1]);
+  });
+
+  const nodeOpacities = LEARNING_CYCLE_NODES.map((_, i) => {
+    const nodeStart = 150 + i * 25;
+    const localFrame = frame - nodeStart;
+    if (localFrame < 0) return 0;
+    const s = spring({ frame: localFrame, fps, config: { damping: 14, stiffness: 100 } });
+    return interpolate(s, [0, 1], [0, 1]);
+  });
+
+  const arrowOpacities = LEARNING_CYCLE_NODES.map((_, i) => {
+    const arrowStart = 150 + i * 25 + 15;
+    const localFrame = frame - arrowStart;
+    if (localFrame < 0) return 0;
+    const s = spring({ frame: localFrame, fps, config: { damping: 14, stiffness: 100 } });
+    return interpolate(s, [0, 1], [0, 1]);
+  });
+
+  // ── Beat 3: MemberPlaceholder + Overlay + LowerThird ──
+  const memberLocal = Math.max(0, frame - 2100);
+  const memberSpring = spring({
+    frame: memberLocal,
+    fps,
+    config: { damping: 14, stiffness: 100 },
+  });
+  const memberScale = interpolate(memberSpring, [0, 1], [0.85, 1]);
+  const memberOpacity = interpolate(memberSpring, [0, 1], [0, 1]);
+  const memberRingAngle = (memberLocal / fps) * 80;
+
+  const overlayLocal = Math.max(0, frame - 2100);
+  const overlaySpring = spring({
+    frame: overlayLocal,
+    fps,
+    config: { damping: 14, stiffness: 100 },
+  });
+  const overlayOpacity = interpolate(overlaySpring, [0, 1], [0, 0.65]);
+
+  const lowerThirdLocal = Math.max(0, frame - 2115);
+  const lowerThirdSpring = spring({
+    frame: lowerThirdLocal,
+    fps,
+    config: { damping: 14, stiffness: 100 },
+  });
+  const lowerThirdTranslateY = interpolate(lowerThirdSpring, [0, 1], [40, 0]);
+  const lowerThirdOpacity = interpolate(lowerThirdSpring, [0, 1], [0, 1]);
+
   return (
     <AbsoluteFill>
 
       {/* Beat 1: SectionTitle (frames 0-90) */}
       {frame < 90 && (
-        <SectionTitle
-          title="Nhận thức đúng đắn"
-          subtitle="Về đại đoàn kết toàn dân tộc"
-          sectionNumber="PHẦN 3.1"
-        />
+        <AbsoluteFill
+          style={{
+            background: "linear-gradient(135deg, #1a1a2e 0%, #0d0d1a 100%)",
+          }}
+        >
+          <SectionTitle
+            title="Nhận thức đúng đắn"
+            subtitle="Về đại đoàn kết toàn dân tộc"
+            sectionNumber="PHẦN 3.1"
+            opacity={titleOpacity}
+            translateY={titleTranslateY}
+          />
+        </AbsoluteFill>
       )}
 
       {/* Beat 2: FlowChart cycle (frames 90-2100) */}
@@ -99,24 +183,26 @@ export const Section31QuynhNhu: React.FC = () => {
           >
             <div
               style={{
-                fontSize: 18,
+                fontSize: 24,
                 color: COLORS.gold,
                 fontFamily: FONT,
                 letterSpacing: 4,
                 marginBottom: 12,
                 textTransform: "uppercase",
+                textShadow: TEXT_SHADOW,
               }}
             >
               Chu trình học tập
             </div>
             <h2
               style={{
-                fontSize: 44,
+                fontSize: 50,
                 color: COLORS.white,
                 fontFamily: FONT,
                 fontWeight: "bold",
                 margin: 0,
                 lineHeight: 1.3,
+                textShadow: TEXT_SHADOW,
               }}
             >
               Xây dựng nhận thức đúng đắn về đại đoàn kết
@@ -127,12 +213,13 @@ export const Section31QuynhNhu: React.FC = () => {
           <div
             style={{
               opacity: subtitleOpacity,
-              fontSize: 22,
-              color: COLORS.muted,
+              fontSize: 26,
+              color: COLORS.body,
               fontFamily: FONT,
               textAlign: "center",
               maxWidth: 900,
               lineHeight: 1.5,
+              textShadow: TEXT_SHADOW,
             }}
           >
             Nhận thức đúng đắn là nền tảng để sinh viên thực hành đoàn kết một cách chủ động và có hiệu quả trong môi trường học tập và cuộc sống.
@@ -143,30 +230,30 @@ export const Section31QuynhNhu: React.FC = () => {
             <FlowChart
               nodes={LEARNING_CYCLE_NODES}
               direction="horizontal"
-              startFrame={150}
-              stagger={25}
               cycle={true}
+              nodeScales={nodeScales}
+              nodeOpacities={nodeOpacities}
+              arrowOpacities={arrowOpacities}
             />
           </div>
 
           {/* Bottom annotation */}
-          {frame > 400 && (
-            <div
-              style={{
-                opacity: interpolate(frame - 400, [0, 30], [0, 1], { extrapolateRight: "clamp" }),
-                fontSize: 18,
-                color: COLORS.gold,
-                fontFamily: FONT,
-                letterSpacing: 1,
-                textAlign: "center",
-                borderTop: `1px solid rgba(246,173,85,0.3)`,
-                paddingTop: 20,
-                maxWidth: 800,
-              }}
-            >
-              "Học phải đi đôi với hành" — Tư tưởng Hồ Chí Minh
-            </div>
-          )}
+          <div
+            style={{
+              opacity: quoteOpacity,
+              fontSize: 22,
+              color: COLORS.gold,
+              fontFamily: FONT,
+              letterSpacing: 1,
+              textAlign: "center",
+              textShadow: TEXT_SHADOW,
+              borderTop: `3px solid rgba(246,173,85,0.3)`,
+              paddingTop: 20,
+              maxWidth: 800,
+            }}
+          >
+            "Học phải đi đôi với hành" — Tư tưởng Hồ Chí Minh
+          </div>
         </AbsoluteFill>
       )}
 
@@ -175,15 +262,27 @@ export const Section31QuynhNhu: React.FC = () => {
         <>
           <MemberPlaceholder
             name="Quỳnh Như"
-            color={MEMBER_COLORS["Quỳnh Như"] ?? COLORS.navy}
-            showFrom={2100}
+            color={MEMBER_COLORS["Quỳnh Như"] ?? COLORS.dark}
+            opacity={memberOpacity}
+            scale={memberScale}
+            ringAngle={memberRingAngle}
           />
-          <Overlay direction="bottom" opacity={0.65} showFrom={2100} />
-          <LowerThird
-            name="Quỳnh Như"
-            role="Nhận thức đúng đắn về đại đoàn kết"
-            showFrom={2115}
-          />
+          <Overlay direction="bottom" opacity={overlayOpacity} />
+          <div
+            style={{
+              position: "absolute",
+              bottom: 0,
+              left: 0,
+              right: 0,
+              transform: `translateY(${lowerThirdTranslateY}px)`,
+              opacity: lowerThirdOpacity,
+            }}
+          >
+            <LowerThird
+              name="Quỳnh Như"
+              role="Nhận thức đúng đắn về đại đoàn kết"
+            />
+          </div>
         </>
       )}
     </AbsoluteFill>

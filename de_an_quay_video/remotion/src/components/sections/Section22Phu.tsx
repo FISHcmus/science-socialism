@@ -1,30 +1,38 @@
 import { AbsoluteFill, interpolate, useCurrentFrame, spring, useVideoConfig } from "remotion";
-import { COLORS, FONT, MEMBER_COLORS } from "../../constants";
-import { SectionTitle } from "../shared/SectionTitle";
-import { CountUpNumber } from "../shared/CountUpNumber";
-import { BarChart } from "../shared/BarChart";
-import { MemberPlaceholder } from "../shared/MemberPlaceholder";
-import { Overlay } from "../shared/Overlay";
-import { LowerThird } from "../shared/LowerThird";
+import { COLORS, FONT, MEMBER_COLORS, TEXT_SHADOW } from "../../constants";
+import {
+  SectionTitle,
+  CountUpNumber,
+  BarChart,
+  MemberPlaceholder,
+  Overlay,
+  LowerThird,
+} from "../ds";
+import type { BarData } from "../ds";
 
 // Beat 1:    0-90   — SectionTitle "Thành tựu & con số", sectionNumber "PHẦN 2.2"
 // Beat 2:  90-1200  — Three CountUpNumber side by side + BarChart below
 // Beat 3: 1200-1800 — MemberPlaceholder "Phú" + Overlay + LowerThird
 // Total: 1800 frames (60s)
 
-const BAR_DATA = [
-  { label: "Miền Bắc", value: 85, color: COLORS.teal },
-  { label: "Miền Trung", value: 78, color: "#805ad5" },
-  { label: "Miền Nam", value: 90, color: COLORS.vnRed },
-  { label: "Tây Nguyên", value: 72, color: "#ed8936" },
-  { label: "Tây Bắc", value: 68, color: "#4299e1" },
+const BAR_DATA: BarData[] = [
+  { label: "Miền Bắc", value: 85 },
+  { label: "Miền Trung", value: 78 },
+  { label: "Miền Nam", value: 90 },
+  { label: "Tây Nguyên", value: 72 },
+  { label: "Tây Bắc", value: 68 },
 ];
 
 export const Section22Phu: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // Beat 2 envelope
+  // ── Beat 1: SectionTitle spring ──────────────────────────────────────────
+  const titleSpring = spring({ frame, fps, config: { damping: 20, stiffness: 80 } });
+  const titleOpacity = interpolate(titleSpring, [0, 1], [0, 1]);
+  const titleTranslateY = interpolate(titleSpring, [0, 1], [40, 0]);
+
+  // ── Beat 2 envelope ──────────────────────────────────────────────────────
   const beat2Local = frame - 90;
   const beat2FadeIn =
     beat2Local >= 0
@@ -37,22 +45,100 @@ export const Section22Phu: React.FC = () => {
   const beat2Opacity = frame >= 90 && frame < 1200 ? Math.min(beat2FadeIn, beat2FadeOut) : 0;
   const beat2Visible = frame >= 90 && frame < 1200;
 
-  // Title slide-up spring for Beat 2 heading
+  // Beat 2 section heading spring
   const headingLocal = Math.max(0, frame - 90);
   const headingSpring = spring({ frame: headingLocal, fps, config: { damping: 20, stiffness: 80 } });
   const headingY = interpolate(headingSpring, [0, 1], [40, 0]);
   const headingOpacity = interpolate(headingSpring, [0, 1], [0, 1]);
+
+  // ── CountUpNumber 1: 54 dân tộc (startFrame=120, duration=80) ────────────
+  const count1Local = frame - 120;
+  const count1Progress = interpolate(count1Local, [0, 80], [0, 1], { extrapolateRight: "clamp" });
+  const count1Eased = 1 - Math.pow(1 - Math.max(0, count1Progress), 3);
+  const count1Value = Math.round(54 * count1Eased);
+  const count1Opacity = interpolate(count1Local, [0, 15], [0, 1], { extrapolateRight: "clamp" });
+
+  // ── CountUpNumber 2: 63 tỉnh thành (startFrame=160, duration=80) ─────────
+  const count2Local = frame - 160;
+  const count2Progress = interpolate(count2Local, [0, 80], [0, 1], { extrapolateRight: "clamp" });
+  const count2Eased = 1 - Math.pow(1 - Math.max(0, count2Progress), 3);
+  const count2Value = Math.round(63 * count2Eased);
+  const count2Opacity = interpolate(count2Local, [0, 15], [0, 1], { extrapolateRight: "clamp" });
+
+  // ── CountUpNumber 3: 100 tr dân số (startFrame=200, duration=80) ─────────
+  const count3Local = frame - 200;
+  const count3Progress = interpolate(count3Local, [0, 80], [0, 1], { extrapolateRight: "clamp" });
+  const count3Eased = 1 - Math.pow(1 - Math.max(0, count3Progress), 3);
+  const count3Value = Math.round(100 * count3Eased);
+  const count3Opacity = interpolate(count3Local, [0, 15], [0, 1], { extrapolateRight: "clamp" });
+
+  // ── BarChart: startFrame=280, stagger=12 ─────────────────────────────────
+  const barProgresses = BAR_DATA.map((_, i) => {
+    const barStart = 280 + i * 12;
+    const localFrame = frame - barStart;
+    if (localFrame < 0) return 0;
+    return spring({ frame: localFrame, fps, config: { damping: 16, stiffness: 80 } });
+  });
+  const barOpacities = BAR_DATA.map((_, i) => {
+    const barStart = 280 + i * 12;
+    const localFrame = frame - barStart;
+    if (localFrame < 0) return 0;
+    return interpolate(localFrame, [0, 10], [0, 1], { extrapolateRight: "clamp" });
+  });
+  const displayValues = BAR_DATA.map((bar, i) => Math.round(bar.value * (barProgresses[i] ?? 0)));
+
+  // ── CountUpNumber ring angle (shared across all 3) ───────────────────────
+  const countRingAngle = (frame / fps) * 60;
+
+  // ── Beat 3: MemberPlaceholder / Overlay / LowerThird ─────────────────────
+  const showFrom = 1200;
+  const memberLocal = frame - showFrom;
+
+  const memberSpring = spring({
+    frame: Math.max(0, memberLocal),
+    fps,
+    config: { damping: 20, stiffness: 80 },
+  });
+  const memberScale = interpolate(memberSpring, [0, 1], [0.8, 1]);
+  const memberOpacity = interpolate(Math.max(0, memberLocal), [0, 20], [0, 1], {
+    extrapolateRight: "clamp",
+  });
+  const memberRingAngle = (Math.max(0, memberLocal) / fps) * 80;
+
+  const overlayOpacity =
+    frame >= showFrom
+      ? interpolate(memberLocal, [0, 20], [0, 0.65], { extrapolateRight: "clamp" })
+      : 0;
+
+  const lowerThirdLocal = frame - 1215;
+  const lowerThirdSpring = spring({
+    frame: Math.max(0, lowerThirdLocal),
+    fps,
+    config: { damping: 20, stiffness: 80 },
+  });
+  const lowerThirdTranslateY = interpolate(lowerThirdSpring, [0, 1], [40, 0]);
+  const lowerThirdOpacity = interpolate(Math.max(0, lowerThirdLocal), [0, 15], [0, 1], {
+    extrapolateRight: "clamp",
+  });
 
   return (
     <AbsoluteFill>
 
       {/* Beat 1: SectionTitle (frames 0-90) */}
       {frame < 90 && (
-        <SectionTitle
-          title="Thành tựu & con số"
-          subtitle="Đoàn kết dân tộc Việt Nam"
-          sectionNumber="PHẦN 2.2"
-        />
+        <AbsoluteFill
+          style={{
+            background: `linear-gradient(135deg, ${COLORS.darkest} 0%, ${COLORS.dark} 100%)`,
+          }}
+        >
+          <SectionTitle
+            title="Thành tựu & con số"
+            subtitle="Đoàn kết dân tộc Việt Nam"
+            sectionNumber="PHẦN 2.2"
+            opacity={titleOpacity}
+            translateY={titleTranslateY}
+          />
+        </AbsoluteFill>
       )}
 
       {/* Beat 2: CountUpNumbers + BarChart (frames 90-1200) */}
@@ -79,24 +165,26 @@ export const Section22Phu: React.FC = () => {
           >
             <div
               style={{
-                fontSize: 18,
+                fontSize: 24,
                 color: COLORS.gold,
                 fontFamily: FONT,
                 letterSpacing: 4,
                 marginBottom: 12,
                 textTransform: "uppercase",
+                textShadow: TEXT_SHADOW,
               }}
             >
               Số liệu nổi bật
             </div>
             <h2
               style={{
-                fontSize: 44,
+                fontSize: 50,
                 color: COLORS.white,
                 fontFamily: FONT,
                 fontWeight: "bold",
                 margin: 0,
                 lineHeight: 1.2,
+                textShadow: TEXT_SHADOW,
               }}
             >
               Việt Nam — Thống nhất trong đa dạng
@@ -114,7 +202,6 @@ export const Section22Phu: React.FC = () => {
               marginBottom: 56,
             }}
           >
-            {/* Divider decorations between numbers */}
             <div
               style={{
                 display: "flex",
@@ -122,78 +209,36 @@ export const Section22Phu: React.FC = () => {
                 gap: 60,
               }}
             >
-              <div
-                style={{
-                  backgroundColor: "rgba(246,173,85,0.1)",
-                  border: `2px solid ${COLORS.gold}`,
-                  borderRadius: 20,
-                  padding: "32px 48px",
-                }}
-              >
-                <CountUpNumber
-                  target={54}
-                  label="dân tộc"
-                  startFrame={120}
-                  duration={80}
-                  color={COLORS.gold}
-                  size={80}
-                />
-              </div>
-
-              <div
-                style={{
-                  width: 2,
-                  height: 100,
-                  backgroundColor: "rgba(255,255,255,0.15)",
-                  borderRadius: 1,
-                }}
+              <CountUpNumber
+                value={count1Value}
+                label="dân tộc"
+                color={COLORS.gold}
+                size={80}
+                opacity={count1Opacity}
+                goldRing
+                ringAngle={countRingAngle}
               />
 
-              <div
-                style={{
-                  backgroundColor: "rgba(56,178,172,0.1)",
-                  border: `2px solid ${COLORS.teal}`,
-                  borderRadius: 20,
-                  padding: "32px 48px",
-                }}
-              >
-                <CountUpNumber
-                  target={63}
-                  label="tỉnh thành"
-                  startFrame={160}
-                  duration={80}
-                  color={COLORS.teal}
-                  size={80}
-                />
-              </div>
-
-              <div
-                style={{
-                  width: 2,
-                  height: 100,
-                  backgroundColor: "rgba(255,255,255,0.15)",
-                  borderRadius: 1,
-                }}
+              <CountUpNumber
+                value={count2Value}
+                label="tỉnh thành"
+                color={COLORS.warmGold}
+                size={80}
+                opacity={count2Opacity}
+                goldRing
+                ringAngle={countRingAngle + 120}
               />
 
-              <div
-                style={{
-                  backgroundColor: "rgba(218,37,29,0.1)",
-                  border: `2px solid ${COLORS.vnRed}`,
-                  borderRadius: 20,
-                  padding: "32px 48px",
-                }}
-              >
-                <CountUpNumber
-                  target={100}
-                  suffix="tr"
-                  label="dân số"
-                  startFrame={200}
-                  duration={80}
-                  color={COLORS.vnRed}
-                  size={80}
-                />
-              </div>
+              <CountUpNumber
+                value={count3Value}
+                suffix="tr"
+                label="dân số"
+                color={COLORS.lightGold}
+                size={80}
+                opacity={count3Opacity}
+                goldRing
+                ringAngle={countRingAngle + 240}
+              />
             </div>
           </div>
 
@@ -212,22 +257,24 @@ export const Section22Phu: React.FC = () => {
             <div
               style={{
                 textAlign: "center",
-                fontSize: 18,
-                color: COLORS.muted,
+                fontSize: 22,
+                color: COLORS.body,
                 fontFamily: FONT,
                 marginBottom: 16,
                 letterSpacing: 1,
+                textShadow: TEXT_SHADOW,
               }}
             >
               Chỉ số đoàn kết theo vùng miền (%)
             </div>
             <BarChart
               data={BAR_DATA}
-              startFrame={280}
-              stagger={12}
               maxHeight={220}
               showValues={true}
               suffix="%"
+              barProgresses={barProgresses}
+              barOpacities={barOpacities}
+              displayValues={displayValues}
             />
           </div>
         </AbsoluteFill>
@@ -238,15 +285,28 @@ export const Section22Phu: React.FC = () => {
         <>
           <MemberPlaceholder
             name="Phú"
-            color={MEMBER_COLORS["Phú"] ?? COLORS.navy}
-            showFrom={1200}
+            color={MEMBER_COLORS["Phú"] ?? COLORS.dark}
+            opacity={memberOpacity}
+            scale={memberScale}
+            ringAngle={memberRingAngle}
           />
-          <Overlay direction="bottom" opacity={0.65} showFrom={1200} />
-          <LowerThird
-            name="Phú"
-            role="Thành tựu & con số về đoàn kết dân tộc"
-            showFrom={1215}
-          />
+          <Overlay direction="bottom" opacity={overlayOpacity} />
+          <div
+            style={{
+              position: "absolute",
+              bottom: 0,
+              left: 0,
+              right: 0,
+              transform: `translateY(${lowerThirdTranslateY}px)`,
+            }}
+          >
+            <LowerThird
+              name="Phú"
+              role="Thành tựu & con số về đoàn kết dân tộc"
+              opacity={lowerThirdOpacity}
+              translateY={0}
+            />
+          </div>
         </>
       )}
     </AbsoluteFill>

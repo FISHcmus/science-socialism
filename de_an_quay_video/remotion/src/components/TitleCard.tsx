@@ -5,6 +5,7 @@ import {
   spring,
   useVideoConfig,
 } from "remotion";
+import { COLORS, FONT, TEXT_SHADOW } from "../constants";
 
 export const TitleCard: React.FC = () => {
   const frame = useCurrentFrame();
@@ -30,7 +31,7 @@ export const TitleCard: React.FC = () => {
       style={{
         justifyContent: "center",
         alignItems: "center",
-        background: "linear-gradient(135deg, rgba(10,22,40,0.4) 0%, rgba(26,54,93,0.4) 50%, rgba(45,55,72,0.4) 100%)",
+        background: "linear-gradient(135deg, rgba(10,10,15,0.4) 0%, rgba(26,26,46,0.4) 50%, rgba(10,10,15,0.4) 100%)",
       }}
     >
       <div
@@ -44,10 +45,11 @@ export const TitleCard: React.FC = () => {
         <div
           style={{
             fontSize: 28,
-            color: "#63b3ed",
+            color: COLORS.gold,
             letterSpacing: 6,
             marginBottom: 24,
-            fontFamily: "Times New Roman, serif",
+            fontFamily: FONT,
+            textShadow: TEXT_SHADOW,
           }}
         >
           CHỦ NGHĨA XÃ HỘI KHOA HỌC - NHÓM 6
@@ -55,11 +57,12 @@ export const TitleCard: React.FC = () => {
         <h1
           style={{
             fontSize: 52,
-            color: "white",
-            fontFamily: "Times New Roman, serif",
+            color: COLORS.white,
+            fontFamily: FONT,
             fontWeight: "bold",
             lineHeight: 1.3,
             margin: 0,
+            textShadow: TEXT_SHADOW,
           }}
         >
           TRÁCH NHIỆM CỦA SINH VIÊN TRONG VIỆC
@@ -76,9 +79,10 @@ export const TitleCard: React.FC = () => {
           bottom: 80,
           opacity: subtitleOpacity,
           textAlign: "center",
-          color: "#a0aec0",
+          color: COLORS.body,
           fontSize: 22,
-          fontFamily: "Times New Roman, serif",
+          fontFamily: FONT,
+          textShadow: TEXT_SHADOW,
         }}
       >
         Nhân - Huỳnh Nhi - Thục Nhi - Châu Nhi - Phụng Nhi - Tố Như - Ý Như
