@@ -27,7 +27,7 @@ export const NhanIntro: React.FC = () => {
   const beat2Visible = frame >= 90 && frame < 150;
 
   return (
-    <AbsoluteFill style={{ backgroundColor: COLORS.navy }}>
+    <AbsoluteFill>
 
       {/* Beat 1: SectionTitle (frames 0-90) */}
       {frame < 90 && (
@@ -48,7 +48,6 @@ export const NhanIntro: React.FC = () => {
             alignItems: "center",
             justifyContent: "space-between",
             padding: "60px 80px",
-            backgroundColor: COLORS.navy,
           }}
         >
           {/* Left: text content */}

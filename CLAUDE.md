@@ -60,9 +60,31 @@ pdftotext "2.GIAO TRINH CHXHKH KHONG CHUYEN.pdf" output.txt
 
 All course content is in **Vietnamese**. Preserve Vietnamese diacritics exactly when extracting or editing markdown files.
 
+## Task Management
+
+Use `/tw` skill for all task tracking. Project: `hcmus.cnxhkh.video`.
+
 ## Code Editing Tools
 
 For all coding actions (reading, editing, navigating, searching code), always prefer **Serena MCP** and **JetBrains MCP** tools over built-in Read/Edit/Grep. Use Serena's symbolic tools for code exploration, `find_symbol`/`get_symbols_overview` for navigation, and `replace_symbol_body`/`insert_after_symbol` for edits. Fall back to built-in tools only for non-code files (markdown, PDFs, config, etc.).
+
+## Remotion Video (de_an_quay_video/remotion/)
+
+Remotion-based video composition for the group presentation. 13.5 min at 30fps.
+
+- **Studio:** `cd de_an_quay_video/remotion && bun run studio` (serves at 100.64.0.2:5173)
+- **Render:** `bun run render` (full MP4) or `bun run render:draft` (half-res, lower quality)
+- **Typecheck:** `bunx tsc --noEmit`
+
+### Architecture
+- `src/MainVideo.tsx` - composition root, maps SECTIONS to Sequence components
+- `src/constants.ts` - SECTIONS array (frame-based from/duration), COLORS, MEMBER_COLORS
+- `src/components/shared/Background3D.tsx` - 3D background layer using `@remotion/three` (ThreeCanvas + wireframe shapes + particles)
+- `src/components/shared/` - reusable components (SectionTitle, Overlay, MemberPlaceholder, etc.)
+- `src/components/sections/` - one component per member section
+- `src/components/TitleCard.tsx` - intro title card
+- Sections use transparent/semi-transparent backgrounds so the 3D layer shows through
+- 3D stack: `three` + `@react-three/fiber` + `@react-three/drei` + `@remotion/three`
 
 ## Style Preferences
 

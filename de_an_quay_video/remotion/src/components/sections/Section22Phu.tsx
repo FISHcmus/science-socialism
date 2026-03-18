@@ -44,7 +44,7 @@ export const Section22Phu: React.FC = () => {
   const headingOpacity = interpolate(headingSpring, [0, 1], [0, 1]);
 
   return (
-    <AbsoluteFill style={{ backgroundColor: COLORS.navy }}>
+    <AbsoluteFill>
 
       {/* Beat 1: SectionTitle (frames 0-90) */}
       {frame < 90 && (
@@ -65,7 +65,6 @@ export const Section22Phu: React.FC = () => {
             alignItems: "center",
             justifyContent: "flex-start",
             padding: "60px 80px 40px 80px",
-            backgroundColor: COLORS.navy,
             gap: 0,
           }}
         >

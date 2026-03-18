@@ -24,7 +24,7 @@ export const SectionTitle: React.FC<{
       style={{
         justifyContent: "center",
         alignItems: "center",
-        background: `linear-gradient(135deg, ${COLORS.navy} 0%, ${COLORS.navyLight} 100%)`,
+        background: `linear-gradient(135deg, rgba(10,22,40,0.4) 0%, rgba(26,54,93,0.4) 100%)`,
       }}
     >
       <div

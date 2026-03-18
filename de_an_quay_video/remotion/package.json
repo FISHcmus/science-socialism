@@ -6,6 +6,8 @@
     "render": "bunx remotion render src/index.ts nhom6-video out/video.mp4",
     "render:draft": "bunx remotion render src/index.ts nhom6-video out/draft.mp4 --quality=50 --scale=0.5",
     "web": "bun --hot src/serve.ts",
+    "lint": "bunx eslint src/",
+    "typecheck": "bunx tsc --noEmit",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -24,8 +26,11 @@
     "@vitejs/plugin-react": "^6.0.1",
     "@vitest/browser-playwright": "^4.1.0",
     "@vitest/coverage-v8": "^4.1.0",
+    "eslint": "^10.0.3",
+    "eslint-plugin-sonarjs": "^4.0.2",
     "playwright": "^1.58.2",
     "storybook": "^10.2.19",
+    "typescript-eslint": "^8.57.1",
     "vite": "^8.0.0",
     "vitest": "^4.1.0"
   },
@@ -33,12 +38,17 @@
     "typescript": "^5"
   },
   "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
     "@remotion/cli": "^4.0.436",
     "@remotion/player": "^4.0.436",
+    "@remotion/three": "^4.0.436",
+    "@types/three": "^0.183.1",
     "d3-geo": "^3.1.1",
     "d3-shape": "^3.2.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "remotion": "^4.0.436"
+    "remotion": "^4.0.436",
+    "three": "^0.183.2"
   }
 }

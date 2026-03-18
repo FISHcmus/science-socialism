@@ -65,7 +65,7 @@ export const Section31QuynhNhu: React.FC = () => {
   });
 
   return (
-    <AbsoluteFill style={{ backgroundColor: COLORS.navy }}>
+    <AbsoluteFill>
 
       {/* Beat 1: SectionTitle (frames 0-90) */}
       {frame < 90 && (
@@ -85,7 +85,6 @@ export const Section31QuynhNhu: React.FC = () => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            backgroundColor: COLORS.navy,
             padding: "40px 60px",
             gap: 40,
           }}

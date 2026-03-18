@@ -58,7 +58,7 @@ export const Conclusion: React.FC = () => {
   return (
     <AbsoluteFill
       style={{
-        background: `linear-gradient(180deg, ${COLORS.navy} 0%, ${COLORS.navyLight} 100%)`,
+        background: `linear-gradient(180deg, rgba(10,22,40,0.4) 0%, rgba(26,54,93,0.4) 100%)`,
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",

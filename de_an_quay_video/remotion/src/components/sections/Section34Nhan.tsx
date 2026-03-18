@@ -88,7 +88,7 @@ const Beat2: React.FC = () => {
   return (
     <AbsoluteFill
       style={{
-        background: `linear-gradient(135deg, ${COLORS.navy} 0%, ${COLORS.navyLight} 100%)`,
+        background: `linear-gradient(135deg, rgba(10,22,40,0.4) 0%, rgba(26,54,93,0.4) 100%)`,
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
@@ -150,7 +150,7 @@ const Beat3: React.FC = () => (
 );
 
 export const Section34Nhan: React.FC = () => (
-  <AbsoluteFill style={{ backgroundColor: COLORS.navy }}>
+  <AbsoluteFill>
     {/* Beat 1: Section title card */}
     <Sequence from={0} durationInFrames={90}>
       <SectionTitle

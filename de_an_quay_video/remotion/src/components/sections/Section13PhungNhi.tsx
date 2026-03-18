@@ -42,7 +42,7 @@ export const Section13PhungNhi: React.FC = () => {
   });
 
   return (
-    <AbsoluteFill style={{ backgroundColor: COLORS.navy }}>
+    <AbsoluteFill>
 
       {/* Beat 1: SectionTitle (frames 0-90) */}
       {frame < 90 && (

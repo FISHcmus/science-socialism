@@ -118,7 +118,7 @@ export const Section11ThucNhi: React.FC = () => {
   const frame = useCurrentFrame();
 
   return (
-    <AbsoluteFill style={{ backgroundColor: COLORS.navy }}>
+    <AbsoluteFill>
 
       {/* Beat 1: SectionTitle (frames 0-90) */}
       {frame < 90 && (

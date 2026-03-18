@@ -30,7 +30,7 @@ export const TitleCard: React.FC = () => {
       style={{
         justifyContent: "center",
         alignItems: "center",
-        background: "linear-gradient(135deg, #0a1628 0%, #1a365d 50%, #2d3748 100%)",
+        background: "linear-gradient(135deg, rgba(10,22,40,0.4) 0%, rgba(26,54,93,0.4) 50%, rgba(45,55,72,0.4) 100%)",
       }}
     >
       <div

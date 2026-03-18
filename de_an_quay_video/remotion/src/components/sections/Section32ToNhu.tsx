@@ -76,7 +76,7 @@ export const Section32ToNhu: React.FC = () => {
   );
 
   return (
-    <AbsoluteFill style={{ backgroundColor: COLORS.navy }}>
+    <AbsoluteFill>
 
       {/* Beat 1: SectionTitle (frames 0-90) */}
       {frame < 90 && (
@@ -95,7 +95,6 @@ export const Section32ToNhu: React.FC = () => {
             display: "flex",
             flexDirection: "row",
             alignItems: "stretch",
-            backgroundColor: COLORS.navy,
             gap: 0,
           }}
         >
