@@ -1,313 +1,250 @@
 import { AbsoluteFill, interpolate, useCurrentFrame, spring, useVideoConfig } from "remotion";
-import { COLORS, FONT, MEMBER_COLORS, TEXT_SHADOW } from "../../constants";
-import {
-  SectionTitle,
-  CountUpNumber,
-  BarChart,
-  MemberPlaceholder,
-  Overlay,
-  LowerThird,
-} from "../ds";
-import type { BarData } from "../ds";
+import { COLORS, FONT, TEXT_SHADOW } from "../../constants";
+import { SectionTitle, ArtDecoImage, MemberPiP, CitationFooter, CountUpNumber } from "../ds";
 
-// Beat 1:    0-90   — SectionTitle "Thành tựu & con số", sectionNumber "PHẦN 2.2"
-// Beat 2:  90-1200  — Three CountUpNumber side by side + BarChart below
-// Beat 3: 1200-1800 — MemberPlaceholder "Phú" + Overlay + LowerThird
+// Beat 1: 0-90   — SectionTitle "Đặc điểm tôn giáo ở Việt Nam" (full screen)
+// Beat 2: 90-1800 — Content (1440px left) + MemberPiP (480px right)
 // Total: 1800 frames (60s)
 
-const BAR_DATA: BarData[] = [
-  { label: "Miền Bắc", value: 85 },
-  { label: "Miền Trung", value: 78 },
-  { label: "Miền Nam", value: 90 },
-  { label: "Tây Nguyên", value: 72 },
-  { label: "Tây Bắc", value: 68 },
+const STATS = [
+  { value: 16, suffix: "", label: "tôn giáo" },
+  { value: 43, suffix: "", label: "tổ chức" },
+  { value: 57, suffix: "K", label: "chức sắc" },
+  { value: 29, suffix: "K+", label: "cơ sở thờ tự" },
+];
+
+const CARDS = [
+  {
+    title: "Chung sống hòa bình",
+    detail: "Các tôn giáo chung sống hòa bình, chưa từng xảy ra xung đột hay chiến tranh tôn giáo tại Việt Nam.",
+    appearAt: 300,
+  },
+  {
+    title: "Chính sách nhà nước",
+    detail: "Tôn trọng tự do tín ngưỡng, bình đẳng trước pháp luật. Nghiêm cấm lợi dụng tín ngưỡng gây chia rẽ, xâm phạm an ninh.",
+    appearAt: 600,
+  },
 ];
 
 export const Section22Phu: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // ── Beat 1: SectionTitle spring ──────────────────────────────────────────
-  const titleSpring = spring({ frame, fps, config: { damping: 20, stiffness: 80 } });
+  // Beat 1: SectionTitle animation
+  const titleSpring = spring({ frame, fps, config: { damping: 18, stiffness: 80 } });
   const titleOpacity = interpolate(titleSpring, [0, 1], [0, 1]);
   const titleTranslateY = interpolate(titleSpring, [0, 1], [40, 0]);
+  const titleAccentWidth = interpolate(titleSpring, [0, 1], [0, 80]);
 
-  // ── Beat 2 envelope ──────────────────────────────────────────────────────
-  const beat2Local = frame - 90;
-  const beat2FadeIn =
-    beat2Local >= 0
-      ? interpolate(beat2Local, [0, 20], [0, 1], { extrapolateRight: "clamp" })
-      : 0;
-  const beat2FadeOut = interpolate(frame, [1160, 1200], [1, 0], {
+  // Beat 2: shared animation values
+  const beat2LocalFrame = Math.max(0, frame - 90);
+  const ringAngle = (beat2LocalFrame / fps) * 80;
+
+  const headerOpacity = interpolate(frame, [90, 110], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
-  const beat2Opacity = frame >= 90 && frame < 1200 ? Math.min(beat2FadeIn, beat2FadeOut) : 0;
-  const beat2Visible = frame >= 90 && frame < 1200;
 
-  // Beat 2 section heading spring
-  const headingLocal = Math.max(0, frame - 90);
-  const headingSpring = spring({ frame: headingLocal, fps, config: { damping: 20, stiffness: 80 } });
-  const headingY = interpolate(headingSpring, [0, 1], [40, 0]);
-  const headingOpacity = interpolate(headingSpring, [0, 1], [0, 1]);
-
-  // ── CountUpNumber 1: 54 dân tộc (startFrame=120, duration=80) ────────────
-  const count1Local = frame - 120;
-  const count1Progress = interpolate(count1Local, [0, 80], [0, 1], { extrapolateRight: "clamp" });
-  const count1Eased = 1 - Math.pow(1 - Math.max(0, count1Progress), 3);
-  const count1Value = Math.round(54 * count1Eased);
-  const count1Opacity = interpolate(count1Local, [0, 15], [0, 1], { extrapolateRight: "clamp" });
-
-  // ── CountUpNumber 2: 63 tỉnh thành (startFrame=160, duration=80) ─────────
-  const count2Local = frame - 160;
-  const count2Progress = interpolate(count2Local, [0, 80], [0, 1], { extrapolateRight: "clamp" });
-  const count2Eased = 1 - Math.pow(1 - Math.max(0, count2Progress), 3);
-  const count2Value = Math.round(63 * count2Eased);
-  const count2Opacity = interpolate(count2Local, [0, 15], [0, 1], { extrapolateRight: "clamp" });
-
-  // ── CountUpNumber 3: 100 tr dân số (startFrame=200, duration=80) ─────────
-  const count3Local = frame - 200;
-  const count3Progress = interpolate(count3Local, [0, 80], [0, 1], { extrapolateRight: "clamp" });
-  const count3Eased = 1 - Math.pow(1 - Math.max(0, count3Progress), 3);
-  const count3Value = Math.round(100 * count3Eased);
-  const count3Opacity = interpolate(count3Local, [0, 15], [0, 1], { extrapolateRight: "clamp" });
-
-  // ── BarChart: startFrame=280, stagger=12 ─────────────────────────────────
-  const barProgresses = BAR_DATA.map((_, i) => {
-    const barStart = 280 + i * 12;
-    const localFrame = frame - barStart;
-    if (localFrame < 0) return 0;
-    return spring({ frame: localFrame, fps, config: { damping: 16, stiffness: 80 } });
-  });
-  const barOpacities = BAR_DATA.map((_, i) => {
-    const barStart = 280 + i * 12;
-    const localFrame = frame - barStart;
-    if (localFrame < 0) return 0;
-    return interpolate(localFrame, [0, 10], [0, 1], { extrapolateRight: "clamp" });
-  });
-  const displayValues = BAR_DATA.map((bar, i) => Math.round(bar.value * (barProgresses[i] ?? 0)));
-
-  // ── CountUpNumber ring angle (shared across all 3) ───────────────────────
-  const countRingAngle = (frame / fps) * 60;
-
-  // ── Beat 3: MemberPlaceholder / Overlay / LowerThird ─────────────────────
-  const showFrom = 1200;
-  const memberLocal = frame - showFrom;
-
-  const memberSpring = spring({
-    frame: Math.max(0, memberLocal),
-    fps,
-    config: { damping: 20, stiffness: 80 },
-  });
-  const memberScale = interpolate(memberSpring, [0, 1], [0.8, 1]);
-  const memberOpacity = interpolate(Math.max(0, memberLocal), [0, 20], [0, 1], {
+  const statsOpacity = interpolate(frame, [90, 120], [0, 1], {
+    extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
-  const memberRingAngle = (Math.max(0, memberLocal) / fps) * 80;
 
-  const overlayOpacity =
-    frame >= showFrom
-      ? interpolate(memberLocal, [0, 20], [0, 0.65], { extrapolateRight: "clamp" })
-      : 0;
-
-  const lowerThirdLocal = frame - 1215;
-  const lowerThirdSpring = spring({
-    frame: Math.max(0, lowerThirdLocal),
-    fps,
-    config: { damping: 20, stiffness: 80 },
-  });
-  const lowerThirdTranslateY = interpolate(lowerThirdSpring, [0, 1], [40, 0]);
-  const lowerThirdOpacity = interpolate(Math.max(0, lowerThirdLocal), [0, 15], [0, 1], {
+  const pipOpacity = interpolate(frame, [90, 120], [0, 1], {
+    extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
+
+  const citationOpacity = interpolate(frame, [1200, 1260], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+
+  // Image animations
+  const img1Opacity = interpolate(frame, [850, 880], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const img1Sweep = Math.max(0, Math.min(1, (frame - 885) / 30));
+
+  const img2Opacity = interpolate(frame, [970, 1000], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const img2Sweep = Math.max(0, Math.min(1, (frame - 1005) / 30));
 
   return (
     <AbsoluteFill>
-
-      {/* Beat 1: SectionTitle (frames 0-90) */}
+      {/* Beat 1: SectionTitle (frames 0-90) — full screen */}
       {frame < 90 && (
         <AbsoluteFill
           style={{
-            background: `linear-gradient(135deg, ${COLORS.darkest} 0%, ${COLORS.dark} 100%)`,
+            background: "linear-gradient(135deg, rgba(10,20,40,0.95) 0%, rgba(20,40,80,0.9) 100%)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
           <SectionTitle
-            title="Thành tựu & con số"
-            subtitle="Đoàn kết dân tộc Việt Nam"
+            title="Đặc điểm tôn giáo"
+            subtitle="ở Việt Nam"
             sectionNumber="PHẦN 2.2"
             opacity={titleOpacity}
             translateY={titleTranslateY}
+            accentWidth={titleAccentWidth}
           />
         </AbsoluteFill>
       )}
 
-      {/* Beat 2: CountUpNumbers + BarChart (frames 90-1200) */}
-      {beat2Visible && (
-        <AbsoluteFill
-          style={{
-            opacity: beat2Opacity,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "flex-start",
-            padding: "60px 80px 40px 80px",
-            gap: 0,
-          }}
-        >
-          {/* Section heading */}
+      {/* Beat 2: Content (1440px) + MemberPiP (480px) — frames 90-1800 */}
+      {frame >= 90 && (
+        <AbsoluteFill style={{ display: "flex", flexDirection: "row" }}>
+          {/* Left: Content area */}
           <div
             style={{
-              transform: `translateY(${headingY}px)`,
-              opacity: headingOpacity,
-              textAlign: "center",
-              marginBottom: 48,
-            }}
-          >
-            <div
-              style={{
-                fontSize: 24,
-                color: COLORS.gold,
-                fontFamily: FONT,
-                letterSpacing: 4,
-                marginBottom: 12,
-                textTransform: "uppercase",
-                textShadow: TEXT_SHADOW,
-              }}
-            >
-              Số liệu nổi bật
-            </div>
-            <h2
-              style={{
-                fontSize: 50,
-                color: COLORS.white,
-                fontFamily: FONT,
-                fontWeight: "bold",
-                margin: 0,
-                lineHeight: 1.2,
-                textShadow: TEXT_SHADOW,
-              }}
-            >
-              Việt Nam — Thống nhất trong đa dạng
-            </h2>
-          </div>
-
-          {/* Three CountUpNumber side by side */}
-          <div
-            style={{
+              width: 1440,
+              height: 1080,
+              padding: "60px 60px 40px 80px",
               display: "flex",
-              flexDirection: "row",
-              justifyContent: "center",
-              alignItems: "flex-end",
-              gap: 80,
-              marginBottom: 56,
+              flexDirection: "column",
+              overflow: "hidden",
             }}
           >
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: 60,
-              }}
-            >
-              <CountUpNumber
-                value={count1Value}
-                label="dân tộc"
-                color={COLORS.gold}
-                size={80}
-                opacity={count1Opacity}
-                goldRing
-                ringAngle={countRingAngle}
-              />
+            {/* Header */}
+            <div style={{ marginBottom: 24, opacity: headerOpacity }}>
+              <div
+                style={{
+                  fontSize: 32,
+                  color: COLORS.gold,
+                  fontFamily: FONT,
+                  letterSpacing: 4,
+                  marginBottom: 8,
+                  textShadow: TEXT_SHADOW,
+                }}
+              >
+                PHẦN 2.2
+              </div>
+              <h2
+                style={{
+                  fontSize: 52,
+                  color: COLORS.white,
+                  fontFamily: FONT,
+                  fontWeight: "bold",
+                  margin: 0,
+                  lineHeight: 1.2,
+                  textShadow: TEXT_SHADOW,
+                }}
+              >
+                Đặc điểm tôn giáo ở Việt Nam
+              </h2>
+              <div style={{ width: 100, height: 4, backgroundColor: COLORS.gold, marginTop: 16 }} />
+            </div>
 
-              <CountUpNumber
-                value={count2Value}
-                label="tỉnh thành"
-                color={COLORS.warmGold}
-                size={80}
-                opacity={count2Opacity}
-                goldRing
-                ringAngle={countRingAngle + 120}
-              />
+            {/* Statistics row */}
+            <div style={{ display: "flex", gap: 32, marginBottom: 24, opacity: statsOpacity }}>
+              {STATS.map((s, i) => (
+                <div key={i} style={{
+                  flex: 1, backgroundColor: "rgba(10,10,15,0.88)",
+                  border: `2px solid ${COLORS.gold}`, borderRadius: 10,
+                  padding: "16px 20px", textAlign: "center",
+                }}>
+                  <CountUpNumber value={s.value} suffix={s.suffix} label={s.label} size={44} />
+                </div>
+              ))}
+            </div>
 
-              <CountUpNumber
-                value={count3Value}
-                suffix="tr"
-                label="dân số"
-                color={COLORS.lightGold}
-                size={80}
-                opacity={count3Opacity}
-                goldRing
-                ringAngle={countRingAngle + 240}
+            {/* Content cards */}
+            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+              {CARDS.map((p, i) => {
+                const localFrame = frame - p.appearAt;
+                if (localFrame < 0) return null;
+
+                const cardSpring = spring({ frame: localFrame, fps, config: { damping: 16, stiffness: 90 } });
+                const translateX = interpolate(cardSpring, [0, 1], [-80, 0]);
+                const cardOpacity = interpolate(cardSpring, [0, 1], [0, 1]);
+
+                return (
+                  <div
+                    key={i}
+                    style={{
+                      transform: `translateX(${translateX}px)`,
+                      opacity: cardOpacity,
+                      backgroundColor: "rgba(10, 10, 15, 0.88)",
+                      border: `3px solid ${COLORS.gold}`,
+                      borderLeft: `6px solid ${COLORS.gold}`,
+                      borderRadius: 12,
+                      padding: "20px 32px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontSize: 38,
+                        fontWeight: "bold",
+                        color: COLORS.white,
+                        fontFamily: FONT,
+                        marginBottom: 8,
+                        lineHeight: 1.2,
+                        textShadow: TEXT_SHADOW,
+                      }}
+                    >
+                      {p.title}
+                    </div>
+                    <div
+                      style={{
+                        fontSize: 28,
+                        color: COLORS.body,
+                        fontFamily: FONT,
+                        lineHeight: 1.4,
+                        textShadow: TEXT_SHADOW,
+                      }}
+                    >
+                      {p.detail}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* 2 images stacked */}
+            <div style={{ display: "flex", gap: 40, marginTop: 24 }}>
+              <div style={{ opacity: img1Opacity }}>
+                <ArtDecoImage
+                  description="Ảnh minh họa 1"
+                  width={340}
+                  height={340}
+                  ringAngle={ringAngle}
+                  sweepProgress={img1Sweep}
+                />
+              </div>
+              <div style={{ opacity: img2Opacity }}>
+                <ArtDecoImage
+                  description="Ảnh minh họa 2"
+                  width={340}
+                  height={340}
+                  ringAngle={ringAngle}
+                  sweepProgress={img2Sweep}
+                />
+              </div>
+            </div>
+
+            {/* Citation */}
+            <div style={{ marginTop: "auto" }}>
+              <CitationFooter
+                text="GT CNXHKH (2021), Ch.6, II.2a-b, tr.222-226"
+                opacity={citationOpacity}
               />
             </div>
           </div>
 
-          {/* Divider */}
-          <div
-            style={{
-              width: 600,
-              height: 2,
-              backgroundColor: "rgba(255,255,255,0.1)",
-              marginBottom: 32,
-            }}
-          />
-
-          {/* BarChart for regional unity metrics */}
-          <div style={{ width: "100%" }}>
-            <div
-              style={{
-                textAlign: "center",
-                fontSize: 22,
-                color: COLORS.body,
-                fontFamily: FONT,
-                marginBottom: 16,
-                letterSpacing: 1,
-                textShadow: TEXT_SHADOW,
-              }}
-            >
-              Chỉ số đoàn kết theo vùng miền (%)
-            </div>
-            <BarChart
-              data={BAR_DATA}
-              maxHeight={220}
-              showValues={true}
-              suffix="%"
-              barProgresses={barProgresses}
-              barOpacities={barOpacities}
-              displayValues={displayValues}
+          {/* Right: MemberPiP (480px) */}
+          <div style={{ opacity: pipOpacity }}>
+            <MemberPiP
+              name="Ngô Văn Phú"
+              sectionLabel="Phần 2.2 - Tôn giáo Việt Nam"
+              ringAngle={ringAngle}
             />
           </div>
         </AbsoluteFill>
-      )}
-
-      {/* Beat 3: MemberPlaceholder + Overlay + LowerThird (frames 1200-1800) */}
-      {frame >= 1200 && (
-        <>
-          <MemberPlaceholder
-            name="Phú"
-            color={MEMBER_COLORS["Phú"] ?? COLORS.dark}
-            opacity={memberOpacity}
-            scale={memberScale}
-            ringAngle={memberRingAngle}
-          />
-          <Overlay direction="bottom" opacity={overlayOpacity} />
-          <div
-            style={{
-              position: "absolute",
-              bottom: 0,
-              left: 0,
-              right: 0,
-              transform: `translateY(${lowerThirdTranslateY}px)`,
-            }}
-          >
-            <LowerThird
-              name="Phú"
-              role="Thành tựu & con số về đoàn kết dân tộc"
-              opacity={lowerThirdOpacity}
-              translateY={0}
-            />
-          </div>
-        </>
       )}
     </AbsoluteFill>
   );

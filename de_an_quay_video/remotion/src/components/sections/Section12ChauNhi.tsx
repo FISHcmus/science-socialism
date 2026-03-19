@@ -1,127 +1,96 @@
-import React from "react";
-import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
-import { COLORS, FONT, MEMBER_COLORS, TEXT_SHADOW } from "../../constants";
-import { SectionTitle, IconGrid, MemberPlaceholder, Overlay } from "../ds";
-import type { IconGridItem } from "../ds";
+import { AbsoluteFill, interpolate, useCurrentFrame, spring, useVideoConfig } from "remotion";
+import { COLORS, FONT, TEXT_SHADOW } from "../../constants";
+import { SectionTitle, ArtDecoImage, MemberPiP, CitationFooter } from "../ds";
 
-// Beat 1: 0-90     — SectionTitle "Năm đặc trưng ĐĐKTDT"
-// Beat 2: 90-2100  — IconGrid with 5 items (3 + 2)
-// Beat 3: 2100-2700 — MemberPlaceholder "Châu Nhi" + Overlay
+// Beat 1: 0-90   — SectionTitle "Năm đặc trưng cơ bản của dân tộc" (full screen)
+// Beat 2: 90-2700 — Content (1440px left) + MemberPiP (480px right)
 
-const FEATURES: IconGridItem[] = [
+const CHARACTERISTICS = [
   {
-    label: "Tính toàn dân",
-    description: "Tập hợp mọi tầng lớp nhân dân không phân biệt dân tộc, tôn giáo, giai cấp",
+    title: "Cộng đồng lãnh thổ",
+    detail: "Vùng đất, trời, biển thuộc chủ quyền quốc gia, là nơi cư trú lâu đời của cộng đồng dân tộc.",
+    appearAt: 90,
   },
   {
-    label: "Tính mục tiêu",
-    description: "Hướng đến lợi ích chung của dân tộc, độc lập - tự do - hạnh phúc",
+    title: "Cộng đồng sinh hoạt kinh tế",
+    detail: "Đặc trưng quan trọng nhất, là cơ sở liên kết các bộ phận, thành viên trong cộng đồng dân tộc.",
+    appearAt: 370,
   },
   {
-    label: "Tính tổ chức",
-    description: "Thông qua Mặt trận Tổ quốc Việt Nam và các tổ chức chính trị - xã hội",
+    title: "Cộng đồng ngôn ngữ",
+    detail: "Công cụ giao tiếp chung, phản ánh ý thức tự giác tộc người và là tiêu chí quan trọng để phân biệt dân tộc.",
+    appearAt: 650,
   },
   {
-    label: "Tính tự nguyện",
-    description: "Trên cơ sở tự giác, tự nguyện, bình đẳng giữa các thành viên",
+    title: "Cộng đồng văn hóa và tâm lý",
+    detail: "Yếu tố đặc biệt quan trọng, thể hiện qua văn hóa vật chất và tinh thần, tạo bản sắc riêng mỗi dân tộc.",
+    appearAt: 930,
   },
   {
-    label: "Tính lâu dài",
-    description: "Xây dựng và củng cố qua nhiều thế hệ, kiên định trước mọi thử thách",
+    title: "Có chung một nhà nước",
+    detail: "Phân biệt dân tộc quốc gia với dân tộc - tộc người, thể hiện qua tổ chức nhà nước thống nhất.",
+    appearAt: 1210,
   },
 ];
 
-// First IconGrid: startFrame=110, stagger=30 — 3 items
-const GRID1_START = 110;
-const GRID1_STAGGER = 30;
-const GRID1_ITEMS = FEATURES.slice(0, 3);
-
-// Second IconGrid: startFrame=200, stagger=30 — 2 items
-const GRID2_START = 200;
-const GRID2_STAGGER = 30;
-const GRID2_ITEMS = FEATURES.slice(3, 5);
-
-const MEMBER_SHOW_FROM = 2100;
 
 export const Section12ChauNhi: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // Beat 1: SectionTitle spring animations
-  const titleSpring = spring({ frame, fps, config: { damping: 18, stiffness: 120 } });
+  // Beat 1: SectionTitle animation
+  const titleSpring = spring({ frame, fps, config: { damping: 18, stiffness: 80 } });
   const titleOpacity = interpolate(titleSpring, [0, 1], [0, 1]);
   const titleTranslateY = interpolate(titleSpring, [0, 1], [40, 0]);
-  const titleAccentWidth = interpolate(titleSpring, [0, 1], [0, 120]);
+  const titleAccentWidth = interpolate(titleSpring, [0, 1], [0, 80]);
 
-  // Beat 2: header fade-in
-  const headerOpacity = interpolate(frame, [90, 115], [0, 1], {
+  // Beat 2: shared animation values
+  const beat2LocalFrame = Math.max(0, frame - 90);
+  const ringAngle = (beat2LocalFrame / fps) * 80;
+
+  const headerOpacity = interpolate(frame, [90, 110], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
 
-  // Beat 2: per-item scales and opacities for first IconGrid (3 items)
-  const grid1Scales = GRID1_ITEMS.map((_, i) => {
-    const itemStart = GRID1_START + i * GRID1_STAGGER;
-    const localFrame = frame - itemStart;
-    if (localFrame < 0) return 0.3;
-    const s = spring({ frame: localFrame, fps, config: { damping: 16, stiffness: 120 } });
-    return interpolate(s, [0, 1], [0.3, 1]);
+  const pipOpacity = interpolate(frame, [90, 120], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
   });
 
-  const grid1Opacities = GRID1_ITEMS.map((_, i) => {
-    const itemStart = GRID1_START + i * GRID1_STAGGER;
-    const localFrame = frame - itemStart;
-    if (localFrame < 0) return 0;
-    const s = spring({ frame: localFrame, fps, config: { damping: 16, stiffness: 120 } });
-    return interpolate(s, [0, 1], [0, 1]);
+  const citationOpacity = interpolate(frame, [1800, 1860], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
   });
 
-  // Beat 2: per-item scales and opacities for second IconGrid (2 items)
-  const grid2Scales = GRID2_ITEMS.map((_, i) => {
-    const itemStart = GRID2_START + i * GRID2_STAGGER;
-    const localFrame = frame - itemStart;
-    if (localFrame < 0) return 0.3;
-    const s = spring({ frame: localFrame, fps, config: { damping: 16, stiffness: 120 } });
-    return interpolate(s, [0, 1], [0.3, 1]);
+  // Image animations (appear after all 5 cards)
+  const img1Opacity = interpolate(frame, [1500, 1530], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
   });
+  const img1Sweep = Math.max(0, Math.min(1, (frame - 1535) / 30));
 
-  const grid2Opacities = GRID2_ITEMS.map((_, i) => {
-    const itemStart = GRID2_START + i * GRID2_STAGGER;
-    const localFrame = frame - itemStart;
-    if (localFrame < 0) return 0;
-    const s = spring({ frame: localFrame, fps, config: { damping: 16, stiffness: 120 } });
-    return interpolate(s, [0, 1], [0, 1]);
+  const img2Opacity = interpolate(frame, [1620, 1650], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
   });
-
-  // Beat 3: MemberPlaceholder animation
-  const memberLocalFrame = Math.max(0, frame - MEMBER_SHOW_FROM);
-  const memberSpring = spring({ frame: memberLocalFrame, fps, config: { damping: 18, stiffness: 120 } });
-  const memberScale = interpolate(memberSpring, [0, 1], [0.8, 1]);
-  const memberOpacity = interpolate(memberSpring, [0, 1], [0, 1]);
-
-  const memberRingAngle = (memberLocalFrame / fps) * 80;
-
-  // Beat 3: Overlay opacity
-  const overlayOpacity = interpolate(
-    frame,
-    [MEMBER_SHOW_FROM, MEMBER_SHOW_FROM + 20],
-    [0, 0.65],
-    { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
-  );
+  const img2Sweep = Math.max(0, Math.min(1, (frame - 1655) / 30));
 
   return (
     <AbsoluteFill>
-
-      {/* Beat 1: SectionTitle (frames 0-90) */}
+      {/* Beat 1: SectionTitle (frames 0-90) — full screen */}
       {frame < 90 && (
         <AbsoluteFill
           style={{
-            background: `linear-gradient(135deg, ${COLORS.darkest} 0%, ${COLORS.dark} 100%)`,
+            background: "linear-gradient(135deg, rgba(10,20,40,0.95) 0%, rgba(20,40,80,0.9) 100%)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
           <SectionTitle
-            title="Năm đặc trưng ĐĐKTDT"
-            subtitle="Đặc trưng của đại đoàn kết toàn dân tộc"
+            title="Năm đặc trưng cơ bản"
+            subtitle="của dân tộc"
             sectionNumber="PHẦN 1.2"
             opacity={titleOpacity}
             translateY={titleTranslateY}
@@ -130,100 +99,142 @@ export const Section12ChauNhi: React.FC = () => {
         </AbsoluteFill>
       )}
 
-      {/* Beat 2: IconGrid (frames 90-2100) */}
-      {frame >= 90 && frame < 2100 && (
-        <AbsoluteFill
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "flex-start",
-            padding: "50px 60px",
-          }}
-        >
-          {/* Header */}
+      {/* Beat 2: Content (1440px) + MemberPiP (480px) — frames 90-2700 */}
+      {frame >= 90 && (
+        <AbsoluteFill style={{ display: "flex", flexDirection: "row" }}>
+          {/* Left: Content area */}
           <div
             style={{
-              opacity: headerOpacity,
-              textAlign: "center",
-              marginBottom: 44,
-              width: "100%",
+              width: 1440,
+              height: 1080,
+              padding: "60px 60px 40px 80px",
+              display: "flex",
+              flexDirection: "column",
+              overflow: "hidden",
             }}
           >
-            <div
-              style={{
-                fontSize: 24,
-                color: COLORS.gold,
-                fontFamily: FONT,
-                letterSpacing: 3,
-                marginBottom: 10,
-                textShadow: TEXT_SHADOW,
-              }}
-            >
-              PHẦN 1.2
+            {/* Header */}
+            <div style={{ marginBottom: 24, opacity: headerOpacity }}>
+              <div
+                style={{
+                  fontSize: 32,
+                  color: COLORS.gold,
+                  fontFamily: FONT,
+                  letterSpacing: 4,
+                  marginBottom: 8,
+                  textShadow: TEXT_SHADOW,
+                }}
+              >
+                PHẦN 1.2
+              </div>
+              <h2
+                style={{
+                  fontSize: 52,
+                  color: COLORS.white,
+                  fontFamily: FONT,
+                  fontWeight: "bold",
+                  margin: 0,
+                  lineHeight: 1.2,
+                  textShadow: TEXT_SHADOW,
+                }}
+              >
+                Năm đặc trưng cơ bản của dân tộc
+              </h2>
+              <div style={{ width: 100, height: 4, backgroundColor: COLORS.gold, marginTop: 16 }} />
             </div>
-            <h2
-              style={{
-                fontSize: 48,
-                color: COLORS.white,
-                fontFamily: FONT,
-                fontWeight: "bold",
-                margin: 0,
-                lineHeight: 1.3,
-                textShadow: TEXT_SHADOW,
-              }}
-            >
-              Năm đặc trưng của đại đoàn kết toàn dân tộc
-            </h2>
-            <div
-              style={{
-                width: 80,
-                height: 3,
-                backgroundColor: COLORS.gold,
-                margin: "16px auto 0",
-              }}
-            />
+
+            {/* 5 characteristic cards */}
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              {CHARACTERISTICS.map((c, i) => {
+                const localFrame = frame - c.appearAt;
+                if (localFrame < 0) return null;
+
+                const cardSpring = spring({ frame: localFrame, fps, config: { damping: 16, stiffness: 90 } });
+                const translateX = interpolate(cardSpring, [0, 1], [-80, 0]);
+                const cardOpacity = interpolate(cardSpring, [0, 1], [0, 1]);
+
+                return (
+                  <div
+                    key={i}
+                    style={{
+                      transform: `translateX(${translateX}px)`,
+                      opacity: cardOpacity,
+                      backgroundColor: "rgba(10, 10, 15, 0.88)",
+                      border: `3px solid ${COLORS.gold}`,
+                      borderLeft: `6px solid ${COLORS.gold}`,
+                      borderRadius: 12,
+                      padding: "16px 28px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontSize: 34,
+                        fontWeight: "bold",
+                        color: COLORS.white,
+                        fontFamily: FONT,
+                        marginBottom: 8,
+                        lineHeight: 1.2,
+                        textShadow: TEXT_SHADOW,
+                      }}
+                    >
+                      {c.title}
+                    </div>
+                    <div
+                      style={{
+                        fontSize: 26,
+                        color: COLORS.body,
+                        fontFamily: FONT,
+                        lineHeight: 1.4,
+                        textShadow: TEXT_SHADOW,
+                      }}
+                    >
+                      {c.detail}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* 2 images side by side */}
+            <div style={{ display: "flex", gap: 40, marginTop: 24 }}>
+              <div style={{ opacity: img1Opacity }}>
+                <ArtDecoImage
+                  description="Ảnh minh họa 1"
+                  width={340}
+                  height={340}
+                  ringAngle={ringAngle}
+                  sweepProgress={img1Sweep}
+                />
+              </div>
+              <div style={{ opacity: img2Opacity }}>
+                <ArtDecoImage
+                  description="Ảnh minh họa 2"
+                  width={340}
+                  height={340}
+                  ringAngle={ringAngle}
+                  sweepProgress={img2Sweep}
+                />
+              </div>
+            </div>
+
+            {/* Citation */}
+            <div style={{ marginTop: "auto" }}>
+              <CitationFooter
+                text="Giáo trình CNXHKH (2021), Ch.6, I.1, tr.196-200"
+                opacity={citationOpacity}
+              />
+            </div>
           </div>
 
-          {/* First row: 3 items */}
-          <div style={{ width: "100%", marginBottom: 0 }}>
-            <IconGrid
-              items={GRID1_ITEMS}
-              columns={3}
-              itemScales={grid1Scales}
-              itemOpacities={grid1Opacities}
-            />
-          </div>
-
-          {/* Second row: 2 items centered */}
-          <div
-            style={{
-              width: "66.66%",
-              marginTop: 20,
-            }}
-          >
-            <IconGrid
-              items={GRID2_ITEMS}
-              columns={2}
-              itemScales={grid2Scales}
-              itemOpacities={grid2Opacities}
+          {/* Right: MemberPiP (480px) */}
+          <div style={{ opacity: pipOpacity }}>
+            <MemberPiP
+              name="Nguyễn Hồng Châu Nhi"
+              sectionLabel="Phần 1.2 - Năm đặc trưng dân tộc"
+              ringAngle={ringAngle}
             />
           </div>
         </AbsoluteFill>
-      )}
-
-      {/* Beat 3: MemberPlaceholder "Châu Nhi" + Overlay (frames 2100-2700) */}
-      {frame >= MEMBER_SHOW_FROM && (
-        <>
-          <Overlay direction="bottom" opacity={overlayOpacity} />
-          <MemberPlaceholder
-            name="Châu Nhi"
-            color={MEMBER_COLORS["Châu Nhi"] ?? COLORS.dark}
-            opacity={memberOpacity}
-            scale={memberScale}
-            ringAngle={memberRingAngle}
-          />
-        </>
       )}
     </AbsoluteFill>
   );

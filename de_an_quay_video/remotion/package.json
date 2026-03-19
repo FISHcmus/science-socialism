@@ -3,8 +3,8 @@
   "private": true,
   "scripts": {
     "studio": "bunx remotion studio src/index.ts",
-    "render": "bunx remotion render src/index.ts nhom6-video out/video.mp4",
-    "render:draft": "bunx remotion render src/index.ts nhom6-video out/draft.mp4 --quality=50 --scale=0.5",
+    "render": "npx remotion render src/index.ts nhom6-video out/video.mp4 --port=3456",
+    "render:draft": "npx remotion render src/index.ts nhom6-video out/draft.mp4 --quality=50 --scale=0.5 --port=3456",
     "web": "bun --hot src/serve.ts",
     "lint": "bunx eslint src/",
     "typecheck": "bunx tsc --noEmit",

@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "serena": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/oraios/serena",
+        "serena",
+        "start-mcp-server",
+        "--context",
+        "claude-code",
+        "--project",
+        "/data/nextcloud/nhannht/files/documents/hcmus/semester2/science-socialism"
+      ],
+      "env": {}
+    }
+  }
+}

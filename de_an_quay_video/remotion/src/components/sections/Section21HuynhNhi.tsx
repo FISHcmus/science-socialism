@@ -1,282 +1,248 @@
-import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
-import { COLORS, FONT, MEMBER_COLORS, TEXT_SHADOW } from "../../constants";
-import { SectionTitle, TypewriterText, MemberPlaceholder, Overlay, LowerThird } from "../ds";
-import { VietnamMap } from "../shared/VietnamMap";
+import { AbsoluteFill, interpolate, useCurrentFrame, spring, useVideoConfig } from "remotion";
+import { COLORS, FONT, TEXT_SHADOW } from "../../constants";
+import { SectionTitle, ArtDecoImage, MemberPiP, CitationFooter } from "../ds";
 
-// Beat 1:  0-90    — SectionTitle "Thực tiễn đoàn kết dân tộc", sectionNumber "PHẦN 2.1"
-// Beat 2:  90-1200 — Left: VietnamMap highlighted. Right: TypewriterText about 54 dân tộc
-// Beat 3: 1200-1800 — MemberPlaceholder "Huỳnh Nhi" + Overlay + LowerThird
+// Beat 1: 0-90   — SectionTitle "Thực tiễn đoàn kết dân tộc Việt Nam" (full screen)
+// Beat 2: 90-1800 — Content (1440px left) + MemberPiP (480px right)
 // Total: 1800 frames (60s)
+
+const CARDS = [
+  {
+    title: "Lợi thế",
+    detail: "54 dân tộc cư trú đan xen giúp tăng cường hiểu biết, giao lưu, tạo nền văn hóa thống nhất trong đa dạng.",
+    appearAt: 90,
+  },
+  {
+    title: "Thách thức",
+    detail: "Dễ nảy sinh mâu thuẫn, hiểu lầm giữa các dân tộc, chênh lệch phát triển giữa các vùng miền.",
+    appearAt: 450,
+  },
+];
+
 
 export const Section21HuynhNhi: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // --- Beat 1: SectionTitle animation values ---
-  const titleSlideIn = spring({
-    frame,
-    fps,
-    from: 40,
-    to: 0,
-    config: { damping: 18, stiffness: 100 },
-  });
-  const titleOpacity = interpolate(frame, [0, 20], [0, 1], {
-    extrapolateRight: "clamp",
-  });
+  // Beat 1: SectionTitle animation
+  const titleSpring = spring({ frame, fps, config: { damping: 18, stiffness: 80 } });
+  const titleOpacity = interpolate(titleSpring, [0, 1], [0, 1]);
+  const titleTranslateY = interpolate(titleSpring, [0, 1], [40, 0]);
+  const titleAccentWidth = interpolate(titleSpring, [0, 1], [0, 80]);
 
-  // --- Beat 2 envelope ---
-  const beat2Local = frame - 90;
-  const beat2FadeIn =
-    beat2Local >= 0
-      ? interpolate(beat2Local, [0, 20], [0, 1], { extrapolateRight: "clamp" })
-      : 0;
-  const beat2FadeOut = interpolate(frame, [1160, 1200], [1, 0], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
-  const beat2Opacity = frame >= 90 && frame < 1200 ? Math.min(beat2FadeIn, beat2FadeOut) : 0;
-  const beat2Visible = frame >= 90 && frame < 1200;
+  // Beat 2: shared animation values
+  const beat2LocalFrame = Math.max(0, frame - 90);
+  const ringAngle = (beat2LocalFrame / fps) * 80;
 
-  // --- Beat 2: TypewriterText values ---
-  const typewriterText =
-    "Việt Nam là quốc gia đa dân tộc với 54 dân tộc anh em cùng sinh sống. Truyền thống đoàn kết được hun đúc qua hàng nghìn năm lịch sử dựng nước và giữ nước.";
-  const visibleChars = Math.min(Math.floor((frame - 110) / 2), typewriterText.length);
-  const cursorVisible = frame % 30 < 15;
-
-  // --- Beat 3: MemberPlaceholder animation values ---
-  const showFrom = 1200;
-  const memberScale = spring({
-    frame: Math.max(frame - showFrom, 0),
-    fps,
-    from: 0.85,
-    to: 1,
-    config: { damping: 20, stiffness: 120 },
-  });
-  const memberOpacity = interpolate(frame, [showFrom, showFrom + 20], [0, 1], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
-  const memberRingAngle = (Math.max(frame - showFrom, 0) / fps) * 80;
-
-  // --- Beat 3: Overlay opacity ---
-  const overlayBaseOpacity = interpolate(frame, [showFrom, showFrom + 20], [0, 0.65], {
+  const headerOpacity = interpolate(frame, [90, 110], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
 
-  // --- Beat 3: LowerThird animation values ---
-  const lowerThirdShowFrom = 1215;
-  const lowerThirdTranslateY = spring({
-    frame: Math.max(frame - lowerThirdShowFrom, 0),
-    fps,
-    from: 40,
-    to: 0,
-    config: { damping: 18, stiffness: 100 },
-  });
-  const lowerThirdOpacity = interpolate(frame, [lowerThirdShowFrom, lowerThirdShowFrom + 20], [0, 1], {
+  const pipOpacity = interpolate(frame, [90, 120], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
+
+  // Quote animation (appears at frame 750)
+  const quoteOpacity = interpolate(frame, [750, 780], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+
+  const citationOpacity = interpolate(frame, [1200, 1260], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+
+  // Image animations (appear at frames 950/1070)
+  const img1Opacity = interpolate(frame, [950, 980], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const img1Sweep = Math.max(0, Math.min(1, (frame - 985) / 30));
+
+  const img2Opacity = interpolate(frame, [1070, 1100], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const img2Sweep = Math.max(0, Math.min(1, (frame - 1105) / 30));
 
   return (
     <AbsoluteFill>
-
-      {/* Beat 1: SectionTitle (frames 0-90) */}
+      {/* Beat 1: SectionTitle (frames 0-90) — full screen */}
       {frame < 90 && (
         <AbsoluteFill
           style={{
-            background: `linear-gradient(135deg, ${COLORS.darkest} 0%, ${COLORS.dark} 100%)`,
+            background: "linear-gradient(135deg, rgba(10,20,40,0.95) 0%, rgba(20,40,80,0.9) 100%)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
           <SectionTitle
-            title="Thực tiễn đoàn kết dân tộc"
-            subtitle="Tại Việt Nam"
+            title="Thực tiễn đoàn kết"
+            subtitle="dân tộc Việt Nam"
             sectionNumber="PHẦN 2.1"
             opacity={titleOpacity}
-            translateY={titleSlideIn}
-            accentWidth={interpolate(frame, [10, 60], [0, 80], { extrapolateRight: "clamp" })}
+            translateY={titleTranslateY}
+            accentWidth={titleAccentWidth}
           />
         </AbsoluteFill>
       )}
 
-      {/* Beat 2: VietnamMap (left) + TypewriterText (right) (frames 90-1200) */}
-      {beat2Visible && (
-        <AbsoluteFill
-          style={{
-            opacity: beat2Opacity,
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-between",
-            padding: "60px 80px",
-          }}
-        >
-          {/* Left: Vietnam map with major city provinces highlighted */}
+      {/* Beat 2: Content (1440px) + MemberPiP (480px) — frames 90-1800 */}
+      {frame >= 90 && (
+        <AbsoluteFill style={{ display: "flex", flexDirection: "row" }}>
+          {/* Left: Content area */}
           <div
             style={{
-              flexShrink: 0,
+              width: 1440,
+              height: 1080,
+              padding: "60px 60px 40px 80px",
               display: "flex",
               flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
+              overflow: "hidden",
             }}
           >
-            <div
-              style={{
-                fontSize: 22,
-                color: COLORS.gold,
-                fontFamily: FONT,
-                letterSpacing: 2,
-                marginBottom: 16,
-                textTransform: "uppercase",
-                textShadow: TEXT_SHADOW,
-              }}
-            >
-              Bản đồ Việt Nam
-            </div>
-            <VietnamMap
-              highlightProvinces={[
-                "Ho Chi Minh City",
-                "Ha Noi",
-                "Da Nang",
-                "Hue",
-                "Can Tho",
-              ]}
-              highlightColor={COLORS.vnRed}
-              startFrame={90}
-              width={360}
-              height={640}
-            />
-          </div>
-
-          {/* Right: text content */}
-          <div
-            style={{
-              flex: 1,
-              paddingLeft: 60,
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              gap: 32,
-            }}
-          >
-            <div
-              style={{
-                fontSize: 24,
-                color: COLORS.gold,
-                fontFamily: FONT,
-                letterSpacing: 3,
-                textTransform: "uppercase",
-                textShadow: TEXT_SHADOW,
-              }}
-            >
-              Thực tiễn đoàn kết
+            {/* Header */}
+            <div style={{ marginBottom: 24, opacity: headerOpacity }}>
+              <div
+                style={{
+                  fontSize: 32,
+                  color: COLORS.gold,
+                  fontFamily: FONT,
+                  letterSpacing: 4,
+                  marginBottom: 8,
+                  textShadow: TEXT_SHADOW,
+                }}
+              >
+                PHẦN 2.1
+              </div>
+              <h2
+                style={{
+                  fontSize: 52,
+                  color: COLORS.white,
+                  fontFamily: FONT,
+                  fontWeight: "bold",
+                  margin: 0,
+                  lineHeight: 1.2,
+                  textShadow: TEXT_SHADOW,
+                }}
+              >
+                Thực tiễn đoàn kết dân tộc Việt Nam
+              </h2>
+              <div style={{ width: 100, height: 4, backgroundColor: COLORS.gold, marginTop: 16 }} />
             </div>
 
-            <h2
-              style={{
-                fontSize: 46,
-                color: COLORS.white,
-                fontFamily: FONT,
-                fontWeight: "bold",
-                lineHeight: 1.4,
-                margin: 0,
-                textShadow: TEXT_SHADOW,
-              }}
-            >
-              Quốc gia đa dân tộc
-            </h2>
+            {/* 2 theme cards */}
+            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+              {CARDS.map((p, i) => {
+                const localFrame = frame - p.appearAt;
+                if (localFrame < 0) return null;
 
-            <TypewriterText
-              text={typewriterText}
-              visibleChars={visibleChars}
-              fontSize={26}
-              color={COLORS.body}
-              showCursor
-              cursorVisible={cursorVisible}
-            />
+                const cardSpring = spring({ frame: localFrame, fps, config: { damping: 16, stiffness: 90 } });
+                const translateX = interpolate(cardSpring, [0, 1], [-80, 0]);
+                const cardOpacity = interpolate(cardSpring, [0, 1], [0, 1]);
 
-            {/* Highlight stats box */}
-            <div
-              style={{
-                display: "flex",
-                gap: 40,
-                marginTop: 20,
-              }}
-            >
-              {[
-                { number: "54", label: "dân tộc anh em" },
-                { number: "4000+", label: "năm lịch sử" },
-                { number: "63", label: "tỉnh thành" },
-              ].map((stat, i) => {
-                const statDelay = 300 + i * 60;
-                const statLocal = frame - statDelay;
-                const statOpacity =
-                  statLocal > 0
-                    ? interpolate(statLocal, [0, 20], [0, 1], { extrapolateRight: "clamp" })
-                    : 0;
                 return (
                   <div
                     key={i}
                     style={{
-                      opacity: statOpacity,
-                      textAlign: "center",
-                      backgroundColor: "rgba(10, 10, 15, 0.85)",
+                      transform: `translateX(${translateX}px)`,
+                      opacity: cardOpacity,
+                      backgroundColor: "rgba(10, 10, 15, 0.88)",
                       border: `3px solid ${COLORS.gold}`,
+                      borderLeft: `6px solid ${COLORS.gold}`,
                       borderRadius: 12,
-                      padding: "16px 24px",
+                      padding: "20px 32px",
                     }}
                   >
                     <div
                       style={{
-                        fontSize: 36,
+                        fontSize: 38,
                         fontWeight: "bold",
-                        color: COLORS.gold,
+                        color: COLORS.white,
                         fontFamily: FONT,
-                        lineHeight: 1,
-                      }}
-                    >
-                      {stat.number}
-                    </div>
-                    <div
-                      style={{
-                        fontSize: 22,
-                        color: COLORS.body,
-                        fontFamily: FONT,
-                        marginTop: 6,
+                        marginBottom: 8,
+                        lineHeight: 1.2,
                         textShadow: TEXT_SHADOW,
                       }}
                     >
-                      {stat.label}
+                      {p.title}
+                    </div>
+                    <div
+                      style={{
+                        fontSize: 28,
+                        color: COLORS.body,
+                        fontFamily: FONT,
+                        lineHeight: 1.4,
+                        textShadow: TEXT_SHADOW,
+                      }}
+                    >
+                      {p.detail}
                     </div>
                   </div>
                 );
               })}
             </div>
-          </div>
-        </AbsoluteFill>
-      )}
 
-      {/* Beat 3: MemberPlaceholder + Overlay + LowerThird (frames 1200-1800) */}
-      {frame >= 1200 && (
-        <>
-          <MemberPlaceholder
-            name="Huỳnh Nhi"
-            color={MEMBER_COLORS["Huỳnh Nhi"] ?? COLORS.dark}
-            opacity={memberOpacity}
-            scale={memberScale}
-            ringAngle={memberRingAngle}
-          />
-          <Overlay direction="bottom" opacity={overlayBaseOpacity} />
-          <div style={{ position: "absolute", bottom: 60, left: 60 }}>
-            <LowerThird
-              name="Huỳnh Nhi"
-              role="Thực tiễn đoàn kết dân tộc ở Việt Nam"
-              opacity={lowerThirdOpacity}
-              translateY={lowerThirdTranslateY}
+            {/* Quote block */}
+            <div style={{
+              opacity: quoteOpacity,
+              padding: "16px 24px",
+              borderLeft: `4px solid ${COLORS.gold}`,
+              fontStyle: "italic",
+              fontSize: 30,
+              color: COLORS.lightGold,
+              fontFamily: FONT,
+              lineHeight: 1.4,
+              textShadow: TEXT_SHADOW,
+              marginTop: 20,
+            }}>
+              "Bao nhiêu lợi ích đều vì dân, bao nhiêu quyền hạn đều của dân"
+            </div>
+
+            {/* 2 images stacked */}
+            <div style={{ display: "flex", gap: 40, marginTop: 24 }}>
+              <div style={{ opacity: img1Opacity }}>
+                <ArtDecoImage
+                  description="Ảnh minh họa 1"
+                  width={340}
+                  height={340}
+                  ringAngle={ringAngle}
+                  sweepProgress={img1Sweep}
+                />
+              </div>
+              <div style={{ opacity: img2Opacity }}>
+                <ArtDecoImage
+                  description="Ảnh minh họa 2"
+                  width={340}
+                  height={340}
+                  ringAngle={ringAngle}
+                  sweepProgress={img2Sweep}
+                />
+              </div>
+            </div>
+
+            {/* Citation */}
+            <div style={{ marginTop: "auto" }}>
+              <CitationFooter
+                text="GT CNXHKH (2021), Ch.6, I.3a, tr.205-208; HCM (1949)"
+                opacity={citationOpacity}
+              />
+            </div>
+          </div>
+
+          {/* Right: MemberPiP (480px) */}
+          <div style={{ opacity: pipOpacity }}>
+            <MemberPiP
+              name="Bùi Huỳnh Nhi"
+              sectionLabel="Phần 2.1 - Thực tiễn đoàn kết"
+              ringAngle={ringAngle}
             />
           </div>
-        </>
+        </AbsoluteFill>
       )}
     </AbsoluteFill>
   );

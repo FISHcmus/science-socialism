@@ -1,289 +1,237 @@
-import {
-  AbsoluteFill,
-  interpolate,
-  useCurrentFrame,
-  spring,
-  useVideoConfig,
-} from "remotion";
-import { COLORS, FONT, MEMBER_COLORS, TEXT_SHADOW } from "../../constants";
-import {
-  SectionTitle,
-  FlowChart,
-  MemberPlaceholder,
-  Overlay,
-  LowerThird,
-} from "../ds";
-import type { FlowNode } from "../ds";
+import { AbsoluteFill, interpolate, useCurrentFrame, spring, useVideoConfig } from "remotion";
+import { COLORS, FONT, TEXT_SHADOW } from "../../constants";
+import { SectionTitle, ArtDecoImage, MemberPiP, CitationFooter } from "../ds";
 
-// Beat 1:    0-90   — SectionTitle "Nhận thức đúng đắn", sectionNumber "PHẦN 3.1"
-// Beat 2:  90-2100  — FlowChart horizontal cycle showing the learning cycle
-// Beat 3: 2100-2700 — MemberPlaceholder + Overlay + LowerThird
-// Total: 2700 frames (90s)
+// Beat 1: 0-90   — SectionTitle "Nhận thức đúng đắn" (full screen)
+// Beat 2: 90-2700 — Content (1440px left) + MemberPiP (480px right)
 
-const LEARNING_CYCLE_NODES: FlowNode[] = [
+const EVENT_CARD = {
+  title: "Giao lưu HSSV DTTS - Cần Thơ 5/2025",
+  detail: "Biểu diễn văn nghệ dân tộc, thi cổng trại truyền thống, đốt lửa trại giao lưu giữa sinh viên các dân tộc thiểu số.",
+  appearAt: 90,
+};
+
+const LESSON_CARDS = [
   {
-    label: "Học tập lý luận",
-    description: "Nắm vững chủ nghĩa Mác-Lênin",
+    title: "Chủ động tìm hiểu",
+    detail: "Trân trọng nét đẹp văn hóa mỗi dân tộc, tìm hiểu phong tục, tập quán, lễ hội truyền thống.",
+    appearAt: 500,
   },
   {
-    label: "Phân tích thực tiễn",
-    description: "Nhận diện thách thức",
+    title: "Giữ bản sắc, mở lòng học hỏi",
+    detail: "Bảo tồn bản sắc văn hóa riêng nhưng không khép kín, sẵn sàng tiếp thu tinh hoa văn hóa các dân tộc khác.",
+    appearAt: 850,
   },
   {
-    label: "Hình thành nhận thức",
-    description: "Tư duy đúng đắn",
-  },
-  {
-    label: "Hành động đoàn kết",
-    description: "Thực hiện trong đời sống",
+    title: "Trở thành cầu nối văn hóa",
+    detail: "Sinh viên là cầu nối giữa các nền văn hóa, lan tỏa giá trị thống nhất trong đa dạng.",
+    appearAt: 1200,
   },
 ];
+
+const ALL_CARDS = [EVENT_CARD, ...LESSON_CARDS];
 
 export const Section31QuynhNhu: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // ── Beat 1: SectionTitle (frames 0-90) ──
-  const titleSpring = spring({
-    frame,
-    fps,
-    config: { damping: 14, stiffness: 100 },
-  });
+  // Beat 1: SectionTitle animation
+  const titleSpring = spring({ frame, fps, config: { damping: 18, stiffness: 80 } });
   const titleOpacity = interpolate(titleSpring, [0, 1], [0, 1]);
   const titleTranslateY = interpolate(titleSpring, [0, 1], [40, 0]);
+  const titleAccentWidth = interpolate(titleSpring, [0, 1], [0, 80]);
 
-  // ── Beat 2 envelope (frames 90-2100) ──
-  const beat2Local = frame - 90;
-  const beat2FadeIn =
-    beat2Local >= 0
-      ? interpolate(beat2Local, [0, 20], [0, 1], { extrapolateRight: "clamp" })
-      : 0;
-  const beat2FadeOut = interpolate(frame, [2060, 2100], [1, 0], {
+  // Beat 2: shared animation values
+  const beat2LocalFrame = Math.max(0, frame - 90);
+  const ringAngle = (beat2LocalFrame / fps) * 80;
+
+  const headerOpacity = interpolate(frame, [90, 110], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
-  const beat2Opacity = frame >= 90 && frame < 2100 ? Math.min(beat2FadeIn, beat2FadeOut) : 0;
-  const beat2Visible = frame >= 90 && frame < 2100;
 
-  // Heading animation
-  const headingLocal = Math.max(0, frame - 90);
-  const headingSpring = spring({
-    frame: headingLocal,
-    fps,
-    config: { damping: 20, stiffness: 80 },
-  });
-  const headingY = interpolate(headingSpring, [0, 1], [40, 0]);
-  const headingOpacity = interpolate(headingSpring, [0, 1], [0, 1]);
-
-  // Subtitle paragraph fades in after heading
-  const subtitleLocal = Math.max(0, frame - 180);
-  const subtitleOpacity = interpolate(subtitleLocal, [0, 30], [0, 1], {
+  const pipOpacity = interpolate(frame, [90, 120], [0, 1], {
+    extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
 
-  // Bottom quote annotation
-  const quoteOpacity =
-    frame > 400
-      ? interpolate(frame - 400, [0, 30], [0, 1], { extrapolateRight: "clamp" })
-      : 0;
-
-  // ── FlowChart: per-node arrays ──
-  const nodeScales = LEARNING_CYCLE_NODES.map((_, i) => {
-    const nodeStart = 150 + i * 25;
-    const localFrame = frame - nodeStart;
-    if (localFrame < 0) return 0.5;
-    const s = spring({ frame: localFrame, fps, config: { damping: 14, stiffness: 100 } });
-    return interpolate(s, [0, 1], [0.5, 1]);
+  const citationOpacity = interpolate(frame, [1800, 1860], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
   });
 
-  const nodeOpacities = LEARNING_CYCLE_NODES.map((_, i) => {
-    const nodeStart = 150 + i * 25;
-    const localFrame = frame - nodeStart;
-    if (localFrame < 0) return 0;
-    const s = spring({ frame: localFrame, fps, config: { damping: 14, stiffness: 100 } });
-    return interpolate(s, [0, 1], [0, 1]);
+  // Image animations (appear after all cards)
+  const img1Opacity = interpolate(frame, [1500, 1530], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
   });
+  const img1Sweep = Math.max(0, Math.min(1, (frame - 1535) / 30));
 
-  const arrowOpacities = LEARNING_CYCLE_NODES.map((_, i) => {
-    const arrowStart = 150 + i * 25 + 15;
-    const localFrame = frame - arrowStart;
-    if (localFrame < 0) return 0;
-    const s = spring({ frame: localFrame, fps, config: { damping: 14, stiffness: 100 } });
-    return interpolate(s, [0, 1], [0, 1]);
+  const img2Opacity = interpolate(frame, [1620, 1650], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
   });
-
-  // ── Beat 3: MemberPlaceholder + Overlay + LowerThird ──
-  const memberLocal = Math.max(0, frame - 2100);
-  const memberSpring = spring({
-    frame: memberLocal,
-    fps,
-    config: { damping: 14, stiffness: 100 },
-  });
-  const memberScale = interpolate(memberSpring, [0, 1], [0.85, 1]);
-  const memberOpacity = interpolate(memberSpring, [0, 1], [0, 1]);
-  const memberRingAngle = (memberLocal / fps) * 80;
-
-  const overlayLocal = Math.max(0, frame - 2100);
-  const overlaySpring = spring({
-    frame: overlayLocal,
-    fps,
-    config: { damping: 14, stiffness: 100 },
-  });
-  const overlayOpacity = interpolate(overlaySpring, [0, 1], [0, 0.65]);
-
-  const lowerThirdLocal = Math.max(0, frame - 2115);
-  const lowerThirdSpring = spring({
-    frame: lowerThirdLocal,
-    fps,
-    config: { damping: 14, stiffness: 100 },
-  });
-  const lowerThirdTranslateY = interpolate(lowerThirdSpring, [0, 1], [40, 0]);
-  const lowerThirdOpacity = interpolate(lowerThirdSpring, [0, 1], [0, 1]);
+  const img2Sweep = Math.max(0, Math.min(1, (frame - 1655) / 30));
 
   return (
     <AbsoluteFill>
-
-      {/* Beat 1: SectionTitle (frames 0-90) */}
+      {/* Beat 1: SectionTitle (frames 0-90) — full screen */}
       {frame < 90 && (
         <AbsoluteFill
           style={{
-            background: "linear-gradient(135deg, #1a1a2e 0%, #0d0d1a 100%)",
+            background: "linear-gradient(135deg, rgba(10,20,40,0.95) 0%, rgba(20,40,80,0.9) 100%)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
           <SectionTitle
             title="Nhận thức đúng đắn"
-            subtitle="Về đại đoàn kết toàn dân tộc"
+            subtitle="Giao lưu văn hóa dân tộc"
             sectionNumber="PHẦN 3.1"
             opacity={titleOpacity}
             translateY={titleTranslateY}
+            accentWidth={titleAccentWidth}
           />
         </AbsoluteFill>
       )}
 
-      {/* Beat 2: FlowChart cycle (frames 90-2100) */}
-      {beat2Visible && (
-        <AbsoluteFill
-          style={{
-            opacity: beat2Opacity,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            padding: "40px 60px",
-            gap: 40,
-          }}
-        >
-          {/* Heading */}
+      {/* Beat 2: Content (1440px) + MemberPiP (480px) — frames 90-2700 */}
+      {frame >= 90 && (
+        <AbsoluteFill style={{ display: "flex", flexDirection: "row" }}>
+          {/* Left: Content area */}
           <div
             style={{
-              transform: `translateY(${headingY}px)`,
-              opacity: headingOpacity,
-              textAlign: "center",
+              width: 1440,
+              height: 1080,
+              padding: "60px 60px 40px 80px",
+              display: "flex",
+              flexDirection: "column",
+              overflow: "hidden",
             }}
           >
-            <div
-              style={{
-                fontSize: 24,
-                color: COLORS.gold,
-                fontFamily: FONT,
-                letterSpacing: 4,
-                marginBottom: 12,
-                textTransform: "uppercase",
-                textShadow: TEXT_SHADOW,
-              }}
-            >
-              Chu trình học tập
+            {/* Header */}
+            <div style={{ marginBottom: 24, opacity: headerOpacity }}>
+              <div
+                style={{
+                  fontSize: 32,
+                  color: COLORS.gold,
+                  fontFamily: FONT,
+                  letterSpacing: 4,
+                  marginBottom: 8,
+                  textShadow: TEXT_SHADOW,
+                }}
+              >
+                PHẦN 3.1
+              </div>
+              <h2
+                style={{
+                  fontSize: 52,
+                  color: COLORS.white,
+                  fontFamily: FONT,
+                  fontWeight: "bold",
+                  margin: 0,
+                  lineHeight: 1.2,
+                  textShadow: TEXT_SHADOW,
+                }}
+              >
+                Giao lưu văn hóa dân tộc
+              </h2>
+              <div style={{ width: 100, height: 4, backgroundColor: COLORS.gold, marginTop: 16 }} />
             </div>
-            <h2
-              style={{
-                fontSize: 50,
-                color: COLORS.white,
-                fontFamily: FONT,
-                fontWeight: "bold",
-                margin: 0,
-                lineHeight: 1.3,
-                textShadow: TEXT_SHADOW,
-              }}
-            >
-              Xây dựng nhận thức đúng đắn về đại đoàn kết
-            </h2>
+
+            {/* Cards */}
+            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+              {ALL_CARDS.map((p, i) => {
+                const localFrame = frame - p.appearAt;
+                if (localFrame < 0) return null;
+
+                const cardSpring = spring({ frame: localFrame, fps, config: { damping: 16, stiffness: 90 } });
+                const translateX = interpolate(cardSpring, [0, 1], [-80, 0]);
+                const cardOpacity = interpolate(cardSpring, [0, 1], [0, 1]);
+
+                return (
+                  <div
+                    key={i}
+                    style={{
+                      transform: `translateX(${translateX}px)`,
+                      opacity: cardOpacity,
+                      backgroundColor: "rgba(10, 10, 15, 0.88)",
+                      border: `3px solid ${COLORS.gold}`,
+                      borderLeft: `6px solid ${COLORS.gold}`,
+                      borderRadius: 12,
+                      padding: "20px 32px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontSize: 38,
+                        fontWeight: "bold",
+                        color: COLORS.white,
+                        fontFamily: FONT,
+                        marginBottom: 8,
+                        lineHeight: 1.2,
+                        textShadow: TEXT_SHADOW,
+                      }}
+                    >
+                      {p.title}
+                    </div>
+                    <div
+                      style={{
+                        fontSize: 28,
+                        color: COLORS.body,
+                        fontFamily: FONT,
+                        lineHeight: 1.4,
+                        textShadow: TEXT_SHADOW,
+                      }}
+                    >
+                      {p.detail}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* 2 images stacked */}
+            <div style={{ display: "flex", gap: 40, marginTop: 24 }}>
+              <div style={{ opacity: img1Opacity }}>
+                <ArtDecoImage
+                  description="Ảnh minh họa 1"
+                  width={340}
+                  height={340}
+                  ringAngle={ringAngle}
+                  sweepProgress={img1Sweep}
+                />
+              </div>
+              <div style={{ opacity: img2Opacity }}>
+                <ArtDecoImage
+                  description="Ảnh minh họa 2"
+                  width={340}
+                  height={340}
+                  ringAngle={ringAngle}
+                  sweepProgress={img2Sweep}
+                />
+              </div>
+            </div>
+
+            {/* Citation */}
+            <div style={{ marginTop: "auto" }}>
+              <CitationFooter
+                text="GT CNXHKH (2021), Ch.6, I.1, tr.198; Bộ VHTTDL (2025)"
+                opacity={citationOpacity}
+              />
+            </div>
           </div>
 
-          {/* Subtitle */}
-          <div
-            style={{
-              opacity: subtitleOpacity,
-              fontSize: 26,
-              color: COLORS.body,
-              fontFamily: FONT,
-              textAlign: "center",
-              maxWidth: 900,
-              lineHeight: 1.5,
-              textShadow: TEXT_SHADOW,
-            }}
-          >
-            Nhận thức đúng đắn là nền tảng để sinh viên thực hành đoàn kết một cách chủ động và có hiệu quả trong môi trường học tập và cuộc sống.
-          </div>
-
-          {/* FlowChart — horizontal cycle */}
-          <div style={{ width: "100%", marginTop: 20 }}>
-            <FlowChart
-              nodes={LEARNING_CYCLE_NODES}
-              direction="horizontal"
-              cycle={true}
-              nodeScales={nodeScales}
-              nodeOpacities={nodeOpacities}
-              arrowOpacities={arrowOpacities}
+          {/* Right: MemberPiP (480px) */}
+          <div style={{ opacity: pipOpacity }}>
+            <MemberPiP
+              name="Nguyễn Phạm Quỳnh Như"
+              sectionLabel="Phần 3.1 - Giao lưu văn hóa"
+              ringAngle={ringAngle}
             />
-          </div>
-
-          {/* Bottom annotation */}
-          <div
-            style={{
-              opacity: quoteOpacity,
-              fontSize: 22,
-              color: COLORS.gold,
-              fontFamily: FONT,
-              letterSpacing: 1,
-              textAlign: "center",
-              textShadow: TEXT_SHADOW,
-              borderTop: `3px solid rgba(246,173,85,0.3)`,
-              paddingTop: 20,
-              maxWidth: 800,
-            }}
-          >
-            "Học phải đi đôi với hành" — Tư tưởng Hồ Chí Minh
           </div>
         </AbsoluteFill>
-      )}
-
-      {/* Beat 3: MemberPlaceholder + Overlay + LowerThird (frames 2100-2700) */}
-      {frame >= 2100 && (
-        <>
-          <MemberPlaceholder
-            name="Quỳnh Như"
-            color={MEMBER_COLORS["Quỳnh Như"] ?? COLORS.dark}
-            opacity={memberOpacity}
-            scale={memberScale}
-            ringAngle={memberRingAngle}
-          />
-          <Overlay direction="bottom" opacity={overlayOpacity} />
-          <div
-            style={{
-              position: "absolute",
-              bottom: 0,
-              left: 0,
-              right: 0,
-              transform: `translateY(${lowerThirdTranslateY}px)`,
-              opacity: lowerThirdOpacity,
-            }}
-          >
-            <LowerThird
-              name="Quỳnh Như"
-              role="Nhận thức đúng đắn về đại đoàn kết"
-            />
-          </div>
-        </>
       )}
     </AbsoluteFill>
   );

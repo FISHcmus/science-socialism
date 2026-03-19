@@ -1,168 +1,231 @@
-import { AbsoluteFill, Sequence, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
-import { COLORS, FONT, MEMBER_COLORS, TEXT_SHADOW } from "../../constants";
-import { SectionTitle, IconGrid, MemberPlaceholder, Overlay } from "../ds";
+import { AbsoluteFill, interpolate, useCurrentFrame, spring, useVideoConfig } from "remotion";
+import { COLORS, FONT, TEXT_SHADOW } from "../../constants";
+import { SectionTitle, ArtDecoImage, MemberPiP, CitationFooter } from "../ds";
 
-// Total duration: 2700 frames (90s)
-// Beat 1: 0-90    — SectionTitle
-// Beat 2: 90-2100 — IconGrid two-column layout
-// Beat 3: 2100-2700 — MemberPlaceholder + Overlay
+// Beat 1: 0-90   — SectionTitle "Tuyên truyền chính sách và tình nguyện cộng đồng" (full screen)
+// Beat 2: 90-2700 — Content (1440px left) + MemberPiP (480px right)
 
-const CAMPUS_ITEMS = [
+const CARDS = [
   {
-    label: "Hoạt động Đoàn-Hội",
-    description: "Tham gia tổ chức Đoàn, Hội sinh viên",
+    title: "Tuyên truyền chính sách dân tộc",
+    detail: "Đồng bào DTTS vùng sâu vùng xa chưa nắm rõ các chương trình hỗ trợ. CT MTQG 2021-2030: hỗ trợ đất ở, nhà ở, nước sinh hoạt tại Hà Giang, Cao Bằng, Kon Tum.",
+    appearAt: 90,
   },
   {
-    label: "Học tập nhóm",
-    description: "Hỗ trợ bạn bè học tập",
+    title: "Mùa hè xanh - ĐHKHTN",
+    detail: "Tình nguyện tại Đồng Tháp, Vĩnh Long, vùng DTTS. Phổ cập tin học, hướng dẫn Internet, khảo sát nguồn nước, xử lý rác thải.",
+    appearAt: 600,
   },
   {
-    label: "Hoạt động văn hóa",
-    description: "Giao lưu văn hóa đa dân tộc",
-  },
-];
-
-const COMMUNITY_ITEMS = [
-  {
-    label: "Tình nguyện",
-    description: "Mùa hè xanh, tiếp sức mùa thi",
-  },
-  {
-    label: "Cộng đồng",
-    description: "Giúp đỡ đồng bào khó khăn",
-  },
-  {
-    label: "Truyền thông",
-    description: "Lan tỏa tinh thần đoàn kết",
+    title: "Trách nhiệm sinh viên",
+    detail: "Mang kiến thức chuyên môn phục vụ cộng đồng, lan tỏa thông tin chính sách qua mạng xã hội hoặc các đợt tình nguyện.",
+    appearAt: 1050,
   },
 ];
 
-const Beat1: React.FC = () => {
+
+export const Section33YNhu: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  const slideIn = spring({ frame, fps, config: { damping: 20, stiffness: 80 } });
-  const titleOpacity =
-    frame < 60
-      ? interpolate(slideIn, [0, 1], [0, 1])
-      : interpolate(frame, [60, 90], [1, 0], {
-          extrapolateLeft: "clamp",
-          extrapolateRight: "clamp",
-        });
-  const titleTranslateY = interpolate(slideIn, [0, 1], [80, 0]);
-  const titleAccentWidth = interpolate(slideIn, [0, 1], [0, 200]);
+  // Beat 1: SectionTitle animation
+  const titleSpring = spring({ frame, fps, config: { damping: 18, stiffness: 80 } });
+  const titleOpacity = interpolate(titleSpring, [0, 1], [0, 1]);
+  const titleTranslateY = interpolate(titleSpring, [0, 1], [40, 0]);
+  const titleAccentWidth = interpolate(titleSpring, [0, 1], [0, 80]);
+
+  // Beat 2: shared animation values
+  const beat2LocalFrame = Math.max(0, frame - 90);
+  const ringAngle = (beat2LocalFrame / fps) * 80;
+
+  const headerOpacity = interpolate(frame, [90, 110], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+
+  const pipOpacity = interpolate(frame, [90, 120], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+
+  const citationOpacity = interpolate(frame, [1700, 1760], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+
+  // Image animations (appear after all 3 cards)
+  const img1Opacity = interpolate(frame, [1400, 1430], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const img1Sweep = Math.max(0, Math.min(1, (frame - 1435) / 30));
+
+  const img2Opacity = interpolate(frame, [1520, 1550], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const img2Sweep = Math.max(0, Math.min(1, (frame - 1555) / 30));
 
   return (
     <AbsoluteFill>
-      <SectionTitle
-        title="Hoạt động thực tiễn"
-        subtitle="Sinh viên với xây dựng khối đại đoàn kết"
-        sectionNumber="PHẦN 3.3"
-        opacity={titleOpacity}
-        translateY={titleTranslateY}
-        accentWidth={titleAccentWidth}
-      />
+      {/* Beat 1: SectionTitle (frames 0-90) — full screen */}
+      {frame < 90 && (
+        <AbsoluteFill
+          style={{
+            background: "linear-gradient(135deg, rgba(10,20,40,0.95) 0%, rgba(20,40,80,0.9) 100%)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <SectionTitle
+            title="Tuyên truyền chính sách"
+            subtitle="và tình nguyện cộng đồng"
+            sectionNumber="PHẦN 3.3"
+            opacity={titleOpacity}
+            translateY={titleTranslateY}
+            accentWidth={titleAccentWidth}
+          />
+        </AbsoluteFill>
+      )}
+
+      {/* Beat 2: Content (1440px) + MemberPiP (480px) — frames 90-2700 */}
+      {frame >= 90 && (
+        <AbsoluteFill style={{ display: "flex", flexDirection: "row" }}>
+          {/* Left: Content area */}
+          <div
+            style={{
+              width: 1440,
+              height: 1080,
+              padding: "60px 60px 40px 80px",
+              display: "flex",
+              flexDirection: "column",
+              overflow: "hidden",
+            }}
+          >
+            {/* Header */}
+            <div style={{ marginBottom: 24, opacity: headerOpacity }}>
+              <div
+                style={{
+                  fontSize: 32,
+                  color: COLORS.gold,
+                  fontFamily: FONT,
+                  letterSpacing: 4,
+                  marginBottom: 8,
+                  textShadow: TEXT_SHADOW,
+                }}
+              >
+                PHẦN 3.3
+              </div>
+              <h2
+                style={{
+                  fontSize: 52,
+                  color: COLORS.white,
+                  fontFamily: FONT,
+                  fontWeight: "bold",
+                  margin: 0,
+                  lineHeight: 1.2,
+                  textShadow: TEXT_SHADOW,
+                }}
+              >
+                Tuyên truyền chính sách và tình nguyện cộng đồng
+              </h2>
+              <div style={{ width: 100, height: 4, backgroundColor: COLORS.gold, marginTop: 16 }} />
+            </div>
+
+            {/* 3 content cards */}
+            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+              {CARDS.map((p, i) => {
+                const localFrame = frame - p.appearAt;
+                if (localFrame < 0) return null;
+
+                const cardSpring = spring({ frame: localFrame, fps, config: { damping: 16, stiffness: 90 } });
+                const translateX = interpolate(cardSpring, [0, 1], [-80, 0]);
+                const cardOpacity = interpolate(cardSpring, [0, 1], [0, 1]);
+
+                return (
+                  <div
+                    key={i}
+                    style={{
+                      transform: `translateX(${translateX}px)`,
+                      opacity: cardOpacity,
+                      backgroundColor: "rgba(10, 10, 15, 0.88)",
+                      border: `3px solid ${COLORS.gold}`,
+                      borderLeft: `6px solid ${COLORS.gold}`,
+                      borderRadius: 12,
+                      padding: "20px 32px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontSize: 38,
+                        fontWeight: "bold",
+                        color: COLORS.white,
+                        fontFamily: FONT,
+                        marginBottom: 8,
+                        lineHeight: 1.2,
+                        textShadow: TEXT_SHADOW,
+                      }}
+                    >
+                      {p.title}
+                    </div>
+                    <div
+                      style={{
+                        fontSize: 28,
+                        color: COLORS.body,
+                        fontFamily: FONT,
+                        lineHeight: 1.4,
+                        textShadow: TEXT_SHADOW,
+                      }}
+                    >
+                      {p.detail}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* 2 images stacked */}
+            <div style={{ display: "flex", gap: 40, marginTop: 24 }}>
+              <div style={{ opacity: img1Opacity }}>
+                <ArtDecoImage
+                  description="Ảnh minh họa 1"
+                  width={340}
+                  height={340}
+                  ringAngle={ringAngle}
+                  sweepProgress={img1Sweep}
+                />
+              </div>
+              <div style={{ opacity: img2Opacity }}>
+                <ArtDecoImage
+                  description="Ảnh minh họa 2"
+                  width={340}
+                  height={340}
+                  ringAngle={ringAngle}
+                  sweepProgress={img2Sweep}
+                />
+              </div>
+            </div>
+
+            {/* Citation */}
+            <div style={{ marginTop: "auto" }}>
+              <CitationFooter
+                text="GT CNXHKH (2021), Ch.6, I.3b, tr.210-212; QĐ 1719/QĐ-TTg"
+                opacity={citationOpacity}
+              />
+            </div>
+          </div>
+
+          {/* Right: MemberPiP (480px) */}
+          <div style={{ opacity: pipOpacity }}>
+            <MemberPiP
+              name="Nguyễn Đình Ý Như"
+              sectionLabel="Phần 3.3 - Tình nguyện cộng đồng"
+              ringAngle={ringAngle}
+            />
+          </div>
+        </AbsoluteFill>
+      )}
     </AbsoluteFill>
   );
 };
-
-const Beat2: React.FC = () => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
-
-  const items = [...CAMPUS_ITEMS, ...COMMUNITY_ITEMS];
-
-  const itemScales = items.map((_, i) => {
-    const itemStart = 10 + i * 15;
-    const localFrame = frame - itemStart;
-    if (localFrame < 0) return 0.3;
-    const pop = spring({ frame: localFrame, fps, config: { damping: 12, stiffness: 120 } });
-    return interpolate(pop, [0, 1], [0.3, 1]);
-  });
-
-  const itemOpacities = items.map((_, i) => {
-    const itemStart = 10 + i * 15;
-    const localFrame = frame - itemStart;
-    if (localFrame < 0) return 0;
-    const pop = spring({ frame: localFrame, fps, config: { damping: 12, stiffness: 120 } });
-    return interpolate(pop, [0, 1], [0, 1]);
-  });
-
-  return (
-    <AbsoluteFill
-      style={{
-        background: `linear-gradient(135deg, rgba(10,22,40,0.4) 0%, rgba(26,54,93,0.4) 100%)`,
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
-        gap: 40,
-        paddingTop: 60,
-      }}
-    >
-      {/* Section header */}
-      <div
-        style={{
-          color: COLORS.gold,
-          fontSize: 24,
-          letterSpacing: 3,
-          fontFamily: FONT,
-          opacity: Math.min(frame / 20, 1),
-          marginBottom: 8,
-          textShadow: TEXT_SHADOW,
-        }}
-      >
-        PHẦN 3.3 — HOẠT ĐỘNG THỰC TIỄN CỦA SINH VIÊN
-      </div>
-
-      {/* Two-column grid — all 6 items ordered left column then right column */}
-      <IconGrid
-        items={items}
-        columns={2}
-        itemScales={itemScales}
-        itemOpacities={itemOpacities}
-      />
-    </AbsoluteFill>
-  );
-};
-
-const Beat3: React.FC = () => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
-
-  const memberScale = spring({ frame, fps, config: { damping: 15, stiffness: 100 } });
-  const memberOpacity = interpolate(frame, [0, 15], [0, 1], { extrapolateRight: "clamp" });
-  const memberRingAngle = (frame / fps) * 80;
-  const overlayOpacity = interpolate(frame, [0, 20], [0, 0.6], { extrapolateRight: "clamp" });
-
-  return (
-    <AbsoluteFill>
-      <MemberPlaceholder
-        name="Ý Như"
-        color={MEMBER_COLORS["Ý Như"] ?? "#2d3748"}
-        opacity={memberOpacity}
-        scale={memberScale}
-        ringAngle={memberRingAngle}
-      />
-      <Overlay direction="bottom" opacity={overlayOpacity} />
-    </AbsoluteFill>
-  );
-};
-
-export const Section33YNhu: React.FC = () => (
-  <AbsoluteFill>
-    {/* Beat 1: Section title card */}
-    <Sequence from={0} durationInFrames={90}>
-      <Beat1 />
-    </Sequence>
-
-    {/* Beat 2: Icon grid */}
-    <Sequence from={90} durationInFrames={2010}>
-      <Beat2 />
-    </Sequence>
-
-    {/* Beat 3: Member placeholder */}
-    <Sequence from={2100} durationInFrames={600}>
-      <Beat3 />
-    </Sequence>
-  </AbsoluteFill>
-);
