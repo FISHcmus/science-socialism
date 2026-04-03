@@ -1,6 +1,6 @@
-import { AbsoluteFill, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile } from "remotion";
+import { AbsoluteFill, Video, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile } from "remotion";
 import { COLORS, TEXT_SHADOW } from "../../constants";
-import { SectionTitle, ArtDecoImage, MemberPiP, CitationFooter, Timeline } from "../ds";
+import { SectionTitle, ArtDecoImage, CitationFooter, Timeline } from "../ds";
 
 ;
 ;
@@ -10,6 +10,8 @@ export const Section31QuynhNhu: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
+  const clampBoth = { extrapolateLeft: "clamp" as const, extrapolateRight: "clamp" as const };
+
   const titleSpring = spring({ frame, fps, config: { damping: 18, stiffness: 80 } });
   const titleOpacity = interpolate(titleSpring, [0, 1], [0, 1]);
   const titleTranslateY = interpolate(titleSpring, [0, 1], [40, 0]);
@@ -17,9 +19,9 @@ export const Section31QuynhNhu: React.FC = () => {
 
   const beat2LocalFrame = Math.max(0, frame - 90);
   const ringAngle = (beat2LocalFrame / fps) * 80;
-  const headerOpacity = interpolate(frame, [90, 110], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const pipOpacity = interpolate(frame, [90, 120], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const citationOpacity = interpolate(frame, [1800, 1860], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const headerOpacity = interpolate(frame, [90, 110], [0, 1], clampBoth);
+  const videoOpacity = interpolate(frame, [90, 120], [0, 1], clampBoth);
+  const citationOpacity = interpolate(frame, [2500, 2560], [0, 1], clampBoth);
 
   // Timeline items
   const timelineItems = [
@@ -28,33 +30,32 @@ export const Section31QuynhNhu: React.FC = () => {
     { title: "Giữ bản sắc nhưng không khép kín", detail: "Trở thành cầu nối văn hóa, lan tỏa giá trị tốt đẹp của mỗi dân tộc" },
   ];
 
-  // Cascade-down entrance: staggered translateY + opacity
+  // Cascade-down entrance synced to speech
+  const itemStartFrames = [450, 1010, 1910];
   const itemOpacities = timelineItems.map((_, i) => {
-    const s = spring({ frame: Math.max(0, frame - 200 - i * 200), fps, config: { damping: 14, stiffness: 70 } });
+    const s = spring({ frame: Math.max(0, frame - itemStartFrames[i]!), fps, config: { damping: 14, stiffness: 70 } });
     return interpolate(s, [0, 1], [0, 1]);
   });
   const itemTranslateX = timelineItems.map((_, i) => {
-    const s = spring({ frame: Math.max(0, frame - 200 - i * 200), fps, config: { damping: 14, stiffness: 70 } });
+    const s = spring({ frame: Math.max(0, frame - itemStartFrames[i]!), fps, config: { damping: 14, stiffness: 70 } });
     return interpolate(s, [0, 1], [-40, 0]);
   });
   const dotScales = timelineItems.map((_, i) => {
-    const s = spring({ frame: Math.max(0, frame - 180 - i * 200), fps, config: { damping: 12, stiffness: 100 } });
+    const s = spring({ frame: Math.max(0, frame - itemStartFrames[i]! + 20), fps, config: { damping: 12, stiffness: 100 } });
     return interpolate(s, [0, 1], [0, 1]);
   });
-  const lineProgress = interpolate(frame, [150, 750], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const visibleCount = frame < 200 ? 0 : frame < 400 ? 1 : frame < 600 ? 2 : 3;
+  const lineProgress = interpolate(frame, [400, 2000], [0, 1], clampBoth);
+  const visibleCount = frame < 450 ? 0 : frame < 1010 ? 1 : frame < 1910 ? 2 : 3;
 
-  // Page curl page-flip
-  const PAGE_FLIP = 1150;
-  const flipProgress = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const page1Opacity = interpolate(flipProgress, [0, 0.8], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const page1SkewY = interpolate(flipProgress, [0, 1], [0, -5]);
-  const page1Scale = interpolate(flipProgress, [0, 1], [1, 0.95]);
+  // Page flip
+  const PAGE_FLIP = 2300;
+  const page1Opacity = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [1, 0], clampBoth);
+  const page1Blur = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [0, 8], clampBoth);
 
-  const img1Opacity = interpolate(frame, [1500, 1530], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const img1Sweep = Math.max(0, Math.min(1, (frame - 1535) / 30));
-  const img2Opacity = interpolate(frame, [1620, 1650], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const img2Sweep = Math.max(0, Math.min(1, (frame - 1655) / 30));
+  const img1Opacity = interpolate(frame, [PAGE_FLIP + 30, PAGE_FLIP + 60], [0, 1], clampBoth);
+  const img1Sweep = Math.max(0, Math.min(1, (frame - PAGE_FLIP - 65) / 30));
+  const img2Opacity = interpolate(frame, [PAGE_FLIP + 90, PAGE_FLIP + 120], [0, 1], clampBoth);
+  const img2Sweep = Math.max(0, Math.min(1, (frame - PAGE_FLIP - 125) / 30));
 
   return (
     <AbsoluteFill>
@@ -65,17 +66,27 @@ export const Section31QuynhNhu: React.FC = () => {
       )}
 
       {frame >= 90 && (
-        <AbsoluteFill style={{ flexDirection: "row" }}>
-          <div className="flex flex-col overflow-hidden" style={{ width: 1440, height: 1080, padding: "48px 60px 32px 80px" }}>
-            <div className="mb-4" style={{ opacity: headerOpacity }}>
-              <div className="text-[32px] text-ds-gold font-sans tracking-[4px] mb-2" style={{ textShadow: TEXT_SHADOW }}>PHẦN 3.1</div>
-              <h2 className="text-[48px] text-ds-white font-sans font-bold m-0 leading-tight" style={{ textShadow: TEXT_SHADOW }}>Giao lưu văn hóa dân tộc</h2>
-              <div className="w-[100px] h-1 bg-ds-gold mt-3" />
+        <AbsoluteFill style={{ flexDirection: "column" }}>
+          {/* Video strip — top 480px */}
+          <div style={{ position: "relative", width: 1920, height: 480, background: "#000", opacity: videoOpacity }}>
+            <Video src={staticFile('media/T3-1/video_quynh_nhu_cropped.mp4')} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+            <div style={{ position: "absolute", bottom: 12, right: 24, background: "rgba(0,0,0,0.6)", padding: "6px 16px", borderRadius: 8 }}>
+              <span className="text-[28px] font-sans font-bold" style={{ color: "#F7F3EE" }}>Nguyễn Phạm Quỳnh Như</span>
+              <span className="text-[22px] font-sans ml-3" style={{ color: "#D4AF37" }}>Phần 3.1</span>
+            </div>
+          </div>
+
+          {/* Content — bottom 600px */}
+          <div className="flex flex-col flex-1 overflow-hidden" style={{ padding: "24px 80px 24px 80px" }}>
+            <div className="mb-3" style={{ opacity: headerOpacity }}>
+              <div className="text-[28px] text-ds-gold font-sans tracking-[4px] mb-1" style={{ textShadow: TEXT_SHADOW }}>PHẦN 3.1</div>
+              <h2 className="text-[42px] text-ds-white font-sans font-bold m-0 leading-tight" style={{ textShadow: TEXT_SHADOW }}>Giao lưu văn hóa dân tộc</h2>
+              <div className="w-[100px] h-1 bg-ds-gold mt-2" />
             </div>
 
             {/* Page 1: Timeline */}
             {frame < PAGE_FLIP + 30 && (
-              <div style={{ opacity: page1Opacity, transform: `skewY(${page1SkewY}deg) scale(${page1Scale})`, transformOrigin: "top left" }}>
+              <div className="flex-1" style={{ opacity: page1Opacity, filter: `blur(${page1Blur}px)` }}>
                 <Timeline
                   items={timelineItems}
                   visibleCount={visibleCount}
@@ -89,15 +100,20 @@ export const Section31QuynhNhu: React.FC = () => {
 
             {/* Page 2: images */}
             {frame >= PAGE_FLIP && (
-              <div className="flex gap-8">
-                <div style={{ opacity: img1Opacity }}><ArtDecoImage description="Ảnh minh họa 1" width={480} height={480} ringAngle={ringAngle} sweepProgress={img1Sweep} /></div>
-                <div style={{ opacity: img2Opacity }}><ArtDecoImage description="Ảnh minh họa 2" width={480} height={480} ringAngle={ringAngle} sweepProgress={img2Sweep} /></div>
+              <div className="flex gap-8 items-center justify-center" style={{ flex: 1 }}>
+                <div style={{ opacity: img1Opacity }} className="flex flex-col items-center">
+                  <ArtDecoImage src={staticFile('media/T3-1/giao_luu_van_hoa_fpt.png')} description="Giao lưu văn hóa dân tộc" width={480} height={340} ringAngle={ringAngle} sweepProgress={img1Sweep} />
+                  <div className="text-[24px] font-sans mt-3 text-center" style={{ color: COLORS.body, textShadow: TEXT_SHADOW }}>Chương trình giao lưu văn hóa nghệ thuật dân tộc tại ĐH FPT</div>
+                </div>
+                <div style={{ opacity: img2Opacity }} className="flex flex-col items-center">
+                  <ArtDecoImage src={staticFile('media/T3-1/le_dang_huong_vua_hung.png')} description="Lễ dâng hương Vua Hùng" width={480} height={340} ringAngle={ringAngle} sweepProgress={img2Sweep} />
+                  <div className="text-[24px] font-sans mt-3 text-center" style={{ color: COLORS.body, textShadow: TEXT_SHADOW }}>Lễ dâng hương tưởng niệm các Vua Hùng</div>
+                </div>
               </div>
             )}
 
             <div className="mt-auto"><CitationFooter text="GT CNXHKH (2021), Ch.6, I.1, tr.198; Bộ VHTTDL (2025)" opacity={citationOpacity} /></div>
           </div>
-          <div style={{ opacity: pipOpacity }}><MemberPiP name="Nguyễn Phạm Quỳnh Như" sectionLabel="Phần 3.1 - Giao lưu văn hóa" ringAngle={ringAngle} src={staticFile('media/T3-1/video_quynh_nhu.mp4')} /></div>
         </AbsoluteFill>
       )}
     </AbsoluteFill>
