@@ -1,12 +1,14 @@
-import { AbsoluteFill, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile } from "remotion";
+import { AbsoluteFill, Video, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile } from "remotion";
 import { COLORS, TEXT_SHADOW } from "../../constants";
-import { SectionTitle, ArtDecoImage, MemberPiP, CitationFooter, FlowChart } from "../ds";
+import { SectionTitle, ArtDecoImage, CitationFooter, FlowChart } from "../ds";
 
 ;
 
 export const Section33YNhu: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
+
+  const clampBoth = { extrapolateLeft: "clamp" as const, extrapolateRight: "clamp" as const };
 
   const titleSpring = spring({ frame, fps, config: { damping: 18, stiffness: 80 } });
   const titleOpacity = interpolate(titleSpring, [0, 1], [0, 1]);
@@ -15,9 +17,9 @@ export const Section33YNhu: React.FC = () => {
 
   const beat2LocalFrame = Math.max(0, frame - 90);
   const ringAngle = (beat2LocalFrame / fps) * 80;
-  const headerOpacity = interpolate(frame, [90, 110], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const pipOpacity = interpolate(frame, [90, 120], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const citationOpacity = interpolate(frame, [1700, 1760], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const headerOpacity = interpolate(frame, [90, 110], [0, 1], clampBoth);
+  const videoOpacity = interpolate(frame, [90, 120], [0, 1], clampBoth);
+  const citationOpacity = interpolate(frame, [2500, 2560], [0, 1], clampBoth);
 
   // FlowChart nodes
   const nodes = [
@@ -26,29 +28,30 @@ export const Section33YNhu: React.FC = () => {
     { label: "Trách nhiệm sinh viên", description: "Mang kiến thức chuyên môn phục vụ cộng đồng, lan tỏa thông tin chính sách" },
   ];
 
-  // Scale-in with glow entrance: per-node scale + glow
+  // Staggered entrance synced to speech
+  const nodeStartFrames = [430, 1550, 2200];
   const nodeScales = nodes.map((_, i) => {
-    const s = spring({ frame: Math.max(0, frame - 200 - i * 250), fps, config: { damping: 12, stiffness: 60 } });
+    const s = spring({ frame: Math.max(0, frame - nodeStartFrames[i]!), fps, config: { damping: 12, stiffness: 60 } });
     return interpolate(s, [0, 1], [0.5, 1]);
   });
   const nodeOpacities = nodes.map((_, i) => {
-    const s = spring({ frame: Math.max(0, frame - 200 - i * 250), fps, config: { damping: 12, stiffness: 60 } });
+    const s = spring({ frame: Math.max(0, frame - nodeStartFrames[i]!), fps, config: { damping: 12, stiffness: 60 } });
     return interpolate(s, [0, 1], [0, 1]);
   });
+  const arrowStartFrames = [1500, 2150];
   const arrowOpacities = nodes.slice(1).map((_, i) => {
-    return interpolate(frame, [350 + i * 250, 380 + i * 250], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+    return interpolate(frame, [arrowStartFrames[i]!, arrowStartFrames[i]! + 30], [0, 1], clampBoth);
   });
-  const visibleNodes = frame < 200 ? 0 : frame < 450 ? 1 : frame < 700 ? 2 : 3;
+  const visibleNodes = frame < 430 ? 0 : frame < 1550 ? 1 : frame < 2200 ? 2 : 3;
 
-  // Slide-down page-flip
-  const PAGE_FLIP = 1250;
-  const flipProgress = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const page1TranslateY = interpolate(flipProgress, [0, 1], [0, 600]);
-  const page1Opacity = interpolate(flipProgress, [0, 0.7], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  // Page flip
+  const PAGE_FLIP = 2400;
+  const page1Opacity = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [1, 0], clampBoth);
+  const page1Scale = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [1, 0.85], clampBoth);
 
-  const img1Opacity = interpolate(frame, [PAGE_FLIP + 30, PAGE_FLIP + 60], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const img1Opacity = interpolate(frame, [PAGE_FLIP + 30, PAGE_FLIP + 60], [0, 1], clampBoth);
   const img1Sweep = Math.max(0, Math.min(1, (frame - PAGE_FLIP - 65) / 30));
-  const img2Opacity = interpolate(frame, [PAGE_FLIP + 90, PAGE_FLIP + 120], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const img2Opacity = interpolate(frame, [PAGE_FLIP + 90, PAGE_FLIP + 120], [0, 1], clampBoth);
   const img2Sweep = Math.max(0, Math.min(1, (frame - PAGE_FLIP - 125) / 30));
 
   return (
@@ -60,20 +63,21 @@ export const Section33YNhu: React.FC = () => {
       )}
 
       {frame >= 90 && (
-        <AbsoluteFill style={{ flexDirection: "row" }}>
-          <div className="flex flex-col overflow-hidden" style={{ width: 1440, height: 1080, padding: "48px 60px 32px 80px" }}>
-            <div className="mb-4" style={{ opacity: headerOpacity }}>
-              <div className="text-[32px] text-ds-gold font-sans tracking-[4px] mb-2" style={{ textShadow: TEXT_SHADOW }}>PHẦN 3.3</div>
-              <h2 className="text-[48px] text-ds-white font-sans font-bold m-0 leading-tight" style={{ textShadow: TEXT_SHADOW }}>Tuyên truyền chính sách và tình nguyện cộng đồng</h2>
-              <div className="w-[100px] h-1 bg-ds-gold mt-3" />
+        <AbsoluteFill style={{ flexDirection: "column" }}>
+          {/* Content — top 600px */}
+          <div className="flex flex-col overflow-hidden" style={{ height: 600, padding: "24px 80px 16px 80px" }}>
+            <div className="mb-3" style={{ opacity: headerOpacity }}>
+              <div className="text-[28px] text-ds-gold font-sans tracking-[4px] mb-1" style={{ textShadow: TEXT_SHADOW }}>PHẦN 3.3</div>
+              <h2 className="text-[42px] text-ds-white font-sans font-bold m-0 leading-tight" style={{ textShadow: TEXT_SHADOW }}>Tuyên truyền chính sách và tình nguyện cộng đồng</h2>
+              <div className="w-[100px] h-1 bg-ds-gold mt-2" />
             </div>
 
-            {/* Page 1: FlowChart horizontal */}
+            {/* Page 1: Vertical FlowChart */}
             {frame < PAGE_FLIP + 30 && (
-              <div style={{ opacity: page1Opacity, transform: `translateY(${page1TranslateY}px)` }}>
+              <div className="flex-1" style={{ opacity: page1Opacity, transform: `scale(${page1Scale})`, transformOrigin: "center center" }}>
                 <FlowChart
                   nodes={nodes}
-                  direction="horizontal"
+                  direction="vertical"
                   visibleNodes={visibleNodes}
                   nodeScales={nodeScales}
                   nodeOpacities={nodeOpacities}
@@ -84,15 +88,32 @@ export const Section33YNhu: React.FC = () => {
 
             {/* Page 2: images */}
             {frame >= PAGE_FLIP && (
-              <div className="flex gap-8">
-                <div style={{ opacity: img1Opacity }}><ArtDecoImage description="Ảnh minh họa 1" src={staticFile('media/T3-3/img1.jpg')} width={480} height={480} ringAngle={ringAngle} sweepProgress={img1Sweep} /></div>
-                <div style={{ opacity: img2Opacity }}><ArtDecoImage description="Ảnh minh họa 2" src={staticFile('media/T3-3/img2.jpg')} width={480} height={480} ringAngle={ringAngle} sweepProgress={img2Sweep} /></div>
+              <div className="flex gap-8 items-center justify-center" style={{ flex: 1 }}>
+                <div style={{ opacity: img1Opacity }} className="flex flex-col items-center">
+                  <ArtDecoImage src={staticFile('media/T3-3/img1.jpg')} description="Bác Hồ với thế hệ trẻ" width={440} height={340} ringAngle={ringAngle} sweepProgress={img1Sweep} />
+                  <div className="text-[24px] font-sans mt-3 text-center" style={{ color: COLORS.body, textShadow: TEXT_SHADOW }}>Chủ tịch Hồ Chí Minh với thế hệ trẻ các dân tộc</div>
+                </div>
+                <div style={{ opacity: img2Opacity }} className="flex flex-col items-center">
+                  <ArtDecoImage src={staticFile('media/T3-3/img2.jpg')} description="Tình nguyện vùng DTTS" width={440} height={340} ringAngle={ringAngle} sweepProgress={img2Sweep} />
+                  <div className="text-[24px] font-sans mt-3 text-center" style={{ color: COLORS.body, textShadow: TEXT_SHADOW }}>Tình nguyện viên dạy học cho trẻ em vùng dân tộc thiểu số</div>
+                </div>
               </div>
             )}
 
             <div className="mt-auto"><CitationFooter text="GT CNXHKH (2021), Ch.6, I.3b, tr.210-212; QĐ 1719/QĐ-TTg" opacity={citationOpacity} /></div>
           </div>
-          <div style={{ opacity: pipOpacity }}><MemberPiP name="Nguyễn Đình Ý Như" sectionLabel="Phần 3.3 - Tình nguyện cộng đồng" ringAngle={ringAngle} src={staticFile('media/T3-3/video_y_nhu.mp4')} /></div>
+
+          {/* Video strip — bottom 480px */}
+          <div style={{ position: "relative", width: 1920, height: 480, background: "#000", opacity: videoOpacity }}>
+            <Video
+              src={staticFile('media/T3-3/video_y_nhu_cropped.mp4')}
+              style={{ width: "100%", height: "100%", objectFit: "contain" }}
+            />
+            <div style={{ position: "absolute", bottom: 12, right: 24, background: "rgba(0,0,0,0.6)", padding: "6px 16px", borderRadius: 8 }}>
+              <span className="text-[28px] font-sans font-bold" style={{ color: "#F7F3EE" }}>Nguyễn Đình Ý Như</span>
+              <span className="text-[22px] font-sans ml-3" style={{ color: "#D4AF37" }}>Phần 3.3</span>
+            </div>
+          </div>
         </AbsoluteFill>
       )}
     </AbsoluteFill>

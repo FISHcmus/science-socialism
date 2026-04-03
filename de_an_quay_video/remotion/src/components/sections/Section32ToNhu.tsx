@@ -17,17 +17,17 @@ export const Section32ToNhu: React.FC = () => {
   const ringAngle = (beat2LocalFrame / fps) * 80;
   const headerOpacity = interpolate(frame, [90, 110], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const pipOpacity = interpolate(frame, [90, 120], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const citationOpacity = interpolate(frame, [1700, 1760], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const citationOpacity = interpolate(frame, [2500, 2560], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
 
   // AlertCard data with variants
   const alerts: Array<{ title: string; detail: string; variant: "warning" | "danger" | "success"; appearAt: number }> = [
-    { title: "4 dấu hiệu tin giả", detail: "Tiêu đề giật gân | Thiếu nguồn | Ảnh/video cắt ghép | Quy chụp nhóm dân tộc/tôn giáo", variant: "warning", appearAt: 150 },
-    { title: "Ví dụ thực tế: Đắk Lắk", detail: "Thông tin bịa đặt về quan hệ dân tộc ở Tây Nguyên, gây hoang mang dư luận", variant: "danger", appearAt: 400 },
-    { title: "Cách kiểm chứng thông tin", detail: "Đối chiếu nhiều nguồn, Google Image/TinEye kiểm tra ảnh, chia sẻ đính chính khi phát hiện tin giả", variant: "success", appearAt: 650 },
+    { title: "4 dấu hiệu tin giả", detail: "Tiêu đề giật gân | Thiếu nguồn | Ảnh/video cắt ghép | Quy chụp nhóm dân tộc/tôn giáo", variant: "warning", appearAt: 594 },
+    { title: "Ví dụ thực tế: Đắk Lắk", detail: "Thông tin bịa đặt về quan hệ dân tộc ở Tây Nguyên, gây hoang mang dư luận", variant: "danger", appearAt: 1014 },
+    { title: "Cách kiểm chứng thông tin", detail: "Đối chiếu nhiều nguồn, Google Image/TinEye kiểm tra ảnh, chia sẻ đính chính khi phát hiện tin giả", variant: "success", appearAt: 1587 },
   ];
 
   // Shake-in from right: translateX 300->0 with overshoot spring
-  const alertAnims = alerts.map((a, i) => {
+  const alertAnims = alerts.map((a) => {
     const s = spring({ frame: Math.max(0, frame - a.appearAt), fps, config: { damping: 8, stiffness: 80, overshootClamping: false } });
     const translateX = interpolate(s, [0, 1], [300, 0]);
     const opacity = interpolate(s, [0, 0.3], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
@@ -35,13 +35,11 @@ export const Section32ToNhu: React.FC = () => {
     return { translateX, opacity, scale };
   });
 
-  // Horizontal flip page-flip
-  const PAGE_FLIP = 1250;
-  const flipProgress = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const page1RotateY = interpolate(flipProgress, [0, 1], [0, 90]);
-  const page1Opacity = interpolate(flipProgress, [0, 0.5], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  // Page flip
+  const PAGE_FLIP = 2100;
+  const page1Opacity = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const page1Blur = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [0, 8], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
 
-  const page2RotateY = interpolate(frame, [PAGE_FLIP + 15, PAGE_FLIP + 45], [-90, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const img1Opacity = interpolate(frame, [PAGE_FLIP + 30, PAGE_FLIP + 60], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const img1Sweep = Math.max(0, Math.min(1, (frame - PAGE_FLIP - 65) / 30));
   const img2Opacity = interpolate(frame, [PAGE_FLIP + 90, PAGE_FLIP + 120], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
@@ -66,7 +64,7 @@ export const Section32ToNhu: React.FC = () => {
 
             {/* Page 1: AlertCards */}
             {frame < PAGE_FLIP + 30 && (
-              <div className="flex flex-col gap-4" style={{ opacity: page1Opacity, transform: `perspective(1200px) rotateY(${page1RotateY}deg)`, transformOrigin: "left center" }}>
+              <div className="flex flex-col gap-4" style={{ opacity: page1Opacity, filter: `blur(${page1Blur}px)` }}>
                 {alerts.map((a, i) => (
                   <AlertCard
                     key={i}
@@ -83,9 +81,15 @@ export const Section32ToNhu: React.FC = () => {
 
             {/* Page 2: images */}
             {frame >= PAGE_FLIP && (
-              <div className="flex gap-8" style={{ transform: `perspective(1200px) rotateY(${page2RotateY}deg)`, transformOrigin: "left center" }}>
-                <div style={{ opacity: img1Opacity }}><ArtDecoImage description="Ảnh minh họa 1" src={staticFile('media/T3-2/img1.webp')} width={480} height={480} ringAngle={ringAngle} sweepProgress={img1Sweep} /></div>
-                <div style={{ opacity: img2Opacity }}><ArtDecoImage description="Ảnh minh họa 2" src={staticFile('media/T3-2/img2.webp')} width={480} height={480} ringAngle={ringAngle} sweepProgress={img2Sweep} /></div>
+              <div className="flex gap-8 items-center justify-center" style={{ flex: 1 }}>
+                <div style={{ opacity: img1Opacity }} className="flex flex-col items-center">
+                  <ArtDecoImage src={staticFile('media/T3-2/img1.webp')} description="Fake news" width={480} height={380} ringAngle={ringAngle} sweepProgress={img1Sweep} />
+                  <div className="text-[24px] font-sans mt-3 text-center" style={{ color: COLORS.body, textShadow: TEXT_SHADOW }}>Nhận diện tin giả - kỹ năng thiết yếu của sinh viên thời đại số</div>
+                </div>
+                <div style={{ opacity: img2Opacity }} className="flex flex-col items-center">
+                  <ArtDecoImage src={staticFile('media/T3-2/img2.webp')} description="Tin giả dân tộc" width={480} height={380} ringAngle={ringAngle} sweepProgress={img2Sweep} />
+                  <div className="text-[24px] font-sans mt-3 text-center" style={{ color: COLORS.body, textShadow: TEXT_SHADOW }}>Tin giả lợi dụng vấn đề dân tộc để chia rẽ đoàn kết</div>
+                </div>
               </div>
             )}
 

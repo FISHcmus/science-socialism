@@ -7,17 +7,17 @@ const PRINCIPLES = [
   {
     title: "Các dân tộc hoàn toàn bình đẳng",
     detail: "Mọi dân tộc đều có quyền và nghĩa vụ ngang nhau trên mọi lĩnh vực",
-    appearAt: 90,
+    appearAt: 250,
   },
   {
     title: "Các dân tộc có quyền tự quyết",
     detail: "Quyền tự quyết định chế độ chính trị, con đường phát triển. HCM: CMVS",
-    appearAt: 390,
+    appearAt: 720,
   },
   {
     title: "Liên hiệp công nhân tất cả các dân tộc",
     detail: "Gắn kết giải phóng dân tộc với giải phóng giai cấp",
-    appearAt: 690,
+    appearAt: 1350,
   },
 ];
 
@@ -69,7 +69,7 @@ export const Section11ThucNhi: React.FC = () => {
   const visibleNodes = PRINCIPLES.filter((p) => frame >= p.appearAt).length;
 
   // Page flip: horizontal wipe
-  const PAGE_FLIP = 1450;
+  const PAGE_FLIP = 1800;
   const page1TranslateX = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [0, -1440], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const page1Opacity = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const page2TranslateX = interpolate(frame, [PAGE_FLIP + 30, PAGE_FLIP + 60], [1440, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
@@ -126,11 +126,13 @@ export const Section11ThucNhi: React.FC = () => {
             {/* Page 2: images */}
             {frame >= PAGE_FLIP && (
               <div className="flex gap-8" style={{ transform: `translateX(${page2TranslateX}px)`, flex: 1, alignItems: "center" }}>
-                <div style={{ opacity: img1Opacity }}>
-                  <ArtDecoImage description="Ảnh minh họa 1" src={staticFile('media/T1-1/img1.jpg')} width={480} height={480} ringAngle={ringAngle} sweepProgress={img1Sweep} />
+                <div style={{ opacity: img1Opacity }} className="flex flex-col items-center">
+                  <ArtDecoImage description="V.I. Lênin" src={staticFile('media/T1-1/img1.jpg')} width={480} height={440} ringAngle={ringAngle} sweepProgress={img1Sweep} />
+                  <div className="text-[24px] font-sans mt-3 text-center" style={{ color: COLORS.body, textShadow: TEXT_SHADOW }}>V.I. Lênin - Tác giả cương lĩnh dân tộc trong chủ nghĩa Mác-Lênin</div>
                 </div>
-                <div style={{ opacity: img2Opacity }}>
-                  <ArtDecoImage description="Ảnh minh họa 2" src={staticFile('media/T1-1/img2.jpg')} width={480} height={480} ringAngle={ringAngle} sweepProgress={img2Sweep} />
+                <div style={{ opacity: img2Opacity }} className="flex flex-col items-center">
+                  <ArtDecoImage description="Báo L'Humanité" src={staticFile('media/T1-1/img2.jpg')} width={480} height={440} ringAngle={ringAngle} sweepProgress={img2Sweep} />
+                  <div className="text-[24px] font-sans mt-3 text-center" style={{ color: COLORS.body, textShadow: TEXT_SHADOW }}>Báo L'Humanité (Pháp) - Cơ quan ngôn luận phong trào cộng sản quốc tế</div>
                 </div>
               </div>
             )}

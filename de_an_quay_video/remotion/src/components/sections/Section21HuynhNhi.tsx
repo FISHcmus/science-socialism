@@ -20,19 +20,19 @@ export const Section21HuynhNhi: React.FC = () => {
   const citationOpacity = interpolate(frame, [1200, 1260], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
 
   // Curtain entrance: left slides from -200, right from +200
-  const leftSpring = spring({ frame: Math.max(0, frame - 150), fps, config: { damping: 14, stiffness: 70 } });
+  const leftSpring = spring({ frame: Math.max(0, frame - 330), fps, config: { damping: 14, stiffness: 70 } });
   const leftOpacity = interpolate(leftSpring, [0, 1], [0, 1]);
   const leftTranslateX = interpolate(leftSpring, [0, 1], [-200, 0]);
 
-  const rightSpring = spring({ frame: Math.max(0, frame - 180), fps, config: { damping: 14, stiffness: 70 } });
+  const rightSpring = spring({ frame: Math.max(0, frame - 1110), fps, config: { damping: 14, stiffness: 70 } });
   const rightOpacity = interpolate(rightSpring, [0, 1], [0, 1]);
   const rightTranslateX = interpolate(rightSpring, [0, 1], [200, 0]);
 
   // Quote fade-in
-  const quoteOpacity = interpolate(frame, [400, 440], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const quoteOpacity = interpolate(frame, [840, 880], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
 
   // Vertical split page-flip: top half up, bottom half down
-  const PAGE_FLIP = 950;
+  const PAGE_FLIP = 1500;
   const flipProgress = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const topTranslateY = interpolate(flipProgress, [0, 1], [0, -540]);
   const bottomTranslateY = interpolate(flipProgress, [0, 1], [0, 540]);
@@ -53,7 +53,8 @@ export const Section21HuynhNhi: React.FC = () => {
 
       {frame >= 90 && (
         <AbsoluteFill style={{ flexDirection: "row" }}>
-          <div className="flex flex-col overflow-hidden" style={{ width: 1440, height: 1080, padding: "48px 60px 32px 80px" }}>
+          <div style={{ opacity: pipOpacity }}><MemberPiP name="Bùi Huỳnh Nhi" sectionLabel="Phần 2.1 - Thực tiễn đoàn kết" ringAngle={ringAngle} src={staticFile('media/T2-1/video_huynh_nhi.mp4')} /></div>
+          <div className="flex flex-col overflow-hidden" style={{ width: 1440, height: 1080, padding: "48px 80px 32px 60px" }}>
             <div className="mb-4" style={{ opacity: headerOpacity }}>
               <div className="text-[32px] text-ds-gold font-sans tracking-[4px] mb-2" style={{ textShadow: TEXT_SHADOW }}>PHẦN 2.1</div>
               <h2 className="text-[48px] text-ds-white font-sans font-bold m-0 leading-tight" style={{ textShadow: TEXT_SHADOW }}>Thực tiễn đoàn kết dân tộc Việt Nam</h2>
@@ -91,14 +92,19 @@ export const Section21HuynhNhi: React.FC = () => {
             {/* Page 2: images */}
             {frame >= PAGE_FLIP && (
               <div className="flex gap-8">
-                <div style={{ opacity: img1Opacity }}><ArtDecoImage description="Ảnh minh họa 1" src={staticFile('media/T2-1/img1.jpg')} width={480} height={480} ringAngle={ringAngle} sweepProgress={img1Sweep} /></div>
-                <div style={{ opacity: img2Opacity }}><ArtDecoImage description="Ảnh minh họa 2" src={staticFile('media/T2-1/img2.jpeg')} width={480} height={480} ringAngle={ringAngle} sweepProgress={img2Sweep} /></div>
+                <div style={{ opacity: img1Opacity }} className="flex flex-col items-center">
+                  <ArtDecoImage description="Bác Hồ với DTTS" src={staticFile('media/T2-1/img1.jpg')} width={480} height={420} ringAngle={ringAngle} sweepProgress={img1Sweep} />
+                  <div className="text-[24px] font-sans mt-3 text-center" style={{ color: COLORS.body, textShadow: TEXT_SHADOW }}>Chủ tịch Hồ Chí Minh thăm đồng bào dân tộc thiểu số</div>
+                </div>
+                <div style={{ opacity: img2Opacity }} className="flex flex-col items-center">
+                  <ArtDecoImage description="SV các dân tộc" src={staticFile('media/T2-1/img2.jpeg')} width={480} height={420} ringAngle={ringAngle} sweepProgress={img2Sweep} />
+                  <div className="text-[24px] font-sans mt-3 text-center" style={{ color: COLORS.body, textShadow: TEXT_SHADOW }}>Sinh viên các dân tộc giao lưu văn hóa truyền thống</div>
+                </div>
               </div>
             )}
 
             <div className="mt-auto"><CitationFooter text="GT CNXHKH (2021), Ch.6, I.3a, tr.205-208; HCM (1949)" opacity={citationOpacity} /></div>
           </div>
-          <div style={{ opacity: pipOpacity }}><MemberPiP name="Bùi Huỳnh Nhi" sectionLabel="Phần 2.1 - Thực tiễn đoàn kết" ringAngle={ringAngle} src={staticFile('media/T2-1/video_huynh_nhi.mp4')} /></div>
         </AbsoluteFill>
       )}
     </AbsoluteFill>

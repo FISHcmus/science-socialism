@@ -1,6 +1,6 @@
 import { AbsoluteFill, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile } from "remotion";
 import { COLORS, TEXT_SHADOW } from "../../constants";
-import { SectionTitle, ArtDecoImage, MemberPiP, CitationFooter, BarChart, GlassPanel } from "../ds";
+import { SectionTitle, ArtDecoImage, MemberPiP, CitationFooter, GlassPanel } from "../ds";
 
 ;
 
@@ -21,40 +21,40 @@ export const Section22Phu: React.FC = () => {
   const pipOpacity = interpolate(frame, [90, 120], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const citationOpacity = interpolate(frame, [1200, 1260], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
 
-  // Bar grow entrance: each bar grows with staggered spring
-  const barData = [
-    { label: "Tôn giáo", value: 16, color: "#D97706" },
-    { label: "Tổ chức", value: 43, color: "#B45309" },
-    { label: "Chức sắc", value: 57, color: "#92400E" },
-    { label: "Cơ sở thờ tự", value: 29, color: "#78350F" },
+  // Stat cards: staggered entrance
+  const stats = [
+    { value: 16, label: "Tôn giáo", suffix: "" },
+    { value: 43, label: "Tổ chức tôn giáo", suffix: "" },
+    { value: 57000, label: "Chức sắc", suffix: "+" },
+    { value: 29000, label: "Cơ sở thờ tự", suffix: "+" },
   ];
-  const barProgresses = barData.map((_, i) => {
-    const barSpring = spring({ frame: Math.max(0, frame - 150 - i * 60), fps, config: { damping: 14, stiffness: 60 } });
-    return interpolate(barSpring, [0, 1], [0, 1]);
+  const statSprings = stats.map((_, i) => {
+    const s = spring({ frame: Math.max(0, frame - 150 - i * 60), fps, config: { damping: 14, stiffness: 60 } });
+    return interpolate(s, [0, 1], [0, 1]);
   });
-  const barOpacities = barData.map((_, i) => {
-    return interpolate(frame, [150 + i * 60, 170 + i * 60], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const statCountUps = stats.map((st, i) => {
+    const localF = Math.max(0, frame - 150 - i * 60);
+    const countDuration = 30; // frames to count up
+    const progress = Math.min(1, localF / countDuration);
+    return Math.round(st.value * progress);
   });
-  const displayValues = [16, 43, 57, 29];
 
   // GlassPanel cards: fade + scale entrance
-  const card1Spring = spring({ frame: Math.max(0, frame - 420), fps, config: { damping: 14, stiffness: 70 } });
+  const card1Spring = spring({ frame: Math.max(0, frame - 1020), fps, config: { damping: 14, stiffness: 70 } });
   const card1Opacity = interpolate(card1Spring, [0, 1], [0, 1]);
   const card1Scale = interpolate(card1Spring, [0, 1], [0.8, 1]);
 
-  const card2Spring = spring({ frame: Math.max(0, frame - 520), fps, config: { damping: 14, stiffness: 70 } });
+  const card2Spring = spring({ frame: Math.max(0, frame - 1275), fps, config: { damping: 14, stiffness: 70 } });
   const card2Opacity = interpolate(card2Spring, [0, 1], [0, 1]);
   const card2Scale = interpolate(card2Spring, [0, 1], [0.8, 1]);
 
   // Dissolve-blur page-flip
-  const PAGE_FLIP = 800;
+  const PAGE_FLIP = 1400;
   const page1Opacity = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const page1Blur = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [0, 8], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
 
   const img1Opacity = interpolate(frame, [PAGE_FLIP + 30, PAGE_FLIP + 60], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const img1Sweep = Math.max(0, Math.min(1, (frame - PAGE_FLIP - 65) / 30));
-  const img2Opacity = interpolate(frame, [PAGE_FLIP + 90, PAGE_FLIP + 120], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const img2Sweep = Math.max(0, Math.min(1, (frame - PAGE_FLIP - 125) / 30));
 
   return (
     <AbsoluteFill>
@@ -76,15 +76,20 @@ export const Section22Phu: React.FC = () => {
             {/* Page 1: BarChart + GlassPanel cards */}
             {frame < PAGE_FLIP + 30 && (
               <div style={{ opacity: page1Opacity, filter: `blur(${page1Blur}px)` }}>
-                <BarChart
-                  data={barData}
-                  maxHeight={280}
-                  showValues={true}
-                  suffix="K"
-                  barProgresses={barProgresses}
-                  barOpacities={barOpacities}
-                  displayValues={displayValues}
-                />
+                <div className="grid grid-cols-2 gap-4 mb-2">
+                  {stats.map((st, i) => (
+                    <GlassPanel key={i} borderRadius={12} padding="20px 24px" style={{ opacity: statSprings[i], transform: `scale(${0.8 + 0.2 * statSprings[i]!})` }}>
+                      <div className="flex flex-col items-center text-center">
+                        <span className="text-[52px] font-bold font-sans leading-none" style={{ color: COLORS.gold, textShadow: TEXT_SHADOW }}>
+                          {statCountUps[i]!.toLocaleString()}{st.suffix}
+                        </span>
+                        <span className="text-[28px] font-sans mt-2" style={{ color: COLORS.body, textShadow: TEXT_SHADOW }}>
+                          {st.label}
+                        </span>
+                      </div>
+                    </GlassPanel>
+                  ))}
+                </div>
 
                 <div className="flex gap-4 mt-2">
                   <GlassPanel goldBorder padding="16px 24px" borderRadius={12} style={{ flex: 1, opacity: card1Opacity, transform: `scale(${card1Scale})` }}>
@@ -99,11 +104,31 @@ export const Section22Phu: React.FC = () => {
               </div>
             )}
 
-            {/* Page 2: images */}
+            {/* Page 2: two images side by side */}
             {frame >= PAGE_FLIP && (
-              <div className="flex gap-8">
-                <div style={{ opacity: img1Opacity }}><ArtDecoImage description="Ảnh minh họa 1" width={480} height={480} ringAngle={ringAngle} sweepProgress={img1Sweep} /></div>
-                <div style={{ opacity: img2Opacity }}><ArtDecoImage description="Ảnh minh họa 2" width={480} height={480} ringAngle={ringAngle} sweepProgress={img2Sweep} /></div>
+              <div className="flex gap-8 items-center justify-center" style={{ flex: 1 }}>
+                <div style={{ opacity: img1Opacity }} className="flex flex-col items-center">
+                  <ArtDecoImage
+                    src={staticFile('media/T2-2/nha_tho_duc_ba.png')}
+                    description="Nhà thờ Đức Bà"
+                    width={480}
+                    height={380}
+                    ringAngle={ringAngle}
+                    sweepProgress={img1Sweep}
+                  />
+                  <div className="text-[24px] font-sans mt-3 text-center" style={{ color: COLORS.body, textShadow: TEXT_SHADOW }}>Nhà thờ Đức Bà Sài Gòn - Công giáo (tôn giáo du nhập)</div>
+                </div>
+                <div style={{ opacity: interpolate(frame, [PAGE_FLIP + 60, PAGE_FLIP + 90], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) }} className="flex flex-col items-center">
+                  <ArtDecoImage
+                    src={staticFile('media/T2-2/toa_thanh_cao_dai.png')}
+                    description="Tòa Thánh Cao Đài"
+                    width={480}
+                    height={380}
+                    ringAngle={ringAngle}
+                    sweepProgress={Math.max(0, Math.min(1, (frame - PAGE_FLIP - 95) / 30))}
+                  />
+                  <div className="text-[24px] font-sans mt-3 text-center" style={{ color: COLORS.body, textShadow: TEXT_SHADOW }}>Tòa Thánh Cao Đài Tây Ninh - Tôn giáo nội sinh</div>
+                </div>
               </div>
             )}
 

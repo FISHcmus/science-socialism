@@ -1,14 +1,14 @@
 import { AbsoluteFill, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile } from "remotion";
-import { TEXT_SHADOW } from "../../constants";
+import { COLORS, TEXT_SHADOW } from "../../constants";
 import { SectionTitle, ArtDecoImage, MemberPiP, CitationFooter, IconGrid } from "../ds";
 import type { IconGridItem } from "../ds";
 
 const CHARACTERISTICS = [
-  { title: "Cộng đồng lãnh thổ", detail: "Vùng đất, trời, biển thuộc chủ quyền quốc gia, là nơi cư trú lâu đời của cộng đồng dân tộc.", appearAt: 90 },
-  { title: "Cộng đồng sinh hoạt kinh tế", detail: "Đặc trưng quan trọng nhất, là cơ sở liên kết các bộ phận, thành viên trong cộng đồng dân tộc.", appearAt: 370 },
-  { title: "Cộng đồng ngôn ngữ", detail: "Công cụ giao tiếp chung, phản ánh ý thức tự giác tộc người và là tiêu chí quan trọng để phân biệt dân tộc.", appearAt: 650 },
-  { title: "Cộng đồng văn hóa và tâm lý", detail: "Yếu tố đặc biệt quan trọng, thể hiện qua văn hóa vật chất và tinh thần, tạo bản sắc riêng mỗi dân tộc.", appearAt: 930 },
-  { title: "Có chung một nhà nước", detail: "Phân biệt dân tộc quốc gia với dân tộc - tộc người, thể hiện qua tổ chức nhà nước thống nhất.", appearAt: 1210 },
+  { title: "Cộng đồng lãnh thổ", detail: "Vùng đất, trời, biển thuộc chủ quyền quốc gia, là nơi cư trú lâu đời của cộng đồng dân tộc.", appearAt: 500 },
+  { title: "Cộng đồng sinh hoạt kinh tế", detail: "Đặc trưng quan trọng nhất, là cơ sở liên kết các bộ phận, thành viên trong cộng đồng dân tộc.", appearAt: 750 },
+  { title: "Cộng đồng ngôn ngữ", detail: "Công cụ giao tiếp chung, phản ánh ý thức tự giác tộc người và là tiêu chí quan trọng để phân biệt dân tộc.", appearAt: 1020 },
+  { title: "Cộng đồng văn hóa và tâm lý", detail: "Yếu tố đặc biệt quan trọng, thể hiện qua văn hóa vật chất và tinh thần, tạo bản sắc riêng mỗi dân tộc.", appearAt: 1210 },
+  { title: "Có chung một nhà nước", detail: "Phân biệt dân tộc quốc gia với dân tộc - tộc người, thể hiện qua tổ chức nhà nước thống nhất.", appearAt: 1580 },
 ];
 
 export const Section12ChauNhi: React.FC = () => {
@@ -27,7 +27,7 @@ export const Section12ChauNhi: React.FC = () => {
   const citationOpacity = interpolate(frame, [1800, 1860], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
 
   // Page transition: rotate-fade
-  const PAGE_FLIP = 880;
+  const PAGE_FLIP = 1100;
   const page1Rotate = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [0, -3], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const page1Opacity = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const page2Rotate = interpolate(frame, [PAGE_FLIP + 30, PAGE_FLIP + 60], [3, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
@@ -77,7 +77,8 @@ export const Section12ChauNhi: React.FC = () => {
 
       {frame >= 90 && (
         <AbsoluteFill style={{ flexDirection: "row" }}>
-          <div className="flex flex-col overflow-hidden" style={{ width: 1440, height: 1080, padding: "48px 60px 32px 80px" }}>
+          <div style={{ opacity: pipOpacity }}><MemberPiP name="Nguyễn Hồng Châu Nhi" sectionLabel="Phần 1.2 - Năm đặc trưng dân tộc" ringAngle={ringAngle} src={staticFile('media/T1-2/video_chau_nhi.mp4')} /></div>
+          <div className="flex flex-col overflow-hidden" style={{ width: 1440, height: 1080, padding: "48px 80px 32px 60px" }}>
             <div className="mb-4" style={{ opacity: headerOpacity }}>
               <div className="text-[32px] text-ds-gold font-sans tracking-[4px] mb-2" style={{ textShadow: TEXT_SHADOW }}>PHẦN 1.2</div>
               <h2 className="text-[48px] text-ds-white font-sans font-bold m-0 leading-tight" style={{ textShadow: TEXT_SHADOW }}>Năm đặc trưng cơ bản của dân tộc</h2>
@@ -109,8 +110,14 @@ export const Section12ChauNhi: React.FC = () => {
                 />
 
                 <div className="flex gap-8 mt-4">
-                  <div style={{ opacity: img1Opacity }}><ArtDecoImage description="54 dân tộc anh em" src={staticFile('media/T1-2/img1_54_dan_toc.jpg')} width={400} height={400} ringAngle={ringAngle} sweepProgress={img1Sweep} /></div>
-                  <div style={{ opacity: img2Opacity }}><ArtDecoImage description="Bản đồ Việt Nam" src={staticFile('media/T1-2/img2_ban_do_vn.jpeg')} width={400} height={400} ringAngle={ringAngle} sweepProgress={img2Sweep} /></div>
+                  <div style={{ opacity: img1Opacity }} className="flex flex-col items-center">
+                    <ArtDecoImage description="54 dân tộc anh em" src={staticFile('media/T1-2/img1_54_dan_toc.jpg')} width={400} height={360} ringAngle={ringAngle} sweepProgress={img1Sweep} />
+                    <div className="text-[24px] font-sans mt-3 text-center" style={{ color: COLORS.body, textShadow: TEXT_SHADOW }}>Đại diện 54 dân tộc anh em trong đại gia đình Việt Nam</div>
+                  </div>
+                  <div style={{ opacity: img2Opacity }} className="flex flex-col items-center">
+                    <ArtDecoImage description="Cộng đồng lãnh thổ" src={staticFile('media/T1-2/img2_ban_do_vn.jpeg')} width={400} height={360} ringAngle={ringAngle} sweepProgress={img2Sweep} />
+                    <div className="text-[24px] font-sans mt-3 text-center" style={{ color: COLORS.body, textShadow: TEXT_SHADOW }}>"Một tấc bản đồ, vạn tấc quê hương" - Cộng đồng lãnh thổ Việt Nam</div>
+                  </div>
                 </div>
               </div>
             )}
@@ -118,7 +125,6 @@ export const Section12ChauNhi: React.FC = () => {
             <div className="mt-auto"><CitationFooter text="Giáo trình CNXHKH (2021), Ch.6, I.1, tr.196-200" opacity={citationOpacity} /></div>
           </div>
 
-          <div style={{ opacity: pipOpacity }}><MemberPiP name="Nguyễn Hồng Châu Nhi" sectionLabel="Phần 1.2 - Năm đặc trưng dân tộc" ringAngle={ringAngle} src={staticFile('media/T1-2/video_chau_nhi.mp4')} /></div>
         </AbsoluteFill>
       )}
     </AbsoluteFill>
