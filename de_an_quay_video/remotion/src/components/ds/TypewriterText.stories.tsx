@@ -1,30 +1,20 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { Story, StoryDefault } from "@ladle/react";
 import { TypewriterText } from "./TypewriterText";
 
-const sampleText =
-  "Đại đoàn kết toàn dân tộc là truyền thống quý báu của dân tộc Việt Nam.";
-
-const meta: Meta<typeof TypewriterText> = {
+export default {
   title: "DS/TypewriterText",
-  component: TypewriterText,
-  args: {
-    text: sampleText,
-    visibleChars: 40,
-    fontSize: 28,
-    showCursor: true,
-    cursorVisible: true,
-  },
-};
-export default meta;
+} satisfies StoryDefault;
 
-type Story = StoryObj<typeof TypewriterText>;
+const sampleText = "Đại đoàn kết toàn dân tộc là truyền thống quý báu của dân tộc Việt Nam.";
 
-export const Default: Story = {};
+export const Default: Story = () => (
+  <TypewriterText text={sampleText} visibleChars={40} fontSize={28} showCursor cursorVisible />
+);
 
-export const FullyTyped: Story = {
-  args: { visibleChars: sampleText.length },
-};
+export const FullyTyped: Story = () => (
+  <TypewriterText text={sampleText} visibleChars={sampleText.length} fontSize={28} showCursor cursorVisible />
+);
 
-export const GoldText: Story = {
-  args: { goldText: true },
-};
+export const GoldText: Story = () => (
+  <TypewriterText text={sampleText} visibleChars={40} fontSize={28} showCursor cursorVisible goldText />
+);

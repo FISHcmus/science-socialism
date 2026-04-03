@@ -16,18 +16,13 @@ export function FilmGrain({
 
   return (
     <div
-      style={{
-        position: "absolute",
-        inset: 0,
-        pointerEvents: "none",
-        mixBlendMode: blendMode,
-        opacity,
-      }}
+      className="absolute inset-0 pointer-events-none"
+      style={{ mixBlendMode: blendMode, opacity }}
     >
       <svg
         width="100%"
         height="100%"
-        style={{ display: "block" }}
+        className="block"
         xmlns="http://www.w3.org/2000/svg"
       >
         <filter id={`grain-${seed}`}>

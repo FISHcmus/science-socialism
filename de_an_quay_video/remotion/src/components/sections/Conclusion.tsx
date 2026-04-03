@@ -1,10 +1,5 @@
 import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
-import { COLORS, FONT, TEXT_SHADOW } from "../../constants";
-
-// Total duration: 900 frames (30s)
-// Frames 0-300:   "Cảm ơn thầy/cô đã theo dõi" springs in, gold accent line
-// Frames 300-600: Group name + all 9 member names fade in
-// Frames 600-900: Everything fades to black
+import { COLORS, TEXT_SHADOW } from "../../constants";
 
 const MEMBERS = [
   "Nhân",
@@ -22,7 +17,6 @@ export const Conclusion: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // --- Phase 1 (0-300): Thank-you text springs in ---
   const thankYouSpring = spring({
     frame,
     fps,
@@ -30,17 +24,13 @@ export const Conclusion: React.FC = () => {
   });
   const thankYouTranslateY = interpolate(thankYouSpring, [0, 1], [80, 0]);
   const thankYouOpacity = interpolate(thankYouSpring, [0, 1], [0, 1]);
-
-  // Gold accent line width expands as spring resolves
   const accentWidth = interpolate(thankYouSpring, [0, 1], [0, 320]);
 
-  // --- Phase 2 (300-600): Group info fades in ---
   const groupFade = interpolate(frame, [300, 380], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
 
-  // Member names stagger — each appears 12 frames after the previous
   const memberOpacities = MEMBERS.map((_, i) => {
     const memberStart = 360 + i * 20;
     return interpolate(frame, [memberStart, memberStart + 20], [0, 1], {
@@ -49,7 +39,6 @@ export const Conclusion: React.FC = () => {
     });
   });
 
-  // --- Phase 3 (600-900): Global fade to black ---
   const globalOpacity = interpolate(frame, [600, 880], [1, 0], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
@@ -57,33 +46,23 @@ export const Conclusion: React.FC = () => {
 
   return (
     <AbsoluteFill
+      className="justify-center items-center flex-col"
       style={{
-        background: `linear-gradient(180deg, rgba(10,22,40,0.4) 0%, rgba(26,54,93,0.4) 100%)`,
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
+        background: `linear-gradient(180deg, rgba(247,243,238,0.6) 0%, rgba(237,232,224,0.4) 100%)`,
         opacity: globalOpacity,
       }}
     >
       {/* Thank-you text */}
       <div
+        className="text-center mb-5"
         style={{
           transform: `translateY(${thankYouTranslateY}px)`,
           opacity: thankYouOpacity,
-          textAlign: "center",
-          marginBottom: 20,
         }}
       >
         <h1
-          style={{
-            fontSize: 64,
-            color: COLORS.white,
-            fontFamily: FONT,
-            fontWeight: "bold",
-            margin: 0,
-            lineHeight: 1.3,
-            textShadow: TEXT_SHADOW,
-          }}
+          className="text-[64px] text-ds-white font-sans font-bold m-0 leading-snug"
+          style={{ textShadow: TEXT_SHADOW }}
         >
           Cảm ơn thầy/cô đã theo dõi
         </h1>
@@ -91,67 +70,37 @@ export const Conclusion: React.FC = () => {
 
       {/* Gold accent line */}
       <div
-        style={{
-          width: accentWidth,
-          height: 3,
-          backgroundColor: COLORS.gold,
-          borderRadius: 2,
-          marginBottom: 48,
-        }}
+        className="h-[3px] bg-ds-gold rounded-sm mb-12"
+        style={{ width: accentWidth }}
       />
 
-      {/* Group info — fades in during phase 2 */}
+      {/* Group info */}
       <div
-        style={{
-          opacity: groupFade,
-          textAlign: "center",
-          marginBottom: 32,
-        }}
+        className="text-center mb-8"
+        style={{ opacity: groupFade }}
       >
         <div
-          style={{
-            fontSize: 28,
-            color: COLORS.gold,
-            fontFamily: FONT,
-            fontWeight: "bold",
-            letterSpacing: 2,
-            marginBottom: 8,
-            textShadow: TEXT_SHADOW,
-          }}
+          className="text-[28px] text-ds-gold font-sans font-bold tracking-[2px] mb-2"
+          style={{ textShadow: TEXT_SHADOW }}
         >
-          Nhóm 6 - CNXHKH
+          Nhóm 7 - CNXHKH
         </div>
         <div
-          style={{
-            fontSize: 22,
-            color: COLORS.body,
-            fontFamily: FONT,
-            letterSpacing: 1,
-            textShadow: TEXT_SHADOW,
-          }}
+          className="text-[22px] text-ds-body font-sans tracking-[1px]"
+          style={{ textShadow: TEXT_SHADOW }}
         >
           BAA00103 — Chủ nghĩa xã hội khoa học
         </div>
       </div>
 
       {/* Member names grid */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
-          gap: "12px 48px",
-          textAlign: "center",
-        }}
-      >
+      <div className="grid grid-cols-3 gap-x-12 gap-y-3 text-center">
         {MEMBERS.map((name, i) => (
           <div
             key={name}
+            className="text-2xl text-ds-white font-sans px-3 py-1.5"
             style={{
               opacity: memberOpacities[i],
-              fontSize: 24,
-              color: COLORS.white,
-              fontFamily: FONT,
-              padding: "6px 12px",
               textShadow: TEXT_SHADOW,
             }}
           >

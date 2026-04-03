@@ -1,37 +1,30 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { Story, StoryDefault } from "@ladle/react";
 import { Overlay } from "./Overlay";
 
-const meta: Meta<typeof Overlay> = {
+export default {
   title: "DS/Overlay",
-  component: Overlay,
-  args: {
-    direction: "bottom",
-    opacity: 0.7,
-    filmGrain: false,
-    grainFrame: 0,
-  },
-  decorators: [
-    (Story) => (
-      <div style={{ position: "relative", width: 960, height: 540, background: "linear-gradient(135deg, #c49746, #e8af48)" }}>
-        <Story />
-      </div>
-    ),
-  ],
-};
-export default meta;
+} satisfies StoryDefault;
 
-type Story = StoryObj<typeof Overlay>;
+export const Bottom: Story = () => (
+  <div style={{ position: "relative", width: 960, height: 540, background: "linear-gradient(135deg, #c49746, #e8af48)" }}>
+    <Overlay direction="bottom" opacity={0.7} />
+  </div>
+);
 
-export const Bottom: Story = {};
+export const Top: Story = () => (
+  <div style={{ position: "relative", width: 960, height: 540, background: "linear-gradient(135deg, #c49746, #e8af48)" }}>
+    <Overlay direction="top" opacity={0.7} />
+  </div>
+);
 
-export const Top: Story = {
-  args: { direction: "top" },
-};
+export const Full: Story = () => (
+  <div style={{ position: "relative", width: 960, height: 540, background: "linear-gradient(135deg, #c49746, #e8af48)" }}>
+    <Overlay direction="full" opacity={0.7} />
+  </div>
+);
 
-export const Full: Story = {
-  args: { direction: "full" },
-};
-
-export const WithGrain: Story = {
-  args: { filmGrain: true, grainFrame: 42 },
-};
+export const WithGrain: Story = () => (
+  <div style={{ position: "relative", width: 960, height: 540, background: "linear-gradient(135deg, #c49746, #e8af48)" }}>
+    <Overlay direction="bottom" opacity={0.7} filmGrain grainFrame={42} />
+  </div>
+);

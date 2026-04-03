@@ -1,0 +1,128 @@
+{
+  "name": "Google Material Design",
+  "summary": "Systematic color roles, elevation, motion specs",
+
+  "color_palette": {
+    "description": "Material Design 3 uses a dynamic color system with 5 key colors generating tonal palettes of 13 tones each. Default light theme baseline palette provided below.",
+    "primary": "#6750A4",
+    "on_primary": "#FFFFFF",
+    "primary_container": "#EADDFF",
+    "secondary": "#625B71",
+    "on_secondary": "#FFFFFF",
+    "secondary_container": "#E8DEF8",
+    "tertiary": "#7D5260",
+    "on_tertiary": "#FFFFFF",
+    "tertiary_container": "#FFD8E4",
+    "surface": "#FFFBFE",
+    "on_surface": "#1C1B1F",
+    "surface_variant": "#E7E0EC",
+    "error": "#B3261E",
+    "outline": "#79747E",
+    "note": "These are baseline defaults. M3 encourages generating custom schemes from a seed color via Material Theme Builder. For Vietnamese academic context, a red (#B91C1C) or gold (#D97706) seed would produce culturally relevant palettes automatically."
+  },
+
+  "typography": {
+    "recommended_families": ["Roboto (default)", "Be Vietnam Pro (Vietnamese-optimized alternative)"],
+    "size_scale": "M3 defines 15 type roles across 5 categories: Display (57/45/36), Headline (32/28/24), Title (22/16/14), Body (16/14/12), Label (14/12/11) - all in sp/dp",
+    "weights": "Regular (400), Medium (500) used across type roles",
+    "vietnamese_diacritics": "Roboto has adequate Vietnamese support but was not purpose-built for it. Be Vietnam Pro is superior for stacked diacritics. M3's type scale system works with any font swap."
+  },
+
+  "animation_style": {
+    "approach": "M3 uses easing curves and duration tokens, not spring physics by default. Easing types: emphasized (entrance/exit), standard, emphasized-decelerate, emphasized-accelerate.",
+    "duration_tokens": "Short (50-200ms for small elements), Medium (250-400ms for expanding/collapsing), Long (450-700ms for page transitions), Extra-long (700ms+ for complex choreography)",
+    "spring_support": "Android Dynamic Animation library offers spring configs with damping/stiffness values in three speeds (fast, slow, default). Not the primary motion system.",
+    "motion_budget": "Conservative by default - animations serve clarity and hierarchy, not decoration"
+  },
+
+  "projector_readability": {
+    "contrast_ratio": "Default light theme achieves ~15.4:1 for on-surface (#1C1B1F) on surface (#FFFBFE), well above WCAG AAA 7:1",
+    "minimum_font_sizes": "M3 body text starts at 14sp, which maps to ~19px at default density. For projector use at 1920x1080, body text would need scaling up to 28px+ per project requirements.",
+    "color_washout_resistance": "Light theme with near-white surface (#FFFBFE) is projector-friendly. Tonal elevation system uses subtle color shifts that may be lost on projectors - shadows preferred over tonal changes for elevation."
+  },
+
+  "wcag_contrast_score": {
+    "primary_on_surface": "15.4:1 (on-surface #1C1B1F on surface #FFFBFE) - AAA pass",
+    "primary_on_primary": "4.64:1 (on-primary #FFFFFF on primary #6750A4) - AA pass for normal text",
+    "degradation_note": "Even with 20-30% projector degradation, primary combinations remain above AA threshold"
+  },
+
+  "projector_degradation_resistance": {
+    "rating": "Good",
+    "strengths": "Light background renders accurately on projectors. High baseline contrast ratios provide margin for degradation.",
+    "weaknesses": "Tonal elevation (subtle color shifts between surface levels) will be invisible on most projectors. Purple primary (#6750A4) may appear muted. Tertiary rose tones can wash out.",
+    "recommendation": "Replace tonal elevation with shadow elevation. Use high-chroma seed color for custom scheme."
+  },
+
+  "vietnamese_diacritics_rendering": {
+    "default_font_quality": "Roboto: adequate but not optimized for Vietnamese stacked diacritics",
+    "recommended_substitute": "Be Vietnam Pro: purpose-built for Vietnamese with adaptive diacritics",
+    "line_height_needs": "M3's default line-height ratios (1.2-1.5x) accommodate Vietnamese diacritics without clipping when font size >= 28px",
+    "minimum_safe_size": "28px with Be Vietnam Pro for projector-safe Vietnamese text"
+  },
+
+  "cultural_fit": {
+    "rating": "Moderate",
+    "analysis": "M3 is culturally neutral by design - it does not invoke Vietnamese symbolism. However, its dynamic theming allows generating culturally appropriate color schemes from Vietnamese red or gold seed colors. The systematic approach communicates modernity and technical competence, fitting for a university setting. No inherent connection to national unity or socialist themes.",
+    "adaptation_needed": "Requires deliberate customization with Vietnamese-significant seed colors to achieve cultural resonance"
+  },
+
+  "cultural_semiotics": {
+    "inherent_symbols": "None - M3 is intentionally culture-neutral",
+    "achievable_via_theming": "Red seed (#B91C1C) invokes revolution/national flag. Gold seed (#D97706) invokes prosperity/star on flag. These can generate full M3 tonal palettes automatically.",
+    "risk": "Default purple baseline reads as tech/startup, not academic/patriotic"
+  },
+
+  "teacher_perception_signal": {
+    "signal": "Professional and polished. Communicates technical competence and attention to detail. May read as overly corporate/tech-focused rather than academically engaged with the socialist content. The systematic design approach shows effort but doesn't directly signal depth of understanding.",
+    "risk": "Could appear as prioritizing form over content if not carefully balanced"
+  },
+
+  "rubric_alignment": {
+    "format_15_percent": "Excellent - M3's systematic approach to color roles, typography scale, and spacing ensures visual consistency. Structured component library maps well to format rubric.",
+    "theory_35_percent": "Neutral - design system neither helps nor hinders theory presentation. Clean typography supports dense text when needed.",
+    "application_50_percent": "Good - M3 has built-in data visualization patterns, card layouts for case studies, and clear information hierarchy for application analysis."
+  },
+
+  "content_density_capacity": {
+    "words_per_frame": "Moderate-high. M3's card-based layouts and clear hierarchy support 60-100 words per frame at readable sizes. Data visualization components (charts, tables) are well-defined in the system.",
+    "theory_support": "Body text at 28px+ on 1920x1080 allows ~8-10 lines of Vietnamese text per content area",
+    "data_viz_support": "Strong - M3 includes guidelines for data tables, charts, and information density"
+  },
+
+  "production_effort": {
+    "migration_from_current": "Moderate. Current codebase already uses a structured color system (COLORS constant). Replacing color tokens and adding M3's elevation/motion specs requires systematic but straightforward changes.",
+    "estimated_effort": "2-3 days to implement M3 color roles, typography scale, and elevation system in existing Remotion components",
+    "reuse_potential": "High - M3 has React component libraries (MUI) that provide reference implementations"
+  },
+
+  "remotion_implementation_complexity": {
+    "css_needs": "Moderate - M3's color roles map to CSS custom properties. Elevation requires box-shadow definitions. No complex CSS features needed.",
+    "three_js": "No impact - M3 does not require Three.js. Existing 3D background can remain unchanged.",
+    "render_performance": "Low overhead - M3 is primarily CSS tokens and layout conventions",
+    "computation_cost": "Minimal - no runtime color computation needed if palette is pre-generated"
+  },
+
+  "distraction_level": "Low to moderate. M3 is designed to support content, not overshadow it. Default animations are subtle. Risk of distraction only if M3 Expressive features (bouncy animations, expressive shapes) are adopted.",
+
+  "differentiation": "Low. M3 is the world's most common design system (Android, web). A student presentation using M3 defaults would look like a generic app, not distinctive. Custom theming helps but base patterns are recognizable.",
+
+  "temporal_coherence": {
+    "rating": "Excellent",
+    "analysis": "M3's systematic color roles and type scale ensure visual consistency across all 13.5 minutes. Color roles (primary/secondary/tertiary) naturally distribute emphasis across sections. Each speaker's section can use the same design language with minor emphasis shifts."
+  },
+
+  "dark_vs_light_mode_viability": "Both viable. M3 defines complete light and dark color schemes. Light mode recommended for projector. The system was designed for theme switching, so light-mode-only usage is fully supported.",
+
+  "precedent": {
+    "examples": [
+      "Google I/O conference presentations use M3 design language",
+      "Android developer documentation and training materials",
+      "University CS department presentations often adopt Material Design for familiarity",
+      "Google's own educational content (Google for Education) uses Material Design"
+    ],
+    "academic_context": "Common in STEM/CS academic presentations but less common in humanities/social sciences"
+  },
+
+  "uncertain": []
+}

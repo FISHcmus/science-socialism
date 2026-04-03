@@ -1,41 +1,29 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { Story, StoryDefault } from "@ladle/react";
 import { CountUpNumber } from "./CountUpNumber";
 import { COLORS } from "./tokens";
+import { useRingAngle } from "../../hooks/useRingAngle";
 
-const meta: Meta<typeof CountUpNumber> = {
+export default {
   title: "DS/CountUpNumber",
-  component: CountUpNumber,
-  args: {
-    value: 54,
-    label: "dân tộc",
-    color: COLORS.gold,
-    size: 72,
-    opacity: 1,
-    goldRing: false,
-    ringAngle: 0,
-  },
-  argTypes: {
-    ringAngle: { control: { type: "range", min: 0, max: 360, step: 1 } },
-  },
-};
-export default meta;
+} satisfies StoryDefault;
 
-type Story = StoryObj<typeof CountUpNumber>;
+export const Default: Story = () => (
+  <CountUpNumber value={54} label="dân tộc" color={COLORS.gold} size={72} opacity={1} />
+);
 
-export const Default: Story = {};
+export const WithSuffix: Story = () => (
+  <CountUpNumber value={100} suffix="tr" label="dân số" color={COLORS.gold} size={72} opacity={1} />
+);
 
-export const WithSuffix: Story = {
-  args: { value: 100, suffix: "tr", label: "dân số" },
+export const WithGoldRing: Story = () => {
+  const ringAngle = useRingAngle();
+  return <CountUpNumber value={54} label="dân tộc" color={COLORS.gold} size={72} opacity={1} goldRing ringAngle={ringAngle} />;
 };
 
-export const WithGoldRing: Story = {
-  args: { goldRing: true, ringAngle: 45 },
-};
+export const WarmGold: Story = () => (
+  <CountUpNumber value={54} label="dân tộc" color={COLORS.warmGold} size={72} opacity={1} />
+);
 
-export const WarmGold: Story = {
-  args: { color: COLORS.warmGold },
-};
-
-export const LightGold: Story = {
-  args: { color: COLORS.lightGold },
-};
+export const LightGold: Story = () => (
+  <CountUpNumber value={54} label="dân tộc" color={COLORS.lightGold} size={72} opacity={1} />
+);

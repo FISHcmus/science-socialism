@@ -1,0 +1,116 @@
+{
+  "name": "Editorial / Magazine Layout",
+  "summary": "Asymmetric grids, text overlapping images, pull quotes. Premium sophisticated feel",
+  "color_palette": {
+    "primary": "#1A1A2E (deep navy/charcoal for headlines)",
+    "secondary": "#4A4A68 (muted slate for subheadings)",
+    "accent": "#C8102E (editorial red for pull quotes and highlights)",
+    "surface": "#FAFAF7 (warm off-white paper texture)",
+    "text": "#2D2D2D (near-black for body text)",
+    "notes": "Editorial palettes favor high-contrast neutrals with a single bold accent. The warm off-white surface mimics quality print paper stock. A secondary accent of gold (#B8860B) may be used sparingly for drop caps or dividers."
+  },
+  "typography": {
+    "headline_font": "Playfair Display or similar high-contrast serif (display use only)",
+    "body_font": "Be Vietnam Pro (sans-serif, already in project - excellent Vietnamese diacritics)",
+    "size_scale": "Headlines 56-72px, subheadings 36-40px, body 28-32px, captions 24px",
+    "weights": "Headline: Bold/Black (700-900), body: Regular/Medium (400-500)",
+    "vietnamese_support": "Be Vietnam Pro handles Vietnamese diacritics natively. Playfair Display has limited Vietnamese support - would need fallback to Noto Serif for stacked diacritics like ượ and ễ.",
+    "notes": "Classic editorial uses serif + sans-serif pairing for visual hierarchy. The contrast between display serif headers and clean sans-serif body creates the magazine feel."
+  },
+  "animation_style": {
+    "approach": "Deliberate, editorial reveals - content slides in with magazine page-turn feel",
+    "spring_config": "Slow, elegant easing (mass: 1, damping: 20, stiffness: 80) for parallax text reveals",
+    "entrance_patterns": "Staggered column reveals, text mask animations, image Ken Burns pans, pull quote fade-ins with scale",
+    "motion_budget": "Medium - animations are purposeful but restrained, no flashy transitions",
+    "notes": "Magazine-inspired motion: asymmetric elements enter at different rates creating visual rhythm. Text blocks slide from edges, images zoom subtly."
+  },
+  "projector_readability": {
+    "contrast_ratio": "High for text-on-surface (~13:1 for #2D2D2D on #FAFAF7)",
+    "minimum_font_sizes": "Body text 28px minimum is achievable but asymmetric layouts risk pushing text into smaller zones",
+    "color_washout_resistance": "Good - relies on high-contrast neutrals rather than subtle color differences",
+    "concerns": "Asymmetric grids with text overlapping images can reduce readability on projectors where contrast is already degraded. Pull quotes over images need careful opacity management."
+  },
+  "wcag_contrast_score": {
+    "primary_text_on_bg": "AAA (~13:1 for #2D2D2D on #FAFAF7)",
+    "accent_on_bg": "AA (~5.5:1 for #C8102E on #FAFAF7)",
+    "projector_degradation": "After 20-30% degradation, body text remains AA. Accent red may drop below AA threshold on projectors.",
+    "notes": "Strong baseline contrast but overlapping text-on-image zones are unpredictable and may fail WCAG entirely."
+  },
+  "projector_degradation_resistance": {
+    "rating": "Medium",
+    "strengths": "High-contrast neutral palette holds up well. Bold typography remains legible.",
+    "weaknesses": "Text overlapping images is the Achilles heel - projector washout makes semi-transparent overlays nearly invisible. Fine typographic details (thin serifs, hairline rules) blur on projectors. Asymmetric white space reads as 'broken layout' when subtle grid lines disappear."
+  },
+  "vietnamese_diacritics_rendering": {
+    "quality": "Mixed - depends on font choice",
+    "details": "Be Vietnam Pro (body) handles diacritics excellently at all sizes. Display serifs like Playfair Display have poor Vietnamese diacritics - stacked marks (ượ, ễ, ắ) clip or overlap at headline sizes. Line-height needs 1.5-1.6 for Vietnamese body text to prevent diacritic cropping.",
+    "recommendation": "Use Be Vietnam Pro for everything, lose the serif pairing, or accept compromised diacritics in headlines."
+  },
+  "cultural_fit": {
+    "alignment": "Low-Medium",
+    "analysis": "Editorial/magazine aesthetic signals Western luxury publishing (Vogue, Monocle, NYT Magazine). This is culturally disconnected from Vietnamese academic context and the topic of national unity (dai doan ket dan toc). The sophisticated premium feel may be perceived as style-over-substance for a political theory presentation.",
+    "positives": "Demonstrates design skill and effort. Professional appearance.",
+    "negatives": "No Vietnamese cultural resonance. The asymmetric overlapping style feels more fashion/lifestyle than academic. Could signal misplaced priorities to a teacher grading on theory and application content."
+  },
+  "cultural_semiotics": {
+    "symbols_invoked": "Western publishing luxury, intellectual elitism, design-forward aesthetics",
+    "vietnamese_resonance": "None inherent - editorial magazine layout is a Western design tradition with no Vietnamese cultural symbols",
+    "adaptation_needed": "Would need to deliberately inject Vietnamese cultural elements (red/gold accents, imagery) into the editorial framework to create relevance",
+    "risk": "Without careful adaptation, reads as a foreign design language applied to Vietnamese content"
+  },
+  "teacher_perception_signal": {
+    "signal": "High design effort, but potentially perceived as prioritizing aesthetics over content",
+    "positive": "Looks professionally designed, suggests student took video production seriously (format rubric 15%)",
+    "negative": "May trigger suspicion of style-over-substance. For a scientific socialism course, intellectualism is expected through content depth, not visual sophistication. Teacher may feel content was sacrificed for layout polish.",
+    "risk_level": "Medium - depends heavily on how well content is integrated"
+  },
+  "rubric_alignment": {
+    "format_15pct": "Strong - editorial layouts look polished and professional, scoring well on visual quality",
+    "theory_35pct": "Weak - asymmetric layouts and text-over-image reduce space for dense theoretical text. Pull quotes break text flow, making sustained argumentation harder to present",
+    "application_50pct": "Medium - magazine layouts can present case studies and real-world applications well with image-text integration, but data visualization is not a natural strength of editorial design",
+    "overall": "Optimized for format points but may sacrifice theory and application density"
+  },
+  "content_density_capacity": {
+    "words_per_frame": "Low-Medium (60-100 words at readable sizes). Asymmetric grids waste space by design - white space is a feature, not a bug, in editorial layouts.",
+    "data_viz_support": "Poor - editorial layouts prioritize text-image interplay over charts and data. Bar charts and flow diagrams feel foreign in a magazine grid.",
+    "theory_density": "Low - pull quotes and large headers consume space that could hold theory content. Dense paragraphs look wrong in editorial context.",
+    "notes": "Fundamental tension: editorial design celebrates white space and visual breathing room, but the rubric demands dense theoretical content (35%) and application analysis (50%)."
+  },
+  "production_effort": {
+    "level": "High",
+    "migration_work": "Major restructuring needed. Current codebase uses card-based symmetric layouts. Editorial requires custom asymmetric grid system, text-over-image compositing, pull quote components, and careful per-slide art direction.",
+    "new_components": "Pull quote component, asymmetric grid container, image overlay with text mask, drop cap component, editorial divider/rule",
+    "time_estimate": "3-5 days of focused work to migrate existing 8 sections"
+  },
+  "remotion_implementation_complexity": {
+    "css_needs": "Complex - CSS Grid with named areas, clip-path for text masks, mix-blend-mode for overlays. Each slide needs unique grid template.",
+    "threejs": "Not required - editorial style is 2D. Could remove existing Three.js background, simplifying render pipeline.",
+    "render_performance": "Medium - image compositing and blend modes add render cost but no 3D overhead",
+    "computation_cost": "Per-frame text mask animations are expensive. Parallax effects require per-frame interpolation of multiple elements.",
+    "difficulty": "High - each slide becomes a bespoke layout rather than reusable templates"
+  },
+  "distraction_level": "Medium-High - the design language itself draws attention. Asymmetric layouts, pull quotes, and overlapping elements are visually interesting but compete with content for viewer attention.",
+  "differentiation": "High - very few student presentations use editorial magazine layouts. Would stand out significantly from PowerPoint-style slides.",
+  "temporal_coherence": {
+    "consistency": "Challenging - editorial layouts are bespoke by nature. Maintaining visual identity across 13.5 min with 9 different speakers requires strict grid system discipline.",
+    "section_transitions": "Each section needs unique art direction while staying within the editorial system. Risk of visual fragmentation.",
+    "speaker_identity": "MemberPiP components may clash with editorial aesthetic. Magazine layouts don't typically feature presenter video overlays.",
+    "mitigation": "Define a strict 3-4 column grid template set and reuse across sections. Limit variation to image placement and accent color."
+  },
+  "dark_vs_light_mode_viability": "Naturally light-mode (paper-white background). Light mode is native to editorial/magazine design. Works well for projector requirement. Dark mode would feel like a digital magazine app rather than editorial print, losing the core aesthetic.",
+  "precedent": {
+    "examples": [
+      "Bloomberg Businessweek - asymmetric editorial layouts in digital format",
+      "Apple Keynote 'magazine-style' product reveals (text overlapping product shots)",
+      "Monocle magazine digital editions",
+      "NYT interactive features (Snowfall, etc.) - editorial storytelling with motion",
+      "Pitch.com presentation templates with editorial aesthetics"
+    ],
+    "in_academic_context": "Rare. Editorial layouts are almost never used in academic presentations. Some design school thesis presentations use this style, but it is foreign to social science / political theory contexts.",
+    "in_vietnamese_context": "No known precedent for editorial magazine layout in Vietnamese academic video presentations."
+  },
+  "uncertain": [
+    "wcag_contrast_score",
+    "production_effort"
+  ]
+}

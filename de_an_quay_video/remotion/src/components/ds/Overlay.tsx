@@ -1,4 +1,3 @@
-import { COLORS } from "./tokens";
 import { FilmGrain } from "./FilmGrain";
 
 export interface OverlayProps {
@@ -7,6 +6,10 @@ export interface OverlayProps {
   filmGrain?: boolean;
   grainFrame?: number;
 }
+
+/** Overlay always uses a fixed dark color for vignette effect,
+ *  independent of the theme's background color. */
+const OVERLAY_COLOR = "#000000";
 
 function toRgba(hex: string, alpha: number): string {
   const r = parseInt(hex.slice(1, 3), 16);
@@ -21,8 +24,8 @@ export function Overlay({
   filmGrain = false,
   grainFrame = 0,
 }: OverlayProps) {
-  const baseRgba = toRgba(COLORS.darkest, opacity);
-  const transparent = toRgba(COLORS.darkest, 0);
+  const baseRgba = toRgba(OVERLAY_COLOR, opacity);
+  const transparent = toRgba(OVERLAY_COLOR, 0);
 
   let background: string;
 
@@ -41,12 +44,8 @@ export function Overlay({
 
   return (
     <div
-      style={{
-        position: "absolute",
-        inset: 0,
-        background,
-        pointerEvents: "none",
-      }}
+      className="absolute inset-0 pointer-events-none"
+      style={{ background }}
     >
       {filmGrain && <FilmGrain frame={grainFrame} />}
     </div>

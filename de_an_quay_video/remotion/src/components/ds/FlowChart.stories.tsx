@@ -1,5 +1,9 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { Story, StoryDefault } from "@ladle/react";
 import { FlowChart } from "./FlowChart";
+
+export default {
+  title: "DS/FlowChart",
+} satisfies StoryDefault;
 
 const sampleNodes = [
   { label: "Nhận thức", description: "Hiểu biết lý luận" },
@@ -8,26 +12,14 @@ const sampleNodes = [
   { label: "Tổng kết", description: "Đánh giá kết quả" },
 ];
 
-const meta: Meta<typeof FlowChart> = {
-  title: "DS/FlowChart",
-  component: FlowChart,
-  args: {
-    nodes: sampleNodes,
-    direction: "horizontal",
-    cycle: false,
-    visibleNodes: 4,
-  },
-};
-export default meta;
+export const Horizontal: Story = () => (
+  <FlowChart nodes={sampleNodes} direction="horizontal" cycle={false} visibleNodes={4} />
+);
 
-type Story = StoryObj<typeof FlowChart>;
+export const Vertical: Story = () => (
+  <FlowChart nodes={sampleNodes} direction="vertical" cycle={false} visibleNodes={4} />
+);
 
-export const Horizontal: Story = {};
-
-export const Vertical: Story = {
-  args: { direction: "vertical" },
-};
-
-export const Cyclic: Story = {
-  args: { cycle: true },
-};
+export const Cyclic: Story = () => (
+  <FlowChart nodes={sampleNodes} direction="horizontal" cycle visibleNodes={4} />
+);

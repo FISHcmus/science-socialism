@@ -1,0 +1,106 @@
+{
+  "name": "Glassmorphism / Frosted Glass",
+  "summary": "Frosted-glass panels, backdrop-blur, layered depth. Already in GlassPanel component",
+
+  "color_palette": {
+    "primary": "#F7F3EE (warm off-white background, current theme base)",
+    "secondary": "rgba(255, 255, 255, 0.15-0.30) (semi-transparent glass panels)",
+    "accent": "#B91C1C (Vietnam red for borders/highlights), #D97706 (amber-gold for decorative rings)",
+    "surface": "rgba(255, 255, 255, 0.10-0.25) with backdrop-blur 10-20px",
+    "text": "#1C1917 (dark stone text on light glass panels)",
+    "notes": "Glass panels need semi-opaque fill (0.15-0.30 alpha) behind text areas to maintain contrast. On light backgrounds, use white glass with subtle border (1px rgba(255,255,255,0.3)) for edge definition."
+  },
+
+  "typography": {
+    "font_families": "Be Vietnam Pro (sans-serif) - already loaded via @remotion/google-fonts/BeVietnamPro",
+    "size_scale": "Section title: 48-56px, Card heading: 36-40px, Body: 28-32px, Citation: 24px",
+    "weights": "400 (body), 600 (headings), 700 (titles)",
+    "vietnamese_diacritics_support": "Excellent - Be Vietnam Pro purpose-built for Vietnamese diacritics (stacked marks like uo+, e~ render cleanly at 28px+)"
+  },
+
+  "animation_style": {
+    "approach": "Panels fade in with slight scale (0.95 to 1.0) and opacity (0 to 1) over 15-20 frames. Spring config: damping 12-15, stiffness 100. Blur can animate from 0px to target for reveal effect.",
+    "entrance_patterns": "Staggered card entrance, panels slide up or fade in sequentially",
+    "motion_budget": "Moderate - backdrop-filter is GPU-intensive. Limit to 3-4 glass panels per frame maximum. Avoid animating blur values (expensive recomposite each frame)."
+  },
+
+  "projector_readability": {
+    "contrast_ratio": "Problematic without mitigation. Pure glassmorphism on variable backgrounds fails WCAG 4.5:1 for body text. Requires semi-opaque backing (rgba white 0.7+) behind all text areas.",
+    "minimum_font_sizes": "28px body minimum (same as current). Glass blur makes small text unreadable - push body to 30-32px.",
+    "color_washout_resistance": "Medium-low. Projectors wash out subtle transparency gradients. Glass borders (1px white/gray) may disappear. Need thicker borders (2-3px) and higher opacity fills than typical web glassmorphism."
+  },
+
+  "wcag_contrast_score": {
+    "text_on_background": "With rgba(255,255,255,0.75) glass panel over #F7F3EE: dark text #1C1917 achieves ~12:1 contrast (AAA). With lower opacity (0.3): contrast varies with background content, may drop below 4.5:1 (fails AA).",
+    "recommendation": "Use higher opacity glass (0.6-0.8) for text panels, reserve low-opacity glass for decorative elements only"
+  },
+
+  "projector_degradation_resistance": {
+    "rating": "Low-Medium",
+    "details": "Projectors shift blacks to gray and reduce color depth. Glass panel edges defined by subtle transparency differences will flatten. Blur halos may vanish. Need fallback solid borders. The frosted effect itself may become invisible if projector cannot reproduce the subtle luminance gradient."
+  },
+
+  "vietnamese_diacritics_rendering": {
+    "quality": "Good with Be Vietnam Pro at 28px+. Glass blur behind text does not affect diacritic rendering since text is rendered on top. Line-height 1.4-1.5 needed for stacked diacritics (uo+o+ng, uo+`). No clipping issues at recommended font sizes."
+  },
+
+  "cultural_fit": {
+    "assessment": "Neutral to slight positive. Glassmorphism conveys modernity and technological sophistication. Does not inherently connect to Vietnamese culture or national unity themes. Could be perceived as style-over-substance for an academic socialism course. However, the existing codebase already uses GlassPanel, making it a natural extension.",
+    "alignment_with_topic": "Weak - frosted glass aesthetic is associated with tech products (Apple, Microsoft), not socialist theory or Vietnamese identity"
+  },
+
+  "cultural_semiotics": {
+    "symbols_invoked": "Modernity, transparency (metaphorical), layered depth. No Vietnamese-specific symbols. Glass/transparency could be stretched to mean 'openness' but this is a reach.",
+    "risk": "May feel disconnected from CNXHKH (Scientific Socialism) course content"
+  },
+
+  "teacher_perception_signal": {
+    "signal": "Technical competence and modern design awareness. May impress with polish but could be seen as prioritizing aesthetics over content substance. For a socialism course, this is a double-edged sword - shows effort but may seem westernized/commercial."
+  },
+
+  "rubric_alignment": {
+    "format_15pct": "Strong - glassmorphism looks polished and professional. Clear visual hierarchy with glass card layers.",
+    "theory_35pct": "Medium - glass panels can contain dense text but the decorative blur competes for attention. Theory content needs to be front-and-center, not behind a glass effect.",
+    "application_50pct": "Medium - data visualization on glass panels is possible but adds complexity. Charts/infographics need solid backgrounds for readability, undermining the glass aesthetic."
+  },
+
+  "content_density_capacity": {
+    "words_per_frame": "40-60 words at 28-32px on glass panels. Glass panels with sufficient opacity can hold body text, but the transparency effect means less usable area (need margins from glass edges where blur is strongest).",
+    "data_viz_support": "Moderate - charts work on solid-backed glass panels but pure glassmorphism undermines data readability"
+  },
+
+  "production_effort": {
+    "assessment": "Low - GlassPanel component already exists in the codebase. Main work is ensuring consistent glass treatment across all 8 sections and tuning opacity/blur values for projector readability.",
+    "migration_cost": "Minimal - extend existing GlassPanel, adjust opacity values, add border fallbacks for projector"
+  },
+
+  "remotion_implementation_complexity": {
+    "css_needs": "backdrop-filter: blur(10-20px), rgba backgrounds, border with alpha. All standard CSS, well-supported.",
+    "threejs_interaction": "3D background layer already exists. Glass panels overlay naturally. No Three.js changes needed.",
+    "render_performance": "backdrop-filter is GPU-intensive during Remotion render (CPU-based via Chromium). Multiple glass panels per frame increase render time. Keep to 3-4 panels max per scene.",
+    "computation_cost": "Medium - each backdrop-filter blur requires re-compositing. Remotion's Chromium renderer handles it but render times increase ~20-40% vs solid panels."
+  },
+
+  "distraction_level": "Medium - the frosted glass effect is inherently decorative and draws attention to itself. Needs careful restraint to not overshadow content.",
+
+  "differentiation": "Medium - glassmorphism was trendy 2021-2023, now mainstream. Apple's Liquid Glass (2025) renewed interest. Other student presentations unlikely to use it, but it is no longer novel in the design world.",
+
+  "temporal_coherence": {
+    "assessment": "Good - glass panel treatment provides consistent visual language across all sections. Each speaker's content appears in the same glass card style. Color and blur values create recognizable identity.",
+    "risk": "Monotony if every section uses identical glass cards. Need variation in layout within the glass framework."
+  },
+
+  "dark_vs_light_mode_viability": "Works on both but light mode is recommended for projector. Light background (#F7F3EE) with white glass panels (rgba 255,255,255,0.2) is subtle but viable. Dark glassmorphism looks better on screens but fails on projectors (washed-out blacks).",
+
+  "precedent": {
+    "examples": [
+      "Apple macOS Big Sur / iOS 26 Liquid Glass (2025) - frosted panels throughout system UI",
+      "Microsoft Fluent Design System - Acrylic material (backdrop-blur + noise texture)",
+      "Apple WWDC presentation slides - glass cards over gradient backgrounds",
+      "Windows 11 UI - subtle glassmorphism in system panels"
+    ],
+    "academic_context": "No known academic presentation precedent. This style is primarily associated with consumer tech products."
+  },
+
+  "uncertain": ["remotion_implementation_complexity.computation_cost"]
+}

@@ -5,7 +5,7 @@ import {
   spring,
   useVideoConfig,
 } from "remotion";
-import { COLORS, FONT, TEXT_SHADOW } from "../constants";
+import { COLORS, TEXT_SHADOW } from "../constants";
 
 export const TitleCard: React.FC = () => {
   const frame = useCurrentFrame();
@@ -28,42 +28,27 @@ export const TitleCard: React.FC = () => {
 
   return (
     <AbsoluteFill
+      className="justify-center items-center"
       style={{
-        justifyContent: "center",
-        alignItems: "center",
-        background: "linear-gradient(135deg, rgba(10,10,15,0.4) 0%, rgba(26,26,46,0.4) 50%, rgba(10,10,15,0.4) 100%)",
+        background: "linear-gradient(135deg, rgba(247,243,238,0.6) 0%, rgba(237,232,224,0.4) 50%, rgba(247,243,238,0.6) 100%)",
       }}
     >
       <div
+        className="text-center px-20"
         style={{
           transform: `translateY(${interpolate(titleY, [0, 1], [50, 0])}px)`,
           opacity: titleOpacity,
-          textAlign: "center",
-          padding: "0 80px",
         }}
       >
         <div
-          style={{
-            fontSize: 28,
-            color: COLORS.gold,
-            letterSpacing: 6,
-            marginBottom: 24,
-            fontFamily: FONT,
-            textShadow: TEXT_SHADOW,
-          }}
+          className="text-[28px] text-ds-gold tracking-[6px] mb-6 font-sans"
+          style={{ textShadow: TEXT_SHADOW }}
         >
-          CHỦ NGHĨA XÃ HỘI KHOA HỌC - NHÓM 6
+          CHỦ NGHĨA XÃ HỘI KHOA HỌC - NHÓM 7
         </div>
         <h1
-          style={{
-            fontSize: 52,
-            color: COLORS.white,
-            fontFamily: FONT,
-            fontWeight: "bold",
-            lineHeight: 1.3,
-            margin: 0,
-            textShadow: TEXT_SHADOW,
-          }}
+          className="text-[52px] text-ds-white font-sans font-bold leading-snug m-0"
+          style={{ textShadow: TEXT_SHADOW }}
         >
           TRÁCH NHIỆM CỦA SINH VIÊN TRONG VIỆC
           <br />
@@ -74,14 +59,9 @@ export const TitleCard: React.FC = () => {
       </div>
 
       <div
+        className="absolute bottom-20 text-center text-ds-body text-[22px] font-sans"
         style={{
-          position: "absolute",
-          bottom: 80,
           opacity: subtitleOpacity,
-          textAlign: "center",
-          color: COLORS.body,
-          fontSize: 22,
-          fontFamily: FONT,
           textShadow: TEXT_SHADOW,
         }}
       >

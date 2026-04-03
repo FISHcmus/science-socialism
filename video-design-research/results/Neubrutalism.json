@@ -1,0 +1,125 @@
+{
+  "name": "Neubrutalism / Neo-Brutalist",
+  "summary": "Bold primary colors, thick black borders, chunky shadows, flat pop-art. High contrast, projector-safe",
+
+  "color_palette": {
+    "description": "Bold, high-saturation primary colors with thick black outlines. Backgrounds are typically off-white, beige, or a single bold color. Limited palette (3-5 colors) but each color is loud.",
+    "background": "#F5F0E8",
+    "background_alt": "#FFE7C2",
+    "primary_red": "#E63946",
+    "primary_yellow": "#FFD166",
+    "primary_blue": "#457B9D",
+    "accent_green": "#2A9D8F",
+    "border": "#000000",
+    "text_primary": "#000000",
+    "text_on_color": "#000000",
+    "shadow": "#000000",
+    "note": "Neubrutalism always uses pure black (#000000) for borders and shadows. No gradients, no transparency, no blur. Colors are flat and opaque."
+  },
+
+  "typography": {
+    "recommended_families": ["Inter (modern neo-grotesque)", "Space Grotesk (geometric with personality)", "Be Vietnam Pro (Vietnamese support + clean geometric feel)"],
+    "size_scale": "Oversized headlines: 72-120px. Body text: 28-36px. Labels/tags: 20-24px. The style embraces extreme size contrast between headings and body.",
+    "weights": "Black (900) or ExtraBold (800) for headlines. Bold (700) for emphasis. Medium (500) for body. Thin weights are antithetical to the style.",
+    "vietnamese_diacritics": "Be Vietnam Pro works well. Inter has decent Vietnamese support. The large font sizes used in neubrutalism mean diacritics are rarely a problem."
+  },
+
+  "animation_style": {
+    "approach": "Snappy and direct. No easing curves - elements pop in abruptly or slam into position. Spring animations with high stiffness, low damping (bouncy).",
+    "entrance_patterns": "Hard cut-ins, scale-from-zero pops, sudden rotations (5-15 degrees), cards slamming down with shadow offset animation. No gentle fades.",
+    "motion_budget": "Moderate to high - animations are brief but impactful. Each element has a punchy entrance. Total animation time per element: 200-400ms.",
+    "spring_config": "stiffness: 300-500, damping: 10-20 (bouncy). Or no spring at all - just hard transitions."
+  },
+
+  "projector_readability": {
+    "contrast_ratio": "Excellent. Black text (#000000) on off-white (#F5F0E8) achieves ~16:1. Thick black borders (3-5px) remain visible even on washed-out projectors.",
+    "minimum_font_sizes": "The style naturally uses large fonts (28px+ body). Thick borders add visual weight that aids readability at distance.",
+    "color_washout_resistance": "EXCELLENT. The style's defining features (thick black borders, chunky shadows, bold colors, large text) are the exact properties that survive projector degradation best. Even if colors wash out, the black structural elements remain."
+  },
+
+  "wcag_contrast_score": {
+    "text_on_background": "16.3:1 (#000000 on #F5F0E8) - AAA pass",
+    "text_on_yellow": "15.4:1 (#000000 on #FFD166) - AAA pass",
+    "text_on_red": "5.2:1 (#000000 on #E63946) - AA pass for large text",
+    "degradation_note": "Black borders and shadows provide structural contrast independent of color. Even with severe projector degradation, the layout remains readable because structure is defined by borders, not color alone."
+  },
+
+  "projector_degradation_resistance": {
+    "rating": "Excellent - best among all candidates",
+    "strengths": "Thick black borders (3-5px) remain visible even on the worst projectors. Chunky drop shadows are visible even when blurred. Bold primary colors maintain identity even when desaturated. Large text sizes provide inherent readability margin. The style was practically designed for low-fidelity reproduction.",
+    "weaknesses": "None significant. The only risk is that very saturated colors (pure red, pure yellow) may shift hue slightly on projectors, but the black structural elements maintain layout integrity.",
+    "recommendation": "This style is naturally projector-proof. No special accommodations needed."
+  },
+
+  "vietnamese_diacritics_rendering": {
+    "quality": "Good to excellent. Large font sizes (28px+ body, 72px+ headers) mean Vietnamese diacritics are never at risk of clipping or collision.",
+    "line_height_needs": "The style's generous spacing and oversized text naturally accommodate Vietnamese diacritics. Line-height 1.3-1.5x is sufficient.",
+    "minimum_safe_size": "28px body text with Be Vietnam Pro - no diacritics issues at this size"
+  },
+
+  "cultural_fit": {
+    "rating": "Low to moderate",
+    "analysis": "Neubrutalism is a Western design trend with roots in Silicon Valley/startup culture. It has no inherent connection to Vietnamese culture, socialism, or national unity. The bold, rebellious aesthetic could feel tonally misaligned with the respectful, unifying message of the presentation topic. However, red + gold from the neubrutalist palette could be mapped to Vietnamese flag colors.",
+    "adaptation_needed": "Significant cultural adaptation needed. Must carefully select colors that map to Vietnamese symbolism (red for revolution, gold for prosperity) rather than arbitrary pop-art primaries."
+  },
+
+  "cultural_semiotics": {
+    "inherent_symbols": "Pop-art, startup culture, digital rebellion, anti-establishment. These connotations conflict with the respectful, state-aligned tone expected for a Scientific Socialism course.",
+    "achievable_via_color": "Red cards with black borders could invoke revolutionary poster art. Gold accents invoke prosperity. But the pop-art framing may undermine the seriousness.",
+    "risk": "The 'rebellious' connotation of neubrutalism may not land well with a teacher evaluating a Scientific Socialism presentation. Could appear flippant."
+  },
+
+  "teacher_perception_signal": {
+    "signal": "Double-edged. On one hand, the bold design clearly shows creative effort and design awareness. On the other hand, the pop-art, playful aesthetic may not communicate appropriate academic seriousness for a political theory course. The style says 'creative and bold' but not 'scholarly and respectful.'",
+    "risk": "Moderate risk of teacher perceiving the style as too casual or disrespectful for the subject matter. Depends on teacher's design awareness and expectations."
+  },
+
+  "rubric_alignment": {
+    "format_15_percent": "Good - distinctive format that demonstrates design effort. Clean structure with clear visual hierarchy.",
+    "theory_35_percent": "Moderate - bold headlines and card-based layouts can present theoretical frameworks. The chunky aesthetic may feel at odds with nuanced academic content.",
+    "application_50_percent": "Good - card layouts, bold data callouts, and high-contrast charts work well for application examples. CountUp numbers and statistics pop visually."
+  },
+
+  "content_density_capacity": {
+    "words_per_frame": "Moderate: 50-80 words per frame. Thick borders and large padding consume screen real estate, but clear hierarchy makes content scannable.",
+    "theory_support": "Moderate - can present key concepts in bold card blocks, but dense theoretical text feels cramped within bordered containers",
+    "data_viz_support": "Good - bold bar charts, numbered callouts, and contrast-heavy tables work well in the neubrutalist style"
+  },
+
+  "production_effort": {
+    "migration_from_current": "Moderate. Current codebase's GlassPanel and card components need restyling to add thick borders and chunky shadows. Color palette shift from warm/subtle to bold/primary. Animations need adjustment from smooth springs to snappy pops.",
+    "estimated_effort": "2-3 days. Main work: restyle all card/panel components with 3-5px black borders and offset shadows, adjust color palette, modify spring configs for snappier motion.",
+    "reuse_potential": "Moderate - existing component structure can be reused with styling overhaul"
+  },
+
+  "remotion_implementation_complexity": {
+    "css_needs": "Low - neubrutalism CSS is intentionally simple: solid borders, solid shadows (box-shadow with no blur), flat colors. No gradients, no transparency, no backdrop-filter.",
+    "three_js": "Not needed. The flat aesthetic conflicts with 3D elements. 3D background should be removed or replaced with solid color.",
+    "render_performance": "Low overhead - flat rendering with no blur effects or transparency calculations",
+    "computation_cost": "Minimal - the simplest rendering of all candidates"
+  },
+
+  "distraction_level": "Moderate. The bold aesthetic grabs attention initially but becomes normalized quickly. Consistent application across all frames reduces ongoing distraction. Bouncy animations could be distracting if overused.",
+
+  "differentiation": "Very high. No Vietnamese student presentations use neubrutalism. The style would be immediately distinctive and memorable. Whether that memorability is positive depends on cultural reception.",
+
+  "temporal_coherence": {
+    "rating": "Excellent",
+    "analysis": "The strong visual constraints (black borders, limited color palette, consistent shadow offset) create iron-clad consistency across all 13.5 minutes. Different speakers' sections are visually unified by the distinctive border/shadow treatment. Very hard to break visual consistency in this style."
+  },
+
+  "dark_vs_light_mode_viability": "Primarily light mode with off-white/beige backgrounds. Dark mode neubrutalism exists but is less common and loses the characteristic contrast. Light mode is natural and projector-friendly.",
+
+  "precedent": {
+    "examples": [
+      "Gumroad's redesign (2021) popularized neubrutalism in product design",
+      "Figma community UI kits (thousands of neubrutalist templates)",
+      "Stripe's Figma template uses neubrutalist elements",
+      "Various startup landing pages and SaaS products",
+      "Educational platform Brilliant uses elements of neubrutalist design"
+    ],
+    "academic_context": "Rare to nonexistent in academic presentations. This would be a first for most Vietnamese university classrooms. No established precedent for neubrutalism in political theory or socialist studies contexts."
+  },
+
+  "uncertain": []
+}

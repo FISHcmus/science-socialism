@@ -1,31 +1,29 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { Story, StoryDefault } from "@ladle/react";
 import { GlassPanel } from "./GlassPanel";
 import { COLORS } from "./tokens";
+import { useRingAngle } from "../../hooks/useRingAngle";
 
-const meta: Meta<typeof GlassPanel> = {
+export default {
   title: "DS/GlassPanel",
-  component: GlassPanel,
-  args: {
-    borderRadius: 16,
-    padding: "24px",
-    goldBorder: false,
-    goldRing: false,
-    ringAngle: 0,
-  },
-};
-export default meta;
+} satisfies StoryDefault;
 
-type Story = StoryObj<typeof GlassPanel>;
+export const Default: Story = () => (
+  <GlassPanel borderRadius={16} padding="24px">
+    <span style={{ color: COLORS.white, fontSize: 20 }}>Glass panel</span>
+  </GlassPanel>
+);
 
-export const Default: Story = {
-  args: {
-    children: <span style={{ color: COLORS.white, fontSize: 20 }}>Dark glass panel</span>,
-  },
-};
+export const GoldBorder: Story = () => (
+  <GlassPanel borderRadius={16} padding="24px" goldBorder>
+    <span style={{ color: COLORS.gold, fontSize: 20 }}>Gold bordered panel</span>
+  </GlassPanel>
+);
 
-export const GoldBorder: Story = {
-  args: {
-    goldBorder: true,
-    children: <span style={{ color: COLORS.gold, fontSize: 20 }}>Gold bordered panel</span>,
-  },
+export const GoldRing: Story = () => {
+  const ringAngle = useRingAngle();
+  return (
+    <GlassPanel borderRadius={16} padding="24px" goldRing ringAngle={ringAngle}>
+      <span style={{ color: COLORS.gold, fontSize: 20 }}>Rotating gold ring</span>
+    </GlassPanel>
+  );
 };

@@ -1,0 +1,107 @@
+{
+  "name": "Vietnamese Propaganda Poster Revival",
+  "summary": "Reinterpreted socialist-realism motifs, bold red/gold, stars, lotus. Culturally resonant with CNXHKH",
+
+  "color_palette": {
+    "primary": "#DA251D (Vietnamese flag red / Lebanese Red - the defining color of socialist visual culture)",
+    "secondary": "#FFCD00 (Vietnamese flag gold/yellow - prosperity, party symbolism)",
+    "accent": "#1B5E20 (revolutionary green - military, agriculture), #F5E6D0 (aged paper/poster cream)",
+    "surface": "#F5E6D0 (aged parchment for light mode), #FEF3C7 (warm cream for cards)",
+    "text": "#1C1917 (body text), #DA251D (headlines), #FFCD00 on red backgrounds (inverted for emphasis)",
+    "notes": "Classic Vietnamese propaganda uses: red background + yellow text/stars, or cream/white background + red illustration + yellow accents. The red-gold combination is the most culturally loaded color pair in Vietnamese visual culture - it simultaneously signals national identity, Communist Party, and traditional Vietnamese aesthetics (Tet decorations, temple colors)."
+  },
+
+  "typography": {
+    "font_families": "Be Vietnam Pro (sans-serif) as primary. For poster headlines, a bolder condensed weight creates propaganda-poster feel. Consider supplementing with a Vietnamese serif for quotes/citations (though Be Vietnam Pro bold works well).",
+    "size_scale": "Poster headline/slogan: 56-72px bold, Section title: 48px, Body: 28-32px, Citation: 24px. Propaganda style uses larger headlines than typical academic presentations.",
+    "weights": "400 (body), 700 (subheadings), 800-900 (poster headlines/slogans)",
+    "vietnamese_diacritics_support": "Critical and excellent. Vietnamese propaganda posters feature Vietnamese text prominently - diacritics are a core visual element, not an afterthought. Be Vietnam Pro at bold weights renders diacritics as integral to the letterform. At 56-72px headline size, Vietnamese diacritics become beautiful visual features."
+  },
+
+  "animation_style": {
+    "approach": "Deliberate, authoritative motion. Elements appear with purpose, not playfulness. Fade-in with slight upward drift for solemnity. Star/lotus motifs can rotate slowly (1 revolution per 5-10 seconds). Red banners can unfurl. Spring config: damping 20-25, stiffness 60 (measured, weighty, no bounce).",
+    "entrance_patterns": "Banner unfurl from center, text stamps into place (no overshoot), star appears with radial light burst, lotus petals open sequentially, figures/silhouettes fade in from sides",
+    "motion_budget": "Low-moderate. Propaganda aesthetic is more about bold static composition than motion. Motion should feel ceremonial, not energetic. Key moments: flag unfurl, star reveal, slogan stamp."
+  },
+
+  "projector_readability": {
+    "contrast_ratio": "Mixed. Red backgrounds with yellow text: ~3.5:1 (barely AA for large text). Cream background with dark text: 14:1+ (AAA). Need to use cream/light base for text-heavy slides and reserve red backgrounds for impact moments only.",
+    "minimum_font_sizes": "Poster headlines: 56px+ on red backgrounds (large enough to compensate for lower contrast). Body text: 28px+ on cream/light backgrounds only.",
+    "color_washout_resistance": "High for red (saturated, survives washout well). Medium for gold/yellow (can wash out to near-white on poor projectors). Cream backgrounds are projector-friendly. Star/lotus motifs in gold need sufficient size (50px+) to remain visible."
+  },
+
+  "wcag_contrast_score": {
+    "text_on_background": "Dark #1C1917 on cream #F5E6D0: 12.8:1 (AAA). Yellow #FFCD00 on red #DA251D: 3.2:1 (fails AA normal, borderline AA large). Red #DA251D on cream #F5E6D0: 4.2:1 (AA large text). White #FFFFFF on red #DA251D: 4.6:1 (AA).",
+    "recommendation": "Use cream background for all text-heavy content. Red backgrounds only for short slogans at 48px+. Avoid yellow-on-red for body text (use white-on-red instead)."
+  },
+
+  "projector_degradation_resistance": {
+    "rating": "Medium-High",
+    "details": "Bold, saturated colors (red, gold) survive projector degradation better than pastels. High-contrast propaganda poster style (thick lines, solid fills, bold shapes) is inherently robust. However, yellow/gold can wash out to white on bright projectors - use thicker strokes and darker gold (#C7A00C) for reliability. Cream background is optimal for projectors."
+  },
+
+  "vietnamese_diacritics_rendering": {
+    "quality": "Excellent. This style celebrates Vietnamese text as a visual element. Bold headlines at 56-72px with full diacritics (e.g., 'DAI DOAN KET TOAN DAN TOC') are the visual centerpiece. Line-height 1.4-1.5 at headline sizes. Be Vietnam Pro bold makes diacritics crisp and authoritative."
+  },
+
+  "cultural_fit": {
+    "assessment": "Exceptional. This is the most culturally resonant option for a CNXHKH (Scientific Socialism) course presentation about national unity (dai doan ket toan dan toc). The visual language directly references Vietnamese communist party imagery, state propaganda tradition, and national symbols. It shows deep understanding of and respect for the course subject matter.",
+    "alignment_with_topic": "Perfect - the visual style IS the topic. Vietnamese propaganda posters are the visual expression of the very ideology being studied. Using this style demonstrates engagement with the course material at a visual/cultural level, not just textual."
+  },
+
+  "cultural_semiotics": {
+    "symbols_invoked": "Red = revolution, sacrifice, Communist Party. Gold/yellow = prosperity, national identity, five-pointed star (workers, peasants, soldiers, intellectuals, businessmen). Star = Party/national unity. Lotus = purity, Vietnamese national flower, Buddhist heritage. Green = agriculture, military. Raised fist = solidarity. Gear/rice = worker-peasant alliance.",
+    "risk": "Could be seen as propagandistic rather than analytical if not balanced with critical content. However, for a CNXHKH course where the subject IS socialism, this is appropriate and expected. The 'revival' framing (modern reinterpretation) avoids looking like unironic propaganda."
+  },
+
+  "teacher_perception_signal": {
+    "signal": "Deep cultural engagement and subject matter understanding. Teacher sees students who understand not just the text but the visual culture of Vietnamese socialism. Shows research into propaganda art history. The 'revival' angle demonstrates both respect for tradition and modern design capability. Likely the highest teacher-impression score of all options for this specific course."
+  },
+
+  "rubric_alignment": {
+    "format_15pct": "Strong - distinctive, culturally appropriate, well-executed visual identity. Immediately communicates the topic through visuals alone.",
+    "theory_35pct": "Very strong - propaganda poster style naturally emphasizes slogans, key principles, and ideological concepts. The visual language was literally designed to communicate socialist theory to mass audiences.",
+    "application_50pct": "Medium - propaganda poster style is better for declarations and principles than for data analysis. Application section (real-world examples, statistics) needs a hybrid approach - poster-style headers with clean data presentation below."
+  },
+
+  "content_density_capacity": {
+    "words_per_frame": "30-50 words. Propaganda style uses large, bold headlines with limited body text. Dense paragraphs clash with poster aesthetic. Key phrases and slogans work best. Supporting detail should use cream-background text cards, not poster-style layouts.",
+    "data_viz_support": "Medium. Bar charts and statistics can be styled with red/gold color coding. Maps of Vietnam with regional data fit naturally. But complex multi-series charts clash with the bold poster aesthetic."
+  },
+
+  "production_effort": {
+    "assessment": "Medium-High. Need: custom SVG star/lotus motifs, banner/flag animations, poster-style typography treatments, aged paper texture overlay, custom illustration elements (silhouettes, geometric shapes). No existing components directly support this style.",
+    "migration_cost": "High - current design system is modern/minimal. Poster revival requires new visual assets (stars, lotus, banners), new color tokens, new typography scale, and potentially custom illustration work."
+  },
+
+  "remotion_implementation_complexity": {
+    "css_needs": "Moderate. CSS gradients for banner effects, clip-path for geometric shapes, custom fonts weights. SVG for star/lotus motifs.",
+    "threejs_interaction": "3D background may conflict with flat propaganda aesthetic. Consider replacing with static textured background (aged paper) or simplified geometric 3D (rotating star, flag wave simulation).",
+    "render_performance": "Good. Poster style uses solid colors, SVG shapes, and simple animations - all lightweight to render. No backdrop-filter or complex compositing.",
+    "computation_cost": "Low-moderate. SVG star/lotus rendering is efficient. Banner unfurl animations are simple interpolations. Flag wave could use a basic vertex shader but simple CSS animation works too."
+  },
+
+  "distraction_level": "Medium - bold red/gold colors are attention-grabbing but in service of the content's cultural context. The style communicates 'this is about socialism' before a word is read.",
+
+  "differentiation": "Very High. No other student group will use this style. It is uniquely appropriate for CNXHKH course content and demonstrates cultural-visual literacy that generic templates cannot match.",
+
+  "temporal_coherence": {
+    "assessment": "Very good. Red/gold/cream color system, star/lotus motifs, and poster typography create an instantly recognizable visual thread. Each section can have its own poster composition while maintaining the overall aesthetic. Transitions can use banner/flag wipe effects.",
+    "risk": "Visual intensity of red/gold needs relief. Alternate between poster-style impact slides (red backgrounds) and reading slides (cream backgrounds) to avoid visual fatigue over 13.5 minutes."
+  },
+
+  "dark_vs_light_mode_viability": "Both viable but light (cream) background is required for projector and for text readability. Red backgrounds should be limited to transitional/impact moments (10-20% of total runtime). Cream base with red/gold accents is the optimal projector configuration.",
+
+  "precedent": {
+    "examples": [
+      "Vietnamese state billboards and street propaganda (tranh co dong) - modern versions still produced nationwide",
+      "Vietnam.vn article on 'Inheriting and renewing propaganda posters in the cultural flow' (2024) - documents the revival trend",
+      "Obey Giant (Shepard Fairey) - Western reinterpretation of propaganda poster aesthetics for contemporary art",
+      "Chinese New Year modern poster design - similar red/gold revival aesthetic in East Asian design",
+      "Vietnamese Tet holiday marketing (Vinamilk, FPT) - commercial brands reinterpreting propaganda poster style"
+    ],
+    "academic_context": "Vietnamese political education materials frequently use propaganda poster-derived visual language. State-produced educational videos on VTV use similar red/gold aesthetics for political content."
+  },
+
+  "uncertain": ["wcag_contrast_score.text_on_background"]
+}

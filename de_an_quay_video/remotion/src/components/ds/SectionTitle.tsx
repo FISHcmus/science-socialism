@@ -1,4 +1,4 @@
-import { COLORS, FONT, TEXT_SHADOW } from "./tokens";
+import { TEXT_SHADOW } from "./tokens";
 
 export interface SectionTitleProps {
   title: string;
@@ -19,28 +19,17 @@ export function SectionTitle({
 }: SectionTitleProps) {
   return (
     <div
+      className="flex flex-col items-center justify-center text-center font-sans gap-4 px-8 py-10"
       style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        textAlign: "center",
-        fontFamily: FONT,
         opacity,
         transform: `translateY(${translateY}px)`,
-        gap: "16px",
-        padding: "40px 32px",
       }}
     >
       {sectionNumber && (
         <span
+          className="text-ds-gold text-[28px] font-semibold uppercase tracking-[0.15em]"
           style={{
-            color: COLORS.gold,
-            fontSize: "28px",
             fontVariant: "small-caps",
-            letterSpacing: "0.15em",
-            fontWeight: 600,
-            textTransform: "uppercase",
             textShadow: TEXT_SHADOW,
           }}
         >
@@ -49,39 +38,25 @@ export function SectionTitle({
       )}
 
       <h1
-        style={{
-          color: COLORS.white,
-          fontSize: "56px",
-          fontWeight: "bold",
-          margin: 0,
-          lineHeight: 1.2,
-          textShadow: TEXT_SHADOW,
-        }}
+        className="text-ds-white text-[56px] font-bold m-0 leading-tight"
+        style={{ textShadow: TEXT_SHADOW }}
       >
         {title}
       </h1>
 
       {subtitle && (
         <p
-          style={{
-            color: COLORS.body,
-            fontSize: "30px",
-            margin: 0,
-            lineHeight: 1.4,
-            textShadow: TEXT_SHADOW,
-          }}
+          className="text-ds-body text-[30px] m-0 leading-normal"
+          style={{ textShadow: TEXT_SHADOW }}
         >
           {subtitle}
         </p>
       )}
 
       <div
+        className="h-[3px] bg-ds-gold rounded-sm mt-2"
         style={{
-          height: "3px",
           width: `${accentWidth}px`,
-          backgroundColor: COLORS.gold,
-          borderRadius: "2px",
-          marginTop: "8px",
           boxShadow: "0 0 8px rgba(232, 175, 72, 0.3)",
         }}
       />

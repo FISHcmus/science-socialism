@@ -1,9 +1,6 @@
 import { AbsoluteFill, interpolate, useCurrentFrame, spring, useVideoConfig } from "remotion";
-import { COLORS, FONT, TEXT_SHADOW } from "../../constants";
+import { COLORS, TEXT_SHADOW } from "../../constants";
 import { SectionTitle, ArtDecoImage, MemberPiP, CitationFooter } from "../ds";
-
-// Beat 1: 0-90   — SectionTitle "Cương lĩnh dân tộc của CN Mác - Lênin" (full screen)
-// Beat 2: 90-2700 — Content (720px left) + MemberPiP (240px right)
 
 const PRINCIPLES = [
   {
@@ -26,18 +23,15 @@ const PRINCIPLES = [
   },
 ];
 
-
 export const Section11ThucNhi: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // Beat 1: SectionTitle animation
   const titleSpring = spring({ frame, fps, config: { damping: 18, stiffness: 80 } });
   const titleOpacity = interpolate(titleSpring, [0, 1], [0, 1]);
   const titleTranslateY = interpolate(titleSpring, [0, 1], [40, 0]);
   const titleAccentWidth = interpolate(titleSpring, [0, 1], [0, 80]);
 
-  // Beat 2: shared animation values
   const beat2LocalFrame = Math.max(0, frame - 90);
   const ringAngle = (beat2LocalFrame / fps) * 80;
 
@@ -56,7 +50,6 @@ export const Section11ThucNhi: React.FC = () => {
     extrapolateRight: "clamp",
   });
 
-  // Image animations (appear after all 3 cards)
   const img1Opacity = interpolate(frame, [1500, 1530], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
@@ -71,15 +64,10 @@ export const Section11ThucNhi: React.FC = () => {
 
   return (
     <AbsoluteFill>
-      {/* Beat 1: SectionTitle (frames 0-90) — full screen */}
       {frame < 90 && (
         <AbsoluteFill
-          style={{
-            background: "linear-gradient(135deg, rgba(10,20,40,0.95) 0%, rgba(20,40,80,0.9) 100%)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
+          className="flex items-center justify-center"
+          style={{ background: "linear-gradient(135deg, rgba(247,243,238,0.97) 0%, rgba(237,232,224,0.95) 100%)" }}
         >
           <SectionTitle
             title="Cương lĩnh dân tộc"
@@ -92,52 +80,29 @@ export const Section11ThucNhi: React.FC = () => {
         </AbsoluteFill>
       )}
 
-      {/* Beat 2: Content (1440px) + MemberPiP (480px) — frames 90-2700 */}
       {frame >= 90 && (
-        <AbsoluteFill style={{ display: "flex", flexDirection: "row" }}>
-          {/* Left: Content area */}
+        <AbsoluteFill style={{ flexDirection: "row" }}>
           <div
-            style={{
-              width: 1440,
-              height: 1080,
-              padding: "60px 60px 40px 80px",
-              display: "flex",
-              flexDirection: "column",
-              overflow: "hidden",
-            }}
+            className="flex flex-col overflow-hidden"
+            style={{ width: 1440, height: 1080, padding: "60px 60px 40px 80px" }}
           >
-            {/* Header */}
-            <div style={{ marginBottom: 24, opacity: headerOpacity }}>
+            <div className="mb-6" style={{ opacity: headerOpacity }}>
               <div
-                style={{
-                  fontSize: 32,
-                  color: COLORS.gold,
-                  fontFamily: FONT,
-                  letterSpacing: 4,
-                  marginBottom: 8,
-                  textShadow: TEXT_SHADOW,
-                }}
+                className="text-[32px] text-ds-gold font-sans tracking-[4px] mb-2"
+                style={{ textShadow: TEXT_SHADOW }}
               >
                 PHẦN 1.1
               </div>
               <h2
-                style={{
-                  fontSize: 52,
-                  color: COLORS.white,
-                  fontFamily: FONT,
-                  fontWeight: "bold",
-                  margin: 0,
-                  lineHeight: 1.2,
-                  textShadow: TEXT_SHADOW,
-                }}
+                className="text-[52px] text-ds-white font-sans font-bold m-0 leading-tight"
+                style={{ textShadow: TEXT_SHADOW }}
               >
                 Cương lĩnh dân tộc của chủ nghĩa Mác - Lênin
               </h2>
-              <div style={{ width: 100, height: 4, backgroundColor: COLORS.gold, marginTop: 16 }} />
+              <div className="w-[100px] h-1 bg-ds-gold mt-4" />
             </div>
 
-            {/* 3 principle cards */}
-            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            <div className="flex flex-col gap-4">
               {PRINCIPLES.map((p, i) => {
                 const localFrame = frame - p.appearAt;
                 if (localFrame < 0) return null;
@@ -149,37 +114,25 @@ export const Section11ThucNhi: React.FC = () => {
                 return (
                   <div
                     key={i}
+                    className="rounded-xl"
                     style={{
                       transform: `translateX(${translateX}px)`,
                       opacity: cardOpacity,
-                      backgroundColor: "rgba(10, 10, 15, 0.88)",
+                      backgroundColor: "rgba(255, 255, 255, 0.95)",
                       border: `3px solid ${COLORS.gold}`,
                       borderLeft: `6px solid ${COLORS.gold}`,
-                      borderRadius: 12,
                       padding: "20px 32px",
                     }}
                   >
                     <div
-                      style={{
-                        fontSize: 38,
-                        fontWeight: "bold",
-                        color: COLORS.white,
-                        fontFamily: FONT,
-                        marginBottom: 8,
-                        lineHeight: 1.2,
-                        textShadow: TEXT_SHADOW,
-                      }}
+                      className="text-[38px] font-bold text-ds-white font-sans mb-2 leading-tight"
+                      style={{ textShadow: TEXT_SHADOW }}
                     >
                       {p.title}
                     </div>
                     <div
-                      style={{
-                        fontSize: 28,
-                        color: COLORS.body,
-                        fontFamily: FONT,
-                        lineHeight: 1.4,
-                        textShadow: TEXT_SHADOW,
-                      }}
+                      className="text-[28px] text-ds-body font-sans leading-normal"
+                      style={{ textShadow: TEXT_SHADOW }}
                     >
                       {p.detail}
                     </div>
@@ -188,47 +141,25 @@ export const Section11ThucNhi: React.FC = () => {
               })}
             </div>
 
-            {/* 2 images stacked */}
-            <div style={{ display: "flex", gap: 40, marginTop: 24 }}>
+            <div className="flex gap-10 mt-6">
               <div style={{ opacity: img1Opacity }}>
-                <ArtDecoImage
-                  description="Ảnh minh họa 1"
-                  width={340}
-                  height={340}
-                  ringAngle={ringAngle}
-                  sweepProgress={img1Sweep}
-                />
+                <ArtDecoImage description="Ảnh minh họa 1" width={340} height={340} ringAngle={ringAngle} sweepProgress={img1Sweep} />
               </div>
               <div style={{ opacity: img2Opacity }}>
-                <ArtDecoImage
-                  description="Ảnh minh họa 2"
-                  width={340}
-                  height={340}
-                  ringAngle={ringAngle}
-                  sweepProgress={img2Sweep}
-                />
+                <ArtDecoImage description="Ảnh minh họa 2" width={340} height={340} ringAngle={ringAngle} sweepProgress={img2Sweep} />
               </div>
             </div>
 
-            {/* Citation */}
-            <div style={{ marginTop: "auto" }}>
-              <CitationFooter
-                text="Giáo trình CNXHKH (2021), Ch.6, I.2b, tr.202-205"
-                opacity={citationOpacity}
-              />
+            <div className="mt-auto">
+              <CitationFooter text="Giáo trình CNXHKH (2021), Ch.6, I.2b, tr.202-205" opacity={citationOpacity} />
             </div>
           </div>
 
-          {/* Right: MemberPiP (480px) */}
           <div style={{ opacity: pipOpacity }}>
-            <MemberPiP
-              name="Đào Thục Nhi"
-              sectionLabel="Phần 1.1 - Cương lĩnh dân tộc"
-              ringAngle={ringAngle}
-            />
+            <MemberPiP name="Đào Thục Nhi" sectionLabel="Phần 1.1 - Cương lĩnh dân tộc" ringAngle={ringAngle} />
           </div>
         </AbsoluteFill>
       )}
     </AbsoluteFill>
   );
-};;
+};

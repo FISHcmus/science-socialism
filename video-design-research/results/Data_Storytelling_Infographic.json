@@ -1,0 +1,107 @@
+{
+  "name": "Data Storytelling / Infographic",
+  "summary": "One insight per visual, annotated charts, animated counters. Good for application rubric (50%)",
+
+  "color_palette": {
+    "primary": "#F7F3EE (warm off-white background)",
+    "secondary": "#374151 (gray-700 for chart axes and labels), #E5E7EB (gray-200 for gridlines)",
+    "accent": "#B91C1C (Vietnam red for primary data series), #D97706 (amber-gold for secondary data), #059669 (emerald for positive trends), #2563EB (blue for comparative data)",
+    "surface": "#FFFFFF (white cards for chart containers), #FEF3C7 (warm yellow for callout boxes)",
+    "text": "#1C1917 (body), #6B7280 (gray-500 for axis labels), #B91C1C (highlight numbers)",
+    "notes": "Infographic palettes use 4-6 distinct colors for data series. Red and gold align with Vietnamese theme. Blue and green provide necessary contrast for multi-series charts. All colors chosen for colorblind accessibility (avoid red-green only differentiation)."
+  },
+
+  "typography": {
+    "font_families": "Be Vietnam Pro (sans-serif). Infographic style uses: light weight for axis labels, regular for body, bold for insight headlines, black for hero statistics.",
+    "size_scale": "Hero statistic: 72-96px (e.g., '54 dan toc'), Insight headline: 40-48px, Annotation: 28-32px, Axis label: 24-28px, Source citation: 20-24px",
+    "weights": "300 (labels), 400 (body), 600 (annotations), 800 (statistics)",
+    "vietnamese_diacritics_support": "Good. Be Vietnam Pro at infographic sizes (28px+) handles diacritics well. Axis labels at 24px are the floor - test Vietnamese text at this size. Hero statistics with Vietnamese text (e.g., 'nguoi') render clearly at 72px+."
+  },
+
+  "animation_style": {
+    "approach": "Data-driven animation. Numbers count up (CountUpNumber component exists). Bar charts grow from zero. Line charts draw progressively. Pie charts fill clockwise. Spring config: damping 15, stiffness 80 (smooth, not bouncy - data should feel authoritative, not playful).",
+    "entrance_patterns": "Sequential data reveal: axis appears -> gridlines fade in -> data bars/lines animate -> annotations appear -> insight headline reveals. One data point highlighted per beat.",
+    "motion_budget": "Moderate. Chart animations are purposeful (each motion reveals data). Avoid gratuitous decoration motion. CountUpNumber animations are lightweight. Bar/line chart animations use simple interpolate()."
+  },
+
+  "projector_readability": {
+    "contrast_ratio": "Very good. Infographic design prioritizes clarity. Solid white chart containers with dark text/axes. Data colors are chosen for maximum distinguishability.",
+    "minimum_font_sizes": "Hero stats: 72px+. Chart labels: 24-28px (at the projector floor). Annotations: 28px+. All legible from back of classroom.",
+    "color_washout_resistance": "High. Solid, saturated data colors (red, blue, gold) survive projector washout better than pastels. White chart containers with dark gridlines maintain structure even when colors shift."
+  },
+
+  "wcag_contrast_score": {
+    "text_on_background": "Dark text #1C1917 on white #FFFFFF: 18.1:1 (AAA). Gray labels #6B7280 on white: 4.6:1 (AA). Red #B91C1C on white: 5.8:1 (AA). All data colors meet AA against white at chart element sizes.",
+    "recommendation": "Ensure gray axis labels are at least 24px to qualify as large text for AA compliance."
+  },
+
+  "projector_degradation_resistance": {
+    "rating": "High",
+    "details": "Infographic design uses thick lines (2px+ for chart elements), solid fills (not gradients), and high-contrast labels. These survive projector degradation well. The biggest risk is thin gridlines (1px) becoming invisible - use 2px minimum and moderate contrast (#D1D5DB, not #F3F4F6)."
+  },
+
+  "vietnamese_diacritics_rendering": {
+    "quality": "Good. Main text areas (insights, annotations) at 28px+ render perfectly. Axis labels at 24px are acceptable. Hero statistics with Vietnamese words at 72px+ are excellent. Chart legend text should be 24px+ for diacritic clarity."
+  },
+
+  "cultural_fit": {
+    "assessment": "Strong for the application rubric (50% of grade). Vietnamese government reports and state media frequently use infographic-style data presentation for economic and social statistics. Data-driven presentation of national unity achievements aligns with how Vietnamese institutions communicate progress.",
+    "alignment_with_topic": "Strong for application section - presenting real data about ethnic groups, regional development, and national unity policies. Medium for pure theory sections which are text-heavy."
+  },
+
+  "cultural_semiotics": {
+    "symbols_invoked": "Evidence-based reasoning, statistical authority, progress/achievement. Numbers and charts signal 'we did research' and 'we have data.' Vietnamese government communication frequently uses statistics to demonstrate socialist achievement - this format mirrors that language.",
+    "risk": "Minimal. Data presentation is culturally neutral and universally respected in academic contexts."
+  },
+
+  "teacher_perception_signal": {
+    "signal": "Research depth and analytical thinking. Data visualization demonstrates that students went beyond the textbook to find real statistics and present them meaningfully. This directly addresses the application rubric (50%) which values connecting theory to reality. Teacher sees effort in data collection and presentation."
+  },
+
+  "rubric_alignment": {
+    "format_15pct": "Good - clean, professional infographic design. Well-organized visual hierarchy.",
+    "theory_35pct": "Medium - pure theory sections are text-heavy and don't naturally fit infographic format. Need hybrid approach with text cards for theory and data cards for application.",
+    "application_50pct": "Excellent - this style is purpose-built for presenting data, statistics, and real-world evidence. Animated charts, annotated data points, and insight callouts directly serve the application rubric. This is the strongest style for the 50% application weight."
+  },
+
+  "content_density_capacity": {
+    "words_per_frame": "30-50 words of text plus data visualization. The 'one insight per visual' principle means each frame has a clear focal point. Annotations add context without overcrowding.",
+    "data_viz_support": "Excellent - this is the style's primary strength. Bar charts, line charts, pie charts, maps, counters, comparison tables, progress indicators. BarChart and CountUpNumber components already exist."
+  },
+
+  "production_effort": {
+    "assessment": "Medium. BarChart and CountUpNumber components exist. Need to add: line chart, pie chart, annotated callout, data card layout, and animated map overlay. Each section needs custom data research and chart design.",
+    "migration_cost": "Medium - current card-based layout can accommodate infographic panels, but theory sections need different treatment than data sections. Not a full rewrite but significant new component work."
+  },
+
+  "remotion_implementation_complexity": {
+    "css_needs": "Moderate. Chart layouts use flexbox/grid. SVG for custom charts (lines, arcs). CSS transitions for reveals. No complex effects.",
+    "threejs_interaction": "3D background probably unnecessary - infographic style uses clean, flat backgrounds. Could remove Three.js dependency entirely for simpler renders.",
+    "render_performance": "Good. SVG charts and CSS animations are lightweight. CountUpNumber uses simple number interpolation. No GPU-intensive effects.",
+    "computation_cost": "Low-moderate. Chart animations are simple interpolations. SVG rendering is efficient. No backdrop-filter or blur costs."
+  },
+
+  "distraction_level": "Low - infographic design serves content directly. Every visual element carries data or insight. No decorative distraction.",
+
+  "differentiation": "High. Student presentations rarely include animated data visualization. Most use static screenshots of charts at best. Animated infographic video would stand out significantly in a university class.",
+
+  "temporal_coherence": {
+    "assessment": "Good with planning. Consistent chart style, color coding, and annotation format across sections. Data cards use the same layout template. However, theory sections (35%) need a different visual treatment, requiring a hybrid approach.",
+    "risk": "Theory-heavy sections (chapters 1-3 of the presentation) may feel like a different video if only infographic style is used for application sections. Need unified visual language that spans both."
+  },
+
+  "dark_vs_light_mode_viability": "Best on light backgrounds. Infographic/data visualization is optimized for white/light containers with dark text and colorful data elements. Light mode is the standard for professional infographics. Perfect match for projector requirements.",
+
+  "precedent": {
+    "examples": [
+      "Our World in Data - animated data visualizations for social/economic topics",
+      "Hans Rosling / Gapminder - famous animated bubble charts for development data",
+      "Vox video essays - data-driven storytelling with annotated charts",
+      "Vietnamese government infographics (Dan tri, VnExpress) - statistics on economic/social progress",
+      "Kurzgesagt - animated infographic style for educational content"
+    ],
+    "academic_context": "Data visualization is the gold standard for academic presentations. Infographic-style presentation is used in TED talks, academic conferences, and policy briefings. Directly relevant to social science presentation."
+  },
+
+  "uncertain": []
+}

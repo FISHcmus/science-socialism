@@ -1,0 +1,118 @@
+{
+  "name": "Slide:ology / Presentation Zen",
+  "summary": "Content-driven, one idea per frame, full-bleed images, minimal text",
+
+  "color_palette": {
+    "description": "Presentation Zen does not prescribe a specific color palette. It advocates for restrained color use driven by content and imagery. Typical implementations use:",
+    "background": "#FFFFFF or full-bleed photography",
+    "text": "#1A1A1A (near-black) or #FFFFFF (on dark images)",
+    "accent": "One accent color derived from brand or topic - for Vietnamese national unity, red (#B91C1C) or gold (#D97706) would be natural choices",
+    "philosophy": "Let the imagery set the color mood. Avoid decorative color that competes with photographs. Maximum 2-3 colors beyond black/white.",
+    "note": "The style is defined more by what it removes (gradients, multi-color schemes, decorative borders) than what it adds"
+  },
+
+  "typography": {
+    "recommended_families": ["Any clean sans-serif - Be Vietnam Pro ideal for Vietnamese content", "Garr Reynolds uses Myriad Pro in his books, but advocates for whatever is most readable"],
+    "size_scale": "Extremely large. Presentation Zen advocates for text large enough to read from the back of the room. Typical: headlines 72-120pt equivalent, body text 36-48pt equivalent. At 1920x1080: headline 80-120px, supporting text 40-56px.",
+    "weights": "Bold for headlines, Regular for minimal body text. Weight contrast replaces color for hierarchy.",
+    "vietnamese_diacritics": "No specific guidance - style is font-agnostic. Be Vietnam Pro works well with the large sizes advocated."
+  },
+
+  "animation_style": {
+    "approach": "Minimal to none. Presentation Zen philosophy treats animation as distraction unless it serves the narrative. Preferred transitions: simple cut or gentle fade.",
+    "entrance_patterns": "Fade-in for text overlays on images. No bouncing, sliding, or spinning. Content appears, it does not perform.",
+    "motion_budget": "Very low. A 13.5-minute video in this style might have 5-10 total animated moments, each a simple opacity transition.",
+    "note": "This is the most animation-conservative style among all candidates"
+  },
+
+  "projector_readability": {
+    "contrast_ratio": "Typically excellent. Large white text on dark photography or dark text on white achieves 10:1+ ratios. Full-bleed images need careful selection to ensure text overlay areas have sufficient contrast.",
+    "minimum_font_sizes": "This style naturally uses very large fonts (40px+ minimum), far exceeding projector readability requirements.",
+    "color_washout_resistance": "Photography-dependent. High-quality, high-contrast images resist washout well. Low-contrast or pastel images suffer significantly on projectors.",
+    "risk": "Text overlaid on busy images can become unreadable on washed-out projectors. Needs semi-transparent overlay behind text."
+  },
+
+  "wcag_contrast_score": {
+    "typical_combinations": "White (#FFFFFF) on dark overlay (#000000 at 60-70% opacity): 8-12:1 depending on underlying image. Dark text (#1A1A1A) on white (#FFFFFF): 17.6:1.",
+    "rating": "AA to AAA when executed properly, but highly dependent on image selection",
+    "degradation_note": "With projector degradation, text on semi-transparent overlays may drop below AA if overlay opacity is too low. Recommend 70%+ opacity overlays."
+  },
+
+  "projector_degradation_resistance": {
+    "rating": "Variable - depends on execution",
+    "strengths": "Large text sizes provide inherent readability margin. High-contrast images (e.g., dark cityscape, bold Vietnamese flag) remain effective.",
+    "weaknesses": "Subtle photographic details lost on projectors. Low-contrast artistic images become muddy. Text-on-image legibility degrades significantly if overlay contrast is insufficient.",
+    "recommendation": "Pre-test each slide's readability at reduced contrast. Use generous text overlays. Prefer high-contrast, bold imagery."
+  },
+
+  "vietnamese_diacritics_rendering": {
+    "quality": "Excellent at the sizes this style uses. Vietnamese diacritics are never a problem at 40px+ font sizes.",
+    "line_height_needs": "Large sizes mean generous line-height is natural. No clipping risk.",
+    "minimum_safe_size": "This style's minimum (40px+) far exceeds the 28px floor needed for Vietnamese diacritics on projectors"
+  },
+
+  "cultural_fit": {
+    "rating": "Good with careful image selection",
+    "analysis": "Full-bleed imagery of Vietnamese landscapes, people, cultural events, and national symbols creates immediate emotional connection to the national unity topic. One-idea-per-frame approach suits Vietnamese rhetorical style which values clear, principled statements. Risk: if images are generic stock photos, the cultural connection is lost entirely.",
+    "adaptation_needed": "Requires curating high-quality Vietnamese-specific imagery. Generic stock photos would undermine cultural authenticity."
+  },
+
+  "cultural_semiotics": {
+    "achievable_symbols": "Full-bleed images of: Vietnamese flag (red + gold star), ethnic minority groups in traditional dress, national landmarks (Ho Chi Minh Mausoleum, One Pillar Pagoda), rice paddies representing rural Vietnam, modern Ho Chi Minh City skyline representing development",
+    "strength": "Photography is the most direct way to invoke specific cultural symbols without abstraction",
+    "risk": "Image selection bias - easy to over-represent Kinh majority culture when topic is national unity across 54 ethnic groups"
+  },
+
+  "teacher_perception_signal": {
+    "signal": "Signals storytelling ability and visual sophistication. A well-executed Presentation Zen video says 'we understand how to communicate ideas clearly and memorably.' The minimal text approach demonstrates confidence in the material.",
+    "risk": "If poorly executed (low-quality images, too little content), could signal laziness rather than restraint. Teacher may perceive insufficient theoretical depth if text is too sparse."
+  },
+
+  "rubric_alignment": {
+    "format_15_percent": "Good - clean, professional format that demonstrates design awareness. Full-bleed images create visual impact.",
+    "theory_35_percent": "Weak - this is the critical weakness. One-idea-per-frame with minimal text makes it difficult to present dense theoretical content. Socialist theory requires definitions, frameworks, citations - hard to fit in this style without modification.",
+    "application_50_percent": "Moderate - application examples can be shown through photography and case study images, but data visualization (statistics, charts) conflicts with the full-bleed image approach."
+  },
+
+  "content_density_capacity": {
+    "words_per_frame": "Very low: 10-30 words per frame by design philosophy. This is a feature, not a bug, for spoken presentations but problematic for a video where narration may be limited.",
+    "theory_support": "Poor for dense theoretical content. Would need to break theory into many more frames than other styles, increasing video complexity.",
+    "data_viz_support": "Weak - charts and data tables conflict with the full-bleed image philosophy. Would need dedicated data frames that break the visual pattern."
+  },
+
+  "production_effort": {
+    "migration_from_current": "High. Current codebase is built around structured card-based layouts with DS components. Presentation Zen requires a fundamentally different approach: full-bleed images, minimal text overlays, fewer but larger visual elements.",
+    "estimated_effort": "4-5 days. Requires sourcing 30-50 high-quality Vietnamese images, implementing full-bleed image components, text overlay system, and redesigning all section layouts.",
+    "image_sourcing": "Major effort - need rights-cleared, high-resolution Vietnamese photography. Stock photo costs or time to find CC-licensed alternatives."
+  },
+
+  "remotion_implementation_complexity": {
+    "css_needs": "Low - mostly full-screen images with text overlays. CSS is simple (object-fit: cover, absolute positioning, text shadows).",
+    "three_js": "Not needed. 3D background would be replaced by photography.",
+    "render_performance": "Moderate concern - full-bleed high-resolution images increase memory usage during Remotion render. Need to optimize image sizes.",
+    "computation_cost": "Low runtime computation. Main cost is image decoding."
+  },
+
+  "distraction_level": "Very low. The entire philosophy is about removing distractions. Content and imagery are the only visual elements.",
+
+  "differentiation": "Moderate. While the philosophy is well-known, most Vietnamese student presentations use bullet-heavy PowerPoint. A properly executed Presentation Zen video would stand out significantly in a Vietnamese university classroom.",
+
+  "temporal_coherence": {
+    "rating": "Moderate",
+    "analysis": "Visual coherence depends on consistent image quality and color grading across all photographs. Without a unifying color scheme or structural design language, 9 different speakers' sections risk feeling disconnected. Needs strong editorial direction on image style and color temperature."
+  },
+
+  "dark_vs_light_mode_viability": "Inherently flexible - images can be dark or light. For projector use, prefer images with sufficient contrast for text overlays. No fixed dark/light mode - each frame adapts to its image.",
+
+  "precedent": {
+    "examples": [
+      "TED talks frequently use Presentation Zen principles in their slide design",
+      "Apple keynote presentations follow similar minimal-text, large-image philosophy",
+      "Garr Reynolds' own presentations and books demonstrate the style extensively",
+      "Many academic conference keynotes (not student presentations) use this approach"
+    ],
+    "academic_context": "More common in professional/keynote contexts than student presentations. Unusual for Vietnamese university assignments, which adds differentiation but also risk of appearing unconventional."
+  },
+
+  "uncertain": ["image_sourcing"]
+}

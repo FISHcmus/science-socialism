@@ -1,4 +1,4 @@
-import { COLORS, FONT, GRADIENTS, GOLD_RING, TEXT_SHADOW } from "./tokens";
+import { COLORS, GRADIENTS, GOLD_RING, TEXT_SHADOW } from "./tokens";
 
 export interface MemberPlaceholderProps {
   name: string;
@@ -23,28 +23,20 @@ export function MemberPlaceholder({
 
   return (
     <div
+      className="absolute inset-0 flex flex-col items-center justify-center font-sans gap-4"
       style={{
-        position: "absolute",
-        inset: 0,
         backgroundColor: color,
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        fontFamily: FONT,
         opacity,
         transform: `scale(${scale})`,
         transformOrigin: "center center",
-        gap: "16px",
       }}
     >
       {/* Gold ring monogram circle */}
-      <div style={{ position: "relative", width: ringSize, height: ringSize }}>
+      <div className="relative" style={{ width: ringSize, height: ringSize }}>
         {/* Glow layer */}
         <div
+          className="absolute inset-0"
           style={{
-            position: "absolute",
-            inset: 0,
             filter: "blur(12px)",
             background: GOLD_RING.glow,
             opacity: 0.15,
@@ -54,18 +46,13 @@ export function MemberPlaceholder({
 
         {/* Clip layer */}
         <div
-          style={{
-            position: "relative",
-            overflow: "hidden",
-            borderRadius,
-            width: ringSize,
-            height: ringSize,
-          }}
+          className="relative overflow-hidden"
+          style={{ borderRadius, width: ringSize, height: ringSize }}
         >
           {/* Rotating conic gradient */}
           <div
+            className="absolute"
             style={{
-              position: "absolute",
               width: "200%",
               height: "200%",
               top: "-50%",
@@ -77,25 +64,15 @@ export function MemberPlaceholder({
 
           {/* Inner plate with monogram */}
           <div
+            className="absolute flex items-center justify-center"
             style={{
-              position: "absolute",
               inset: borderWidth,
-              background: GRADIENTS.darkRadial,
+              background: GRADIENTS.lightRadial,
               borderRadius: borderRadius - 1,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
             }}
           >
             <span
-              style={{
-                fontSize: "72px",
-                color: COLORS.lightGold,
-                fontWeight: "bold",
-                fontFamily: FONT,
-                lineHeight: 1,
-                userSelect: "none",
-              }}
+              className="text-[72px] text-ds-light-gold font-bold font-sans leading-none select-none"
             >
               {monogram}
             </span>
@@ -104,27 +81,15 @@ export function MemberPlaceholder({
       </div>
 
       <div
-        style={{
-          color: COLORS.white,
-          fontSize: "48px",
-          fontWeight: "bold",
-          lineHeight: 1.2,
-          textAlign: "center",
-          padding: "0 16px",
-          textShadow: TEXT_SHADOW,
-        }}
+        className="text-ds-white text-5xl font-bold leading-tight text-center px-4"
+        style={{ textShadow: TEXT_SHADOW }}
       >
         {name}
       </div>
 
       <div
-        style={{
-          color: COLORS.body,
-          fontSize: "24px",
-          fontWeight: 400,
-          textAlign: "center",
-          textShadow: TEXT_SHADOW,
-        }}
+        className="text-ds-body text-2xl font-normal text-center"
+        style={{ textShadow: TEXT_SHADOW }}
       >
         Video placeholder
       </div>

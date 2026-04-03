@@ -1,4 +1,4 @@
-import { COLORS, FONT, TEXT_SHADOW } from "./tokens";
+import { COLORS, TEXT_SHADOW } from "./tokens";
 
 export interface TypewriterTextProps {
   text: string;
@@ -25,24 +25,18 @@ export function TypewriterText({
 
   return (
     <span
+      className="font-sans leading-relaxed break-words"
       style={{
         color: goldText ? COLORS.gold : color,
         fontSize: `${fontSize}px`,
-        fontFamily: FONT,
-        lineHeight: 1.6,
-        wordBreak: "break-word",
         textShadow: TEXT_SHADOW,
       }}
     >
       {displayText}
       {shouldShowCursor && (
         <span
-          style={{
-            color: COLORS.gold,
-            fontWeight: "bold",
-            userSelect: "none",
-            textShadow: "0 0 8px rgba(232, 175, 72, 0.5)",
-          }}
+          className="text-ds-gold font-bold select-none"
+          style={{ textShadow: "0 0 8px rgba(232, 175, 72, 0.5)" }}
         >
           |
         </span>

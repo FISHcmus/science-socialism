@@ -1,22 +1,14 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { Story, StoryDefault } from "@ladle/react";
 import { LowerThird } from "./LowerThird";
 
-const meta: Meta<typeof LowerThird> = {
+export default {
   title: "DS/LowerThird",
-  component: LowerThird,
-  args: {
-    name: "Nhân",
-    role: "Nhóm trưởng - Giới thiệu chủ đề",
-    opacity: 1,
-    translateY: 0,
-  },
-};
-export default meta;
+} satisfies StoryDefault;
 
-type Story = StoryObj<typeof LowerThird>;
+export const Default: Story = () => (
+  <LowerThird name="Nhân" role="Nhóm trưởng - Giới thiệu chủ đề" opacity={1} translateY={0} />
+);
 
-export const Default: Story = {};
-
-export const LongRole: Story = {
-  args: { name: "Quỳnh Như", role: "Trách nhiệm sinh viên trong nhận thức đúng đắn" },
-};
+export const LongRole: Story = () => (
+  <LowerThird name="Quỳnh Như" role="Trách nhiệm sinh viên trong nhận thức đúng đắn" opacity={1} translateY={0} />
+);

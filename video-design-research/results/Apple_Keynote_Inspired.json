@@ -1,0 +1,132 @@
+{
+  "name": "Apple Keynote Inspired",
+  "summary": "Ultra-clean, large text on solid backgrounds, dramatic reveals",
+
+  "color_palette": {
+    "primary": "#000000 (pure black for hero text and dramatic slides)",
+    "secondary": "#1D4ED8 (Apple-style blue for accents and links)",
+    "accent": "#7C3AED (purple gradient accent for special moments)",
+    "surface": "#FFFFFF (pure white for light slides)",
+    "surface_dark": "#000000 (pure black for dramatic contrast slides)",
+    "surface_gradient": "linear-gradient(135deg, #667EEA, #764BA2) (hero gradient backgrounds)",
+    "text": "#1F2937 (dark gray for body text on white)",
+    "text_on_dark": "#FFFFFF (white text on dark/gradient slides)"
+  },
+
+  "typography": {
+    "heading_font": "Be Vietnam Pro ExtraBold (800) / Black (900) at very large sizes",
+    "body_font": "Be Vietnam Pro Regular (400) / Medium (500)",
+    "size_scale": {
+      "hero_statement": "72-96px (single-line dramatic reveals)",
+      "section_title": "56-64px",
+      "section_label": "32px uppercase",
+      "card_heading": "40px",
+      "body_text": "28-32px",
+      "citation": "24px"
+    },
+    "weights_used": "400, 500, 700, 800, 900",
+    "vietnamese_diacritics": "Good - Be Vietnam Pro handles large sizes well; at 72-96px hero sizes, diacritics are massive and crystal clear. Risk: Black (900) weight may cause diacritics to feel heavy/crowded at smaller sizes."
+  },
+
+  "animation_style": {
+    "approach": "Dramatic reveals - elements appear with impact, scale transitions, cinematic pacing",
+    "entrance_pattern": "Scale from 0.8 to 1.0 with opacity, or slide-up from below frame. Key moments use 'appear from nothing' with brief black pause between slides.",
+    "spring_config": "Damping 15-20, mass 1, stiffness 150 (snappy, decisive - no wobble)",
+    "motion_budget": "Medium-high - Apple keynotes are motion-heavy but each animation serves a purpose (reveal, emphasis, transition)"
+  },
+
+  "projector_readability": {
+    "contrast_approach": "SPLIT PROBLEM: White slides with dark text = excellent. Black slides with white text = problematic on classroom projectors.",
+    "min_font_sizes": "Hero text at 72-96px is massively readable. Body at 28-32px standard. The issue is not size but contrast on dark slides.",
+    "color_washout": "WARNING: Dark/black background slides will appear as washed-out gray on most classroom projectors. White text on projected gray is significantly less readable than dark text on projected white. Blue and purple accents lose vibrancy on projectors.",
+    "line_weight": "Clean lines, no thin decorative elements - good for projection"
+  },
+
+  "wcag_contrast_score": {
+    "text_on_white": "#1F2937 on #FFFFFF = 15.4:1 (AAA pass)",
+    "text_on_black": "#FFFFFF on #000000 = 21:1 (AAA pass on screen, but projected black becomes ~#404040, reducing effective ratio to ~8:1)",
+    "blue_on_white": "#1D4ED8 on #FFFFFF = 5.9:1 (AA pass)",
+    "white_on_gradient": "#FFFFFF on gradient varies, typically 4-8:1 (AA marginal)",
+    "overall": "Excellent on screen; white-background slides maintain AA+ when projected; dark-background slides degrade from AAA to marginal AA"
+  },
+
+  "projector_degradation_resistance": {
+    "rating": "Medium (split)",
+    "details": "This style inherently requires BOTH light and dark slides for its dramatic effect. Light slides project beautifully. Dark slides suffer from projector black-level limitations - classroom projectors (typically 2500-4000 lumens) render black as medium gray, destroying the dramatic contrast that defines the Apple keynote look. Gradients lose their subtlety. The signature 'black slide with white text reveal' becomes 'gray slide with white text' - underwhelming rather than dramatic."
+  },
+
+  "vietnamese_diacritics_rendering": {
+    "font_suitability": "Good - Be Vietnam Pro at hero sizes (72-96px) renders diacritics impressively; the large scale makes Vietnamese text a visual feature",
+    "line_height_needs": "line-height 1.3-1.4 for hero text (tighter for impact), 1.5-1.6 for body",
+    "min_size_for_clarity": "Not an issue - this style's minimum sizes exceed most others' maximums"
+  },
+
+  "cultural_fit": {
+    "alignment": "Weak - Apple keynote aesthetic is strongly associated with Silicon Valley corporate culture",
+    "details": "The dramatic reveal style mimics tech product launches ('One more thing...'). For Vietnamese political science content about national unity, this feels like using a product launch template for an essay. The black/white drama doesn't map to any Vietnamese cultural convention. Blue/purple accents have no Vietnamese political meaning.",
+    "risk": "Teacher may see it as impressive but question its appropriateness for academic political content. Could feel like form over substance."
+  },
+
+  "cultural_semiotics": {
+    "black_slides": "Drama, premium, tech luxury, Steve Jobs - zero Vietnamese resonance",
+    "white_slides": "Clean, modern, authoritative - culturally neutral",
+    "blue_purple_gradient": "Innovation, technology, premium branding - corporate Western semiotics",
+    "dramatic_reveals": "Product announcement, surprise, spectacle - entertainment/commercial semiotics",
+    "overall": "Every semiotic signal points to Silicon Valley product culture; actively conflicts with socialist/academic subject matter"
+  },
+
+  "teacher_perception_signal": {
+    "signal": "Technically impressive but culturally disconnected",
+    "details": "Teacher recognizes the Apple keynote style (everyone has seen Apple events). This communicates high production skill but may raise questions about whether students focused on looking cool rather than engaging with the material. In Vietnamese academic context, this aesthetic may feel imported and inauthentic.",
+    "effort_perception": "High effort recognized - the dramatic animations and clean execution clearly required work"
+  },
+
+  "rubric_alignment": {
+    "format_15pct": "Strong - dramatic and polished format that demonstrates production quality",
+    "theory_35pct": "Weak - Apple keynote style uses very few words per slide (1-3 key phrases), which makes presenting dense socialist theory extremely difficult. Would need 3x more slides to cover same theory content.",
+    "application_50pct": "Medium - data can be presented dramatically (big number reveals, chart animations) but narrative application content suffers from the sparse-text constraint"
+  },
+
+  "content_density_capacity": {
+    "words_per_frame": "20-50 words - deliberately sparse; Apple style shows one idea per slide at massive scale",
+    "data_viz_support": "Good for individual stats (big number reveals) but poor for complex multi-variable charts or comparative data",
+    "theory_density": "Very low - the style fundamentally conflicts with dense academic text; theory would require many more slides/frames"
+  },
+
+  "production_effort": {
+    "migration_cost": "High - requires complete redesign. Need to build dark-mode slide variants, hero text components, gradient backgrounds, dramatic transition system. Current card-based editorial layout is fundamentally different from the one-idea-per-slide Apple approach.",
+    "component_changes": "Major - need HeroText, DramaticReveal, GradientBackground, BlackSlide, WhiteSlide components; existing GlassPanel/IconGrid/FlowChart don't fit the aesthetic; need to restructure content flow for more slides with less content each"
+  },
+
+  "remotion_implementation_complexity": {
+    "css_needs": "Moderate - gradients, large text styling, slide transitions are standard CSS",
+    "threejs_usage": "Could keep 3D for dramatic reveals but style is fundamentally 2D; 3D is optional decorative layer",
+    "render_performance": "Medium - more frames needed (content spread across more slides), gradient rendering, scale animations",
+    "overall": "Medium-high complexity, primarily due to content restructuring rather than technical CSS challenges"
+  },
+
+  "distraction_level": "Medium - dramatic reveals draw attention to the reveal moment itself rather than the content; the style IS the distraction in many ways",
+
+  "differentiation": "High - no student group presents political science like an Apple keynote; extremely memorable but risky",
+
+  "temporal_coherence": {
+    "consistency": "Medium - alternating between black and white slides creates rhythm but the dramatic pacing is hard to sustain for 13.5 minutes without fatigue",
+    "section_transitions": "Good - black pause slides between sections are natural transition points",
+    "speaker_differentiation": "Difficult - the stark black/white palette leaves little room for speaker color coding; would need subtle accent color per speaker"
+  },
+
+  "dark_vs_light_mode_viability": "Requires BOTH dark and light modes alternating for full effect. Light-only version loses the dramatic reveals. Dark-only version is a projector disaster. The hybrid requirement is this style's core vulnerability for projector presentation.",
+
+  "precedent": {
+    "examples": [
+      "Apple WWDC and product launch keynotes - the definitive reference",
+      "Google I/O keynote presentations - similar dramatic style with Material Design",
+      "Tesla product reveal presentations - dark backgrounds, dramatic text",
+      "TED and TEDx presentations by tech speakers",
+      "SlidesCarnival Apple-inspired templates"
+    ],
+    "notes": "All precedents are corporate product launches and tech conferences. No academic or political science precedents exist for this style. The style was designed for dimmed auditoriums with high-end projectors/LED walls, not classroom projectors."
+  },
+
+  "uncertain": ["wcag_contrast_score"]
+}

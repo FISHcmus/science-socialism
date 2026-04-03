@@ -11,7 +11,7 @@ const App: React.FC = () => {
         justifyContent: "center",
         alignItems: "center",
         height: "100vh",
-        backgroundColor: "#111",
+        backgroundColor: "#F7F3EE",
       }}
     >
       <Player

@@ -1,0 +1,107 @@
+{
+  "name": "Kinetic Typography / Motion-First",
+  "summary": "Text as primary visual, animated word reveals, dramatic scale. Good for theory-heavy sections",
+
+  "color_palette": {
+    "primary": "#F7F3EE (warm off-white background for projector)",
+    "secondary": "#1C1917 (dark text as the primary visual element)",
+    "accent": "#B91C1C (Vietnam red for emphasis words), #D97706 (amber-gold for highlighted phrases)",
+    "surface": "Minimal - kinetic typography uses the full frame as canvas, surfaces are implied by text grouping",
+    "text": "#1C1917 (primary), #B91C1C (emphasis), #78716C (secondary/faded text)",
+    "notes": "Color palette is intentionally minimal. The typography IS the visual. Color accents are used sparingly to highlight key terms (e.g., 'dai doan ket' in red, statistics in gold)."
+  },
+
+  "typography": {
+    "font_families": "Be Vietnam Pro (sans-serif) as base. Kinetic typography benefits from weight variety: 300 (light, background words), 400 (body), 700 (bold emphasis), 900 (black, hero words). A single font family with many weights is ideal.",
+    "size_scale": "Hero word: 120-200px, Key phrase: 56-80px, Supporting text: 36-48px, Detail text: 28-32px. The dramatic size range IS the design.",
+    "weights": "300-900 range used expressively. Weight transitions can be animated for emphasis.",
+    "vietnamese_diacritics_support": "Critical concern at large sizes (120-200px). Be Vietnam Pro handles this well but line-height must be generous (1.5+) to avoid diacritic clipping at hero sizes. Stacked marks on capital letters at 200px need testing."
+  },
+
+  "animation_style": {
+    "approach": "Text is the motion. Words fly in, scale up, rotate, fade, split apart. Each word or phrase has its own entrance choreography timed to narration. Spring configs vary per emphasis: hero words use bouncy springs (damping 8, stiffness 80), body text uses subtle fades.",
+    "entrance_patterns": "Word-by-word reveal (typewriter at phrase level), scale-up from center, slide-in from edges, parallax depth layers, word explosion/assembly, character-by-character build",
+    "motion_budget": "Very high. Motion IS the content. Every frame has active animation. This is the most animation-heavy style. Budget: 5-15 simultaneous animated elements per frame."
+  },
+
+  "projector_readability": {
+    "contrast_ratio": "Excellent for hero text (large size compensates for any washout). Problematic for smaller supporting text that may be in motion. Moving text is inherently harder to read than static text.",
+    "minimum_font_sizes": "Hero: 120px+ (always readable). Supporting: 36px+ (readable if stationary or slow-moving). Detail: 28px+ (must be static or very slow fade-in).",
+    "color_washout_resistance": "High for primary dark-on-light contrast. The large scale of text means even washed-out projectors render it clearly. Accent colors (red, gold) at large sizes survive washout."
+  },
+
+  "wcag_contrast_score": {
+    "text_on_background": "Dark text #1C1917 on #F7F3EE: 14.8:1 (AAA). Red accent #B91C1C on #F7F3EE: 5.6:1 (AA). Faded text #78716C on #F7F3EE: 3.8:1 (AA large text only - acceptable at 48px+).",
+    "recommendation": "Keep faded/secondary text at 48px+ to qualify as 'large text' for WCAG AA compliance."
+  },
+
+  "projector_degradation_resistance": {
+    "rating": "High",
+    "details": "Large text is inherently projector-resistant. Even with significant color degradation, dark text on light background at 56-200px remains legible from back of classroom. The main risk is during motion: fast-moving text at small sizes may smear on projectors with slow response times."
+  },
+
+  "vietnamese_diacritics_rendering": {
+    "quality": "Good but requires careful testing at extreme sizes. At 120-200px hero size, Vietnamese diacritics become very prominent visual elements - this can be a feature (showing the beauty of Vietnamese script) or a problem (diacritics extend far above baseline, requiring extra vertical space). Line-height 1.5+ mandatory at hero sizes."
+  },
+
+  "cultural_fit": {
+    "assessment": "Medium. Kinetic typography is style-neutral - it does not inherently connect to Vietnamese culture. However, it naturally suits theory-heavy academic content where key terminology needs emphasis. Vietnamese political vocabulary (dai doan ket, khoi dai doan ket toan dan toc) can be given visual weight through scale and motion.",
+    "alignment_with_topic": "Medium - serves the educational mission of emphasizing key concepts, but the flashy motion style may feel more 'advertising' than 'academic'"
+  },
+
+  "cultural_semiotics": {
+    "symbols_invoked": "Modernity, energy, persuasion. Kinetic typography is associated with advertising, music videos, and corporate presentations. The style emphasizes words themselves, which could serve socialist theory pedagogy (making slogans and key terms visually impactful).",
+    "risk": "May feel overly commercial or Western. Vietnamese academic/political communication tends toward formal, measured presentation rather than energetic motion graphics."
+  },
+
+  "teacher_perception_signal": {
+    "signal": "High effort and technical skill. Kinetic typography is visually impressive and clearly took significant animation work. However, may be perceived as 'style over substance' if the motion overwhelms the theoretical content. Teacher may wonder if students spent more time on animation than on understanding the material."
+  },
+
+  "rubric_alignment": {
+    "format_15pct": "Strong - kinetic typography is visually striking and demonstrates advanced video production. Format score would be high.",
+    "theory_35pct": "Medium - good for emphasizing key terms and definitions, but extended theoretical explanation is difficult in kinetic format. Dense paragraphs of theory cannot be presented kinetically without becoming unreadable. Need static text sections for theory depth.",
+    "application_50pct": "Weak - kinetic typography is primarily about text, not data. Application section (50% of grade) requires charts, statistics, real-world examples. Animated text alone cannot carry data storytelling."
+  },
+
+  "content_density_capacity": {
+    "words_per_frame": "5-15 words per frame at any moment (kinetic style shows few words at large sizes). Over time, a 30-second kinetic sequence can convey 50-80 words through sequential reveals. Much lower density than static layouts.",
+    "data_viz_support": "Weak - kinetic typography focuses on text, not data visualization. Numbers can be animated (CountUpNumber exists) but charts and graphs are outside this style's vocabulary."
+  },
+
+  "production_effort": {
+    "assessment": "Very High. Each frame needs individually choreographed text animation. 13.5 minutes of kinetic typography requires hundreds of animation keyframes. TypewriterText component exists but full kinetic typography needs per-word/per-character animation control.",
+    "migration_cost": "High - current section layouts are card-based. Converting to kinetic typography requires complete rewrite of all section components with word-level animation logic."
+  },
+
+  "remotion_implementation_complexity": {
+    "css_needs": "Moderate - transform, opacity, scale, rotation per word/character. Needs dynamic text splitting into spans for per-word animation.",
+    "threejs_interaction": "3D background could complement kinetic text with depth parallax. Or could be removed entirely (kinetic typography often uses solid backgrounds).",
+    "render_performance": "Moderate - many simultaneous transform animations but each is lightweight (no blur or compositing). Remotion handles this well with spring() and interpolate().",
+    "computation_cost": "Moderate - many interpolation calculations per frame but each is cheap. Total render time reasonable."
+  },
+
+  "distraction_level": "High - motion is constant and attention-demanding by design. This is the most distracting style. Viewers watch the animation, not necessarily absorb the content.",
+
+  "differentiation": "Very High. No other student presentation in a Vietnamese university class will use kinetic typography. Extremely distinctive. However, differentiation through motion may not translate to better grades if content suffers.",
+
+  "temporal_coherence": {
+    "assessment": "Challenging. Maintaining kinetic energy for 13.5 minutes risks viewer fatigue. Need to vary rhythm: intense kinetic sections for key points, calmer static sections for extended theory. Without variation, the style becomes exhausting.",
+    "risk": "High. Motion fatigue after 3-5 minutes. Need deliberate pacing with rest periods."
+  },
+
+  "dark_vs_light_mode_viability": "Flexible. Kinetic typography works on any solid background. Light background (#F7F3EE) with dark text is projector-optimal. Some sections could use inverted (dark bg, light text) for dramatic contrast, but limit to brief moments.",
+
+  "precedent": {
+    "examples": [
+      "Apple product announcements - large-scale kinetic text reveals ('The biggest thing to happen to iPhone')",
+      "Slack brand video - fast-paced kinetic typography for feature communication",
+      "Strava Year in Sport - code-driven kinetic typography with personalized data",
+      "TED-Ed educational animations - kinetic text synchronized with narration",
+      "Kinetic Studio (Remotion-based) - open-source kinetic typography video generator"
+    ],
+    "academic_context": "Kinetic typography is used in educational explainer videos (TED-Ed, Kurzgesagt intro segments) but rarely for academic presentations. More common in marketing and entertainment."
+  },
+
+  "uncertain": ["remotion_implementation_complexity.computation_cost"]
+}

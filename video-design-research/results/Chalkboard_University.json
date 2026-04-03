@@ -1,0 +1,126 @@
+{
+  "name": "Chalkboard/University",
+  "summary": "Dark green or navy bg, handwritten accents, academic warmth",
+
+  "color_palette": {
+    "description": "Classic chalkboard aesthetic with warm academic tones. Two primary variants: dark green (traditional chalkboard) and navy (modern academic).",
+    "background_green": "#1B3B2A",
+    "background_navy": "#1A1F3B",
+    "chalk_white": "#E8E4D8",
+    "chalk_yellow": "#F5D76E",
+    "chalk_pink": "#E8A0BF",
+    "chalk_blue": "#7EC8E3",
+    "chalk_orange": "#E8A87C",
+    "text_primary": "#E8E4D8",
+    "text_accent": "#F5D76E",
+    "board_frame": "#5C3A1E",
+    "note": "Colors simulate chalk on slate. All 'chalk' colors are slightly muted/dusty rather than pure, mimicking real chalk texture."
+  },
+
+  "typography": {
+    "recommended_families": ["Indie Flower or Patrick Hand (handwritten headers)", "Be Vietnam Pro (body text for readability)", "Nanum Pen Script (chalk-like handwriting alternative)"],
+    "size_scale": "Headers in handwritten font: 56-72px. Body text in sans-serif: 32-40px. Chalk annotations: 24-28px. Must be larger than normal due to low-contrast background.",
+    "weights": "Handwritten fonts are single-weight. Body sans-serif uses Regular (400) and SemiBold (600).",
+    "vietnamese_diacritics": "CRITICAL WEAKNESS: Most handwritten/chalk fonts have poor or no Vietnamese diacritic support. Indie Flower, Patrick Hand, and similar fonts do not handle stacked diacritics (uong, uoi) correctly. Must fall back to sans-serif (Be Vietnam Pro) for any Vietnamese text, which undermines the handwritten aesthetic."
+  },
+
+  "animation_style": {
+    "approach": "Chalk-drawing effect: text and diagrams appear as if being written/drawn by hand. Whiteboard animation style.",
+    "entrance_patterns": "Stroke-by-stroke text reveal (chalk writing simulation), hand-drawn line animations for diagrams and charts, eraser-wipe transitions between sections",
+    "motion_budget": "High - the writing animation IS the visual identity. Every text element ideally has a chalk-writing entrance, which is animation-intensive.",
+    "note": "Authentic chalk animation requires SVG path animation or canvas drawing, which is computationally expensive in Remotion"
+  },
+
+  "projector_readability": {
+    "contrast_ratio": "Problematic. Chalk white (#E8E4D8) on dark green (#1B3B2A) achieves ~8:1, which is good in theory. BUT projectors render dark backgrounds as washed-out gray, dramatically reducing effective contrast.",
+    "minimum_font_sizes": "Must use 32px+ for body text due to the inherent contrast challenges of dark backgrounds on projectors.",
+    "color_washout_resistance": "POOR. Dark green background becomes muddy medium gray on projectors. Chalk white text loses its warmth and becomes indistinguishable from the gray background at distance. This is the style's fundamental weakness for projector presentation.",
+    "critical_issue": "Dark backgrounds are the opposite of projector-optimized design. Projectors produce light, so whites are bright but darks become gray. A chalkboard that looks green on a monitor will look gray on a projector."
+  },
+
+  "wcag_contrast_score": {
+    "chalk_on_green": "8.2:1 (#E8E4D8 on #1B3B2A) - AAA pass on screen",
+    "yellow_on_green": "6.1:1 (#F5D76E on #1B3B2A) - AA pass",
+    "pink_on_green": "4.8:1 (#E8A0BF on #1B3B2A) - AA pass for normal text",
+    "degradation_note": "CRITICAL: With 20-30% projector degradation, effective contrast drops to 4-5:1 for white and below 3:1 for colored chalks. Yellow and pink chalk become nearly invisible on washed-out gray background."
+  },
+
+  "projector_degradation_resistance": {
+    "rating": "Poor",
+    "strengths": "None significant for projector use. The style is designed for screens, not projection.",
+    "weaknesses": "Dark background becomes gray. Chalk texture details disappear entirely. Colored chalk (yellow, pink, blue) loses distinction. Handwritten text at small sizes becomes illegible. The entire visual identity depends on the green-to-chalk contrast that projectors destroy.",
+    "recommendation": "If using this style, invert to light mode: cream/off-white background with dark green text and accents. This preserves the academic warmth while being projector-safe, but loses the signature chalkboard look."
+  },
+
+  "vietnamese_diacritics_rendering": {
+    "quality": "Poor for handwritten fonts, adequate for sans-serif fallback",
+    "line_height_needs": "Handwritten fonts require extra line-height (1.6-1.8x) due to irregular baselines and ascender/descender variation. Vietnamese diacritics compound this problem.",
+    "minimum_safe_size": "36px+ for handwritten fonts with Vietnamese text to prevent diacritic collisions. 28px for sans-serif fallback.",
+    "critical_issue": "Handwritten fonts + Vietnamese diacritics + dark background + projector = quadruple readability penalty"
+  },
+
+  "cultural_fit": {
+    "rating": "Moderate",
+    "analysis": "Chalkboard evokes education and teaching tradition, which is appropriate for an academic assignment. Vietnamese students and teachers associate chalkboards with classroom learning. However, the style feels nostalgic/retro rather than forward-looking, which may not suit a topic about building national unity for the future. The dark green could inadvertently evoke military/revolution aesthetics.",
+    "adaptation_needed": "Would benefit from incorporating Vietnamese cultural elements (lotus, flag colors) as chalk illustrations to connect to the national unity topic"
+  },
+
+  "cultural_semiotics": {
+    "inherent_symbols": "Chalkboard = education, teaching, tradition, knowledge transfer. Green = nature, growth (positive in Vietnamese culture). Academic cap/gown associations.",
+    "strength": "Immediately communicates 'this is an educational/academic work' to the teacher",
+    "weakness": "No inherent Vietnamese national unity symbolism. Must be added through content, not design."
+  },
+
+  "teacher_perception_signal": {
+    "signal": "Mixed. The chalkboard style communicates 'we respect the academic tradition' and creates a warm, approachable feel. However, it could also signal 'we used a template' since chalkboard PowerPoint themes are extremely common and often low-effort.",
+    "risk": "High risk of appearing like a downloaded template rather than original work. Chalkboard themes are among the most overused presentation styles globally."
+  },
+
+  "rubric_alignment": {
+    "format_15_percent": "Moderate - unique aesthetic that stands out, but projector readability issues could hurt format scores if text is illegible",
+    "theory_35_percent": "Moderate - the educational context supports theory presentation. Chalk-drawn diagrams can illustrate theoretical frameworks effectively. But readability constraints limit text density.",
+    "application_50_percent": "Weak - chalk-drawn charts and data visualizations are charming but imprecise. Statistical data and real-world application examples need clean, readable formatting that conflicts with the handwritten aesthetic."
+  },
+
+  "content_density_capacity": {
+    "words_per_frame": "Low to moderate: 40-70 words per frame. Dark background and handwritten elements require larger text, reducing available space.",
+    "theory_support": "Moderate - can present theory through 'lecture notes' aesthetic, but limited by readability constraints",
+    "data_viz_support": "Weak - hand-drawn charts are charming but imprecise. Statistical data loses credibility in chalk-drawn format."
+  },
+
+  "production_effort": {
+    "migration_from_current": "High. Requires complete visual overhaul: new color scheme (dark bg), handwritten font integration, chalk texture effects, custom SVG animations for chalk-writing effect.",
+    "estimated_effort": "4-6 days. Chalk-writing animation system is complex to implement in Remotion. Need custom SVG path animation components. Texture overlays for chalk dust effect.",
+    "custom_components": "Need: ChalkText component (SVG path reveal), ChalkDiagram (animated line drawing), ChalkboardFrame (decorative border), EraserTransition"
+  },
+
+  "remotion_implementation_complexity": {
+    "css_needs": "Moderate - texture overlays, noise filters for chalk effect, custom fonts",
+    "three_js": "Not needed but could be used for chalk particle effects (dust). Would add complexity.",
+    "render_performance": "High concern - SVG path animation for chalk writing is computationally expensive per frame. 13.5 minutes of chalk animation at 30fps = many SVG calculations.",
+    "computation_cost": "High - chalk writing simulation requires per-frame SVG path interpolation. Render time could be significantly longer than other styles."
+  },
+
+  "distraction_level": "Moderate to high. Chalk-writing animations draw attention to the presentation mechanism rather than content. The novelty of the effect can overshadow the message.",
+
+  "differentiation": "High initially, but declining. Chalkboard themes were novel in 2015-2018 but are now common. Among Vietnamese university students, it would still stand out from standard PowerPoint but may appear dated to design-aware evaluators.",
+
+  "temporal_coherence": {
+    "rating": "Good",
+    "analysis": "The chalkboard provides a strong unifying visual metaphor. All sections exist 'on the same board.' Transition between speakers can use eraser-and-rewrite effects. The constraint of the single visual context (chalkboard) naturally enforces consistency."
+  },
+
+  "dark_vs_light_mode_viability": "Inherently dark mode. An inverted (light) version loses the chalkboard identity entirely and becomes a generic academic presentation. The style is fundamentally locked to dark backgrounds, which is a critical problem for projector presentation.",
+
+  "precedent": {
+    "examples": [
+      "Khan Academy's early videos used chalkboard/blackboard style",
+      "Thousands of chalkboard PowerPoint templates on Slidesgo, SlidesCarnival, SlideKit",
+      "TED-Ed animated lessons sometimes use chalkboard aesthetics",
+      "Vietnamese online tutoring platforms occasionally use chalkboard backgrounds"
+    ],
+    "academic_context": "Extremely common as a PowerPoint template. Many Vietnamese students have used chalkboard themes, reducing novelty. Khan Academy association gives it educational credibility."
+  },
+
+  "uncertain": ["background_green", "background_navy", "chalk_white", "chalk_yellow"]
+}

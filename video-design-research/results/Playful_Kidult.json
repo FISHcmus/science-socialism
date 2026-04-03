@@ -1,0 +1,116 @@
+{
+  "name": "Playful / Kidult (2026 Trend)",
+  "summary": "Stickers, doodles, friendly rounded shapes, pastel. Too informal for CNXHKH",
+  "color_palette": {
+    "primary": "#FF6B9D (bubblegum pink - signature playful/kidult color)",
+    "secondary": "#C4B5FD (soft lavender/purple)",
+    "accent": "#FCD34D (sunny pastel yellow)",
+    "surface": "#FFF7ED (warm pastel cream) or #FDF2F8 (pink-tinted white)",
+    "text": "#4A4A4A (soft dark gray - never harsh black)",
+    "notes": "Pastel palette with high saturation secondary colors. Additional pastels: mint green (#A7F3D0), sky blue (#BAE6FD), peach (#FECACA). The palette avoids pure black and pure white - everything is softened. Sticker-style elements use thick outlines in slightly darker versions of their fill color."
+  },
+  "typography": {
+    "headline_font": "Nunito, Quicksand, or Comfortaa (rounded sans-serif for friendly feel)",
+    "body_font": "Be Vietnam Pro or Nunito Regular",
+    "size_scale": "Headlines 48-56px, subheadings 36-40px, body 28-32px, sticker labels 24-28px",
+    "weights": "Headlines: Bold (700-800), body: Regular-Medium (400-500). Rounded fonts naturally look lighter even at Bold weight.",
+    "vietnamese_support": "Nunito has decent Vietnamese support. Quicksand and Comfortaa have limited Vietnamese diacritics - stacked marks may clip in rounded letterforms. Be Vietnam Pro for body maintains readability but the rounded headline fonts create visual inconsistency with Vietnamese text.",
+    "notes": "Rounded sans-serifs define the playful aesthetic. The rounded terminals and soft curves signal friendliness and approachability. However, rounded fonts were not designed with Vietnamese diacritics as a priority - the rounded letterforms can interfere with diacritic marks."
+  },
+  "animation_style": {
+    "approach": "Bouncy, elastic, playful - elements jiggle, pop, and wobble into place",
+    "spring_config": "Very bouncy (mass: 0.8, damping: 8, stiffness: 200) - significant overshoot and bounce",
+    "entrance_patterns": "Elements pop in with scale bounce (0 -> 1.2 -> 1.0), wiggle/rotation on appear, stickers 'peel' onto screen, doodle lines draw themselves SVG-style, confetti bursts on key moments",
+    "motion_budget": "Very High - constant micro-animations, idle wobbles, hover effects. The design expects continuous movement to maintain playful energy.",
+    "notes": "Playful motion is the core of this style. Static playful design feels dead. But 13.5 minutes of bouncing, wobbling, and popping elements is exhausting to watch."
+  },
+  "projector_readability": {
+    "contrast_ratio": "Poor (~4:1 for #4A4A4A on #FFF7ED, ~2.5:1 for pastel accents on pastel background)",
+    "minimum_font_sizes": "Achievable but sticker/doodle elements consume space and push text into smaller zones",
+    "color_washout_resistance": "Very Poor - pastel colors are by definition low-saturation. Projectors will wash them out to near-white. Pink, lavender, and mint green become indistinguishable on a projector.",
+    "concerns": "Fundamental incompatibility. Pastel palettes and projectors do not work together. The entire design identity (soft, pastel, dreamy) is destroyed by projector display. Thick sticker outlines may survive but the fills disappear."
+  },
+  "wcag_contrast_score": {
+    "primary_text_on_bg": "Borderline AA (~4.5:1 for #4A4A4A on #FFF7ED - barely passes)",
+    "accent_on_bg": "Fails AA - all pastel accents on pastel backgrounds fail. Pink #FF6B9D on #FFF7ED: ~2.8:1. Lavender #C4B5FD on #FFF7ED: ~2.1:1. Yellow #FCD34D on #FFF7ED: ~1.4:1 (catastrophic).",
+    "projector_degradation": "After 20-30% degradation, even body text drops below AA. All accent colors become invisible.",
+    "notes": "Worst accessibility scores of all candidates by a significant margin. Pastel-on-pastel is an accessibility anti-pattern. Would require dark text overlays for every colored element, undermining the aesthetic."
+  },
+  "projector_degradation_resistance": {
+    "rating": "Very Poor (worst of all candidates)",
+    "strengths": "Thick sticker outlines may partially survive projector degradation if they are dark enough. Bold rounded shapes maintain their structure even when fills wash out.",
+    "weaknesses": "The entire pastel color system collapses on projectors. Soft gradients become flat white. Pastel fills disappear entirely. The 'soft, dreamy' quality becomes 'washed out and broken'. Doodle lines (typically drawn in pastel colors) may become invisible."
+  },
+  "vietnamese_diacritics_rendering": {
+    "quality": "Medium",
+    "details": "Rounded sans-serifs (Nunito, Quicksand) have variable Vietnamese support. The rounded letterforms can interfere with diacritics - the curves of rounded letters compete visually with the curves of Vietnamese marks. Stacked diacritics (ượ, ễ) need extra line-height (1.7-1.8) in rounded fonts. Be Vietnam Pro for body text works well but creates visual mismatch with rounded headlines.",
+    "recommendation": "Nunito is the best rounded option for Vietnamese (better glyph coverage than Quicksand/Comfortaa). Still inferior to Be Vietnam Pro for diacritics rendering."
+  },
+  "cultural_fit": {
+    "alignment": "Very Low (worst of all candidates)",
+    "analysis": "Playful/kidult aesthetic is fundamentally incompatible with CNXHKH (Scientific Socialism). The course covers Marxist-Leninist theory, Vietnamese Communist Party policy, and national unity - topics that demand gravitas and intellectual seriousness. Stickers, doodles, and bouncing animations communicate childishness and triviality, which is disrespectful to the subject matter.",
+    "positives": "Approachable and engaging for casual content. Trending in 2025-2026 design.",
+    "negatives": "Actively harmful for this context. Using playful doodles to present Communist Party policy on national unity signals that students do not take the course seriously. This is not merely a poor fit - it could be perceived as mockery of the subject matter."
+  },
+  "cultural_semiotics": {
+    "symbols_invoked": "Childhood, play, Gen-Z consumer culture, kawaii/cute culture, TikTok aesthetics, digital sticker culture",
+    "vietnamese_resonance": "Strongly negative for academic context. Vietnamese academic culture values formality and respect for political theory. Playful aesthetics signal disrespect or immaturity in this context.",
+    "adaptation_needed": "Impossible to adapt without destroying the style. You cannot make 'playful kidult' serious enough for CNXHKH while keeping it playful. The adaptation contradicts the style's identity.",
+    "risk": "Very High - teacher perception will be negative. Could affect grade."
+  },
+  "teacher_perception_signal": {
+    "signal": "Student does not take the course seriously",
+    "positive": "None in this context. What might be 'creative' in a design course is 'inappropriate' in a political theory course.",
+    "negative": "Signals immaturity, lack of respect for the subject matter, prioritizing trendiness over appropriateness. A teacher grading CNXHKH will likely perceive stickers and doodles on Marxist-Leninist theory as a lack of academic seriousness. This could directly impact the format score (15%) and potentially color perception of theory/application sections.",
+    "risk_level": "Very High - the highest risk of negative teacher perception among all candidates"
+  },
+  "rubric_alignment": {
+    "format_15pct": "Poor - while visually distinct, 'format' in academic context implies appropriate professional presentation. Playful design fails the implicit 'appropriate for the topic' requirement.",
+    "theory_35pct": "Very Poor - dense theoretical text in bubbly rounded fonts with pastel backgrounds undermines the seriousness of Marxist-Leninist theory. Pull quotes in sticker bubbles trivialize the content.",
+    "application_50pct": "Poor - application analysis (real-world policy impacts) requires data credibility. Presenting national unity statistics in pastel sticker bubbles destroys data credibility.",
+    "overall": "Worst rubric alignment of all candidates. The style actively works against scoring in every category."
+  },
+  "content_density_capacity": {
+    "words_per_frame": "Low-Medium (70-100 words). Sticker elements, doodle borders, and decorative bubbles consume frame space.",
+    "data_viz_support": "Poor for credibility - you can make pastel bar charts and doodle-style diagrams, but they undermine the seriousness of the data being presented.",
+    "theory_density": "Poor - academic text in playful bubbles with rounded fonts reads as parody, not scholarship.",
+    "notes": "The style actively undermines content credibility. Even if you fit sufficient text on screen, the visual framing makes the content feel unserious."
+  },
+  "production_effort": {
+    "level": "Medium-High",
+    "migration_work": "Significant redesign needed. New color palette, rounded UI components, sticker/doodle SVG library, bouncy animation system. Current card-based layout needs complete restyling.",
+    "new_components": "Sticker frame component, doodle border SVGs, bubble quote component, confetti animation, wiggle idle animation, peel-on entrance animation",
+    "time_estimate": "3-4 days. Custom SVG sticker/doodle assets are the main time sink. Bouncy animations are straightforward in Remotion's spring system."
+  },
+  "remotion_implementation_complexity": {
+    "css_needs": "Medium - border-radius for rounded shapes, custom SVG sticker outlines, pastel gradient backgrounds. CSS is simpler than editorial but SVG work is significant.",
+    "threejs": "Not needed - playful style is 2D. Could remove existing Three.js background.",
+    "render_performance": "Medium - bouncy spring animations with overshoot are cheap, but SVG sticker rendering and continuous idle animations add up over 13.5 minutes",
+    "computation_cost": "Medium-High - continuous micro-animations (wobble, breathe, wiggle) mean every frame has active calculations even during 'static' content display",
+    "difficulty": "Medium - springs and SVG are well-supported in Remotion, but creating quality sticker/doodle assets requires design skill"
+  },
+  "distraction_level": "Very High - bouncing, wobbling, popping elements constantly compete with content. The playful motion language is designed to attract attention to the interface, not the message. Over 13.5 minutes, this becomes genuinely fatiguing.",
+  "differentiation": "High - unlikely that other groups use sticker/doodle style for CNXHKH. Stands out, but for the wrong reasons (like wearing a clown suit to a business meeting).",
+  "temporal_coherence": {
+    "consistency": "Medium - the playful system is internally consistent (everything bounces, everything is pastel), but the constant high energy is exhausting over 13.5 minutes",
+    "section_transitions": "Bouncy transitions maintain playful continuity across sections",
+    "speaker_identity": "MemberPiP components would need sticker-frame styling with doodle borders. Fun but time-consuming to produce for 9 members.",
+    "mitigation": "Reduce motion budget for mid-video sections to prevent viewer fatigue. But reducing motion makes the style feel inconsistent."
+  },
+  "dark_vs_light_mode_viability": "Locked to light mode. Pastel colors on dark backgrounds become neon/vibrant, completely changing the aesthetic from 'soft and playful' to 'rave/cyberpunk'. The warm pastel cream surface is essential to the style. Light mode is required, and while it technically works for projectors, the pastel colors still wash out.",
+  "precedent": {
+    "examples": [
+      "Duolingo app UI and marketing (green owl, playful doodles, bouncy animations)",
+      "Canva's younger-audience templates",
+      "TikTok creator tools and sticker aesthetics",
+      "Notion style illustrations (hand-drawn, wobbly lines - but much more restrained)",
+      "Headspace meditation app (rounded, pastel, calming variant of playful)"
+    ],
+    "in_academic_context": "Used occasionally in primary education or creative design courses. Never appropriate for university-level political theory courses.",
+    "in_vietnamese_context": "Some Vietnamese EdTech platforms (e.g., Topica) use playful elements for casual courses, but never for political theory or Marxist-Leninist coursework. Using this style for CNXHKH would be unprecedented and inadvisable."
+  },
+  "uncertain": [
+    "wcag_contrast_score",
+    "remotion_implementation_complexity"
+  ]
+}

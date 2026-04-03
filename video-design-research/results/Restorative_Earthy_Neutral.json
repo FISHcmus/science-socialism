@@ -1,0 +1,107 @@
+{
+  "name": "Restorative / Earthy Neutral (2026 Trend)",
+  "summary": "Warm neutrals, earthy browns, natural greens, Transformative Teal. Grounded, trustworthy",
+
+  "color_palette": {
+    "primary": "#F7F3EE (warm off-white - already the current theme base, also matches 2026 'Creamy' trend)",
+    "secondary": "#A67B5B (warm brown / Universal Khaki - Sherwin-Williams 2026 COTY), #78716C (stone gray)",
+    "accent": "#0D7377 (Transformative Teal - WGSN/Coloro 2026 trend color), #6B7F3E (dusty olive green), #C05621 (terracotta/reddened earth)",
+    "surface": "#FAF7F2 (lightest cream for cards), #EDE8E0 (warm gray for secondary panels)",
+    "text": "#292524 (stone-800, warm dark brown), #78716C (stone-500 for secondary text)",
+    "notes": "2026 color trend is a deliberate move away from bold contrasts toward layered, tonal warmth. Sherwin-Williams Universal Khaki, Pantone Cloud Dancer, and WGSN Transformative Teal are the anchor colors. This palette uses nature-derived tones: soil browns, sage greens, sky teals, clay terracottas."
+  },
+
+  "typography": {
+    "font_families": "Be Vietnam Pro (sans-serif). Earthy neutral style pairs well with clean sans-serif. The warmth comes from color and spacing, not ornate typography. Consider lighter weights (300-400) for a softer, more approachable feel.",
+    "size_scale": "Section title: 48-56px, Card heading: 36-40px, Body: 28-32px, Citation: 24px (same as current - this style doesn't demand different sizing)",
+    "weights": "300 (light body for breathing room), 400 (regular body), 600 (headings), 700 (titles - but not heavier, to maintain the calm aesthetic)",
+    "vietnamese_diacritics_support": "Good. Be Vietnam Pro at lighter weights (300-400) still renders diacritics well. The earthy neutral style's generous spacing and line-height (1.5+) gives diacritics ample room. No issues at recommended sizes."
+  },
+
+  "animation_style": {
+    "approach": "Gentle, organic motion. Slow fades (20-30 frames), subtle parallax, breathing scale (0.98 to 1.02 oscillation). Spring config: damping 25-30, stiffness 40-60 (very gentle, no bounce, like a slow exhale). Nature-inspired easing.",
+    "entrance_patterns": "Gentle fade-in with slight upward drift (2-5px). Cards appear like leaves settling. No sharp cuts - crossfade between sections. Teal accent elements fade in last as subtle highlights.",
+    "motion_budget": "Very low. This style is about stillness and calm. Minimal animation - just enough to maintain video interest. Most motion is entrance/exit transitions. Avoid continuous motion."
+  },
+
+  "projector_readability": {
+    "contrast_ratio": "Medium. Earthy neutrals are inherently low-contrast (warm brown on warm cream). Need careful contrast management. Teal accent on cream provides good contrast. Body text in stone-800 on cream is acceptable.",
+    "minimum_font_sizes": "28px+ body (standard). May need 30-32px for brown text on cream backgrounds due to lower contrast than pure black on white.",
+    "color_washout_resistance": "Low-Medium. Subtle earth tones are exactly what projectors degrade most. Warm browns may fade to near-background. Teal accent survives better (more saturated). Need to ensure sufficient value contrast (not just hue contrast) between elements."
+  },
+
+  "wcag_contrast_score": {
+    "text_on_background": "Stone-800 #292524 on cream #F7F3EE: 12.5:1 (AAA). Stone-500 #78716C on cream #F7F3EE: 3.8:1 (AA large text only). Teal #0D7377 on cream: 5.1:1 (AA). Brown #A67B5B on cream: 3.1:1 (fails AA - decorative only).",
+    "recommendation": "Primary text must use stone-800 or darker. Brown and stone-500 are decorative only (borders, icons, large labels). Teal works for medium-sized interactive elements. Watch the projector 20-30% degradation factor."
+  },
+
+  "projector_degradation_resistance": {
+    "rating": "Low-Medium",
+    "details": "This is the weakest style for projector readability. Earth tones rely on subtle color differences that projectors flatten. A warm brown border on a warm cream background may become invisible when projected. Teal provides the best contrast accent. Recommend: use teal more aggressively than typical earthy palette suggests, and add thin dark borders (stone-800) to all panels for projector-safe edge definition."
+  },
+
+  "vietnamese_diacritics_rendering": {
+    "quality": "Good. Lighter font weights (300-400) with generous line-height give diacritics clean rendering. The calm, spacious layout means no crowding. At 28px+ with stone-800 color, Vietnamese text is clear. At secondary stone-500, diacritics may be slightly less sharp on projectors."
+  },
+
+  "cultural_fit": {
+    "assessment": "Medium. Earthy neutral tones connect to Vietnamese agricultural landscape (rice fields, soil, rivers, forests) and traditional material culture (bamboo, wood, clay). However, this palette lacks the assertive red/gold that Vietnamese audiences associate with political/social topics. For a socialism course, it may feel too subdued and apolitical.",
+    "alignment_with_topic": "Weak-Medium. National unity (dai doan ket) is an active, assertive political concept. Earthy calm communicates trustworthiness but not political engagement. Better suited to environmental topics than socialist theory."
+  },
+
+  "cultural_semiotics": {
+    "symbols_invoked": "Nature, agriculture, groundedness, trust, calm authority. Brown/green/teal evokes Vietnamese countryside (ruong dong, nui rung). Teal connects to water (Mekong, coastal identity). These are culturally positive but not politically resonant.",
+    "risk": "May feel 'too Western' - earthy neutral is a 2026 Western interior design trend. Vietnamese academic audiences may not connect it to the socialist theory content. Could seem like style imported without cultural adaptation."
+  },
+
+  "teacher_perception_signal": {
+    "signal": "Modern design awareness and sophistication. Communicates calm confidence and maturity. However, may not signal strong engagement with the specific course material (socialism). Teacher might appreciate the professionalism but not see a clear connection between the visual style and the topic of national unity."
+  },
+
+  "rubric_alignment": {
+    "format_15pct": "Good - clean, modern, well-organized. Professional appearance. But lacks distinctive character tied to the topic.",
+    "theory_35pct": "Medium - calm backgrounds support extended text reading. Low-contrast palette may not effectively highlight key theoretical terms. Theory sections need accent color (teal) for emphasis.",
+    "application_50pct": "Medium - data visualization is possible but the muted palette provides fewer distinct colors for chart series. Need to supplement with more saturated variants of teal, terracotta, olive for data differentiation."
+  },
+
+  "content_density_capacity": {
+    "words_per_frame": "50-70 words. Calm, spacious layout supports moderate text density. Generous whitespace is a feature of this style but reduces usable area. Card layouts with ample padding.",
+    "data_viz_support": "Medium. Limited color variety for chart series (browns and greens don't differentiate well). Teal and terracotta provide two strong accent colors. Need to extend palette for multi-series charts."
+  },
+
+  "production_effort": {
+    "assessment": "Low. Current codebase already uses warm off-white (#F7F3EE) background. Main change is swapping accent colors from red/gold to teal/brown/olive. No new components needed - just color token updates.",
+    "migration_cost": "Very low - primarily a COLORS constant update in constants.ts. No structural changes to components."
+  },
+
+  "remotion_implementation_complexity": {
+    "css_needs": "Minimal. Solid colors, no special effects. The simplest CSS of all options.",
+    "threejs_interaction": "3D background could use earth-toned mesh materials (brown/teal/olive spheres at low opacity). Or simplify to subtle gradient background. Either works.",
+    "render_performance": "Excellent. No GPU-intensive effects. Solid backgrounds, simple text, basic card layouts. Fastest render times.",
+    "computation_cost": "Very low - the simplest style to render"
+  },
+
+  "distraction_level": "Very Low - the calmest, most content-focused style. All attention goes to text and data. No visual elements compete for attention.",
+
+  "differentiation": "Low-Medium. While on-trend for 2026, earthy neutral palettes are common in modern design. Other student presentations using Canva/PowerPoint templates may accidentally land on similar earth tones. Doesn't stand out strongly.",
+
+  "temporal_coherence": {
+    "assessment": "Excellent. Tonal, low-contrast palette naturally maintains consistency across sections. All content areas share the same warm temperature. No jarring transitions. The calm aesthetic is perfectly suited to 13.5-minute viewing.",
+    "risk": "Monotony. Without the variety that bolder accent colors provide, the video may feel visually flat across 13.5 minutes. Need teal accents as periodic visual punctuation."
+  },
+
+  "dark_vs_light_mode_viability": "Light mode only. This style is defined by its warm, light, airy quality. Dark mode would require cool dark backgrounds that contradict the 'earthy warm' identity. Light cream/off-white background is both the style's signature and the projector requirement - perfect alignment.",
+
+  "precedent": {
+    "examples": [
+      "Sherwin-Williams 2026 'Honest Essentials' collection - Universal Khaki as Color of the Year",
+      "WGSN/Coloro 'Transformative Teal' - 2026 global trend color",
+      "Pantone 2026 'Cloud Dancer' - soft off-white as anchor neutral",
+      "Aesop brand design - earthy neutral palette with clean typography (beauty/wellness)",
+      "Kinfolk magazine - earthy editorial design that influenced the 2020s neutral trend"
+    ],
+    "academic_context": "Earthy neutral palettes are used in wellness, sustainability, and environmental presentations. Less common in political science or social theory contexts. No strong academic presentation precedent for this specific style."
+  },
+
+  "uncertain": ["wcag_contrast_score.text_on_background", "projector_degradation_resistance"]
+}

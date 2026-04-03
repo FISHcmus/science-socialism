@@ -1,5 +1,9 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { Story, StoryDefault } from "@ladle/react";
 import { IconGrid } from "./IconGrid";
+
+export default {
+  title: "DS/IconGrid",
+} satisfies StoryDefault;
 
 const sampleItems = [
   { label: "Sức mạnh đoàn kết", description: "Tập hợp mọi lực lượng" },
@@ -10,24 +14,10 @@ const sampleItems = [
   { label: "Hội nhập quốc tế", description: "Mở rộng hợp tác" },
 ];
 
-const meta: Meta<typeof IconGrid> = {
-  title: "DS/IconGrid",
-  component: IconGrid,
-  args: {
-    items: sampleItems,
-    columns: 3,
-    visibleCount: 6,
-    itemScale: 1,
-    itemOpacity: 1,
+export const Default: Story = () => (
+  <IconGrid items={sampleItems} columns={3} visibleCount={6} itemScale={1} itemOpacity={1} />
+);
 
-  },
-};
-export default meta;
-
-type Story = StoryObj<typeof IconGrid>;
-
-export const Default: Story = {};
-
-export const TwoColumns: Story = {
-  args: { columns: 2 },
-};
+export const TwoColumns: Story = () => (
+  <IconGrid items={sampleItems} columns={2} visibleCount={6} itemScale={1} itemOpacity={1} />
+);

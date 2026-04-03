@@ -1,0 +1,130 @@
+{
+  "name": "Minimal Academic",
+  "summary": "Near-white bg, single accent color, heavy typography hierarchy, max whitespace",
+
+  "color_palette": {
+    "primary": "#111827 (gray-900, primary text and visual weight carrier)",
+    "secondary": "#B91C1C (single accent - Vietnam red, used sparingly for emphasis)",
+    "accent": "None additional - minimalism demands one accent maximum",
+    "surface": "#FAFAFA (near-white, warmer than pure #FFFFFF to reduce glare)",
+    "surface_alt": "#F5F5F5 (very subtle gray for section differentiation)",
+    "text": "#111827 (gray-900 for headings and body)",
+    "text_secondary": "#6B7280 (gray-500 for metadata, captions, dates)"
+  },
+
+  "typography": {
+    "heading_font": "Be Vietnam Pro ExtraBold (800) / Bold (700) - typography IS the design in this style",
+    "body_font": "Be Vietnam Pro Regular (400) / Light (300)",
+    "size_scale": {
+      "section_label": "32px uppercase tracking-wide",
+      "section_title": "56-64px (large titles are the primary visual element)",
+      "card_heading": "40px",
+      "body_text": "28-32px",
+      "pull_quote": "48px italic",
+      "citation": "24px"
+    },
+    "weights_used": "300, 400, 700, 800 (extreme weight contrast creates hierarchy)",
+    "vietnamese_diacritics": "Excellent - Be Vietnam Pro ExtraBold at large sizes renders Vietnamese diacritics beautifully; Light weight at 28px+ remains clear"
+  },
+
+  "animation_style": {
+    "approach": "Ultra-restrained - text fades in, content appears with deliberate pacing, no decorative motion",
+    "entrance_pattern": "Simple opacity fade (0 to 1) over 20-30 frames, occasionally paired with 20px vertical slide",
+    "spring_config": "Not spring-based; use linear or ease-out interpolation for understated motion",
+    "motion_budget": "Very low - whitespace and typography do the work, not animation"
+  },
+
+  "projector_readability": {
+    "contrast_approach": "Near-black text on near-white background provides maximum contrast. The extreme simplicity means every element that IS visible is clearly readable.",
+    "min_font_sizes": "Titles at 56-64px are among the largest of all options; body at 28-32px well above threshold; generous whitespace prevents crowding",
+    "color_washout": "Minimal risk - the design uses almost no color. Single red accent (#B91C1C) is deep enough to survive washout. Gray tones may blend slightly but text contrast is extreme.",
+    "line_weight": "Minimal use of lines - relies on whitespace for separation, which is projector-proof"
+  },
+
+  "wcag_contrast_score": {
+    "text_on_surface": "#111827 on #FAFAFA = 17.1:1 (AAA pass)",
+    "text_on_alt": "#111827 on #F5F5F5 = 16.5:1 (AAA pass)",
+    "red_accent_on_surface": "#B91C1C on #FAFAFA = 5.4:1 (AA pass, AAA for large text)",
+    "secondary_text": "#6B7280 on #FAFAFA = 5.0:1 (AA pass)",
+    "overall": "AAA compliant for all primary text; AA compliant for secondary text and accents"
+  },
+
+  "projector_degradation_resistance": {
+    "rating": "Very high",
+    "details": "This style is almost immune to projector degradation because it relies on extreme contrast (near-black on near-white) rather than color. No subtle gradients, shadows, or thin lines to lose. The only color (red accent) is deep and saturated. Whitespace-based separation is immune to blur and washout. This is arguably the most projector-safe option."
+  },
+
+  "vietnamese_diacritics_rendering": {
+    "font_suitability": "Excellent - Be Vietnam Pro at large sizes with generous line-height means diacritics have maximum room to render cleanly",
+    "line_height_needs": "line-height 1.6-1.8 recommended (generous whitespace is part of the aesthetic, so tall line-heights feel natural)",
+    "min_size_for_clarity": "28px body, but titles at 56-64px make Vietnamese text a visual feature rather than a readability concern"
+  },
+
+  "cultural_fit": {
+    "alignment": "Medium - academically appropriate but lacks Vietnamese cultural specificity",
+    "details": "Minimal academic style is culturally neutral - it works for any topic in any country. The single red accent can anchor to Vietnamese identity, but the overall aesthetic is international/Western academic. For national unity topic, the lack of cultural signaling may feel like a missed opportunity.",
+    "risk": "Teacher may perceive the minimalism as either sophisticated restraint OR as insufficient engagement with Vietnamese cultural context"
+  },
+
+  "cultural_semiotics": {
+    "whitespace": "Intellectual clarity, academic rigor, Western modernism, luxury",
+    "single_red_accent": "Can be read as Vietnamese red, but also as generic design accent - ambiguous",
+    "heavy_typography": "Authority through text, intellectual weight, editorial confidence",
+    "overall": "Semiotics lean Western/international academic rather than specifically Vietnamese; the minimalism is a statement of design confidence"
+  },
+
+  "teacher_perception_signal": {
+    "signal": "Intellectually confident, design-literate, possibly pretentious",
+    "details": "Teacher sees a presentation that prioritizes content hierarchy and readability - positive signals of academic seriousness. However, extreme minimalism in a Vietnamese university context may feel foreign or showy. Best received by teachers who value clarity over ornamentation.",
+    "effort_perception": "Paradoxical - minimalism looks effortless but is actually harder to execute well. Teacher may undervalue the effort if they equate visual complexity with work invested."
+  },
+
+  "rubric_alignment": {
+    "format_15pct": "Medium - very clean format but may look 'empty' to teachers expecting visual richness; 15% format points may penalize perceived lack of effort",
+    "theory_35pct": "Excellent - heavy typography hierarchy and generous whitespace make theoretical arguments crystal clear and scannable",
+    "application_50pct": "Medium - whitespace-heavy layouts reduce space for data visualization and real-world examples; charts and images need careful placement to not break the minimal aesthetic"
+  },
+
+  "content_density_capacity": {
+    "words_per_frame": "50-80 words - whitespace-heavy design intentionally reduces density; quality over quantity",
+    "data_viz_support": "Medium - simple bar/line charts work but complex infographics clash with minimal aesthetic; every data element must be essential",
+    "theory_density": "Medium - excellent for key statements and hierarchical arguments but dense theory paragraphs undermine the minimal feel"
+  },
+
+  "production_effort": {
+    "migration_cost": "Medium - requires stripping current design of decorative elements (FilmGrain, 3D background, gold conic gradients, GlassPanel borders). Paradoxically, removing features is work: need to redesign each section for whitespace-first layout.",
+    "component_changes": "Moderate - simplify GlassPanel to borderless containers, remove FilmGrain/Overlay, strip SectionTitle to text-only, rethink IconGrid/FlowChart for minimal aesthetic"
+  },
+
+  "remotion_implementation_complexity": {
+    "css_needs": "Simple CSS - the complexity is in layout decisions, not CSS properties",
+    "threejs_usage": "Remove entirely - 3D background contradicts minimal philosophy",
+    "render_performance": "Very fast - fewer elements per frame means faster renders",
+    "overall": "Low technical complexity but high design decision-making effort"
+  },
+
+  "distraction_level": "Very low - nothing competes with content; the design is invisible by intention",
+
+  "differentiation": "High - minimalism is extremely rare in Vietnamese student presentations, which tend toward visual abundance. This would stand out as unusual.",
+
+  "temporal_coherence": {
+    "consistency": "Very high - limited palette and strict typography rules make it nearly impossible to break visual consistency across 13.5 minutes",
+    "section_transitions": "Simple - fade to white between sections; consistency is effortless with so few visual elements",
+    "speaker_differentiation": "Challenging - with one accent color and minimal visual language, differentiating 9 speakers requires creative solutions (name typography, subtle position changes)"
+  },
+
+  "dark_vs_light_mode_viability": "Must be light mode. Minimal academic style fundamentally relies on whitespace which requires a white/near-white background. Dark mode would completely change the character to something closer to TED Talk style.",
+
+  "precedent": {
+    "examples": [
+      "Edward Tufte's presentation style and books - maximum data-ink ratio, whitespace-driven",
+      "Apple product pages (product detail, not keynote) - large text, massive whitespace",
+      "Academic journals and conference proceedings - typography hierarchy without decoration",
+      "Swiss/International Typographic Style - grid-based, type-driven, minimal color",
+      "Medium.com article layouts - generous whitespace, focused typography"
+    ],
+    "notes": "This style has strong precedent in Western academic and editorial contexts. In Vietnamese academic settings, it would be novel and potentially misunderstood as lacking effort. Works best when content is strong enough to carry the sparse visual treatment."
+  },
+
+  "uncertain": ["teacher_perception_signal"]
+}

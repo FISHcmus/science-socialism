@@ -1,4 +1,4 @@
-import { COLORS, FONT, TEXT_SHADOW } from "./tokens";
+import { TEXT_SHADOW } from "./tokens";
 import { GlassPanel } from "./GlassPanel";
 
 export interface IconGridItem {
@@ -27,13 +27,8 @@ export function IconGrid({
 }: IconGridProps) {
   return (
     <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: `repeat(${columns}, 1fr)`,
-        gap: "20px",
-        fontFamily: FONT,
-        width: "100%",
-      }}
+      className="grid gap-5 font-sans w-full"
+      style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}
     >
       {items.map((item, index) => {
         const s = itemScales?.[index] ?? itemScale;
@@ -62,24 +57,15 @@ export function IconGrid({
               }}
             >
               <span
-                style={{
-                  color: COLORS.white,
-                  fontSize: "28px",
-                  fontWeight: "bold",
-                  lineHeight: 1.3,
-                  textShadow: TEXT_SHADOW,
-                }}
+                className="text-ds-white text-[28px] font-bold leading-snug"
+                style={{ textShadow: TEXT_SHADOW }}
               >
                 {item.label}
               </span>
               {item.description && (
                 <span
-                  style={{
-                    color: COLORS.body,
-                    fontSize: "22px",
-                    lineHeight: 1.6,
-                    textShadow: TEXT_SHADOW,
-                  }}
+                  className="text-ds-body text-[22px] leading-relaxed"
+                  style={{ textShadow: TEXT_SHADOW }}
                 >
                   {item.description}
                 </span>

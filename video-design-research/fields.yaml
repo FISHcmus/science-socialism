@@ -1,0 +1,84 @@
+fields:
+  # Core visual identity
+  - name: color_palette
+    description: "Primary, secondary, accent, surface, text colors with hex values"
+    detail_level: detailed
+
+  - name: typography
+    description: "Font families, size scale, weights, Vietnamese diacritics support quality"
+    detail_level: detailed
+
+  - name: animation_style
+    description: "Motion design approach - spring configs, entrance patterns, motion budget"
+    detail_level: moderate
+
+  # Projector & readability
+  - name: projector_readability
+    description: "Contrast ratio, minimum font sizes, color washout resistance"
+    detail_level: detailed
+
+  - name: wcag_contrast_score
+    description: "Measured contrast ratios (AA/AAA) for primary text-on-background. Projectors degrade by 20-30%"
+    detail_level: moderate
+
+  - name: projector_degradation_resistance
+    description: "How design holds up when colors shift lighter, blacks become gray, fine details blur"
+    detail_level: moderate
+
+  - name: vietnamese_diacritics_rendering
+    description: "How well design handles stacked diacritics (ượ, ễ) at minimum font sizes, line-height needs"
+    detail_level: moderate
+
+  # Cultural & academic fit
+  - name: cultural_fit
+    description: "How well colors/style match Vietnamese academic context and national unity topic"
+    detail_level: detailed
+
+  - name: cultural_semiotics
+    description: "Specific Vietnamese symbols invoked and what they signify (red=revolution, gold=prosperity, lotus=purity)"
+    detail_level: moderate
+
+  - name: teacher_perception_signal
+    description: "What design communicates about student effort/seriousness to the grading teacher"
+    detail_level: moderate
+
+  # Rubric alignment
+  - name: rubric_alignment
+    description: "How design supports scoring on format (15%), theory (35%), application (50%)"
+    detail_level: detailed
+
+  - name: content_density_capacity
+    description: "How many words/data points fit per frame at readable sizes. Theory needs dense text, application needs data viz"
+    detail_level: moderate
+
+  # Practical considerations
+  - name: production_effort
+    description: "How much work to implement/migrate from current Remotion codebase"
+    detail_level: moderate
+
+  - name: remotion_implementation_complexity
+    description: "Technical difficulty in React/Remotion - CSS needs, Three.js, render performance, computation cost"
+    detail_level: moderate
+
+  - name: distraction_level
+    description: "Does design draw attention to itself or let content shine"
+    detail_level: brief
+
+  - name: differentiation
+    description: "How much it stands out vs generic student presentations"
+    detail_level: brief
+
+  - name: temporal_coherence
+    description: "How well design maintains visual identity across 13.5 min with multiple sections and speakers"
+    detail_level: moderate
+
+  - name: dark_vs_light_mode_viability
+    description: "Whether design works on light backgrounds (required for projector) or is locked to dark"
+    detail_level: brief
+
+  # Evidence
+  - name: precedent
+    description: "Real-world examples of this style in similar contexts"
+    detail_level: moderate
+
+uncertain: []

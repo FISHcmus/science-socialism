@@ -1,0 +1,117 @@
+{
+  "name": "Retro-Futurism / Mid-Century Modern",
+  "summary": "Geometric shapes, vintage palettes (mustard/teal/coral). Distinctive but culturally disconnected",
+  "color_palette": {
+    "primary": "#D4A017 (mustard gold - signature mid-century color)",
+    "secondary": "#2A9D8F (muted teal - complementary vintage accent)",
+    "accent": "#E76F51 (warm coral/burnt orange - tertiary pop)",
+    "surface": "#FAF3E8 (warm cream/ivory - vintage paper feel)",
+    "text": "#264653 (deep teal-black - softer than pure black)",
+    "notes": "Classic mid-century palette of mustard, teal, and coral with warm cream background. Additional colors: avocado green (#6B8E23), burnt sienna (#A0522D). The palette is warm and inviting but carries strong 1950s-60s American associations. Retro futurism palettes also include steel gray (#1E1E2F) and bright gold (#F0A400) for more space-age variants."
+  },
+  "typography": {
+    "headline_font": "Futura or Century Gothic (geometric sans-serif, quintessential mid-century typeface)",
+    "body_font": "Be Vietnam Pro Regular (for Vietnamese diacritics support)",
+    "size_scale": "Headlines 48-60px, subheadings 36-40px, body 28-32px, labels 24px",
+    "weights": "Headlines: Bold (700), body: Regular (400), emphasis: Medium (500)",
+    "vietnamese_support": "Futura has limited Vietnamese diacritics support. Century Gothic handles basic Vietnamese but struggles with complex stacked diacritics (ượ, ễ). Be Vietnam Pro for body text ensures readability. Headline font mismatch creates visual tension.",
+    "notes": "Mid-century typography is defined by geometric sans-serifs (Futura, Avant Garde, Century Gothic). These fonts were designed for Latin scripts and have poor Vietnamese support. The design requires a compromise: use geometric sans for decorative elements only, Be Vietnam Pro for all readable text."
+  },
+  "animation_style": {
+    "approach": "Kinetic typography meets Saul Bass title sequences - geometric shapes animate with purpose",
+    "spring_config": "Bouncy, playful (mass: 1, damping: 12, stiffness: 150) - elements overshoot slightly before settling",
+    "entrance_patterns": "Geometric shapes expand from center, text rotates in, starburst/radial reveal patterns, boomerang curves as transition wipes",
+    "motion_budget": "High - the style demands animated geometric elements. Starbursts spin, circles expand, text slides along curved paths.",
+    "notes": "Saul Bass film title sequences (Vertigo, Anatomy of a Murder) are the gold standard for this animation style. Bold, graphic, geometric motion. However, high motion budget risks distraction from content."
+  },
+  "projector_readability": {
+    "contrast_ratio": "Medium (~8:1 for #264653 on #FAF3E8). Lower than monochrome approaches.",
+    "minimum_font_sizes": "Achievable but geometric shapes compete for space. Decorative elements may push text smaller.",
+    "color_washout_resistance": "Poor - the distinctive mustard/teal/coral palette relies on color differentiation that projectors wash out. Mustard on cream becomes invisible. Teal becomes gray-green.",
+    "concerns": "The entire aesthetic identity depends on color. Projector degradation destroys the retro palette - mustard yellows wash out, teals desaturate to gray, corals become muddy pink. The design loses its identity when projected."
+  },
+  "wcag_contrast_score": {
+    "primary_text_on_bg": "AA (~8:1 for #264653 on #FAF3E8)",
+    "accent_on_bg": "Fails AA (~2.8:1 for #D4A017 mustard on #FAF3E8 cream). Coral #E76F51 on cream: ~3.2:1 (fails AA).",
+    "projector_degradation": "After 20-30% degradation, primary text may drop to borderline AA. Accent colors fail entirely. Mustard-on-cream becomes unreadable on projectors.",
+    "notes": "Worst contrast scores of the four candidates. The vintage palette is inherently low-contrast - warm colors on warm backgrounds. This is the style's defining weakness for projector use."
+  },
+  "projector_degradation_resistance": {
+    "rating": "Poor",
+    "strengths": "Bold geometric shapes maintain their structure even when colors wash out. If shapes are large enough, the layout survives.",
+    "weaknesses": "Color is the entire identity of this style. When projector washes out mustard to pale yellow, teal to gray, and coral to pink-gray, the design loses all its retro-futurism character and becomes an oddly-colored generic layout. Fine geometric patterns (starbursts, atomic motifs) blur and disappear."
+  },
+  "vietnamese_diacritics_rendering": {
+    "quality": "Poor for headline fonts, Good for body",
+    "details": "Geometric sans-serifs (Futura, Century Gothic, Avant Garde) were designed in the 1920s-60s for Latin scripts. Vietnamese diacritics are an afterthought - stacked marks clip at display sizes, x-height proportions are wrong for Vietnamese. Be Vietnam Pro for body text is fine. The visual mismatch between geometric headline font and Vietnamese body font is noticeable.",
+    "recommendation": "Either accept poor diacritics in headlines or abandon geometric sans-serifs entirely, which undermines the mid-century identity."
+  },
+  "cultural_fit": {
+    "alignment": "Very Low",
+    "analysis": "Retro-futurism is rooted in 1950s-60s American/Western optimism about space age and atomic energy. This is culturally disconnected from Vietnamese academic context and doubly disconnected from the topic of national unity in scientific socialism. The aesthetic references Eisenhower-era America, which is ideologically opposite to the course content.",
+    "positives": "Distinctive and memorable. Shows creative thinking.",
+    "negatives": "Culturally tone-deaf for a CNXHKH course. The 1950s American aesthetic carries Cold War associations that directly conflict with the course's ideological framework. A Vietnamese teacher may find the cultural mismatch jarring or inappropriate."
+  },
+  "cultural_semiotics": {
+    "symbols_invoked": "1950s-60s American optimism, space age, atomic energy, Cold War-era Western futurism, consumer culture",
+    "vietnamese_resonance": "Negative resonance - the aesthetic references an era of American cultural hegemony that is explicitly critiqued in scientific socialism coursework. Atomic motifs reference weapons, not progress, in Vietnamese historical memory.",
+    "adaptation_needed": "Extremely difficult to adapt. The style's identity IS its cultural reference. Removing Cold War associations means removing the retro-futurism itself.",
+    "risk": "High - teacher may perceive cultural insensitivity or ideological contradiction"
+  },
+  "teacher_perception_signal": {
+    "signal": "Creative and distinctive, but signals misunderstanding of the assignment's context",
+    "positive": "Shows design skill and creative thinking. Visually memorable.",
+    "negative": "Signals that student prioritized aesthetic novelty over topic appropriateness. For a scientific socialism course, using 1950s American consumer culture aesthetics demonstrates poor judgment about cultural context.",
+    "risk_level": "High - the cultural mismatch is the dominant signal"
+  },
+  "rubric_alignment": {
+    "format_15pct": "Medium - visually distinctive but questionable taste for context. May score well on 'effort' but poorly on 'appropriateness'.",
+    "theory_35pct": "Weak - geometric decorative elements consume frame space. Dense theoretical text feels wrong in a retro-futurism context. The style encourages slogans and taglines, not academic argumentation.",
+    "application_50pct": "Weak - data visualization in retro style (vintage infographics) is possible but time-intensive to produce. Modern data viz tools don't output retro-styled charts.",
+    "overall": "Poor rubric fit. The style optimizes for visual impact at the expense of content delivery."
+  },
+  "content_density_capacity": {
+    "words_per_frame": "Low (50-80 words). Geometric shapes, starbursts, and decorative elements consume significant frame space.",
+    "data_viz_support": "Poor - standard bar/flow charts clash with the retro aesthetic. Custom vintage-style infographics are possible but extremely time-intensive.",
+    "theory_density": "Low - the style encourages short, punchy text (like 1960s advertising copy), not academic paragraphs.",
+    "notes": "Lowest content density of all candidates. The decorative geometric framework is visually hungry."
+  },
+  "production_effort": {
+    "level": "Very High",
+    "migration_work": "Complete redesign required. New color system, geometric shape library, custom animation system for retro motion, vintage-styled data viz components. Nothing from current codebase is reusable except basic Remotion infrastructure.",
+    "new_components": "Starburst decorator, atomic motif component, retro badge/label, vintage infographic charts, geometric transition wipes, boomerang curve animations",
+    "time_estimate": "5-8 days of focused work. Custom geometric animations alone are 2-3 days."
+  },
+  "remotion_implementation_complexity": {
+    "css_needs": "Complex - custom SVG geometric shapes, CSS transforms for rotations, clip-path for reveal animations, custom color palette system",
+    "threejs": "Optional but fitting - 3D geometric shapes (spheres, cones, tori) with retro materials could enhance the aesthetic. Adds render cost.",
+    "render_performance": "Heavy - multiple animated SVG elements per frame, potential 3D geometry, complex color calculations",
+    "computation_cost": "High - spinning starbursts, expanding circles, and rotating text all require per-frame calculations. Many animated elements per scene.",
+    "difficulty": "High - geometric animation system is custom work, not available as a library"
+  },
+  "distraction_level": "Very High - geometric shapes, starbursts, and animated decorative elements constantly compete with content for attention. The style IS the distraction.",
+  "differentiation": "Very High - no other student group will use retro-futurism. Maximum visual distinctiveness, though not necessarily positive distinctiveness in this context.",
+  "temporal_coherence": {
+    "consistency": "Medium - the strong visual identity (geometric shapes + vintage palette) maintains coherence, but the decorative density may fatigue viewers over 13.5 minutes",
+    "section_transitions": "Geometric wipe transitions maintain style across sections",
+    "speaker_identity": "MemberPiP components need retro-styled frames (atomic ovals, boomerang shapes) to fit the aesthetic. Extra design work per speaker.",
+    "mitigation": "Limit geometric decoration to section transitions and headers; let content zones be cleaner."
+  },
+  "dark_vs_light_mode_viability": "Works on both but differently. Light mode (cream background) is more authentic to mid-century print design and works for projector. Dark mode (deep navy/charcoal background with bright mustard/teal) creates a more 'space age' feel but fails projector requirement.",
+  "precedent": {
+    "examples": [
+      "Saul Bass film title sequences (Vertigo, Anatomy of a Murder, The Man with the Golden Arm)",
+      "Fallout video game series UI design",
+      "Jetsons/Atomic Age themed restaurant and hotel branding",
+      "Archer TV show title sequences",
+      "Mid-century modern furniture brand websites (Herman Miller vintage campaigns)"
+    ],
+    "in_academic_context": "Essentially nonexistent. Retro-futurism is used in entertainment, branding, and interior design, not academic presentations.",
+    "in_vietnamese_context": "No known precedent. Mid-century modern design has minimal presence in Vietnamese visual culture."
+  },
+  "uncertain": [
+    "wcag_contrast_score",
+    "production_effort",
+    "remotion_implementation_complexity"
+  ]
+}

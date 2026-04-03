@@ -1,0 +1,403 @@
+export interface ScriptItem {
+  label: string;
+  detail: string;
+}
+
+export interface StatItem {
+  value: string;
+  label: string;
+}
+
+export interface SectionData {
+  id: string;
+  sectionLabel: string;
+  title: string;
+  member: string;
+  memberFull: string;
+  duration: number; // frames
+  durationSec: number;
+  timeStart: string;
+  timeEnd: string;
+  color: string;
+  memberColor: string;
+  bgColor: string;
+  cards: ScriptItem[];
+  stats?: StatItem[];
+  quote?: string;
+  images: { src: string; alt: string }[];
+  citation: string;
+  script: ScriptItem[];
+  scriptCitation: string;
+  mediaStatus: { text: string; ok: boolean }[];
+
+}
+
+export const SECTIONS: SectionData[] = [
+  {
+    id: "title",
+    sectionLabel: "TITLE",
+    title: "Xây dựng khối đại đoàn kết toàn dân tộc",
+    member: "",
+    memberFull: "",
+    duration: 150,
+    durationSec: 5,
+    timeStart: "0:00",
+    timeEnd: "0:05",
+    color: "#111827",
+    memberColor: "#111827",
+    bgColor: "#F7F3EE",
+    cards: [],
+    images: [],
+    citation: "",
+    script: [],
+    scriptCitation: "",
+    mediaStatus: [],
+  },
+  {
+    id: "intro",
+    sectionLabel: "INTRO",
+    title: "Giới thiệu chủ đề & nhóm thực hiện",
+    member: "Nhân",
+    memberFull: "Nguyễn Hữu Thiện Nhân",
+    duration: 750,
+    durationSec: 25,
+    timeStart: "0:05",
+    timeEnd: "0:30",
+    color: "#D97706",
+    memberColor: "#D97706",
+    bgColor: "#EDE8E0",
+    cards: [
+      { label: "Chủ đề 6", detail: "Xây dựng khối đại đoàn kết toàn dân tộc ở Việt Nam hiện nay" },
+      { label: "Nhóm 7 - 9 thành viên", detail: "Cấu trúc: Lý luận → Thực tiễn → Trách nhiệm SV" },
+    ],
+    images: [],
+    citation: "",
+    script: [],
+    scriptCitation: "",
+    mediaStatus: [{ text: "T3-4 chưa có video", ok: false }],
+  },
+  {
+    id: "1.1",
+    sectionLabel: "PHẦN 1.1",
+    title: "Cương lĩnh dân tộc Mác-Lênin",
+    member: "Thục Nhi",
+    memberFull: "Đào Thục Nhi",
+    duration: 2700,
+    durationSec: 90,
+    timeStart: "0:30",
+    timeEnd: "2:00",
+    color: "#EA580C",
+    memberColor: "#EA580C",
+    bgColor: "#FEF3C7",
+    cards: [
+      { label: "1. Bình đẳng", detail: "Mọi dân tộc đều có quyền và nghĩa vụ ngang nhau" },
+      { label: "2. Tự quyết", detail: "Quyền tự quyết định chế độ chính trị, con đường phát triển" },
+      { label: "3. Liên hiệp công nhân", detail: "Gắn kết giải phóng dân tộc với giải phóng giai cấp" },
+    ],
+    images: [
+      { src: "../media/T1-1/img1.jpg", alt: "Ảnh 1" },
+      { src: "../media/T1-1/img2.jpg", alt: "Ảnh 2" },
+    ],
+    citation: "GT CNXHKH (2021), Ch.6, mục I.2b, tr.202-205",
+    script: [
+      { label: "Bình đẳng", detail: "mọi dân tộc đều có quyền và nghĩa vụ ngang nhau" },
+      { label: "Tự quyết", detail: "quyền tự quyết định chế độ chính trị, con đường phát triển" },
+      { label: "Liên hiệp công nhân", detail: "gắn kết giải phóng dân tộc với giải phóng giai cấp" },
+    ],
+    scriptCitation: "GT CNXHKH (2021), Chương 6, mục I.2b, trang 202-205",
+    mediaStatus: [{ text: "2 ảnh + video (.mov 100MB)", ok: true }],
+    // contentIssue: "MISMATCH - cần sửa nội dung cards",
+  },
+  {
+    id: "1.2",
+    sectionLabel: "PHẦN 1.2",
+    title: "Năm đặc trưng cơ bản của dân tộc",
+    member: "Châu Nhi",
+    memberFull: "Nguyễn Hồng Châu Nhi",
+    duration: 2700,
+    durationSec: 90,
+    timeStart: "2:00",
+    timeEnd: "3:30",
+    color: "#2563EB",
+    memberColor: "#2563EB",
+    bgColor: "#DBEAFE",
+    cards: [
+      { label: "1. Cộng đồng lãnh thổ", detail: "Vùng đất, trời, biển thuộc chủ quyền quốc gia" },
+      { label: "2. Cộng đồng kinh tế", detail: "Đặc trưng quan trọng nhất" },
+      { label: "3. Cộng đồng ngôn ngữ", detail: "Công cụ giao tiếp chung" },
+      { label: "4. Văn hóa - tâm lý", detail: "Yếu tố đặc biệt quan trọng" },
+      { label: "5. Chung một nhà nước", detail: "Phân biệt DT quốc gia với tộc người" },
+    ],
+    images: [
+      { src: "../media/T1-2/img1_54_dan_toc.jpg", alt: "54 dân tộc" },
+      { src: "../media/T1-2/img2_ban_do_vn.jpeg", alt: "Bản đồ VN" },
+    ],
+    citation: "GT CNXHKH (2021), Ch.6, mục I.1, tr.196-200",
+    script: [
+      { label: "Lãnh thổ", detail: "vùng đất, trời, biển thuộc chủ quyền quốc gia" },
+      { label: "Kinh tế", detail: "đặc trưng quan trọng nhất" },
+      { label: "Ngôn ngữ", detail: "công cụ giao tiếp chung" },
+      { label: "Văn hóa - tâm lý", detail: "yếu tố đặc biệt quan trọng" },
+      { label: "Nhà nước", detail: "phân biệt dân tộc quốc gia với tộc người" },
+    ],
+    scriptCitation: "GT CNXHKH (2021), Chương 6, mục I.1, trang 196-200",
+    mediaStatus: [{ text: "3 ảnh + video (14MB)", ok: true }],
+    // contentIssue: "WRONG - code có nội dung sai",
+  },
+  {
+    id: "1.3",
+    sectionLabel: "PHẦN 1.3",
+    title: "Bốn nguyên tắc giải quyết vấn đề tôn giáo",
+    member: "Phụng Nhi",
+    memberFull: "Trần Thị Phụng Nhi",
+    duration: 2700,
+    durationSec: 90,
+    timeStart: "3:30",
+    timeEnd: "5:00",
+    color: "#9333EA",
+    memberColor: "#9333EA",
+    bgColor: "#F3E8FF",
+    cards: [
+      { label: "1. Tôn trọng tự do tín ngưỡng", detail: "Quyền theo hoặc không theo tôn giáo" },
+      { label: "2. Khắc phục tiêu cực", detail: "Bằng phát triển KT, nâng cao dân trí" },
+      { label: "3. Phân biệt TT và CT", detail: "Không đối kháng vs đối kháng" },
+      { label: "4. Quan điểm lịch sử", detail: "Phân tích từng giai đoạn, phát huy nhân văn" },
+    ],
+    images: [
+      { src: "../media/T1-3/img1_tu_do_tin_nguong.jpg", alt: "Tự do tín ngưỡng" },
+      { src: "../media/T1-3/img2_xuyen_tac_ton_giao.png", alt: "Xuyên tạc tôn giáo" },
+    ],
+    citation: "GT CNXHKH (2021), Ch.6, mục II.1b, tr.218-221",
+    script: [
+      { label: "Tôn trọng tự do tín ngưỡng", detail: "quyền theo hoặc không theo tôn giáo" },
+      { label: "Khắc phục tiêu cực", detail: "bằng phát triển kinh tế, nâng cao dân trí" },
+      { label: "Phân biệt tư tưởng/chính trị", detail: "không đối kháng vs đối kháng" },
+      { label: "Quan điểm lịch sử cụ thể", detail: "phân tích từng giai đoạn, phát huy giá trị nhân văn" },
+    ],
+    scriptCitation: "GT CNXHKH (2021), Chương 6, mục II.1b, trang 218-221",
+    mediaStatus: [{ text: "2 ảnh + video (63MB)", ok: true }],
+    // contentIssue: "WRONG - code có nội dung sai",
+  },
+  {
+    id: "2.1",
+    sectionLabel: "PHẦN 2.1",
+    title: "Thực tiễn đoàn kết dân tộc Việt Nam",
+    member: "Huỳnh Nhi",
+    memberFull: "Bùi Huỳnh Nhi",
+    duration: 1800,
+    durationSec: 60,
+    timeStart: "5:00",
+    timeEnd: "6:00",
+    color: "#16A34A",
+    memberColor: "#16A34A",
+    bgColor: "#DCFCE7",
+    stats: [{ value: "54", label: "dân tộc" }],
+    cards: [
+      { label: "Lợi thế", detail: "Tăng cường hiểu biết, giao lưu, VH thống nhất trong đa dạng" },
+      { label: "Thách thức", detail: "Mâu thuẫn, chênh lệch phát triển giữa vùng miền" },
+    ],
+    quote: "\"Bao nhiêu lợi ích đều vì dân...\" - HCM",
+    images: [
+      { src: "../media/T2-1/img1.jpg", alt: "Ảnh 1" },
+      { src: "../media/T2-1/img2.jpeg", alt: "Ảnh 2" },
+    ],
+    citation: "GT CNXHKH (2021), Ch.6, I.3a, tr.205-208; HCM (1949)",
+    script: [
+      { label: "54 dân tộc cư trú đan xen", detail: "không dân tộc nào chiếm vùng lãnh thổ riêng biệt" },
+      { label: "Lợi thế", detail: "giao lưu, văn hóa thống nhất trong đa dạng" },
+      { label: "Thách thức", detail: "dễ nảy sinh mâu thuẫn, chênh lệch phát triển" },
+    ],
+    scriptCitation: "GT CNXHKH (2021), Ch.6, I.3a, tr.205-208; HCM (1949) \"Dân vận\"",
+    mediaStatus: [{ text: "3 ảnh + video (12MB)", ok: true }],
+  },
+  {
+    id: "2.2",
+    sectionLabel: "PHẦN 2.2",
+    title: "Đặc điểm tôn giáo ở Việt Nam",
+    member: "Phú",
+    memberFull: "Ngô Văn Phú",
+    duration: 1800,
+    durationSec: 60,
+    timeStart: "6:00",
+    timeEnd: "7:00",
+    color: "#CA8A04",
+    memberColor: "#CA8A04",
+    bgColor: "#FEF9C3",
+    stats: [
+      { value: "16", label: "tôn giáo" },
+      { value: "43", label: "tổ chức" },
+      { value: "29K+", label: "cơ sở thờ tự" },
+    ],
+    cards: [
+      { label: "Chung sống hòa bình", detail: "Chưa từng xảy ra chiến tranh tôn giáo. TG du nhập + nội sinh" },
+      { label: "Chính sách", detail: "Tôn trọng tự do tín ngưỡng, bình đẳng trước pháp luật" },
+    ],
+    images: [],
+    citation: "GT CNXHKH (2021), Ch.6, II.2a tr.222-224, II.2b tr.225-226",
+    script: [
+      { label: "16 tôn giáo", detail: "được công nhận, 43 tổ chức tôn giáo" },
+      { label: "Chung sống hòa bình", detail: "chưa từng xảy ra chiến tranh tôn giáo" },
+      { label: "Chính sách đại đoàn kết", detail: "giữa các tôn giáo, người có đạo/không đạo" },
+    ],
+    scriptCitation: "GT CNXHKH (2021), Ch.6, II.2a tr.222-224, II.2b tr.225-226",
+    mediaStatus: [
+      { text: "video (31MB)", ok: true },
+      { text: "Chưa có ảnh", ok: false },
+    ],
+    // contentIssue: "FABRICATED - cần viết lại hoàn toàn",
+  },
+  {
+    id: "3.1",
+    sectionLabel: "PHẦN 3.1",
+    title: "Giao lưu văn hóa dân tộc",
+    member: "Quỳnh Như",
+    memberFull: "Nguyễn Phạm Quỳnh Như",
+    duration: 2700,
+    durationSec: 90,
+    timeStart: "7:00",
+    timeEnd: "8:30",
+    color: "#DB2777",
+    memberColor: "#DB2777",
+    bgColor: "#FCE7F3",
+    cards: [
+      { label: "Giao lưu HSSV DTTS (Cần Thơ, 5/2025)", detail: "Biểu diễn văn nghệ, thi cổng trại, đốt lửa trại" },
+      { label: "Bài học 1", detail: "Chủ động tìm hiểu đa dạng văn hóa" },
+      { label: "Bài học 2", detail: "Giữ bản sắc nhưng không khép kín" },
+      { label: "Bài học 3", detail: "Trở thành cầu nối văn hóa" },
+    ],
+    images: [],
+    citation: "GT CNXHKH (2021), Ch.6, I.1 tr.198; Bộ VHTTDL (2025)",
+    script: [
+      { label: "54 dân tộc", detail: "mỗi dân tộc mang bản sắc riêng - thống nhất trong đa dạng" },
+      { label: "Giao lưu HSSV DTTS", detail: "Cần Thơ (5/2025): văn nghệ, cổng trại, lửa trại" },
+      { label: "3 bài học", detail: "tìm hiểu đa dạng, giữ bản sắc, trở thành cầu nối" },
+    ],
+    scriptCitation: "GT CNXHKH (2021), Ch.6, I.1 tr.198; Bộ VHTTDL (2025)",
+    mediaStatus: [
+      { text: "video (16MB)", ok: true },
+      { text: "Chưa có ảnh", ok: false },
+    ],
+    // contentIssue: "MISMATCH - cần viết lại nội dung",
+  },
+  {
+    id: "3.2",
+    sectionLabel: "PHẦN 3.2",
+    title: "Nhận diện thông tin sai lệch trên MXH",
+    member: "Tố Như",
+    memberFull: "Hoàng Thị Tố Như",
+    duration: 2700,
+    durationSec: 90,
+    timeStart: "8:30",
+    timeEnd: "10:00",
+    color: "#0891B2",
+    memberColor: "#0891B2",
+    bgColor: "#E0F2FE",
+    cards: [
+      { label: "4 dấu hiệu tin giả", detail: "Tiêu đề giật gân | Thiếu nguồn | Ảnh/video cắt ghép | Quy chụp nhóm DT/TG" },
+      { label: "Ví dụ: Đắk Lắk", detail: "Thông tin bịa đặt về quan hệ dân tộc Tây Nguyên" },
+      { label: "Cách kiểm chứng", detail: "Đối chiếu nhiều nguồn, Google Image/TinEye, chia sẻ đính chính" },
+    ],
+    images: [
+      { src: "../media/T3-2/img1.webp", alt: "Ảnh 1" },
+      { src: "../media/T3-2/img2.webp", alt: "Ảnh 2" },
+    ],
+    citation: "Báo Nhân Dân (2025), Đắk Lắk fake news case",
+    script: [
+      { label: "MXH = nơi lan nhanh", detail: "thông tin sai lệch về dân tộc, tôn giáo" },
+      { label: "4 dấu hiệu", detail: "tiêu đề giật gân, thiếu nguồn, ảnh cắt ghép, quy chụp" },
+      { label: "Ví dụ Đắk Lắk", detail: "bịa đặt về dân tộc Tây Nguyên" },
+      { label: "Kiểm chứng", detail: "đối chiếu nguồn, Google Image/TinEye" },
+    ],
+    scriptCitation: "Báo Nhân Dân (2025)",
+    mediaStatus: [{ text: "2 ảnh (webp) + video (80MB)", ok: true }],
+    // contentIssue: "MISMATCH - cần viết lại nội dung",
+  },
+  {
+    id: "3.3",
+    sectionLabel: "PHẦN 3.3",
+    title: "Tuyên truyền chính sách & Tình nguyện cộng đồng",
+    member: "Ý Như",
+    memberFull: "Nguyễn Đình Ý Như",
+    duration: 2700,
+    durationSec: 90,
+    timeStart: "10:00",
+    timeEnd: "11:30",
+    color: "#C2410C",
+    memberColor: "#C2410C",
+    bgColor: "#FFF7ED",
+    cards: [
+      { label: "CT MTQG 2021-2030", detail: "Hỗ trợ đất ở, nhà ở, nước sinh hoạt (Hà Giang, Cao Bằng, Kon Tum)" },
+      { label: "Mùa hè xanh ĐHKHTN", detail: "Đồng Tháp, Vĩnh Long - phổ cập tin học, khảo sát nguồn nước" },
+      { label: "SV lan tỏa", detail: "Thông tin qua MXH + đợt tình nguyện, mang kiến thức chuyên môn" },
+    ],
+    images: [
+      { src: "../media/T3-3/img1.jpg", alt: "Ảnh 1" },
+      { src: "../media/T3-3/img2.jpg", alt: "Ảnh 2" },
+    ],
+    citation: "GT (2021) Ch.6, I.3b tr.210-212; QĐ 1719/QĐ-TTg; ĐHKHTN (2025)",
+    script: [
+      { label: "Tuyên truyền", detail: "đồng bào DTTS vùng sâu chưa nắm rõ chương trình hỗ trợ" },
+      { label: "CT MTQG 2021-2030", detail: "đất ở, nhà ở, nước sinh hoạt" },
+      { label: "Mùa hè xanh ĐHKHTN", detail: "Đồng Tháp, Vĩnh Long - phổ cập tin học, khảo sát nguồn nước" },
+    ],
+    scriptCitation: "GT (2021), Ch.6, I.3b tr.210-212; QĐ 1719/QĐ-TTg; ĐHKHTN (2025) Mùa hè xanh",
+    mediaStatus: [{ text: "2 ảnh + video (17MB)", ok: true }],
+    // contentIssue: "MISMATCH - cần viết lại nội dung",
+  },
+  {
+    id: "3.4",
+    sectionLabel: "PHẦN 3.4",
+    title: "Tổng kết & liên hệ bản thân",
+    member: "Nhân",
+    memberFull: "Nguyễn Hữu Thiện Nhân",
+    duration: 2700,
+    durationSec: 90,
+    timeStart: "11:30",
+    timeEnd: "13:00",
+    color: "#D97706",
+    memberColor: "#D97706",
+    bgColor: "#EDE8E0",
+    quote: "\"Môi trường ĐH = hình ảnh thu nhỏ của cộng đồng 54 dân tộc\"",
+    cards: [
+      { label: "Ví dụ cụ thể", detail: "Nhóm trưởng phân công 9 thành viên từ nhiều vùng miền" },
+      { label: "Thực hành nguyên tắc", detail: "Bình đẳng, đoàn kết, tương trợ, giúp nhau cùng phát triển" },
+      { label: "Hành động nhỏ hàng ngày", detail: "Xây dựng đoàn kết từ những việc làm cụ thể trong nhóm/lớp" },
+    ],
+    images: [],
+    citation: "GT CNXHKH (2021) Ch.6, I.3a tr.205-206; Văn kiện ĐH XII tr.164-165",
+    script: [
+      { label: "Môi trường ĐH", detail: "hình ảnh thu nhỏ cộng đồng 54 dân tộc" },
+      { label: "Ví dụ", detail: "nhóm trưởng phân công 9 thành viên = thực hành đoàn kết" },
+      { label: "Nguyên tắc", detail: "bình đẳng, đoàn kết, tương trợ, giúp nhau cùng phát triển" },
+    ],
+    scriptCitation: "GT CNXHKH (2021), Ch.6, I.3a tr.205-206; Văn kiện ĐH XII tr.164-165",
+    mediaStatus: [{ text: "Chưa có video + ảnh (T3-4 empty)", ok: false }],
+  },
+  {
+    id: "conclusion",
+    sectionLabel: "KẾT",
+    title: "Cảm ơn thầy/cô đã lắng nghe",
+    member: "",
+    memberFull: "",
+    duration: 900,
+    durationSec: 30,
+    timeStart: "13:00",
+    timeEnd: "13:30",
+    color: "#111827",
+    memberColor: "#111827",
+    bgColor: "#F7F3EE",
+    cards: [],
+    images: [],
+    citation: "",
+    script: [],
+    scriptCitation: "",
+    mediaStatus: [],
+  },
+];
+
+export const TIMELINE_GROUPS = [
+  { label: "Lý luận (35%)", color: "#FEF3C7" },
+  { label: "Thực tiễn (14%)", color: "#DCFCE7" },
+  { label: "Trách nhiệm SV (50%)", color: "#FCE7F3" },
+  { label: "Mở/Kết", color: "#F7F3EE" },
+];

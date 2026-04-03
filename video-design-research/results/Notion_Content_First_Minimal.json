@@ -1,0 +1,115 @@
+{
+  "name": "Notion / Content-First Minimal",
+  "summary": "Ultra-clean whitespace, monochrome + single accent. Maximum content focus, low effort",
+  "color_palette": {
+    "primary": "#37352F (Notion's default text color - warm dark brown-gray)",
+    "secondary": "#787774 (Notion's secondary/muted text)",
+    "accent": "#2EAADC (Notion blue) or single accent choice - could use #B91C1C (Vietnam red) for cultural fit",
+    "surface": "#FFFFFF (pure white) or #FBFBFA (Notion's warm white)",
+    "text": "#37352F (warm near-black)",
+    "notes": "Notion's palette is deliberately restrained - near-monochrome with tiny color touches. The system uses 10 muted colors (brown, orange, yellow, green, blue, purple, pink, red, grey) but always desaturated. Icon colors are slightly more saturated than text colors."
+  },
+  "typography": {
+    "headline_font": "Be Vietnam Pro Bold/SemiBold (sans-serif, matches Notion's clean sans aesthetic)",
+    "body_font": "Be Vietnam Pro Regular (already in project)",
+    "size_scale": "Headlines 48-56px, subheadings 36-40px, body 28-32px, captions 24px",
+    "weights": "Headlines: SemiBold/Bold (600-700), body: Regular (400), emphasis: Medium (500)",
+    "vietnamese_support": "Excellent - Be Vietnam Pro is purpose-built for Vietnamese. Notion's native fonts (system sans-serif stack) have variable Vietnamese support.",
+    "notes": "Notion uses a system font stack: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, etc. For this project, Be Vietnam Pro achieves the same clean sans-serif feel while guaranteeing Vietnamese diacritics quality. Only one font family needed - differentiation comes from weight and size only."
+  },
+  "animation_style": {
+    "approach": "Minimal, functional transitions - content appears, not performs",
+    "spring_config": "Quick, snappy (mass: 1, damping: 30, stiffness: 200) - elements appear fast without lingering",
+    "entrance_patterns": "Simple fade-in, slight upward slide (8-16px). No stagger, no parallax. Content blocks appear as units.",
+    "motion_budget": "Very low - animations are utilitarian. The design philosophy is that motion should never distract from reading.",
+    "notes": "Notion's own UI uses near-invisible transitions. This translates to video as quick, unnoticeable entrances. Risk: may feel too static for a 13.5 min video."
+  },
+  "projector_readability": {
+    "contrast_ratio": "Excellent (~14:1 for #37352F on #FFFFFF)",
+    "minimum_font_sizes": "Easily achieved - content-first approach naturally prioritizes readable text sizes",
+    "color_washout_resistance": "Excellent - monochrome palette with high contrast is the most projector-resistant approach",
+    "concerns": "Pure white (#FFFFFF) background may cause glare on projectors. Slight warm tint (#FBFBFA or project's #F7F3EE) is better."
+  },
+  "wcag_contrast_score": {
+    "primary_text_on_bg": "AAA (~14:1 for #37352F on #FFFFFF)",
+    "accent_on_bg": "AA (~3.5:1 for #2EAADC on #FFFFFF - borderline). If using red accent #B91C1C: AA (~5.7:1)",
+    "projector_degradation": "After 20-30% degradation, body text remains AAA. Blue accent may drop below AA. Red accent stays AA.",
+    "notes": "Strongest contrast scores of any candidate due to near-monochrome design. The only risk is accent color on white."
+  },
+  "projector_degradation_resistance": {
+    "rating": "Excellent",
+    "strengths": "High-contrast monochrome is the gold standard for projector resistance. No subtle color gradients to wash out. No thin decorative lines to disappear. Content hierarchy relies on size and weight, not color.",
+    "weaknesses": "Design may look overly plain on a projector - the subtle sophistication of Notion's whitespace-driven design requires a high-quality display to appreciate. On a classroom projector, it may just look... empty."
+  },
+  "vietnamese_diacritics_rendering": {
+    "quality": "Excellent",
+    "details": "Single font family (Be Vietnam Pro) purpose-built for Vietnamese. Large font sizes with generous line-height (1.6-1.8 as Notion uses). No decorative fonts that might clip diacritics. Stacked marks (ượ, ễ, ắ) render cleanly at all sizes down to 24px.",
+    "recommendation": "Best-in-class for Vietnamese text rendering. No compromises needed."
+  },
+  "cultural_fit": {
+    "alignment": "Low",
+    "analysis": "Notion aesthetic is a Silicon Valley product design language. It communicates tech-startup minimalism, not Vietnamese academic seriousness. For a topic on national unity (dai doan ket dan toc), the sterile minimalism feels emotionally cold and culturally neutral to the point of being culturally absent.",
+    "positives": "Clean, professional, lets content speak for itself. Does not actively clash with any cultural context.",
+    "negatives": "No Vietnamese cultural identity whatsoever. The aesthetic is distinctly Western tech. For a course on scientific socialism, the Silicon Valley aesthetic carries ironic ideological tension."
+  },
+  "cultural_semiotics": {
+    "symbols_invoked": "Silicon Valley tech culture, startup minimalism, digital productivity tools",
+    "vietnamese_resonance": "None - this is explicitly a Western tech aesthetic. The monochrome palette carries no Vietnamese cultural meaning.",
+    "adaptation_needed": "Swapping Notion blue for Vietnam red (#B91C1C) as the single accent adds minimal cultural signal. Would need Vietnamese imagery or layout patterns to create any cultural connection.",
+    "risk": "May read as 'student used a template' rather than 'student designed for the topic'"
+  },
+  "teacher_perception_signal": {
+    "signal": "Low effort, minimal investment in visual design",
+    "positive": "Content-focused approach signals that student prioritized substance over style - potentially good for a theory course",
+    "negative": "May look like the student did not invest effort in the video format (15% of rubric). Minimal design can be mistaken for lazy design. Teacher may not distinguish 'intentional minimalism' from 'did not try'.",
+    "risk_level": "High - the format rubric explicitly rewards visual quality, and minimal design scores poorly on perceived effort"
+  },
+  "rubric_alignment": {
+    "format_15pct": "Weak - minimalist design may not score well on 'format' criteria that reward visual effort and polish",
+    "theory_35pct": "Strong - maximum space for theoretical text. Clean typography hierarchy supports dense argumentation.",
+    "application_50pct": "Medium - clean layout works for text-heavy application analysis but lacks visual tools for data presentation. Charts and diagrams would need to be added separately.",
+    "overall": "Optimized for content delivery but may sacrifice format points. Net effect depends on whether theory+application scores outweigh format loss."
+  },
+  "content_density_capacity": {
+    "words_per_frame": "High (120-180 words at readable sizes). Content-first design maximizes usable text area.",
+    "data_viz_support": "Medium - clean backgrounds make charts readable, but the minimal aesthetic doesn't naturally include data viz components. Would need to add them as standalone elements.",
+    "theory_density": "Excellent - this is what the design is built for. Long-form text with clear hierarchy is Notion's core strength.",
+    "notes": "Highest content density of all candidates. If the rubric rewards content depth, this design maximizes the canvas for it."
+  },
+  "production_effort": {
+    "level": "Very Low",
+    "migration_work": "Minimal - strip existing design back to basics. Remove 3D background, decorative elements, complex animations. Keep card-based layout but simplify borders and shadows.",
+    "new_components": "Almost none - existing components with stripped-down styling. Possibly a simple divider/separator component.",
+    "time_estimate": "0.5-1 day to migrate existing 8 sections (mostly removing complexity)"
+  },
+  "remotion_implementation_complexity": {
+    "css_needs": "Simple - basic flexbox/grid, no blend modes, no clip-path, no complex gradients",
+    "threejs": "Not needed - remove existing Three.js background entirely, simplifying render pipeline significantly",
+    "render_performance": "Excellent - minimal CSS, no 3D, simple animations = fast renders",
+    "computation_cost": "Very low - simple fade/slide animations, no per-frame interpolation of multiple elements",
+    "difficulty": "Very Low - simplest implementation of all candidates"
+  },
+  "distraction_level": "Very Low - design is intentionally invisible. All attention goes to content. Risk of being so invisible that viewers lose engagement over 13.5 minutes.",
+  "differentiation": "Very Low - looks like a stripped-down default template. Will not stand out among other student presentations. Multiple groups likely have similarly minimal designs.",
+  "temporal_coherence": {
+    "consistency": "Excellent - uniform design system makes all sections look cohesive by default",
+    "section_transitions": "Simple, consistent transitions maintain visual continuity across all 8 sections",
+    "speaker_identity": "MemberPiP works naturally in minimal layouts - clean containment without visual clutter",
+    "mitigation": "No mitigation needed - temporal coherence is a natural strength of minimal design"
+  },
+  "dark_vs_light_mode_viability": "Naturally light-mode. Pure white or warm white background is the default Notion aesthetic. Light mode is ideal for projector. Dark mode is technically possible (Notion supports it) but loses the 'paper-like' quality that defines the style.",
+  "precedent": {
+    "examples": [
+      "Notion's own product interface and marketing materials",
+      "Linear.app (minimal productivity tool UI)",
+      "Stripe's documentation pages (content-first, minimal decoration)",
+      "Bear notes app (clean markdown rendering)",
+      "Dropbox Paper presentations"
+    ],
+    "in_academic_context": "Common but unremarkable. Many academic presentations use minimal white-background designs by default (Google Slides default theme, etc.).",
+    "in_vietnamese_context": "Vietnamese students commonly use minimal white-background presentations. This would blend in rather than stand out."
+  },
+  "uncertain": [
+    "wcag_contrast_score"
+  ]
+}

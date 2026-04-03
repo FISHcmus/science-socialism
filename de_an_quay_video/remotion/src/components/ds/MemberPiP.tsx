@@ -1,5 +1,5 @@
 import React from "react";
-import { COLORS, FONT, GOLD_RING, GRADIENTS, TEXT_SHADOW } from "./tokens";
+import { COLORS, GOLD_RING, GRADIENTS, TEXT_SHADOW } from "./tokens";
 
 export interface MemberPiPProps {
   name: string;
@@ -28,22 +28,15 @@ export function MemberPiP({
 
   return (
     <div
-      style={{
-        width,
-        height,
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        opacity,
-        flexShrink: 0,
-      }}
+      className="flex flex-col items-center shrink-0"
+      style={{ width, height, opacity }}
     >
       {/* Video area with gold ring border */}
-      <div style={{ position: "relative", width: 440, height: videoHeight }}>
+      <div className="relative" style={{ width: 440, height: videoHeight }}>
         {/* Glow */}
         <div
+          className="absolute"
           style={{
-            position: "absolute",
             inset: -3,
             filter: "blur(10px)",
             background: GOLD_RING.glow,
@@ -54,18 +47,13 @@ export function MemberPiP({
 
         {/* Clip container */}
         <div
-          style={{
-            position: "relative",
-            overflow: "hidden",
-            borderRadius,
-            width: 440,
-            height: videoHeight,
-          }}
+          className="relative overflow-hidden"
+          style={{ borderRadius, width: 440, height: videoHeight }}
         >
           {/* Rotating conic gradient border */}
           <div
+            className="absolute"
             style={{
-              position: "absolute",
               width: "300%",
               height: "300%",
               top: "-100%",
@@ -77,60 +65,29 @@ export function MemberPiP({
 
           {/* Inner plate */}
           <div
+            className="absolute flex items-center justify-center overflow-hidden"
             style={{
-              position: "absolute",
               inset: borderWidth,
               borderRadius: Math.max(0, borderRadius - 1),
-              overflow: "hidden",
-              background: GRADIENTS.darkRadial,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
+              background: GRADIENTS.lightRadial,
             }}
           >
             {src ? (
               <video
                 src={src}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  display: "block",
-                }}
+                className="w-full h-full object-cover block"
               />
             ) : (
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  textAlign: "center",
-                  padding: 32,
-                  gap: 16,
-                }}
-              >
+              <div className="flex flex-col items-center justify-center text-center p-8 gap-4">
                 <div
-                  style={{
-                    fontSize: 32,
-                    color: COLORS.lightGold,
-                    fontFamily: FONT,
-                    fontWeight: "bold",
-                    textShadow: TEXT_SHADOW,
-                    lineHeight: 1.3,
-                  }}
+                  className="text-[32px] text-ds-light-gold font-sans font-bold leading-snug"
+                  style={{ textShadow: TEXT_SHADOW }}
                 >
                   Chèn video
                 </div>
                 <div
-                  style={{
-                    fontSize: 28,
-                    color: COLORS.body,
-                    fontFamily: FONT,
-                    fontWeight: 400,
-                    textShadow: TEXT_SHADOW,
-                    lineHeight: 1.3,
-                  }}
+                  className="text-[28px] text-ds-body font-sans font-normal leading-snug"
+                  style={{ textShadow: TEXT_SHADOW }}
                 >
                   {name}
                 </div>
@@ -141,37 +98,17 @@ export function MemberPiP({
       </div>
 
       {/* Name + section label below video */}
-      <div
-        style={{
-          marginTop: 24,
-          textAlign: "center",
-          display: "flex",
-          flexDirection: "column",
-          gap: 8,
-        }}
-      >
+      <div className="mt-6 text-center flex flex-col gap-2">
         <div
-          style={{
-            fontSize: 32,
-            color: COLORS.white,
-            fontFamily: FONT,
-            fontWeight: "bold",
-            textShadow: TEXT_SHADOW,
-            lineHeight: 1.2,
-          }}
+          className="text-[32px] text-ds-white font-sans font-bold leading-tight"
+          style={{ textShadow: TEXT_SHADOW }}
         >
           {name}
         </div>
         {sectionLabel && (
           <div
-            style={{
-              fontSize: 24,
-              color: COLORS.muted,
-              fontFamily: FONT,
-              fontWeight: 400,
-              textShadow: TEXT_SHADOW,
-              lineHeight: 1.2,
-            }}
+            className="text-2xl text-ds-muted font-sans font-normal leading-tight"
+            style={{ textShadow: TEXT_SHADOW }}
           >
             {sectionLabel}
           </div>

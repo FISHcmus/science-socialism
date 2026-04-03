@@ -1,0 +1,84 @@
+topic: "Best design system/theme for Vietnamese academic presentation video"
+context:
+  medium: Remotion React video, 1920x1080, 30fps, 13.5 min
+  projection: Classroom projector (washes out darks, degrades contrast 20-30%)
+  subject: Vietnamese national unity (CNXHKH - Scientific Socialism)
+  rubric: format 15% + theory 35% + application 50%
+  audience: One teacher grading
+  font: Be Vietnam Pro (Vietnamese diacritics optimized)
+
+items:
+  # Original 10
+  - id: 1
+    name: "Vietnamese Government/Institutional"
+    summary: "Red + gold on white, formal, mirrors official documents and flag"
+  - id: 2
+    name: "Vietnamese Editorial Modern"
+    summary: "Vietnam red + amber-gold on warm off-white, Be Vietnam Pro, clean cards"
+  - id: 3
+    name: "Bento"
+    summary: "Warm peach + soft blue on cream, modular grid cards, trendy tech"
+  - id: 4
+    name: "Minimal Academic"
+    summary: "Near-white bg, single accent color, heavy typography hierarchy, max whitespace"
+  - id: 5
+    name: "Apple Keynote Inspired"
+    summary: "Ultra-clean, large text on solid backgrounds, dramatic reveals"
+  - id: 6
+    name: "TED Talk Style"
+    summary: "Dark background, bright text, cinematic. Bold statements"
+  - id: 7
+    name: "Google Material Design"
+    summary: "Systematic color roles, elevation, motion specs"
+  - id: 8
+    name: "Slide:ology / Presentation Zen"
+    summary: "Content-driven, one idea per frame, full-bleed images, minimal text"
+  - id: 9
+    name: "Corporate Vietnam"
+    summary: "Modern Vietnamese corporate identity (Vietcombank/Vingroup style)"
+  - id: 10
+    name: "Chalkboard/University"
+    summary: "Dark green or navy bg, handwritten accents, academic warmth"
+
+  # Supplementary from research
+  - id: 11
+    name: "Neubrutalism / Neo-Brutalist"
+    summary: "Bold primary colors, thick black borders, chunky shadows, flat pop-art. High contrast, projector-safe"
+  - id: 12
+    name: "Swiss International Typographic Style"
+    summary: "Mathematical grid, asymmetric layouts, sans-serif hierarchy through scale/weight. Academic pedigree"
+  - id: 13
+    name: "Glassmorphism / Frosted Glass"
+    summary: "Frosted-glass panels, backdrop-blur, layered depth. Already in GlassPanel component"
+  - id: 14
+    name: "Documentary / Broadcast News"
+    summary: "Lower thirds, speaker ID cards, chapter markers, film grain. Fits video medium naturally"
+  - id: 15
+    name: "Kinetic Typography / Motion-First"
+    summary: "Text as primary visual, animated word reveals, dramatic scale. Good for theory-heavy sections"
+  - id: 16
+    name: "Data Storytelling / Infographic"
+    summary: "One insight per visual, annotated charts, animated counters. Good for application rubric (50%)"
+  - id: 17
+    name: "Vietnamese Propaganda Poster Revival"
+    summary: "Reinterpreted socialist-realism motifs, bold red/gold, stars, lotus. Culturally resonant with CNXHKH"
+  - id: 18
+    name: "Restorative / Earthy Neutral (2026 Trend)"
+    summary: "Warm neutrals, earthy browns, natural greens, Transformative Teal. Grounded, trustworthy"
+  - id: 19
+    name: "Editorial / Magazine Layout"
+    summary: "Asymmetric grids, text overlapping images, pull quotes. Premium sophisticated feel"
+  - id: 20
+    name: "Notion / Content-First Minimal"
+    summary: "Ultra-clean whitespace, monochrome + single accent. Maximum content focus, low effort"
+  - id: 21
+    name: "Retro-Futurism / Mid-Century Modern"
+    summary: "Geometric shapes, vintage palettes (mustard/teal/coral). Distinctive but culturally disconnected"
+  - id: 22
+    name: "Playful / Kidult (2026 Trend)"
+    summary: "Stickers, doodles, friendly rounded shapes, pastel. Too informal for CNXHKH"
+
+execution:
+  batch_size: 4
+  items_per_agent: 6
+  output_dir: ./results

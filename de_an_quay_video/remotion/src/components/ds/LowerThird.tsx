@@ -1,4 +1,4 @@
-import { COLORS, FONT, TEXT_SHADOW } from "./tokens";
+import { TEXT_SHADOW } from "./tokens";
 import { GlassPanel } from "./GlassPanel";
 
 export interface LowerThirdProps {
@@ -16,58 +16,30 @@ export function LowerThird({
 }: LowerThirdProps) {
   return (
     <div
+      className="inline-flex flex-row items-stretch gap-4 font-sans py-3"
       style={{
-        display: "inline-flex",
-        flexDirection: "row",
-        alignItems: "stretch",
-        gap: "16px",
-        fontFamily: FONT,
         opacity,
         transform: `translateY(${translateY}px)`,
-        padding: "12px 0",
       }}
     >
       {/* Gold left accent bar with glow */}
       <div
-        style={{
-          width: "4px",
-          height: "60px",
-          backgroundColor: COLORS.gold,
-          borderRadius: "2px",
-          flexShrink: 0,
-          boxShadow: "0 0 8px rgba(232, 175, 72, 0.3)",
-        }}
+        className="w-1 h-[60px] bg-ds-gold rounded-sm shrink-0"
+        style={{ boxShadow: "0 0 8px rgba(232, 175, 72, 0.3)" }}
       />
 
       {/* Text block in dark glass */}
       <GlassPanel padding="12px 20px" borderRadius={12}>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            gap: "4px",
-          }}
-        >
+        <div className="flex flex-col justify-center gap-1">
           <div
-            style={{
-              color: COLORS.gold,
-              fontSize: "32px",
-              fontWeight: "bold",
-              lineHeight: 1.2,
-              textShadow: TEXT_SHADOW,
-            }}
+            className="text-ds-gold text-[32px] font-bold leading-tight"
+            style={{ textShadow: TEXT_SHADOW }}
           >
             {name}
           </div>
           <div
-            style={{
-              color: COLORS.body,
-              fontSize: "24px",
-              fontWeight: 400,
-              lineHeight: 1.3,
-              textShadow: TEXT_SHADOW,
-            }}
+            className="text-ds-body text-2xl font-normal leading-snug"
+            style={{ textShadow: TEXT_SHADOW }}
           >
             {role}
           </div>

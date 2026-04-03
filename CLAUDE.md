@@ -8,13 +8,20 @@ Course materials for **BAA00103 — Chủ nghĩa xã hội khoa học (Scientifi
 
 ## Structure
 
-- **Root:** Source PDFs and DOCX files (syllabus, textbook, assessment docs, group presentation templates)
-- **`markdown/`:** Extracted markdown versions of course content
-  - `chuong1.md` through `chuong7.md` — 7 textbook chapters
-  - `de-cuong-chi-tiet.md` — Full course syllabus
-  - `cach-thuc-danh-gia.md` — Grading breakdown
-  - `chu-de-thuyet-trinh-nhom.md` — Group presentation topics & rubric
+- **`extracted_content/`:** Markdown versions of course content
+  - `chuong1.md` through `chuong7.md` - 7 textbook chapters
+  - `de-cuong-chi-tiet.md` - Full course syllabus
+  - `cach-thuc-danh-gia.md` - Grading breakdown
+  - `chu-de-thuyet-trinh-nhom.md` - Group presentation topics & rubric
 - **`digital_full.txt`:** Full plaintext extraction from the digital PDF textbook (via `pdftotext`)
+- **`official_documents/`:** Source PDFs (syllabus, textbook, grading criteria, presentation topics)
+- **`script_from_member/`:** Member scripts (.docx originals + `_shorten.md` processed versions + unified `video_script.md`)
+- **`video-design-research/`:** Design system research (22 candidates evaluated across 19 fields, JSON results + report)
+- **`de_an_quay_video/`:** Video production
+  - `PLAN.md` - production plan
+  - `media/` - member-submitted images + self-recorded videos (organized by task: `T1-1/` through `T3-4/`)
+  - `remotion/` - Remotion (React) video project (see section below)
+- **`baigiang/`**, **`baigiang_pptx/`:** Lecture slides (scanned PDFs and PPTX)
 
 ## Key Source PDFs
 
@@ -43,7 +50,7 @@ pdftotext "2.GIAO TRINH CHXHKH KHONG CHUYEN.pdf" output.txt
 - **Cuối kỳ (final exam): 50%** — Essay, 60 min, paper materials allowed, no internet devices
 - **Group presentation:** Video 7–15 min, due Week 8. Rubric: format 15% + theory 35% + application 50%
 
-## Group Presentation (Nhóm 6)
+## Group Presentation (Nhóm 7)
 
 - **Topic:** Chủ đề 6 - Xây dựng khối đại đoàn kết toàn dân tộc
 - **Management spreadsheet:** `CNXHKH - Quản lý nhóm.xlsx`
@@ -64,11 +71,37 @@ All course content is in **Vietnamese**. Preserve Vietnamese diacritics exactly 
 
 Use `/tw` skill for all task tracking. Project: `hcmus.cnxhkh.video`.
 
+## MCP Servers Required
+
+This project requires the following MCP servers. On a new machine, create `.mcp.json` (gitignored) with:
+
+```json
+{
+  "mcpServers": {
+    "serena": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "--from", "git+https://github.com/oraios/serena",
+        "serena", "start-mcp-server",
+        "--context", "claude-code",
+        "--project", "<absolute-path-to-science-socialism>"
+      ]
+    }
+  }
+}
+```
+
+Additional MCP servers configured globally (`~/.claude/.mcp.json`):
+- **context7** — library documentation lookup
+- **chrome-devtools** — visual QA via remote browser on asus
+- **jetbrains** — IDE integration (via JetBrains Gateway plugin)
+
 ## Code Editing Tools (MANDATORY)
 
 **CRITICAL: For ALL code files (.ts, .tsx, .js, .jsx, .css), you MUST use Serena MCP and JetBrains MCP tools instead of built-in Read/Edit/Grep/Write. Built-in tools are ONLY for non-code files (markdown, PDFs, JSON config, etc.).**
 
-This is not optional. If you catch yourself using `Read` on a `.tsx` file or `Edit` on a `.ts` file, STOP and use the correct tool instead. The projectPath for all JetBrains calls is `/data/nextcloud/nhannht/files/documents/hcmus/semester2/science-socialism`.
+This is not optional. If you catch yourself using `Read` on a `.tsx` file or `Edit` on a `.ts` file, STOP and use the correct tool instead. The projectPath for all JetBrains calls is `/home/ubuntu/nhannht-projects/hcmus/semester2/science-socialism`.
 
 ### When to use which tool
 
@@ -159,7 +192,7 @@ mcp__serena__search_for_pattern(
 
 **Always pass `projectPath`:**
 ```
-projectPath="/data/nextcloud/nhannht/files/documents/hcmus/semester2/science-socialism"
+projectPath="/home/ubuntu/nhannht-projects/hcmus/semester2/science-socialism"
 ```
 
 **Inspections and validation:**
@@ -234,12 +267,27 @@ Remotion-based video composition for the group presentation. 13.5 min at 30fps.
 - **Render:** `bun run render` (full MP4) or `bun run render:draft` (half-res, lower quality)
 - **Typecheck:** `bunx tsc --noEmit`
 
+### Tailwind CSS Integration
+- Remotion uses **webpack** internally, NOT Vite. Use `@remotion/tailwind` + `enableTailwind()` in `remotion.config.ts`
+- `@tailwindcss/vite` does NOT work for Remotion Studio/render — only for Ladle/preview which use Vite
+- **AbsoluteFill inline override:** AbsoluteFill sets `flexDirection: "column"` as inline style. Tailwind `flex-row` CANNOT override it. Must use `style={{ flexDirection: "row" }}`. Other flex props (`items-center`, `justify-center`) work fine in className.
+
+### Theme Architecture (Modern Vietnamese Light)
+- **Light theme with warm off-white `#F7F3EE` background** — better for classroom projectors (projectors produce light; dark bg becomes washed-out gray)
+- **Font:** Be Vietnam Pro (sans-serif) — purpose-built for Vietnamese diacritics. Loaded via `@remotion/google-fonts/BeVietnamPro`
+- **Accents:** Vietnam red `#B91C1C` + amber-gold `#D97706`. Red for structure (card borders), gold for decoration (ring borders)
+- **Token inversion trick:** `COLORS.white = "#111827"` (dark text). Name kept for zero-refactor, value inverted.
+- **`TEXT_SHADOW = "none"`** — all 50+ textShadow application sites become no-ops without code removal
+- **Overlay uses fixed `#000000`**, NOT theme color — vignettes must always darken regardless of theme
+- **GRADIENTS.goldConic kept as-is** — gold ring works on both dark and light backgrounds
+- Design system docs: `de_an_quay_video/remotion/src/components/ds/DESIGN_SYSTEM.md`
+
 ### Architecture
 - **Composition is 1920x1080** (defined in `Root.tsx`). FIRST STEP for any layout work: verify this.
 - **AbsoluteFill** defaults to `flexDirection: "column"`. For horizontal layouts, MUST explicitly set `flexDirection: "row"`.
 - `src/MainVideo.tsx` - composition root, maps SECTIONS to Sequence components
 - `src/constants.ts` - defines COLORS, FONT, TEXT_SHADOW, SECTIONS, MEMBER_COLORS, REGIONS
-- `src/components/ds/` - design system components (SectionTitle, IconGrid, FlowChart, BarChart, CountUpNumber, TypewriterText, LowerThird, GlassPanel, MemberPlaceholder, Overlay) and tokens
+- `src/components/ds/` - design system (15 components: tokens, SectionTitle, IconGrid, FlowChart, BarChart, CountUpNumber, TypewriterText, LowerThird, GlassPanel, MemberPlaceholder, MemberPiP, MemberVideoPlaceholder, ArtDecoImage, CitationFooter, FilmGrain, Overlay) + 15 Ladle stories
 - `src/components/shared/Background3D.tsx` - 3D background layer using `@remotion/three`
 - `src/components/shared/VietnamMap.tsx` - Remotion-specific map loader (uses delayRender/staticFile)
 - `src/components/sections/` - one component per member section
@@ -251,10 +299,31 @@ Remotion-based video composition for the group presentation. 13.5 min at 30fps.
 ## Component Development Workflow
 
 When changing shared/DS components (adding dependencies, changing interfaces, redesigning visuals):
-1. **Develop in isolation first** - update the DS component + its Storybook story
-2. **Verify in Storybook** - visually confirm the component renders correctly before touching consumers
+1. **Develop in isolation first** - update the DS component + its Ladle story (`.stories.tsx`)
+2. **Verify in Ladle** (`bun run ladle`) - visually confirm the component renders correctly before touching consumers
 3. **Only then integrate** - update section files / product code to use the new component
-4. Never skip straight to injecting changes into product code without Storybook verification
+4. Never skip straight to injecting changes into product code without Ladle verification
+
+Note: Ladle stories use `useRingAngle` hook (rAF-based) for gold ring rotation. Remotion sections compute ringAngle from frame/fps directly.
+
+## Media Assets (de_an_quay_video/media/)
+
+Member-submitted images and self-recorded videos, organized by task ID:
+
+| Dir | Member | Contents |
+|-----|--------|----------|
+| T1-1/ | Thục Nhi | 2 images + video (.mov) |
+| T1-2/ | Châu Nhi | 3 images + video |
+| T1-3/ | Phụng Nhi | 2 images + video |
+| T2-1/ | Huỳnh Nhi | 3 images + video |
+| T2-2/ | Phú | video only |
+| T3-1/ | Quỳnh Như | video only |
+| T3-2/ | Tố Như | 2 images (webp) + video |
+| T3-3/ | Ý Như | 2 images + video |
+| T3-4/ | Nhân | **empty** (needs own recording) |
+
+Source: Google Sheets spreadsheet with hyperlinks + smart chips (chipRuns).
+These files should NOT be tracked in git (large video files 12-100MB each).
 
 ## Projector Readability (MANDATORY)
 
@@ -270,8 +339,10 @@ This video will be projected on a **classroom projector**. All sizing and stylin
   - MemberPiP name: 32px
   - MemberPiP section label: 24px
 - **Always calculate layout math BEFORE writing code.** Write down the pixel budget: screen dimensions → column widths → padding → usable area → element heights. Verify total fits before coding.
-- **High contrast:** dark backgrounds (opacity >= 0.85), light text, TEXT_SHADOW on all text
-- **3D background meshes** are dimmed ~50% so text remains readable
+- **Font: Be Vietnam Pro** (sans-serif) — engineered for Vietnamese diacritics (ươ, ượ, ễ, ắ). Serif fonts have Vietnamese diacritics as afterthought. At 28px on a projector from 10m, this matters.
+- **Light background preferred** — projectors produce light, so whites are bright/accurate but dark backgrounds render as washed-out gray. `#F7F3EE` warm off-white is the base.
+- **High contrast:** dark text on light background, amber-gold accents for emphasis
+- **3D background meshes** at low opacity (0.1-0.18) so text remains readable on light bg
 - Projectors wash out colors - avoid subtle color differences or thin lines < 2px
 
 ## Style Preferences

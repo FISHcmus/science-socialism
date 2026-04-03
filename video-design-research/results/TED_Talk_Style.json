@@ -1,0 +1,131 @@
+{
+  "name": "TED Talk Style",
+  "summary": "Dark background, bright text, cinematic. Bold statements",
+
+  "color_palette": {
+    "primary": "#FFFFFF (white text, primary content carrier)",
+    "secondary": "#EF4444 (TED red for emphasis and accents)",
+    "accent": "#FBBF24 (warm yellow for highlights and data viz)",
+    "surface": "#0F172A (dark slate-900 background)",
+    "surface_alt": "#1E293B (slate-800 for card/panel differentiation)",
+    "text": "#FFFFFF (white for primary text)",
+    "text_secondary": "#94A3B8 (slate-400 for secondary/caption text)"
+  },
+
+  "typography": {
+    "heading_font": "Be Vietnam Pro Bold (700) / ExtraBold (800)",
+    "body_font": "Be Vietnam Pro Regular (400) / Medium (500)",
+    "size_scale": {
+      "hero_quote": "64-72px (bold statement slides)",
+      "section_title": "52-56px",
+      "section_label": "32px",
+      "card_heading": "38px",
+      "body_text": "28-32px",
+      "citation": "24px"
+    },
+    "weights_used": "400, 500, 700, 800",
+    "vietnamese_diacritics": "Good - Be Vietnam Pro renders white-on-dark Vietnamese text well at large sizes; at body sizes (28px), white text diacritics can lose definition due to anti-aliasing bloom on projectors"
+  },
+
+  "animation_style": {
+    "approach": "Cinematic - slow fades, deliberate pacing, mood-shifting color transitions",
+    "entrance_pattern": "Slow opacity fade over 30-45 frames, text slides in from bottom; mood shifts from dark/moody to brighter as content develops",
+    "spring_config": "Not spring-based; use slow ease-in-out curves for cinematic gravity; linear fades for text",
+    "motion_budget": "Low-medium - motion is slow and deliberate, creating gravitas; fast animation would break the cinematic feel"
+  },
+
+  "projector_readability": {
+    "contrast_approach": "CRITICAL ISSUE: Dark backgrounds (#0F172A) will render as washed-out gray (#505050 or lighter) on classroom projectors. White text on projected gray has dramatically reduced contrast.",
+    "min_font_sizes": "Hero quotes at 64-72px survive projection degradation; body at 28px is at risk - white text at body sizes on projected gray background may become difficult to read from back of classroom.",
+    "color_washout": "SEVERE: The entire design depends on deep blacks that projectors cannot produce. TED red (#EF4444) will appear as a lighter, duller red. Yellow (#FBBF24) may remain visible but loses warmth. The dark, moody atmosphere that defines this style is impossible to reproduce with a classroom projector.",
+    "line_weight": "Glow effects and thin light-on-dark lines will bloom and blur on projection"
+  },
+
+  "wcag_contrast_score": {
+    "text_on_surface_screen": "#FFFFFF on #0F172A = 17.5:1 (AAA pass on screen)",
+    "text_on_surface_projected": "#FFFFFF on projected ~#505050 = approximately 6:1 (AA pass but reduced from AAA; further degrades in bright classroom)",
+    "red_on_dark": "#EF4444 on #0F172A = 5.5:1 (AA pass on screen, degrades to ~3:1 on projector)",
+    "secondary_text": "#94A3B8 on #0F172A = 7.2:1 (AAA on screen, degrades to ~3.5:1 on projector)",
+    "overall": "Excellent contrast on screen; degrades to marginal AA or below when projected in typical classroom conditions"
+  },
+
+  "projector_degradation_resistance": {
+    "rating": "Very low",
+    "details": "This style is fundamentally incompatible with classroom projectors. Edward Tufte and presentation experts consistently note that dark backgrounds fail on projectors because projectors produce light - they CAN make white very bright but CANNOT make black truly dark. The result: the moody, cinematic atmosphere becomes a washed-out gray mess. Perceived contrast drops 30-50%. Text that was crisp white-on-black becomes murky white-on-gray. All the dramatic impact evaporates. This style requires either a high-end LED wall, an OLED display, or a darkened room with a cinema-grade projector (10,000+ lumens) to work as intended."
+  },
+
+  "vietnamese_diacritics_rendering": {
+    "font_suitability": "Medium - white text on dark backgrounds causes anti-aliasing bloom where thin strokes (diacritics) appear to glow/spread, reducing crispness",
+    "line_height_needs": "line-height 1.5-1.6; light-on-dark text needs slightly more generous spacing for visual comfort",
+    "min_size_for_clarity": "32px minimum recommended for dark mode Vietnamese text (higher than light-mode 28px minimum) because anti-aliasing bloom reduces effective sharpness of diacritics"
+  },
+
+  "cultural_fit": {
+    "alignment": "Weak to medium - cinematic/dramatic style can convey the gravity of national unity, but the dark aesthetic conflicts with Vietnamese presentation norms",
+    "details": "TED Talk aesthetic communicates thought leadership and inspirational speaking. For a topic on national unity, the cinematic gravitas could enhance emotional impact of historical narrative or call-to-action moments. However, Vietnamese academic presentations typically use light, formal backgrounds. A fully dark presentation may feel out of place in a Vietnamese university classroom.",
+    "risk": "High projector risk AND cultural unfamiliarity in Vietnamese academic context. Teacher may find it impressive on a laptop screen but disappointing when projected in class."
+  },
+
+  "cultural_semiotics": {
+    "dark_background": "Cinematic authority, TED-style thought leadership, Western inspirational speaking",
+    "white_text": "Spotlight effect, revelation, truth emerging from darkness",
+    "red_accent": "Can map to TED brand or Vietnamese red - ambiguous",
+    "cinematic_mood": "Film, drama, emotional narrative - entertainment semiotics rather than academic",
+    "overall": "Western inspirational/entertainment semiotics; can work for emotional national unity narrative but feels imported"
+  },
+
+  "teacher_perception_signal": {
+    "signal": "Ambitious and cinematic, but potentially gimmicky for academic context",
+    "details": "Teacher recognizes the TED style immediately. Positive: students aimed for inspirational quality. Negative: if the projector fails to reproduce the dark aesthetic, it looks like a failed experiment. Teacher may also question whether cinematic style substitutes for academic rigor.",
+    "effort_perception": "High effort when it works; perceived as poor execution when projector degrades it"
+  },
+
+  "rubric_alignment": {
+    "format_15pct": "High risk/reward - spectacular if viewed on screen, disappointing on projector. Format score depends entirely on viewing conditions.",
+    "theory_35pct": "Weak - TED style uses sparse text (bold statements, not paragraphs). Dense socialist theory cannot be effectively presented in this format without excessive slide count.",
+    "application_50pct": "Medium - cinematic storytelling can enhance emotional impact of application examples, but data visualization on dark backgrounds is harder to read and design"
+  },
+
+  "content_density_capacity": {
+    "words_per_frame": "30-60 words - TED style is even sparser than Apple; emphasis on single powerful statements",
+    "data_viz_support": "Poor - charts on dark backgrounds require careful color management; gridlines, axes, and labels are harder to read; dark background data viz is a known accessibility challenge",
+    "theory_density": "Very low - fundamentally incompatible with dense academic text; would need to restructure all theory into bite-sized bold statements"
+  },
+
+  "production_effort": {
+    "migration_cost": "Very high - requires inverting the entire color system from light to dark, redesigning all components for dark mode, rebuilding animation system for cinematic pacing, restructuring content for sparse bold-statement format.",
+    "component_changes": "Complete rebuild - every DS component (GlassPanel, SectionTitle, IconGrid, FlowChart, BarChart) needs dark-mode variants; FilmGrain becomes irrelevant; Overlay needs inversion; need new CinematicQuote, MoodTransition, SpotlightReveal components"
+  },
+
+  "remotion_implementation_complexity": {
+    "css_needs": "Moderate - dark theme CSS, glow effects, text shadows for readability, gradient overlays",
+    "threejs_usage": "3D background could be repurposed as subtle particle/star field on dark background - moderate effort",
+    "render_performance": "Medium - dark backgrounds with glow effects and particle systems add render cost; many more frames needed due to slow cinematic pacing",
+    "overall": "High complexity - both technical (dark mode system, glow effects, particles) and content (restructuring all text for sparse format)"
+  },
+
+  "distraction_level": "Medium - the cinematic atmosphere itself draws attention; slow reveals create anticipation that may detract from content absorption",
+
+  "differentiation": "Very high - no Vietnamese student group uses TED-style dark cinematic presentations for political science; extremely memorable but extremely risky",
+
+  "temporal_coherence": {
+    "consistency": "Medium-high - dark background provides consistent backdrop but mood-shifting (dark to bright) across sections can feel disjointed",
+    "section_transitions": "Good - black slides are natural section breaks; cinematic dissolves work well",
+    "speaker_differentiation": "Difficult - limited accent color palette on dark background; neon-style member colors (pink, cyan, green) could work but clash with the serious tone"
+  },
+
+  "dark_vs_light_mode_viability": "Locked to dark mode by definition. Converting to light mode would transform it into a completely different style (Minimal Academic or Editorial). This is the fundamental problem: the style IS the dark background, and the dark background IS the projector problem.",
+
+  "precedent": {
+    "examples": [
+      "TED and TEDx conferences - the canonical reference (dimmed auditoriums with professional lighting)",
+      "Netflix documentary title cards - dark, cinematic, bold text",
+      "Obama Hope poster aesthetic - high contrast, dramatic, political",
+      "Some academic keynote speakers at international conferences",
+      "Duarte Design's TED slide guidelines (ted.com/pages/create-prepare-slides)"
+    ],
+    "notes": "TED itself advises: 'If you are using a dark or black background, make the text bold' and notes the importance of room lighting. TED venues use professional AV setups with controlled lighting. Classroom projectors in lit rooms are the opposite of TED viewing conditions. This style's entire value proposition depends on environmental conditions that a Vietnamese university classroom cannot provide."
+  },
+
+  "uncertain": ["wcag_contrast_score"]
+}

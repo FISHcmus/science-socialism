@@ -1,11 +1,7 @@
 import { AbsoluteFill, interpolate, useCurrentFrame, spring, useVideoConfig } from "remotion";
-import { COLORS, FONT, MEMBER_COLORS, TEXT_SHADOW } from "../../constants";
+import { COLORS, MEMBER_COLORS, TEXT_SHADOW } from "../../constants";
 import { SectionTitle, TypewriterText, MemberPlaceholder, Overlay, LowerThird } from "../ds";
 import { VietnamMap } from "../shared/VietnamMap";
-
-// Beat 1: 0-90    — SectionTitle "Giới thiệu chủ đề"
-// Beat 2: 90-150  — TypewriterText (left) + VietnamMap (right)
-// Beat 3: 150-750 — MemberPlaceholder "Nhân" + Overlay + LowerThird
 
 export const NhanIntro: React.FC = () => {
   const frame = useCurrentFrame();
@@ -50,7 +46,6 @@ export const NhanIntro: React.FC = () => {
     ? interpolate(memberLocal, [0, 20], [0, 1], { extrapolateRight: "clamp" })
     : 0;
   const memberScale = interpolate(memberSpring, [0, 1], [0.95, 1]);
-
   const memberRingAngle = memberLocal >= 0 ? (memberLocal / fps) * 80 : 0;
 
   const overlayLocal = frame - 150;
@@ -74,17 +69,13 @@ export const NhanIntro: React.FC = () => {
       {/* Beat 1: SectionTitle (frames 0-90) */}
       {frame < 90 && (
         <AbsoluteFill
-          style={{
-            background: "linear-gradient(135deg, #0a0e1a 0%, #1a1f3a 100%)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
+          className="flex items-center justify-center"
+          style={{ background: "linear-gradient(135deg, rgba(247,243,238,0.97) 0%, rgba(237,232,224,0.95) 100%)" }}
         >
           <SectionTitle
             title="Giới thiệu chủ đề"
             subtitle="Xây dựng khối đại đoàn kết toàn dân tộc"
-            sectionNumber="NHÓM 6"
+            sectionNumber="NHÓM 7"
             opacity={beat1Opacity}
             translateY={beat1TranslateY}
             accentWidth={beat1AccentWidth}
@@ -95,48 +86,24 @@ export const NhanIntro: React.FC = () => {
       {/* Beat 2: TypewriterText + VietnamMap (frames 90-150) */}
       {beat2Visible && (
         <AbsoluteFill
+          className="items-center justify-between"
           style={{
             opacity: beat2CombinedOpacity,
-            display: "flex",
             flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-between",
             padding: "60px 80px",
           }}
         >
           {/* Left: text content */}
-          <div
-            style={{
-              flex: 1,
-              paddingRight: 60,
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-            }}
-          >
+          <div className="flex-1 pr-[60px] flex flex-col justify-center">
             <div
-              style={{
-                fontSize: 24,
-                color: COLORS.gold,
-                fontFamily: FONT,
-                letterSpacing: 3,
-                marginBottom: 24,
-                textTransform: "uppercase",
-                textShadow: TEXT_SHADOW,
-              }}
+              className="text-2xl text-ds-gold font-sans tracking-[3px] mb-6 uppercase"
+              style={{ textShadow: TEXT_SHADOW }}
             >
-              Chủ đề 6 - Nhóm 6
+              Chủ đề 6 - Nhóm 7
             </div>
             <h2
-              style={{
-                fontSize: 48,
-                color: COLORS.white,
-                fontFamily: FONT,
-                fontWeight: "bold",
-                lineHeight: 1.4,
-                margin: "0 0 32px 0",
-                textShadow: TEXT_SHADOW,
-              }}
+              className="text-5xl text-ds-white font-sans font-bold leading-normal m-0 mb-8"
+              style={{ textShadow: TEXT_SHADOW }}
             >
               Xây dựng khối đại đoàn kết toàn dân tộc
             </h2>
@@ -151,14 +118,7 @@ export const NhanIntro: React.FC = () => {
           </div>
 
           {/* Right: Vietnam map */}
-          <div
-            style={{
-              flexShrink: 0,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
+          <div className="shrink-0 flex items-center justify-center">
             <VietnamMap
               highlightProvinces={[]}
               highlightColor={COLORS.vnRed}
@@ -181,7 +141,7 @@ export const NhanIntro: React.FC = () => {
             ringAngle={memberRingAngle}
           />
           <Overlay direction="bottom" opacity={overlayOpacity} />
-          <div style={{ position: "absolute", bottom: 60, left: 60 }}>
+          <div className="absolute bottom-[60px] left-[60px]">
             <LowerThird
               name="Nhân"
               role="Nhóm trưởng - Giới thiệu chủ đề"

@@ -1,4 +1,4 @@
-# Kịch bản video - Nhóm 6
+# Kịch bản video - Nhóm 7
 ## Chủ đề 6: Trách nhiệm của sinh viên trong việc góp phần xây dựng khối đại đoàn kết toàn dân tộc ở Việt Nam
 
 | Thời lượng | ~12 phút |
@@ -12,8 +12,8 @@
 
 | HÌNH ẢNH | LỜI THOẠI |
 |---|---|
-| Title card: "TRÁCH NHIỆM CỦA SINH VIÊN TRONG VIỆC GÓP PHẦN XÂY DỰNG KHỐI ĐẠI ĐOÀN KẾT TOÀN DÂN TỘC Ở VIỆT NAM" + tên nhóm 6, danh sách thành viên. Nhạc nền nhẹ. | *(không lời)* |
-| Nhân xuất hiện trước camera | Xin chào thầy/cô và các bạn. Nhóm 6 chúng em xin trình bày chủ đề "Trách nhiệm của sinh viên trong việc góp phần xây dựng khối đại đoàn kết toàn dân tộc ở Việt Nam." Trước hết, chúng em sẽ trình bày cơ sở lý luận từ môn Chủ nghĩa xã hội khoa học, tiếp đến là thực tiễn Việt Nam, và cuối cùng là trách nhiệm cụ thể mà mỗi sinh viên chúng em có thể thực hiện. |
+| Title card: "TRÁCH NHIỆM CỦA SINH VIÊN TRONG VIỆC GÓP PHẦN XÂY DỰNG KHỐI ĐẠI ĐOÀN KẾT TOÀN DÂN TỘC Ở VIỆT NAM" + tên nhóm 7, danh sách thành viên. Nhạc nền nhẹ. | *(không lời)* |
+| Nhân xuất hiện trước camera | Xin chào thầy/cô và các bạn. Nhóm 7 chúng em xin trình bày chủ đề "Trách nhiệm của sinh viên trong việc góp phần xây dựng khối đại đoàn kết toàn dân tộc ở Việt Nam." Trước hết, chúng em sẽ trình bày cơ sở lý luận từ môn Chủ nghĩa xã hội khoa học, tiếp đến là thực tiễn Việt Nam, và cuối cùng là trách nhiệm cụ thể mà mỗi sinh viên chúng em có thể thực hiện. |
 
 ---
 
@@ -141,7 +141,7 @@
 | Slide: "ĐOÀN KẾT TỪ GIẢNG ĐƯỜNG" | |
 | Nhân xuất hiện trước camera | Là sinh viên năm nhất tại ĐHKHTN, tôi nhận thấy môi trường đại học chính là hình ảnh thu nhỏ của cộng đồng 54 dân tộc cư trú đan xen mà giáo trình đề cập. Trong lớp tôi có bạn bè đến từ nhiều tỉnh thành, vùng miền khác nhau - mỗi người mang theo giọng nói, thói quen sinh hoạt và nền tảng văn hoá riêng. |
 | B-roll: cảnh lớp học, làm việc nhóm | Theo quan điểm của Đảng, đoàn kết dân tộc là sự đoàn kết giữa những người có cùng chung mục đích, và mục tiêu chung ấy chính là sức mạnh gắn kết. Trong môi trường đại học, mục tiêu chung của chúng tôi là học tập và phát triển bản thân. |
-| B-roll: nhóm 6 làm việc | Cụ thể, ngay trong bài thuyết trình nhóm này, tôi đã đảm nhận vai trò nhóm trưởng - phân công nhiệm vụ cho 9 thành viên, đảm bảo mỗi người đều có phần đóng góp phù hợp với khả năng. Quá trình làm việc nhóm đòi hỏi sự lắng nghe, tôn trọng ý kiến khác biệt và hỗ trợ lẫn nhau - đây chính là thực hành nguyên tắc "bình đẳng, đoàn kết, tương trợ, giúp nhau cùng phát triển" mà Đảng ta luôn nhất quán. |
+| B-roll: nhóm 7 làm việc | Cụ thể, ngay trong bài thuyết trình nhóm này, tôi đã đảm nhận vai trò nhóm trưởng - phân công nhiệm vụ cho 9 thành viên, đảm bảo mỗi người đều có phần đóng góp phù hợp với khả năng. Quá trình làm việc nhóm đòi hỏi sự lắng nghe, tôn trọng ý kiến khác biệt và hỗ trợ lẫn nhau - đây chính là thực hành nguyên tắc "bình đẳng, đoàn kết, tương trợ, giúp nhau cùng phát triển" mà Đảng ta luôn nhất quán. |
 | Nhân nhìn thẳng camera | Tôi tin rằng xây dựng đoàn kết không bắt đầu từ những điều lớn lao, mà từ chính những hành động nhỏ hàng ngày: chủ động giúp đỡ bạn học yếu hơn, tôn trọng sự khác biệt vùng miền, và cùng nhau hướng đến mục tiêu chung. Đó là cách mỗi sinh viên góp phần xây dựng khối đại đoàn kết từ giảng đường. |
 
 **Trích dẫn (Nhân):**
@@ -154,8 +154,8 @@
 
 | HÌNH ẢNH | LỜI THOẠI |
 |---|---|
-| Slide tổng kết: 3 phần chính | Nhân: Dựa trên cơ sở lý luận của chủ nghĩa Mác - Lênin về dân tộc và tôn giáo, nhóm 6 đã liên hệ với thực tiễn Việt Nam và thể hiện trách nhiệm cụ thể của sinh viên: từ giao lưu văn hóa, nhận diện tin giả, tuyên truyền chính sách, tình nguyện vùng DTTS, đến thực hành đoàn kết ngay trong giảng đường. Xây dựng khối đại đoàn kết toàn dân tộc không phải là khẩu hiệu xa vời mà bắt đầu từ chính hành động hàng ngày của mỗi chúng ta. |
-| End card: tên nhóm, thành viên, lời cảm ơn. Nhạc nền. | Nhóm 6 xin cảm ơn thầy/cô và các bạn đã theo dõi. |
+| Slide tổng kết: 3 phần chính | Nhân: Dựa trên cơ sở lý luận của chủ nghĩa Mác - Lênin về dân tộc và tôn giáo, nhóm 7 đã liên hệ với thực tiễn Việt Nam và thể hiện trách nhiệm cụ thể của sinh viên: từ giao lưu văn hóa, nhận diện tin giả, tuyên truyền chính sách, tình nguyện vùng DTTS, đến thực hành đoàn kết ngay trong giảng đường. Xây dựng khối đại đoàn kết toàn dân tộc không phải là khẩu hiệu xa vời mà bắt đầu từ chính hành động hàng ngày của mỗi chúng ta. |
+| End card: tên nhóm, thành viên, lời cảm ơn. Nhạc nền. | Nhóm 7 xin cảm ơn thầy/cô và các bạn đã theo dõi. |
 
 ---
 

@@ -1,4 +1,4 @@
-import { COLORS, FONT, GRADIENTS, GOLD_RING, TEXT_SHADOW } from "./tokens";
+import { COLORS, GRADIENTS, GOLD_RING, TEXT_SHADOW } from "./tokens";
 
 export interface CountUpNumberProps {
   value: number;
@@ -27,24 +27,14 @@ export function CountUpNumber({
 }: CountUpNumberProps) {
   const content = (
     <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        textAlign: "center",
-        fontFamily: FONT,
-        opacity,
-        gap: "12px",
-        padding: "24px",
-      }}
+      className="flex flex-col items-center justify-center text-center font-sans gap-3 p-6"
+      style={{ opacity }}
     >
       <div
+        className="font-bold leading-none tracking-tight"
         style={{
           color,
           fontSize: `${size}px`,
-          fontWeight: "bold",
-          lineHeight: 1,
           letterSpacing: "-0.02em",
           textShadow: TEXT_SHADOW,
         }}
@@ -55,13 +45,8 @@ export function CountUpNumber({
       </div>
 
       <div
-        style={{
-          color: COLORS.body,
-          fontSize: "22px",
-          fontWeight: 400,
-          lineHeight: 1.4,
-          textShadow: TEXT_SHADOW,
-        }}
+        className="text-ds-body text-[22px] font-normal leading-normal"
+        style={{ textShadow: TEXT_SHADOW }}
       >
         {label}
       </div>
@@ -70,18 +55,16 @@ export function CountUpNumber({
 
   if (!goldRing) return content;
 
-  // Wrap in gold ring
   const ringSize = size + 80;
   const borderWidth = 2;
   const borderRadius = 20;
 
   return (
-    <div style={{ position: "relative", width: ringSize, height: ringSize }}>
+    <div className="relative" style={{ width: ringSize, height: ringSize }}>
       {/* Glow */}
       <div
+        className="absolute inset-0"
         style={{
-          position: "absolute",
-          inset: 0,
           filter: "blur(12px)",
           background: GOLD_RING.glow,
           opacity: 0.15,
@@ -91,18 +74,13 @@ export function CountUpNumber({
 
       {/* Clip */}
       <div
-        style={{
-          position: "relative",
-          overflow: "hidden",
-          borderRadius,
-          width: ringSize,
-          height: ringSize,
-        }}
+        className="relative overflow-hidden"
+        style={{ borderRadius, width: ringSize, height: ringSize }}
       >
         {/* Rotating conic gradient */}
         <div
+          className="absolute"
           style={{
-            position: "absolute",
             width: "200%",
             height: "200%",
             top: "-50%",
@@ -114,14 +92,10 @@ export function CountUpNumber({
 
         {/* Inner plate */}
         <div
+          className="absolute flex items-center justify-center bg-ds-darkest"
           style={{
-            position: "absolute",
             inset: borderWidth,
-            background: COLORS.darkest,
             borderRadius: borderRadius - 1,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
           }}
         >
           {content}

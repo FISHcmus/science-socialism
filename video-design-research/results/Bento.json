@@ -1,0 +1,132 @@
+{
+  "name": "Bento",
+  "summary": "Warm peach + soft blue on cream, modular grid cards, trendy tech",
+
+  "color_palette": {
+    "primary": "#F97316 (warm peach-orange for primary accents)",
+    "secondary": "#60A5FA (soft blue for secondary accents and data)",
+    "accent": "#FBBF24 (warm yellow for highlights)",
+    "surface": "#FFFBF0 (warm cream background)",
+    "surface_alt": "#FFFFFF (pure white for card interiors)",
+    "card_border": "#E5E7EB (light gray, subtle card separation)",
+    "text": "#1F2937 (gray-800 for body text)",
+    "text_secondary": "#6B7280 (gray-500 for secondary text)"
+  },
+
+  "typography": {
+    "heading_font": "Be Vietnam Pro Bold/SemiBold (or Inter/Plus Jakarta Sans for full Bento aesthetic)",
+    "body_font": "Be Vietnam Pro Regular/Medium",
+    "size_scale": {
+      "section_label": "32px",
+      "section_title": "48-52px",
+      "card_heading": "36px",
+      "body_text": "28-30px",
+      "stat_number": "64-72px (hero numbers in bento tiles)",
+      "citation": "24px"
+    },
+    "weights_used": "400, 500, 600, 700",
+    "vietnamese_diacritics": "Good with Be Vietnam Pro; Inter has acceptable but not purpose-built Vietnamese support; Plus Jakarta Sans adequate but not optimized"
+  },
+
+  "animation_style": {
+    "approach": "Playful, staggered card reveals - each bento tile animates in with slight delay, scale-up with spring",
+    "entrance_pattern": "Cards scale from 0.9 to 1.0 with fade-in, staggered by 3-5 frames per card; parallax subtle hover effects",
+    "spring_config": "Damping 10-12, mass 0.6, stiffness 100 (slightly bouncy, playful feel)",
+    "motion_budget": "Medium-high - the grid layout invites animation of individual tiles, which adds visual interest but risks being distracting"
+  },
+
+  "projector_readability": {
+    "contrast_approach": "Dark text on cream/white backgrounds; pastel accents (peach, soft blue) may wash out on projectors",
+    "min_font_sizes": "Body 28px, headings 36px+ adequate but stat numbers at 64-72px are the real visual anchors",
+    "color_washout": "WARNING: Soft blue (#60A5FA) and warm peach (#F97316) at reduced saturation may lose identity when projected. Peach-orange is more resilient than soft blue. Cream background (#FFFBF0) projects cleanly.",
+    "line_weight": "Card borders typically 1px with shadow - thin borders WILL disappear on projectors; need to increase to 2px solid"
+  },
+
+  "wcag_contrast_score": {
+    "text_on_surface": "#1F2937 on #FFFBF0 = 14.1:1 (AAA pass)",
+    "text_on_white_card": "#1F2937 on #FFFFFF = 15.4:1 (AAA pass)",
+    "peach_on_cream": "#F97316 on #FFFBF0 = 3.1:1 (FAIL for small text, AA pass for large text only)",
+    "blue_on_cream": "#60A5FA on #FFFBF0 = 2.8:1 (FAIL for text - use only for decorative/icon purposes)",
+    "overall": "Body text passes AAA; accent colors fail for functional text and must be limited to large headings, icons, or decorative elements"
+  },
+
+  "projector_degradation_resistance": {
+    "rating": "Medium-low",
+    "details": "The soft, pastel nature of Bento palettes is designed for high-quality screens (Retina displays, modern monitors), not projectors. Soft blue washes out significantly. Peach-orange loses warmth and may read as generic orange. Card shadows (typical in Bento) become invisible on projectors. The cream background itself is fine. Grid gaps and card separation rely on subtle shadows that projectors eliminate - need solid borders instead."
+  },
+
+  "vietnamese_diacritics_rendering": {
+    "font_suitability": "Good if using Be Vietnam Pro; risk of degradation if switching to Inter or Plus Jakarta Sans which have less optimized Vietnamese glyph design",
+    "line_height_needs": "line-height 1.5-1.6; bento cards with constrained heights may clip diacritics if not careful",
+    "min_size_for_clarity": "28px minimum; bento layouts tend to cram more items per frame, creating pressure to shrink text below safe thresholds"
+  },
+
+  "cultural_fit": {
+    "alignment": "Weak - Bento is a Japanese-inspired tech aesthetic with no Vietnamese cultural resonance",
+    "details": "The Bento grid style is associated with Apple WWDC, Silicon Valley product pages, and tech startups. Peach and soft blue evoke modern SaaS dashboards, not Vietnamese academic or political content. For a topic on national unity (đại đoàn kết toàn dân tộc), this palette and style feel disconnected from the subject matter.",
+    "risk": "High - teacher may perceive a mismatch between trendy tech aesthetics and serious political/academic content; could seem like prioritizing style over substance"
+  },
+
+  "cultural_semiotics": {
+    "peach_orange": "Tech warmth, Silicon Valley friendliness, startup energy - no Vietnamese cultural meaning",
+    "soft_blue": "Trust, technology, calmness - generic corporate/tech semiotics",
+    "cream": "Warmth, approachability - neutral",
+    "bento_grid": "Japanese lunch box organization metaphor, adopted by Apple and tech companies - foreign cultural reference",
+    "overall": "Semiotics point entirely to tech industry; zero Vietnamese or socialist/political symbolism"
+  },
+
+  "teacher_perception_signal": {
+    "signal": "Technically skilled but potentially misaligned priorities",
+    "details": "Teacher sees students with strong design/tech skills (positive) but may question why a political science presentation looks like a tech product page (negative). The trendiness could be interpreted as caring more about aesthetics than academic content.",
+    "effort_perception": "High technical effort recognized, but cultural appropriateness may be questioned"
+  },
+
+  "rubric_alignment": {
+    "format_15pct": "Strong for format points - modular grid is visually organized and impressive",
+    "theory_35pct": "Weak - bento tiles encourage bite-sized info chunks that may fragment theoretical arguments; dense theory doesn't fit naturally in small cards",
+    "application_50pct": "Medium - stat numbers and data viz work well in bento tiles, but narrative application content is harder to present in modular chunks"
+  },
+
+  "content_density_capacity": {
+    "words_per_frame": "60-90 words - bento layout distributes content across multiple small cards, reducing per-card density",
+    "data_viz_support": "Good for stats and numbers (hero stat tiles), medium for complex charts (space constraints in grid cells)",
+    "theory_density": "Low-medium - the modular nature fragments long theoretical arguments; better for bullet points than paragraphs"
+  },
+
+  "production_effort": {
+    "migration_cost": "High - requires complete redesign from current card-based editorial layout to modular grid system. Need to implement CSS Grid with variable-size tiles, rethink information architecture per frame, redesign all section components.",
+    "component_changes": "Major - need new BentoGrid container, BentoTile components with size variants (1x1, 2x1, 1x2, 2x2), stat tiles, icon tiles. Existing GlassPanel/SectionTitle need significant rework."
+  },
+
+  "remotion_implementation_complexity": {
+    "css_needs": "Complex - CSS Grid with named areas, responsive tile sizing, shadow/blur effects (though shadows should be replaced with borders for projector)",
+    "threejs_usage": "3D background should be removed - Bento style is flat/2D by nature",
+    "render_performance": "Medium - multiple animated tiles per frame increases render computation; staggered animations need careful frame counting",
+    "overall": "High complexity - fundamentally different layout paradigm from current codebase"
+  },
+
+  "distraction_level": "Medium-high - the grid animation and multiple tiles competing for attention can distract from content, especially with staggered reveals",
+
+  "differentiation": "High - no other student group will use Bento-style layouts for political science; stands out dramatically but may stand out for wrong reasons",
+
+  "temporal_coherence": {
+    "consistency": "Medium - grid layout provides structural consistency but tile arrangements will vary significantly per section, potentially feeling inconsistent",
+    "section_transitions": "Challenging - transitioning between different grid configurations may feel jarring",
+    "speaker_differentiation": "Can assign tile colors per speaker but this fragments the already-complex grid further"
+  },
+
+  "dark_vs_light_mode_viability": "Primarily light mode. Bento can work dark (Apple WWDC style) but pastel accents lose their character on dark backgrounds. Light cream is the canonical Bento surface.",
+
+  "precedent": {
+    "examples": [
+      "Apple WWDC 2023-2024 feature slides - dark Bento grid with product feature tiles",
+      "Linear.app landing page - Bento-style feature grid",
+      "Notion feature marketing pages - tinted Bento cards grouped by category",
+      "Vercel/Next.js landing pages - modular grid layouts",
+      "bentogrids.com - curated gallery of Bento grid implementations"
+    ],
+    "notes": "All precedents are from tech/product contexts. No examples found of Bento style used for academic, political, or Vietnamese cultural presentations. This would be a first-of-its-kind application."
+  },
+
+  "uncertain": ["vietnamese_diacritics_rendering"]
+}

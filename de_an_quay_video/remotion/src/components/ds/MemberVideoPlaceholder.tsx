@@ -1,5 +1,5 @@
 import React from "react";
-import { COLORS, FONT, GOLD_RING, GRADIENTS, TEXT_SHADOW } from "./tokens";
+import { COLORS, GOLD_RING, GRADIENTS, TEXT_SHADOW } from "./tokens";
 
 export interface MemberVideoPlaceholderProps {
   name: string;
@@ -29,11 +29,11 @@ export function MemberVideoPlaceholder({
   const borderRadius = 6;
 
   return (
-    <div style={{ position: "relative", width, height, opacity }}>
+    <div className="relative" style={{ width, height, opacity }}>
       {/* Glow layer */}
       <div
+        className="absolute"
         style={{
-          position: "absolute",
           inset: -4,
           filter: "blur(14px)",
           background: GOLD_RING.glow,
@@ -44,18 +44,13 @@ export function MemberVideoPlaceholder({
 
       {/* Clip container */}
       <div
-        style={{
-          position: "relative",
-          overflow: "hidden",
-          borderRadius,
-          width,
-          height,
-        }}
+        className="relative overflow-hidden"
+        style={{ borderRadius, width, height }}
       >
         {/* Rotating conic gradient border */}
         <div
+          className="absolute"
           style={{
-            position: "absolute",
             width: "200%",
             height: "200%",
             top: "-50%",
@@ -67,53 +62,30 @@ export function MemberVideoPlaceholder({
 
         {/* Inner plate */}
         <div
+          className="absolute flex flex-col items-center justify-center gap-3 overflow-hidden"
           style={{
-            position: "absolute",
             inset: borderWidth,
             borderRadius: Math.max(0, borderRadius - 1),
-            overflow: "hidden",
-            background: GRADIENTS.darkRadial,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: 12,
+            background: GRADIENTS.lightRadial,
           }}
         >
           {src ? (
             <video
               src={src}
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                display: "block",
-              }}
+              className="w-full h-full object-cover block"
             />
           ) : (
             <>
               <div
-                style={{
-                  fontSize: 28,
-                  color: COLORS.lightGold,
-                  fontFamily: FONT,
-                  fontWeight: "bold",
-                  textShadow: TEXT_SHADOW,
-                  lineHeight: 1.2,
-                }}
+                className="text-[28px] text-ds-light-gold font-sans font-bold leading-tight"
+                style={{ textShadow: TEXT_SHADOW }}
               >
                 Chèn video: {name}
               </div>
               {sectionLabel && (
                 <div
-                  style={{
-                    fontSize: 20,
-                    color: COLORS.body,
-                    fontFamily: FONT,
-                    fontWeight: 400,
-                    textShadow: TEXT_SHADOW,
-                    lineHeight: 1.2,
-                  }}
+                  className="text-xl text-ds-body font-sans font-normal leading-tight"
+                  style={{ textShadow: TEXT_SHADOW }}
                 >
                   {sectionLabel}
                 </div>

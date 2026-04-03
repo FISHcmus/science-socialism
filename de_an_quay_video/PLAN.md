@@ -1,4 +1,4 @@
-# Video Production Plan — Nhóm 6 CNXHKH
+# Video Production Plan — Nhóm 7 CNXHKH
 
 ## Overview
 

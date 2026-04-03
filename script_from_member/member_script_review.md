@@ -1,4 +1,4 @@
-# Đánh giá bài viết thành viên - Nhóm 6
+# Đánh giá bài viết thành viên - Nhóm 7
 
 Chủ đề 6: Xây dựng khối đại đoàn kết toàn dân tộc
 

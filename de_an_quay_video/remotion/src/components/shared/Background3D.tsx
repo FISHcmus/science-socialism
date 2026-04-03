@@ -7,7 +7,7 @@ interface Background3DProps {
 }
 
 export const Background3D: React.FC<Background3DProps> = ({
-  accentColor = "#f6ad55",
+  accentColor = "#D97706",
 }) => {
   const frame = useCurrentFrame();
   const { width, height } = useVideoConfig();
@@ -29,71 +29,71 @@ export const Background3D: React.FC<Background3DProps> = ({
       width={width}
       height={height}
       camera={{ fov: 50, position: [0, 0, 8], near: 0.1, far: 50 }}
-      style={{ position: "absolute", top: 0, left: 0 }}
+      className="absolute top-0 left-0"
     >
-      {/* Navy background matching the theme */}
-      <color attach="background" args={["#0a0a0f"]} />
-      <ambientLight intensity={0.6} />
-      <directionalLight position={[5, 5, 5]} intensity={1.0} />
+      {/* Warm off-white background matching light theme */}
+      <color attach="background" args={["#F7F3EE"]} />
+      <ambientLight intensity={0.8} />
+      <directionalLight position={[5, 5, 5]} intensity={0.6} />
 
-      {/* Floating wireframe octahedron - gold */}
+      {/* Floating wireframe octahedron - amber gold */}
       <mesh
         position={[-4, 2, -2]}
         rotation={[t * 0.5, t * 0.3, t * 0.2]}
         scale={1.2}
       >
         <octahedronGeometry args={[1, 0]} />
-        <meshStandardMaterial color={accentColor} wireframe transparent opacity={0.3} />
+        <meshStandardMaterial color={accentColor} wireframe transparent opacity={0.18} />
       </mesh>
 
-      {/* Floating wireframe icosahedron - blue */}
+      {/* Floating wireframe icosahedron - warm gold */}
       <mesh
         position={[4, -1, -3]}
         rotation={[t * 0.3, t * 0.5, t * 0.1]}
         scale={1.0}
       >
         <icosahedronGeometry args={[1, 0]} />
-        <meshStandardMaterial color="#c49746" wireframe transparent opacity={0.25} />
+        <meshStandardMaterial color="#B45309" wireframe transparent opacity={0.15} />
       </mesh>
 
-      {/* Floating torus - gold */}
+      {/* Floating torus - amber */}
       <mesh
         position={[-2, -2.5, -1]}
         rotation={[t * 0.4, t * 0.2, t * 0.6]}
         scale={0.8}
       >
         <torusGeometry args={[1, 0.35, 8, 16]} />
-        <meshStandardMaterial color={accentColor} wireframe transparent opacity={0.25} />
+        <meshStandardMaterial color={accentColor} wireframe transparent opacity={0.15} />
       </mesh>
 
-      {/* Small octahedron top-right */}
+      {/* Small octahedron top-right - warm taupe */}
       <mesh
         position={[5, 3, -4]}
         rotation={[t * 0.6, t * 0.4, 0]}
         scale={0.6}
       >
         <octahedronGeometry args={[1, 0]} />
-        <meshStandardMaterial color="#a0aec0" wireframe transparent opacity={0.2} />
+        <meshStandardMaterial color="#78716C" wireframe transparent opacity={0.12} />
       </mesh>
 
-      {/* Large slow icosahedron center-back */}
+      {/* Large slow icosahedron center-back - faint bronze */}
       <mesh
         position={[0, 0, -5]}
         rotation={[t * 0.1, t * 0.15, t * 0.05]}
         scale={2.0}
       >
         <icosahedronGeometry args={[1, 1]} />
-        <meshStandardMaterial color="#533517" wireframe transparent opacity={0.08} />
+        <meshStandardMaterial color="#92400E" wireframe transparent opacity={0.06} />
       </mesh>
 
-      {/* Torus top-left */}
+      {/* Torus top-left - warm taupe */}
       <mesh
         position={[-5, 1, -4]}
         rotation={[t * 0.2, t * 0.6, t * 0.3]}
         scale={0.7}
       >
         <torusGeometry args={[1, 0.3, 8, 16]} />
-        <meshStandardMaterial color="#a0aec0" wireframe transparent opacity={0.18} />
+        <meshStandardMaterial color="#78716C" wireframe transparent opacity={0.1} />
       </mesh>
 
       {/* Particle field */}
@@ -108,7 +108,7 @@ export const Background3D: React.FC<Background3DProps> = ({
           color={accentColor}
           size={0.06}
           transparent
-          opacity={0.35}
+          opacity={0.2}
           sizeAttenuation
         />
       </points>

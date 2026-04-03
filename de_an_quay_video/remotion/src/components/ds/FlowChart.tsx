@@ -1,4 +1,4 @@
-import { COLORS, FONT, TEXT_SHADOW } from "./tokens";
+import { TEXT_SHADOW } from "./tokens";
 import { GlassPanel } from "./GlassPanel";
 
 export interface FlowNode {
@@ -36,16 +36,9 @@ export function FlowChart({
 
   return (
     <div
-      style={{
-        display: "flex",
-        flexDirection: isHorizontal ? "row" : "column",
-        alignItems: "center",
-        justifyContent: "center",
-        fontFamily: FONT,
-        gap: "0px",
-        width: "100%",
-        flexWrap: isHorizontal ? "wrap" : "nowrap",
-      }}
+      className={`flex items-center justify-center font-sans w-full ${
+        isHorizontal ? "flex-row flex-wrap" : "flex-col flex-nowrap"
+      }`}
     >
       {nodes.map((node, index) => {
         const nodeVisible = index < visibleNodes;
@@ -57,12 +50,7 @@ export function FlowChart({
         return (
           <div
             key={index}
-            style={{
-              display: "flex",
-              flexDirection: isHorizontal ? "row" : "column",
-              alignItems: "center",
-              gap: "0px",
-            }}
+            className={`flex items-center ${isHorizontal ? "flex-row" : "flex-col"}`}
           >
             <div
               style={{
@@ -86,24 +74,15 @@ export function FlowChart({
                 }}
               >
                 <span
-                  style={{
-                    color: COLORS.white,
-                    fontSize: "26px",
-                    fontWeight: "bold",
-                    lineHeight: 1.3,
-                    textShadow: TEXT_SHADOW,
-                  }}
+                  className="text-ds-white text-[26px] font-bold leading-snug"
+                  style={{ textShadow: TEXT_SHADOW }}
                 >
                   {node.label}
                 </span>
                 {node.description && (
                   <span
-                    style={{
-                      color: COLORS.body,
-                      fontSize: "22px",
-                      lineHeight: 1.6,
-                      textShadow: TEXT_SHADOW,
-                    }}
+                    className="text-ds-body text-[22px] leading-relaxed"
+                    style={{ textShadow: TEXT_SHADOW }}
                   >
                     {node.description}
                   </span>
@@ -112,16 +91,11 @@ export function FlowChart({
             </div>
 
             <div
+              className="flex items-center justify-center text-ds-gold text-[28px] leading-none shrink-0"
               style={{
                 display: showArrow ? "flex" : "none",
-                alignItems: "center",
-                justifyContent: "center",
-                color: COLORS.gold,
-                fontSize: "28px",
                 opacity: arrowOpacities?.[index] ?? arrowOpacity,
                 padding: isHorizontal ? "0 12px" : "8px 0",
-                lineHeight: 1,
-                flexShrink: 0,
               }}
             >
               {arrowSymbol}

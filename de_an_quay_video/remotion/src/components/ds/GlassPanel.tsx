@@ -31,28 +31,26 @@ export function GlassPanel({
 
   const panel = (
     <div
+      className="relative box-border"
       style={{
-        position: "relative",
         backdropFilter: `blur(${blur}px)`,
         WebkitBackdropFilter: `blur(${blur}px)`,
         background: GLASS.bgColor,
         border: goldBorder ? "none" : `3px solid ${GLASS.borderColor}`,
         borderRadius,
         padding,
-        boxSizing: "border-box",
         boxShadow: [
-          "0 8px 32px rgba(0,0,0,0.4)",
-          "inset 0 1px 0 rgba(255,255,255,0.06)",
-          ...(goldRing ? ["0 0 20px rgba(232, 175, 72, 0.15)"] : []),
+          "0 4px 24px rgba(0,0,0,0.06)",
+          "0 1px 2px rgba(0,0,0,0.04)",
+          ...(goldRing ? ["0 0 20px rgba(217, 119, 6, 0.12)"] : []),
         ].join(", "),
         ...style,
       }}
     >
       {goldBorder && (
         <div
+          className="absolute inset-0 pointer-events-none"
           style={{
-            position: "absolute",
-            inset: 0,
             borderRadius: "inherit",
             padding: 3,
             background: goldGradient,
@@ -61,7 +59,6 @@ export function GlassPanel({
             WebkitMaskComposite: "xor",
             mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
             maskComposite: "exclude",
-            pointerEvents: "none",
           }}
         />
       )}
@@ -73,12 +70,11 @@ export function GlassPanel({
     const borderWidth = 2;
 
     return (
-      <div style={{ position: "relative", width: ringSize, height: ringSize }}>
+      <div className="relative" style={{ width: ringSize, height: ringSize }}>
         {/* Glow */}
         <div
+          className="absolute inset-0"
           style={{
-            position: "absolute",
-            inset: 0,
             filter: "blur(12px)",
             background: GOLD_RING.glow,
             opacity: 0.15,
@@ -88,18 +84,13 @@ export function GlassPanel({
 
         {/* Clip */}
         <div
-          style={{
-            position: "relative",
-            overflow: "hidden",
-            borderRadius,
-            width: ringSize,
-            height: ringSize,
-          }}
+          className="relative overflow-hidden"
+          style={{ borderRadius, width: ringSize, height: ringSize }}
         >
           {/* Rotating conic gradient */}
           <div
+            className="absolute"
             style={{
-              position: "absolute",
               width: "200%",
               height: "200%",
               top: "-50%",
@@ -111,14 +102,11 @@ export function GlassPanel({
 
           {/* Inner plate */}
           <div
+            className="absolute flex items-center justify-center"
             style={{
-              position: "absolute",
               inset: borderWidth,
               background: COLORS.darkest,
               borderRadius: borderRadius - 1,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
             }}
           >
             {panel}

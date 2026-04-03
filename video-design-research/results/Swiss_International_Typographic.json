@@ -1,0 +1,124 @@
+{
+  "name": "Swiss International Typographic Style",
+  "summary": "Mathematical grid, asymmetric layouts, sans-serif hierarchy through scale/weight. Academic pedigree",
+
+  "color_palette": {
+    "description": "Swiss Style traditionally uses a minimal, restrained palette. Color serves function (emphasis, categorization), never decoration. Classic implementations are near-monochrome with one accent.",
+    "background": "#FFFFFF",
+    "text_primary": "#000000",
+    "text_secondary": "#4A4A4A",
+    "accent_red": "#E63946",
+    "accent_blue": "#1D3557",
+    "grid_lines": "#CCCCCC",
+    "surface_light": "#F2F2F2",
+    "note": "Swiss Style is not about specific colors but about how color is used: sparingly, functionally, with maximum contrast. Red is the traditional Swiss accent (Swiss flag, Basel school). For Vietnamese context, red + gold maps naturally."
+  },
+
+  "typography": {
+    "recommended_families": ["Helvetica Neue (the original Swiss Style font)", "Inter (modern Helvetica alternative, free)", "Be Vietnam Pro (Vietnamese-optimized, maintains Swiss geometric clarity)"],
+    "size_scale": "Hierarchy through extreme scale contrast. Display: 72-120px. Title: 48-64px. Subtitle: 32-40px. Body: 20-28px. Caption: 14-18px. The jump between levels is dramatic (2x+), not incremental.",
+    "weights": "Bold (700) and Regular (400) only. Swiss Style achieves hierarchy through size and weight, not decoration. Light/Thin weights are used decoratively in some modern interpretations.",
+    "vietnamese_diacritics": "Helvetica Neue has functional Vietnamese support but was not designed for it. Be Vietnam Pro maintains the geometric sans-serif clarity while being purpose-built for Vietnamese. Inter falls in between. At Swiss Style's preferred large sizes, diacritics are manageable in any of these fonts."
+  },
+
+  "animation_style": {
+    "approach": "Minimal and geometric. Swiss Style motion follows the grid: elements slide along grid lines, scale from grid intersection points, or reveal along axes. No organic or bouncy motion.",
+    "entrance_patterns": "Horizontal/vertical slide-ins along grid axes. Opacity fades. Clip-path reveals along geometric edges. Text typing reveals (left-to-right, following reading direction). No rotation, no bounce, no curve paths.",
+    "motion_budget": "Low to moderate. Motion is precise and purposeful. Each animation has a clear informational purpose (revealing hierarchy, showing sequence, directing attention).",
+    "spring_config": "Not spring-based. Uses linear or ease-out timing functions. Duration: 300-500ms for reveals, 200-300ms for emphasis shifts."
+  },
+
+  "projector_readability": {
+    "contrast_ratio": "Excellent. Black text (#000000) on white (#FFFFFF) achieves 21:1 - the maximum possible contrast ratio.",
+    "minimum_font_sizes": "Swiss Style's emphasis on large, bold typography naturally exceeds projector minimums. Display text at 72px+ and body at 20px+ (should be scaled to 28px+ for projector).",
+    "color_washout_resistance": "Excellent. The near-monochrome palette (black/white/one accent) is inherently projector-proof. White backgrounds render perfectly on projectors. Black text remains fully legible."
+  },
+
+  "wcag_contrast_score": {
+    "text_on_white": "21:1 (#000000 on #FFFFFF) - maximum AAA",
+    "secondary_on_white": "7.5:1 (#4A4A4A on #FFFFFF) - AAA pass",
+    "red_accent_on_white": "5.2:1 (#E63946 on #FFFFFF) - AA pass for normal text, AAA for large",
+    "degradation_note": "With the maximum possible contrast as baseline, even severe projector degradation maintains well above AA thresholds"
+  },
+
+  "projector_degradation_resistance": {
+    "rating": "Excellent",
+    "strengths": "Maximum contrast (black on white). Grid-based layouts remain structured even when fine details blur. Large typography survives distance and degradation. Minimal color dependence means color shifts don't affect information delivery.",
+    "weaknesses": "Thin grid lines (if visible) may disappear on projectors. Very light grays (#F2F2F2) become indistinguishable from white. Red accent may shift hue slightly.",
+    "recommendation": "Ensure grid lines are 2px+ if visible. Keep accent color at high saturation. The style is naturally projector-optimized."
+  },
+
+  "vietnamese_diacritics_rendering": {
+    "quality": "Good with correct font choice. Swiss Style's large font sizes mitigate diacritics issues.",
+    "line_height_needs": "Swiss Style uses generous vertical spacing as a design principle. Line-height 1.4-1.6x is standard, which accommodates Vietnamese diacritics well.",
+    "minimum_safe_size": "28px body text. Swiss Style typically uses 20px+ for body which should be scaled up to 28px for projector + Vietnamese diacritics.",
+    "note": "The mathematical grid approach means line-height and spacing are precisely calculated, preventing diacritics clipping"
+  },
+
+  "cultural_fit": {
+    "rating": "Moderate to good",
+    "analysis": "Swiss Style has strong academic pedigree - it was developed in universities (Basel and Zurich schools of design) and has been the visual language of academia and serious institutional communication for 70+ years. This institutional credibility aligns well with a university course. However, it is distinctly European/Western with no inherent Vietnamese connection. The style's emphasis on objectivity and rationality aligns with the 'scientific' in Scientific Socialism.",
+    "adaptation_needed": "Use Vietnamese red + gold as the accent colors instead of Swiss red/blue. Incorporate Vietnamese-specific photography or illustrations within the grid structure. The grid and typography system transfers directly; only color and content need localization."
+  },
+
+  "cultural_semiotics": {
+    "inherent_symbols": "Rationality, objectivity, precision, institutional authority, modernism, Swiss neutrality. The style communicates 'serious, rigorous, academic' universally.",
+    "achievable_via_adaptation": "Red accent maps to Vietnamese revolutionary red. Gold accent adds prosperity symbolism. Grid structure communicates systematic thinking, which aligns with Marxist dialectical methodology. The objectivity ethos fits the 'scientific' approach to socialism.",
+    "strength": "Academic credibility is built into the DNA of this style"
+  },
+
+  "teacher_perception_signal": {
+    "signal": "Very strong positive signal. Swiss Style communicates: 'We approach this subject with intellectual rigor and systematic thinking.' The clean, grid-based design suggests organized minds and serious academic engagement. The style has been associated with universities and academic publishing for decades.",
+    "risk": "Low risk. May appear 'cold' or impersonal compared to more expressive styles, but for a political theory course, intellectual rigor is valued. The only risk is appearing too austere for a topic about 'unity' which implies warmth."
+  },
+
+  "rubric_alignment": {
+    "format_15_percent": "Excellent - the mathematical grid and systematic typography demonstrate design sophistication. Clean, professional format that signals high effort.",
+    "theory_35_percent": "Excellent - this is the style's strongest suit. Swiss Style was literally designed for presenting complex information clearly. Dense theoretical text, hierarchical arguments, and structured frameworks are native to this design language.",
+    "application_50_percent": "Good - grid-based layouts support data visualization, comparison tables, and structured analysis. Statistical charts align naturally to the grid. Case studies can be presented in systematic card/column layouts."
+  },
+
+  "content_density_capacity": {
+    "words_per_frame": "High: 80-120 words per frame. The grid system maximizes usable space while maintaining readability. Asymmetric layouts create natural content zones for different information types.",
+    "theory_support": "Excellent - designed specifically for presenting complex textual and informational content. Multi-column layouts can present original text alongside analysis.",
+    "data_viz_support": "Strong - Swiss Style pioneered information graphics (Isotype, statistical charts). Grid-aligned bar charts, clean tables, and systematic data layouts are native to the style."
+  },
+
+  "production_effort": {
+    "migration_from_current": "Moderate. Current codebase uses a less rigorous layout system. Migration requires: implementing a strict mathematical grid, adjusting typography to use extreme scale contrast, simplifying color palette, removing decorative elements.",
+    "estimated_effort": "2-3 days. Grid system implementation in CSS/Remotion, typography scale adjustment, color simplification, removal of decorative elements (film grain, glass panels, 3D background).",
+    "simplification_benefit": "Swiss Style requires REMOVING complexity, not adding it. FilmGrain, GlassPanel, Background3D would all be eliminated, simplifying the codebase."
+  },
+
+  "remotion_implementation_complexity": {
+    "css_needs": "Moderate - CSS Grid is the core technology. Precise mathematical spacing requires careful calc() usage. Typography scale with rem/px precision.",
+    "three_js": "Not needed - should be removed. Swiss Style is fundamentally 2D. 3D elements conflict with the flat, grid-based aesthetic.",
+    "render_performance": "Excellent - no expensive visual effects. Pure CSS layout and typography. Fastest render of all candidates.",
+    "computation_cost": "Minimal - no blur, no transparency, no 3D, no complex animations"
+  },
+
+  "distraction_level": "Very low. Swiss Style is the antithesis of distraction. Every element serves an informational purpose. The design intentionally steps back to let content speak.",
+
+  "differentiation": "High in Vietnamese university context. Swiss Style is extremely uncommon in Vietnamese student presentations. Its clean austerity would stand out dramatically from typical Vietnamese PowerPoints (which tend toward decorative templates). The style signals design literacy that is rare among university students.",
+
+  "temporal_coherence": {
+    "rating": "Excellent",
+    "analysis": "The mathematical grid provides an absolute structural foundation. Every frame aligns to the same grid, creating iron-clad visual consistency. Typography hierarchy is systematically defined and cannot drift. Color palette is so minimal that inconsistency is nearly impossible. 13.5 minutes of Swiss Style content will feel like a single, unified piece."
+  },
+
+  "dark_vs_light_mode_viability": "Primarily light mode (white background, black text). This is both historically accurate and projector-optimal. Dark mode Swiss Style exists in some modern interpretations but is less common and loses the connection to classic Swiss print design.",
+
+  "precedent": {
+    "examples": [
+      "Josef Muller-Brockmann's concert posters for Zurich Tonhalle (canonical examples)",
+      "MIT Press book covers and academic publications",
+      "The New York Times and Washington Post use Swiss-influenced editorial design",
+      "Many university press publications and academic conference materials",
+      "Dieter Rams/Braun product design applied Swiss principles to industrial design",
+      "Swiss Federal Railways (SBB) corporate identity"
+    ],
+    "academic_context": "Deeply rooted in academic design tradition. Used by major university presses, academic journals, and institutional communications worldwide. The style was born in art schools and has maintained academic credibility for 70+ years."
+  },
+
+  "uncertain": []
+}

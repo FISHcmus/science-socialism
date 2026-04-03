@@ -1,0 +1,107 @@
+{
+  "name": "Documentary / Broadcast News",
+  "summary": "Lower thirds, speaker ID cards, chapter markers, film grain. Fits video medium naturally",
+
+  "color_palette": {
+    "primary": "#F7F3EE (warm off-white background) or #0D1B2A (deep navy for broadcast dark mode)",
+    "secondary": "#1B263B (dark blue-gray for lower third bars), #E0D8CC (warm cream for light panels)",
+    "accent": "#B91C1C (red urgency bar - also Vietnam red), #D97706 (amber-gold for highlights/tickers)",
+    "surface": "#FFFFFF at 90-95% opacity for text backing panels",
+    "text": "#1C1917 (dark text on light), #F7F3EE (light text on dark lower thirds)",
+    "notes": "Broadcast design uses high-contrast solid blocks. Red bar + white text is a universal news visual language. Pairs naturally with Vietnamese red."
+  },
+
+  "typography": {
+    "font_families": "Be Vietnam Pro (sans-serif) - excellent for broadcast clarity. Broadcast standard: clean sans-serif for lower thirds, heavier weight for names, lighter for titles/roles.",
+    "size_scale": "Speaker name: 40-48px bold, Speaker role/title: 28-32px regular, Chapter marker: 36-40px, Body text: 28-32px, Ticker/crawl: 24-28px",
+    "weights": "400 (descriptions), 600 (subtitles), 700 (names/headlines)",
+    "vietnamese_diacritics_support": "Excellent - Be Vietnam Pro handles broadcast-style bold weights with proper diacritic spacing. Sans-serif fonts are the broadcast industry standard precisely because they render cleanly at various sizes."
+  },
+
+  "animation_style": {
+    "approach": "Slide-in from left/bottom for lower thirds (8-12 frames). Chapter markers wipe in. Film grain overlay at low opacity (3-5%). Spring config: damping 18-20, stiffness 120 (snappy, professional).",
+    "entrance_patterns": "Lower third slides in from left with slight overshoot. Name appears first, role slides in 5 frames later. Chapter markers use horizontal wipe. Content fades in above lower third.",
+    "motion_budget": "Low-moderate. Broadcast animations are quick and purposeful - no gratuitous motion. Film grain is a simple noise overlay (already have FilmGrain component). Most motion is entrance/exit of UI chrome."
+  },
+
+  "projector_readability": {
+    "contrast_ratio": "Excellent. Broadcast design is built for worst-case viewing: small TVs, bright rooms, poor reception. Solid colored bars behind text guarantee contrast. No transparency ambiguity.",
+    "minimum_font_sizes": "32px+ for all broadcast UI elements. Lower thirds at 40px+ for names. This exceeds the 28px minimum easily.",
+    "color_washout_resistance": "Very high. Solid color blocks (not gradients or transparency) maintain readability even on washed-out projectors. Red bar remains visible. White text on dark bar is projector-proof."
+  },
+
+  "wcag_contrast_score": {
+    "text_on_background": "White #FFFFFF on dark bar #1B263B: 13.5:1 (AAA). Dark text #1C1917 on light background #F7F3EE: 14.8:1 (AAA). Red accent #B91C1C on white: 5.8:1 (AA large text).",
+    "recommendation": "Broadcast design inherently achieves AAA contrast due to solid backing bars. No accessibility concerns."
+  },
+
+  "projector_degradation_resistance": {
+    "rating": "Very High",
+    "details": "Broadcast design was literally engineered for degraded display conditions (analog TV, compression artifacts, bright environments). Solid color blocks, thick borders, high-contrast text survive projector color shift, brightness washout, and resolution loss. Film grain adds texture that masks projector artifacts."
+  },
+
+  "vietnamese_diacritics_rendering": {
+    "quality": "Excellent. Lower third format gives each name generous vertical space. Bold sans-serif at 40px+ renders all Vietnamese diacritics perfectly. No clipping risk. Line-height 1.3-1.4 sufficient at broadcast sizes."
+  },
+
+  "cultural_fit": {
+    "assessment": "Strong. Documentary format signals seriousness, research depth, and journalistic rigor - exactly what an academic presentation on Scientific Socialism should convey. Vietnamese state television (VTV) uses this exact broadcast aesthetic. Students will recognize it as 'professional' and 'official'.",
+    "alignment_with_topic": "Strong - documentary/broadcast format is how Vietnamese state media (VTV, QPVN) presents political and social content. Culturally appropriate for CNXHKH course."
+  },
+
+  "cultural_semiotics": {
+    "symbols_invoked": "Authority, credibility, journalistic professionalism. Red accent bar = urgency/importance (also Vietnamese red). The broadcast format itself signals 'this is important information worth reporting.' Chapter markers echo VTV documentary style.",
+    "risk": "None - broadcast format is culturally neutral-to-positive for Vietnamese academic context"
+  },
+
+  "teacher_perception_signal": {
+    "signal": "Seriousness and professionalism. Documentary format communicates 'we treated this as real journalism/research, not a school project.' Shows understanding of video as a medium. Film grain adds production value. Teacher likely associates this with quality VTV documentaries."
+  },
+
+  "rubric_alignment": {
+    "format_15pct": "Excellent - broadcast format is inherently well-structured with clear visual hierarchy. Lower thirds, chapter markers, and speaker IDs demonstrate professional video production understanding.",
+    "theory_35pct": "Very good - documentary format supports extended text explanation with clean typography. Chapter markers create clear theoretical structure. Lower thirds identify sources/citations naturally.",
+    "application_50pct": "Good - data can be presented in broadcast-style info panels and full-screen data cards. Ticker/crawl format can highlight statistics. However, less suited to complex data visualization than a dedicated infographic approach."
+  },
+
+  "content_density_capacity": {
+    "words_per_frame": "50-80 words. Documentary format supports dense information through layered presentation: main content area + lower third + optional ticker. Multiple information zones per frame are a broadcast convention.",
+    "data_viz_support": "Good - broadcast uses full-screen data cards, side-by-side comparisons, and info panels. Not as flexible as pure infographic but very readable."
+  },
+
+  "production_effort": {
+    "assessment": "Low-Medium. LowerThird component already exists. FilmGrain component exists. Need to add: chapter marker component, speaker ID card variant, transition wipes. Most work is styling existing components to broadcast conventions.",
+    "migration_cost": "Low - builds on existing LowerThird and FilmGrain. Add chapter markers and refine timing."
+  },
+
+  "remotion_implementation_complexity": {
+    "css_needs": "Simple. Solid background bars, basic positioning (bottom 20% of frame), CSS transitions for slide-in. No backdrop-filter or complex effects.",
+    "threejs_interaction": "3D background can be retained but dimmed further. Broadcast style works best with simpler backgrounds (solid color or subtle gradient). Could replace 3D with film grain + solid color.",
+    "render_performance": "Excellent. No GPU-intensive effects. Solid color blocks and text are the cheapest elements to render. Film grain is a simple noise overlay. Render time minimal.",
+    "computation_cost": "Very low - simplest of all design options to render"
+  },
+
+  "distraction_level": "Low - broadcast design is engineered to present information clearly without competing for attention. Lower thirds appear and disappear, leaving content in focus.",
+
+  "differentiation": "Medium-High. Student presentations rarely adopt broadcast/documentary aesthetics. Most use PowerPoint templates or basic Canva designs. A broadcast-style video would stand out as professionally produced.",
+
+  "temporal_coherence": {
+    "assessment": "Excellent. Broadcast design systems are specifically built for long-form content (hours of news, 90-minute documentaries). Lower thirds, chapter markers, and consistent typography create strong identity over 13.5 minutes. Each speaker gets the same ID card treatment.",
+    "risk": "Minimal. This style was designed for temporal coherence."
+  },
+
+  "dark_vs_light_mode_viability": "Highly flexible. Broadcast design works with both light and dark base themes. Lower thirds are self-contained solid blocks that read against any background. For projector: use light background with dark lower third bars.",
+
+  "precedent": {
+    "examples": [
+      "VTV (Vietnam Television) documentary programming - red/blue lower thirds with Vietnamese typography",
+      "BBC documentary style - clean lower thirds, chapter markers, authoritative presentation",
+      "Netflix documentary productions (e.g., 'The Social Dilemma') - modern broadcast design with motion graphics",
+      "CNN/Al Jazeera news design systems - structured information layers with clear hierarchy",
+      "Ken Burns documentaries - understated broadcast design that lets content lead"
+    ],
+    "academic_context": "Documentary format is commonly used for educational video content. Vietnamese state TV uses this format for political education programming (Phim tai lieu)."
+  },
+
+  "uncertain": []
+}

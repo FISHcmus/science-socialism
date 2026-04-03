@@ -1,0 +1,129 @@
+{
+  "name": "Vietnamese Government/Institutional",
+  "summary": "Red + gold on white, formal, mirrors official documents and flag",
+
+  "color_palette": {
+    "primary": "#C8102E (Vietnam flag red, Pantone 186)",
+    "secondary": "#FFCD00 (Vietnam flag gold/yellow, Pantone 116)",
+    "accent": "#8B0000 (dark red for borders/dividers)",
+    "surface": "#FFFFFF (pure white, official document feel)",
+    "surface_alt": "#FFF8E7 (warm cream for card backgrounds)",
+    "text": "#1A1A1A (near-black for body text)",
+    "text_secondary": "#4A4A4A (dark gray for secondary text)"
+  },
+
+  "typography": {
+    "heading_font": "Be Vietnam Pro Bold/ExtraBold",
+    "body_font": "Be Vietnam Pro Regular/Medium",
+    "size_scale": {
+      "section_label": "32px",
+      "section_title": "52px",
+      "card_heading": "38px",
+      "body_text": "28-32px",
+      "citation": "24px"
+    },
+    "weights_used": "400, 500, 700, 800",
+    "vietnamese_diacritics": "Excellent - Be Vietnam Pro is purpose-built for Vietnamese with adaptive diacritics for stacked marks like ượ, ễ, ắ"
+  },
+
+  "animation_style": {
+    "approach": "Restrained and formal - fade-ins, gentle slides, no bouncy springs",
+    "entrance_pattern": "Slide-up with fade, 400-600ms duration, ease-out curve",
+    "spring_config": "Damping 20-30, mass 1, stiffness 100 (overdamped, no bounce)",
+    "motion_budget": "Low - government/institutional style demands gravitas, not playfulness"
+  },
+
+  "projector_readability": {
+    "contrast_approach": "Dark text on white/cream backgrounds ensures maximum projector brightness utilization",
+    "min_font_sizes": "Body 28px, headings 38px+, labels 32px - all well above legibility thresholds at distance",
+    "color_washout": "Red (#C8102E) and gold (#FFCD00) are both high-saturation colors that resist projector washout well; gold especially vibrant on white",
+    "line_weight": "Borders and dividers at 2-3px minimum to survive projection blur"
+  },
+
+  "wcag_contrast_score": {
+    "text_on_surface": "#1A1A1A on #FFFFFF = 17.4:1 (AAA pass)",
+    "text_on_cream": "#1A1A1A on #FFF8E7 = 16.2:1 (AAA pass)",
+    "red_on_white": "#C8102E on #FFFFFF = 5.6:1 (AA pass, AAA fail for small text)",
+    "gold_on_white": "#FFCD00 on #FFFFFF = 1.5:1 (FAIL - gold text on white is not readable, use only for decorative elements)",
+    "overall": "AA compliant for all functional text; decorative gold reserved for borders/icons only"
+  },
+
+  "projector_degradation_resistance": {
+    "rating": "High",
+    "details": "Light background leverages projector's strongest capability (producing white light). Red and gold are saturated enough to remain distinct even with 30% contrast loss. White surface means blacks stay darkest element. Thin gold lines may blur but thick accents survive."
+  },
+
+  "vietnamese_diacritics_rendering": {
+    "font_suitability": "Be Vietnam Pro is the gold standard for Vietnamese rendering - engineered specifically for Vietnamese diacritics with adaptive positioning",
+    "line_height_needs": "line-height 1.5-1.6 recommended to prevent stacked diacritics (e.g., ượ) from clipping into line above",
+    "min_size_for_clarity": "28px minimum ensures diacritics are distinguishable even on classroom projectors at 5-10m viewing distance"
+  },
+
+  "cultural_fit": {
+    "alignment": "Perfect alignment with Vietnamese governmental and national identity",
+    "details": "Red (#C8102E) and gold (#FFCD00) are the exact flag colors of the Socialist Republic of Vietnam. The formal, institutional style mirrors official government documents, Communist Party communications, and national ceremony aesthetics. For a topic on 'national unity' (đại đoàn kết toàn dân tộc), this palette directly invokes state symbolism.",
+    "risk": "May feel too politically heavy-handed or propagandistic for an academic presentation; could be perceived as unoriginal student effort"
+  },
+
+  "cultural_semiotics": {
+    "red": "Revolution, bloodshed of independence struggle, Communist Party, national sovereignty",
+    "gold_star": "Five classes of Vietnamese society united (workers, peasants, soldiers, intellectuals, businessmen), also prosperity",
+    "white_background": "Official document authority, clarity, institutional legitimacy",
+    "overall": "Strongly invokes state/party identity - powerful for national unity topic but may overplay political symbolism"
+  },
+
+  "teacher_perception_signal": {
+    "signal": "Respectful, patriotic, safe choice",
+    "details": "Teacher sees students who respect the subject matter and align with official framing. Low creative risk but also low impression of design sophistication. May look like every other student presentation that defaults to flag colors.",
+    "effort_perception": "Moderate - obvious color choice doesn't demonstrate design thinking"
+  },
+
+  "rubric_alignment": {
+    "format_15pct": "Functional but generic - red/gold/white is clean and readable but doesn't showcase creative formatting effort",
+    "theory_35pct": "Strong support - formal institutional framing naturally suits academic theory presentation with authority",
+    "application_50pct": "Adequate - can display data and real-world examples but the formality may make application content feel dry rather than engaging"
+  },
+
+  "content_density_capacity": {
+    "words_per_frame": "80-120 words at 28px body text on 1920x1080",
+    "data_viz_support": "Good - clean white backgrounds are ideal canvas for charts/graphs; red accent works for bar charts and highlights",
+    "theory_density": "High - formal style naturally accommodates dense text blocks with clear hierarchy"
+  },
+
+  "production_effort": {
+    "migration_cost": "Low-medium - current codebase already uses red/gold palette (B91C1C/D97706). Shifting to official flag colors (C8102E/FFCD00) and making style more formal requires palette swap and removing playful animation curves",
+    "component_changes": "Minimal - existing DS components (GlassPanel, SectionTitle, etc.) work with palette swap; may need to add formal borders and government-style header bars"
+  },
+
+  "remotion_implementation_complexity": {
+    "css_needs": "Simple - solid colors, sharp borders, minimal gradients",
+    "threejs_usage": "Can reduce/remove 3D background - formal style doesn't need it",
+    "render_performance": "Fast - no complex shaders or heavy animations",
+    "overall": "Low complexity"
+  },
+
+  "distraction_level": "Low - design is utilitarian and lets content lead, but also visually unremarkable",
+
+  "differentiation": "Low - this is the default 'safe' choice for Vietnamese political topics; likely what 50% of student groups will produce",
+
+  "temporal_coherence": {
+    "consistency": "High - red/gold/white is a tight palette that naturally stays coherent across 13.5 minutes",
+    "section_transitions": "Easy to maintain with consistent header bars and section dividers",
+    "speaker_differentiation": "Can use member accent colors within the red-gold spectrum but palette is narrow"
+  },
+
+  "dark_vs_light_mode_viability": "Locked to light mode (white/cream backgrounds). Dark mode would undermine the institutional feel and projector readability. This is correct for the use case.",
+
+  "precedent": {
+    "examples": [
+      "Vietnamese government official websites (chinhphu.vn) - red headers, gold accents on white",
+      "Communist Party of Vietnam publications and posters",
+      "Vietnamese national ceremony stage backdrops and banners",
+      "Vietnamese university official presentation templates",
+      "VTV (Vietnam Television) news graphics"
+    ],
+    "notes": "This style has strong real-world precedent in Vietnamese institutional contexts but is rarely seen as a deliberate design choice in student presentations - usually it's a default rather than an intentional aesthetic"
+  },
+
+  "uncertain": []
+}

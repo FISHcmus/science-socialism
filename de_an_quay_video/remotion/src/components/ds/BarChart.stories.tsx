@@ -1,5 +1,9 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { Story, StoryDefault } from "@ladle/react";
 import { BarChart } from "./BarChart";
+
+export default {
+  title: "DS/BarChart",
+} satisfies StoryDefault;
 
 const sampleData = [
   { label: "Miền Bắc", value: 85 },
@@ -9,28 +13,14 @@ const sampleData = [
   { label: "Tây Bắc", value: 68 },
 ];
 
-const meta: Meta<typeof BarChart> = {
-  title: "DS/BarChart",
-  component: BarChart,
-  args: {
-    data: sampleData,
-    maxHeight: 300,
-    showValues: true,
-    suffix: "%",
-    barProgress: 1,
-    barOpacity: 1,
-  },
-};
-export default meta;
+export const Default: Story = () => (
+  <BarChart data={sampleData} maxHeight={300} showValues suffix="%" barProgress={1} barOpacity={1} />
+);
 
-type Story = StoryObj<typeof BarChart>;
+export const HalfProgress: Story = () => (
+  <BarChart data={sampleData} maxHeight={300} showValues suffix="%" barProgress={0.5} barOpacity={1} />
+);
 
-export const Default: Story = {};
-
-export const HalfProgress: Story = {
-  args: { barProgress: 0.5 },
-};
-
-export const NoValues: Story = {
-  args: { showValues: false },
-};
+export const NoValues: Story = () => (
+  <BarChart data={sampleData} maxHeight={300} showValues={false} suffix="%" barProgress={1} barOpacity={1} />
+);
