@@ -1,14 +1,10 @@
-import { AbsoluteFill, interpolate, useCurrentFrame, spring, useVideoConfig } from "remotion";
+import { AbsoluteFill, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile } from "remotion";
 import { COLORS, TEXT_SHADOW } from "../../constants";
-import { SectionTitle, ArtDecoImage, MemberPiP, CitationFooter } from "../ds";
+import { SectionTitle, ArtDecoImage, MemberPiP, CitationFooter, Timeline } from "../ds";
 
-const EVENT_CARD = { title: "Giao lưu HSSV DTTS - Cần Thơ 5/2025", detail: "Biểu diễn văn nghệ dân tộc, thi cổng trại truyền thống, đốt lửa trại giao lưu giữa sinh viên các dân tộc thiểu số.", appearAt: 90 };
-const LESSON_CARDS = [
-  { title: "Chủ động tìm hiểu", detail: "Trân trọng nét đẹp văn hóa mỗi dân tộc, tìm hiểu phong tục, tập quán, lễ hội truyền thống.", appearAt: 500 },
-  { title: "Giữ bản sắc, mở lòng học hỏi", detail: "Bảo tồn bản sắc văn hóa riêng nhưng không khép kín, sẵn sàng tiếp thu tinh hoa văn hóa các dân tộc khác.", appearAt: 850 },
-  { title: "Trở thành cầu nối văn hóa", detail: "Sinh viên là cầu nối giữa các nền văn hóa, lan tỏa giá trị thống nhất trong đa dạng.", appearAt: 1200 },
-];
-const ALL_CARDS = [EVENT_CARD, ...LESSON_CARDS];
+;
+;
+;
 
 export const Section31QuynhNhu: React.FC = () => {
   const frame = useCurrentFrame();
@@ -25,6 +21,36 @@ export const Section31QuynhNhu: React.FC = () => {
   const pipOpacity = interpolate(frame, [90, 120], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const citationOpacity = interpolate(frame, [1800, 1860], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
 
+  // Timeline items
+  const timelineItems = [
+    { title: "Giao lưu HSSV DTTS (Cần Thơ, 5/2025)", detail: "Biểu diễn văn nghệ, thi cắm trại, đốt lửa trại — tăng cường hiểu biết giữa các dân tộc" },
+    { title: "Chủ động tìm hiểu đa dạng văn hóa", detail: "Học hỏi phong tục, tập quán, ngôn ngữ của các dân tộc anh em trong cộng đồng" },
+    { title: "Giữ bản sắc nhưng không khép kín", detail: "Trở thành cầu nối văn hóa, lan tỏa giá trị tốt đẹp của mỗi dân tộc" },
+  ];
+
+  // Cascade-down entrance: staggered translateY + opacity
+  const itemOpacities = timelineItems.map((_, i) => {
+    const s = spring({ frame: Math.max(0, frame - 200 - i * 200), fps, config: { damping: 14, stiffness: 70 } });
+    return interpolate(s, [0, 1], [0, 1]);
+  });
+  const itemTranslateX = timelineItems.map((_, i) => {
+    const s = spring({ frame: Math.max(0, frame - 200 - i * 200), fps, config: { damping: 14, stiffness: 70 } });
+    return interpolate(s, [0, 1], [-40, 0]);
+  });
+  const dotScales = timelineItems.map((_, i) => {
+    const s = spring({ frame: Math.max(0, frame - 180 - i * 200), fps, config: { damping: 12, stiffness: 100 } });
+    return interpolate(s, [0, 1], [0, 1]);
+  });
+  const lineProgress = interpolate(frame, [150, 750], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const visibleCount = frame < 200 ? 0 : frame < 400 ? 1 : frame < 600 ? 2 : 3;
+
+  // Page curl page-flip
+  const PAGE_FLIP = 1150;
+  const flipProgress = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const page1Opacity = interpolate(flipProgress, [0, 0.8], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const page1SkewY = interpolate(flipProgress, [0, 1], [0, -5]);
+  const page1Scale = interpolate(flipProgress, [0, 1], [1, 0.95]);
+
   const img1Opacity = interpolate(frame, [1500, 1530], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const img1Sweep = Math.max(0, Math.min(1, (frame - 1535) / 30));
   const img2Opacity = interpolate(frame, [1620, 1650], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
@@ -40,37 +66,38 @@ export const Section31QuynhNhu: React.FC = () => {
 
       {frame >= 90 && (
         <AbsoluteFill style={{ flexDirection: "row" }}>
-          <div className="flex flex-col overflow-hidden" style={{ width: 1440, height: 1080, padding: "60px 60px 40px 80px" }}>
-            <div className="mb-6" style={{ opacity: headerOpacity }}>
+          <div className="flex flex-col overflow-hidden" style={{ width: 1440, height: 1080, padding: "48px 60px 32px 80px" }}>
+            <div className="mb-4" style={{ opacity: headerOpacity }}>
               <div className="text-[32px] text-ds-gold font-sans tracking-[4px] mb-2" style={{ textShadow: TEXT_SHADOW }}>PHẦN 3.1</div>
-              <h2 className="text-[52px] text-ds-white font-sans font-bold m-0 leading-tight" style={{ textShadow: TEXT_SHADOW }}>Giao lưu văn hóa dân tộc</h2>
-              <div className="w-[100px] h-1 bg-ds-gold mt-4" />
+              <h2 className="text-[48px] text-ds-white font-sans font-bold m-0 leading-tight" style={{ textShadow: TEXT_SHADOW }}>Giao lưu văn hóa dân tộc</h2>
+              <div className="w-[100px] h-1 bg-ds-gold mt-3" />
             </div>
 
-            <div className="flex flex-col gap-4">
-              {ALL_CARDS.map((p, i) => {
-                const localFrame = frame - p.appearAt;
-                if (localFrame < 0) return null;
-                const cardSpring = spring({ frame: localFrame, fps, config: { damping: 16, stiffness: 90 } });
-                const translateX = interpolate(cardSpring, [0, 1], [-80, 0]);
-                const cardOpacity = interpolate(cardSpring, [0, 1], [0, 1]);
-                return (
-                  <div key={i} className="rounded-xl" style={{ transform: `translateX(${translateX}px)`, opacity: cardOpacity, backgroundColor: "rgba(255, 255, 255, 0.95)", border: `3px solid ${COLORS.gold}`, borderLeft: `6px solid ${COLORS.gold}`, padding: "20px 32px" }}>
-                    <div className="text-[38px] font-bold text-ds-white font-sans mb-2 leading-tight" style={{ textShadow: TEXT_SHADOW }}>{p.title}</div>
-                    <div className="text-[28px] text-ds-body font-sans leading-normal" style={{ textShadow: TEXT_SHADOW }}>{p.detail}</div>
-                  </div>
-                );
-              })}
-            </div>
+            {/* Page 1: Timeline */}
+            {frame < PAGE_FLIP + 30 && (
+              <div style={{ opacity: page1Opacity, transform: `skewY(${page1SkewY}deg) scale(${page1Scale})`, transformOrigin: "top left" }}>
+                <Timeline
+                  items={timelineItems}
+                  visibleCount={visibleCount}
+                  itemOpacities={itemOpacities}
+                  itemTranslateX={itemTranslateX}
+                  dotScales={dotScales}
+                  lineProgress={lineProgress}
+                />
+              </div>
+            )}
 
-            <div className="flex gap-10 mt-6">
-              <div style={{ opacity: img1Opacity }}><ArtDecoImage description="Ảnh minh họa 1" width={340} height={340} ringAngle={ringAngle} sweepProgress={img1Sweep} /></div>
-              <div style={{ opacity: img2Opacity }}><ArtDecoImage description="Ảnh minh họa 2" width={340} height={340} ringAngle={ringAngle} sweepProgress={img2Sweep} /></div>
-            </div>
+            {/* Page 2: images */}
+            {frame >= PAGE_FLIP && (
+              <div className="flex gap-8">
+                <div style={{ opacity: img1Opacity }}><ArtDecoImage description="Ảnh minh họa 1" width={480} height={480} ringAngle={ringAngle} sweepProgress={img1Sweep} /></div>
+                <div style={{ opacity: img2Opacity }}><ArtDecoImage description="Ảnh minh họa 2" width={480} height={480} ringAngle={ringAngle} sweepProgress={img2Sweep} /></div>
+              </div>
+            )}
 
             <div className="mt-auto"><CitationFooter text="GT CNXHKH (2021), Ch.6, I.1, tr.198; Bộ VHTTDL (2025)" opacity={citationOpacity} /></div>
           </div>
-          <div style={{ opacity: pipOpacity }}><MemberPiP name="Nguyễn Phạm Quỳnh Như" sectionLabel="Phần 3.1 - Giao lưu văn hóa" ringAngle={ringAngle} /></div>
+          <div style={{ opacity: pipOpacity }}><MemberPiP name="Nguyễn Phạm Quỳnh Như" sectionLabel="Phần 3.1 - Giao lưu văn hóa" ringAngle={ringAngle} src={staticFile('media/T3-1/video_quynh_nhu.mp4')} /></div>
         </AbsoluteFill>
       )}
     </AbsoluteFill>

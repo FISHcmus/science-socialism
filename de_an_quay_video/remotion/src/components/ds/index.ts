@@ -46,3 +46,10 @@ export type { CitationFooterProps } from "./CitationFooter";
 
 export { MemberPiP } from "./MemberPiP";
 export type { MemberPiPProps } from "./MemberPiP";
+
+export { SplitCompare } from "./SplitCompare";
+export type { SplitCompareProps } from "./SplitCompare";
+export { Timeline } from "./Timeline";
+export type { TimelineProps } from "./Timeline";
+export { AlertCard } from "./AlertCard";
+export type { AlertCardProps } from "./AlertCard";
