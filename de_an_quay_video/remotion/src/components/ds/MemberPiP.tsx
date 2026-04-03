@@ -1,4 +1,5 @@
 import React from "react";
+import { Video } from "remotion";
 import { COLORS, GOLD_RING, GRADIENTS, TEXT_SHADOW } from "./tokens";
 
 export interface MemberPiPProps {
@@ -73,7 +74,7 @@ export function MemberPiP({
             }}
           >
             {src ? (
-              <video
+              <Video
                 src={src}
                 className="w-full h-full object-cover block"
               />

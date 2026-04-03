@@ -1,6 +1,7 @@
-import { AbsoluteFill, interpolate, useCurrentFrame, spring, useVideoConfig } from "remotion";
-import { COLORS, TEXT_SHADOW } from "../../constants";
-import { SectionTitle, ArtDecoImage, MemberPiP, CitationFooter } from "../ds";
+import { AbsoluteFill, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile } from "remotion";
+import { TEXT_SHADOW } from "../../constants";
+import { SectionTitle, ArtDecoImage, MemberPiP, CitationFooter, IconGrid } from "../ds";
+import type { IconGridItem } from "../ds";
 
 const CHARACTERISTICS = [
   { title: "Cộng đồng lãnh thổ", detail: "Vùng đất, trời, biển thuộc chủ quyền quốc gia, là nơi cư trú lâu đời của cộng đồng dân tộc.", appearAt: 90 },
@@ -25,10 +26,43 @@ export const Section12ChauNhi: React.FC = () => {
   const pipOpacity = interpolate(frame, [90, 120], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const citationOpacity = interpolate(frame, [1800, 1860], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
 
+  // Page transition: rotate-fade
+  const PAGE_FLIP = 880;
+  const page1Rotate = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [0, -3], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const page1Opacity = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const page2Rotate = interpolate(frame, [PAGE_FLIP + 30, PAGE_FLIP + 60], [3, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const page2Opacity = interpolate(frame, [PAGE_FLIP + 30, PAGE_FLIP + 60], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+
   const img1Opacity = interpolate(frame, [1500, 1530], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const img1Sweep = Math.max(0, Math.min(1, (frame - 1535) / 30));
   const img2Opacity = interpolate(frame, [1620, 1650], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const img2Sweep = Math.max(0, Math.min(1, (frame - 1655) / 30));
+
+  // Map CHARACTERISTICS to IconGridItem format
+  const page1Items: IconGridItem[] = CHARACTERISTICS.slice(0, 3).map(c => ({ label: c.title, description: c.detail }));
+  const page2Items: IconGridItem[] = CHARACTERISTICS.slice(3).map(c => ({ label: c.title, description: c.detail }));
+
+  // Scale-bounce animation: 0 -> 1.15 -> 1.0
+  const computeScaleBounce = (appearAt: number) => {
+    const localFrame = frame - appearAt;
+    if (localFrame < 0) return { scale: 0, opacity: 0 };
+    const s = spring({ frame: localFrame, fps, config: { damping: 12, stiffness: 120 } });
+    const scale = interpolate(s, [0, 0.7, 1], [0, 1.15, 1]);
+    const opacity = interpolate(s, [0, 0.3], [0, 1], { extrapolateRight: "clamp" });
+    return { scale, opacity };
+  };
+
+  // Page 1: items 0-2
+  const page1Animations = CHARACTERISTICS.slice(0, 3).map(c => computeScaleBounce(c.appearAt));
+  const page1Scales = page1Animations.map(a => a.scale);
+  const page1Opacities = page1Animations.map(a => a.opacity);
+  const page1VisibleCount = page1Animations.filter(a => a.opacity > 0).length;
+
+  // Page 2: items 3-4
+  const page2Animations = CHARACTERISTICS.slice(3).map(c => computeScaleBounce(c.appearAt));
+  const page2Scales = page2Animations.map(a => a.scale);
+  const page2Opacities = page2Animations.map(a => a.opacity);
+  const page2VisibleCount = page2Animations.filter(a => a.opacity > 0).length;
 
   return (
     <AbsoluteFill>
@@ -43,39 +77,48 @@ export const Section12ChauNhi: React.FC = () => {
 
       {frame >= 90 && (
         <AbsoluteFill style={{ flexDirection: "row" }}>
-          <div className="flex flex-col overflow-hidden" style={{ width: 1440, height: 1080, padding: "60px 60px 40px 80px" }}>
-            <div className="mb-6" style={{ opacity: headerOpacity }}>
+          <div className="flex flex-col overflow-hidden" style={{ width: 1440, height: 1080, padding: "48px 60px 32px 80px" }}>
+            <div className="mb-4" style={{ opacity: headerOpacity }}>
               <div className="text-[32px] text-ds-gold font-sans tracking-[4px] mb-2" style={{ textShadow: TEXT_SHADOW }}>PHẦN 1.2</div>
-              <h2 className="text-[52px] text-ds-white font-sans font-bold m-0 leading-tight" style={{ textShadow: TEXT_SHADOW }}>Năm đặc trưng cơ bản của dân tộc</h2>
-              <div className="w-[100px] h-1 bg-ds-gold mt-4" />
+              <h2 className="text-[48px] text-ds-white font-sans font-bold m-0 leading-tight" style={{ textShadow: TEXT_SHADOW }}>Năm đặc trưng cơ bản của dân tộc</h2>
+              <div className="w-[100px] h-1 bg-ds-gold mt-3" />
             </div>
 
-            <div className="flex flex-col gap-3">
-              {CHARACTERISTICS.map((c, i) => {
-                const localFrame = frame - c.appearAt;
-                if (localFrame < 0) return null;
-                const cardSpring = spring({ frame: localFrame, fps, config: { damping: 16, stiffness: 90 } });
-                const translateX = interpolate(cardSpring, [0, 1], [-80, 0]);
-                const cardOpacity = interpolate(cardSpring, [0, 1], [0, 1]);
+            {/* Page 1: IconGrid 3 columns for items 0-2 */}
+            {frame < PAGE_FLIP + 30 && (
+              <div style={{ opacity: page1Opacity, transform: `rotate(${page1Rotate}deg)`, transformOrigin: "center center", flex: 1, display: "flex", alignItems: "flex-start" }}>
+                <IconGrid
+                  items={page1Items}
+                  columns={3}
+                  visibleCount={page1VisibleCount}
+                  itemScales={page1Scales}
+                  itemOpacities={page1Opacities}
+                />
+              </div>
+            )}
 
-                return (
-                  <div key={i} className="rounded-xl" style={{ transform: `translateX(${translateX}px)`, opacity: cardOpacity, backgroundColor: "rgba(255, 255, 255, 0.95)", border: `3px solid ${COLORS.gold}`, borderLeft: `6px solid ${COLORS.gold}`, padding: "16px 28px" }}>
-                    <div className="text-[34px] font-bold text-ds-white font-sans mb-2 leading-tight" style={{ textShadow: TEXT_SHADOW }}>{c.title}</div>
-                    <div className="text-[26px] text-ds-body font-sans leading-normal" style={{ textShadow: TEXT_SHADOW }}>{c.detail}</div>
-                  </div>
-                );
-              })}
-            </div>
+            {/* Page 2: IconGrid 2 columns for items 3-4 + images */}
+            {frame >= PAGE_FLIP && (
+              <div style={{ opacity: page2Opacity, transform: `rotate(${page2Rotate}deg)`, transformOrigin: "center center", flex: 1 }} className="flex flex-col gap-4">
+                <IconGrid
+                  items={page2Items}
+                  columns={2}
+                  visibleCount={page2VisibleCount}
+                  itemScales={page2Scales}
+                  itemOpacities={page2Opacities}
+                />
 
-            <div className="flex gap-10 mt-6">
-              <div style={{ opacity: img1Opacity }}><ArtDecoImage description="Ảnh minh họa 1" width={340} height={340} ringAngle={ringAngle} sweepProgress={img1Sweep} /></div>
-              <div style={{ opacity: img2Opacity }}><ArtDecoImage description="Ảnh minh họa 2" width={340} height={340} ringAngle={ringAngle} sweepProgress={img2Sweep} /></div>
-            </div>
+                <div className="flex gap-8 mt-4">
+                  <div style={{ opacity: img1Opacity }}><ArtDecoImage description="54 dân tộc anh em" src={staticFile('media/T1-2/img1_54_dan_toc.jpg')} width={400} height={400} ringAngle={ringAngle} sweepProgress={img1Sweep} /></div>
+                  <div style={{ opacity: img2Opacity }}><ArtDecoImage description="Bản đồ Việt Nam" src={staticFile('media/T1-2/img2_ban_do_vn.jpeg')} width={400} height={400} ringAngle={ringAngle} sweepProgress={img2Sweep} /></div>
+                </div>
+              </div>
+            )}
 
             <div className="mt-auto"><CitationFooter text="Giáo trình CNXHKH (2021), Ch.6, I.1, tr.196-200" opacity={citationOpacity} /></div>
           </div>
 
-          <div style={{ opacity: pipOpacity }}><MemberPiP name="Nguyễn Hồng Châu Nhi" sectionLabel="Phần 1.2 - Năm đặc trưng dân tộc" ringAngle={ringAngle} /></div>
+          <div style={{ opacity: pipOpacity }}><MemberPiP name="Nguyễn Hồng Châu Nhi" sectionLabel="Phần 1.2 - Năm đặc trưng dân tộc" ringAngle={ringAngle} src={staticFile('media/T1-2/video_chau_nhi.mp4')} /></div>
         </AbsoluteFill>
       )}
     </AbsoluteFill>

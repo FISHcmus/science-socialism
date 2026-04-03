@@ -1,6 +1,6 @@
 import { AbsoluteFill, Sequence } from "remotion";
 import { SECTIONS, COLORS } from "./constants";
-import { Background3D } from "./components/shared/Background3D";
+// import { Background3D } from "./components/shared/Background3D";
 import { TitleCard } from "./components/TitleCard";
 import { NhanIntro } from "./components/sections/NhanIntro";
 import { Section11ThucNhi } from "./components/sections/Section11ThucNhi";
@@ -32,7 +32,7 @@ const SECTION_COMPONENTS: Record<string, React.FC> = {
 export const MainVideo: React.FC = () => {
   return (
     <AbsoluteFill style={{ backgroundColor: COLORS.darkest }}>
-      <Background3D accentColor={COLORS.gold} />
+      {/* <Background3D accentColor={COLORS.gold} /> */}
       {SECTIONS.map((section) => {
         const Component = SECTION_COMPONENTS[section.id];
         if (!Component) return null;

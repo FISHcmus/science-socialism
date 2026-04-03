@@ -1,25 +1,23 @@
-import { AbsoluteFill, interpolate, useCurrentFrame, spring, useVideoConfig } from "remotion";
+import { AbsoluteFill, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile } from "remotion";
 import { COLORS, TEXT_SHADOW } from "../../constants";
-import { SectionTitle, ArtDecoImage, MemberPiP, CitationFooter } from "../ds";
+import { SectionTitle, ArtDecoImage, MemberPiP, CitationFooter, FlowChart } from "../ds";
+import type { FlowNode } from "../ds";
 
 const PRINCIPLES = [
   {
     title: "Các dân tộc hoàn toàn bình đẳng",
-    detail: "Mọi dân tộc đều có quyền và nghĩa vụ ngang nhau trên mọi lĩnh vực, không phân biệt lớn nhỏ, trình độ phát triển.",
-    image: "Đồng bào các dân tộc thiểu số Việt Nam",
+    detail: "Mọi dân tộc đều có quyền và nghĩa vụ ngang nhau trên mọi lĩnh vực",
     appearAt: 90,
   },
   {
     title: "Các dân tộc có quyền tự quyết",
-    detail: "Quyền tự quyết định chế độ chính trị, con đường phát triển của mình. HCM: con đường cách mạng vô sản.",
-    image: "Trích dẫn Hồ Chí Minh về con đường cách mạng",
-    appearAt: 690,
+    detail: "Quyền tự quyết định chế độ chính trị, con đường phát triển. HCM: CMVS",
+    appearAt: 390,
   },
   {
     title: "Liên hiệp công nhân tất cả các dân tộc",
-    detail: "Gắn kết chặt chẽ giải phóng dân tộc với giải phóng giai cấp, phản ánh bản chất quốc tế của phong trào công nhân.",
-    image: "Đoàn kết công nhân - nông dân các dân tộc",
-    appearAt: 1290,
+    detail: "Gắn kết giải phóng dân tộc với giải phóng giai cấp",
+    appearAt: 690,
   },
 ];
 
@@ -35,32 +33,51 @@ export const Section11ThucNhi: React.FC = () => {
   const beat2LocalFrame = Math.max(0, frame - 90);
   const ringAngle = (beat2LocalFrame / fps) * 80;
 
-  const headerOpacity = interpolate(frame, [90, 110], [0, 1], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
+  const headerOpacity = interpolate(frame, [90, 110], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const pipOpacity = interpolate(frame, [90, 120], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const citationOpacity = interpolate(frame, [1800, 1860], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+
+  // FlowChart nodes
+  const flowNodes: FlowNode[] = PRINCIPLES.map((p) => ({
+    label: p.title,
+    description: p.detail,
+  }));
+
+  // Per-node scale pop-in (0.7 -> 1.0) and opacity (0 -> 1), staggered ~300 frames apart
+  const nodeScales = PRINCIPLES.map((p) => {
+    const localFrame = frame - p.appearAt;
+    if (localFrame < 0) return 0.7;
+    const s = spring({ frame: localFrame, fps, config: { damping: 16, stiffness: 90 } });
+    return interpolate(s, [0, 1], [0.7, 1]);
   });
 
-  const pipOpacity = interpolate(frame, [90, 120], [0, 1], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
+  const nodeOpacities = PRINCIPLES.map((p) => {
+    const localFrame = frame - p.appearAt;
+    if (localFrame < 0) return 0;
+    const s = spring({ frame: localFrame, fps, config: { damping: 16, stiffness: 90 } });
+    return interpolate(s, [0, 1], [0, 1]);
   });
 
-  const citationOpacity = interpolate(frame, [1800, 1860], [0, 1], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
+  const arrowOpacities = PRINCIPLES.slice(1).map((p) => {
+    const localFrame = frame - p.appearAt;
+    if (localFrame < 0) return 0;
+    const s = spring({ frame: localFrame, fps, config: { damping: 16, stiffness: 90 } });
+    return interpolate(s, [0, 1], [0, 1]);
   });
 
-  const img1Opacity = interpolate(frame, [1500, 1530], [0, 1], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
-  const img1Sweep = Math.max(0, Math.min(1, (frame - 1535) / 30));
+  // Count visible nodes for FlowChart
+  const visibleNodes = PRINCIPLES.filter((p) => frame >= p.appearAt).length;
 
-  const img2Opacity = interpolate(frame, [1620, 1650], [0, 1], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
-  const img2Sweep = Math.max(0, Math.min(1, (frame - 1655) / 30));
+  // Page flip: horizontal wipe
+  const PAGE_FLIP = 1450;
+  const page1TranslateX = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [0, -1440], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const page1Opacity = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const page2TranslateX = interpolate(frame, [PAGE_FLIP + 30, PAGE_FLIP + 60], [1440, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+
+  const img1Opacity = interpolate(frame, [PAGE_FLIP + 30, PAGE_FLIP + 60], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const img1Sweep = Math.max(0, Math.min(1, (frame - PAGE_FLIP - 65) / 30));
+  const img2Opacity = interpolate(frame, [PAGE_FLIP + 90, PAGE_FLIP + 120], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const img2Sweep = Math.max(0, Math.min(1, (frame - PAGE_FLIP - 125) / 30));
 
   return (
     <AbsoluteFill>
@@ -84,71 +101,39 @@ export const Section11ThucNhi: React.FC = () => {
         <AbsoluteFill style={{ flexDirection: "row" }}>
           <div
             className="flex flex-col overflow-hidden"
-            style={{ width: 1440, height: 1080, padding: "60px 60px 40px 80px" }}
+            style={{ width: 1440, height: 1080, padding: "48px 60px 32px 80px", position: "relative" }}
           >
-            <div className="mb-6" style={{ opacity: headerOpacity }}>
-              <div
-                className="text-[32px] text-ds-gold font-sans tracking-[4px] mb-2"
-                style={{ textShadow: TEXT_SHADOW }}
-              >
-                PHẦN 1.1
-              </div>
-              <h2
-                className="text-[52px] text-ds-white font-sans font-bold m-0 leading-tight"
-                style={{ textShadow: TEXT_SHADOW }}
-              >
-                Cương lĩnh dân tộc của chủ nghĩa Mác - Lênin
-              </h2>
-              <div className="w-[100px] h-1 bg-ds-gold mt-4" />
+            <div className="mb-4" style={{ opacity: headerOpacity }}>
+              <div className="text-[32px] text-ds-gold font-sans tracking-[4px] mb-2" style={{ textShadow: TEXT_SHADOW }}>PHẦN 1.1</div>
+              <h2 className="text-[48px] text-ds-white font-sans font-bold m-0 leading-tight" style={{ textShadow: TEXT_SHADOW }}>Cương lĩnh dân tộc của chủ nghĩa Mác - Lênin</h2>
+              <div className="w-[100px] h-1 bg-ds-gold mt-3" />
             </div>
 
-            <div className="flex flex-col gap-4">
-              {PRINCIPLES.map((p, i) => {
-                const localFrame = frame - p.appearAt;
-                if (localFrame < 0) return null;
-
-                const cardSpring = spring({ frame: localFrame, fps, config: { damping: 16, stiffness: 90 } });
-                const translateX = interpolate(cardSpring, [0, 1], [-80, 0]);
-                const cardOpacity = interpolate(cardSpring, [0, 1], [0, 1]);
-
-                return (
-                  <div
-                    key={i}
-                    className="rounded-xl"
-                    style={{
-                      transform: `translateX(${translateX}px)`,
-                      opacity: cardOpacity,
-                      backgroundColor: "rgba(255, 255, 255, 0.95)",
-                      border: `3px solid ${COLORS.gold}`,
-                      borderLeft: `6px solid ${COLORS.gold}`,
-                      padding: "20px 32px",
-                    }}
-                  >
-                    <div
-                      className="text-[38px] font-bold text-ds-white font-sans mb-2 leading-tight"
-                      style={{ textShadow: TEXT_SHADOW }}
-                    >
-                      {p.title}
-                    </div>
-                    <div
-                      className="text-[28px] text-ds-body font-sans leading-normal"
-                      style={{ textShadow: TEXT_SHADOW }}
-                    >
-                      {p.detail}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
-            <div className="flex gap-10 mt-6">
-              <div style={{ opacity: img1Opacity }}>
-                <ArtDecoImage description="Ảnh minh họa 1" width={340} height={340} ringAngle={ringAngle} sweepProgress={img1Sweep} />
+            {/* Page 1: FlowChart vertical */}
+            {frame < PAGE_FLIP + 30 && (
+              <div style={{ opacity: page1Opacity, transform: `translateX(${page1TranslateX}px)`, flex: 1, display: "flex", alignItems: "center" }}>
+                <FlowChart
+                  nodes={flowNodes}
+                  direction="vertical"
+                  visibleNodes={visibleNodes}
+                  nodeScales={nodeScales}
+                  nodeOpacities={nodeOpacities}
+                  arrowOpacities={arrowOpacities}
+                />
               </div>
-              <div style={{ opacity: img2Opacity }}>
-                <ArtDecoImage description="Ảnh minh họa 2" width={340} height={340} ringAngle={ringAngle} sweepProgress={img2Sweep} />
+            )}
+
+            {/* Page 2: images */}
+            {frame >= PAGE_FLIP && (
+              <div className="flex gap-8" style={{ transform: `translateX(${page2TranslateX}px)`, flex: 1, alignItems: "center" }}>
+                <div style={{ opacity: img1Opacity }}>
+                  <ArtDecoImage description="Ảnh minh họa 1" src={staticFile('media/T1-1/img1.jpg')} width={480} height={480} ringAngle={ringAngle} sweepProgress={img1Sweep} />
+                </div>
+                <div style={{ opacity: img2Opacity }}>
+                  <ArtDecoImage description="Ảnh minh họa 2" src={staticFile('media/T1-1/img2.jpg')} width={480} height={480} ringAngle={ringAngle} sweepProgress={img2Sweep} />
+                </div>
               </div>
-            </div>
+            )}
 
             <div className="mt-auto">
               <CitationFooter text="Giáo trình CNXHKH (2021), Ch.6, I.2b, tr.202-205" opacity={citationOpacity} />
@@ -156,7 +141,7 @@ export const Section11ThucNhi: React.FC = () => {
           </div>
 
           <div style={{ opacity: pipOpacity }}>
-            <MemberPiP name="Đào Thục Nhi" sectionLabel="Phần 1.1 - Cương lĩnh dân tộc" ringAngle={ringAngle} />
+            <MemberPiP name="Đào Thục Nhi" sectionLabel="Phần 1.1 - Cương lĩnh dân tộc" ringAngle={ringAngle} src={staticFile('media/T1-1/video_thuc_nhi.mp4')} />
           </div>
         </AbsoluteFill>
       )}
