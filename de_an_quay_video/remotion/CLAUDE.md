@@ -21,8 +21,8 @@ Default to using **Bun** instead of Node.js for all operations (`bun install`, `
 ## Section Layout Pattern
 
 All 8 member sections follow a 2-beat structure:
-- **Beat 1** (90 frames / 3s): Full-screen section title slide
-- **Beat 2** (remaining): Split layout - content area (left) + 480px MemberPiP sidebar (right)
+- **Beat 1** (360 frames / 12s): Full-screen section title slide (BGM plays here, no speech)
+- **Beat 2** (remaining): Split layout - content area (left) + 480px MemberPiP sidebar (right) (BGM silent, member speech)
 
 ## Key Architecture Rules
 

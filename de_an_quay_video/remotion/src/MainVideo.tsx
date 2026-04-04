@@ -1,4 +1,5 @@
-import { AbsoluteFill, Sequence } from "remotion";
+import { AbsoluteFill, Audio, Sequence, interpolate, staticFile } from "remotion";
+import { getBgmVolume } from "./bgmVolume";
 import { SECTIONS, COLORS } from "./constants";
 // import { Background3D } from "./components/shared/Background3D";
 import { TitleCard } from "./components/TitleCard";
@@ -33,6 +34,26 @@ export const MainVideo: React.FC = () => {
   return (
     <AbsoluteFill style={{ backgroundColor: COLORS.darkest }}>
       {/* <Background3D accentColor={COLORS.gold} /> */}
+      {/* BGM: 3 plays covering full video, volume=0 during speech */}
+      <Sequence from={0} durationInFrames={9150} name="BGM Play 1">
+        <Audio
+          src={staticFile("bgm.mp3")}
+          volume={(f) => getBgmVolume(f)}
+        />
+      </Sequence>
+      <Sequence from={9150} durationInFrames={9150} name="BGM Play 2">
+        <Audio
+          src={staticFile("bgm.mp3")}
+          volume={(f) => getBgmVolume(9150 + f)}
+        />
+      </Sequence>
+      <Sequence from={18300} durationInFrames={8700} name="BGM Play 3">
+        <Audio
+          src={staticFile("bgm.mp3")}
+          volume={(f) => getBgmVolume(18300 + f)}
+        />
+      </Sequence>
+
       {SECTIONS.map((section) => {
         const Component = SECTION_COMPONENTS[section.id];
         if (!Component) return null;

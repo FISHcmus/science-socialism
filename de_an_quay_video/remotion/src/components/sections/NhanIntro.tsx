@@ -1,4 +1,4 @@
-import { AbsoluteFill, interpolate, useCurrentFrame, spring, useVideoConfig } from "remotion";
+import { AbsoluteFill, interpolate, useCurrentFrame, spring, useVideoConfig, Video, staticFile } from "remotion";
 import { COLORS, MEMBER_COLORS, TEXT_SHADOW } from "../../constants";
 import { SectionTitle, TypewriterText, MemberPlaceholder, Overlay, LowerThird } from "../ds";
 import { VietnamMap } from "../shared/VietnamMap";
@@ -18,11 +18,11 @@ export const NhanIntro: React.FC = () => {
   const beat2Opacity = beat2Local >= 0
     ? interpolate(beat2Local, [0, 20], [0, 1], { extrapolateRight: "clamp" })
     : 0;
-  const beat2FadeOut = interpolate(frame, [130, 150], [1, 0], {
+  const beat2FadeOut = interpolate(frame, [330, 360], [1, 0], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
-  const beat2Visible = frame >= 90 && frame < 150;
+  const beat2Visible = frame >= 90 && frame < 360;
   const beat2CombinedOpacity = beat2Visible ? Math.min(beat2Opacity, beat2FadeOut) : 0;
 
   const typewriterText =
@@ -35,8 +35,8 @@ export const NhanIntro: React.FC = () => {
     ? Math.floor(beat2Local / 15) % 2 === 0
     : false;
 
-  // --- Beat 3: MemberPlaceholder + Overlay + LowerThird (frames 150-750) ---
-  const memberLocal = frame - 150;
+  // --- Beat 3: Content cards + Video (frames 360-750) ---
+  const memberLocal = frame - 360;
   const memberSpring = spring({
     frame: memberLocal,
     fps,
@@ -48,12 +48,12 @@ export const NhanIntro: React.FC = () => {
   const memberScale = interpolate(memberSpring, [0, 1], [0.95, 1]);
   const memberRingAngle = memberLocal >= 0 ? (memberLocal / fps) * 80 : 0;
 
-  const overlayLocal = frame - 150;
+  const overlayLocal = frame - 360;
   const overlayOpacity = overlayLocal >= 0
     ? interpolate(overlayLocal, [0, 20], [0, 0.65], { extrapolateRight: "clamp" })
     : 0;
 
-  const lowerThirdLocal = frame - 165;
+  const lowerThirdLocal = frame - 375;
   const lowerThirdSpring = spring({
     frame: lowerThirdLocal >= 0 ? lowerThirdLocal : 0,
     fps,
@@ -130,26 +130,53 @@ export const NhanIntro: React.FC = () => {
         </AbsoluteFill>
       )}
 
-      {/* Beat 3: MemberPlaceholder + Overlay + LowerThird (frames 150-750) */}
-      {frame >= 150 && (
-        <>
-          <MemberPlaceholder
-            name="Nhân"
-            color={MEMBER_COLORS["Nhân"] ?? COLORS.dark}
-            opacity={memberOpacity}
-            scale={memberScale}
-            ringAngle={memberRingAngle}
-          />
-          <Overlay direction="bottom" opacity={overlayOpacity} />
-          <div className="absolute bottom-[60px] left-[60px]">
-            <LowerThird
-              name="Nhân"
-              role="Nhóm trưởng - Giới thiệu chủ đề"
-              opacity={lowerThirdOpacity}
-              translateY={lowerThirdTranslateY}
-            />
+      {/* Beat 3: Content cards + Video (frames 360-750) */}
+      {frame >= 360 && (
+        <AbsoluteFill style={{ flexDirection: "row" }}>
+          {/* Left: content cards */}
+          <div className="flex flex-col justify-center" style={{ width: 960, height: 1080, padding: "60px 60px 60px 80px", opacity: memberOpacity }}>
+            <div
+              className="text-[32px] text-ds-gold font-sans tracking-[4px] mb-3 uppercase"
+              style={{ textShadow: TEXT_SHADOW }}
+            >
+              Chủ đề 6 - Nhóm 7
+            </div>
+            <h2
+              className="text-[44px] text-ds-white font-sans font-bold leading-tight m-0 mb-6"
+              style={{ textShadow: TEXT_SHADOW }}
+            >
+              Trách nhiệm của sinh viên trong việc góp phần xây dựng khối đại đoàn kết toàn dân tộc
+            </h2>
+
+            <div className="flex flex-col gap-4 mb-6">
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 rounded-full bg-ds-gold shrink-0" />
+                <div className="text-[30px] font-sans" style={{ color: COLORS.white, textShadow: TEXT_SHADOW }}>Phần 1: Cơ sở lý luận (35%)</div>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 rounded-full bg-ds-gold shrink-0" />
+                <div className="text-[30px] font-sans" style={{ color: COLORS.white, textShadow: TEXT_SHADOW }}>Phần 2: Thực tiễn Việt Nam (14%)</div>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 rounded-full bg-ds-gold shrink-0" />
+                <div className="text-[30px] font-sans" style={{ color: COLORS.white, textShadow: TEXT_SHADOW }}>Phần 3: Trách nhiệm sinh viên (50%)</div>
+              </div>
+            </div>
+
+            <div className="text-[24px] font-sans leading-relaxed" style={{ color: COLORS.body, textShadow: TEXT_SHADOW }}>
+              <span style={{ color: COLORS.gold, fontWeight: "bold" }}>Nguyễn Hữu Thiện Nhân</span> · Đào Thục Nhi · Nguyễn Hồng Châu Nhi · Trần Thị Phụng Nhi · Bùi Huỳnh Nhi · Hoàng Thị Tố Như · Nguyễn Đình Ý Như · Nguyễn Phạm Quỳnh Như · Ngô Văn Phú
+            </div>
           </div>
-        </>
+
+          {/* Right: horizontal video (contained) + name label */}
+          <div className="flex flex-col items-center justify-center" style={{ width: 960, height: 1080, opacity: memberOpacity, background: "#000" }}>
+            <Video src={staticFile('media/T3-4/cnxhkh_intro_nhan.mp4')} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+            <div style={{ position: "absolute", bottom: 60, background: "rgba(0,0,0,0.55)", borderRadius: 8, padding: "8px 20px" }}>
+              <div className="text-[28px] font-sans font-bold" style={{ color: "#fff" }}>Nhân</div>
+              <div className="text-[20px] font-sans" style={{ color: COLORS.gold }}>Nhóm trưởng - Giới thiệu chủ đề</div>
+            </div>
+          </div>
+        </AbsoluteFill>
       )}
     </AbsoluteFill>
   );

@@ -13,7 +13,7 @@ export const Section32ToNhu: React.FC = () => {
   const titleTranslateY = interpolate(titleSpring, [0, 1], [40, 0]);
   const titleAccentWidth = interpolate(titleSpring, [0, 1], [0, 80]);
 
-  const beat2LocalFrame = Math.max(0, frame - 90);
+  const beat2LocalFrame = Math.max(0, frame - 360);
   const ringAngle = (beat2LocalFrame / fps) * 80;
   const headerOpacity = interpolate(frame, [90, 110], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const pipOpacity = interpolate(frame, [90, 120], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
@@ -47,13 +47,13 @@ export const Section32ToNhu: React.FC = () => {
 
   return (
     <AbsoluteFill>
-      {frame < 90 && (
+      {frame < 360 && (
         <AbsoluteFill className="flex items-center justify-center" style={{ background: "linear-gradient(135deg, rgba(247,243,238,0.97) 0%, rgba(237,232,224,0.95) 100%)" }}>
           <SectionTitle title="Nhận diện thông tin sai lệch" subtitle="trên mạng xã hội" sectionNumber="PHẦN 3.2" opacity={titleOpacity} translateY={titleTranslateY} accentWidth={titleAccentWidth} />
         </AbsoluteFill>
       )}
 
-      {frame >= 90 && (
+      {frame >= 360 && (
         <AbsoluteFill style={{ flexDirection: "row" }}>
           <div className="flex flex-col overflow-hidden" style={{ width: 1440, height: 1080, padding: "48px 60px 32px 80px" }}>
             <div className="mb-4" style={{ opacity: headerOpacity }}>

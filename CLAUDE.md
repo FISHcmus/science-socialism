@@ -261,7 +261,7 @@ mcp__jetbrains__find_files_by_name_keyword(nameKeyword="Section", projectPath=".
 
 ## Remotion Video (de_an_quay_video/remotion/)
 
-Remotion-based video composition for the group presentation. 13.5 min at 30fps.
+Remotion-based video composition for the group presentation. 15:00 (27000 frames) at 30fps.
 
 - **Studio:** `cd de_an_quay_video/remotion && bun run studio` (serves at 100.64.0.2:5173)
 - **Render:** `bun run render` (full MP4) or `bun run render:draft` (half-res, lower quality)

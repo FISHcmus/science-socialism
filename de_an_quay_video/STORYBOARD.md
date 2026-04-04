@@ -1,16 +1,16 @@
 # Storyboard - Nhom 7 Video
 
 **Chu de 6:** Xay dung khoi dai doan ket toan dan toc o Viet Nam
-**Thoi luong:** 13:30 (24300 frames @ 30fps)
+**Thoi luong:** 15:00 (27000 frames @ 30fps)
 **Do phan giai:** 1920x1080
 
 ## Timeline
 
 ```
-00:00    00:30    02:00    03:30    05:00  06:00  07:00    08:30    10:00    11:30    13:00 13:30
+00:00    00:37    02:16    03:55    05:34  06:34  07:43    09:22    11:01    12:40    14:09 15:00
   |        |        |        |        |      |      |        |        |        |        |     |
   |--TITLE-|--INTRO-|--S1.1--|--S1.2--|S1.3--|S2.1--|--S2.2--|--S3.1--|--S3.2--|--S3.3--|S3.4-|KET|
-  | 150fr  | 750fr  | 2700fr | 2700fr|2700fr|1800fr|1800fr  | 2700fr | 2700fr | 2700fr|2700f|900|
+  | 150fr  | 960fr  | 2970fr | 2970fr|2970fr|2070fr|2070fr  | 2970fr | 2970fr | 2970fr|2970f|960|
   |        |        |        |        |      |      |        |        |        |        |     |
   |  Mo dau| Nhan   |ThucNhi |ChauNhi |PhNhi |HNhi  | Phu    |Q.Nhu   | ToNhu  | YNhu   |Nhan |   |
   |        |        |-----LY LUAN (35%)------|--TT(14%)-|------TRACH NHIEM SV (50%)-----|     |
@@ -59,8 +59,8 @@
 ## Beat structure (moi section)
 
 ```
-Frame 0-89:   TITLE BEAT - chi hien tieu de section (centered, full screen)
-Frame 90+:    CONTENT BEAT - layout 2 cot (content + MemberPiP)
+Frame 0-359:  TITLE BEAT - tieu de section (centered, full screen, 12s) + BGM plays here
+Frame 360+:   CONTENT BEAT - layout 2 cot (content + MemberPiP), BGM silent
 ```
 
 ---
@@ -82,7 +82,7 @@ Frame 90+:    CONTENT BEAT - layout 2 cot (content + MemberPiP)
 +------------------------------------------------------+
 ```
 
-## INTRO (0:05 - 0:30, frames 150-899) - Nhan
+## INTRO (0:05 - 0:37, frames 150-1109) - Nhan
 
 ```
 Content:
@@ -90,14 +90,16 @@ Content:
   - Nhom 7 - 9 thanh vien
   - Cau truc: Ly luan -> Thuc tien -> Trach nhiem SV
 
-Media: T3-4 chua co video (placeholder)
+Layout: Split 960+960 | Left: content cards (topic, 3-part structure, member count) | Right: horizontal video (contain, black bg) + name label
+
+Video:  T3-4/cnxhkh_intro_nhan.mp4 (horizontal 1920x1080, objectFit: contain)
 ```
 
 ---
 
 ## PHAN 1: CO SO LY LUAN (35%)
 
-### S1.1 - Cuong linh dan toc Mac-Lenin (0:30 - 2:00) - Thuc Nhi
+### S1.1 - Cuong linh dan toc Mac-Lenin (0:37 - 2:16) - Thuc Nhi
 
 **Layout:** FlowChart vertical (3 nodes) | Scale pop-in | Horizontal wipe
 
@@ -115,7 +117,7 @@ Video:  T1-1/video_thuc_nhi.mp4
 Citation: GT CNXHKH (2021), Ch.6, I.2b, tr.202-205
 ```
 
-### S1.2 - Nam dac trung co ban cua dan toc (2:00 - 3:30) - Chau Nhi
+### S1.2 - Nam dac trung co ban cua dan toc (2:16 - 3:55) - Chau Nhi
 
 **Layout:** IconGrid 3-col / 2-col | Scale-bounce (0->1.15->1.0) | Rotate-fade
 
@@ -136,7 +138,7 @@ Video:  T1-2/video_chau_nhi.mp4
 Citation: GT CNXHKH (2021), Ch.6, I.1, tr.196-200
 ```
 
-### S1.3 - Bon nguyen tac giai quyet van de ton giao (3:30 - 5:00) - Phung Nhi
+### S1.3 - Bon nguyen tac giai quyet van de ton giao (3:55 - 5:34) - Phung Nhi
 
 **Layout:** FlowChart horizontal + TypewriterText | Fade + slide-down | Scale-down/up
 
@@ -160,7 +162,7 @@ Citation: GT CNXHKH (2021), Ch.6, II.1b, tr.218-221
 
 ## PHAN 2: THUC TIEN VIET NAM (14%)
 
-### S2.1 - Thuc tien doan ket dan toc VN (5:00 - 6:00) - Huynh Nhi
+### S2.1 - Thuc tien doan ket dan toc VN (5:34 - 6:43) - Huynh Nhi
 
 **Layout:** SplitCompare (green vs red) | Curtain (opposite sides) | Vertical split
 
@@ -172,11 +174,11 @@ Cards (2):
 Quote: "Bao nhieu loi ich deu vi dan, bao nhieu quyen han deu cua dan" - HCM
 
 Images: T2-1/img1.jpg, T2-1/img2.jpeg (280x280)
-Video:  T2-1/video_huynh_nhi.mp4
+Video:  T2-1/video_huynh_nhi.mp4 (NOTE: video already has background music - do NOT layer additional music track)
 Citation: GT CNXHKH (2021), Ch.6, I.3a, tr.205-208; HCM (1949)
 ```
 
-### S2.2 - Dac diem ton giao o Viet Nam (6:00 - 7:00) - Phu
+### S2.2 - Dac diem ton giao o Viet Nam (6:43 - 7:52) - Phu
 
 **Layout:** BarChart + GlassPanel | Bar grow + fade-scale | Dissolve-blur
 
@@ -188,7 +190,7 @@ Cards (2):
   2. Chinh sach nha nuoc: Ton trong tu do tin nguong, binh dang truoc phap luat
 
 Images: (chua co anh - placeholder)
-Video:  T2-2/video_phu.mp4
+Video:  T2-2/video_phu.mp4 (NOTE: video has traffic noise background - need to add background music to mask it)
 Citation: GT CNXHKH (2021), Ch.6, II.2a-b, tr.222-226
 ```
 
@@ -196,7 +198,7 @@ Citation: GT CNXHKH (2021), Ch.6, II.2a-b, tr.222-226
 
 ## PHAN 3: TRACH NHIEM SINH VIEN (50%)
 
-### S3.1 - Giao luu van hoa dan toc (7:00 - 8:30) - Quynh Nhu
+### S3.1 - Giao luu van hoa dan toc (7:52 - 9:31) - Quynh Nhu
 
 **Layout:** Timeline (gold line + dots) | Cascade-down | Page curl (skew)
 
@@ -212,7 +214,7 @@ Video:  T3-1/video_quynh_nhu.mp4
 Citation: GT CNXHKH (2021), Ch.6, I.1 tr.198; Bo VHTTDL (2025)
 ```
 
-### S3.2 - Nhan dien thong tin sai lech tren MXH (8:30 - 10:00) - To Nhu
+### S3.2 - Nhan dien thong tin sai lech tren MXH (9:31 - 11:10) - To Nhu
 
 **Layout:** AlertCard (warning/danger/success) | Shake-in from right | Horizontal flip
 
@@ -230,7 +232,7 @@ Video:  T3-2/video_to_nhu.mp4
 Citation: Bao Nhan Dan (2025), vu tin gia Dak Lak
 ```
 
-### S3.3 - Tuyen truyen chinh sach & tinh nguyen cong dong (10:00 - 11:30) - Y Nhu
+### S3.3 - Tuyen truyen chinh sach & tinh nguyen cong dong (11:10 - 12:49) - Y Nhu
 
 **Layout:** FlowChart horizontal (progression) | Scale-in with glow | Slide-down
 
@@ -248,9 +250,9 @@ Video:  T3-3/video_y_nhu.mp4
 Citation: GT CNXHKH (2021), Ch.6, I.3b tr.210-212; QD 1719/QD-TTg
 ```
 
-### S3.4 - Tong ket & lien he ban than (11:30 - 13:00) - Nhan
+### S3.4 - Tong ket & lien he ban than (12:49 - 14:28) - Nhan
 
-**Layout:** GlassPanel goldRing + row | Fan-out from center | Zoom-out
+**Layout:** Stacked: video strip top (1920x360, contain) + content bottom (1920x720) | GlassPanel goldRing + fan-out cards | Zoom-out
 
 ```
 Quote: "Moi truong dai hoc chinh la hinh anh thu nho cua cong dong 54 dan toc cu tru dan xen"
@@ -263,21 +265,27 @@ Cards (3):
   3. Hanh dong tu hom nay
      Xay dung doan ket tu hanh dong nho hang ngay
 
-Images: (chua co anh + video - T3-4 empty)
-Video:  (chua co)
+Images: (chua co anh - placeholder)
+Video:  T3-4/cnxhkh_mainspeech_nhan.mp4 (horizontal 1920x1080, objectFit: contain, black bg)
 Citation: GT CNXHKH (2021), Ch.6, I.3a tr.205-206; Van kien DH XII tr.164-165
 ```
 
 ---
 
-## KET LUAN (13:00 - 13:30, frames 23400-24299)
+## KET LUAN (14:28 - 15:00, frames 26040-26999)
 
 ```
+Background: T3-4/cnxhkh_ending_nhan.mp4 (horizontal, objectFit: contain, semi-transparent overlay)
+
 +------------------------------------------------------+
+|  [Video background - Nhan speaking]                  |
+|  [Overlay rgba(247,243,238,0.75)]                    |
 |                                                      |
 |           CAM ON THAY/CO DA LANG NGHE                |
 |                                                      |
 |              Nhom 7 - BAA00103                       |
+|              CNXH khoa hoc                            |
+|              [9 member names grid]                   |
 |                                                      |
 +------------------------------------------------------+
 ```
@@ -293,11 +301,11 @@ T1-1     | 2 jpg           | video_thuc_nhi.mp4 | OK
 T1-2     | 2 jpg/jpeg      | video_chau_nhi.mp4 | OK
 T1-3     | 2 jpg/png       | video_phung_nhi.mp4| OK
 T2-1     | 2 jpg/jpeg      | video_huynh_nhi.mp4| OK
-T2-2     | (none)          | video_phu.mp4      | Missing images
-T3-1     | (none)          | video_quynh_nhu.mp4| Missing images
+T2-2     | 2 png           | video_phu.mp4      | OK
+T3-1     | 2 png           | video_quynh_nhu.mp4| OK
 T3-2     | 2 webp          | video_to_nhu.mp4   | OK
 T3-3     | 2 jpg           | video_y_nhu.mp4    | OK
-T3-4     | (none)          | (none)             | Missing all
+T3-4     | (none)          | 3 mp4 (intro/main/ending) | OK (no images)
 ```
 
 All videos re-encoded to H264 720x1280 2Mbps 30fps .mp4.
