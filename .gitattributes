@@ -3,3 +3,9 @@
 *.ppsx filter=lfs diff=lfs merge=lfs -text
 *.odp filter=lfs diff=lfs merge=lfs -text
 *.docx filter=lfs diff=lfs merge=lfs -text
+de_an_quay_video/media/**/*.mp4 filter=lfs diff=lfs merge=lfs -text
+de_an_quay_video/media/**/*.jpg filter=lfs diff=lfs merge=lfs -text
+de_an_quay_video/media/**/*.jpeg filter=lfs diff=lfs merge=lfs -text
+de_an_quay_video/media/**/*.png filter=lfs diff=lfs merge=lfs -text
+de_an_quay_video/media/**/*.webp filter=lfs diff=lfs merge=lfs -text
+de_an_quay_video/media/**/*.mov filter=lfs diff=lfs merge=lfs -text

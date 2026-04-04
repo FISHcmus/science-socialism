@@ -50,7 +50,7 @@ export function BarChart({
           >
             {showValues && (
               <span
-                className="text-ds-light-gold text-[22px] font-bold whitespace-nowrap"
+                className="text-ds-light-gold text-[28px] font-bold whitespace-nowrap"
                 style={{
                   textShadow: TEXT_SHADOW,
                   opacity: progress > 0.1 ? opacity : 0,
@@ -61,15 +61,16 @@ export function BarChart({
               </span>
             )}
             <div
-              className="w-20 rounded-t-lg shrink-0"
+              className="rounded-t-lg shrink-0"
               style={{
+                width: 100,
                 height: `${Math.max(barHeight, 0)}px`,
                 background: item.color ?? GRADIENTS.goldBar,
                 opacity: opacity * barOpacityVariation,
               }}
             />
             <span
-              className="text-ds-body text-[22px] text-center whitespace-nowrap max-w-[90px] overflow-hidden text-ellipsis"
+              className="text-ds-body text-[28px] text-center whitespace-nowrap"
               style={{ textShadow: TEXT_SHADOW }}
             >
               {item.label}

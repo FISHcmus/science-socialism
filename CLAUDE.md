@@ -28,8 +28,8 @@ Course materials for **BAA00103 — Chủ nghĩa xã hội khoa học (Scientifi
 | File | Content | Type |
 |---|---|---|
 | `1. KHTN.ĐC.CNXH.2025.pdf` | Course syllabus (9 pages) | Scanned |
-| `2.GIAO TRINH CHXHKH KHONG CHUYEN.pdf` | Full textbook, digital (180 pages) | Digital — use `pdftotext` for extraction |
-| `MLN131 - Giao trinh CNXHKH.pdf` | Full textbook, scanned (273 pages) | Scanned — same content as #2, just scanned with cover/TOC |
+| `2.GIAO TRINH CHXHKH KHONG CHUYEN.pdf` | Older/unofficial textbook extract, digital (180 pages) | Digital — NOT the official textbook |
+| `MLN131 - Giao trinh CNXHKH (1).pdf` | **Official textbook** (NXB Chính trị Quốc gia Sự Thật, 2021), scanned (273 pages) | Scanned — this is the real textbook, use for all chapter references |
 | `7.Cách thức đánh giá...pdf` | Grading criteria (2 pages) | Digital |
 | `8.CHỦ ĐỀ VÀ CÁCH THỨC...pdf` | Presentation topics (2 pages) | Digital |
 
