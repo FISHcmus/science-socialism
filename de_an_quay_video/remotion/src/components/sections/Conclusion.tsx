@@ -71,7 +71,7 @@ export const Conclusion: FC = memo(() => {
           className="text-[64px] text-ds-white font-sans font-bold m-0 leading-snug"
           style={{ textShadow: TEXT_SHADOW }}
         >
-          Cảm ơn thầy/cô đã theo dõi
+          Cảm ơn cô đã theo dõi
         </h1>
       </div>
 
@@ -97,6 +97,12 @@ export const Conclusion: FC = memo(() => {
           style={{ textShadow: TEXT_SHADOW }}
         >
           BAA00103 — Chủ nghĩa xã hội khoa học
+        </div>
+        <div
+          className="text-[24px] text-ds-white font-sans tracking-[1px] mt-1"
+          style={{ textShadow: TEXT_SHADOW }}
+        >
+          GVHD: TS. Phạm Thị Đoạt
         </div>
       </div>
 

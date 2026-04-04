@@ -142,11 +142,14 @@ export const NhanIntro: FC = memo(() => {
                 Chủ đề 6 - Nhóm 7
               </div>
               <h2
-                className="text-[44px] text-ds-white font-sans font-bold leading-tight m-0 mb-6"
+                className="text-[44px] text-ds-white font-sans font-bold leading-tight m-0 mb-3"
                 style={{ textShadow: TEXT_SHADOW }}
               >
                 Trách nhiệm của sinh viên trong việc góp phần xây dựng khối đại đoàn kết toàn dân tộc
               </h2>
+              <div className="text-[26px] font-sans mb-6" style={{ color: COLORS.body, textShadow: TEXT_SHADOW }}>
+                GVHD: TS. Phạm Thị Đoạt
+              </div>
             </div>
 
             <div className="flex flex-col gap-4 mb-6">

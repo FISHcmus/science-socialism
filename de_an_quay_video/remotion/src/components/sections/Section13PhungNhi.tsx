@@ -28,26 +28,26 @@ export const Section13PhungNhi: FC = memo(() => {
   const beat2LocalFrame = Math.max(0, frame - 360);
   const ringAngle = 0;
   const headerOpacity = interpolate(frame, [90, 110], [0, 1], clampBoth);
+  const accentWidth = interpolate(spring({ frame: Math.max(0, frame - 100), fps, config: { damping: 14, stiffness: 80 } }), [0, 1], [0, 320]);
   const videoOpacity = interpolate(frame, [90, 120], [0, 1], clampBoth);
   const citationOpacity = interpolate(frame, [1900, 1960], [0, 1], clampBoth);
 
-  // FlowChart node entrance
-  const nodeOpacities = PRINCIPLES.map((_, i) => {
-    const nodeAppear = 90 + i * 450;
-    const s = spring({ frame: Math.max(0, frame - nodeAppear), fps, config: { damping: 16, stiffness: 90 } });
+  // FlowChart node entrance — synced to transcript
+  const nodeOpacities = PRINCIPLES.map((p) => {
+    const s = spring({ frame: Math.max(0, frame - p.appearAt), fps, config: { damping: 16, stiffness: 90 } });
     return interpolate(s, [0, 1], [0, 1]);
   });
 
-  // Active principle based on principleStartFrames
-  const activePrincipleIndex = frame < 670 ? -1
-    : frame < 1250 ? 0
-    : frame < 1510 ? 1
-    : frame < 2410 ? 2
+  // Active principle — switch when speaker starts explaining each detail
+  const activePrincipleIndex = frame < 1119 ? -1
+    : frame < 1563 ? 0
+    : frame < 1935 ? 1
+    : frame < 2754 ? 2
     : 3;
 
   // TypewriterText
   const activeDetail = activePrincipleIndex >= 0 ? PRINCIPLES[activePrincipleIndex]!.detail : "";
-  const principleStartFrames = [670, 1250, 1510, 2410];
+  const principleStartFrames = [1119, 1563, 1935, 2754];
   const localTypingFrame = activePrincipleIndex >= 0
     ? Math.max(0, frame - principleStartFrames[activePrincipleIndex]!)
     : 0;
@@ -56,7 +56,7 @@ export const Section13PhungNhi: FC = memo(() => {
   const cursorVisible = !typingDone && Math.floor(frame / 15) % 2 === 0;
 
   // Page-flip transition
-  const PAGE_FLIP = 2610;
+  const PAGE_FLIP = 3000;
   const page1Scale = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [1, 0.85], clampBoth);
   const page1Opacity = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [1, 0], clampBoth);
   const page2Scale = interpolate(frame, [PAGE_FLIP + 30, PAGE_FLIP + 60], [0.85, 1], clampBoth);
@@ -84,7 +84,7 @@ export const Section13PhungNhi: FC = memo(() => {
             <div className="mb-3" style={{ opacity: headerOpacity }}>
               <div className="text-[28px] text-ds-gold font-sans tracking-[4px] mb-1" style={{ textShadow: TEXT_SHADOW }}>PHẦN 1.3</div>
               <h2 className="text-[42px] text-ds-white font-sans font-bold m-0 leading-tight" style={{ textShadow: TEXT_SHADOW }}>Bốn nguyên tắc giải quyết vấn đề tôn giáo</h2>
-              <div className="w-[100px] h-1 bg-ds-gold mt-2" />
+              <div className="h-1 bg-ds-gold mt-2" style={{ width: accentWidth }} />
             </div>
 
             {/* Page 1: FlowChart + TypewriterText */}

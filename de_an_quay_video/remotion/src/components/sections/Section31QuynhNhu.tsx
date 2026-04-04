@@ -23,6 +23,7 @@ export const Section31QuynhNhu: FC = memo(() => {
   const beat2LocalFrame = Math.max(0, frame - 360);
   const ringAngle = 0;
   const headerOpacity = interpolate(frame, [90, 110], [0, 1], clampBoth);
+  const accentWidth = interpolate(spring({ frame: Math.max(0, frame - 100), fps, config: { damping: 14, stiffness: 80 } }), [0, 1], [0, 320]);
   const videoOpacity = interpolate(frame, [90, 120], [0, 1], clampBoth);
   const citationOpacity = interpolate(frame, [2500, 2560], [0, 1], clampBoth);
 
@@ -86,7 +87,7 @@ export const Section31QuynhNhu: FC = memo(() => {
             <div className="mb-3" style={{ opacity: headerOpacity }}>
               <div className="text-[28px] text-ds-gold font-sans tracking-[4px] mb-1" style={{ textShadow: TEXT_SHADOW }}>PHẦN 3.1</div>
               <h2 className="text-[42px] text-ds-white font-sans font-bold m-0 leading-tight" style={{ textShadow: TEXT_SHADOW }}>Giao lưu văn hóa dân tộc</h2>
-              <div className="w-[100px] h-1 bg-ds-gold mt-2" />
+              <div className="h-1 bg-ds-gold mt-2" style={{ width: accentWidth }} />
             </div>
 
             {/* Page 1: Timeline */}

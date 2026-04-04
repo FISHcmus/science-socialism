@@ -83,6 +83,16 @@ export const TitleCard: FC = memo(() => {
         >
           CHỦ NGHĨA XÃ HỘI KHOA HỌC - NHÓM 7
         </div>
+        <div
+          className="text-[24px] text-ds-gold tracking-[2px] mt-2 font-sans"
+          style={{
+            textShadow: TEXT_SHADOW,
+            opacity: labelAnim.opacity,
+            transform: `translateY(${labelAnim.translateY}px)`,
+          }}
+        >
+          GVHD: TS. Phạm Thị Đoạt
+        </div>
 
         {/* Title lines - staggered */}
         <h1 className="text-[52px] text-ds-white font-sans font-bold leading-snug m-0">

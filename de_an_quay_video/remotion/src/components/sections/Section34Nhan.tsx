@@ -19,6 +19,7 @@ export const Section34Nhan: FC = memo(() => {
   const beat2LocalFrame = Math.max(0, frame - 360);
   const ringAngle = 0;
   const headerOpacity = interpolate(frame, [90, 110], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const accentWidth = interpolate(spring({ frame: Math.max(0, frame - 100), fps, config: { damping: 14, stiffness: 80 } }), [0, 1], [0, 320]);
   const videoOpacity = interpolate(frame, [90, 120], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const citationOpacity = interpolate(frame, [2250, 2310], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
 
@@ -79,7 +80,7 @@ export const Section34Nhan: FC = memo(() => {
             <div className="mb-3" style={{ opacity: headerOpacity }}>
               <div className="text-[32px] text-ds-gold font-sans tracking-[4px] mb-1" style={{ textShadow: TEXT_SHADOW }}>PHẦN 3.4</div>
               <h2 className="text-[44px] text-ds-white font-sans font-bold m-0 leading-tight" style={{ textShadow: TEXT_SHADOW }}>Tổng kết và liên hệ bản thân</h2>
-              <div className="w-[100px] h-1 bg-ds-gold mt-2" />
+              <div className="h-1 bg-ds-gold mt-2" style={{ width: accentWidth }} />
             </div>
 
             {/* Page 1: GlassPanel quote + fan-out cards */}
