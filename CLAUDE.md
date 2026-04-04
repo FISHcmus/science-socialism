@@ -335,14 +335,26 @@ Member-submitted images and self-recorded videos, organized by task ID:
 | T1-2/ | Châu Nhi | 3 images + video |
 | T1-3/ | Phụng Nhi | 2 images + video |
 | T2-1/ | Huỳnh Nhi | 3 images + video |
-| T2-2/ | Phú | video only |
+| T2-2/ | Phú | 2 images + video |
 | T3-1/ | Quỳnh Như | video only |
 | T3-2/ | Tố Như | 2 images (webp) + video |
 | T3-3/ | Ý Như | 2 images + video |
-| T3-4/ | Nhân | **empty** (needs own recording) |
+| T3-4/ | Nhân | 1 image + 3 videos (intro, main, ending) |
 
 Source: Google Sheets spreadsheet with hyperlinks + smart chips (chipRuns).
 These files should NOT be tracked in git (large video files 12-100MB each).
+
+### Audio Normalization
+
+All 11 member videos have been normalized using ffmpeg 2-pass EBU R128 loudnorm. Target: -16 LUFS (broadcast standard). Nhân's 3 videos (T3-4) use -12 LUFS target for extra loudness. Originals backed up at `de_an_quay_video/media/_originals/`.
+
+To re-normalize a video:
+```bash
+# Pass 1: measure
+ffmpeg -i input.mp4 -af "loudnorm=I=-16:TP=-1.5:LRA=11:print_format=json" -f null /dev/null
+# Pass 2: apply (use measured values from pass 1)
+ffmpeg -y -i input.mp4 -af "loudnorm=I=-16:TP=-1.5:LRA=11:measured_I=X:measured_TP=X:measured_LRA=X:measured_thresh=X:linear=true" -c:v copy -c:a aac -b:a 192k output.mp4
+```
 
 ## Projector Readability (MANDATORY)
 
