@@ -1,4 +1,4 @@
-import { AbsoluteFill, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile } from "remotion";
+import { AbsoluteFill, Sequence, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile } from "remotion";
 import { COLORS, TEXT_SHADOW } from "../../constants";
 import { SectionTitle, ArtDecoImage, MemberPiP, CitationFooter, FlowChart } from "../ds";
 import type { FlowNode } from "../ds";
@@ -7,17 +7,17 @@ const PRINCIPLES = [
   {
     title: "Các dân tộc hoàn toàn bình đẳng",
     detail: "Mọi dân tộc đều có quyền và nghĩa vụ ngang nhau trên mọi lĩnh vực",
-    appearAt: 250,
+    appearAt: 519,
   },
   {
     title: "Các dân tộc có quyền tự quyết",
     detail: "Quyền tự quyết định chế độ chính trị, con đường phát triển. HCM: CMVS",
-    appearAt: 720,
+    appearAt: 1056,
   },
   {
     title: "Liên hiệp công nhân tất cả các dân tộc",
     detail: "Gắn kết giải phóng dân tộc với giải phóng giai cấp",
-    appearAt: 1350,
+    appearAt: 1617,
   },
 ];
 
@@ -31,7 +31,7 @@ export const Section11ThucNhi: React.FC = () => {
   const titleAccentWidth = interpolate(titleSpring, [0, 1], [0, 80]);
 
   const beat2LocalFrame = Math.max(0, frame - 360);
-  const ringAngle = (beat2LocalFrame / fps) * 80;
+  const ringAngle = 0;
 
   const headerOpacity = interpolate(frame, [90, 110], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const pipOpacity = interpolate(frame, [90, 120], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
@@ -69,7 +69,7 @@ export const Section11ThucNhi: React.FC = () => {
   const visibleNodes = PRINCIPLES.filter((p) => frame >= p.appearAt).length;
 
   // Page flip: horizontal wipe
-  const PAGE_FLIP = 1800;
+  const PAGE_FLIP = 2160;
   const page1TranslateX = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [0, -1440], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const page1Opacity = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const page2TranslateX = interpolate(frame, [PAGE_FLIP + 30, PAGE_FLIP + 60], [1440, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
@@ -143,7 +143,9 @@ export const Section11ThucNhi: React.FC = () => {
           </div>
 
           <div style={{ opacity: pipOpacity }}>
-            <MemberPiP name="Đào Thục Nhi" sectionLabel="Phần 1.1 - Cương lĩnh dân tộc" ringAngle={ringAngle} src={staticFile('media/T1-1/video_thuc_nhi.mp4')} />
+            <Sequence from={360} layout="none" durationInFrames={2250}>
+              <MemberPiP name="Đào Thục Nhi" sectionLabel="Phần 1.1 - Cương lĩnh dân tộc" ringAngle={ringAngle} src={staticFile('media/T1-1/video_thuc_nhi.mp4')} />
+            </Sequence>
           </div>
         </AbsoluteFill>
       )}

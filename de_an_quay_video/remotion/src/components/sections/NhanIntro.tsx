@@ -1,4 +1,4 @@
-import { AbsoluteFill, interpolate, useCurrentFrame, spring, useVideoConfig, Video, staticFile } from "remotion";
+import { AbsoluteFill, Sequence, interpolate, useCurrentFrame, spring, useVideoConfig, Video, staticFile } from "remotion";
 import { COLORS, MEMBER_COLORS, TEXT_SHADOW } from "../../constants";
 import { SectionTitle, TypewriterText, MemberPlaceholder, Overlay, LowerThird } from "../ds";
 import { VietnamMap } from "../shared/VietnamMap";
@@ -46,7 +46,7 @@ export const NhanIntro: React.FC = () => {
     ? interpolate(memberLocal, [0, 20], [0, 1], { extrapolateRight: "clamp" })
     : 0;
   const memberScale = interpolate(memberSpring, [0, 1], [0.95, 1]);
-  const memberRingAngle = memberLocal >= 0 ? (memberLocal / fps) * 80 : 0;
+  const memberRingAngle = 0;
 
   const overlayLocal = frame - 360;
   const overlayOpacity = overlayLocal >= 0
@@ -170,7 +170,9 @@ export const NhanIntro: React.FC = () => {
 
           {/* Right: horizontal video (contained) + name label */}
           <div className="flex flex-col items-center justify-center" style={{ width: 960, height: 1080, opacity: memberOpacity, background: "#000" }}>
-            <Video src={staticFile('media/T3-4/cnxhkh_intro_nhan.mp4')} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+            <Sequence from={360} layout="none" durationInFrames={600}>
+              <Video src={staticFile('media/T3-4/cnxhkh_intro_nhan.mp4')} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+            </Sequence>
             <div style={{ position: "absolute", bottom: 60, background: "rgba(0,0,0,0.55)", borderRadius: 8, padding: "8px 20px" }}>
               <div className="text-[28px] font-sans font-bold" style={{ color: "#fff" }}>Nhân</div>
               <div className="text-[20px] font-sans" style={{ color: COLORS.gold }}>Nhóm trưởng - Giới thiệu chủ đề</div>

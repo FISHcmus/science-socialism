@@ -1,8 +1,8 @@
-import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig, Video, staticFile } from "remotion";
 import { COLORS, TEXT_SHADOW } from "../../constants";
 
 const MEMBERS = [
-  "Nhân",
+  "Nguyễn Hữu Thiện Nhân",
   "Bùi Huỳnh Nhi",
   "Đào Thục Nhi",
   "Nguyễn Hồng Châu Nhi",
@@ -45,13 +45,19 @@ export const Conclusion: React.FC = () => {
   });
 
   return (
-    <AbsoluteFill
-      className="justify-center items-center flex-col"
-      style={{
-        background: `linear-gradient(180deg, rgba(247,243,238,0.6) 0%, rgba(237,232,224,0.4) 100%)`,
-        opacity: globalOpacity,
-      }}
-    >
+    <AbsoluteFill>
+      {/* Background video */}
+      <AbsoluteFill>
+        <Video src={staticFile('media/T3-4/cnxhkh_ending_nhan.mp4')} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+      </AbsoluteFill>
+      {/* Overlay + content */}
+      <AbsoluteFill
+        className="justify-center items-center flex-col"
+        style={{
+          background: `linear-gradient(180deg, rgba(247,243,238,0.75) 0%, rgba(237,232,224,0.65) 100%)`,
+          opacity: globalOpacity,
+        }}
+      >
       {/* Thank-you text */}
       <div
         className="text-center mb-5"
@@ -108,6 +114,7 @@ export const Conclusion: React.FC = () => {
           </div>
         ))}
       </div>
+      </AbsoluteFill>
     </AbsoluteFill>
   );
 };

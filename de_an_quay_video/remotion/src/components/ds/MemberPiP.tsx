@@ -12,6 +12,8 @@ export interface MemberPiPProps {
   opacity?: number;
   /** Border thickness. Default 3 */
   borderWidth?: number;
+  /** Video object-fit. Default "cover" */
+  objectFit?: "cover" | "contain";
 }
 
 export function MemberPiP({
@@ -21,6 +23,7 @@ export function MemberPiP({
   ringAngle = 0,
   opacity = 1,
   borderWidth = 3,
+  objectFit = "cover",
 }: MemberPiPProps) {
   const width = 480;
   const height = 1080;
@@ -76,7 +79,8 @@ export function MemberPiP({
             {src ? (
               <Video
                 src={src}
-                className="w-full h-full object-cover block"
+                className="w-full h-full block"
+                style={{ objectFit }}
               />
             ) : (
               <div className="flex flex-col items-center justify-center text-center p-8 gap-4">

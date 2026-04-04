@@ -1,4 +1,4 @@
-import { AbsoluteFill, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile } from "remotion";
+import { AbsoluteFill, Sequence, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile } from "remotion";
 import { COLORS, TEXT_SHADOW } from "../../constants";
 import { SectionTitle, ArtDecoImage, MemberPiP, CitationFooter, AlertCard } from "../ds";
 
@@ -14,16 +14,16 @@ export const Section32ToNhu: React.FC = () => {
   const titleAccentWidth = interpolate(titleSpring, [0, 1], [0, 80]);
 
   const beat2LocalFrame = Math.max(0, frame - 360);
-  const ringAngle = (beat2LocalFrame / fps) * 80;
+  const ringAngle = 0;
   const headerOpacity = interpolate(frame, [90, 110], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const pipOpacity = interpolate(frame, [90, 120], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const citationOpacity = interpolate(frame, [2500, 2560], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
 
   // AlertCard data with variants
   const alerts: Array<{ title: string; detail: string; variant: "warning" | "danger" | "success"; appearAt: number }> = [
-    { title: "4 dấu hiệu tin giả", detail: "Tiêu đề giật gân | Thiếu nguồn | Ảnh/video cắt ghép | Quy chụp nhóm dân tộc/tôn giáo", variant: "warning", appearAt: 594 },
-    { title: "Ví dụ thực tế: Đắk Lắk", detail: "Thông tin bịa đặt về quan hệ dân tộc ở Tây Nguyên, gây hoang mang dư luận", variant: "danger", appearAt: 1014 },
-    { title: "Cách kiểm chứng thông tin", detail: "Đối chiếu nhiều nguồn, Google Image/TinEye kiểm tra ảnh, chia sẻ đính chính khi phát hiện tin giả", variant: "success", appearAt: 1587 },
+    { title: "4 dấu hiệu tin giả", detail: "Tiêu đề giật gân | Thiếu nguồn | Ảnh/video cắt ghép | Quy chụp nhóm dân tộc/tôn giáo", variant: "warning", appearAt: 936 },
+    { title: "Ví dụ thực tế: Đắk Lắk", detail: "Thông tin bịa đặt về quan hệ dân tộc ở Tây Nguyên, gây hoang mang dư luận", variant: "danger", appearAt: 1680 },
+    { title: "Cách kiểm chứng thông tin", detail: "Đối chiếu nhiều nguồn, Google Image/TinEye kiểm tra ảnh, chia sẻ đính chính khi phát hiện tin giả", variant: "success", appearAt: 1857 },
   ];
 
   // Shake-in from right: translateX 300->0 with overshoot spring
@@ -40,8 +40,6 @@ export const Section32ToNhu: React.FC = () => {
   const page1Opacity = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const page1Blur = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [0, 8], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
 
-  const img1Opacity = interpolate(frame, [PAGE_FLIP + 30, PAGE_FLIP + 60], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const img1Sweep = Math.max(0, Math.min(1, (frame - PAGE_FLIP - 65) / 30));
   const img2Opacity = interpolate(frame, [PAGE_FLIP + 90, PAGE_FLIP + 120], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const img2Sweep = Math.max(0, Math.min(1, (frame - PAGE_FLIP - 125) / 30));
 
@@ -81,13 +79,9 @@ export const Section32ToNhu: React.FC = () => {
 
             {/* Page 2: images */}
             {frame >= PAGE_FLIP && (
-              <div className="flex gap-8 items-center justify-center" style={{ flex: 1 }}>
-                <div style={{ opacity: img1Opacity }} className="flex flex-col items-center">
-                  <ArtDecoImage src={staticFile('media/T3-2/img1.webp')} description="Fake news" width={480} height={380} ringAngle={ringAngle} sweepProgress={img1Sweep} />
-                  <div className="text-[24px] font-sans mt-3 text-center" style={{ color: COLORS.body, textShadow: TEXT_SHADOW }}>Nhận diện tin giả - kỹ năng thiết yếu của sinh viên thời đại số</div>
-                </div>
+              <div className="flex items-center justify-center" style={{ flex: 1 }}>
                 <div style={{ opacity: img2Opacity }} className="flex flex-col items-center">
-                  <ArtDecoImage src={staticFile('media/T3-2/img2.webp')} description="Tin giả dân tộc" width={480} height={380} ringAngle={ringAngle} sweepProgress={img2Sweep} />
+                  <ArtDecoImage src={staticFile('media/T3-2/img2.webp')} description="Tin giả dân tộc" width={600} height={440} ringAngle={ringAngle} sweepProgress={img2Sweep} />
                   <div className="text-[24px] font-sans mt-3 text-center" style={{ color: COLORS.body, textShadow: TEXT_SHADOW }}>Tin giả lợi dụng vấn đề dân tộc để chia rẽ đoàn kết</div>
                 </div>
               </div>
@@ -95,7 +89,7 @@ export const Section32ToNhu: React.FC = () => {
 
             <div className="mt-auto"><CitationFooter text="Báo Nhân Dân (2025), vụ tin giả Đắk Lắk" opacity={citationOpacity} /></div>
           </div>
-          <div style={{ opacity: pipOpacity }}><MemberPiP name="Hoàng Thị Tố Như" sectionLabel="Phần 3.2 - Nhận diện tin giả" ringAngle={ringAngle} src={staticFile('media/T3-2/video_to_nhu.mp4')} /></div>
+          <div style={{ opacity: pipOpacity }}><Sequence from={360} layout="none" durationInFrames={2160}><MemberPiP name="Hoàng Thị Tố Như" sectionLabel="Phần 3.2 - Nhận diện tin giả" ringAngle={ringAngle} src={staticFile('media/T3-2/video_to_nhu.mp4')} /></Sequence></div>
         </AbsoluteFill>
       )}
     </AbsoluteFill>

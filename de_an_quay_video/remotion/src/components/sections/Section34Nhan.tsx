@@ -1,4 +1,4 @@
-import { AbsoluteFill, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile, Video } from "remotion";
+import { AbsoluteFill, Sequence, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile, Video } from "remotion";
 import { COLORS, TEXT_SHADOW } from "../../constants";
 import { SectionTitle, ArtDecoImage, MemberPiP, CitationFooter, GlassPanel } from "../ds";
 
@@ -14,7 +14,7 @@ export const Section34Nhan: React.FC = () => {
   const titleAccentWidth = interpolate(titleSpring, [0, 1], [0, 80]);
 
   const beat2LocalFrame = Math.max(0, frame - 360);
-  const ringAngle = (beat2LocalFrame / fps) * 80;
+  const ringAngle = 0;
   const headerOpacity = interpolate(frame, [90, 110], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const videoOpacity = interpolate(frame, [90, 120], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const citationOpacity = interpolate(frame, [1800, 1860], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
@@ -41,7 +41,7 @@ export const Section34Nhan: React.FC = () => {
   });
 
   // Zoom-out page-flip
-  const PAGE_FLIP = 1800;
+  const PAGE_FLIP = 1821;
   const flipProgress = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const page1Scale = interpolate(flipProgress, [0, 1], [1, 0.5]);
   const page1Opacity = interpolate(flipProgress, [0, 0.8], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
@@ -61,7 +61,9 @@ export const Section34Nhan: React.FC = () => {
         <AbsoluteFill>
           {/* Top: horizontal video strip */}
           <div style={{ position: "absolute", top: 0, left: 0, width: 1920, height: 360, opacity: videoOpacity, overflow: "hidden", background: "#000" }}>
-            <Video src={staticFile('media/T3-4/cnxhkh_mainspeech_nhan.mp4')} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+            <Sequence from={360} layout="none" durationInFrames={2040}>
+              <Video src={staticFile('media/T3-4/cnxhkh_mainspeech_nhan.mp4')} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+            </Sequence>
             {/* Name label overlay */}
             <div style={{ position: "absolute", bottom: 12, right: 24, background: "rgba(0,0,0,0.55)", borderRadius: 8, padding: "6px 16px" }}>
               <div className="text-[28px] font-sans font-bold" style={{ color: "#fff" }}>Nguyễn Hữu Thiện Nhân</div>

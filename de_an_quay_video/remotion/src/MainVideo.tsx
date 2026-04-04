@@ -35,22 +35,22 @@ export const MainVideo: React.FC = () => {
     <AbsoluteFill style={{ backgroundColor: COLORS.darkest }}>
       {/* <Background3D accentColor={COLORS.gold} /> */}
       {/* BGM: 3 plays covering full video, volume=0 during speech */}
-      <Sequence from={0} durationInFrames={9150} name="BGM Play 1">
+      <Sequence from={0} durationInFrames={9143} name="BGM Play 1">
         <Audio
           src={staticFile("bgm.mp3")}
           volume={(f) => getBgmVolume(f)}
         />
       </Sequence>
-      <Sequence from={9150} durationInFrames={9150} name="BGM Play 2">
+      <Sequence from={9143} durationInFrames={9143} name="BGM Play 2">
         <Audio
           src={staticFile("bgm.mp3")}
-          volume={(f) => getBgmVolume(9150 + f)}
+          volume={(f) => getBgmVolume(9143 + f)}
         />
       </Sequence>
-      <Sequence from={18300} durationInFrames={8700} name="BGM Play 3">
+      <Sequence from={18286} durationInFrames={8414} name="BGM Play 3">
         <Audio
           src={staticFile("bgm.mp3")}
-          volume={(f) => getBgmVolume(18300 + f)}
+          volume={(f) => getBgmVolume(18286 + f)}
         />
       </Sequence>
 

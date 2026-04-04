@@ -1,12 +1,12 @@
-import { AbsoluteFill, Video, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile } from "remotion";
+import { AbsoluteFill, Sequence, Video, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile } from "remotion";
 import { COLORS, TEXT_SHADOW } from "../../constants";
 import { SectionTitle, ArtDecoImage, CitationFooter, FlowChart, GlassPanel, TypewriterText } from "../ds";
 
 const PRINCIPLES = [
-  { title: "Tôn trọng quyền tự do tín ngưỡng", detail: "Quyền theo hoặc không theo tôn giáo nào, đây là quyền tự do cơ bản của công dân được pháp luật bảo hộ.", appearAt: 670 },
-  { title: "Khắc phục dần ảnh hưởng tiêu cực", detail: "Bằng phát triển kinh tế, nâng cao đời sống vật chất và tinh thần, nâng cao trình độ dân trí cho nhân dân.", appearAt: 1250 },
-  { title: "Phân biệt mặt tư tưởng và mặt chính trị", detail: "Mặt tư tưởng: không đối kháng, giải quyết bằng tuyên truyền. Mặt chính trị: đối kháng, xử lý bằng pháp luật.", appearAt: 1510 },
-  { title: "Quan điểm lịch sử cụ thể", detail: "Phân tích vai trò tôn giáo trong từng giai đoạn lịch sử, phát huy giá trị nhân văn, đạo đức tốt đẹp.", appearAt: 2410 },
+  { title: "Tôn trọng quyền tự do tín ngưỡng", detail: "Quyền theo hoặc không theo tôn giáo nào, đây là quyền tự do cơ bản của công dân được pháp luật bảo hộ.", appearAt: 942 },
+  { title: "Khắc phục dần ảnh hưởng tiêu cực", detail: "Bằng phát triển kinh tế, nâng cao đời sống vật chất và tinh thần, nâng cao trình độ dân trí cho nhân dân.", appearAt: 1515 },
+  { title: "Phân biệt mặt tư tưởng và mặt chính trị", detail: "Mặt tư tưởng: không đối kháng, giải quyết bằng tuyên truyền. Mặt chính trị: đối kháng, xử lý bằng pháp luật.", appearAt: 1779 },
+  { title: "Quan điểm lịch sử cụ thể", detail: "Phân tích vai trò tôn giáo trong từng giai đoạn lịch sử, phát huy giá trị nhân văn, đạo đức tốt đẹp.", appearAt: 2682 },
 ];
 
 export const Section13PhungNhi: React.FC = () => {
@@ -23,7 +23,7 @@ export const Section13PhungNhi: React.FC = () => {
 
   // Content beat (90+)
   const beat2LocalFrame = Math.max(0, frame - 360);
-  const ringAngle = (beat2LocalFrame / fps) * 80;
+  const ringAngle = 0;
   const headerOpacity = interpolate(frame, [90, 110], [0, 1], clampBoth);
   const videoOpacity = interpolate(frame, [90, 120], [0, 1], clampBoth);
   const citationOpacity = interpolate(frame, [1900, 1960], [0, 1], clampBoth);
@@ -53,7 +53,7 @@ export const Section13PhungNhi: React.FC = () => {
   const cursorVisible = !typingDone && Math.floor(frame / 15) % 2 === 0;
 
   // Page-flip transition
-  const PAGE_FLIP = 2300;
+  const PAGE_FLIP = 2610;
   const page1Scale = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [1, 0.85], clampBoth);
   const page1Opacity = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [1, 0], clampBoth);
   const page2Scale = interpolate(frame, [PAGE_FLIP + 30, PAGE_FLIP + 60], [0.85, 1], clampBoth);
@@ -121,7 +121,9 @@ export const Section13PhungNhi: React.FC = () => {
 
           {/* Video strip — bottom 480px */}
           <div style={{ position: "relative", width: 1920, height: 480, background: "#000", opacity: videoOpacity }}>
-            <Video src={staticFile('media/T1-3/video_phung_nhi_cropped.mp4')} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+            <Sequence from={360} layout="none" durationInFrames={2760}>
+              <Video src={staticFile('media/T1-3/video_phung_nhi_cropped.mp4')} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+            </Sequence>
             <div style={{ position: "absolute", bottom: 12, right: 24, background: "rgba(0,0,0,0.6)", padding: "6px 16px", borderRadius: 8 }}>
               <span className="text-[28px] font-sans font-bold" style={{ color: "#F7F3EE" }}>Trần Thị Phụng Nhi</span>
               <span className="text-[22px] font-sans ml-3" style={{ color: "#D4AF37" }}>Phần 1.3</span>

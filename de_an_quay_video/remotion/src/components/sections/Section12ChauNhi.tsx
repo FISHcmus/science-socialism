@@ -1,14 +1,14 @@
-import { AbsoluteFill, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile } from "remotion";
+import { AbsoluteFill, Sequence, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile } from "remotion";
 import { COLORS, TEXT_SHADOW } from "../../constants";
 import { SectionTitle, ArtDecoImage, MemberPiP, CitationFooter, IconGrid } from "../ds";
 import type { IconGridItem } from "../ds";
 
 const CHARACTERISTICS = [
-  { title: "Cộng đồng lãnh thổ", detail: "Vùng đất, trời, biển thuộc chủ quyền quốc gia, là nơi cư trú lâu đời của cộng đồng dân tộc.", appearAt: 500 },
-  { title: "Cộng đồng sinh hoạt kinh tế", detail: "Đặc trưng quan trọng nhất, là cơ sở liên kết các bộ phận, thành viên trong cộng đồng dân tộc.", appearAt: 750 },
-  { title: "Cộng đồng ngôn ngữ", detail: "Công cụ giao tiếp chung, phản ánh ý thức tự giác tộc người và là tiêu chí quan trọng để phân biệt dân tộc.", appearAt: 1020 },
-  { title: "Cộng đồng văn hóa và tâm lý", detail: "Yếu tố đặc biệt quan trọng, thể hiện qua văn hóa vật chất và tinh thần, tạo bản sắc riêng mỗi dân tộc.", appearAt: 1210 },
-  { title: "Có chung một nhà nước", detail: "Phân biệt dân tộc quốc gia với dân tộc - tộc người, thể hiện qua tổ chức nhà nước thống nhất.", appearAt: 1580 },
+  { title: "Cộng đồng lãnh thổ", detail: "Vùng đất, trời, biển thuộc chủ quyền quốc gia, là nơi cư trú lâu đời của cộng đồng dân tộc.", appearAt: 771 },
+  { title: "Cộng đồng sinh hoạt kinh tế", detail: "Đặc trưng quan trọng nhất, là cơ sở liên kết các bộ phận, thành viên trong cộng đồng dân tộc.", appearAt: 1098 },
+  { title: "Cộng đồng ngôn ngữ", detail: "Công cụ giao tiếp chung, phản ánh ý thức tự giác tộc người và là tiêu chí quan trọng để phân biệt dân tộc.", appearAt: 1287 },
+  { title: "Cộng đồng văn hóa và tâm lý", detail: "Yếu tố đặc biệt quan trọng, thể hiện qua văn hóa vật chất và tinh thần, tạo bản sắc riêng mỗi dân tộc.", appearAt: 1476 },
+  { title: "Có chung một nhà nước", detail: "Phân biệt dân tộc quốc gia với dân tộc - tộc người, thể hiện qua tổ chức nhà nước thống nhất.", appearAt: 1779 },
 ];
 
 export const Section12ChauNhi: React.FC = () => {
@@ -21,22 +21,22 @@ export const Section12ChauNhi: React.FC = () => {
   const titleAccentWidth = interpolate(titleSpring, [0, 1], [0, 80]);
 
   const beat2LocalFrame = Math.max(0, frame - 360);
-  const ringAngle = (beat2LocalFrame / fps) * 80;
+  const ringAngle = 0;
   const headerOpacity = interpolate(frame, [90, 110], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const pipOpacity = interpolate(frame, [90, 120], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const citationOpacity = interpolate(frame, [1800, 1860], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
 
   // Page transition: rotate-fade
-  const PAGE_FLIP = 1100;
+  const PAGE_FLIP = 1410;
   const page1Rotate = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [0, -3], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const page1Opacity = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const page2Rotate = interpolate(frame, [PAGE_FLIP + 30, PAGE_FLIP + 60], [3, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const page2Opacity = interpolate(frame, [PAGE_FLIP + 30, PAGE_FLIP + 60], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
 
-  const img1Opacity = interpolate(frame, [1500, 1530], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const img1Sweep = Math.max(0, Math.min(1, (frame - 1535) / 30));
-  const img2Opacity = interpolate(frame, [1620, 1650], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const img2Sweep = Math.max(0, Math.min(1, (frame - 1655) / 30));
+  const img1Opacity = interpolate(frame, [2520, 2550], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const img1Sweep = Math.max(0, Math.min(1, (frame - 2555) / 30));
+  const img2Opacity = interpolate(frame, [2700, 2730], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const img2Sweep = Math.max(0, Math.min(1, (frame - 2735) / 30));
 
   // Map CHARACTERISTICS to IconGridItem format
   const page1Items: IconGridItem[] = CHARACTERISTICS.slice(0, 3).map(c => ({ label: c.title, description: c.detail }));
@@ -77,7 +77,7 @@ export const Section12ChauNhi: React.FC = () => {
 
       {frame >= 360 && (
         <AbsoluteFill style={{ flexDirection: "row" }}>
-          <div style={{ opacity: pipOpacity }}><MemberPiP name="Nguyễn Hồng Châu Nhi" sectionLabel="Phần 1.2 - Năm đặc trưng dân tộc" ringAngle={ringAngle} src={staticFile('media/T1-2/video_chau_nhi.mp4')} /></div>
+          <div style={{ opacity: pipOpacity }}><Sequence from={360} layout="none" durationInFrames={2670}><MemberPiP name="Nguyễn Hồng Châu Nhi" sectionLabel="Phần 1.2 - Năm đặc trưng dân tộc" ringAngle={ringAngle} src={staticFile('media/T1-2/video_chau_nhi.mp4')} /></Sequence></div>
           <div className="flex flex-col overflow-hidden" style={{ width: 1440, height: 1080, padding: "48px 80px 32px 60px" }}>
             <div className="mb-4" style={{ opacity: headerOpacity }}>
               <div className="text-[32px] text-ds-gold font-sans tracking-[4px] mb-2" style={{ textShadow: TEXT_SHADOW }}>PHẦN 1.2</div>

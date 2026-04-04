@@ -1,4 +1,4 @@
-import { AbsoluteFill, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile } from "remotion";
+import { AbsoluteFill, Sequence, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile } from "remotion";
 import { COLORS, TEXT_SHADOW } from "../../constants";
 import { SectionTitle, ArtDecoImage, MemberPiP, CitationFooter, GlassPanel } from "../ds";
 
@@ -16,7 +16,7 @@ export const Section22Phu: React.FC = () => {
   const titleAccentWidth = interpolate(titleSpring, [0, 1], [0, 80]);
 
   const beat2LocalFrame = Math.max(0, frame - 360);
-  const ringAngle = (beat2LocalFrame / fps) * 80;
+  const ringAngle = 0;
   const headerOpacity = interpolate(frame, [90, 110], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const pipOpacity = interpolate(frame, [90, 120], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const citationOpacity = interpolate(frame, [1200, 1260], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
@@ -49,7 +49,7 @@ export const Section22Phu: React.FC = () => {
   const card2Scale = interpolate(card2Spring, [0, 1], [0.8, 1]);
 
   // Dissolve-blur page-flip
-  const PAGE_FLIP = 1400;
+  const PAGE_FLIP = 1545;
   const page1Opacity = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const page1Blur = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [0, 8], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
 
@@ -134,7 +134,7 @@ export const Section22Phu: React.FC = () => {
 
             <div className="mt-auto"><CitationFooter text="GT CNXHKH (2021), Ch.6, II.2a-b, tr.222-226" opacity={citationOpacity} /></div>
           </div>
-          <div style={{ opacity: pipOpacity }}><MemberPiP name="Ngô Văn Phú" sectionLabel="Phần 2.2 - Tôn giáo Việt Nam" ringAngle={ringAngle} src={staticFile('media/T2-2/video_phu.mp4')} /></div>
+          <div style={{ opacity: pipOpacity }}><Sequence from={360} layout="none" durationInFrames={2370}><MemberPiP name="Ngô Văn Phú" sectionLabel="Phần 2.2 - Tôn giáo Việt Nam" ringAngle={ringAngle} src={staticFile('media/T2-2/video_phu.mp4')} /></Sequence></div>
         </AbsoluteFill>
       )}
     </AbsoluteFill>

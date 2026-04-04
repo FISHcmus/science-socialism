@@ -1,4 +1,4 @@
-import { AbsoluteFill, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile } from "remotion";
+import { AbsoluteFill, Sequence, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile } from "remotion";
 import { COLORS, TEXT_SHADOW } from "../../constants";
 import { SectionTitle, ArtDecoImage, MemberPiP, CitationFooter, SplitCompare } from "../ds";
 
@@ -14,7 +14,7 @@ export const Section21HuynhNhi: React.FC = () => {
   const titleAccentWidth = interpolate(titleSpring, [0, 1], [0, 80]);
 
   const beat2LocalFrame = Math.max(0, frame - 360);
-  const ringAngle = (beat2LocalFrame / fps) * 80;
+  const ringAngle = 0;
   const headerOpacity = interpolate(frame, [90, 110], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const pipOpacity = interpolate(frame, [90, 120], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const citationOpacity = interpolate(frame, [1200, 1260], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
@@ -32,7 +32,7 @@ export const Section21HuynhNhi: React.FC = () => {
   const quoteOpacity = interpolate(frame, [840, 880], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
 
   // Vertical split page-flip: top half up, bottom half down
-  const PAGE_FLIP = 1500;
+  const PAGE_FLIP = 1953;
   const flipProgress = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const topTranslateY = interpolate(flipProgress, [0, 1], [0, -540]);
   const bottomTranslateY = interpolate(flipProgress, [0, 1], [0, 540]);
@@ -53,7 +53,7 @@ export const Section21HuynhNhi: React.FC = () => {
 
       {frame >= 360 && (
         <AbsoluteFill style={{ flexDirection: "row" }}>
-          <div style={{ opacity: pipOpacity }}><MemberPiP name="Bùi Huỳnh Nhi" sectionLabel="Phần 2.1 - Thực tiễn đoàn kết" ringAngle={ringAngle} src={staticFile('media/T2-1/video_huynh_nhi.mp4')} /></div>
+          <div style={{ opacity: pipOpacity }}><Sequence from={360} layout="none" durationInFrames={2010}><MemberPiP name="Bùi Huỳnh Nhi" sectionLabel="Phần 2.1 - Thực tiễn đoàn kết" ringAngle={ringAngle} src={staticFile('media/T2-1/video_huynh_nhi.mp4')} /></Sequence></div>
           <div className="flex flex-col overflow-hidden" style={{ width: 1440, height: 1080, padding: "48px 80px 32px 60px" }}>
             <div className="mb-4" style={{ opacity: headerOpacity }}>
               <div className="text-[32px] text-ds-gold font-sans tracking-[4px] mb-2" style={{ textShadow: TEXT_SHADOW }}>PHẦN 2.1</div>

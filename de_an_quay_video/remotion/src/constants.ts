@@ -18,16 +18,16 @@ export interface SectionDef {
 export const SECTIONS: SectionDef[] = [
   { id: "title", label: "Mở đầu", member: "", from: 0, duration: 150, color: COLORS.darkest },
   { id: "nhan-intro", label: "Giới thiệu chủ đề", member: "Nhân", from: 150, duration: 960, color: COLORS.dark },
-  { id: "1.1", label: "Cương lĩnh dân tộc", member: "Thục Nhi", from: 1110, duration: 2970, color: "#FEF3C7" },
-  { id: "1.2", label: "Năm đặc trưng dân tộc", member: "Châu Nhi", from: 4080, duration: 2970, color: "#DBEAFE" },
-  { id: "1.3", label: "Nguyên tắc tôn giáo", member: "Phụng Nhi", from: 7050, duration: 2970, color: "#F3E8FF" },
-  { id: "2.1", label: "Thực tiễn đoàn kết", member: "Huỳnh Nhi", from: 10020, duration: 2070, color: "#DCFCE7" },
-  { id: "2.2", label: "Tôn giáo Việt Nam", member: "Phú", from: 12090, duration: 2070, color: "#FEF9C3" },
-  { id: "3.1", label: "Giao lưu văn hóa", member: "Quỳnh Như", from: 14160, duration: 2970, color: "#FCE7F3" },
-  { id: "3.2", label: "Nhận diện tin giả", member: "Tố Như", from: 17130, duration: 2970, color: "#E0F2FE" },
-  { id: "3.3", label: "Tình nguyện cộng đồng", member: "Ý Như", from: 20100, duration: 2970, color: "#FFF7ED" },
-  { id: "3.4", label: "Tổng kết & liên hệ", member: "Nhân", from: 23070, duration: 2970, color: COLORS.dark },
-  { id: "conclusion", label: "Kết luận", member: "", from: 26040, duration: 960, color: COLORS.darkest },
+  { id: "1.1", label: "Cương lĩnh dân tộc", member: "Thục Nhi", from: 1110, duration: 2610, color: "#FEF3C7" },
+  { id: "1.2", label: "Năm đặc trưng dân tộc", member: "Châu Nhi", from: 3720, duration: 3030, color: "#DBEAFE" },
+  { id: "1.3", label: "Nguyên tắc tôn giáo", member: "Phụng Nhi", from: 6750, duration: 3120, color: "#F3E8FF" },
+  { id: "2.1", label: "Thực tiễn đoàn kết", member: "Huỳnh Nhi", from: 9870, duration: 2370, color: "#DCFCE7" },
+  { id: "2.2", label: "Tôn giáo Việt Nam", member: "Phú", from: 12240, duration: 2730, color: "#FEF9C3" },
+  { id: "3.1", label: "Giao lưu văn hóa", member: "Quỳnh Như", from: 14970, duration: 3300, color: "#FCE7F3" },
+  { id: "3.2", label: "Nhận diện tin giả", member: "Tố Như", from: 18270, duration: 2520, color: "#E0F2FE" },
+  { id: "3.3", label: "Tình nguyện cộng đồng", member: "Ý Như", from: 20790, duration: 2640, color: "#FFF7ED" },
+  { id: "3.4", label: "Tổng kết & liên hệ", member: "Nhân", from: 23430, duration: 2400, color: COLORS.dark },
+  { id: "conclusion", label: "Kết luận", member: "", from: 25830, duration: 870, color: COLORS.darkest },
 ];
 
 export const MEMBER_COLORS: Record<string, string> = {

@@ -345,6 +345,13 @@ This video will be projected on a **classroom projector**. All sizing and stylin
 - **3D background meshes** at low opacity (0.1-0.18) so text remains readable on light bg
 - Projectors wash out colors - avoid subtle color differences or thin lines < 2px
 
+## Performance Notes
+
+- **Gold ring rotation is DISABLED** — `ringAngle = 0` in all sections. The rotating conic gradient border caused frame drops in studio preview. Do not re-enable.
+- **Proxy videos for preview** — `public/media/T*/fullres/` has original 1080p videos. `public/media/T*/*.mp4` are 480p proxies for smooth studio scrubbing. Before final render, restore full-res: `for d in T*/; do cp "$d/fullres/"*.mp4 "$d/" 2>/dev/null; done`
+- **Content card timing is synced to transcripts** — `appearAt` values in section components are computed from `script_from_member/transcripts/` timestamps using formula: `frame = 360 + transcript_seconds * 30`. Do not set `appearAt` arbitrarily — always reference the transcript.
+- **Section durations are sized to video lengths** — each section's `duration` in SECTIONS = `ceil(video_seconds * 30) + 360` (title card), rounded to nearest 30 frames. Do not change section durations without checking the member video length.
+
 ## Style Preferences
 
 - Use normal hyphens (`-`) not em dashes (`—`) in all generated content (spreadsheets, markdown, etc.)

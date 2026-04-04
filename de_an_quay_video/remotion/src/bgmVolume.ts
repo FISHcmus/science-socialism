@@ -34,7 +34,7 @@ function findSection(absoluteFrame: number) {
  * Does NOT include crossfade logic — that is handled per-play in MainVideo.
  */
 export function getBgmVolume(absoluteFrame: number): number {
-  const totalFrames = 27000;
+  const totalFrames = 26700;
 
   // Fade-in: frames 0-60
   if (absoluteFrame < 60) {

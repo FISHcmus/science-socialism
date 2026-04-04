@@ -1,4 +1,4 @@
-import { AbsoluteFill, Video, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile } from "remotion";
+import { AbsoluteFill, Sequence, Video, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile } from "remotion";
 import { COLORS, TEXT_SHADOW } from "../../constants";
 import { SectionTitle, ArtDecoImage, CitationFooter, Timeline } from "../ds";
 
@@ -18,7 +18,7 @@ export const Section31QuynhNhu: React.FC = () => {
   const titleAccentWidth = interpolate(titleSpring, [0, 1], [0, 80]);
 
   const beat2LocalFrame = Math.max(0, frame - 360);
-  const ringAngle = (beat2LocalFrame / fps) * 80;
+  const ringAngle = 0;
   const headerOpacity = interpolate(frame, [90, 110], [0, 1], clampBoth);
   const videoOpacity = interpolate(frame, [90, 120], [0, 1], clampBoth);
   const citationOpacity = interpolate(frame, [2500, 2560], [0, 1], clampBoth);
@@ -48,7 +48,7 @@ export const Section31QuynhNhu: React.FC = () => {
   const visibleCount = frame < 450 ? 0 : frame < 1010 ? 1 : frame < 1910 ? 2 : 3;
 
   // Page flip
-  const PAGE_FLIP = 2300;
+  const PAGE_FLIP = 2181;
   const page1Opacity = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [1, 0], clampBoth);
   const page1Blur = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [0, 8], clampBoth);
 
@@ -69,7 +69,9 @@ export const Section31QuynhNhu: React.FC = () => {
         <AbsoluteFill style={{ flexDirection: "column" }}>
           {/* Video strip — top 480px */}
           <div style={{ position: "relative", width: 1920, height: 480, background: "#000", opacity: videoOpacity }}>
-            <Video src={staticFile('media/T3-1/video_quynh_nhu_cropped.mp4')} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+            <Sequence from={360} layout="none" durationInFrames={2940}>
+              <Video src={staticFile('media/T3-1/video_quynh_nhu_cropped.mp4')} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+            </Sequence>
             <div style={{ position: "absolute", bottom: 12, right: 24, background: "rgba(0,0,0,0.6)", padding: "6px 16px", borderRadius: 8 }}>
               <span className="text-[28px] font-sans font-bold" style={{ color: "#F7F3EE" }}>Nguyễn Phạm Quỳnh Như</span>
               <span className="text-[22px] font-sans ml-3" style={{ color: "#D4AF37" }}>Phần 3.1</span>
