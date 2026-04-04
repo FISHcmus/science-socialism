@@ -1,5 +1,5 @@
 import { memo, type FC } from "react";
-import { AbsoluteFill, Sequence, interpolate, useCurrentFrame, spring, useVideoConfig, Video, staticFile } from "remotion";
+import { AbsoluteFill, Sequence, interpolate, useCurrentFrame, spring, useVideoConfig, OffthreadVideo, staticFile } from "remotion";
 import { COLORS, TEXT_SHADOW } from "../../constants";
 import { SectionTitle, TypewriterText } from "../ds";
 import { VietnamMap } from "../shared/VietnamMap";
@@ -183,7 +183,7 @@ export const NhanIntro: FC = memo(() => {
           {/* Right: horizontal video (contained) + name label */}
           <div className="flex flex-col items-center justify-center" style={{ width: 960, height: 1080, opacity: videoOpacity, background: "#000" }}>
             <Sequence from={360} layout="none" durationInFrames={600}>
-              <Video src={staticFile('media/T3-4/cnxhkh_intro_nhan.mp4')} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+              <OffthreadVideo src={staticFile('media/T3-4/cnxhkh_intro_nhan.mp4')} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </Sequence>
             <div style={{ position: "absolute", bottom: 60, background: "rgba(0,0,0,0.55)", borderRadius: 8, padding: "8px 20px" }}>
               <div className="text-[28px] font-sans font-bold" style={{ color: "#fff" }}>Nhân</div>

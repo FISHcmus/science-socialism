@@ -3,7 +3,10 @@ import { loadFont } from "@remotion/google-fonts/BeVietnamPro";
 import { MainVideo } from "./MainVideo";
 import "./style.css";
 
-loadFont();
+loadFont("normal", {
+  weights: ["400", "700"],
+  subsets: ["vietnamese", "latin"],
+});
 
 export const RemotionRoot: React.FC = () => {
   return (

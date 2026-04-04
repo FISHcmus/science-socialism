@@ -1,5 +1,5 @@
 import { memo, type FC } from "react";
-import { AbsoluteFill, Sequence, Video, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile } from "remotion";
+import { AbsoluteFill, Sequence, OffthreadVideo, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile } from "remotion";
 import { COLORS, TEXT_SHADOW } from "../../constants";
 import { SectionTitle, ArtDecoImage, CitationFooter, FlowChart } from "../ds";
 
@@ -110,7 +110,7 @@ export const Section33YNhu: FC = memo(() => {
           {/* Video strip — bottom 480px */}
           <div style={{ position: "relative", width: 1920, height: 480, background: "#000", opacity: videoOpacity }}>
             <Sequence from={360} layout="none" durationInFrames={2280}>
-              <Video
+              <OffthreadVideo
                 src={staticFile('media/T3-3/video_y_nhu_cropped.mp4')}
                 style={{ width: "100%", height: "100%", objectFit: "contain" }}
               />

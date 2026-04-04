@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import { Video } from "remotion";
+import { OffthreadVideo } from "remotion";
 import { COLORS, GOLD_RING, GRADIENTS, TEXT_SHADOW } from "./tokens";
 
 export interface MemberPiPProps {
@@ -77,7 +77,7 @@ export const MemberPiP = memo(function MemberPiP({
             }}
           >
             {src ? (
-              <Video
+              <OffthreadVideo
                 src={src}
                 className="w-full h-full block"
                 style={{ objectFit }}

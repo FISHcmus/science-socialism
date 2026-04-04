@@ -1,5 +1,5 @@
 import { memo, type FC } from "react";
-import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig, Video, staticFile } from "remotion";
+import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig, OffthreadVideo, staticFile } from "remotion";
 import { COLORS, TEXT_SHADOW } from "../../constants";
 
 const MEMBERS = [
@@ -49,7 +49,7 @@ export const Conclusion: FC = memo(() => {
     <AbsoluteFill>
       {/* Background video */}
       <AbsoluteFill>
-        <Video src={staticFile('media/T3-4/cnxhkh_ending_nhan.mp4')} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+        <OffthreadVideo src={staticFile('media/T3-4/cnxhkh_ending_nhan.mp4')} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
       </AbsoluteFill>
       {/* Overlay + content */}
       <AbsoluteFill

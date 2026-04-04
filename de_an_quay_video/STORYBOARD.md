@@ -1,19 +1,20 @@
 # Storyboard - Nhom 7 Video
 
 **Chu de 6:** Xay dung khoi dai doan ket toan dan toc o Viet Nam
-**Thoi luong:** 15:00 (27000 frames @ 30fps)
+**Thoi luong:** 14:50 (26700 frames @ 30fps)
 **Do phan giai:** 1920x1080
+**GVHD:** TS. Pham Thi Doat
 
 ## Timeline
 
 ```
-00:00    00:37    02:16    03:55    05:34  06:34  07:43    09:22    11:01    12:40    14:09 15:00
-  |        |        |        |        |      |      |        |        |        |        |     |
-  |--TITLE-|--INTRO-|--S1.1--|--S1.2--|S1.3--|S2.1--|--S2.2--|--S3.1--|--S3.2--|--S3.3--|S3.4-|KET|
-  | 150fr  | 960fr  | 2970fr | 2970fr|2970fr|2070fr|2070fr  | 2970fr | 2970fr | 2970fr|2970f|960|
-  |        |        |        |        |      |      |        |        |        |        |     |
-  |  Mo dau| Nhan   |ThucNhi |ChauNhi |PhNhi |HNhi  | Phu    |Q.Nhu   | ToNhu  | YNhu   |Nhan |   |
-  |        |        |-----LY LUAN (35%)------|--TT(14%)-|------TRACH NHIEM SV (50%)-----|     |
+00:00    00:05    00:37    02:04    03:45    05:29  06:48  08:19    10:09    11:33    13:01    14:21 14:50
+  |        |        |        |        |        |      |      |        |        |        |        |     |
+  |--TITLE-|--INTRO-|--S1.1--|--S1.2--|--S1.3--|S2.1--|S2.2--|--S3.1--|--S3.2--|--S3.3--|--S3.4--|KET--|
+  | 150fr  | 960fr  | 2610fr | 3030fr | 3120fr|2370fr|2730fr| 3300fr | 2520fr | 2640fr | 2400fr|870fr|
+  |        |        |        |        |        |      |      |        |        |        |        |     |
+  |  Mo dau| Nhan   |ThucNhi |ChauNhi |PhNhi   |HNhi  | Phu  |Q.Nhu   | ToNhu  | YNhu   |Nhan   |     |
+  |        |        |-----LY LUAN (35%)--------|--TT(14%)-|------TRACH NHIEM SV (50%)---|       |
 ```
 
 ## Layout chung moi section
@@ -63,6 +64,8 @@ Frame 0-359:  TITLE BEAT - tieu de section (centered, full screen, 12s) + BGM pl
 Frame 360+:   CONTENT BEAT - layout 2 cot (content + MemberPiP), BGM silent
 ```
 
+**Gold accent line:** 320px wide, spring sweep animation (damping 14, stiffness 80) in all sections.
+
 ---
 
 ## TITLE (0:00 - 0:05, frames 0-149)
@@ -71,6 +74,7 @@ Frame 360+:   CONTENT BEAT - layout 2 cot (content + MemberPiP), BGM silent
 +------------------------------------------------------+
 |                                                      |
 |       CHU NGHIA XA HOI KHOA HOC - NHOM 7             |
+|       GVHD: TS. Pham Thi Doat                       |
 |                                                      |
 |   TRACH NHIEM CUA SINH VIEN TRONG VIEC              |
 |   GOP PHAN XAY DUNG KHOI DAI DOAN KET               |
@@ -89,8 +93,9 @@ Content:
   - Chu de 6: Xay dung khoi dai doan ket toan dan toc o VN hien nay
   - Nhom 7 - 9 thanh vien
   - Cau truc: Ly luan -> Thuc tien -> Trach nhiem SV
+  - GVHD: TS. Pham Thi Doat
 
-Layout: Split 960+960 | Left: content cards (topic, 3-part structure, member count) | Right: horizontal video (contain, black bg) + name label
+Layout: Split 960+960 | Left: content cards (topic, 3-part structure, member list) | Right: horizontal video (contain, black bg) + name label
 
 Video:  T3-4/cnxhkh_intro_nhan.mp4 (horizontal 1920x1080, objectFit: contain)
 ```
@@ -99,7 +104,7 @@ Video:  T3-4/cnxhkh_intro_nhan.mp4 (horizontal 1920x1080, objectFit: contain)
 
 ## PHAN 1: CO SO LY LUAN (35%)
 
-### S1.1 - Cuong linh dan toc Mac-Lenin (0:37 - 2:16) - Thuc Nhi
+### S1.1 - Cuong linh dan toc Mac-Lenin (0:37 - 2:04, frames 1110-3719) - Thuc Nhi
 
 **Layout:** FlowChart vertical (3 nodes) | Scale pop-in | Horizontal wipe
 
@@ -117,7 +122,7 @@ Video:  T1-1/video_thuc_nhi.mp4
 Citation: GT CNXHKH (2021), Ch.6, I.2b, tr.202-205
 ```
 
-### S1.2 - Nam dac trung co ban cua dan toc (2:16 - 3:55) - Chau Nhi
+### S1.2 - Nam dac trung co ban cua dan toc (2:04 - 3:45, frames 3720-6749) - Chau Nhi
 
 **Layout:** IconGrid 3-col / 2-col | Scale-bounce (0->1.15->1.0) | Rotate-fade
 
@@ -133,28 +138,28 @@ Cards (5) -> PAGE FLIP tai frame 880 (tuong doi):
     5. Co chung mot nha nuoc        (appear: 1210)
     + Images
 
-Images: T1-2/img1_54_dan_toc.jpg, T1-2/img2_ban_do_vn.jpeg (280x280)
+Images: T1-2/img1_lanh_dao_dtts.jpg, T1-2/img2_ban_do_vn.jpeg (280x280)
 Video:  T1-2/video_chau_nhi.mp4
 Citation: GT CNXHKH (2021), Ch.6, I.1, tr.196-200
 ```
 
-### S1.3 - Bon nguyen tac giai quyet van de ton giao (3:55 - 5:34) - Phung Nhi
+### S1.3 - Bon nguyen tac giai quyet van de ton giao (3:45 - 5:29, frames 6750-9869) - Phung Nhi
 
 **Layout:** FlowChart horizontal + TypewriterText | Fade + slide-down | Scale-down/up
 
 ```
-Cards (4) -> PAGE FLIP tai frame 1390 (tuong doi):
-  Trang 1 (frame 90-1419):
-    1. Ton trong quyen tu do tin nguong       (appear: 90)
-    2. Khac phuc dan anh huong tieu cuc       (appear: 540)
-    3. Phan biet mat tu tuong va mat chinh tri (appear: 990)
+Cards (4) -> PAGE FLIP tai frame 3000 (tuong doi):
+  Trang 1:
+    1. Ton trong quyen tu do tin nguong       (appear: 1119)
+    2. Khac phuc dan anh huong tieu cuc       (appear: 1563)
+    3. Phan biet mat tu tuong va mat chinh tri (appear: 1935)
   
-  Trang 2 (frame 1390+):
-    4. Quan diem lich su cu the               (appear: 1440)
+  Trang 2 (frame 3000+):
+    4. Quan diem lich su cu the               (appear: 2754)
     + Images
 
 Images: T1-3/img1_tu_do_tin_nguong.jpg, T1-3/img2_xuyen_tac_ton_giao.png (280x280)
-Video:  T1-3/video_phung_nhi.mp4
+Video:  T1-3/video_phung_nhi_cropped.mp4
 Citation: GT CNXHKH (2021), Ch.6, II.1b, tr.218-221
 ```
 
@@ -162,7 +167,7 @@ Citation: GT CNXHKH (2021), Ch.6, II.1b, tr.218-221
 
 ## PHAN 2: THUC TIEN VIET NAM (14%)
 
-### S2.1 - Thuc tien doan ket dan toc VN (5:34 - 6:43) - Huynh Nhi
+### S2.1 - Thuc tien doan ket dan toc VN (5:29 - 6:48, frames 9870-12239) - Huynh Nhi
 
 **Layout:** SplitCompare (green vs red) | Curtain (opposite sides) | Vertical split
 
@@ -174,11 +179,11 @@ Cards (2):
 Quote: "Bao nhieu loi ich deu vi dan, bao nhieu quyen han deu cua dan" - HCM
 
 Images: T2-1/img1.jpg, T2-1/img2.jpeg (280x280)
-Video:  T2-1/video_huynh_nhi.mp4 (NOTE: video already has background music - do NOT layer additional music track)
+Video:  T2-1/video_huynh_nhi_processed.mp4 (NOTE: video already has background music - do NOT layer additional music track)
 Citation: GT CNXHKH (2021), Ch.6, I.3a, tr.205-208; HCM (1949)
 ```
 
-### S2.2 - Dac diem ton giao o Viet Nam (6:43 - 7:52) - Phu
+### S2.2 - Dac diem ton giao o Viet Nam (6:48 - 8:19, frames 12240-14969) - Phu
 
 **Layout:** BarChart + GlassPanel | Bar grow + fade-scale | Dissolve-blur
 
@@ -189,7 +194,7 @@ Cards (2):
   1. Chung song hoa binh: Chua tung xay ra xung dot hay chien tranh ton giao
   2. Chinh sach nha nuoc: Ton trong tu do tin nguong, binh dang truoc phap luat
 
-Images: (chua co anh - placeholder)
+Images: T2-2/nha_tho_duc_ba.png, T2-2/toa_thanh_cao_dai.png (280x280)
 Video:  T2-2/video_phu.mp4 (NOTE: video has traffic noise background - need to add background music to mask it)
 Citation: GT CNXHKH (2021), Ch.6, II.2a-b, tr.222-226
 ```
@@ -198,7 +203,7 @@ Citation: GT CNXHKH (2021), Ch.6, II.2a-b, tr.222-226
 
 ## PHAN 3: TRACH NHIEM SINH VIEN (50%)
 
-### S3.1 - Giao luu van hoa dan toc (7:52 - 9:31) - Quynh Nhu
+### S3.1 - Giao luu van hoa dan toc (8:19 - 10:09, frames 14970-18269) - Quynh Nhu
 
 **Layout:** Timeline (gold line + dots) | Cascade-down | Page curl (skew)
 
@@ -210,11 +215,11 @@ Cards (3):
   3. Giu ban sac nhung khong khep kin, tro thanh cau noi van hoa
 
 Images: (chua co anh - placeholder)
-Video:  T3-1/video_quynh_nhu.mp4
+Video:  T3-1/video_quynh_nhu_cropped.mp4
 Citation: GT CNXHKH (2021), Ch.6, I.1 tr.198; Bo VHTTDL (2025)
 ```
 
-### S3.2 - Nhan dien thong tin sai lech tren MXH (9:31 - 11:10) - To Nhu
+### S3.2 - Nhan dien thong tin sai lech tren MXH (10:09 - 11:33, frames 18270-20789) - To Nhu
 
 **Layout:** AlertCard (warning/danger/success) | Shake-in from right | Horizontal flip
 
@@ -232,7 +237,7 @@ Video:  T3-2/video_to_nhu.mp4
 Citation: Bao Nhan Dan (2025), vu tin gia Dak Lak
 ```
 
-### S3.3 - Tuyen truyen chinh sach & tinh nguyen cong dong (11:10 - 12:49) - Y Nhu
+### S3.3 - Tuyen truyen chinh sach & tinh nguyen cong dong (11:33 - 13:01, frames 20790-23429) - Y Nhu
 
 **Layout:** FlowChart horizontal (progression) | Scale-in with glow | Slide-down
 
@@ -246,11 +251,11 @@ Cards (3):
      Mang kien thuc chuyen mon phuc vu cong dong, lan toa thong tin chinh sach
 
 Images: T3-3/img1.jpg, T3-3/img2.jpg (280x280)
-Video:  T3-3/video_y_nhu.mp4
+Video:  T3-3/video_y_nhu_cropped.mp4
 Citation: GT CNXHKH (2021), Ch.6, I.3b tr.210-212; QD 1719/QD-TTg
 ```
 
-### S3.4 - Tong ket & lien he ban than (12:49 - 14:28) - Nhan
+### S3.4 - Tong ket & lien he ban than (13:01 - 14:21, frames 23430-25829) - Nhan
 
 **Layout:** Stacked: video strip top (1920x360, contain) + content bottom (1920x720) | GlassPanel goldRing + fan-out cards | Zoom-out
 
@@ -265,14 +270,14 @@ Cards (3):
   3. Hanh dong tu hom nay
      Xay dung doan ket tu hanh dong nho hang ngay
 
-Images: (chua co anh - placeholder)
+Images: T3-4/hcmus_campus.png
 Video:  T3-4/cnxhkh_mainspeech_nhan.mp4 (horizontal 1920x1080, objectFit: contain, black bg)
 Citation: GT CNXHKH (2021), Ch.6, I.3a tr.205-206; Van kien DH XII tr.164-165
 ```
 
 ---
 
-## KET LUAN (14:28 - 15:00, frames 26040-26999)
+## KET LUAN (14:21 - 14:50, frames 25830-26699)
 
 ```
 Background: T3-4/cnxhkh_ending_nhan.mp4 (horizontal, objectFit: contain, semi-transparent overlay)
@@ -281,10 +286,11 @@ Background: T3-4/cnxhkh_ending_nhan.mp4 (horizontal, objectFit: contain, semi-tr
 |  [Video background - Nhan speaking]                  |
 |  [Overlay rgba(247,243,238,0.75)]                    |
 |                                                      |
-|           CAM ON THAY/CO DA LANG NGHE                |
+|           CAM ON CO DA THEO DOI                      |
 |                                                      |
 |              Nhom 7 - BAA00103                       |
 |              CNXH khoa hoc                            |
+|              GVHD: TS. Pham Thi Doat                 |
 |              [9 member names grid]                   |
 |                                                      |
 +------------------------------------------------------+
@@ -295,20 +301,21 @@ Background: T3-4/cnxhkh_ending_nhan.mp4 (horizontal, objectFit: contain, semi-tr
 ## Media status
 
 ```
-Section  | Images          | Video              | Status
----------|-----------------|--------------------|---------
-T1-1     | 2 jpg           | video_thuc_nhi.mp4 | OK
-T1-2     | 2 jpg/jpeg      | video_chau_nhi.mp4 | OK
-T1-3     | 2 jpg/png       | video_phung_nhi.mp4| OK
-T2-1     | 2 jpg/jpeg      | video_huynh_nhi.mp4| OK
-T2-2     | 2 png           | video_phu.mp4      | OK
-T3-1     | 2 png           | video_quynh_nhu.mp4| OK
-T3-2     | 2 webp          | video_to_nhu.mp4   | OK
-T3-3     | 2 jpg           | video_y_nhu.mp4    | OK
-T3-4     | (none)          | 3 mp4 (intro/main/ending) | OK (no images)
+Section  | Images                          | Video                        | Status
+---------|---------------------------------|------------------------------|---------
+T1-1     | 2 jpg                           | video_thuc_nhi.mp4           | OK
+T1-2     | 2 jpg/jpeg                      | video_chau_nhi.mp4           | OK
+T1-3     | 2 jpg/png                       | video_phung_nhi_cropped.mp4  | OK
+T2-1     | 2 jpg/jpeg                      | video_huynh_nhi_processed.mp4| OK
+T2-2     | 2 png (nha_tho, toa_thanh)      | video_phu.mp4                | OK
+T3-1     | (none)                          | video_quynh_nhu_cropped.mp4  | OK
+T3-2     | 2 webp                          | video_to_nhu.mp4             | OK
+T3-3     | 2 jpg                           | video_y_nhu_cropped.mp4      | OK
+T3-4     | 1 png (hcmus_campus)            | 3 mp4 (intro/main/ending)    | OK
 ```
 
-All videos re-encoded to H264 720x1280 2Mbps 30fps .mp4.
+All member videos normalized to EBU R128 -16 LUFS (Nhan's 3 videos at -12 LUFS).
+All videos use OffthreadVideo for reliable frame extraction during render.
 
 ## Design tokens
 
@@ -317,6 +324,6 @@ Background:  #F7F3EE (warm off-white)
 Text:        #111827 (near-black)
 Gold accent: #D97706
 Red accent:  #B91C1C
-Font:        Be Vietnam Pro (sans-serif)
+Font:        Be Vietnam Pro (sans-serif), weights 400+700, subsets vietnamese+latin
 Min text:    28px body, 32px labels, 48px titles
 ```

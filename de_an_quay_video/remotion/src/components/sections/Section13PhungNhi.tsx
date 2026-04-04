@@ -1,5 +1,5 @@
 import { memo, type FC } from "react";
-import { AbsoluteFill, Sequence, Video, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile } from "remotion";
+import { AbsoluteFill, Sequence, OffthreadVideo, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile } from "remotion";
 import { COLORS, TEXT_SHADOW } from "../../constants";
 import { SectionTitle, ArtDecoImage, CitationFooter, FlowChart, GlassPanel, TypewriterText } from "../ds";
 
@@ -125,7 +125,7 @@ export const Section13PhungNhi: FC = memo(() => {
           {/* Video strip — bottom 480px */}
           <div style={{ position: "relative", width: 1920, height: 480, background: "#000", opacity: videoOpacity }}>
             <Sequence from={360} layout="none" durationInFrames={2760}>
-              <Video src={staticFile('media/T1-3/video_phung_nhi_cropped.mp4')} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+              <OffthreadVideo src={staticFile('media/T1-3/video_phung_nhi_cropped.mp4')} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
             </Sequence>
             <div style={{ position: "absolute", bottom: 12, right: 24, background: "rgba(0,0,0,0.6)", padding: "6px 16px", borderRadius: 8 }}>
               <span className="text-[28px] font-sans font-bold" style={{ color: "#F7F3EE" }}>Trần Thị Phụng Nhi</span>

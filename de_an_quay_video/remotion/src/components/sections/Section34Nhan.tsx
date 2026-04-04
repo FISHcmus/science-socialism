@@ -1,5 +1,5 @@
 import { memo, type FC } from "react";
-import { AbsoluteFill, Sequence, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile, Video } from "remotion";
+import { AbsoluteFill, Sequence, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile, OffthreadVideo } from "remotion";
 import { COLORS, TEXT_SHADOW } from "../../constants";
 import { SectionTitle, ArtDecoImage, MemberPiP, CitationFooter, GlassPanel } from "../ds";
 
@@ -66,7 +66,7 @@ export const Section34Nhan: FC = memo(() => {
           {/* Top: horizontal video strip */}
           <div style={{ position: "absolute", top: 0, left: 0, width: 1920, height: 360, opacity: videoOpacity, overflow: "hidden", background: "#000" }}>
             <Sequence from={360} layout="none" durationInFrames={2040}>
-              <Video src={staticFile('media/T3-4/cnxhkh_mainspeech_nhan.mp4')} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+              <OffthreadVideo src={staticFile('media/T3-4/cnxhkh_mainspeech_nhan.mp4')} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </Sequence>
             {/* Name label overlay */}
             <div style={{ position: "absolute", bottom: 12, right: 24, background: "rgba(0,0,0,0.55)", borderRadius: 8, padding: "6px 16px" }}>

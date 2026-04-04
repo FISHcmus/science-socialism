@@ -22,7 +22,7 @@
       },
       "devDependencies": {
         "@ladle/react": "^5.1.1",
-        "@remotion/tailwind": "^4.0.438",
+        "@remotion/tailwind": "4.0.436",
         "@types/bun": "latest",
         "@types/d3-geo": "^3.1.0",
         "@types/d3-shape": "^3.1.8",
@@ -351,7 +351,7 @@
 
     "@remotion/studio-shared": ["@remotion/studio-shared@4.0.436", "", { "dependencies": { "remotion": "4.0.436" } }, "sha512-Nold+9VKwwTg58cQgnAqz9DZnJdIPEWy5zEtFPJ8AlfaYzm0BRZI9RSR0btxa2gScWSf3mZiUigcSku/xXaoFg=="],
 
-    "@remotion/tailwind": ["@remotion/tailwind@4.0.438", "", { "dependencies": { "autoprefixer": "10.4.20", "css-loader": "5.2.7", "postcss": "8.4.47", "postcss-loader": "^7.3.0", "postcss-preset-env": "^8.3.2", "style-loader": "4.0.0", "tailwindcss": "3.4.13" }, "peerDependencies": { "@remotion/bundler": "4.0.438" } }, "sha512-6Dtc11wD+mKomd0sBcJXBIH9tGd0S8lW9Mw6wJH64SM/zmPBEFhxFB4P/Kb3K3y68BWTRctlKzpLvY531uK+qg=="],
+    "@remotion/tailwind": ["@remotion/tailwind@4.0.436", "", { "dependencies": { "autoprefixer": "10.4.20", "css-loader": "5.2.7", "postcss": "8.4.47", "postcss-loader": "^7.3.0", "postcss-preset-env": "^8.3.2", "style-loader": "4.0.0", "tailwindcss": "3.4.13" }, "peerDependencies": { "@remotion/bundler": "4.0.436" } }, "sha512-gjfOB5dJBZuFxfqk6WLgb934cl9mDI5q7BwJh8s5UcSc5pvB+2TlVRa+5LQPGMO/cOapIh+60Lri8gsXyQXEuw=="],
 
     "@remotion/three": ["@remotion/three@4.0.436", "", { "dependencies": { "remotion": "4.0.436" }, "peerDependencies": { "@react-three/fiber": ">=8.0.0", "react": ">=16.8.0", "react-dom": ">=16.8.0", "three": ">=0.137.0" } }, "sha512-boPHu1gmuWRKfKtPehvx//endZ3Vu079SskNlmSWJyxcQJ5GErR5mh7vJ/lPsdjLBOwGFKOl+siU3fvzNWdxsg=="],
 
