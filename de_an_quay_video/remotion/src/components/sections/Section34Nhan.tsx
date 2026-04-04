@@ -1,10 +1,11 @@
+import { memo, type FC } from "react";
 import { AbsoluteFill, Sequence, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile, Video } from "remotion";
 import { COLORS, TEXT_SHADOW } from "../../constants";
 import { SectionTitle, ArtDecoImage, MemberPiP, CitationFooter, GlassPanel } from "../ds";
 
 ;
 
-export const Section34Nhan: React.FC = () => {
+export const Section34Nhan: FC = memo(() => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -131,4 +132,4 @@ export const Section34Nhan: React.FC = () => {
       )}
     </AbsoluteFill>
   );
-};
+});

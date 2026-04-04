@@ -1,3 +1,4 @@
+import { memo, type FC } from "react";
 import {
   AbsoluteFill,
   interpolate,
@@ -7,7 +8,7 @@ import {
 } from "remotion";
 import { COLORS, TEXT_SHADOW } from "../constants";
 
-export const TitleCard: React.FC = () => {
+export const TitleCard: FC = memo(() => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -70,4 +71,4 @@ export const TitleCard: React.FC = () => {
       </div>
     </AbsoluteFill>
   );
-};
+});

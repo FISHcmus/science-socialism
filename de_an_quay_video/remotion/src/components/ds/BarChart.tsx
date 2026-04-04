@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { COLORS, GRADIENTS, TEXT_SHADOW } from "./tokens";
 
 export interface BarData {
@@ -18,7 +19,7 @@ export interface BarChartProps {
   displayValues?: number[];
 }
 
-export function BarChart({
+export const BarChart = memo(function BarChart({
   data,
   maxHeight = 400,
   showValues = true,
@@ -80,4 +81,4 @@ export function BarChart({
       })}
     </div>
   );
-}
+});

@@ -1,4 +1,4 @@
-import type { CSSProperties } from "react";
+import { memo, type CSSProperties } from "react";
 import { COLORS, GLASS, TEXT_SHADOW } from "./tokens";
 
 export interface SplitCompareProps {
@@ -14,7 +14,7 @@ export interface SplitCompareProps {
   rightTranslateX?: number;
 }
 
-export function SplitCompare({
+export const SplitCompare = memo(function SplitCompare({
   leftTitle,
   leftDetail,
   leftAccentColor = "#16A34A",
@@ -83,4 +83,4 @@ export function SplitCompare({
       </div>
     </div>
   );
-}
+});

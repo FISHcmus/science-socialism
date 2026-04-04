@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { COLORS, GRADIENTS, GOLD_RING, TEXT_SHADOW } from "./tokens";
 
 export interface CountUpNumberProps {
@@ -14,7 +15,7 @@ export interface CountUpNumberProps {
   ringAngle?: number;
 }
 
-export function CountUpNumber({
+export const CountUpNumber = memo(function CountUpNumber({
   value,
   suffix,
   prefix,
@@ -103,4 +104,4 @@ export function CountUpNumber({
       </div>
     </div>
   );
-}
+});

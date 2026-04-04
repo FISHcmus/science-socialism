@@ -1,4 +1,4 @@
-import { type CSSProperties, type ReactNode } from "react";
+import { memo, type CSSProperties, type ReactNode } from "react";
 import { COLORS, GLASS, GRADIENTS, GOLD_RING } from "./tokens";
 
 export interface GlassPanelProps {
@@ -16,7 +16,7 @@ export interface GlassPanelProps {
   children?: ReactNode;
 }
 
-export function GlassPanel({
+export const GlassPanel = memo(function GlassPanel({
   blur = 16,
   borderRadius = 16,
   padding = "24px",
@@ -117,4 +117,4 @@ export function GlassPanel({
   }
 
   return panel;
-}
+});

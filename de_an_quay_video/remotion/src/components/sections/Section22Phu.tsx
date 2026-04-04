@@ -1,3 +1,4 @@
+import { memo, type FC } from "react";
 import { AbsoluteFill, Sequence, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile } from "remotion";
 import { COLORS, TEXT_SHADOW } from "../../constants";
 import { SectionTitle, ArtDecoImage, MemberPiP, CitationFooter, GlassPanel } from "../ds";
@@ -6,7 +7,7 @@ import { SectionTitle, ArtDecoImage, MemberPiP, CitationFooter, GlassPanel } fro
 
 ;
 
-export const Section22Phu: React.FC = () => {
+export const Section22Phu: FC = memo(() => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -139,4 +140,4 @@ export const Section22Phu: React.FC = () => {
       )}
     </AbsoluteFill>
   );
-};
+});

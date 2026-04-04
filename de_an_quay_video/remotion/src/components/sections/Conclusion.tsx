@@ -1,3 +1,4 @@
+import { memo, type FC } from "react";
 import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig, Video, staticFile } from "remotion";
 import { COLORS, TEXT_SHADOW } from "../../constants";
 
@@ -13,7 +14,7 @@ const MEMBERS = [
   "Ngô Văn Phú",
 ];
 
-export const Conclusion: React.FC = () => {
+export const Conclusion: FC = memo(() => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -117,4 +118,4 @@ export const Conclusion: React.FC = () => {
       </AbsoluteFill>
     </AbsoluteFill>
   );
-};
+});

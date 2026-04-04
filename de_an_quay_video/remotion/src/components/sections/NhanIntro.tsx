@@ -1,9 +1,10 @@
+import { memo, type FC } from "react";
 import { AbsoluteFill, Sequence, interpolate, useCurrentFrame, spring, useVideoConfig, Video, staticFile } from "remotion";
 import { COLORS, MEMBER_COLORS, TEXT_SHADOW } from "../../constants";
 import { SectionTitle, TypewriterText, MemberPlaceholder, Overlay, LowerThird } from "../ds";
 import { VietnamMap } from "../shared/VietnamMap";
 
-export const NhanIntro: React.FC = () => {
+export const NhanIntro: FC = memo(() => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -182,4 +183,4 @@ export const NhanIntro: React.FC = () => {
       )}
     </AbsoluteFill>
   );
-};
+});

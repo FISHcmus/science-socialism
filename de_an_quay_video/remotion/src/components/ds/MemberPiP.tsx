@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Video } from "remotion";
 import { COLORS, GOLD_RING, GRADIENTS, TEXT_SHADOW } from "./tokens";
 
@@ -16,7 +16,7 @@ export interface MemberPiPProps {
   objectFit?: "cover" | "contain";
 }
 
-export function MemberPiP({
+export const MemberPiP = memo(function MemberPiP({
   name,
   sectionLabel,
   src,
@@ -121,4 +121,4 @@ export function MemberPiP({
       </div>
     </div>
   );
-}
+});

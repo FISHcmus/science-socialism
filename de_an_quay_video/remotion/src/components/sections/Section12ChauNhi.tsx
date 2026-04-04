@@ -1,3 +1,4 @@
+import { memo, type FC } from "react";
 import { AbsoluteFill, Sequence, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile } from "remotion";
 import { COLORS, TEXT_SHADOW } from "../../constants";
 import { SectionTitle, ArtDecoImage, MemberPiP, CitationFooter, IconGrid } from "../ds";
@@ -11,7 +12,7 @@ const CHARACTERISTICS = [
   { title: "Có chung một nhà nước", detail: "Phân biệt dân tộc quốc gia với dân tộc - tộc người, thể hiện qua tổ chức nhà nước thống nhất.", appearAt: 1779 },
 ];
 
-export const Section12ChauNhi: React.FC = () => {
+export const Section12ChauNhi: FC = memo(() => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -129,4 +130,4 @@ export const Section12ChauNhi: React.FC = () => {
       )}
     </AbsoluteFill>
   );
-};
+});

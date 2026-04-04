@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { TEXT_SHADOW } from "./tokens";
 
 export interface SectionTitleProps {
@@ -9,7 +10,7 @@ export interface SectionTitleProps {
   accentWidth?: number;
 }
 
-export function SectionTitle({
+export const SectionTitle = memo(function SectionTitle({
   title,
   subtitle,
   sectionNumber,
@@ -62,4 +63,4 @@ export function SectionTitle({
       />
     </div>
   );
-}
+});

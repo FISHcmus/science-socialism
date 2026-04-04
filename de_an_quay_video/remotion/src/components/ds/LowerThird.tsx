@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { TEXT_SHADOW } from "./tokens";
 import { GlassPanel } from "./GlassPanel";
 
@@ -8,7 +9,7 @@ export interface LowerThirdProps {
   translateY?: number;
 }
 
-export function LowerThird({
+export const LowerThird = memo(function LowerThird({
   name,
   role,
   opacity = 1,
@@ -47,4 +48,4 @@ export function LowerThird({
       </GlassPanel>
     </div>
   );
-}
+});

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { COLORS, GRADIENTS, GOLD_RING, TEXT_SHADOW } from "./tokens";
 
 export interface ArtDecoImageProps {
@@ -13,7 +13,7 @@ export interface ArtDecoImageProps {
   borderRadius?: number;
 }
 
-export function ArtDecoImage({
+export const ArtDecoImage = memo(function ArtDecoImage({
   src,
   description,
   width,
@@ -100,4 +100,4 @@ export function ArtDecoImage({
       </div>
     </div>
   );
-}
+});

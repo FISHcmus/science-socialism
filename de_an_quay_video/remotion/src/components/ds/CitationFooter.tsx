@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { GOLD_RING, TEXT_SHADOW } from "./tokens";
 
 export interface CitationFooterProps {
@@ -7,7 +7,7 @@ export interface CitationFooterProps {
   opacity?: number;
 }
 
-export function CitationFooter({ text, opacity = 1 }: CitationFooterProps) {
+export const CitationFooter = memo(function CitationFooter({ text, opacity = 1 }: CitationFooterProps) {
   return (
     <div
       className="flex items-center gap-3"
@@ -34,4 +34,4 @@ export function CitationFooter({ text, opacity = 1 }: CitationFooterProps) {
       />
     </div>
   );
-}
+});

@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { TEXT_SHADOW } from "./tokens";
 import { GlassPanel } from "./GlassPanel";
 
@@ -19,7 +20,7 @@ export interface FlowChartProps {
   arrowOpacities?: number[];
 }
 
-export function FlowChart({
+export const FlowChart = memo(function FlowChart({
   nodes,
   direction = "horizontal",
   cycle = false,
@@ -105,4 +106,4 @@ export function FlowChart({
       })}
     </div>
   );
-}
+});

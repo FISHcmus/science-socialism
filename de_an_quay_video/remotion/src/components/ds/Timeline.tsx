@@ -1,4 +1,4 @@
-import type { CSSProperties } from "react";
+import { memo, type CSSProperties } from "react";
 import { COLORS, GLASS, TEXT_SHADOW } from "./tokens";
 
 export interface TimelineItem {
@@ -15,7 +15,7 @@ export interface TimelineProps {
   lineProgress?: number;
 }
 
-export function Timeline({
+export const Timeline = memo(function Timeline({
   items,
   visibleCount = items.length,
   itemOpacities,
@@ -97,4 +97,4 @@ export function Timeline({
       </div>
     </div>
   );
-}
+});

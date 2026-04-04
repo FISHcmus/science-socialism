@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { COLORS, TEXT_SHADOW } from "./tokens";
 
 export interface TypewriterTextProps {
@@ -10,7 +11,7 @@ export interface TypewriterTextProps {
   goldText?: boolean;
 }
 
-export function TypewriterText({
+export const TypewriterText = memo(function TypewriterText({
   text,
   visibleChars,
   fontSize = 28,
@@ -43,4 +44,4 @@ export function TypewriterText({
       )}
     </span>
   );
-}
+});

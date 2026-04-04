@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { COLORS, GRADIENTS, GOLD_RING, TEXT_SHADOW } from "./tokens";
 
 export interface MemberPlaceholderProps {
@@ -9,7 +10,7 @@ export interface MemberPlaceholderProps {
   ringAngle?: number;
 }
 
-export function MemberPlaceholder({
+export const MemberPlaceholder = memo(function MemberPlaceholder({
   name,
   color,
   opacity = 1,
@@ -95,4 +96,4 @@ export function MemberPlaceholder({
       </div>
     </div>
   );
-}
+});

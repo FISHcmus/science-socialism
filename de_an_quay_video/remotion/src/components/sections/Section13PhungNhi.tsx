@@ -1,3 +1,4 @@
+import { memo, type FC } from "react";
 import { AbsoluteFill, Sequence, Video, interpolate, useCurrentFrame, spring, useVideoConfig, staticFile } from "remotion";
 import { COLORS, TEXT_SHADOW } from "../../constants";
 import { SectionTitle, ArtDecoImage, CitationFooter, FlowChart, GlassPanel, TypewriterText } from "../ds";
@@ -9,7 +10,7 @@ const PRINCIPLES = [
   { title: "Quan điểm lịch sử cụ thể", detail: "Phân tích vai trò tôn giáo trong từng giai đoạn lịch sử, phát huy giá trị nhân văn, đạo đức tốt đẹp.", appearAt: 2682 },
 ];
 
-export const Section13PhungNhi: React.FC = () => {
+export const Section13PhungNhi: FC = memo(() => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -133,4 +134,4 @@ export const Section13PhungNhi: React.FC = () => {
       )}
     </AbsoluteFill>
   );
-};
+});

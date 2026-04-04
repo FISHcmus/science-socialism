@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { TEXT_SHADOW } from "./tokens";
 import { GlassPanel } from "./GlassPanel";
 
@@ -16,7 +17,7 @@ export interface IconGridProps {
   itemOpacities?: number[];
 }
 
-export function IconGrid({
+export const IconGrid = memo(function IconGrid({
   items,
   columns = 3,
   visibleCount = items.length,
@@ -76,4 +77,4 @@ export function IconGrid({
       })}
     </div>
   );
-}
+});

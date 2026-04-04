@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { COLORS, GLASS, TEXT_SHADOW } from "./tokens";
 
 export type AlertVariant = "warning" | "danger" | "success";
@@ -17,7 +18,7 @@ const VARIANT_CONFIG: Record<AlertVariant, { color: string; icon: string }> = {
   success: { color: "#16A34A", icon: "\u2714" },
 };
 
-export function AlertCard({
+export const AlertCard = memo(function AlertCard({
   title,
   detail,
   variant = "warning",
@@ -76,4 +77,4 @@ export function AlertCard({
       </div>
     </div>
   );
-}
+});
