@@ -8,6 +8,7 @@ export interface SectionTitleProps {
   opacity?: number;
   translateY?: number;
   accentWidth?: number;
+  scale?: number;
 }
 
 export const SectionTitle = memo(function SectionTitle({
@@ -17,13 +18,14 @@ export const SectionTitle = memo(function SectionTitle({
   opacity = 1,
   translateY = 0,
   accentWidth = 200,
+  scale = 1,
 }: SectionTitleProps) {
   return (
     <div
       className="flex flex-col items-center justify-center text-center font-sans gap-4 px-8 py-10"
       style={{
         opacity,
-        transform: `translateY(${translateY}px)`,
+        transform: `translateY(${translateY}px) scale(${scale})`,
       }}
     >
       {sectionNumber && (

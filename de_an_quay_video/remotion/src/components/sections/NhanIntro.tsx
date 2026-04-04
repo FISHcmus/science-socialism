@@ -13,6 +13,8 @@ export const NhanIntro: FC = memo(() => {
   const beat1Opacity = interpolate(beat1Spring, [0, 1], [0, 1]);
   const beat1TranslateY = interpolate(beat1Spring, [0, 1], [40, 0]);
   const beat1AccentWidth = interpolate(beat1Spring, [0, 1], [0, 200]);
+  const beat1Breathe = spring({ frame, fps, config: { damping: 30, stiffness: 40 } });
+  const beat1Scale = interpolate(beat1Breathe, [0, 1], [1.03, 1]);
 
   // --- Beat 2: TypewriterText + VietnamMap (frames 90-150) ---
   const beat2Local = frame - 90;
@@ -75,6 +77,7 @@ export const NhanIntro: FC = memo(() => {
             opacity={beat1Opacity}
             translateY={beat1TranslateY}
             accentWidth={beat1AccentWidth}
+            scale={beat1Scale}
           />
         </AbsoluteFill>
       )}

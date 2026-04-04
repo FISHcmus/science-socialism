@@ -20,6 +20,8 @@ export const Section12ChauNhi: FC = memo(() => {
   const titleOpacity = interpolate(titleSpring, [0, 1], [0, 1]);
   const titleTranslateY = interpolate(titleSpring, [0, 1], [40, 0]);
   const titleAccentWidth = interpolate(titleSpring, [0, 1], [0, 80]);
+  const titleBreathe = spring({ frame, fps, config: { damping: 30, stiffness: 40 } });
+  const titleScale = interpolate(titleBreathe, [0, 1], [1.03, 1]);
 
   const beat2LocalFrame = Math.max(0, frame - 360);
   const ringAngle = 0;
@@ -72,7 +74,7 @@ export const Section12ChauNhi: FC = memo(() => {
           className="flex items-center justify-center"
           style={{ background: "linear-gradient(135deg, rgba(247,243,238,0.97) 0%, rgba(237,232,224,0.95) 100%)" }}
         >
-          <SectionTitle title="Năm đặc trưng cơ bản" subtitle="của dân tộc" sectionNumber="PHẦN 1.2" opacity={titleOpacity} translateY={titleTranslateY} accentWidth={titleAccentWidth} />
+          <SectionTitle title="Năm đặc trưng cơ bản" subtitle="của dân tộc" sectionNumber="PHẦN 1.2" opacity={titleOpacity} translateY={titleTranslateY} accentWidth={titleAccentWidth} scale={titleScale} />
         </AbsoluteFill>
       )}
 

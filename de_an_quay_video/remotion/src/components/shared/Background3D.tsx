@@ -1,117 +1,130 @@
-import { ThreeCanvas } from "@remotion/three";
+import { memo, useMemo } from "react";
 import { useCurrentFrame, useVideoConfig } from "remotion";
-import { useMemo } from "react";
 
 interface Background3DProps {
   accentColor?: string;
 }
 
-export const Background3D: React.FC<Background3DProps> = ({
+// Node definition with depth layer for parallax + visual depth
+interface Node {
+  baseX: number; // pixel position
+  baseY: number;
+  depth: number; // 0 = near (large, opaque), 1 = far (small, faint)
+}
+
+// Precomputed connection with static opacity
+interface Connection {
+  a: number;
+  b: number;
+  opacity: number;
+}
+
+const Background3DInner: React.FC<Background3DProps> = ({
   accentColor = "#D97706",
 }) => {
   const frame = useCurrentFrame();
   const { width, height } = useVideoConfig();
 
-  const t = frame * 0.02;
+  // Throttle to ~10fps
+  const t = Math.floor(frame / 3) * 3 * 0.008;
 
-  const particles = useMemo(() => {
-    const arr = new Float32Array(300 * 3);
-    for (let i = 0; i < 300; i++) {
-      arr[i * 3] = (Math.random() - 0.5) * 16;
-      arr[i * 3 + 1] = (Math.random() - 0.5) * 10;
-      arr[i * 3 + 2] = (Math.random() - 0.5) * 8;
+  // 25 nodes on jittered 5x5 grid (computed once, in pixel space)
+  const nodes: Node[] = useMemo(() => {
+    const cols = 8, rows = 6;
+    const padX = 120, padY = 80;
+    const spanX = width - padX * 2;
+    const spanY = height - padY * 2;
+    const result: Node[] = [];
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        const i = r * cols + c;
+        const gx = padX + (c / (cols - 1)) * spanX;
+        const gy = padY + (r / (rows - 1)) * spanY;
+        const jx = Math.sin(i * 127.1 + 42) * 60;
+        const jy = Math.cos(i * 269.5 + 42) * 40;
+        const depth = (Math.sin(i * 419.2 + 42) * 0.5 + 0.5); // 0-1
+        result.push({ baseX: gx + jx, baseY: gy + jy, depth });
+      }
     }
-    return arr;
-  }, []);
+    return result;
+  }, [width, height]);
+
+  // Precompute connections (computed once)
+  const connections: Connection[] = useMemo(() => {
+    const maxDist = 500; // pixels
+    const result: Connection[] = [];
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        const dx = nodes[i]!.baseX - nodes[j]!.baseX;
+        const dy = nodes[i]!.baseY - nodes[j]!.baseY;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < maxDist) {
+          const distFade = 1 - dist / maxDist;
+          const avgDepth = (nodes[i]!.depth + nodes[j]!.depth) / 2;
+          const depthFade = 1 - avgDepth * 0.6;
+          result.push({ a: i, b: j, opacity: distFade * depthFade * 0.45 });
+        }
+      }
+    }
+    return result;
+  }, [nodes]);
+
+  // Camera parallax offset (pixels)
+  const camOffsetX = Math.sin(t * 0.7) * 40;
+  const camOffsetY = Math.cos(t * 0.5) * 25;
+
+  // Drifted node positions (per effective frame)
+  const drifted = useMemo(() =>
+    nodes.map((n, i) => {
+      const phase = i * 1.7;
+      const driftX = Math.sin(t + phase) * 40;
+      const driftY = Math.cos(t * 0.7 + phase) * 25;
+      // Parallax: near nodes (depth=0) shift more with camera
+      const parallaxScale = 1 - n.depth * 0.7;
+      return {
+        x: n.baseX + driftX + camOffsetX * parallaxScale,
+        y: n.baseY + driftY + camOffsetY * parallaxScale,
+        r: 16 - n.depth * 10, // radius: 16px near, 6px far
+        opacity: 0.55 - n.depth * 0.25, // 0.55 near, 0.30 far
+      };
+    }),
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  [t, nodes, camOffsetX, camOffsetY]);
 
   return (
-    <ThreeCanvas
+    <svg
       width={width}
       height={height}
-      camera={{ fov: 50, position: [0, 0, 8], near: 0.1, far: 50 }}
+      viewBox={`0 0 ${width} ${height}`}
       className="absolute top-0 left-0"
+      style={{ pointerEvents: "none" }}
     >
-      {/* Warm off-white background matching light theme */}
-      <color attach="background" args={["#F7F3EE"]} />
-      <ambientLight intensity={0.8} />
-      <directionalLight position={[5, 5, 5]} intensity={0.6} />
-
-      {/* Floating wireframe octahedron - amber gold */}
-      <mesh
-        position={[-4, 2, -2]}
-        rotation={[t * 0.5, t * 0.3, t * 0.2]}
-        scale={1.2}
-      >
-        <octahedronGeometry args={[1, 0]} />
-        <meshStandardMaterial color={accentColor} wireframe transparent opacity={0.18} />
-      </mesh>
-
-      {/* Floating wireframe icosahedron - warm gold */}
-      <mesh
-        position={[4, -1, -3]}
-        rotation={[t * 0.3, t * 0.5, t * 0.1]}
-        scale={1.0}
-      >
-        <icosahedronGeometry args={[1, 0]} />
-        <meshStandardMaterial color="#B45309" wireframe transparent opacity={0.15} />
-      </mesh>
-
-      {/* Floating torus - amber */}
-      <mesh
-        position={[-2, -2.5, -1]}
-        rotation={[t * 0.4, t * 0.2, t * 0.6]}
-        scale={0.8}
-      >
-        <torusGeometry args={[1, 0.35, 8, 16]} />
-        <meshStandardMaterial color={accentColor} wireframe transparent opacity={0.15} />
-      </mesh>
-
-      {/* Small octahedron top-right - warm taupe */}
-      <mesh
-        position={[5, 3, -4]}
-        rotation={[t * 0.6, t * 0.4, 0]}
-        scale={0.6}
-      >
-        <octahedronGeometry args={[1, 0]} />
-        <meshStandardMaterial color="#78716C" wireframe transparent opacity={0.12} />
-      </mesh>
-
-      {/* Large slow icosahedron center-back - faint bronze */}
-      <mesh
-        position={[0, 0, -5]}
-        rotation={[t * 0.1, t * 0.15, t * 0.05]}
-        scale={2.0}
-      >
-        <icosahedronGeometry args={[1, 1]} />
-        <meshStandardMaterial color="#92400E" wireframe transparent opacity={0.06} />
-      </mesh>
-
-      {/* Torus top-left - warm taupe */}
-      <mesh
-        position={[-5, 1, -4]}
-        rotation={[t * 0.2, t * 0.6, t * 0.3]}
-        scale={0.7}
-      >
-        <torusGeometry args={[1, 0.3, 8, 16]} />
-        <meshStandardMaterial color="#78716C" wireframe transparent opacity={0.1} />
-      </mesh>
-
-      {/* Particle field */}
-      <points rotation={[0, t * 0.1, 0]}>
-        <bufferGeometry>
-          <bufferAttribute
-            attach="attributes-position"
-            args={[particles, 3]}
-          />
-        </bufferGeometry>
-        <pointsMaterial
-          color={accentColor}
-          size={0.06}
-          transparent
-          opacity={0.2}
-          sizeAttenuation
+      {/* Connection lines */}
+      {connections.map((conn, i) => (
+        <line
+          key={i}
+          x1={drifted[conn.a]!.x}
+          y1={drifted[conn.a]!.y}
+          x2={drifted[conn.b]!.x}
+          y2={drifted[conn.b]!.y}
+          stroke="#92400E"
+          strokeWidth={2}
+          opacity={conn.opacity}
         />
-      </points>
-    </ThreeCanvas>
+      ))}
+      {/* Nodes */}
+      {drifted.map((n, i) => (
+        <circle
+          key={i}
+          cx={n.x}
+          cy={n.y}
+          r={n.r}
+          fill="#374151"
+          opacity={n.opacity}
+        />
+      ))}
+    </svg>
   );
 };
+
+export const Background3D = memo(Background3DInner);

@@ -1,7 +1,7 @@
 import { AbsoluteFill, Audio, Sequence, interpolate, staticFile } from "remotion";
 import { getBgmVolume } from "./bgmVolume";
 import { SECTIONS, COLORS } from "./constants";
-// import { Background3D } from "./components/shared/Background3D";
+import { Background3D } from "./components/shared/Background3D";
 import { TitleCard } from "./components/TitleCard";
 import { NhanIntro } from "./components/sections/NhanIntro";
 import { Section11ThucNhi } from "./components/sections/Section11ThucNhi";
@@ -33,7 +33,7 @@ const SECTION_COMPONENTS: Record<string, React.FC> = {
 export const MainVideo: React.FC = () => {
   return (
     <AbsoluteFill style={{ backgroundColor: COLORS.darkest }}>
-      {/* <Background3D accentColor={COLORS.gold} /> */}
+      <Background3D accentColor={COLORS.gold} />
       {/* BGM: 3 plays covering full video, volume=0 during speech */}
       <Sequence from={0} durationInFrames={9143} name="BGM Play 1">
         <Audio

@@ -30,6 +30,8 @@ export const Section11ThucNhi: FC = memo(() => {
   const titleOpacity = interpolate(titleSpring, [0, 1], [0, 1]);
   const titleTranslateY = interpolate(titleSpring, [0, 1], [40, 0]);
   const titleAccentWidth = interpolate(titleSpring, [0, 1], [0, 80]);
+  const titleBreathe = spring({ frame, fps, config: { damping: 30, stiffness: 40 } });
+  const titleScale = interpolate(titleBreathe, [0, 1], [1.03, 1]);
 
   const beat2LocalFrame = Math.max(0, frame - 360);
   const ringAngle = 0;
@@ -94,6 +96,7 @@ export const Section11ThucNhi: FC = memo(() => {
             opacity={titleOpacity}
             translateY={titleTranslateY}
             accentWidth={titleAccentWidth}
+            scale={titleScale}
           />
         </AbsoluteFill>
       )}
