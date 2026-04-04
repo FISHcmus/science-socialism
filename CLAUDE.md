@@ -6,6 +6,25 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Course materials for **BAA00103 — Chủ nghĩa xã hội khoa học (Scientific Socialism)**, a 2-credit general education course at ĐHQG-HCM (Trường ĐH Khoa Học Tự Nhiên). Semester 2, academic year 2025–2026.
 
+## Local Setup (Fresh Clone)
+
+```bash
+git clone --recurse-submodules https://github.com/FISHcmus/science-socialism.git
+cd science-socialism
+git lfs pull                          # downloads proxy media (~20MB)
+
+# Remotion video project
+cd de_an_quay_video/remotion
+bun install
+bun run studio                        # opens at localhost:3000
+```
+
+**Prerequisites:** git-lfs, bun
+
+**Media:** 27 proxy video/image files are tracked via Git LFS in `de_an_quay_video/media/`. The symlink `de_an_quay_video/remotion/public/media → ../../media` is tracked in git. Fullres originals (`*/fullres/`) are gitignored.
+
+**MCP servers:** Create `.mcp.json` (gitignored) — see the MCP Servers Required section below.
+
 ## Structure
 
 - **`extracted_content/`:** Markdown versions of course content
