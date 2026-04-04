@@ -22,9 +22,9 @@ export const Section32ToNhu: FC = memo(() => {
 
   // AlertCard data with variants
   const alerts: Array<{ title: string; detail: string; variant: "warning" | "danger" | "success"; appearAt: number }> = [
-    { title: "4 dấu hiệu tin giả", detail: "Tiêu đề giật gân | Thiếu nguồn | Ảnh/video cắt ghép | Quy chụp nhóm dân tộc/tôn giáo", variant: "warning", appearAt: 936 },
-    { title: "Ví dụ thực tế: Đắk Lắk", detail: "Thông tin bịa đặt về quan hệ dân tộc ở Tây Nguyên, gây hoang mang dư luận", variant: "danger", appearAt: 1680 },
-    { title: "Cách kiểm chứng thông tin", detail: "Đối chiếu nhiều nguồn, Google Image/TinEye kiểm tra ảnh, chia sẻ đính chính khi phát hiện tin giả", variant: "success", appearAt: 1857 },
+    { title: "4 dấu hiệu tin giả", detail: "Tiêu đề giật gân | Thiếu nguồn | Ảnh/video cắt ghép | Quy chụp nhóm dân tộc/tôn giáo", variant: "warning", appearAt: 864 },
+    { title: "Ví dụ thực tế: Đắk Lắk", detail: "Thông tin bịa đặt về quan hệ dân tộc ở Tây Nguyên, gây hoang mang dư luận", variant: "danger", appearAt: 1368 },
+    { title: "Cách kiểm chứng thông tin", detail: "Đối chiếu nhiều nguồn, Google Image/TinEye kiểm tra ảnh, chia sẻ đính chính khi phát hiện tin giả", variant: "success", appearAt: 1914 },
   ];
 
   // Shake-in from right: translateX 300->0 with overshoot spring

@@ -30,7 +30,7 @@ export const Section33YNhu: FC = memo(() => {
   ];
 
   // Staggered entrance synced to speech
-  const nodeStartFrames = [430, 1550, 2200];
+  const nodeStartFrames = [771, 1575, 2229];
   const nodeScales = nodes.map((_, i) => {
     const s = spring({ frame: Math.max(0, frame - nodeStartFrames[i]!), fps, config: { damping: 12, stiffness: 60 } });
     return interpolate(s, [0, 1], [0.5, 1]);
@@ -39,14 +39,14 @@ export const Section33YNhu: FC = memo(() => {
     const s = spring({ frame: Math.max(0, frame - nodeStartFrames[i]!), fps, config: { damping: 12, stiffness: 60 } });
     return interpolate(s, [0, 1], [0, 1]);
   });
-  const arrowStartFrames = [1500, 2150];
+  const arrowStartFrames = [1525, 2179];
   const arrowOpacities = nodes.slice(1).map((_, i) => {
     return interpolate(frame, [arrowStartFrames[i]!, arrowStartFrames[i]! + 30], [0, 1], clampBoth);
   });
-  const visibleNodes = frame < 430 ? 0 : frame < 1550 ? 1 : frame < 2200 ? 2 : 3;
+  const visibleNodes = frame < 771 ? 0 : frame < 1575 ? 1 : frame < 2229 ? 2 : 3;
 
   // Page flip
-  const PAGE_FLIP = 1710;
+  const PAGE_FLIP = 1821;
   const page1Opacity = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [1, 0], clampBoth);
   const page1Scale = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [1, 0.85], clampBoth);
 

@@ -18,7 +18,7 @@ export const Section34Nhan: FC = memo(() => {
   const ringAngle = 0;
   const headerOpacity = interpolate(frame, [90, 110], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const videoOpacity = interpolate(frame, [90, 120], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const citationOpacity = interpolate(frame, [1800, 1860], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const citationOpacity = interpolate(frame, [2250, 2310], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
 
   // Quote in GlassPanel with goldRing — fade + scale entrance
   const quoteSpring = spring({ frame: Math.max(0, frame - 255), fps, config: { damping: 16, stiffness: 70 } });
@@ -32,7 +32,7 @@ export const Section34Nhan: FC = memo(() => {
     { title: "Hành động từ hôm nay", detail: "Xây dựng đoàn kết từ hành động nhỏ hàng ngày trong học tập và sinh hoạt" },
   ];
   const fanOffsets = [-420, 0, 420];
-  const cardStartFrames = [960, 1060, 1660];
+  const cardStartFrames = [1230, 1692, 1929];
   const cardAnims = cardData.map((_, i) => {
     const s = spring({ frame: Math.max(0, frame - cardStartFrames[i]!), fps, config: { damping: 14, stiffness: 70 } });
     const translateX = interpolate(s, [0, 1], [0, fanOffsets[i]!]);
@@ -42,7 +42,7 @@ export const Section34Nhan: FC = memo(() => {
   });
 
   // Zoom-out page-flip
-  const PAGE_FLIP = 1821;
+  const PAGE_FLIP = 2160;
   const flipProgress = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const page1Scale = interpolate(flipProgress, [0, 1], [1, 0.5]);
   const page1Opacity = interpolate(flipProgress, [0, 0.8], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });

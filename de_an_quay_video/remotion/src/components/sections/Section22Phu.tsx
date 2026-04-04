@@ -20,7 +20,7 @@ export const Section22Phu: FC = memo(() => {
   const ringAngle = 0;
   const headerOpacity = interpolate(frame, [90, 110], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const pipOpacity = interpolate(frame, [90, 120], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const citationOpacity = interpolate(frame, [1200, 1260], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const citationOpacity = interpolate(frame, [2100, 2160], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
 
   // Stat cards: staggered entrance
   const stats = [
@@ -41,16 +41,16 @@ export const Section22Phu: FC = memo(() => {
   });
 
   // GlassPanel cards: fade + scale entrance
-  const card1Spring = spring({ frame: Math.max(0, frame - 1020), fps, config: { damping: 14, stiffness: 70 } });
+  const card1Spring = spring({ frame: Math.max(0, frame - 1296), fps, config: { damping: 14, stiffness: 70 } });
   const card1Opacity = interpolate(card1Spring, [0, 1], [0, 1]);
   const card1Scale = interpolate(card1Spring, [0, 1], [0.8, 1]);
 
-  const card2Spring = spring({ frame: Math.max(0, frame - 1275), fps, config: { damping: 14, stiffness: 70 } });
+  const card2Spring = spring({ frame: Math.max(0, frame - 1545), fps, config: { damping: 14, stiffness: 70 } });
   const card2Opacity = interpolate(card2Spring, [0, 1], [0, 1]);
   const card2Scale = interpolate(card2Spring, [0, 1], [0.8, 1]);
 
   // Dissolve-blur page-flip
-  const PAGE_FLIP = 1545;
+  const PAGE_FLIP = 1809;
   const page1Opacity = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const page1Blur = interpolate(frame, [PAGE_FLIP, PAGE_FLIP + 30], [0, 8], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
 
