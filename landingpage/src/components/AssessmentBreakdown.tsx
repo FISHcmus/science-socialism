@@ -1,81 +1,69 @@
 import React from "react";
-import { COLORS, FONT, TEXT } from "../tokens";
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
-type AssessmentItem = { label: string; value: string };
+type AssessmentItem = {
+  component: string;
+  weight: string;
+  detail: string;
+};
 
 type AssessmentBreakdownProps = {
   continuous?: AssessmentItem[];
-  final?: { label: string; detail: string };
+  finalWeight?: string;
+  finalDetail?: string;
 };
 
 const defaultContinuous: AssessmentItem[] = [
-  { label: "Giua ky", value: "20%" },
-  { label: "Thao luan", value: "10%" },
-  { label: "Thuyet trinh", value: "10%" },
-  { label: "Diem danh", value: "10%" },
+  { component: "Midterm Exam", weight: "20%", detail: "Essay" },
+  { component: "Discussion", weight: "10%", detail: "Group discussion participation" },
+  { component: "Group Presentation", weight: "10%", detail: "Video 7-15 min" },
+  { component: "Attendance", weight: "10%", detail: "Class attendance" },
 ];
 
 export const AssessmentBreakdown: React.FC<AssessmentBreakdownProps> = ({
   continuous = defaultContinuous,
-  final: finalExam = { label: "Tu luan", detail: "60 phut" },
+  finalWeight = "50%",
+  finalDetail = "Essay, 60 phút, được sử dụng tài liệu giấy",
 }) => (
-  <div className="constructivist-frame" style={{ background: COLORS.surfaceWhite }}>
-    <span className="section-label" style={{ fontSize: TEXT.label.size }}>Co cau danh gia</span>
-    <div className="accent-line" style={{ margin: "8px 0 20px", width: "40%" }} />
-
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0 }}>
-      {/* Left: Continuous */}
-      <div style={{ borderRight: `1px solid ${COLORS.border}`, paddingRight: 24 }}>
-        <div style={{
-          fontFamily: FONT.heading,
-          fontWeight: 700,
-          fontSize: TEXT.h2.size,
-          color: COLORS.red,
-          marginBottom: 4,
-        }}>50%</div>
-        <div style={{
-          fontFamily: FONT.heading,
-          fontWeight: 600,
-          fontSize: TEXT.small.size,
-          textTransform: "uppercase",
-          letterSpacing: "2px",
-          color: COLORS.inkMuted,
-          marginBottom: 16,
-        }}>Qua trinh</div>
-        {continuous.map((item, i) => (
-          <div key={i} style={{
-            display: "flex",
-            justifyContent: "space-between",
-            padding: "8px 0",
-            borderBottom: i < continuous.length - 1 ? `1px solid ${COLORS.border}` : "none",
-          }}>
-            <span style={{ fontFamily: FONT.body, fontSize: TEXT.small.size, color: COLORS.inkSecondary }}>{item.label}</span>
-            <span style={{ fontFamily: FONT.heading, fontWeight: 700, fontSize: TEXT.small.size, color: COLORS.ink }}>{item.value}</span>
-          </div>
-        ))}
+  <Card className="constructivist-frame border-0">
+    <CardHeader>
+      <span className="section-label text-xs">Assessment Structure</span>
+      <div className="accent-line w-[40%]" />
+    </CardHeader>
+    <CardContent className="space-y-6">
+      <div>
+        <h3 className="font-heading font-bold text-xl text-foreground mb-3">Continuous (50%)</h3>
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead className="font-heading">Component</TableHead>
+              <TableHead className="font-heading w-20">Weight</TableHead>
+              <TableHead className="font-heading">Detail</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {continuous.map((item, i) => (
+              <TableRow key={i}>
+                <TableCell className="font-body">{item.component}</TableCell>
+                <TableCell className="font-heading font-bold text-primary">{item.weight}</TableCell>
+                <TableCell className="font-body text-muted-foreground">{item.detail}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
       </div>
-
-      {/* Right: Final */}
-      <div style={{ paddingLeft: 24 }}>
-        <div style={{
-          fontFamily: FONT.heading,
-          fontWeight: 700,
-          fontSize: TEXT.h2.size,
-          color: COLORS.red,
-          marginBottom: 4,
-        }}>50%</div>
-        <div style={{
-          fontFamily: FONT.heading,
-          fontWeight: 600,
-          fontSize: TEXT.small.size,
-          textTransform: "uppercase",
-          letterSpacing: "2px",
-          color: COLORS.inkMuted,
-          marginBottom: 16,
-        }}>Cuoi ky</div>
-        <div style={{ fontFamily: FONT.body, fontSize: TEXT.body.size, color: COLORS.ink, marginBottom: 4 }}>{finalExam.label}</div>
-        <div style={{ fontFamily: FONT.body, fontSize: TEXT.small.size, color: COLORS.inkSecondary }}>{finalExam.detail}</div>
+      <div>
+        <h3 className="font-heading font-bold text-xl text-foreground mb-2">Final Exam ({finalWeight})</h3>
+        <p className="font-body text-base text-muted-foreground">{finalDetail}</p>
       </div>
-    </div>
-  </div>
+    </CardContent>
+  </Card>
 );

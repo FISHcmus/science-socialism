@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { COLORS, FONT, TEXT } from "../tokens";
+import { Input } from "@/components/ui/input";
 import { SearchIcon } from "./icons";
 
 type SearchBarProps = {
@@ -7,37 +7,21 @@ type SearchBarProps = {
   onSearch?: (query: string) => void;
 };
 
-export const SearchBar: React.FC<SearchBarProps> = ({ placeholder = "Tìm kiếm...", onSearch }) => {
-  const [value, setValue] = useState("");
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    onSearch?.(value);
-  };
+export const SearchBar: React.FC<SearchBarProps> = ({ placeholder = "Search...", onSearch }) => {
+  const [query, setQuery] = useState("");
 
   return (
-    <form onSubmit={handleSubmit} style={{ position: "relative", display: "flex", alignItems: "center" }}>
-      <SearchIcon size={18} color={COLORS.inkMuted} />
-      <input
-        type="text"
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        placeholder={placeholder}
-        style={{
-          fontFamily: FONT.body,
-          fontSize: TEXT.small.size,
-          color: COLORS.ink,
-          background: "transparent",
-          border: "none",
-          borderBottom: `1px solid ${COLORS.border}`,
-          padding: "6px 8px",
-          outline: "none",
-          width: 180,
-          transition: "border-color 200ms",
+    <div className="relative">
+      <SearchIcon size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+      <Input
+        value={query}
+        onChange={(e) => {
+          setQuery(e.target.value);
+          onSearch?.(e.target.value);
         }}
-        onFocus={(e) => (e.currentTarget.style.borderBottomColor = COLORS.gold)}
-        onBlur={(e) => (e.currentTarget.style.borderBottomColor = COLORS.border)}
+        placeholder={placeholder}
+        className="pl-10 border-0 border-b border-border rounded-none bg-transparent focus:border-primary font-body"
       />
-    </form>
+    </div>
   );
 };

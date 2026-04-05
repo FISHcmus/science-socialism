@@ -1,95 +1,44 @@
 import React from "react";
-import { COLORS, FONT, TEXT } from "../tokens";
+import { Button } from "@/components/ui/button";
 import { ArrowIcon } from "./icons";
 
 type CTAItem = {
-  title: string;
-  description: string;
-  href: string;
   label: string;
+  href: string;
+  variant?: "default" | "outline";
 };
 
 type CallToActionProps = {
+  title?: string;
+  description?: string;
   items?: CTAItem[];
 };
 
 const defaultItems: CTAItem[] = [
-  {
-    title: "Truy cập Moodle",
-    description: "courses.hcmus.edu.vn",
-    href: "https://courses.hcmus.edu.vn/course/view.php?id=16128",
-    label: "Vào Moodle",
-  },
-  {
-    title: "Liên hệ nhóm",
-    description: "Nhóm trưởng: Nhân",
-    href: "mailto:nhanclassroom@gmail.com",
-    label: "Liên hệ",
-  },
+  { label: "Access Moodle", href: "https://courses.hcmus.edu.vn/course/view.php?id=16128", variant: "default" },
+  { label: "Contact Team Leader", href: "mailto:nhanclassroom@gmail.com", variant: "outline" },
 ];
 
-export const CallToAction: React.FC<CallToActionProps> = ({ items = defaultItems }) => (
-  <section style={{
-    padding: "64px 80px",
-    background: COLORS.surface,
-  }}>
-    <div style={{
-      maxWidth: 1200,
-      margin: "0 auto",
-      display: "grid",
-      gridTemplateColumns: `repeat(${items.length}, 1fr)`,
-      gap: 32,
-    }}>
-      {items.map((item, i) => (
-        <div key={i} style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: 12,
-        }}>
-          <div style={{
-            fontFamily: FONT.heading,
-            fontWeight: 700,
-            fontSize: TEXT.h3.size,
-            color: COLORS.ink,
-          }}>
-            {item.title}
-          </div>
-          <div style={{
-            fontFamily: FONT.body,
-            fontSize: TEXT.small.size,
-            color: COLORS.inkSecondary,
-          }}>
-            {item.description}
-          </div>
-          <a
-            href={item.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              fontFamily: FONT.heading,
-              fontWeight: 600,
-              fontSize: TEXT.small.size,
-              textTransform: "uppercase",
-              letterSpacing: "2px",
-              color: COLORS.bg,
-              background: COLORS.red,
-              padding: "10px 24px",
-              textDecoration: "none",
-              borderRadius: 2,
-              width: "fit-content",
-              transition: "background 200ms",
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = COLORS.redDeep)}
-            onMouseLeave={(e) => (e.currentTarget.style.background = COLORS.red)}
-          >
-            {item.label}
-            <ArrowIcon size={16} color={COLORS.bg} />
-          </a>
-        </div>
-      ))}
+export const CallToAction: React.FC<CallToActionProps> = ({
+  title = "Start Learning Now",
+  description = "Access course materials and join group discussions",
+  items = defaultItems,
+}) => (
+  <section className="py-16 px-8 text-center bg-background">
+    <div className="max-w-[600px] mx-auto">
+      <h2 className="display-text text-[42px] leading-[1.15] mb-4">{title}</h2>
+      <p className="font-body text-lg text-muted-foreground mb-8">{description}</p>
+      <div className="flex justify-center gap-4 flex-wrap">
+        {items.map((item, i) => (
+          <Button key={i} variant={item.variant === "outline" ? "outline" : "default"} size="lg" asChild
+            className={item.variant === "outline" ? "border-primary text-primary hover:bg-primary hover:text-primary-foreground" : ""}>
+            <a href={item.href} target="_blank" rel="noopener noreferrer">
+              {item.label}
+              <ArrowIcon size={16} />
+            </a>
+          </Button>
+        ))}
+      </div>
     </div>
   </section>
 );

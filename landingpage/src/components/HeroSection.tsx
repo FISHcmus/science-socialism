@@ -1,110 +1,48 @@
 import React from "react";
-import { COLORS, FONT, TEXT, GRADIENTS } from "../tokens";
-import { StarIcon } from "./icons";
+import { Button } from "@/components/ui/button";
 
-export const HeroSection: React.FC = () => (
-  <section style={{
-    position: "relative",
-    padding: "128px 80px 96px",
-    background: COLORS.bg,
-    overflow: "hidden",
-  }}>
-    {/* Subtle sunburst behind */}
-    <div style={{
-      position: "absolute",
-      top: "-20%",
-      right: "-10%",
-      width: 600,
-      height: 600,
-      background: GRADIENTS.radialBurst,
-      opacity: 0.06,
-      pointerEvents: "none",
-    }} />
+type HeroSectionProps = {
+  courseCode?: string;
+  title?: string;
+  subtitle?: string;
+  semester?: string;
+  onWatchVideo?: () => void;
+  onResources?: () => void;
+};
 
-    <div style={{ position: "relative", maxWidth: 1200, margin: "0 auto" }}>
-      {/* Course code label */}
-      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16 }}>
-        <StarIcon size={14} color={COLORS.gold} />
-        <span style={{
-          fontFamily: FONT.heading,
-          fontWeight: 600,
-          fontSize: TEXT.label.size,
-          textTransform: "uppercase",
-          letterSpacing: "4px",
-          color: COLORS.gold,
-        }}>
-          BAA00103
-        </span>
-      </div>
-
-      {/* Accent line */}
-      <div className="accent-line" style={{ marginBottom: 24 }} />
-
-      {/* Title */}
-      <h1 style={{
-        fontFamily: FONT.display,
-        fontWeight: 700,
-        fontSize: TEXT.hero.size,
-        lineHeight: TEXT.hero.lineHeight,
-        color: COLORS.ink,
-        margin: "0 0 16px",
-        maxWidth: 800,
-      }}>
-        Chủ Nghĩa Xã Hội Khoa Học
+export const HeroSection: React.FC<HeroSectionProps> = ({
+  courseCode = "BAA00103",
+  title = "Scientific Socialism",
+  subtitle = "University of Science - VNU-HCM",
+  semester = "Semester 2, 2025-2026",
+  onWatchVideo,
+  onResources,
+}) => (
+  <section className="relative py-24 px-8 overflow-hidden bg-background">
+    <div className="max-w-[1200px] mx-auto">
+      <span className="section-label text-xs">{courseCode}</span>
+      <div className="accent-line my-3 w-[60%] animate-[sweep_1s_ease-out_forwards]" />
+      <h1 className="display-text text-[72px] leading-[1.05] mb-4 animate-[slide-in_0.6s_ease-out]">
+        {title}
       </h1>
-
-      {/* Subtitle */}
-      <p style={{
-        fontFamily: FONT.body,
-        fontSize: TEXT.bodyLg.size,
-        lineHeight: TEXT.bodyLg.lineHeight,
-        color: COLORS.inkSecondary,
-        margin: "0 0 32px",
-        maxWidth: 600,
-      }}>
-        Học kỳ 2 - 2025-2026 - 2 tín chỉ<br />
-        ĐHKHTN - ĐHQG-HCM
+      <p className="font-body text-xl leading-relaxed text-muted-foreground max-w-2xl mb-2">
+        {subtitle}
       </p>
-
-      {/* CTA buttons */}
-      <div style={{ display: "flex", gap: 16 }}>
-        <a href="#video" style={{
-          fontFamily: FONT.heading,
-          fontWeight: 600,
-          fontSize: TEXT.small.size,
-          textTransform: "uppercase",
-          letterSpacing: "2px",
-          color: COLORS.bg,
-          background: COLORS.red,
-          padding: "12px 32px",
-          textDecoration: "none",
-          borderRadius: 2,
-          transition: "background 200ms",
-        }}
-          onMouseEnter={(e) => (e.currentTarget.style.background = COLORS.redDeep)}
-          onMouseLeave={(e) => (e.currentTarget.style.background = COLORS.red)}
-        >
-          Xem video
-        </a>
-        <a href="#resources" style={{
-          fontFamily: FONT.heading,
-          fontWeight: 600,
-          fontSize: TEXT.small.size,
-          textTransform: "uppercase",
-          letterSpacing: "2px",
-          color: COLORS.gold,
-          background: "transparent",
-          border: `2px solid ${COLORS.gold}`,
-          padding: "10px 30px",
-          textDecoration: "none",
-          borderRadius: 2,
-          transition: "background 200ms, color 200ms",
-        }}
-          onMouseEnter={(e) => { e.currentTarget.style.background = COLORS.gold; e.currentTarget.style.color = COLORS.bg; }}
-          onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = COLORS.gold; }}
-        >
-          Tài liệu
-        </a>
+      <p className="font-heading font-semibold text-sm uppercase tracking-widest text-primary mb-8">
+        {semester}
+      </p>
+      <div className="flex gap-4">
+        {onWatchVideo && (
+          <Button size="lg" onClick={onWatchVideo}>
+            Watch Video
+          </Button>
+        )}
+        {onResources && (
+          <Button variant="outline" size="lg" onClick={onResources}
+            className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+            Resources
+          </Button>
+        )}
       </div>
     </div>
   </section>

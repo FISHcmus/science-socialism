@@ -1,64 +1,30 @@
 import React from "react";
-import { COLORS, FONT, TEXT } from "../tokens";
-import { SectionHeader } from "./SectionHeader";
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 type DiscussionHighlightProps = {
-  quote?: string;
+  prompt: string;
   references?: string[];
 };
 
-const defaultQuote = "Đoàn kết dân tộc trong bối cảnh toàn cầu hóa - thách thức nào cho sinh viên?";
-const defaultRefs = ["Ch.5 Dân tộc", "Ch.6 Tôn giáo"];
-
 export const DiscussionHighlight: React.FC<DiscussionHighlightProps> = ({
-  quote = defaultQuote,
-  references = defaultRefs,
+  prompt,
+  references = ["Ch.5 Ethnicity", "Ch.6 Religion", "VN Practice"],
 }) => (
-  <section style={{ padding: "0 80px", maxWidth: 1200, margin: "0 auto" }}>
-    <SectionHeader label="Phần 07" title="Thảo luận" />
-
-    <div className="constructivist-frame" style={{
-      background: COLORS.surfaceWhite,
-      maxWidth: 720,
-    }}>
-      <blockquote style={{
-        fontFamily: FONT.display,
-        fontWeight: 600,
-        fontSize: TEXT.h2.size,
-        lineHeight: 1.3,
-        color: COLORS.ink,
-        margin: 0,
-        fontStyle: "italic",
-      }}>
-        "{quote}"
-      </blockquote>
-      {references.length > 0 && (
-        <div style={{ marginTop: 20, display: "flex", gap: 12 }}>
-          <span style={{
-            fontFamily: FONT.heading,
-            fontWeight: 600,
-            fontSize: TEXT.label.size,
-            textTransform: "uppercase",
-            letterSpacing: "2px",
-            color: COLORS.inkMuted,
-          }}>
-            Lien he:
-          </span>
-          {references.map((ref, i) => (
-            <span key={i} style={{
-              fontFamily: FONT.heading,
-              fontWeight: 600,
-              fontSize: TEXT.label.size,
-              color: COLORS.gold,
-              background: COLORS.goldLight,
-              padding: "2px 10px",
-              borderRadius: 2,
-            }}>
-              {ref}
-            </span>
-          ))}
-        </div>
-      )}
-    </div>
-  </section>
+  <Card className="constructivist-frame border-0">
+    <CardHeader>
+      <span className="section-label text-xs">Discussion Topic</span>
+      <div className="accent-line w-[40%]" />
+    </CardHeader>
+    <CardContent className="space-y-4">
+      <p className="font-[var(--font-propaganda)] font-bold text-2xl leading-snug text-foreground">{prompt}</p>
+      <div className="flex flex-wrap gap-2">
+        {references.map((ref, i) => (
+          <Badge key={i} variant="secondary" className="font-heading text-xs text-primary border border-primary/30">
+            {ref}
+          </Badge>
+        ))}
+      </div>
+    </CardContent>
+  </Card>
 );

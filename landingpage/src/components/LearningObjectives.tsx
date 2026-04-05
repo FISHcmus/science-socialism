@@ -1,5 +1,5 @@
 import React from "react";
-import { COLORS, FONT, TEXT } from "../tokens";
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { StarIcon } from "./icons";
 
 type LearningObjectivesProps = {
@@ -7,35 +7,27 @@ type LearningObjectivesProps = {
 };
 
 const defaultObjectives = [
-  "Hieu ban chat khoa hoc va cach mang cua CNXHKH",
-  "Nam vung quy luat van dong va phat trien cua xa hoi",
-  "Van dung sang tao vao thuc tien Viet Nam",
-  "Nhan thuc trach nhiem sinh vien trong xay dung CNXH",
+  "Understand the scientific and revolutionary nature of Scientific Socialism",
+  "Master the laws of social movement and development",
+  "Creatively apply theory to Vietnamese practice",
+  "Recognize student responsibility in building socialism",
 ];
 
 export const LearningObjectives: React.FC<LearningObjectivesProps> = ({ objectives = defaultObjectives }) => (
-  <div style={{
-    background: COLORS.surfaceWhite,
-    border: `1px solid ${COLORS.border}`,
-    borderRadius: 2,
-    padding: 32,
-  }}>
-    <span className="section-label" style={{ fontSize: TEXT.label.size }}>Muc tieu hoc tap</span>
-    <div className="accent-line" style={{ margin: "8px 0 20px", width: "40%" }} />
-    <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 16 }}>
-      {objectives.map((obj, i) => (
-        <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
-          <StarIcon size={16} color={COLORS.gold} />
-          <span style={{
-            fontFamily: FONT.body,
-            fontSize: TEXT.body.size,
-            lineHeight: TEXT.body.lineHeight,
-            color: COLORS.ink,
-          }}>
-            {obj}
-          </span>
-        </li>
-      ))}
-    </ul>
-  </div>
+  <Card>
+    <CardHeader>
+      <span className="section-label text-xs">Learning Objectives</span>
+      <div className="accent-line w-[40%]" />
+    </CardHeader>
+    <CardContent>
+      <ul className="list-none p-0 m-0 flex flex-col gap-4">
+        {objectives.map((obj, i) => (
+          <li key={i} className="flex items-start gap-3">
+            <StarIcon size={16} className="mt-1 shrink-0 text-primary" />
+            <span className="font-body text-lg leading-relaxed text-foreground">{obj}</span>
+          </li>
+        ))}
+      </ul>
+    </CardContent>
+  </Card>
 );

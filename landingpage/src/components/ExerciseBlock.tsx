@@ -1,88 +1,44 @@
 import React from "react";
-import { COLORS, FONT, TEXT } from "../tokens";
-import { SectionHeader } from "./SectionHeader";
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
 
-type Tier = { label: string; percentage: string; color: string };
+type Tier = {
+  label: string;
+  percent: string;
+  description: string;
+};
 
 type ExerciseBlockProps = {
-  quote?: string;
+  prompt: string;
   tiers?: Tier[];
 };
 
-const defaultQuote = "Dựa trên cơ sở lý luận trong môn Chủ nghĩa xã hội khoa học, các bạn hãy thể hiện trách nhiệm của mình trong việc góp phần xây dựng khối đại đoàn kết toàn dân tộc ở Việt Nam?";
-
 const defaultTiers: Tier[] = [
-  { label: "Lý luận", percentage: "35%", color: COLORS.red },
-  { label: "Thực tiễn", percentage: "15%", color: COLORS.gold },
-  { label: "Trách nhiệm", percentage: "50%", color: COLORS.redDeep },
+  { label: "Theoretical Basis", percent: "35%", description: "Analyze the theory of building national solidarity" },
+  { label: "Vietnamese Practice", percent: "15%", description: "Connect practice of applying the solidarity policy" },
+  { label: "Student Responsibility", percent: "50%", description: "Student responsibility in building national solidarity" },
 ];
 
-export const ExerciseBlock: React.FC<ExerciseBlockProps> = ({ quote = defaultQuote, tiers = defaultTiers }) => (
-  <div style={{ padding: "0 80px", maxWidth: 1200, margin: "0 auto" }}>
-    <SectionHeader label="Phần 04" title="Phân tích đề" />
-
-    <div className="constructivist-frame" style={{ background: COLORS.surfaceWhite }}>
-      {/* Quote */}
-      <blockquote style={{
-        fontFamily: FONT.display,
-        fontWeight: 600,
-        fontSize: TEXT.h3.size,
-        lineHeight: 1.4,
-        color: COLORS.ink,
-        borderLeft: `4px solid ${COLORS.gold}`,
-        padding: "16px 24px",
-        margin: "0 0 32px",
-        background: COLORS.goldLight,
-        fontStyle: "italic",
-      }}>
-        "{quote}"
-      </blockquote>
-
-      {/* Tiers */}
-      <div style={{
-        fontFamily: FONT.heading,
-        fontWeight: 600,
-        fontSize: TEXT.small.size,
-        textTransform: "uppercase",
-        letterSpacing: "2px",
-        color: COLORS.inkMuted,
-        marginBottom: 16,
-      }}>
-        3 tầng nội dung
-      </div>
-      <div style={{ display: "flex", gap: 16 }}>
+export const ExerciseBlock: React.FC<ExerciseBlockProps> = ({ prompt, tiers = defaultTiers }) => (
+  <Card className="constructivist-frame border-0">
+    <CardHeader>
+      <span className="section-label text-xs">Exercise Analysis</span>
+      <div className="accent-line w-[40%]" />
+    </CardHeader>
+    <CardContent className="space-y-4">
+      <p className="font-body text-lg text-foreground leading-relaxed">{prompt}</p>
+      <div className="grid gap-3 sm:grid-cols-3">
         {tiers.map((tier, i) => (
-          <div key={i} style={{
-            flex: 1,
-            background: COLORS.bg,
-            border: `1px solid ${COLORS.border}`,
-            borderTop: `3px solid ${tier.color}`,
-            borderRadius: 2,
-            padding: 20,
-            textAlign: "center",
-          }}>
-            <div style={{
-              fontFamily: FONT.heading,
-              fontWeight: 700,
-              fontSize: TEXT.h2.size,
-              color: tier.color,
-              marginBottom: 4,
-            }}>
-              {tier.percentage}
-            </div>
-            <div style={{
-              fontFamily: FONT.heading,
-              fontWeight: 600,
-              fontSize: TEXT.small.size,
-              textTransform: "uppercase",
-              letterSpacing: "2px",
-              color: COLORS.inkSecondary,
-            }}>
-              {tier.label}
-            </div>
-          </div>
+          <Card key={i} className="bg-muted/50">
+            <CardContent className="py-4 px-4">
+              <div className="flex items-baseline justify-between mb-2">
+                <span className="font-heading font-semibold text-sm text-foreground">{tier.label}</span>
+                <span className="font-heading font-bold text-primary text-lg">{tier.percent}</span>
+              </div>
+              <p className="font-body text-sm text-muted-foreground">{tier.description}</p>
+            </CardContent>
+          </Card>
         ))}
       </div>
-    </div>
-  </div>
+    </CardContent>
+  </Card>
 );

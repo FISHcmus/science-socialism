@@ -1,77 +1,43 @@
 import React from "react";
-import { COLORS, FONT, TEXT } from "../tokens";
-import { StarIcon } from "./icons";
-import { SearchBar } from "./SearchBar";
+import { cn } from "@/lib/utils";
 
-type NavItem = { label: string; href: string };
+type NavItem = {
+  label: string;
+  href: string;
+};
 
 type NavbarProps = {
   items?: NavItem[];
-  onSearch?: (query: string) => void;
+  className?: string;
 };
 
 const defaultItems: NavItem[] = [
-  { label: "Nội dung", href: "#chapters" },
+  { label: "Overview", href: "#overview" },
+  { label: "Chapters", href: "#chapters" },
   { label: "Video", href: "#video" },
-  { label: "Nhóm", href: "#team" },
-  { label: "Tài liệu", href: "#resources" },
+  { label: "Team", href: "#team" },
+  { label: "Resources", href: "#resources" },
 ];
 
-export const Navbar: React.FC<NavbarProps> = ({ items = defaultItems, onSearch }) => (
-  <nav style={{
-    position: "sticky",
-    top: 0,
-    zIndex: 100,
-    background: COLORS.ink,
-    display: "flex",
-    alignItems: "center",
-    padding: "0 48px",
-    height: 56,
-    gap: 32,
-  }}>
-    <a href="#" style={{ display: "flex", alignItems: "center", gap: 8, textDecoration: "none" }}>
-      <StarIcon size={18} color={COLORS.gold} />
-      <span style={{
-        fontFamily: FONT.heading,
-        fontWeight: 700,
-        fontSize: TEXT.small.size,
-        color: COLORS.gold,
-        textTransform: "uppercase",
-        letterSpacing: "3px",
-      }}>
-        CNXHKH
-      </span>
-    </a>
-    <div style={{ flex: 1, display: "flex", alignItems: "center", gap: 24 }}>
-      {items.map((item) => (
-        <a
-          key={item.href}
-          href={item.href}
-          style={{
-            fontFamily: FONT.heading,
-            fontWeight: 600,
-            fontSize: TEXT.label.size,
-            color: "rgba(250,250,247,0.7)",
-            textDecoration: "none",
-            textTransform: "uppercase",
-            letterSpacing: "2px",
-            padding: "4px 0",
-            borderBottom: "2px solid transparent",
-            transition: "color 200ms, border-color 200ms",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.color = COLORS.bg;
-            e.currentTarget.style.borderBottomColor = COLORS.red;
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.color = "rgba(250,250,247,0.7)";
-            e.currentTarget.style.borderBottomColor = "transparent";
-          }}
-        >
-          {item.label}
-        </a>
-      ))}
+export const Navbar: React.FC<NavbarProps> = ({ items = defaultItems, className }) => (
+  <nav className={cn(
+    "sticky top-0 z-50 bg-[hsl(var(--foreground))] text-[hsl(var(--background))]",
+    "border-b border-white/10 backdrop-blur-sm",
+    className
+  )}>
+    <div className="max-w-[1200px] mx-auto flex items-center justify-between px-6 h-14">
+      <span className="font-heading font-bold text-base tracking-wide">CNXHKH</span>
+      <div className="flex items-center gap-6">
+        {items.map((item) => (
+          <a
+            key={item.href}
+            href={item.href}
+            className="font-heading text-sm text-white/70 hover:text-white transition-colors no-underline"
+          >
+            {item.label}
+          </a>
+        ))}
+      </div>
     </div>
-    {onSearch && <SearchBar placeholder="Tìm kiếm..." onSearch={onSearch} />}
   </nav>
 );

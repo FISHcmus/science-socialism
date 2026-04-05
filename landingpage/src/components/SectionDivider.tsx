@@ -1,20 +1,22 @@
 import React from "react";
-import { DiamondIcon, StarIcon } from "./icons";
-import { COLORS } from "../tokens";
+import { cn } from "@/lib/utils";
+import { Separator } from "@/components/ui/separator";
+import { DiamondIcon } from "./icons";
 
 type SectionDividerProps = {
-  ornament?: "diamond" | "star";
+  variant?: "default" | "ornament";
+  className?: string;
 };
 
-export const SectionDivider: React.FC<SectionDividerProps> = ({ ornament = "diamond" }) => {
-  const Icon = ornament === "star" ? StarIcon : DiamondIcon;
-  const iconColor = ornament === "star" ? COLORS.gold : COLORS.red;
-
-  return (
-    <div style={{ display: "flex", alignItems: "center", gap: 16, padding: "48px 0" }}>
-      <div style={{ flex: 1, height: 1, background: COLORS.border }} />
-      <Icon size={12} color={iconColor} />
-      <div style={{ flex: 1, height: 1, background: COLORS.border }} />
-    </div>
-  );
+export const SectionDivider: React.FC<SectionDividerProps> = ({ variant = "default", className }) => {
+  if (variant === "ornament") {
+    return (
+      <div className={cn("flex items-center gap-4 py-8", className)}>
+        <Separator className="flex-1 bg-border" />
+        <DiamondIcon size={12} className="text-primary" />
+        <Separator className="flex-1 bg-border" />
+      </div>
+    );
+  }
+  return <Separator className={cn("my-8 bg-border", className)} />;
 };

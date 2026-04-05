@@ -1,5 +1,6 @@
 import React from "react";
-import { COLORS, FONT, TEXT } from "../tokens";
+import { Card, CardHeader, CardContent, CardFooter, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { BookIcon } from "./icons";
 
 type ChapterCardProps = {
@@ -11,109 +12,34 @@ type ChapterCardProps = {
 };
 
 export const ChapterCard: React.FC<ChapterCardProps> = ({ number, title, summary, onMindmap, onRead }) => (
-  <div
-    className="chevron-corner"
-    style={{
-      background: COLORS.surfaceWhite,
-      border: `1px solid ${COLORS.border}`,
-      borderRadius: 2,
-      padding: 24,
-      display: "flex",
-      flexDirection: "column",
-      gap: 12,
-      transition: "border-color 200ms, box-shadow 200ms",
-    }}
-    onMouseEnter={(e) => {
-      e.currentTarget.style.borderColor = COLORS.red;
-      e.currentTarget.style.boxShadow = "0 2px 8px rgba(0,0,0,0.06)";
-    }}
-    onMouseLeave={(e) => {
-      e.currentTarget.style.borderColor = COLORS.border;
-      e.currentTarget.style.boxShadow = "none";
-    }}
-  >
-    <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-      <BookIcon size={18} color={COLORS.red} />
-      <span style={{
-        fontFamily: FONT.heading,
-        fontWeight: 600,
-        fontSize: TEXT.label.size,
-        textTransform: "uppercase",
-        letterSpacing: "3px",
-        color: COLORS.gold,
-      }}>
-        Chương {number}
-      </span>
-    </div>
-    <div className="accent-line" style={{ width: "40%", height: 2 }} />
-    <h3 style={{
-      fontFamily: FONT.heading,
-      fontWeight: 700,
-      fontSize: TEXT.body.size,
-      lineHeight: TEXT.h3.lineHeight,
-      color: COLORS.ink,
-      margin: 0,
-    }}>
-      {title}
-    </h3>
+  <Card className="chevron-corner hover:border-primary hover:shadow-sm flex flex-col">
+    <CardHeader>
+      <div className="flex items-center gap-2 mb-1 text-primary">
+        <BookIcon size={16} />
+        <span className="section-label text-xs">Chapter {number}</span>
+      </div>
+      <div className="accent-line w-2/5" />
+      <CardTitle className="font-[var(--font-propaganda)] font-bold text-2xl leading-tight text-foreground mt-2">
+        {title}
+      </CardTitle>
+    </CardHeader>
     {summary && (
-      <p style={{
-        fontFamily: FONT.body,
-        fontSize: TEXT.small.size,
-        color: COLORS.inkSecondary,
-        margin: 0,
-        lineHeight: 1.5,
-      }}>
-        {summary}
-      </p>
+      <CardContent>
+        <p className="font-body text-sm text-muted-foreground leading-relaxed">{summary}</p>
+      </CardContent>
     )}
-    <div style={{ display: "flex", gap: 12, marginTop: "auto" }}>
+    <CardFooter className="mt-auto gap-3 border-0 bg-transparent px-4 pb-4">
       {onMindmap && (
-        <button
-          onClick={onMindmap}
-          style={{
-            fontFamily: FONT.heading,
-            fontWeight: 600,
-            fontSize: TEXT.label.size,
-            textTransform: "uppercase",
-            letterSpacing: "1px",
-            color: COLORS.gold,
-            background: "transparent",
-            border: `1px solid ${COLORS.gold}`,
-            padding: "6px 12px",
-            borderRadius: 2,
-            cursor: "pointer",
-            transition: "background 200ms, color 200ms",
-          }}
-          onMouseEnter={(e) => { e.currentTarget.style.background = COLORS.gold; e.currentTarget.style.color = COLORS.bg; }}
-          onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = COLORS.gold; }}
-        >
+        <Button variant="outline" size="sm" onClick={onMindmap}
+          className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
           Mindmap
-        </button>
+        </Button>
       )}
       {onRead && (
-        <button
-          onClick={onRead}
-          style={{
-            fontFamily: FONT.heading,
-            fontWeight: 600,
-            fontSize: TEXT.label.size,
-            textTransform: "uppercase",
-            letterSpacing: "1px",
-            color: COLORS.red,
-            background: "transparent",
-            border: "none",
-            padding: "6px 0",
-            cursor: "pointer",
-            borderBottom: `1px solid transparent`,
-            transition: "border-color 200ms",
-          }}
-          onMouseEnter={(e) => (e.currentTarget.style.borderBottomColor = COLORS.red)}
-          onMouseLeave={(e) => (e.currentTarget.style.borderBottomColor = "transparent")}
-        >
-          Doc &rarr;
-        </button>
+        <Button variant="link" size="sm" onClick={onRead} className="text-primary">
+          Đọc &rarr;
+        </Button>
       )}
-    </div>
-  </div>
+    </CardFooter>
+  </Card>
 );

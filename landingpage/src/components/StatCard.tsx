@@ -1,5 +1,6 @@
 import React from "react";
-import { COLORS, FONT, TEXT } from "../tokens";
+import { Card, CardContent } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 type StatCardProps = {
   value: string;
@@ -8,44 +9,11 @@ type StatCardProps = {
 };
 
 export const StatCard: React.FC<StatCardProps> = ({ value, label, icon }) => (
-  <div
-    className="chevron-corner"
-    style={{
-      background: COLORS.surfaceWhite,
-      border: `1px solid ${COLORS.border}`,
-      borderRadius: 2,
-      padding: "32px 24px",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      gap: 8,
-      textAlign: "center",
-      transition: "border-color 200ms ease",
-      cursor: "default",
-    }}
-    onMouseEnter={(e) => (e.currentTarget.style.borderColor = COLORS.red)}
-    onMouseLeave={(e) => (e.currentTarget.style.borderColor = COLORS.border)}
-  >
-    {icon && <div style={{ marginBottom: 4 }}>{icon}</div>}
-    <div style={{
-      fontFamily: FONT.heading,
-      fontWeight: 700,
-      fontSize: TEXT.display.size,
-      lineHeight: TEXT.display.lineHeight,
-      color: COLORS.red,
-    }}>
-      {value}
-    </div>
-    <div style={{
-      fontFamily: FONT.heading,
-      fontWeight: 600,
-      fontSize: TEXT.small.size,
-      lineHeight: TEXT.small.lineHeight,
-      textTransform: "uppercase",
-      letterSpacing: "3px",
-      color: COLORS.inkMuted,
-    }}>
-      {label}
-    </div>
-  </div>
+  <Card className={cn("chevron-corner hover:border-primary cursor-default text-center")}>
+    <CardContent className="flex flex-col items-center gap-2 py-8 px-6">
+      {icon && <div className="mb-1 text-primary">{icon}</div>}
+      <div className="font-heading font-bold text-[56px] leading-[1.1] text-primary">{value}</div>
+      <div className="font-heading font-semibold text-sm uppercase tracking-[3px] text-muted-foreground">{label}</div>
+    </CardContent>
+  </Card>
 );
