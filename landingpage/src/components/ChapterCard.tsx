@@ -12,14 +12,14 @@ type ChapterCardProps = {
 };
 
 export const ChapterCard: React.FC<ChapterCardProps> = ({ number, title, summary, onMindmap, onRead }) => (
-  <Card className="chevron-corner hover:border-primary hover:shadow-sm flex flex-col">
+  <Card className="stamp-border-top chevron-corner hover:border-primary hover:translate-y-[-2px] transition-transform flex flex-col bg-number" data-number={String(number).padStart(2, '0')}>
     <CardHeader>
       <div className="flex items-center gap-2 mb-1 text-primary">
         <BookIcon size={16} />
-        <span className="section-label text-xs">Chapter {number}</span>
+        <span className="section-label text-xs tracking-[8px]">Chapter {number}</span>
       </div>
-      <div className="accent-line w-2/5" />
-      <CardTitle className="font-[var(--font-propaganda)] font-bold text-2xl leading-tight text-foreground mt-2">
+      <div className="accent-line w-full" />
+      <CardTitle className="font-display-vi text-2xl leading-tight text-foreground mt-3 uppercase">
         {title}
       </CardTitle>
     </CardHeader>
@@ -30,14 +30,13 @@ export const ChapterCard: React.FC<ChapterCardProps> = ({ number, title, summary
     )}
     <CardFooter className="mt-auto gap-3 border-0 bg-transparent px-4 pb-4">
       {onMindmap && (
-        <Button variant="outline" size="sm" onClick={onMindmap}
-          className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+        <Button variant="stamp" size="sm" onClick={onMindmap}>
           Mindmap
         </Button>
       )}
       {onRead && (
-        <Button variant="link" size="sm" onClick={onRead} className="text-primary">
-          Đọc &rarr;
+        <Button variant="link" size="sm" onClick={onRead}>
+          Read &rarr;
         </Button>
       )}
     </CardFooter>

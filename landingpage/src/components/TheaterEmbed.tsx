@@ -14,10 +14,10 @@ export const TheaterEmbed: React.FC<TheaterEmbedProps> = ({
   aspectRatio = "16/9",
   className,
 }) => (
-  <section className={cn("bg-[hsl(var(--foreground))] py-16 px-8", className)}>
+  <section className={cn("bg-black py-16 px-8", className)}>
     <div className="max-w-[1200px] mx-auto">
       <div
-        className="relative w-full border-3 border-primary rounded-sm overflow-hidden"
+        className="relative w-full border-4 border-primary overflow-hidden"
         style={{ aspectRatio }}
       >
         <iframe

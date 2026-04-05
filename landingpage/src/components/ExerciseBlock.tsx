@@ -19,20 +19,20 @@ const defaultTiers: Tier[] = [
 ];
 
 export const ExerciseBlock: React.FC<ExerciseBlockProps> = ({ prompt, tiers = defaultTiers }) => (
-  <Card className="constructivist-frame border-0">
+  <Card className="constructivist-frame border-0 star-watermark">
     <CardHeader>
-      <span className="section-label text-xs">Exercise Analysis</span>
-      <div className="accent-line w-[40%]" />
+      <span className="section-label text-sm tracking-[8px]">Exercise Analysis</span>
+      <div className="accent-line w-full" />
     </CardHeader>
-    <CardContent className="space-y-4">
-      <p className="font-body text-lg text-foreground leading-relaxed">{prompt}</p>
+    <CardContent className="space-y-4 relative z-10">
+      <p className="font-display-vi text-xl text-foreground leading-snug uppercase">{prompt}</p>
       <div className="grid gap-3 sm:grid-cols-3">
         {tiers.map((tier, i) => (
-          <Card key={i} className="bg-muted/50">
+          <Card key={i} className="bg-muted/50 stamp-border-top">
             <CardContent className="py-4 px-4">
               <div className="flex items-baseline justify-between mb-2">
-                <span className="font-heading font-semibold text-sm text-foreground">{tier.label}</span>
-                <span className="font-heading font-bold text-primary text-lg">{tier.percent}</span>
+                <span className="font-heading font-bold text-sm text-foreground uppercase tracking-wider">{tier.label}</span>
+                <span className="font-propaganda text-primary text-2xl">{tier.percent}</span>
               </div>
               <p className="font-body text-sm text-muted-foreground">{tier.description}</p>
             </CardContent>

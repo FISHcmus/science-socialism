@@ -27,17 +27,21 @@ import {
   PeopleIcon, DownloadIcon, SearchIcon, ChevronIcon,
 } from "./components/icons";
 
-function Section({ title, children, dark, red }: { title: string; children: React.ReactNode; dark?: boolean; red?: boolean }) {
-  const bg = red ? "red-banner" : dark ? "black-banner" : "";
+function Section({ title, children, dark, red, olive }: { title: string; children: React.ReactNode; dark?: boolean; red?: boolean; olive?: boolean }) {
+  const bg = red ? "red-banner" : dark ? "black-banner" : olive ? "olive-banner" : "";
   return (
-    <div className={`${bg} py-12 px-8`}>
-      <div className="max-w-[1200px] mx-auto">
-        <h2 className="font-[var(--font-propaganda)] text-2xl mb-6 pb-2 border-b-4 border-current uppercase tracking-wider">
-          {title}
-        </h2>
-        {children}
+    <>
+      {/* Thick red slash between sections */}
+      <div className="section-slash" />
+      <div className={`${bg} py-14 px-8`}>
+        <div className="max-w-[1200px] mx-auto">
+          <h2 className="font-propaganda text-3xl mb-8 pb-3 border-b-4 border-current uppercase tracking-[6px] stamp-text">
+            {title}
+          </h2>
+          {children}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
@@ -63,7 +67,7 @@ export const Gallery: React.FC = () => {
   const mindmap = useMindmapViewer();
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground film-grain">
       {/* Icons */}
       <Section title="Icons">
         <div className="flex gap-6 flex-wrap items-end">
@@ -132,7 +136,7 @@ export const Gallery: React.FC = () => {
           ].map(([n, t]: any) => (
             <ChapterCard key={n} number={n} title={t}
               summary="Chapter summary..."
-              onMindmap={() => mindmap.openMindmap(`Chapter ${n}: ${t}`, sampleMd)}
+              onMindmap={() => mindmap.openMindmap(`Chapter ${n}: ${t}`, n)}
               onRead={() => alert("Read")} />
           ))}
         </ChapterNav>
@@ -167,7 +171,7 @@ export const Gallery: React.FC = () => {
       </Section>
 
       {/* TheaterEmbed */}
-      <Section title="TheaterEmbed" dark>
+      <Section title="TheaterEmbed" olive>
         <TheaterEmbed src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Demo" />
       </Section>
 
@@ -232,7 +236,7 @@ export const Gallery: React.FC = () => {
       {/* MindmapViewer Dialog */}
       <MindmapViewer
         title={mindmap.title}
-        content={mindmap.content}
+        chapterNumber={mindmap.chapterNumber}
         open={mindmap.open}
         onOpenChange={mindmap.onOpenChange}
       />

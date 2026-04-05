@@ -18,17 +18,23 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   onWatchVideo,
   onResources,
 }) => (
-  <section className="relative py-24 px-8 overflow-hidden bg-background">
-    <div className="max-w-[1200px] mx-auto">
-      <span className="section-label text-xs">{courseCode}</span>
-      <div className="accent-line my-3 w-[60%] animate-[sweep_1s_ease-out_forwards]" />
-      <h1 className="display-text text-[72px] leading-[1.05] mb-4 animate-[slide-in_0.6s_ease-out]">
+  <section className="relative py-28 px-8 overflow-hidden bg-background star-watermark">
+    {/* Diagonal red slash across top */}
+    <div className="absolute top-0 left-0 right-0 h-2 bg-primary" />
+    {/* Oversized background text */}
+    <div className="absolute top-[-40px] right-[-20px] font-propaganda text-[280px] leading-none text-primary/[0.04] uppercase pointer-events-none select-none z-0">
+      CNXH
+    </div>
+    <div className="relative z-10 max-w-[1200px] mx-auto">
+      <span className="section-label text-sm tracking-[12px]">{courseCode}</span>
+      <div className="accent-line my-4 w-full animate-[sweep_0.8s_ease-out_forwards]" />
+      <h1 className="display-text text-[88px] leading-[0.95] mb-4 animate-[slam-down_0.5s_ease-out] stamp-text tracking-[-2px]">
         {title}
       </h1>
-      <p className="font-body text-xl leading-relaxed text-muted-foreground max-w-2xl mb-2">
+      <p className="font-body text-xl leading-relaxed text-muted-foreground max-w-2xl mb-2 uppercase tracking-wider">
         {subtitle}
       </p>
-      <p className="font-heading font-semibold text-sm uppercase tracking-widest text-primary mb-8">
+      <p className="font-heading font-bold text-sm uppercase tracking-[6px] text-primary mb-10">
         {semester}
       </p>
       <div className="flex gap-4">
@@ -38,12 +44,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </Button>
         )}
         {onResources && (
-          <Button variant="outline" size="lg" onClick={onResources}
-            className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+          <Button variant="stamp" size="lg" onClick={onResources}>
             Resources
           </Button>
         )}
       </div>
     </div>
+    {/* Bottom red slash */}
+    <div className="absolute bottom-0 left-0 right-0 h-2 bg-primary" />
   </section>
 );

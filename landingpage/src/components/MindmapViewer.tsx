@@ -5,35 +5,43 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { MarkdownRenderer } from "./MarkdownRenderer";
+import { MindmapFlow } from "./MindmapFlow";
+import { chapterOutlines } from "@/data/chapterOutlines";
 
 type MindmapViewerProps = {
   title: string;
-  content: string;
+  chapterNumber: number;
   open: boolean;
   onOpenChange: (open: boolean) => void;
 };
 
-export const MindmapViewer: React.FC<MindmapViewerProps> = ({ title, content, open, onOpenChange }) => (
-  <Dialog open={open} onOpenChange={onOpenChange}>
-    <DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto border-3 border-primary">
-      <DialogHeader>
-        <DialogTitle className="font-[var(--font-propaganda)] font-bold text-3xl text-foreground">{title}</DialogTitle>
-      </DialogHeader>
-      <MarkdownRenderer content={content} />
-    </DialogContent>
-  </Dialog>
-);
+export const MindmapViewer: React.FC<MindmapViewerProps> = ({ title, chapterNumber, open, onOpenChange }) => {
+  const tree = chapterOutlines[chapterNumber];
+  return (
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent className="max-w-6xl max-h-[90vh] overflow-hidden border-3 border-primary p-4">
+        <DialogHeader>
+          <DialogTitle className="font-display-vi font-bold text-2xl text-foreground uppercase">{title}</DialogTitle>
+        </DialogHeader>
+        {tree ? (
+          <MindmapFlow tree={tree} />
+        ) : (
+          <p className="text-muted-foreground text-sm">No outline data for this chapter.</p>
+        )}
+      </DialogContent>
+    </Dialog>
+  );
+};
 
 export function useMindmapViewer() {
-  const [state, setState] = useState<{ open: boolean; title: string; content: string }>({
+  const [state, setState] = useState<{ open: boolean; title: string; chapterNumber: number }>({
     open: false,
     title: "",
-    content: "",
+    chapterNumber: 0,
   });
 
-  const openMindmap = useCallback((title: string, content: string) => {
-    setState({ open: true, title, content });
+  const openMindmap = useCallback((title: string, chapterNumber: number) => {
+    setState({ open: true, title, chapterNumber });
   }, []);
 
   const onOpenChange = useCallback((open: boolean) => {

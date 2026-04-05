@@ -1,6 +1,6 @@
-# Classical Communist Design System
+# Brutal Soviet Propaganda Design System
 
-A web design system blending **Soviet Constructivism**, **Art Deco geometry**, and **Vietnamese political poster aesthetics** for an academic course landing page on Scientific Socialism (CNXHKH).
+A web design system channeling **Soviet propaganda poster art** — bloody, institutional, mechanical — for an academic course landing page on Scientific Socialism (CNXHKH). No elegance. No warmth. The state does not comfort you.
 
 ---
 
@@ -8,28 +8,27 @@ A web design system blending **Soviet Constructivism**, **Art Deco geometry**, a
 
 ### Roots
 
-Three movements converge:
+One movement, pushed to its extreme:
 
-1. **Soviet Constructivism (1920s-30s)** — El Lissitzky, Rodchenko. Functional art: pure geometric forms, asymmetric tension, photomontage, bold sans-serif typography. Art serves the people, not decoration.
-
-2. **Art Deco (1920s-40s)** — Geometric ornamentation, symmetry, sunbursts, chevrons, metallic accents. Where Constructivism strips decoration, Art Deco celebrates controlled opulence.
-
-3. **Vietnamese Political Poster Art** — Adapts Soviet visual language with warmer, more saturated palettes (brighter reds, folk-art blues and oranges). Softer than Soviet brutalism, more human, more tropical warmth.
-
-### Where They Overlap
-
-- Bold geometric forms (circles, triangles, radiating lines)
-- Limited, high-contrast color palettes
-- Emphasis on monumentality and hierarchy
-- Worker/people-centric imagery
-- Strong diagonal compositions creating dynamism
-- Typography as architecture, not just text
+**Soviet Propaganda Poster Art (1917-1960s)** — Rodchenko, El Lissitzky, Klutsis, the Stenberg brothers. Woodblock printing, letterpress, silk-screen. Art as a weapon. Type stamped into cheap newsprint. Blood red ink on institutional paper. Zero decoration that doesn't serve the message.
 
 ### Design Principle
 
-> **Authoritative but warm. Geometric but human. Historical but modern.**
+> **Brutal. Institutional. Bloody. The state does not ask — it commands.**
 
-We take the structural rigor of Constructivism, the decorative confidence of Art Deco, and the human warmth of Vietnamese poster art. The result should feel like a curated political exhibition — not a propaganda poster, not a tech startup.
+We take the structural violence of propaganda printing: cheap paper, heavy ink, stamped type, diagonal slashes of red. Everything is ALL CAPS because the revolution does not whisper. Every border is sharp because the party does not soften edges. Every accent is blood red because that's the only color that matters.
+
+This is not "Soviet-inspired aesthetic." This is the real thing, adapted for the web.
+
+### Anti-Principles (What We Reject)
+
+- Warmth, coziness, friendliness
+- Rounded corners (compromise)
+- Subtle color differences (weakness)
+- Gentle hover effects (hesitation)
+- Gold accents (bourgeois)
+- Serif display fonts (aristocratic)
+- Center-aligned layouts (indecisive)
 
 ---
 
@@ -37,46 +36,40 @@ We take the structural rigor of Constructivism, the decorative confidence of Art
 
 ### Primary Tokens
 
-| Token | Hex | Role | Origin |
+| Token | Hex | OKLCH | Role |
 |---|---|---|---|
-| `--color-bg` | `#FAFAF7` | Page background | Warm cream, poster paper |
-| `--color-surface` | `#F5F0E8` | Card/panel background | Aged parchment |
-| `--color-surface-white` | `#FFFFFF` | Clean surface variant | Modern contrast |
-| `--color-ink` | `#1A1A1A` | Primary text | Near-black, not pure |
-| `--color-ink-secondary` | `#4A4A4A` | Secondary text | Softer read |
-| `--color-ink-muted` | `#7A7A7A` | Tertiary/caption text | Recedes |
+| `--color-ds-cream` | `#DDD5C0` | `oklch(0.87 0.025 85)` | Dirty newsprint — cold, institutional paper |
+| `--color-ds-cream-dark` | `#C8BFA8` | — | Aged paper stain, code backgrounds |
+| `--color-ds-ink` | `#000000` | `oklch(0 0 0)` | PURE BLACK — propaganda prints in pure black |
+| `--color-ds-ink-secondary` | `#1A1A1A` | — | Secondary text |
+| `--color-ds-ink-muted` | `#555555` | — | Tertiary text — still dark, not gray |
+| `--color-ds-red` | `#990000` | `oklch(0.4 0.18 25)` | Dried blood — not fresh paint, not bright |
+| `--color-ds-red-deep` | `#660000` | `oklch(0.28 0.15 25)` | Coagulated — destructive actions |
+| `--color-ds-red-light` | `#CC1111` | — | Arterial spray — hover/active red |
+| `--color-ds-olive` | `#2D3A1A` | `oklch(0.3 0.05 130)` | Military olive — the OTHER communist color |
+| `--color-ds-khaki` | `#4A4A2A` | — | Army surplus — secondary military accent |
+| `--color-ds-black` | `#000000` | — | True void |
 
-### Accent Tokens
+### What's NOT in the palette
 
-| Token | Hex | Role | Origin |
-|---|---|---|---|
-| `--color-red` | `#CC0000` | Primary accent, structure | Soviet red |
-| `--color-red-deep` | `#8B0000` | Hover/active state | Darkened red |
-| `--color-red-light` | `#FEE2E2` | Red tint background | Soft alert |
-| `--color-gold` | `#DAA520` | Secondary accent, decoration | Art Deco gold |
-| `--color-gold-deep` | `#B8860B` | Hover/active state | Darkened gold |
-| `--color-gold-light` | `#FEF3C7` | Gold tint background | Warm highlight |
-| `--color-black` | `#111111` | Cinematic/theater sections | Pure contrast |
+- **No gold** — gold is Art Deco, bourgeois, decorative
+- **No warm cream** — warm = friendly = wrong
+- **No grays** — gray is indecisive; use black or newsprint
+- **No blue** — blue is liberal democracy
 
-### Semantic Tokens
+### Semantic Mapping (shadcn/ui)
 
-| Token | Hex | Usage |
+| shadcn variable | Value | Meaning |
 |---|---|---|
-| `--color-border` | `#D4C5B0` | Card borders, dividers |
-| `--color-border-strong` | `#CC0000` | Accent borders, active states |
-| `--color-overlay` | `rgba(0,0,0,0.7)` | Dark overlays for video theater |
-| `--color-highlight` | `rgba(218,165,32,0.15)` | Text highlight, selection |
-
-### Gradient Tokens
-
-```css
---gradient-hero: linear-gradient(135deg, #CC0000 0%, #DAA520 100%);
---gradient-subtle: linear-gradient(180deg, #FAFAF7 0%, #F5F0E8 100%);
---gradient-theater: linear-gradient(180deg, #111111 0%, #1A1A1A 100%);
---gradient-red-fade: linear-gradient(90deg, #CC0000 0%, transparent 100%);
---gradient-gold-fade: linear-gradient(90deg, #DAA520 0%, transparent 100%);
---gradient-radial-burst: radial-gradient(ellipse at center, #DAA520 0%, transparent 70%);
-```
+| `--background` | dirty newsprint | Page background |
+| `--foreground` | pure black | All text |
+| `--primary` | blood red `#990000` | Action, emphasis, authority |
+| `--secondary` | pure black | Secondary actions |
+| `--accent` | military olive | Alternative accent |
+| `--muted` | stained paper | Subdued surfaces |
+| `--destructive` | coagulated `#660000` | Danger |
+| `--border` | pure black | All borders — BLACK |
+| `--radius` | `0px` | ZERO. SHARP. NO MERCY. |
 
 ---
 
@@ -84,179 +77,198 @@ We take the structural rigor of Constructivism, the decorative confidence of Art
 
 ### Font Stack
 
-| Role | Font | Weight | Fallback | Why |
-|---|---|---|---|---|
-| Display (H1, Hero) | **Cormorant Garamond** | 700, 600 | Georgia, serif | High-contrast classical serif. Monumental, editorial. Bridges Art Deco elegance with academic authority. |
-| Heading (H2-H4) | **Josefin Sans** | 700, 600, 400 | sans-serif | Geometric sans-serif with Art Deco DNA. Clean, architectural letter-forms. |
-| Body | **Be Vietnam Pro** | 400, 500, 700 | sans-serif | Purpose-built for Vietnamese diacritics. Modern, readable, warm. |
-| Accent/Label | **Josefin Sans** | 600 | sans-serif | Section labels, stat numbers, navigation. Uppercase with wide tracking. |
-| Mono/Code | **JetBrains Mono** | 400 | monospace | Data tables, statistics, timestamps. |
-
-### Type Scale
-
-Based on a 1.333 ratio (perfect fourth), anchored at 18px body.
-
-| Token | Size | Line Height | Usage |
+| Role | Font | Weight | Why |
 |---|---|---|---|
-| `--text-hero` | 72px | 1.05 | Hero title only |
-| `--text-display` | 56px | 1.1 | Section titles |
-| `--text-h1` | 42px | 1.15 | Page headings |
-| `--text-h2` | 32px | 1.2 | Section headings |
-| `--text-h3` | 24px | 1.3 | Sub-headings |
-| `--text-body` | 18px | 1.6 | Paragraph text |
-| `--text-body-lg` | 20px | 1.6 | Lead paragraphs |
-| `--text-small` | 14px | 1.5 | Captions, labels |
-| `--text-label` | 12px | 1.4 | Overline labels, tags |
+| Display | **Propaganda** (custom .ttf) | 700 | Soviet poster display type by Otto Lerma/MachacaCorp. Blocky, stamped, brutal. The only acceptable display font. |
+| Heading | **Oswald** | 700, 600, 400 | Condensed, industrial sans-serif. Narrow like newspaper columns. |
+| Body | **Be Vietnam Pro** | 400, 500, 700 | Purpose-built for Vietnamese diacritics. The only concession to readability. |
+| Mono | **JetBrains Mono** | 400 | Data, code, statistics. |
 
 ### Typography Rules
 
-1. **Display text**: Cormorant Garamond, always. Title case or sentence case. Never all-caps for serif.
-2. **Section labels**: Josefin Sans, uppercase, `letter-spacing: 4px`, always paired with a geometric accent (line, chevron, or dot).
-3. **Body text**: Be Vietnam Pro 400. Max line width: 720px (40-45 characters for Vietnamese).
-4. **Bold in body**: Be Vietnam Pro 700, use `--color-red` sparingly for key terms.
-5. **Numbers/Stats**: Josefin Sans 700 at `--text-display` size. Tabular figures.
+1. **ALL CAPS EVERYTHING** — headings, labels, buttons, badges, card titles. The `h1-h6` elements have `text-transform: uppercase` globally.
+2. **Section labels:** Propaganda font, `letter-spacing: 10-12px`, blood red. Screaming.
+3. **Display text:** Propaganda font, `letter-spacing: -1px` to `-2px` (letters crunching together like a crowd), stamp text-shadow effect.
+4. **Body text:** Be Vietnam Pro 400. The only place lowercase is acceptable.
+5. **Numbers/Stats:** Propaganda font, oversized (64px+), blood red, stamp effect.
+6. **Button text:** Oswald, ALL CAPS, `letter-spacing: 3px`.
+
+### Stamp Text Effect
+
+The signature typographic treatment — makes text look letterpress-stamped into paper:
+
+```css
+.stamp-text {
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.25), -1px -1px 0 rgba(0,0,0,0.08);
+  -webkit-text-stroke: 0.5px rgba(0,0,0,0.15);
+}
+```
+
+Applied to: hero title, section headers, stat numbers, CTA title.
+
+### Display Text Class
+
+```css
+.display-text {
+  font-family: var(--font-propaganda);
+  color: var(--color-ds-ink);
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+}
+```
 
 ---
 
 ## 4. Spacing & Layout
 
-### Spacing Scale (8px base)
+### Grid
 
-| Token | Value | Usage |
-|---|---|---|
-| `--space-1` | 4px | Tight internal padding |
-| `--space-2` | 8px | Icon gaps, inline spacing |
-| `--space-3` | 12px | Small component padding |
-| `--space-4` | 16px | Standard padding |
-| `--space-5` | 24px | Card padding, gaps |
-| `--space-6` | 32px | Section internal spacing |
-| `--space-7` | 48px | Between components |
-| `--space-8` | 64px | Between sections |
-| `--space-9` | 96px | Major section breaks |
-| `--space-10` | 128px | Hero padding, page margins |
+12-column grid, max content width 1200px. Left-heavy asymmetry preferred.
 
-### Grid System
+### Layout Principles
 
-12-column grid, 24px gutters. Max content width: 1200px.
-
-```
-Desktop (>1024px):  12 columns, 24px gutter
-Tablet (768-1024):  8 columns, 20px gutter
-Mobile (<768px):    4 columns, 16px gutter
-```
-
-### Constructivist Layout Principles
-
-1. **Asymmetric bias**: Content left-weighted (5-7 columns), supporting elements right (3-5 columns). Avoid centered-everything layouts.
-2. **Diagonal tension**: At least one element per major section should break the grid — a skewed accent line, an overlapping image, or an angled divider.
-3. **Generous negative space**: Sections breathe with `--space-8` to `--space-9` vertical padding. Density inside cards, air between them.
-4. **Vertical rhythm**: All vertical spacing multiples of 8px. Headlines snap to a 48px baseline grid.
+1. **Left-heavy** — content biased to the left. Propaganda posters don't center-align.
+2. **Diagonal tension** — skewed accent lines, diagonal section slashes, rotated stamp buttons.
+3. **Violent hierarchy** — one element DOMINATES per section, everything else submits. Hero title at 88px dwarfs 14px body text.
+4. **Thick separators** — 6-8px red slashes between sections, not subtle hairlines.
+5. **Generous but aggressive padding** — sections breathe, but borders are thick and close.
 
 ---
 
-## 5. Geometric Decorative Elements
+## 5. Decorative Elements
 
-These are the visual signatures that make this system feel Art Deco / Constructivist, not generic.
+### 5.1 Accent Line — Full-Width Slash
 
-### 5.1 Diagonal Accent Line
-
-The primary divider motif. A red line with a skew, fading out.
+The primary divider motif. Thicker, wider, more aggressive than before.
 
 ```css
 .accent-line {
-  height: 3px;
-  background: linear-gradient(90deg, var(--color-red) 0%, transparent 100%);
-  transform: skewX(-20deg);
-  width: 60%;
+  height: 6px;
+  background: var(--color-ds-red);
+  transform: skewX(-25deg);
+  width: 100%;
 }
 ```
 
-### 5.2 Double-Border Frame (Constructivist Edge)
+### 5.2 Constructivist Frame — Brutal Double Border
 
-Cards and panels use a double-border treatment — inner border in cream, outer in red.
+For featured content (exercises, assessments, discussions). Includes ink bleed shadow.
 
 ```css
 .constructivist-frame {
-  border: 3px solid var(--color-red);
-  box-shadow: inset 0 0 0 6px var(--color-surface), inset 0 0 0 9px var(--color-red);
+  border: 5px solid var(--color-ds-red);
+  box-shadow:
+    inset 0 0 0 6px var(--color-ds-cream),
+    inset 0 0 0 11px var(--color-ds-red),
+    0 0 0 2px rgba(0,0,0,0.15); /* ink bleed */
   padding: 24px;
 }
 ```
 
-### 5.3 Corner Chevrons
+### 5.3 Corner Brackets — Always Partially Visible
 
-Art Deco corner brackets on featured cards.
+RED brackets (not gold). Always visible at 30% opacity, grow to full on hover.
 
 ```css
 .chevron-corner::before,
 .chevron-corner::after {
-  content: '';
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  border-color: var(--color-gold);
-  border-style: solid;
+  width: 36px; height: 36px;
+  border-color: var(--color-ds-red);
+  border-width: 5px;
+  opacity: 0.3;
 }
-.chevron-corner::before {
-  top: -2px; left: -2px;
-  border-width: 3px 0 0 3px; /* top-left */
-}
-.chevron-corner::after {
-  bottom: -2px; right: -2px;
-  border-width: 0 3px 3px 0; /* bottom-right */
+.chevron-corner:hover::before,
+.chevron-corner:hover::after {
+  opacity: 1;
+  width: 48px; height: 48px;
 }
 ```
 
-### 5.4 Sunburst / Radiating Lines
+### 5.4 Film Grain — Visible, Committed
 
-Behind hero sections or stat cards. Pure CSS radial pattern.
+10% opacity, `mix-blend-mode: multiply`. Should be VISIBLE.
 
 ```css
-.sunburst {
-  background: conic-gradient(
-    from 0deg,
-    var(--color-gold) 0deg, transparent 15deg,
-    transparent 30deg, var(--color-gold) 30deg, transparent 45deg,
-    transparent 60deg, var(--color-gold) 60deg, transparent 75deg,
-    /* repeat for full circle */
+.film-grain::after {
+  opacity: 0.10;
+  mix-blend-mode: multiply;
+}
+```
+
+### 5.5 Paper Fiber Texture
+
+SVG fractalNoise on body background at 3% opacity. Adds physical weight.
+
+### 5.6 Halftone Dots
+
+Hover state effect — radial-gradient dot pattern instead of color transitions.
+
+```css
+.halftone-hover:hover {
+  background-image: radial-gradient(circle, var(--color-ds-red) 1px, transparent 1px);
+  background-size: 6px 6px;
+}
+```
+
+### 5.7 Stamp Border Top
+
+8px red top border on cards — like an official document stamp mark.
+
+```css
+.stamp-border-top {
+  border-top: 8px solid var(--color-ds-red) !important;
+}
+```
+
+### 5.8 Soviet Star Watermark
+
+500px faded ★ character behind key sections (hero, CTA, exercises).
+
+```css
+.star-watermark::before {
+  content: '★';
+  font-size: 500px;
+  color: var(--color-ds-red);
+  opacity: 0.04;
+}
+```
+
+### 5.9 Oversized Background Number
+
+200px ghost number behind chapter cards via `data-number` attribute.
+
+```css
+.bg-number::before {
+  content: attr(data-number);
+  font-family: var(--font-propaganda);
+  font-size: 200px;
+  color: var(--color-ds-red);
+  opacity: 0.06;
+}
+```
+
+### 5.10 Section Slash
+
+Full-width 8px red bar between sections. Replaces subtle dividers.
+
+```css
+.section-slash {
+  height: 8px;
+  background: var(--color-ds-red);
+}
+```
+
+### 5.11 Red Banner Diagonal Stripes
+
+45-degree repeating stripes at 3% opacity inside `.red-banner` sections.
+
+```css
+.red-banner::before {
+  background: repeating-linear-gradient(
+    45deg, transparent, transparent 40px,
+    rgba(0,0,0,0.03) 40px, rgba(0,0,0,0.03) 42px
   );
-  opacity: 0.08;
-}
-```
-
-### 5.5 Gold Star Accent
-
-A 5-pointed star (Vietnamese socialist symbol) used as a decorative bullet or section marker. Implemented as SVG inline, sized at 16-24px.
-
-```svg
-<svg viewBox="0 0 24 24" fill="#DAA520">
-  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-</svg>
-```
-
-### 5.6 Geometric Section Divider
-
-A horizontal rule with a centered diamond or star motif.
-
-```
-──────────── ◆ ────────────
-```
-
-Implemented as `::before` + `::after` lines with a centered SVG/unicode element.
-
-### 5.7 Film Grain Overlay
-
-Subtle noise texture at 2-3% opacity on the page background. Adds vintage poster feel without reducing readability.
-
-```css
-.grain::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  opacity: 0.025;
-  background-image: url("data:image/svg+xml,..."); /* noise pattern */
-  pointer-events: none;
-  z-index: 9999;
 }
 ```
 
@@ -266,97 +278,71 @@ Subtle noise texture at 2-3% opacity on the page background. Adds vintage poster
 
 ### 6.1 Cards
 
-Two tiers:
+**Standard Card** — stamp-border-top, chevron corners, JOLT on hover (not glow).
 
-**Standard Card** — White surface, subtle border, corner chevrons on hover.
 ```
-┌─────────────────────┐
-│  LABEL              │
-│  ──── (red line)    │
-│  Title              │
-│  Body text...       │
-│                     │
-│  [Action →]         │
-└─────────────────────┘
+┌═══════════════════════════╗  ← 8px red top border
+│  LABEL (tracking: 8px)     │
+│  ━━━━━━━━━━━━━━━━━━━━━━━  │  ← full-width accent line
+│  TITLE (Propaganda font)   │
+│  Body text...              │
+│                            │
+│  [STAMP BUTTON]  Read →    │
+└────────────────────────────┘
 ```
-- Background: `--color-surface-white`
-- Border: `1px solid --color-border`
-- Border-radius: `2px` (sharp, not rounded — geometric)
-- Hover: `border-color: --color-red`, corner chevrons appear
-- Shadow: `0 2px 8px rgba(0,0,0,0.06)`
+- Background: newsprint card surface
+- Border: 1px solid pure black
+- Hover: `translate-y(-2px)` — JOLT, not glow
+- No border-radius. No shadow. Sharp.
 
-**Featured Card** — Double-border constructivist frame, gold accent.
-- Uses `.constructivist-frame` treatment
-- Label text in gold
-- Larger padding (`--space-6`)
+**Featured Card** — constructivist-frame + star-watermark.
 
 ### 6.2 Buttons
 
-**Primary**: Red background, cream text, no border-radius.
-```css
-.btn-primary {
-  background: var(--color-red);
-  color: var(--color-bg);
-  padding: 12px 32px;
-  border: none;
-  font-family: 'Josefin Sans';
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background 200ms;
-}
-.btn-primary:hover { background: var(--color-red-deep); }
-```
+ALL CAPS. Hard shadow. Mechanical.
 
-**Secondary**: Gold border, transparent background.
-```css
-.btn-secondary {
-  background: transparent;
-  color: var(--color-gold);
-  border: 2px solid var(--color-gold);
-  /* same padding/font as primary */
-}
-```
+| Variant | Style |
+|---|---|
+| `default` | Blood red bg, cream text, 2px border, hard shadow on hover |
+| `outline` | 3px red border, transparent bg, fills red on hover |
+| `stamp` | 3px red border, -2deg rotation, straightens on hover, fills red |
+| `link` | Red text, underline on hover, 2px tracking |
+| `secondary` | Black bg, cream text |
 
-**Ghost**: Text-only with underline on hover.
+All buttons: `hover:translate-y(-1px) hover:shadow-[3px_3px_0]`, `active:translate-y(1px) active:shadow-none`.
 
 ### 6.3 Navigation
 
-Sticky top bar. Dark background (`--color-ink`) with gold text. Josefin Sans uppercase labels.
+Sticky black bar, 4px red bottom border, Propaganda font logo, Oswald uppercase links.
 
 ```
-┌──────────────────────────────────────────────────┐
-│  ★ CNXHKH   NỘI DUNG  NHÓM  VIDEO  TÀI LIỆU   │
-└──────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────┐
+│  CNXHKH (Propaganda)    CONTENT  GROUP  VIDEO  RESOURCES │
+│════════════════════════════════════════════════════════════│ ← 4px red
 ```
-
-Active item: red underline (3px, slight skew).
 
 ### 6.4 Section Headers
 
-Every major section follows this pattern:
-
 ```
-PHẦN 01                          ← Josefin Sans, gold, uppercase, tracking: 4px
-━━━━━━━━                         ← Diagonal accent line, red
-Tổng quan môn học                ← Cormorant Garamond, 56px, ink
-Giới thiệu chương trình học      ← Be Vietnam Pro, 20px, ink-secondary
+PART 01                          ← Propaganda, tracking: 12px, blood red
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━    ← full-width accent line, 6px, skewed
+THEORETICAL BASIS               ← Propaganda, 64px, stamp-text effect
 ```
 
-### 6.5 Theater (Video) Section
+### 6.5 Section Banners
 
-Full-width dark section that breaks the cream theme.
+Three variants:
+- `.red-banner` — blood red bg, cream text, diagonal stripe overlay
+- `.black-banner` — pure black bg, cream text
+- `.olive-banner` — military olive bg, cream text
 
-```
-Background: --gradient-theater (#111 → #1A1A1A)
-Padding: 96px vertical
-Video: centered, max-width 960px, 16:9
-Border: 2px solid --color-gold (Art Deco frame)
-Corner chevrons in gold
-```
+### 6.6 Theater (Video) Section
 
-Below video: caption in Be Vietnam Pro, gold color.
+Pure black background, 4px red border on video frame. No gold. No chevrons.
+
+### 6.7 Footer
+
+Black background, 4px red top border. Propaganda font course code. All text uppercase with extreme tracking.
 
 ---
 
@@ -364,80 +350,73 @@ Below video: caption in Be Vietnam Pro, gold color.
 
 ### Principles
 
-- **Constructivist energy**: Diagonal slide-ins, not fade-ups. Elements enter from the left at a slight skew.
-- **Restrained**: 1-2 animations per viewport. Not everything moves.
-- **Purposeful**: Motion reveals content hierarchy (title first, then subtitle, then body).
-- **Snappy**: 200-400ms duration. `cubic-bezier(0.34, 1.56, 0.64, 1)` for slight overshoot.
+- **Mechanical, not organic** — elements SLAM into place, not float
+- **Harsh easing** — overshoot on entry, no ease-in-out
+- **Faster stagger** — 60ms between items, not 100ms
+- **JOLT on hover** — translate, not shadow. Elements move, not glow.
 
 ### Entry Animations
 
 ```css
-/* Diagonal slide-in (primary) */
+/* Slam down — mechanical stamp */
+@keyframes slam-down {
+  0% { opacity: 0; transform: translateY(-40px) scaleY(1.3); }
+  60% { opacity: 1; transform: translateY(4px) scaleY(0.95); }
+  100% { opacity: 1; transform: translateY(0) scaleY(1); }
+}
+
+/* Diagonal slide-in — aggressive */
 @keyframes slide-in {
-  from { opacity: 0; transform: translateX(-40px) skewX(3deg); }
+  from { opacity: 0; transform: translateX(-80px) skewX(8deg); }
   to { opacity: 1; transform: translateX(0) skewX(0); }
 }
 
-/* Accent line sweep */
-@keyframes sweep {
-  from { width: 0; }
-  to { width: 60%; }
+/* Stamp — rubber stamp effect */
+@keyframes stamp {
+  0% { transform: scale(2) rotate(-5deg); opacity: 0; }
+  50% { transform: scale(0.95) rotate(1deg); opacity: 1; }
+  100% { transform: scale(1) rotate(-2deg); opacity: 1; }
 }
-
-/* Stagger delay pattern */
-.stagger-1 { animation-delay: 0ms; }
-.stagger-2 { animation-delay: 100ms; }
-.stagger-3 { animation-delay: 200ms; }
-.stagger-4 { animation-delay: 300ms; }
 ```
-
-### Scroll-Triggered Reveals
-
-Use `IntersectionObserver` (no library). Elements start with `opacity: 0; transform: translateX(-40px)` and animate in when 20% visible.
 
 ### Hover Effects
 
-- Cards: border color transition to red + corner chevrons fade in (200ms)
-- Buttons: background darken + slight `translateY(-1px)`
-- Links: red underline sweeps from left to right
-- Images: subtle `scale(1.02)` with overflow hidden
+- Cards: `translate-y(-2px)` — jolt up, not shadow glow
+- Buttons: `translate-y(-1px) + shadow-[3px_3px_0]` — hard shadow, mechanical
+- Resources: `translate-x(4px)` — shove right
+- Corner brackets: grow from 36px to 48px, opacity 0.3 to 1.0
 
 ---
 
 ## 8. Iconography
 
-No icon library. Custom geometric SVG icons matching the Art Deco / Constructivist language:
+Minimal geometric SVG icons. Red fill or currentColor.
 
-- **Star** (★): Section markers, bullets. Gold fill.
-- **Diamond** (◆): Divider ornaments. Red fill.
-- **Arrow** (→): Navigation, CTAs. Geometric, not rounded.
-- **Chevron** (‹ ›): Pagination, breadcrumbs.
-- **Book**: Chapters. Geometric outline style.
-- **Play**: Video. Triangle in circle, constructivist.
-- **People**: Members. Simplified geometric silhouettes.
-- **Download**: Resources. Downward arrow in bracket.
+- **★** (Soviet star): Section markers, bullets, watermarks. Character `★`, not SVG. Red fill.
+- **Diamond** (◆): Divider ornaments only.
+- **Arrow** (→): Navigation, CTAs. Geometric, angular.
+- **Book, People, Download, Search, Play, Chevron**: Simple geometric outlines, 2px stroke.
 
-All icons: 24x24px grid, 2px stroke or solid fill, square caps.
+All icons inherit `currentColor` from parent element — set `text-primary` on the container.
 
 ---
 
 ## 9. Responsive Behavior
 
-| Breakpoint | Width | Grid | Font Scale |
+| Breakpoint | Grid | Hero Title | Section Title |
 |---|---|---|---|
-| Desktop | > 1024px | 12 col | 1x (base) |
-| Tablet | 768-1024px | 8 col | 0.9x |
-| Mobile | < 768px | 4 col | 0.8x |
+| Desktop (>1024px) | 12 col | 88px | 64px |
+| Tablet (768-1024) | 8 col | 56px | 42px |
+| Mobile (<768px) | 4 col | 36px | 32px |
 
 ### Mobile Adaptations
 
-- Hero title: 42px (down from 72px)
-- Section titles: 36px (down from 56px)
-- Diagonal accent lines: reduce skew to `-10deg`
-- Double-border frames: simplify to single border
-- Corner chevrons: hide on mobile
-- Navigation: hamburger menu with full-screen overlay (dark bg, gold links)
-- Asymmetric layouts: stack to single column
+- Constructivist frames: simplify to single 3px border
+- Corner brackets: hide
+- Stamp buttons: remove rotation
+- Star watermark: reduce to 200px
+- Background numbers: hide
+- Section slash: reduce to 4px
 
 ---
 
@@ -445,74 +424,85 @@ All icons: 24x24px grid, 2px stroke or solid fill, square caps.
 
 ### Do
 
-- Use diagonal accent lines liberally — they're the system's signature
-- Keep body text in Be Vietnam Pro — Vietnamese diacritics matter
-- Maintain high contrast (WCAG AA minimum)
-- Use gold for decoration, red for structure
-- Let sections breathe with generous padding
-- Use the double-border frame for featured content only (max 2 per page)
-- Keep border-radius at 0-2px — sharp geometry is intentional
+- Use ALL CAPS on everything except body paragraphs
+- Use thick borders (3-8px) — thin lines are weakness
+- Use pure black `#000` for borders and text — not "near-black"
+- Use the Propaganda font for all display/heading text
+- Use stamp-text effect on large typography
+- Use 8px red top borders on cards
+- Use full-width accent lines
+- Use star watermarks on key sections
+- Make hover effects JOLT (translate), not GLOW (shadow)
+- Use military olive for variety, not gold
+- Commit to the film grain — 10% opacity minimum
 
 ### Don't
 
-- Use rounded corners > 4px — breaks the geometric language
-- Use gradient text — reads as "tech startup"
-- Use purple or blue as primary colors — breaks the political palette
-- Center-align everything — asymmetry is a feature
-- Animate every element — restraint matters
-- Use generic sans-serifs (Inter, Roboto, Arial) — they have no character
-- Add drop shadows > 8px spread — keep it tight and architectural
-- Use emoji — use geometric SVG icons instead
+- Use rounded corners — EVER (0px radius is enforced globally)
+- Use gold accents — bourgeois
+- Use warm cream — too cozy (dirty newsprint only)
+- Use subtle borders < 2px — invisible = irrelevant
+- Use gentle fade-in animations — propaganda SLAMS
+- Use centered layouts by default — left-heavy is aggressive
+- Use lowercase in headings — the revolution does not whisper
+- Use emoji — use ★ character or geometric SVG
+- Use hover:shadow without hover:translate — movement > decoration
+- Use more than 3 colors in any component — red, black, newsprint. That's it.
 
 ---
 
 ## 11. Reference Visual Language
 
-### Soviet Constructivism
-
+### Soviet Propaganda Posters
 - El Lissitzky, "Beat the Whites with the Red Wedge" (1919) — diagonal composition, red/black/white
-- Rodchenko advertising posters — bold typography, photomontage
-- Gustav Klutsis political posters — radiating lines, photomontage
+- Rodchenko advertising posters — bold condensed typography, photomontage
+- Gustav Klutsis political posters — radiating lines, oversized numbers
+- Dmitri Moor, "Have You Volunteered?" (1920) — direct address, blood red, stark contrast
+- TASS Windows propaganda posters — thick outlines, flat color, stamped text
 
-### Art Deco
-
-- Cassandre travel posters — geometric simplification, metallic colors
-- Rockefeller Center facade — geometric relief patterns
-- Art Deco typography — geometric sans-serifs, wide tracking
-
-### Vietnamese Political Posters
-
-- Warmer reds (more orange than Soviet crimson)
-- Folk art elements softening geometric rigor
-- Star motif (5-pointed, yellow on red) as universal marker
-- Crowd/unity imagery — fitting for our topic (national solidarity)
+### What We Take From Them
+- Cheap paper (dirty newsprint, not clean white)
+- Letterpress/woodblock stamp quality (text-shadow, text-stroke)
+- Blood red as the ONLY accent (not fresh paint — dried, dark, coagulated)
+- Pure black ink (not "near-black" — the real thing)
+- ALL CAPS condensed type at extreme sizes
+- Diagonal slashes of color cutting across compositions
+- Oversized numbers and stars as background texture
+- Military olive/khaki as secondary institutional color
+- Film grain and paper texture (the medium is the message)
 
 ---
 
-## 12. Implementation Notes
+## 12. Implementation
 
-### CSS Custom Properties
+### Tech Stack
+- **Vite 6** + **React 19** + **Tailwind CSS v4** (OKLCH color space, `@theme` block)
+- **shadcn/ui** (new-york style, Radix primitives) — 14 base components in `src/components/ui/`
+- **24 custom components** in `src/components/` built on shadcn primitives
 
-All tokens defined as CSS custom properties on `:root`. Components reference tokens, never raw hex values.
+### CSS Architecture
+- All tokens in `src/index.css` under `@theme {}` block
+- shadcn semantic variables in `@layer base :root {}` using OKLCH values
+- Utility classes (`.stamp-text`, `.star-watermark`, `.constructivist-frame`, etc.) in `src/index.css`
+- No separate token file — CSS is the single source of truth
 
 ### Font Loading
-
 ```html
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Josefin+Sans:wght@400;600;700&family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- Google Fonts in index.html <link> tags -->
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Be+Vietnam+Pro:wght@400;500;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+```
+```css
+/* Custom font in index.css */
+@font-face {
+  font-family: 'Propaganda';
+  src: url('/fonts/Propaganda.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
 ```
 
-Load display fonts (Cormorant, Josefin) with `display=swap` to prevent FOIT.
-
-### Tailwind Integration
-
-Extend Tailwind config with custom colors, fonts, and spacing tokens. Use `@apply` sparingly — prefer utility classes for one-off styling, component classes for repeated patterns.
-
-### Ladle Stories
-
-Every component gets a Ladle story showing:
-1. Default state
-2. Variants (if applicable)
-3. Hover/active states
-4. Responsive behavior (use Ladle's viewport controls)
-5. Dark section variant (for theater/overlay contexts)
+### Component Gallery
+- Access via `?gallery` query parameter: `http://localhost:3004/?gallery`
+- `src/Gallery.tsx` renders all 24 components with section wrappers
+- Sections use `.red-banner`, `.black-banner`, `.olive-banner` for variety
+- Film grain overlay on entire gallery page

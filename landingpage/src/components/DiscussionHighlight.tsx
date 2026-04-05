@@ -11,16 +11,16 @@ export const DiscussionHighlight: React.FC<DiscussionHighlightProps> = ({
   prompt,
   references = ["Ch.5 Ethnicity", "Ch.6 Religion", "VN Practice"],
 }) => (
-  <Card className="constructivist-frame border-0">
+  <Card className="constructivist-frame border-0 star-watermark">
     <CardHeader>
-      <span className="section-label text-xs">Discussion Topic</span>
-      <div className="accent-line w-[40%]" />
+      <span className="section-label text-sm tracking-[8px]">Discussion Topic</span>
+      <div className="accent-line w-full" />
     </CardHeader>
-    <CardContent className="space-y-4">
-      <p className="font-[var(--font-propaganda)] font-bold text-2xl leading-snug text-foreground">{prompt}</p>
+    <CardContent className="space-y-4 relative z-10">
+      <p className="font-display-vi text-2xl leading-snug text-foreground uppercase">{prompt}</p>
       <div className="flex flex-wrap gap-2">
         {references.map((ref, i) => (
-          <Badge key={i} variant="secondary" className="font-heading text-xs text-primary border border-primary/30">
+          <Badge key={i} variant="secondary" className="font-heading font-bold text-xs uppercase tracking-[4px] text-primary border-2 border-primary">
             {ref}
           </Badge>
         ))}

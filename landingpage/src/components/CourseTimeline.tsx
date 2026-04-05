@@ -22,21 +22,21 @@ const defaultMilestones: Milestone[] = [
 
 export const CourseTimeline: React.FC<CourseTimelineProps> = ({ milestones = defaultMilestones }) => (
   <div className="relative flex items-start justify-between gap-4">
-    <div className="absolute top-6 left-0 right-0 h-[2px] bg-border" />
+    <div className="absolute top-6 left-0 right-0 h-[4px] bg-primary" />
     {milestones.map((ms, i) => (
       <div key={i} className="relative flex flex-col items-center text-center flex-1">
         <div className={cn(
-          "size-12 rounded-sm border-2 flex items-center justify-center font-heading font-bold text-lg z-10 bg-background",
-          ms.active ? "border-primary text-primary" : "border-border text-muted-foreground"
+          "size-12 border-3 flex items-center justify-center font-propaganda text-xl z-10 bg-background",
+          ms.active ? "border-primary text-primary" : "border-foreground text-foreground"
         )}>
           {ms.week}
         </div>
         <div className="mt-3">
           <div className={cn(
-            "font-heading font-bold text-sm",
+            "font-heading font-bold text-sm uppercase tracking-[3px]",
             ms.active ? "text-primary" : "text-foreground"
           )}>{ms.label}</div>
-          <div className="font-body text-xs text-muted-foreground mt-1 max-w-[140px]">{ms.description}</div>
+          <div className="font-body text-xs text-muted-foreground mt-1 max-w-[140px] uppercase">{ms.description}</div>
         </div>
       </div>
     ))}

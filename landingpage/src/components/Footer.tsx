@@ -12,19 +12,19 @@ export const Footer: React.FC<FooterProps> = ({
   courseName = "Scientific Socialism",
   year = "2025-2026",
 }) => (
-  <footer className="bg-[hsl(var(--foreground))] text-[hsl(var(--background))] py-12 px-8">
+  <footer className="bg-black text-cream py-12 px-8 border-t-4 border-primary">
     <div className="max-w-[1200px] mx-auto">
       <div className="flex items-center justify-between">
         <div>
-          <div className="font-heading font-bold text-lg">{courseCode}</div>
-          <div className="font-body text-sm text-white/60">{courseName}</div>
+          <div className="font-propaganda text-2xl tracking-[4px] uppercase">{courseCode}</div>
+          <div className="font-body text-sm text-cream/50 uppercase tracking-wider">{courseName}</div>
         </div>
-        <div className="font-body text-sm text-white/40">
-          Nhóm 7 - HK2 {year}
+        <div className="font-heading font-bold text-sm text-cream/30 uppercase tracking-[4px]">
+          Group 7 - HK2 {year}
         </div>
       </div>
-      <Separator className="my-6 bg-white/10" />
-      <div className="font-body text-xs text-white/30 text-center">
+      <Separator className="my-6 bg-[var(--color-ds-cream)]/10 h-[2px]" />
+      <div className="font-body text-xs text-cream/20 text-center uppercase tracking-[6px]">
         University of Science - VNU-HCM
       </div>
     </div>

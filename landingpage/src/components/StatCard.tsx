@@ -9,11 +9,11 @@ type StatCardProps = {
 };
 
 export const StatCard: React.FC<StatCardProps> = ({ value, label, icon }) => (
-  <Card className={cn("chevron-corner hover:border-primary cursor-default text-center")}>
+  <Card className={cn("stamp-border-top chevron-corner hover:border-primary cursor-default text-center hover:translate-y-[-2px] transition-transform")}>
     <CardContent className="flex flex-col items-center gap-2 py-8 px-6">
       {icon && <div className="mb-1 text-primary">{icon}</div>}
-      <div className="font-heading font-bold text-[56px] leading-[1.1] text-primary">{value}</div>
-      <div className="font-heading font-semibold text-sm uppercase tracking-[3px] text-muted-foreground">{label}</div>
+      <div className="font-propaganda text-[64px] leading-[1] text-primary stamp-text">{value}</div>
+      <div className="font-heading font-bold text-xs uppercase tracking-[5px] text-muted-foreground">{label}</div>
     </CardContent>
   </Card>
 );

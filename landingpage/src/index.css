@@ -10,78 +10,88 @@
 }
 
 @theme {
-  /* Soviet Propaganda Palette — red/black/cream, no gold */
-  --color-ds-cream: #F5E6C8;
-  --color-ds-cream-dark: #E8D5B0;
-  --color-ds-ink: #111111;
-  --color-ds-ink-secondary: #333333;
-  --color-ds-ink-muted: #666666;
-  --color-ds-red: #CC0000;
-  --color-ds-red-deep: #8B0000;
-  --color-ds-red-light: #FF3333;
-  --color-ds-black: #0A0A0A;
-  --color-ds-border: #111111;
-  --color-ds-border-strong: #CC0000;
+  /* BRUTAL SOVIET PALETTE — blood, ink, dirty newsprint, military olive */
+  --color-ds-cream: #DDD5C0;         /* dirty newsprint — cold, institutional */
+  --color-ds-cream-dark: #C8BFA8;    /* aged paper stain */
+  --color-ds-ink: #000000;           /* PURE BLACK — propaganda prints in pure black */
+  --color-ds-ink-secondary: #1A1A1A;
+  --color-ds-ink-muted: #555555;
+  --color-ds-red: #990000;           /* dried blood — not fresh paint */
+  --color-ds-red-deep: #660000;      /* coagulated */
+  --color-ds-red-light: #CC1111;     /* arterial spray */
+  --color-ds-olive: #2D3A1A;         /* military olive — the OTHER communist color */
+  --color-ds-khaki: #4A4A2A;         /* army surplus */
+  --color-ds-black: #000000;
+  --color-ds-border: #000000;
+  --color-ds-border-strong: #990000;
 
   --font-propaganda: 'Propaganda', 'Impact', sans-serif;
+  --font-display-vi: 'Anton', 'Impact', sans-serif;  /* brutal + Vietnamese diacritics */
   --font-heading: 'Oswald', 'Arial Narrow', sans-serif;
   --font-body: 'Be Vietnam Pro', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
+
+  /* Tailwind font-family utilities: font-propaganda, font-display-vi, etc. */
+  --font-family-propaganda: var(--font-propaganda);
+  --font-family-display-vi: var(--font-display-vi);
+
+  /* Cream as a Tailwind color: text-cream, bg-cream, text-cream/50, etc. */
+  --color-cream: var(--color-ds-cream);
 }
 
-/* shadcn/ui semantic theme — Soviet Propaganda */
+/* shadcn/ui semantic theme — BRUTAL Soviet Propaganda */
 @custom-variant dark (&:is(.dark *));
 
 @layer base {
   :root {
-    --background: oklch(0.93 0.03 80);       /* #F5E6C8 poster cream */
-    --foreground: oklch(0.15 0 0);            /* #111111 black */
-    --card: oklch(0.95 0.025 80);             /* slightly lighter cream */
-    --card-foreground: oklch(0.15 0 0);
-    --popover: oklch(0.95 0.025 80);
-    --popover-foreground: oklch(0.15 0 0);
-    --primary: oklch(0.5 0.2 27);             /* #CC0000 Soviet red */
-    --primary-foreground: oklch(0.93 0.03 80); /* cream on red */
-    --secondary: oklch(0.15 0 0);             /* black */
-    --secondary-foreground: oklch(0.93 0.03 80); /* cream on black */
-    --muted: oklch(0.88 0.03 80);             /* darker cream */
-    --muted-foreground: oklch(0.4 0 0);       /* dark gray */
-    --accent: oklch(0.5 0.2 27);              /* red = accent too */
-    --accent-foreground: oklch(0.93 0.03 80);
-    --destructive: oklch(0.35 0.165 27);      /* deep red */
-    --border: oklch(0.15 0 0);                /* BLACK borders */
-    --input: oklch(0.15 0 0);
-    --ring: oklch(0.5 0.2 27);
-    --radius: 0px;                            /* ZERO radius. Sharp. */
-    --sidebar-background: oklch(0.15 0 0);
-    --sidebar-foreground: oklch(0.93 0.03 80);
-    --sidebar-primary: oklch(0.5 0.2 27);
-    --sidebar-primary-foreground: oklch(0.93 0.03 80);
-    --sidebar-accent: oklch(0.5 0.2 27);
-    --sidebar-accent-foreground: oklch(0.93 0.03 80);
-    --sidebar-border: oklch(0.3 0 0);
-    --sidebar-ring: oklch(0.5 0.2 27);
+    --background: oklch(0.87 0.025 85);      /* #DDD5C0 dirty newsprint */
+    --foreground: oklch(0 0 0);               /* #000000 pure black */
+    --card: oklch(0.89 0.02 85);              /* slightly lighter newsprint */
+    --card-foreground: oklch(0 0 0);
+    --popover: oklch(0.89 0.02 85);
+    --popover-foreground: oklch(0 0 0);
+    --primary: oklch(0.4 0.18 25);            /* #990000 blood red */
+    --primary-foreground: oklch(0.87 0.025 85); /* newsprint on blood */
+    --secondary: oklch(0 0 0);                /* pure black */
+    --secondary-foreground: oklch(0.87 0.025 85);
+    --muted: oklch(0.82 0.025 85);            /* stained paper */
+    --muted-foreground: oklch(0.35 0 0);      /* charcoal */
+    --accent: oklch(0.3 0.05 130);            /* military olive */
+    --accent-foreground: oklch(0.87 0.025 85);
+    --destructive: oklch(0.28 0.15 25);       /* coagulated red */
+    --border: oklch(0 0 0);                   /* PURE BLACK borders */
+    --input: oklch(0 0 0);
+    --ring: oklch(0.4 0.18 25);
+    --radius: 0px;                            /* ZERO. SHARP. NO MERCY. */
+    --sidebar-background: oklch(0 0 0);
+    --sidebar-foreground: oklch(0.87 0.025 85);
+    --sidebar-primary: oklch(0.4 0.18 25);
+    --sidebar-primary-foreground: oklch(0.87 0.025 85);
+    --sidebar-accent: oklch(0.4 0.18 25);
+    --sidebar-accent-foreground: oklch(0.87 0.025 85);
+    --sidebar-border: oklch(0.2 0 0);
+    --sidebar-ring: oklch(0.4 0.18 25);
   }
 
   .dark {
-    --background: oklch(0.15 0 0);
-    --foreground: oklch(0.93 0.03 80);
-    --card: oklch(0.18 0 0);
-    --card-foreground: oklch(0.93 0.03 80);
-    --popover: oklch(0.18 0 0);
-    --popover-foreground: oklch(0.93 0.03 80);
-    --primary: oklch(0.5 0.2 27);
-    --primary-foreground: oklch(0.93 0.03 80);
-    --secondary: oklch(0.93 0.03 80);
-    --secondary-foreground: oklch(0.15 0 0);
-    --muted: oklch(0.22 0 0);
-    --muted-foreground: oklch(0.56 0 0);
-    --accent: oklch(0.5 0.2 27);
-    --accent-foreground: oklch(0.93 0.03 80);
-    --destructive: oklch(0.35 0.165 27);
-    --border: oklch(0.3 0 0);
-    --input: oklch(0.3 0 0);
-    --ring: oklch(0.5 0.2 27);
+    --background: oklch(0.08 0 0);
+    --foreground: oklch(0.87 0.025 85);
+    --card: oklch(0.12 0 0);
+    --card-foreground: oklch(0.87 0.025 85);
+    --popover: oklch(0.12 0 0);
+    --popover-foreground: oklch(0.87 0.025 85);
+    --primary: oklch(0.4 0.18 25);
+    --primary-foreground: oklch(0.87 0.025 85);
+    --secondary: oklch(0.87 0.025 85);
+    --secondary-foreground: oklch(0 0 0);
+    --muted: oklch(0.16 0 0);
+    --muted-foreground: oklch(0.5 0 0);
+    --accent: oklch(0.3 0.05 130);
+    --accent-foreground: oklch(0.87 0.025 85);
+    --destructive: oklch(0.28 0.15 25);
+    --border: oklch(0.25 0 0);
+    --input: oklch(0.25 0 0);
+    --ring: oklch(0.4 0.18 25);
   }
 }
 
@@ -118,24 +128,33 @@
   --radius-xl: 0px;
 }
 
-/* Base */
+/* Base — dirty newsprint paper */
 body {
   font-family: var(--font-body);
   color: var(--color-ds-ink);
   background: var(--color-ds-cream);
   margin: 0;
   -webkit-font-smoothing: antialiased;
+  /* Paper fiber texture overlay */
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='400' height='400' viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.04' numOctaves='5' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper)' opacity='0.03'/%3E%3C/svg%3E");
 }
 
-/* Keyframe Animations */
+/* Keyframe Animations — harsh, mechanical */
 @keyframes slide-in {
-  from { opacity: 0; transform: translateX(-60px) skewX(5deg); }
+  from { opacity: 0; transform: translateX(-80px) skewX(8deg); }
   to { opacity: 1; transform: translateX(0) skewX(0); }
+}
+
+@keyframes slam-down {
+  0% { opacity: 0; transform: translateY(-40px) scaleY(1.3); }
+  60% { opacity: 1; transform: translateY(4px) scaleY(0.95); }
+  100% { opacity: 1; transform: translateY(0) scaleY(1); }
 }
 
 @keyframes sweep {
   from { width: 0; }
-  to { width: 80%; }
+  to { width: 100%; }
 }
 
 @keyframes fade-in {
@@ -148,22 +167,31 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Utility: Accent Line — thicker, more aggressive */
-.accent-line {
-  height: 5px;
-  background: var(--color-ds-red);
-  transform: skewX(-25deg);
-  width: 80%;
+@keyframes stamp {
+  0% { transform: scale(2) rotate(-5deg); opacity: 0; }
+  50% { transform: scale(0.95) rotate(1deg); opacity: 1; }
+  100% { transform: scale(1) rotate(-2deg); opacity: 1; }
 }
 
-/* Utility: Constructivist Frame — brutal double border */
+/* Utility: Accent Line — FULL WIDTH SLASH */
+.accent-line {
+  height: 6px;
+  background: var(--color-ds-red);
+  transform: skewX(-25deg);
+  width: 100%;
+}
+
+/* Utility: Constructivist Frame — brutal double border with ink bleed */
 .constructivist-frame {
-  border: 4px solid var(--color-ds-red);
-  box-shadow: inset 0 0 0 6px var(--color-ds-cream), inset 0 0 0 10px var(--color-ds-red);
+  border: 5px solid var(--color-ds-red);
+  box-shadow:
+    inset 0 0 0 6px var(--color-ds-cream),
+    inset 0 0 0 11px var(--color-ds-red),
+    0 0 0 2px rgba(0,0,0,0.15); /* ink bleed */
   padding: 24px;
 }
 
-/* Utility: Corner Brackets — RED not gold */
+/* Utility: Corner Brackets — RED, THICKER, always partially visible */
 .chevron-corner {
   position: relative;
 }
@@ -171,91 +199,329 @@ body {
 .chevron-corner::after {
   content: '';
   position: absolute;
-  width: 28px;
-  height: 28px;
+  width: 36px;
+  height: 36px;
   border-color: var(--color-ds-red);
   border-style: solid;
-  opacity: 0;
-  transition: opacity 150ms ease;
+  opacity: 0.3;
+  transition: opacity 100ms ease, width 100ms ease, height 100ms ease;
 }
 .chevron-corner::before {
-  top: -3px;
-  left: -3px;
-  border-width: 4px 0 0 4px;
+  top: -4px;
+  left: -4px;
+  border-width: 5px 0 0 5px;
 }
 .chevron-corner::after {
-  bottom: -3px;
-  right: -3px;
-  border-width: 0 4px 4px 0;
+  bottom: -4px;
+  right: -4px;
+  border-width: 0 5px 5px 0;
 }
 .chevron-corner:hover::before,
 .chevron-corner:hover::after {
   opacity: 1;
+  width: 48px;
+  height: 48px;
 }
 
-/* Utility: Film Grain — stronger for poster feel */
+/* Utility: Film Grain — VISIBLE, committed grime */
 .film-grain::after {
   content: '';
   position: fixed;
   inset: 0;
-  opacity: 0.04;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.10;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 9999;
+  mix-blend-mode: multiply;
+}
+
+/* Utility: Halftone dot overlay for hover states */
+.halftone-hover:hover {
+  background-image: radial-gradient(circle, var(--color-ds-red) 1px, transparent 1px);
+  background-size: 6px 6px;
+}
+
+/* Utility: Stamp text — letterpress/embossed effect */
+.stamp-text {
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.25), -1px -1px 0 rgba(0,0,0,0.08);
+  -webkit-text-stroke: 0.5px rgba(0,0,0,0.15);
+}
+
+/* Utility: Thick top border — official document stamp mark */
+.stamp-border-top {
+  border-top: 8px solid var(--color-ds-red) !important;
+}
+
+/* Utility: Diagonal slash section background */
+.diagonal-slash {
+  position: relative;
+}
+.diagonal-slash::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-ds-red);
+  clip-path: polygon(0 0, 100% 0, 100% 6px, 0 6px);
+  z-index: 1;
+}
+.diagonal-slash::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--color-ds-red);
+  z-index: 1;
+}
+
+/* Utility: Oversized background number */
+.bg-number {
+  position: relative;
+}
+.bg-number::before {
+  content: attr(data-number);
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  font-family: var(--font-propaganda);
+  font-size: 200px;
+  line-height: 1;
+  color: var(--color-ds-red);
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Utility: Soviet star watermark */
+.star-watermark {
+  position: relative;
+  overflow: hidden;
+}
+.star-watermark::before {
+  content: '★';
+  position: absolute;
+  font-size: 500px;
+  color: var(--color-ds-red);
+  opacity: 0.04;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+  line-height: 1;
 }
 
 /* Stagger animation delays */
 .stagger-1 { animation-delay: 0ms; }
-.stagger-2 { animation-delay: 80ms; }
-.stagger-3 { animation-delay: 160ms; }
-.stagger-4 { animation-delay: 240ms; }
-.stagger-5 { animation-delay: 320ms; }
-.stagger-6 { animation-delay: 400ms; }
-.stagger-7 { animation-delay: 480ms; }
+.stagger-2 { animation-delay: 60ms; }
+.stagger-3 { animation-delay: 120ms; }
+.stagger-4 { animation-delay: 180ms; }
+.stagger-5 { animation-delay: 240ms; }
+.stagger-6 { animation-delay: 300ms; }
+.stagger-7 { animation-delay: 360ms; }
 
-/* Section label — Propaganda font, RED, ALL-CAPS, screaming */
+/* Section label — Propaganda font, BLOOD RED, ALL-CAPS, SCREAMING */
 .section-label {
   font-family: var(--font-propaganda);
   text-transform: uppercase;
-  letter-spacing: 6px;
+  letter-spacing: 10px;
   color: var(--color-ds-red);
 }
 
-/* Display typography — Propaganda font, brutal */
+/* Display typography — Propaganda font, STAMPED INTO PAPER */
 .display-text {
   font-family: var(--font-propaganda);
   color: var(--color-ds-ink);
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: -1px;
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+  -webkit-text-stroke: 0.5px rgba(0,0,0,0.1);
 }
 
-/* Red banner section — full red background with cream text */
+/* Red banner section — BLOOD background with institutional text */
 .red-banner {
   background: var(--color-ds-red);
   color: var(--color-ds-cream);
+  position: relative;
 }
-.red-banner .display-text { color: var(--color-ds-cream); }
+.red-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 40px,
+    rgba(0,0,0,0.03) 40px,
+    rgba(0,0,0,0.03) 42px
+  );
+  pointer-events: none;
+}
+.red-banner .display-text { color: var(--color-ds-cream); text-shadow: 2px 2px 0 rgba(0,0,0,0.3); }
 .red-banner .section-label { color: var(--color-ds-cream); }
 
-/* Black banner section */
+/* Black banner section — pure void */
 .black-banner {
   background: var(--color-ds-black);
   color: var(--color-ds-cream);
 }
 
-/* MarkdownRenderer styles */
-.markdown-content h1 { font-family: var(--font-propaganda); font-size: 42px; line-height: 1.1; color: var(--color-ds-ink); margin: 32px 0 16px; text-transform: uppercase; }
-.markdown-content h2 { font-family: var(--font-heading); font-weight: 700; font-size: 32px; line-height: 1.2; color: var(--color-ds-ink); margin: 28px 0 12px; text-transform: uppercase; }
-.markdown-content h3 { font-family: var(--font-heading); font-weight: 600; font-size: 24px; line-height: 1.3; color: var(--color-ds-ink-secondary); margin: 24px 0 8px; }
+/* Olive banner section — military */
+.olive-banner {
+  background: var(--color-ds-olive);
+  color: var(--color-ds-cream);
+}
+
+/* Section divider — THICK RED SLASH */
+.section-slash {
+  height: 8px;
+  background: var(--color-ds-red);
+  margin: 0;
+  border: none;
+}
+
+/* Heading styles — ALL CAPS EVERYTHING */
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SCROLL REVEAL ANIMATIONS — mechanical, authoritative
+   Elements start hidden, get .revealed class from IntersectionObserver
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Hard stop easing — no gentle ease-in-out */
+:root {
+  --ease-slam: cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+/* SLAM — stamp hitting paper */
+.anim-slam {
+  opacity: 0;
+  transform: scale(1.3);
+}
+.anim-slam.revealed {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 250ms var(--ease-slam), transform 250ms var(--ease-slam);
+}
+
+/* SLIDE-IN — constructivist diagonal from left */
+.anim-slide {
+  opacity: 0;
+  transform: translateX(-60px) skewX(5deg);
+}
+.anim-slide.revealed {
+  opacity: 1;
+  transform: translateX(0) skewX(0);
+  transition: opacity 300ms var(--ease-slam), transform 300ms var(--ease-slam);
+}
+
+/* HARD CUT — binary, just appears */
+.anim-cut {
+  opacity: 0;
+}
+.anim-cut.revealed {
+  opacity: 1;
+  transition: opacity 100ms linear;
+}
+
+/* SWEEP — accent line draws left to right */
+.anim-sweep {
+  width: 0 !important;
+}
+.anim-sweep.revealed {
+  width: 100% !important;
+  transition: width 400ms var(--ease-slam);
+}
+
+/* MARCH — container that staggers its children */
+.anim-march > * {
+  opacity: 0;
+  transform: scale(1.15) translateX(-20px);
+}
+.anim-march.revealed > * {
+  opacity: 1;
+  transform: scale(1) translateX(0);
+  transition: opacity 200ms var(--ease-slam), transform 200ms var(--ease-slam);
+}
+.anim-march.revealed > *:nth-child(1) { transition-delay: 0ms; }
+.anim-march.revealed > *:nth-child(2) { transition-delay: 60ms; }
+.anim-march.revealed > *:nth-child(3) { transition-delay: 120ms; }
+.anim-march.revealed > *:nth-child(4) { transition-delay: 180ms; }
+.anim-march.revealed > *:nth-child(5) { transition-delay: 240ms; }
+.anim-march.revealed > *:nth-child(6) { transition-delay: 300ms; }
+.anim-march.revealed > *:nth-child(7) { transition-delay: 360ms; }
+.anim-march.revealed > *:nth-child(8) { transition-delay: 420ms; }
+.anim-march.revealed > *:nth-child(9) { transition-delay: 480ms; }
+
+/* MARCH-DEEP — for grid wrappers (ChapterNav, MemberGrid, ResourceLibrary) */
+.anim-march-deep > * > * {
+  opacity: 0;
+  transform: scale(1.15) translateX(-20px);
+}
+.anim-march-deep.revealed > * > * {
+  opacity: 1;
+  transform: scale(1) translateX(0);
+  transition: opacity 200ms var(--ease-slam), transform 200ms var(--ease-slam);
+}
+.anim-march-deep.revealed > * > *:nth-child(1) { transition-delay: 0ms; }
+.anim-march-deep.revealed > * > *:nth-child(2) { transition-delay: 60ms; }
+.anim-march-deep.revealed > * > *:nth-child(3) { transition-delay: 120ms; }
+.anim-march-deep.revealed > * > *:nth-child(4) { transition-delay: 180ms; }
+.anim-march-deep.revealed > * > *:nth-child(5) { transition-delay: 240ms; }
+.anim-march-deep.revealed > * > *:nth-child(6) { transition-delay: 300ms; }
+.anim-march-deep.revealed > * > *:nth-child(7) { transition-delay: 360ms; }
+.anim-march-deep.revealed > * > *:nth-child(8) { transition-delay: 420ms; }
+.anim-march-deep.revealed > * > *:nth-child(9) { transition-delay: 480ms; }
+
+/* SECTION CHOREOGRAPHY — orchestrates label → line → title → content */
+.anim-section .section-label {
+  opacity: 0;
+  transform: translateX(-40px) skewX(3deg);
+}
+.anim-section .accent-line {
+  width: 0 !important;
+}
+.anim-section .display-text {
+  opacity: 0;
+  transform: scale(1.2);
+}
+.anim-section.revealed .section-label {
+  opacity: 1;
+  transform: translateX(0) skewX(0);
+  transition: opacity 250ms var(--ease-slam), transform 250ms var(--ease-slam);
+  transition-delay: 0ms;
+}
+.anim-section.revealed .accent-line {
+  width: 100% !important;
+  transition: width 350ms var(--ease-slam);
+  transition-delay: 100ms;
+}
+.anim-section.revealed .display-text {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 250ms var(--ease-slam), transform 250ms var(--ease-slam);
+  transition-delay: 200ms;
+}
+
+/* MarkdownRenderer styles — brutal typesetting */
+.markdown-content h1 { font-family: var(--font-propaganda); font-size: 42px; line-height: 1.1; color: var(--color-ds-ink); margin: 32px 0 16px; text-transform: uppercase; text-shadow: 2px 2px 0 rgba(0,0,0,0.15); }
+.markdown-content h2 { font-family: var(--font-heading); font-weight: 700; font-size: 32px; line-height: 1.2; color: var(--color-ds-ink); margin: 28px 0 12px; text-transform: uppercase; letter-spacing: 3px; }
+.markdown-content h3 { font-family: var(--font-heading); font-weight: 600; font-size: 24px; line-height: 1.3; color: var(--color-ds-ink-secondary); margin: 24px 0 8px; text-transform: uppercase; }
 .markdown-content p { margin: 0 0 16px; }
 .markdown-content ul, .markdown-content ol { padding-left: 24px; margin: 0 0 16px; }
 .markdown-content li { margin-bottom: 6px; }
 .markdown-content strong { font-weight: 700; color: var(--color-ds-red); }
-.markdown-content blockquote { border-left: 5px solid var(--color-ds-red); padding: 12px 20px; margin: 16px 0; background: rgba(204,0,0,0.08); }
-.markdown-content code { font-family: var(--font-mono); font-size: 14px; background: var(--color-ds-cream-dark); padding: 2px 6px; }
+.markdown-content blockquote { border-left: 6px solid var(--color-ds-red); padding: 12px 20px; margin: 16px 0; background: rgba(153,0,0,0.08); }
+.markdown-content code { font-family: var(--font-mono); font-size: 14px; background: var(--color-ds-cream-dark); padding: 2px 6px; border: 1px solid rgba(0,0,0,0.1); }
 .markdown-content table { width: 100%; border-collapse: collapse; margin: 16px 0; }
-.markdown-content th { font-family: var(--font-heading); font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; text-align: left; padding: 8px 12px; border-bottom: 3px solid var(--color-ds-red); color: var(--color-ds-ink); }
-.markdown-content td { padding: 8px 12px; border-bottom: 1px solid var(--color-ds-ink); }
-.markdown-content hr { border: none; height: 3px; background: var(--color-ds-red); margin: 32px 0; }
-.markdown-content a { color: var(--color-ds-red); text-decoration: none; border-bottom: 2px solid var(--color-ds-red); }
-.markdown-content a:hover { background: rgba(204,0,0,0.1); }
+.markdown-content th { font-family: var(--font-heading); font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 3px; text-align: left; padding: 8px 12px; border-bottom: 4px solid var(--color-ds-red); color: var(--color-ds-ink); }
+.markdown-content td { padding: 8px 12px; border-bottom: 2px solid var(--color-ds-ink); }
+.markdown-content hr { border: none; height: 6px; background: var(--color-ds-red); margin: 32px 0; }
+.markdown-content a { color: var(--color-ds-red); text-decoration: none; border-bottom: 3px solid var(--color-ds-red); font-weight: 700; }
+.markdown-content a:hover { background: rgba(153,0,0,0.12); }

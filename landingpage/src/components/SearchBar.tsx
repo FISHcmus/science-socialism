@@ -12,7 +12,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({ placeholder = "Search...",
 
   return (
     <div className="relative">
-      <SearchIcon size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+      <SearchIcon size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-primary" />
       <Input
         value={query}
         onChange={(e) => {
@@ -20,7 +20,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({ placeholder = "Search...",
           onSearch?.(e.target.value);
         }}
         placeholder={placeholder}
-        className="pl-10 border-0 border-b border-border rounded-none bg-transparent focus:border-primary font-body"
+        className="pl-10 border-0 border-b-3 border-black rounded-none bg-transparent focus:border-primary font-heading font-bold uppercase tracking-wider"
       />
     </div>
   );
