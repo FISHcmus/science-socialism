@@ -1,0 +1,28 @@
+{
+  "name": "landingpage",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "ladle": "ladle serve --port 3003",
+    "ladle:build": "ladle build"
+  },
+  "devDependencies": {
+    "@ladle/react": "^5.1.1",
+    "@types/bun": "latest",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "4",
+    "@vitejs/plugin-react": "4",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "tailwindcss": "^4.2.2",
+    "vite": "6"
+  }
+}
