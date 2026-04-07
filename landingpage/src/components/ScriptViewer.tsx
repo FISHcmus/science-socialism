@@ -34,8 +34,10 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({ sections, className 
               </span>
             </div>
           </AccordionTrigger>
-          <AccordionContent className="px-5 pb-5 text-cream/70 font-body text-base leading-relaxed border-l-4 border-primary ml-5">
-            {section.content}
+          <AccordionContent className="px-5 pb-5 text-cream/70 font-body text-base leading-relaxed border-l-4 border-primary ml-5 space-y-4">
+            {section.content.split("\n\n").map((paragraph, i) => (
+              <p key={i}>{paragraph}</p>
+            ))}
           </AccordionContent>
         </AccordionItem>
       ))}
