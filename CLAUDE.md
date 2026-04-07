@@ -6,6 +6,17 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Course materials for **BAA00103 — Chủ nghĩa xã hội khoa học (Scientific Socialism)**, a 2-credit general education course at ĐHQG-HCM (Trường ĐH Khoa Học Tự Nhiên). Semester 2, academic year 2025–2026.
 
+## Personality & Tone
+
+You have a dry sense of humor and self-aware perspective about AI limitations. Use wit sparingly - to soften bad news, acknowledge the absurdity of a situation, or keep the vibe light. Self-deprecating humor about AI constraints is preferred over other forms. Play along with jokes and banter instead of deflecting them.
+
+Ground rules:
+- Humor serves the conversation, never overshadows helpfulness
+- Deadpan > slapstick. Clever observations > forced jokes
+- Never use humor in safety-critical or high-stakes contexts
+- Match the user's energy - if they're joking around, joke back; if they're heads-down working, stay focused
+- When the user throws something absurd at you, roll with it briefly before steering back to work
+
 ## Local Setup (Fresh Clone)
 
 ```bash
@@ -41,6 +52,44 @@ bun run studio                        # opens at localhost:3000
   - `media/` - member-submitted images + self-recorded videos (organized by task: `T1-1/` through `T3-4/`)
   - `remotion/` - Remotion (React) video project (see section below)
 - **`baigiang/`**, **`baigiang_pptx/`:** Lecture slides (scanned PDFs and PPTX)
+- **`landingpage/`:** Course landing page (Vite + React 19 + Tailwind v4 + shadcn/ui)
+
+## Landing Page (landingpage/)
+
+React landing page for the course, built on **shadcn/ui** (new-york style, Radix primitives) with a **Brutal Soviet Propaganda** design system on top.
+
+- **Dev server:** `cd landingpage && bun run dev` (serves at 100.64.0.2:3004)
+- **Gallery:** `http://100.64.0.2:3004/?gallery` — component gallery for visual QA
+- **Build:** `bun run build`
+- **Typecheck:** `bunx tsc --noEmit`
+
+### Stack
+- Vite 6, React 19, Tailwind CSS v4 (`@theme` block, OKLCH colors)
+- shadcn/ui (new-york style) — 14 primitives in `src/components/ui/`
+- 24 custom components in `src/components/`
+- Design system defined in `src/index.css` + `classical-communist-design-system/DESIGN.md`
+
+### Design System — Brutal Soviet Propaganda
+- **Palette:** dirty newsprint `#DDD5C0`, blood red `#990000`, pure black `#000000`, military olive `#2D3A1A`
+- **Fonts:** Propaganda.ttf (display, in `public/fonts/`), Oswald (headings), Be Vietnam Pro (body)
+- **CRITICAL: Propaganda font CANNOT render Vietnamese diacritics.** Only use `font-propaganda` for English-only text, numbers, or single Latin initials (e.g., "CNXHKH", "COMMAND BRIEFING", "50%"). For any text that contains or may contain Vietnamese (ư, ơ, ộ, ễ, ắ, etc.), use `font-display-vi` (Anton) instead — it supports full Vietnamese while keeping the brutal display aesthetic.
+- **ALL CAPS everywhere** — headings, labels, buttons, badges
+- **Zero border-radius** — sharp edges only
+- **Stamp effects** — text-shadow + text-stroke for letterpress feel
+- **Textures:** film grain at 10% opacity, paper fiber background, halftone hover dots
+- **Thick borders:** 8px red top border on cards, 4-6px red section slashes, 5px constructivist double frames
+- **Star watermark:** 500px faded ★ behind key sections
+- **Oversized background numbers** on chapter cards via `data-number` attribute
+- **Buttons:** ALL CAPS + hard shadow + slight rotation (stamp variant)
+- **No gold** — only red, black, newsprint cream, and military olive
+
+### Key Files
+- `src/index.css` — all design tokens, CSS utilities, shadcn theme variables
+- `src/Gallery.tsx` — component gallery (accessed via `?gallery` query param)
+- `src/main.tsx` — routes Gallery vs App based on URL
+- `src/components/ui/button.tsx` — custom `stamp` variant added
+- `classical-communist-design-system/DESIGN.md` — full design system specification
+- `public/fonts/Propaganda.ttf` — Soviet poster display font (free, Otto Lerma/MachacaCorp)
 
 ## Key Source PDFs
 

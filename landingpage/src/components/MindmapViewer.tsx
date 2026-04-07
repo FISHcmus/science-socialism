@@ -4,6 +4,7 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
+  DialogDescription,
 } from "@/components/ui/dialog";
 import { MindmapFlow } from "./MindmapFlow";
 import { chapterOutlines } from "@/data/chapterOutlines";
@@ -22,6 +23,7 @@ export const MindmapViewer: React.FC<MindmapViewerProps> = ({ title, chapterNumb
       <DialogContent className="max-w-6xl max-h-[90vh] overflow-hidden border-3 border-primary p-4">
         <DialogHeader>
           <DialogTitle className="font-display-vi font-bold text-2xl text-foreground uppercase">{title}</DialogTitle>
+          <DialogDescription className="sr-only">Mindmap for chapter {chapterNumber}</DialogDescription>
         </DialogHeader>
         {tree ? (
           <MindmapFlow tree={tree} />

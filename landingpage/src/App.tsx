@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar } from "./components/Navbar";
 import { HeroSection } from "./components/HeroSection";
 import { StatCard } from "./components/StatCard";
@@ -21,7 +21,12 @@ import { CallToAction } from "./components/CallToAction";
 import { Footer } from "./components/Footer";
 import { MindmapViewer, useMindmapViewer } from "./components/MindmapViewer";
 import { BookIcon, PeopleIcon, PlayIcon, StarIcon } from "./components/icons";
+import { Button } from "./components/ui/button";
+import { MindmapFlow } from "./components/MindmapFlow";
+import { chapter6Detailed } from "./data/chapter6Detailed";
 import { useScrollReveal } from "./hooks/useScrollReveal";
+import { CommandSheet } from "./components/CommandSheet";
+
 
 /* ─── Chapter Data ────────────────────────────────────────────── */
 
@@ -53,20 +58,46 @@ const scriptSections = [
 /* ─── Members ────────────────────────────────────────────��────── */
 
 const members = [
-  { name: "Nguyễn Hữu Thiện Nhân", role: "Nhóm trưởng", task: "T3-4" },
-  { name: "Bùi Huỳnh Nhi", role: "Thành viên", task: "T2-1" },
-  { name: "Đào Thục Nhi", role: "Thành viên", task: "T1-1" },
-  { name: "Nguyễn Hồng Châu Nhi", role: "Thành viên", task: "T1-2" },
-  { name: "Trần Thị Phụng Nhi", role: "Thành viên", task: "T1-3" },
-  { name: "Hoàng Thị Tố Như", role: "Thành viên", task: "T3-2" },
-  { name: "Nguyễn Đình Ý Như", role: "Thành viên", task: "T3-3" },
-  { name: "Nguyễn Phạm Quỳnh Như", role: "Thành viên", task: "T3-1" },
-  { name: "Ngô Văn Phú", role: "Thành viên", task: "T2-2" },
+  { name: "Nguyễn Hữu Thiện Nhân", role: "Nhóm trưởng", task: "T3-4", description: "Kết luận & sản xuất video", photoUrl: "/avatars/nhan.webp", leader: true },
+  { name: "Bùi Huỳnh Nhi", role: "Thành viên", task: "T2-1", description: "Thực tiễn đại đoàn kết VN" },
+  { name: "Đào Thục Nhi", role: "Thành viên", task: "T1-1", description: "Cương lĩnh dân tộc Mác-Lênin" },
+  { name: "Nguyễn Hồng Châu Nhi", role: "Thành viên", task: "T1-2", description: "Đặc trưng dân tộc Việt Nam" },
+  { name: "Trần Thị Phụng Nhi", role: "Thành viên", task: "T1-3", description: "Tư tưởng HCM về đoàn kết" },
+  { name: "Hoàng Thị Tố Như", role: "Thành viên", task: "T3-2", description: "SV trong hoạt động thực tiễn" },
+  { name: "Nguyễn Đình Ý Như", role: "Thành viên", task: "T3-3", description: "SV bảo vệ đoàn kết dân tộc" },
+  { name: "Nguyễn Phạm Quỳnh Như", role: "Thành viên", task: "T3-1", description: "SV trong học tập & nghiên cứu" },
+  { name: "Ngô Văn Phú", role: "Thành viên", task: "T2-2", description: "Thành tựu & hạn chế thực tiễn" },
 ];
 
 /* ─── App ─────────��──────────────────────��────────────────────── */
 
 export const App: React.FC = () => {
+  const [commandSheetOpen, setCommandSheetOpen] = useState(false);
+
+  // Handle browser back/forward for hash navigation
+  useEffect(() => {
+    const handlePopState = () => {
+      const hash = window.location.hash.slice(1);
+      if (hash) {
+        document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
+      }
+    };
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
+  // Global Ctrl+K shortcut for Command Sheet
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        setCommandSheetOpen((prev) => !prev);
+      }
+    };
+    document.addEventListener("keydown", handleKey);
+    return () => document.removeEventListener("keydown", handleKey);
+  }, []);
+
   const mindmap = useMindmapViewer();
   const statsRef = useScrollReveal();
   const chaptersRef = useScrollReveal();
@@ -88,20 +119,25 @@ export const App: React.FC = () => {
   const ctaRef = useScrollReveal();
 
   const scrollTo = (id: string) => {
+    history.pushState(null, "", `#${id}`);
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <div className="min-h-screen bg-background text-foreground film-grain">
       {/* ── Navbar ──────────────────────────────────────────── */}
-      <Navbar items={[
-        { label: "Content", href: "#chapters" },
-        { label: "Video", href: "#video" },
-        { label: "Team", href: "#team" },
-        { label: "Resources", href: "#resources" },
-      ]} />
+      <Navbar
+        items={[
+          { label: "Content", href: "#chapters" },
+          { label: "Video", href: "#video" },
+          { label: "Team", href: "#team" },
+          { label: "Resources", href: "#resources" },
+        ]}
+        onCommandSheet={() => setCommandSheetOpen(true)}
+      />
 
       {/* ── Section 1: Hero (no scroll anim — visible on load) */}
+      <div id="hero">
       <HeroSection
         courseCode="BAA00103"
         title="Scientific Socialism"
@@ -110,9 +146,10 @@ export const App: React.FC = () => {
         onWatchVideo={() => scrollTo("video")}
         onResources={() => scrollTo("resources")}
       />
+      </div>
 
       {/* ── Section 2: Stats ───────────────────────────────── */}
-      <section className="py-16 px-8 bg-background">
+      <section id="stats" className="py-16 px-8 bg-background">
         <div ref={statsRef} className="max-w-[1200px] mx-auto grid grid-cols-2 lg:grid-cols-4 gap-4 anim-march">
           <StatCard value="7" label="Chapters" icon={<BookIcon size={24} />} />
           <StatCard value="9" label="Members" icon={<PeopleIcon size={24} />} />
@@ -146,7 +183,7 @@ export const App: React.FC = () => {
 
       {/* ── Section 4: Objectives + Assessment ─────────────── */}
       <SectionDivider variant="ornament" className="max-w-[1200px] mx-auto" />
-      <section className="py-16 px-8 bg-background">
+      <section id="objectives" className="py-16 px-8 bg-background">
         <div className="max-w-[1200px] mx-auto">
           <div ref={objectivesRef} className="anim-section">
             <SectionHeader label="Part 02" title="Objectives & Assessment" />
@@ -168,7 +205,7 @@ export const App: React.FC = () => {
 
       {/* ── Section 5: Timeline ────────────────────────────── */}
       <SectionDivider variant="ornament" className="max-w-[1200px] mx-auto" />
-      <section className="py-16 px-8 bg-background">
+      <section id="timeline" className="py-16 px-8 bg-background">
         <div className="max-w-[1200px] mx-auto">
           <div ref={timelineRef} className="anim-section">
             <SectionHeader label="Part 03" title="Schedule" />
@@ -186,7 +223,7 @@ export const App: React.FC = () => {
 
       {/* ── Section 6: Exercise ────────────────────────────── */}
       <SectionDivider variant="ornament" className="max-w-[1200px] mx-auto" />
-      <section className="py-16 px-8 bg-background">
+      <section id="exercise" className="py-16 px-8 bg-background">
         <div className="max-w-[1200px] mx-auto">
           <div ref={exerciseRef} className="anim-section">
             <SectionHeader label="Part 04" title="Topic Analysis" />
@@ -201,6 +238,23 @@ export const App: React.FC = () => {
               ]}
             />
           </div>
+        </div>
+      </section>
+
+      {/* ── Section 6.5: Chapter 6 Mindmap ───────────────── */}
+      <SectionDivider variant="ornament" className="max-w-[1200px] mx-auto" />
+      <section id="mindmap-ch6" className="py-16 px-8 bg-background">
+        <div className="max-w-[1200px] mx-auto">
+          <SectionHeader label="Chương 6" title="Dân tộc và tôn giáo — Mindmap" />
+          <p className="font-body text-sm text-muted-foreground uppercase tracking-wider mb-6 max-w-2xl">
+            Sơ đồ tư duy chương 6: Vấn đề dân tộc và tôn giáo trong thời kỳ quá độ lên CNXH — nền tảng lý luận cho chủ đề thuyết trình nhóm 7.
+          </p>
+          <div className="border-3 border-primary" style={{ height: 600 }}>
+            <MindmapFlow tree={chapter6Detailed} layout="radial" />
+          </div>
+          <a href="/mindmap/6" target="_blank" className="inline-block mt-4">
+            <Button variant="outline" size="lg">Open Fullscreen</Button>
+          </a>
         </div>
       </section>
 
@@ -241,8 +295,15 @@ export const App: React.FC = () => {
             <SectionHeader label="Part 06" title="Group 7" />
           </div>
           <div ref={teamGridRef} className="anim-march-deep">
+            {/* Leader portrait */}
+            <div className="max-w-2xl mx-auto mb-8">
+              {members.filter((m) => m.leader).map((m) => (
+                <MemberCard key={m.name} {...m} />
+              ))}
+            </div>
+            {/* Members grid */}
             <MemberGrid>
-              {members.map((m) => (
+              {members.filter((m) => !m.leader).map((m) => (
                 <MemberCard key={m.name} {...m} />
               ))}
             </MemberGrid>
@@ -252,7 +313,7 @@ export const App: React.FC = () => {
 
       {/* ── Section 9: Discussion ──────────────────────────── */}
       <SectionDivider variant="ornament" className="max-w-[1200px] mx-auto" />
-      <section className="py-16 px-8 bg-background">
+      <section id="discussion" className="py-16 px-8 bg-background">
         <div className="max-w-[1200px] mx-auto">
           <div ref={discussionRef} className="anim-section">
             <SectionHeader label="Part 07" title="Discussion" />
@@ -305,7 +366,7 @@ export const App: React.FC = () => {
       </section>
 
       {/* ── Section 11: Call to Action ─────────────────────── */}
-      <div ref={ctaRef} className="anim-slam">
+      <div id="cta" ref={ctaRef} className="anim-slam">
         <CallToAction
           title="Start Learning Now"
           description="Access course materials and join group discussions"
@@ -317,11 +378,16 @@ export const App: React.FC = () => {
       </div>
 
       {/* ── Section 12: Footer ─────────────────────────────── */}
+      <div id="footer">
       <Footer
         courseCode="BAA00103"
         courseName="Scientific Socialism"
         year="2025-2026"
       />
+      </div>
+
+      {/* ── Command Sheet ─────────────────────────────────── */}
+      <CommandSheet open={commandSheetOpen} onOpenChange={setCommandSheetOpen} />
 
       {/* ── Mindmap Dialog ─────────────────────────────────── */}
       <MindmapViewer

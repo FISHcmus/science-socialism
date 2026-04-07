@@ -28,7 +28,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     <div className="relative z-10 max-w-[1200px] mx-auto">
       <span className="section-label text-sm tracking-[12px]">{courseCode}</span>
       <div className="accent-line my-4 w-full animate-[sweep_0.8s_ease-out_forwards]" />
-      <h1 className="display-text text-[88px] leading-[0.95] mb-4 animate-[slam-down_0.5s_ease-out] stamp-text tracking-[-2px]">
+      <h1 className="display-text text-[40px] sm:text-[56px] md:text-[72px] lg:text-[88px] leading-[0.95] mb-4 animate-[slam-down_0.5s_ease-out] stamp-text tracking-[-2px]">
         {title}
       </h1>
       <p className="font-body text-xl leading-relaxed text-muted-foreground max-w-2xl mb-2 uppercase tracking-wider">
