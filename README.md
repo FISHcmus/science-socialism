@@ -16,7 +16,7 @@ The entire video is code. No After Effects, no Premiere — just TypeScript. [Re
 
 <div align="center">
   <a href="https://www.youtube.com/watch?v=GT7FYuN6Sc0">
-    <img src="https://img.youtube.com/vi/GT7FYuN6Sc0/maxresdefault.jpg" alt="Watch on YouTube" width="720" />
+    <img src="https://img.youtube.com/vi/GT7FYuN6Sc0/hqdefault.jpg" alt="Watch on YouTube" width="720" />
   </a>
   <p><em>Watch the full 15-minute presentation on YouTube</em></p>
 </div>
