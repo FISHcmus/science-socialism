@@ -4,7 +4,7 @@
 
 **Topic:** Xây dựng khối đại đoàn kết toàn dân tộc (Building national unity)
 
-**Live site:** [cnxhkh.fishcmus.io.vn](https://cnxhkh.fishcmus.io.vn) | **Video:** [YouTube](https://www.youtube.com/watch?v=GT7FYuN6Sc0)
+**Live site:** [cnxhkh.fishcmus.io.vn](https://cnxhkh.fishcmus.io.vn)
 
 ---
 
@@ -14,7 +14,12 @@ This isn't a typical "upload slides and call it a day" university project. We bu
 
 The entire video is code. No After Effects, no Premiere — just TypeScript. [Remotion](https://remotion.dev) turns React components into frames and renders them into a final MP4.
 
-![Video title card with 3D mesh background and Vietnam map](docs/screenshot-video-title.jpg)
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=GT7FYuN6Sc0">
+    <img src="https://img.youtube.com/vi/GT7FYuN6Sc0/maxresdefault.jpg" alt="Watch on YouTube" width="720" />
+  </a>
+  <p><em>Watch the full 15-minute presentation on YouTube</em></p>
+</div>
 
 ![Section with member PiP overlay, content cards, and citations](docs/screenshot-video-content.jpg)
 
