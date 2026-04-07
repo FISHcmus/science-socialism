@@ -105,7 +105,7 @@ export const Gallery: React.FC = () => {
 
       {/* HeroSection */}
       <Section title="HeroSection">
-        <HeroSection onWatchVideo={() => alert("Video")} onResources={() => alert("Resources")} />
+        <HeroSection />
       </Section>
 
       {/* StatCard */}
@@ -172,7 +172,7 @@ export const Gallery: React.FC = () => {
 
       {/* TheaterEmbed */}
       <Section title="TheaterEmbed" olive>
-        <TheaterEmbed src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Demo" />
+        <TheaterEmbed videoId="dQw4w9WgXcQ" title="Demo" />
       </Section>
 
       {/* ScriptViewer */}

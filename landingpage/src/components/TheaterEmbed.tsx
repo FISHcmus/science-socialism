@@ -1,33 +1,56 @@
-import React from "react";
-import { cn } from "@/lib/utils";
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
 
 type TheaterEmbedProps = {
-  src: string;
+  videoId: string;
   title?: string;
-  aspectRatio?: string;
-  className?: string;
 };
 
 export const TheaterEmbed: React.FC<TheaterEmbedProps> = ({
-  src,
+  videoId,
   title = "Video",
-  aspectRatio = "16/9",
-  className,
-}) => (
-  <section className={cn("bg-black py-16 px-8", className)}>
-    <div className="max-w-[1200px] mx-auto">
-      <div
-        className="relative w-full border-4 border-primary overflow-hidden"
-        style={{ aspectRatio }}
-      >
+}) => {
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <div
+      className="relative w-full border-4 border-primary overflow-hidden"
+      style={{ aspectRatio: "16/9" }}
+    >
+      {loaded ? (
         <iframe
-          src={src}
+          src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
           title={title}
           className="absolute inset-0 w-full h-full"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         />
-      </div>
+      ) : (
+        <button
+          onClick={() => setLoaded(true)}
+          className="absolute inset-0 w-full h-full cursor-pointer group"
+          aria-label={`Play ${title}`}
+        >
+          <Image
+            src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+            alt={title}
+            fill
+            className="object-cover"
+            unoptimized
+          />
+          <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/60 transition-colors">
+            <svg className="w-20 h-20" viewBox="0 0 68 48">
+              <path
+                d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z"
+                fill="#CC0000"
+              />
+              <path d="M45 24L27 14v20" fill="white" />
+            </svg>
+          </div>
+        </button>
+      )}
     </div>
-  </section>
-);
+  );
+};

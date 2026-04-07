@@ -1,13 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* Propaganda font — Soviet poster display type */
-@font-face {
-  font-family: 'Propaganda';
-  src: url('/fonts/Propaganda.ttf') format('truetype');
-  font-weight: 700;
-  font-display: swap;
-}
 
 @theme {
   /* BRUTAL SOVIET PALETTE — blood, ink, dirty newsprint, military olive */

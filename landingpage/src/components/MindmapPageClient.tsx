@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { MindmapFlow } from "@/components/MindmapFlow";
 import { chapterOutlines } from "@/data/chapterOutlines";

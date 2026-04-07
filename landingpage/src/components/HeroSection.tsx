@@ -6,8 +6,6 @@ type HeroSectionProps = {
   title?: string;
   subtitle?: string;
   semester?: string;
-  onWatchVideo?: () => void;
-  onResources?: () => void;
 };
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
@@ -15,13 +13,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   title = "Scientific Socialism",
   subtitle = "University of Science - VNU-HCM",
   semester = "Semester 2, 2025-2026",
-  onWatchVideo,
-  onResources,
 }) => (
   <section className="relative py-28 px-8 overflow-hidden bg-background star-watermark">
-    {/* Diagonal red slash across top */}
     <div className="absolute top-0 left-0 right-0 h-2 bg-primary" />
-    {/* Oversized background text */}
     <div className="absolute top-[-40px] right-[-20px] font-propaganda text-[280px] leading-none text-primary/[0.04] uppercase pointer-events-none select-none z-0">
       CNXH
     </div>
@@ -38,19 +32,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         {semester}
       </p>
       <div className="flex gap-4">
-        {onWatchVideo && (
-          <Button size="lg" onClick={onWatchVideo}>
-            Watch Video
-          </Button>
-        )}
-        {onResources && (
-          <Button variant="stamp" size="lg" onClick={onResources}>
-            Resources
-          </Button>
-        )}
+        <a href="#video">
+          <Button size="lg">Watch Video</Button>
+        </a>
+        <a href="#resources">
+          <Button variant="stamp" size="lg">Resources</Button>
+        </a>
       </div>
     </div>
-    {/* Bottom red slash */}
     <div className="absolute bottom-0 left-0 right-0 h-2 bg-primary" />
   </section>
 );
