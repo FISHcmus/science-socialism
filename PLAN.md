@@ -46,11 +46,9 @@ All 8 sections currently look identical (same card stack, same animations, same 
 
 ### Implementation approach
 Each section rewrite:
-1. Read current body via `mcp__serena__jet_brains_find_symbol`
+1. Read the current component body
 2. Rewrite with new layout/transitions, keeping content and media paths
-3. Replace via `mcp__serena__replace_symbol_body`
-4. Fix duplicate `export const` issue after replace
-5. Typecheck with `bunx tsc --noEmit`
+3. Typecheck with `bunx tsc --noEmit`
 
 ### Key constraints
 - DS components never call useCurrentFrame() - animation values are props

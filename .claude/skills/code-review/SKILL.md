@@ -86,7 +86,7 @@ Call in parallel batches (up to 10 files).
 
 ### Step 6 - Pass 4: Claude Semantic Review (Remotion/Three.js)
 
-Read changed files using Serena/JetBrains symbolic tools when available, `Read` otherwise.
+Read changed files using JetBrains symbolic tools when available, `Read` otherwise.
 
 Apply the project-specific checklist below. Focus on things the other passes cannot catch.
 
@@ -172,5 +172,5 @@ git diff --cached | sha256sum | cut -d' ' -f1 > /tmp/claude-code-review-passed
 - **Linters**: `Bash` for `tsc` and `eslint`
 - **Simplify**: Invoke `/simplify` skill
 - **IDE**: `mcp__jetbrains__get_file_problems` (skip if unavailable)
-- **Code reading**: Serena/JetBrains symbolic tools preferred, `Read` fallback
+- **Code reading**: JetBrains symbolic tools preferred, `Read` fallback
 - **Sub-agents**: Use `model: "opus"` for review agents (NOT haiku)
