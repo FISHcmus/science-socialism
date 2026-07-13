@@ -6,3 +6,4 @@ de_an_quay_video/media/*/fullres/
 de_an_quay_video/preview/
 de_an_quay_video/remotion/.agents/
 de_an_quay_video/remotion/.claude/
+.DS_Store
